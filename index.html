@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Fabrique PEPPS - Incarne ton Autorité</title>
-    <meta name="description" content="Coaching scénique pour entrepreneurs. Incarne ton autorité organique avec La Fabrique PEPPS.">
+    <title>La Fabrique PEPPS - Incarne ton Autorité Organique</title>
+    <meta name="description" content="Coaching scénique et leadership pour entrepreneurs hypersensibles. Passez du trac à la confiance pour être écouté·e avec La Fabrique PEPPS.">
     
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="La Fabrique PEPPS - Incarne ton Autorité">
+    <meta property="og:description" content="Le rendez-vous des leaders qui veulent prendre la parole pour marquer les esprits, sans stress ni masque.">
+    <meta property="og:type" content="website">
+
     <!-- Import Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
     <style>
         /* --- VARIABLES & RESET --- */
@@ -81,7 +86,7 @@
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: none;
             box-shadow: var(--shadow-soft);
-            border-radius: 50px; /* Forme Pilule */
+            border-radius: 50px;
             text-align: center;
         }
 
@@ -309,7 +314,7 @@
             font-style: italic;
         }
 
-        /* --- SECTIONS GRID (Offres & Journal) --- */
+        /* --- SECTIONS GRID --- */
         .section-padding {
             padding: 100px 0;
         }
@@ -529,129 +534,130 @@
 </head>
 <body>
 
-    <div class="glow-circle glow-1"></div>
-    <div class="glow-circle glow-2"></div>
+    <div class="glow-circle glow-1" aria-hidden="true"></div>
+    <div class="glow-circle glow-2" aria-hidden="true"></div>
 
     <!-- HEADER -->
-    <header>
+    <header role="banner">
         <div class="container">
-            <nav>
+            <nav role="navigation" aria-label="Menu principal">
                 <a href="#" class="logo">La Fabrique <span>PEPPS</span></a>
                 <ul class="nav-links">
-                    <li><a href="#">Manifeste</a></li>
-                    <li><a href="#">Expertise</a></li>
-                    <li><a href="#offres">Offres</a></li>
-                    <li><a href="#">Ressources</a></li>
+                    <li><a href="#hero">Manifeste</a></li>
+                    <li><a href="#journal-pepps">Journal</a></li>
+                    <li><a href="#offres">Parcours</a></li>
                 </ul>
-                <a href="#contact" class="btn btn-premium">Parlons Impact</a>
+                <a href="#hero-form" class="btn btn-premium">JE M'ABONNE</a>
             </nav>
         </div>
     </header>
 
-    <!-- AJUSTEMENT 1 : HERO -->
-    <section id="hero">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-text">
-                    <span class="subtitle">Leadership Organique</span>
-                    <h1>Incarne ton <em>autorité naturelle</em>.</h1>
-                    
-                    <div class="hero-journal-box">
-                        <p class="hero-journal-subtitle">Reçois Le Journal PEPPS : le rendez-vous des leaders qui veulent prendre la parole avec impact (réunion, pitch, conférence), sans stress ni masque.</p>
+    <main role="main">
+        <!-- HERO SECTION -->
+        <section id="hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-text">
+                        <span class="subtitle">Leadership Organique</span>
+                        <h1>Incarne ton <em>autorité naturelle</em>.</h1>
                         
-                        <form class="hero-newsletter-form">
-                            <input type="text" placeholder="Ton prénom" required>
-                            <input type="email" placeholder="Ton email" required>
-                            <button type="submit" class="btn btn-premium btn-subscribe">JE M'ABONNE AU JOURNAL PEPPS</button>
-                        </form>
+                        <div class="hero-journal-box">
+                            <p class="hero-journal-subtitle">Reçois Le Journal PEPPS : le rendez-vous des leaders qui veulent prendre la parole pour captiver ton audience (réunion, pitch, conférence), sans stress ni masque.</p>
+                            
+                            <form id="hero-form" class="hero-newsletter-form" aria-label="S'abonner au Journal PEPPS">
+                                <input type="text" name="firstname" placeholder="Ton prénom" required aria-label="Ton prénom">
+                                <input type="email" name="email" placeholder="Ton email" required aria-label="Ton adresse email">
+                                <button type="submit" class="btn btn-premium btn-subscribe">JE M'ABONNE AU JOURNAL PEPPS</button>
+                            </form>
+                        </div>
+
+                        <p>Transforme ton hypersensibilité en une puissance magnétique. Ne porte plus de masque, révèle ton aura.</p>
+                        
+                        <a href="#offres" class="btn btn-premium">Découvrir la méthode</a>
                     </div>
+                    <div class="hero-image-wrapper">
+                        <div class="hero-image" role="img" aria-label="Sandrina de La Fabrique PEPPS"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <p>Transforme ton hypersensibilité en une puissance magnétique. Ne porte plus de masque, révèle ton aura.</p>
-                    
-                    <a href="#offres" class="btn btn-premium">Découvrir la méthode</a>
-                </div>
-                <div class="hero-image-wrapper">
-                    <div class="hero-image"></div>
-                </div>
+        <!-- SOCIAL PROOF -->
+        <section id="social-proof">
+            <div class="wave-divider" aria-hidden="true">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
             </div>
-        </div>
-    </section>
+            <div class="container proof-content">
+                <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+                <p class="proof-text">"Ils ont validé leur singularité sans se fragiliser."</p>
+            </div>
+        </section>
 
-    <!-- SOCIAL PROOF -->
-    <section id="social-proof">
-        <div class="wave-divider">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-            </svg>
-        </div>
-        <div class="container proof-content">
-            <div class="stars">★★★★★</div>
-            <p class="proof-text">"Ils ont validé leur singularité sans se fragiliser."</p>
-        </div>
-    </section>
+        <!-- PARCOURS POUR ÊTRE ÉCOUTÉ·E -->
+        <section id="offres" class="section-padding">
+            <div class="container">
+                <div class="section-title-wrap">
+                    <h2 class="section-title">Parcours pour <em>Être Écouté·e</em></h2>
+                </div>
+                <div class="grid-layout">
+                    <article class="card-item">
+                        <h3>Coaching Scénique</h3>
+                        <p>Transforme ton anxiété en énergie de présence. Que ce soit pour une réunion stratégique, un pitch réseau ou une conférence, arrête de te suradapter et deviens inoubliable.</p>
+                        <span class="card-price">950€</span>
+                        <a href="#" class="btn btn-premium">Postuler</a>
+                    </article>
+                    <article class="card-item">
+                        <h3>Conférences</h3>
+                        <p>Conférences interactives sur l'optimisme, le rire en entreprise et l'affirmation de soi. 30 ans d'expérience sur scène et en entreprise, pour des interventions qui engagent vraiment.</p>
+                        <span class="card-price">Sur Devis</span>
+                        <a href="#" class="btn btn-premium">Réserver</a>
+                    </article>
+                    <article class="card-item">
+                        <h3>Le Cercle</h3>
+                        <p>Ressources privées pour leaders qui veulent être écoutés : exercices de prise de parole (réunion, pitch, scène), outils PEPPS, coulisses de conférences marquantes.</p>
+                        <span class="card-price">Offert</span>
+                        <a href="#" class="btn btn-premium">S'inscrire</a>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-    <!-- AJUSTEMENT 4 : PARCOURS D'IMPACT -->
-    <section id="offres" class="section-padding">
-        <div class="container">
-            <div class="section-title-wrap">
-                <h2 class="section-title">Parcours d'<em>Impact</em></h2>
+        <!-- JOURNAL PEPPS SECTION -->
+        <section id="journal-pepps" class="section-padding" style="background-color: var(--bg-cream); border-top: 1px solid rgba(88, 0, 23, 0.05);">
+            <div class="container">
+                <div class="section-title-wrap">
+                    <h2 class="section-title">Le Journal <em>PEPPS</em></h2>
+                    <p class="section-subtitle">Ton compagnon de route pour prendre la parole pour marquer les esprits, dans TOUS tes contextes professionnels.</p>
+                </div>
+                <div class="grid-layout">
+                    <div class="card-item">
+                        <span class="icon" aria-hidden="true">🎤</span>
+                        <h3>Exercices de prise de parole concrets</h3>
+                        <p>Apprivoise ton trac avant ta réunion, ton pitch réseau ou ta présentation. Même si tu te sens "en surchauffe", transforme ce stress en énergie d'engagement.</p>
+                    </div>
+                    <div class="card-item">
+                        <span class="icon" aria-hidden="true">🎬</span>
+                        <h3>Coulisses de conférences & stratégies pour captiver</h3>
+                        <p>Découvre comment Sandrina construit des interventions qui marquent les esprits (+ extraits du podcast "L'Instant PEPPS" et techniques pour captiver ton audience).</p>
+                    </div>
+                    <div class="card-item">
+                        <span class="icon" aria-hidden="true">🔥</span>
+                        <h3>Outils pour leaders qui veulent être écoutés</h3>
+                        <p>Invitations prioritaires aux ateliers de prise de parole, lives thématiques et ressources exclusives (comme le Carnet Physique PEPPS).</p>
+                    </div>
+                </div>
+                <div class="center-cta">
+                    <a href="#hero-form" class="btn btn-premium">JE M'ABONNE GRATUITEMENT</a>
+                </div>
             </div>
-            <div class="grid-layout">
-                <div class="card-item">
-                    <h3>Coaching Scénique</h3>
-                    <p>Transforme ton anxiété en énergie de présence. Que ce soit pour une réunion stratégique, un pitch réseau ou une conférence, arrête de te suradapter et deviens inoubliable.</p>
-                    <span class="card-price">950€</span>
-                    <a href="#" class="btn btn-premium">Postuler</a>
-                </div>
-                <div class="card-item">
-                    <h3>Conférences</h3>
-                    <p>Conférences interactives sur l'optimisme, le rire en entreprise et l'affirmation de soi. 30 ans d'expérience sur scène et en entreprise, pour des interventions qui engagent vraiment.</p>
-                    <span class="card-price">Sur Devis</span>
-                    <a href="#" class="btn btn-premium">Réserver</a>
-                </div>
-                <div class="card-item">
-                    <h3>Le Cercle</h3>
-                    <p>Ressources privées pour leaders qui veulent être écoutés : exercices de prise de parole (réunion, pitch, scène), outils PEPPS, coulisses de conférences impactantes.</p>
-                    <span class="card-price">Offert</span>
-                    <a href="#" class="btn btn-premium">S'inscrire</a>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- AJUSTEMENT 3 : NOUVELLE SECTION JOURNAL PEPPS -->
-    <section id="journal-pepps" class="section-padding" style="background-color: var(--bg-cream); border-top: 1px solid rgba(88, 0, 23, 0.05);">
-        <div class="container">
-            <div class="section-title-wrap">
-                <h2 class="section-title">Le Journal <em>PEPPS</em></h2>
-                <p class="section-subtitle">Ton compagnon de route pour prendre la parole avec impact, dans TOUS tes contextes professionnels.</p>
-            </div>
-            <div class="grid-layout">
-                <div class="card-item">
-                    <span class="icon">🎤</span>
-                    <h3>Exercices de prise de parole concrets</h3>
-                    <p>Apprivoise ton trac avant ta réunion, ton pitch réseau ou ta présentation. Même si tu te sens "en surchauffe", transforme ce stress en énergie d'engagement.</p>
-                </div>
-                <div class="card-item">
-                    <span class="icon">🎬</span>
-                    <h3>Coulisses de conférences & stratégies d'impact</h3>
-                    <p>Découvre comment Sandrina construit des interventions qui marquent les esprits (+ extraits du podcast "L'Instant PEPPS" et techniques pour capter ton audience).</p>
-                </div>
-                <div class="card-item">
-                    <span class="icon">🔥</span>
-                    <h3>Outils pour leaders qui veulent être écoutés</h3>
-                    <p>Invitations prioritaires aux ateliers de prise de parole, lives thématiques et ressources exclusives (comme le Carnet Physique PEPPS).</p>
-                </div>
-            </div>
-            <div class="center-cta">
-                <a href="#hero" class="btn btn-premium">JE M'ABONNE GRATUITEMENT</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- AJUSTEMENT 2 : FOOTER & LEAD MAGNET -->
-    <footer>
-        <div class="footer-wave">
+    <!-- FOOTER & LEAD MAGNET -->
+    <footer role="contentinfo">
+        <div class="footer-wave" aria-hidden="true">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
             </svg>
@@ -675,13 +681,13 @@
                 </div>
             </div>
 
-            <form class="newsletter-form">
-                <input type="email" placeholder="Ton adresse email favorite" class="newsletter-input" required>
+            <form id="footer-form" class="newsletter-form" aria-label="Télécharger le Kit d'Urgence PEPPS">
+                <input type="email" name="email" placeholder="Ton adresse email favorite" class="newsletter-input" required aria-label="Adresse email pour recevoir le kit">
                 <button type="submit" class="btn btn-premium">JE TÉLÉCHARGE MON KIT D'URGENCE</button>
             </form>
 
             <p class="footer-micro-copy">
-                En téléchargeant ce kit, tu rejoins Le Journal PEPPS : 1 à 2 emails par mois avec des exercices de prise de parole, des coulisses de conférences et des outils pour impacter et engager ton audience (réunion, pitch, scène). Aucun spam.
+                En téléchargeant ce kit, tu rejoins Le Journal PEPPS : 1 à 2 emails par mois avec des exercices de prise de parole, des coulisses de conférences et des outils pour captiver et engager ton audience (réunion, pitch, scène). Aucun spam.
             </p>
 
             <div class="copyright">
@@ -690,5 +696,28 @@
         </div>
     </footer>
 
+    <script>
+        // Simple mock for form submission
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const btn = this.querySelector('button');
+                const originalText = btn.textContent;
+                
+                // Visual feedback
+                btn.textContent = "MERCI ! À TRÈS VITE.";
+                btn.style.backgroundColor = "#D70040";
+                
+                // Clear inputs
+                this.querySelectorAll('input').forEach(input => input.value = '');
+                
+                // Revert button after 3 seconds
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.backgroundColor = "";
+                }, 3000);
+            });
+        });
+    </script>
 </body>
 </html>
