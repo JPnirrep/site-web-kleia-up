@@ -14,20 +14,20 @@
     <style>
         /* --- VARIABLES & RESET --- */
         :root {
-            /* Palette Rock Baroque & Solaire */
-            --bg-cream: #FDF6F0;       /* Fond Principal */
-            --bg-off-white: #FFFBF7;   /* Fond Cartes */
-            --color-burgundy: #5D1029; /* Titres & Structure */
-            --color-orange: #FF5733;   /* Accents & Boutons */
-            --color-text: #4A3B32;     /* Texte Courant */
+            /* Palette Leadership Organique */
+            --bg-cream: #FAF9F6;       /* Fond Dominant */
+            --bg-off-white: #FFFFFF;   /* Fond Cartes */
+            --color-burgundy: #580017; /* Premium & Action */
+            --color-accent-red: #D70040; /* Accent Énergie */
+            --color-text: #1A1A1A;     /* Texte & Structure */
             
             /* Typographie */
             --font-title: 'Playfair Display', serif;
             --font-body: 'Montserrat', sans-serif;
             
             /* Ombres */
-            --shadow-soft: 0 10px 30px rgba(93, 16, 41, 0.1);
-            --shadow-hover: 0 15px 40px rgba(255, 87, 51, 0.2);
+            --shadow-soft: 0 10px 30px rgba(88, 0, 23, 0.08);
+            --shadow-hover: 0 15px 40px rgba(88, 0, 23, 0.15);
         }
 
         * {
@@ -51,16 +51,17 @@
         /* --- TYPOGRAPHIE --- */
         h1, h2, h3 {
             font-family: var(--font-title);
-            color: var(--color-burgundy);
+            color: var(--color-text);
             line-height: 1.2;
         }
 
         h1 em, h2 em {
             font-style: italic;
             font-weight: 400;
+            color: var(--color-burgundy);
         }
 
-        a { text-decoration: none; color: inherit; }
+        a { text-decoration: none; color: inherit; transition: color 0.3s; }
 
         /* --- UTILS --- */
         .container {
@@ -69,35 +70,30 @@
             padding: 0 20px;
         }
 
-        /* Formes Organiques (Blobs) pour boutons et images */
-        .blob-shape-1 { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-        .blob-shape-2 { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-        .blob-shape-3 { border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%; }
-
         .btn {
             display: inline-block;
-            padding: 14px 32px;
+            padding: 14px 36px;
             font-family: var(--font-body);
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: none;
             box-shadow: var(--shadow-soft);
+            border-radius: 50px; /* Forme Pilule */
+            text-align: center;
         }
 
-        .btn-orange {
-            background-color: var(--color-orange);
+        .btn-premium {
+            background-color: var(--color-burgundy);
             color: white;
-            /* Forme légèrement organique pour les boutons */
-            border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px; 
         }
 
-        .btn-orange:hover {
-            transform: translateY(-3px) scale(1.02);
+        .btn-premium:hover {
+            transform: scale(1.05);
+            background-color: var(--color-accent-red);
             box-shadow: var(--shadow-hover);
-            background-color: #E64A19;
         }
 
         /* --- HEADER --- */
@@ -105,10 +101,10 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(253, 246, 240, 0.9);
+            background: rgba(250, 249, 246, 0.95);
             backdrop-filter: blur(10px);
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(93, 16, 41, 0.05);
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(26, 26, 26, 0.05);
         }
 
         nav {
@@ -120,11 +116,27 @@
         .logo {
             font-family: var(--font-title);
             font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--color-burgundy);
+            font-size: 1.4rem;
+            color: var(--color-text);
         }
         
-        .logo span { color: var(--color-orange); }
+        .logo span { color: var(--color-burgundy); }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--color-text);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-burgundy);
+        }
 
         /* --- HERO SECTION --- */
         #hero {
@@ -133,35 +145,34 @@
             overflow: hidden;
         }
 
-        /* Décor de fond (Glows) */
         .glow-circle {
             position: absolute;
             border-radius: 50%;
             filter: blur(80px);
-            opacity: 0.6;
+            opacity: 0.4;
             z-index: -1;
         }
         .glow-1 {
             width: 400px; height: 400px;
-            background: rgba(255, 87, 51, 0.15); /* Orange */
+            background: var(--color-burgundy);
             top: -100px; right: -100px;
         }
         .glow-2 {
             width: 300px; height: 300px;
-            background: rgba(93, 16, 41, 0.1); /* Burgundy */
+            background: var(--color-accent-red);
             bottom: 50px; left: -50px;
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1.1fr;
             align-items: center;
             gap: 60px;
         }
 
         .hero-text .subtitle {
             display: block;
-            color: var(--color-orange);
+            color: var(--color-burgundy);
             font-weight: 600;
             letter-spacing: 2px;
             font-size: 0.9rem;
@@ -171,13 +182,58 @@
 
         .hero-text h1 {
             font-size: 4rem;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .hero-text p {
             font-size: 1.2rem;
-            margin-bottom: 40px;
-            max-width: 500px;
+            margin-bottom: 30px;
+            max-width: 550px;
+        }
+
+        .hero-journal-box {
+            background: rgba(255, 255, 255, 0.4);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid rgba(88, 0, 23, 0.1);
+            margin-bottom: 35px;
+            max-width: 580px;
+        }
+
+        .hero-journal-subtitle {
+            font-size: 1.05rem !important;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 15px !important;
+            line-height: 1.4 !important;
+        }
+
+        .hero-newsletter-form {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .hero-newsletter-form input {
+            flex: 1;
+            min-width: 180px;
+            padding: 14px 20px;
+            border: 1px solid rgba(88, 0, 23, 0.2);
+            border-radius: 50px;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            outline: none;
+            background: var(--bg-cream);
+        }
+
+        .hero-newsletter-form input:focus {
+            border-color: var(--color-burgundy);
+        }
+
+        .btn-subscribe {
+            padding: 14px 25px !important;
+            font-size: 0.75rem !important;
+            white-space: nowrap;
         }
 
         .hero-image-wrapper {
@@ -188,28 +244,22 @@
 
         .hero-image {
             width: 100%;
-            max-width: 500px;
-            height: 500px;
-            background-color: #ddd; /* Fallback */
+            max-width: 480px;
+            height: 520px;
             background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
-            /* Forme Blob Organique */
             border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-            box-shadow: 20px 20px 0 rgba(93, 16, 41, 0.1);
+            box-shadow: 20px 20px 0 rgba(88, 0, 23, 0.05);
             position: relative;
             z-index: 2;
-            transition: border-radius 5s ease-in-out infinite alternate;
+            animation: morph 8s ease-in-out infinite;
         }
         
         @keyframes morph {
             0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
             50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
             100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-        }
-        
-        .hero-image {
-             animation: morph 8s ease-in-out infinite;
         }
 
         /* --- SOCIAL PROOF --- */
@@ -221,7 +271,6 @@
             text-align: center;
         }
 
-        /* SVG Wave Separator */
         .wave-divider {
             position: absolute;
             top: -50px;
@@ -248,7 +297,7 @@
         }
 
         .stars {
-            color: var(--color-orange);
+            color: var(--color-accent-red);
             font-size: 1.5rem;
             margin-bottom: 15px;
             letter-spacing: 5px;
@@ -260,73 +309,94 @@
             font-style: italic;
         }
 
-        /* --- OFFRES --- */
-        #offres {
+        /* --- SECTIONS GRID (Offres & Journal) --- */
+        .section-padding {
             padding: 100px 0;
-            background-color: var(--bg-cream);
+        }
+
+        .section-title-wrap {
+            text-align: center;
+            margin-bottom: 60px;
         }
 
         .section-title {
-            text-align: center;
-            margin-bottom: 60px;
             font-size: 3rem;
-            color: var(--color-burgundy);
         }
 
-        .offers-grid {
+        .section-subtitle {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 15px auto 0;
+            opacity: 0.8;
+        }
+
+        .grid-layout {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            gap: 30px;
         }
 
-        .offer-card {
+        .card-item {
             background-color: var(--bg-off-white);
-            border: 2px solid var(--color-burgundy);
-            /* Forme légèrement irrégulière pour les cartes aussi */
-            border-radius: 20px 4px 20px 4px;
-            padding: 40px 30px;
+            border: 1px solid rgba(26, 26, 26, 0.1);
+            border-radius: 12px;
+            padding: 50px 30px;
             text-align: center;
             transition: all 0.4s ease;
             position: relative;
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            flex-direction: column;
         }
 
-        .offer-card:hover {
+        .card-item:hover {
             transform: translateY(-10px);
-            box-shadow: 10px 10px 0 var(--color-orange);
-            border-color: var(--color-orange);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--color-burgundy);
         }
 
-        .offer-card h3 {
-            font-size: 1.8rem;
+        .card-item .icon {
+            font-size: 2.5rem;
             margin-bottom: 20px;
-            color: var(--color-burgundy);
         }
 
-        .offer-card p {
-            margin-bottom: 30px;
-            font-size: 1rem;
-            color: var(--color-text);
+        .card-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            min-height: 3.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .offer-price {
+        .card-item p {
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .card-price {
             display: block;
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--color-orange);
+            color: var(--color-burgundy);
             margin-bottom: 25px;
             font-family: var(--font-title);
         }
 
-        /* --- FOOTER (LEAD MAGNET) --- */
+        .center-cta {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* --- FOOTER & LEAD MAGNET --- */
         footer {
-            /* Dégradé Audacieux */
-            background: linear-gradient(135deg, var(--color-burgundy) 0%, #88192d 50%, #b8361c 100%);
+            background: var(--color-burgundy);
             color: white;
-            padding: 80px 0 40px;
+            padding: 100px 0 40px;
             position: relative;
         }
         
-        /* Wave separator top of footer */
         .footer-wave {
             position: absolute;
             top: -49px;
@@ -344,25 +414,55 @@
         }
         
         .footer-wave .shape-fill {
-            fill: var(--color-burgundy); /* Matches the start of gradient */
+            fill: var(--color-burgundy);
         }
 
         .footer-content {
             text-align: center;
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
         footer h2 {
             color: white;
             font-size: 2.8rem;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            line-height: 1.1;
         }
 
-        footer p {
-            color: rgba(255, 255, 255, 0.9);
+        .footer-lead-subtitle {
+            font-size: 1.4rem;
+            font-family: var(--font-title);
+            font-style: italic;
             margin-bottom: 40px;
-            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .lead-magnet-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            text-align: left;
+            margin-bottom: 50px;
+        }
+
+        .lead-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .lead-item strong {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--bg-cream);
+        }
+
+        .lead-item p {
+            font-size: 0.85rem;
+            line-height: 1.4;
+            opacity: 0.8;
         }
 
         .newsletter-form {
@@ -370,62 +470,58 @@
             gap: 15px;
             flex-wrap: wrap;
             justify-content: center;
+            margin-bottom: 20px;
         }
 
         .newsletter-input {
             flex: 1;
             min-width: 250px;
-            padding: 15px 20px;
+            padding: 18px 25px;
             border: none;
-            /* Forme Blob Soft */
             border-radius: 50px;
             font-family: var(--font-body);
             font-size: 1rem;
             outline: none;
-            color: var(--color-burgundy);
         }
 
-        .newsletter-input::placeholder {
-            color: rgba(93, 16, 41, 0.5);
-        }
-        
-        .copyright {
-            margin-top: 60px;
-            font-size: 0.8rem;
+        .footer-micro-copy {
+            font-size: 0.75rem;
             opacity: 0.6;
+            max-width: 600px;
+            margin: 20px auto 0;
+            line-height: 1.4;
+        }
+
+        .copyright {
+            margin-top: 80px;
+            font-size: 0.8rem;
+            opacity: 0.5;
             text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
         }
 
         /* --- RESPONSIVE --- */
         @media (max-width: 900px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .hero-text h1 {
-                font-size: 3rem;
-            }
-
-            .hero-image-wrapper {
-                margin-top: 40px;
-            }
-            
-            .hero-text p {
-                margin-left: auto;
-                margin-right: auto;
-            }
+            .nav-links { display: none; }
+            .hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-text h1 { font-size: 3rem; }
+            .hero-text p { margin-left: auto; margin-right: auto; }
+            .hero-journal-box { margin-left: auto; margin-right: auto; }
+            footer h2 { font-size: 2rem; }
         }
 
         @media (max-width: 600px) {
-            .hero-text h1 { font-size: 2.5rem; }
-            .section-title { font-size: 2.2rem; }
-            footer h2 { font-size: 2rem; }
-            
+            .hero-newsletter-form {
+                flex-direction: column;
+            }
+            .hero-newsletter-form input {
+                width: 100%;
+            }
             .newsletter-form {
                 flex-direction: column;
             }
-            .btn {
+            .newsletter-input {
                 width: 100%;
             }
         }
@@ -433,7 +529,6 @@
 </head>
 <body>
 
-    <!-- DECOR BACKGROUND -->
     <div class="glow-circle glow-1"></div>
     <div class="glow-circle glow-2"></div>
 
@@ -442,20 +537,38 @@
         <div class="container">
             <nav>
                 <a href="#" class="logo">La Fabrique <span>PEPPS</span></a>
-                <a href="#offres" class="btn btn-orange">Audit Flash</a>
+                <ul class="nav-links">
+                    <li><a href="#">Manifeste</a></li>
+                    <li><a href="#">Expertise</a></li>
+                    <li><a href="#offres">Offres</a></li>
+                    <li><a href="#">Ressources</a></li>
+                </ul>
+                <a href="#contact" class="btn btn-premium">Parlons Impact</a>
             </nav>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- AJUSTEMENT 1 : HERO -->
     <section id="hero">
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-text">
-                    <span class="subtitle">Coaching Scénique pour Entrepreneurs</span>
-                    <h1>Incarne ton <em>autorité organique</em>.</h1>
-                    <p>Ne joue plus un rôle. Révèle ta présence brute, magnétique et authentique sur scène et dans ton business.</p>
-                    <a href="#offres" class="btn btn-orange">Je veux mon Audit Flash</a>
+                    <span class="subtitle">Leadership Organique</span>
+                    <h1>Incarne ton <em>autorité naturelle</em>.</h1>
+                    
+                    <div class="hero-journal-box">
+                        <p class="hero-journal-subtitle">Reçois Le Journal PEPPS : le rendez-vous des leaders qui veulent prendre la parole avec impact (réunion, pitch, conférence), sans stress ni masque.</p>
+                        
+                        <form class="hero-newsletter-form">
+                            <input type="text" placeholder="Ton prénom" required>
+                            <input type="email" placeholder="Ton email" required>
+                            <button type="submit" class="btn btn-premium btn-subscribe">JE M'ABONNE AU JOURNAL PEPPS</button>
+                        </form>
+                    </div>
+
+                    <p>Transforme ton hypersensibilité en une puissance magnétique. Ne porte plus de masque, révèle ton aura.</p>
+                    
+                    <a href="#offres" class="btn btn-premium">Découvrir la méthode</a>
                 </div>
                 <div class="hero-image-wrapper">
                     <div class="hero-image"></div>
@@ -464,74 +577,115 @@
         </div>
     </section>
 
-    <!-- SOCIAL PROOF (Séparateur Vague) -->
+    <!-- SOCIAL PROOF -->
     <section id="social-proof">
-        <!-- Vague SVG Haut -->
         <div class="wave-divider">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
             </svg>
         </div>
-
         <div class="container proof-content">
             <div class="stars">★★★★★</div>
-            <p class="proof-text">"Ils ont libéré leur voix et ne s'excusent plus d'exister."</p>
+            <p class="proof-text">"Ils ont validé leur singularité sans se fragiliser."</p>
         </div>
     </section>
 
-    <!-- OFFRES -->
-    <section id="offres">
+    <!-- AJUSTEMENT 4 : PARCOURS D'IMPACT -->
+    <section id="offres" class="section-padding">
         <div class="container">
-            <h2 class="section-title">Ton Parcours d'<em>Excellence</em></h2>
-            
-            <div class="offers-grid">
-                <!-- Carte 1 -->
-                <div class="offer-card">
-                    <h3>Audit Flash</h3>
-                    <p>45 minutes intenses pour débloquer ta posture et identifier ce qui freine ton magnétisme.</p>
-                    <span class="offer-price">150€</span>
-                    <a href="#" class="btn btn-orange">Réserver</a>
+            <div class="section-title-wrap">
+                <h2 class="section-title">Parcours d'<em>Impact</em></h2>
+            </div>
+            <div class="grid-layout">
+                <div class="card-item">
+                    <h3>Coaching Scénique</h3>
+                    <p>Transforme ton anxiété en énergie de présence. Que ce soit pour une réunion stratégique, un pitch réseau ou une conférence, arrête de te suradapter et deviens inoubliable.</p>
+                    <span class="card-price">950€</span>
+                    <a href="#" class="btn btn-premium">Postuler</a>
                 </div>
-
-                <!-- Carte 2 -->
-                <div class="offer-card">
-                    <h3>L'Ancrage</h3>
-                    <p>4 semaines pour construire tes fondations. Respiration, voix, présence corporelle.</p>
-                    <span class="offer-price">950€</span>
-                    <a href="#" class="btn btn-orange">Découvrir</a>
+                <div class="card-item">
+                    <h3>Conférences</h3>
+                    <p>Conférences interactives sur l'optimisme, le rire en entreprise et l'affirmation de soi. 30 ans d'expérience sur scène et en entreprise, pour des interventions qui engagent vraiment.</p>
+                    <span class="card-price">Sur Devis</span>
+                    <a href="#" class="btn btn-premium">Réserver</a>
                 </div>
-
-                <!-- Carte 3 -->
-                <div class="offer-card">
-                    <h3>L'Incarnation</h3>
-                    <p>L'expérience signature de 3 mois. Transforme ton business par la puissance de ton aura.</p>
-                    <span class="offer-price">Sur Mesure</span>
-                    <a href="#" class="btn btn-orange">Candidater</a>
+                <div class="card-item">
+                    <h3>Le Cercle</h3>
+                    <p>Ressources privées pour leaders qui veulent être écoutés : exercices de prise de parole (réunion, pitch, scène), outils PEPPS, coulisses de conférences impactantes.</p>
+                    <span class="card-price">Offert</span>
+                    <a href="#" class="btn btn-premium">S'inscrire</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- AJUSTEMENT 3 : NOUVELLE SECTION JOURNAL PEPPS -->
+    <section id="journal-pepps" class="section-padding" style="background-color: var(--bg-cream); border-top: 1px solid rgba(88, 0, 23, 0.05);">
+        <div class="container">
+            <div class="section-title-wrap">
+                <h2 class="section-title">Le Journal <em>PEPPS</em></h2>
+                <p class="section-subtitle">Ton compagnon de route pour prendre la parole avec impact, dans TOUS tes contextes professionnels.</p>
+            </div>
+            <div class="grid-layout">
+                <div class="card-item">
+                    <span class="icon">🎤</span>
+                    <h3>Exercices de prise de parole concrets</h3>
+                    <p>Apprivoise ton trac avant ta réunion, ton pitch réseau ou ta présentation. Même si tu te sens "en surchauffe", transforme ce stress en énergie d'engagement.</p>
+                </div>
+                <div class="card-item">
+                    <span class="icon">🎬</span>
+                    <h3>Coulisses de conférences & stratégies d'impact</h3>
+                    <p>Découvre comment Sandrina construit des interventions qui marquent les esprits (+ extraits du podcast "L'Instant PEPPS" et techniques pour capter ton audience).</p>
+                </div>
+                <div class="card-item">
+                    <span class="icon">🔥</span>
+                    <h3>Outils pour leaders qui veulent être écoutés</h3>
+                    <p>Invitations prioritaires aux ateliers de prise de parole, lives thématiques et ressources exclusives (comme le Carnet Physique PEPPS).</p>
+                </div>
+            </div>
+            <div class="center-cta">
+                <a href="#hero" class="btn btn-premium">JE M'ABONNE GRATUITEMENT</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- AJUSTEMENT 2 : FOOTER & LEAD MAGNET -->
     <footer>
-        <!-- Vague SVG de transition -->
         <div class="footer-wave">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
             </svg>
         </div>
-
         <div class="container footer-content">
-            <h2>Pas prête pour le <em>grand saut</em> ?</h2>
-            <p>Reçois mes conseils privés pour commencer à briller, un mail à la fois.</p>
+            <h2>Gorge nouée avant ta réunion ?<br>Blanc avant ton pitch ?</h2>
+            <p class="footer-lead-subtitle">Récupère ton calme et ta clarté en 7 minutes chrono avec le Kit d'Urgence PEPPS.</p>
+            
+            <div class="lead-magnet-details">
+                <div class="lead-item">
+                    <strong>🎧 Audio SOS Ancrage (3 min)</strong>
+                    <p>Respiration guidée par Sandrina pour calmer ton stress avant de prendre la parole (réunion, pitch, présentation).</p>
+                </div>
+                <div class="lead-item">
+                    <strong>📄 Double Page Magique</strong>
+                    <p>PDF interactif : Outil "Météo Intérieure + Brain Dump" pour décharger ton mental et clarifier tes idées avant ton intervention.</p>
+                </div>
+                <div class="lead-item">
+                    <strong>🎬 Vidéo Déculpabilisation</strong>
+                    <p>"Tu n'es pas cassé·e, tu es juste en surchauffe" — comprends pourquoi ton cerveau réagit comme ça face à l'enjeu.</p>
+                </div>
+            </div>
 
             <form class="newsletter-form">
                 <input type="email" placeholder="Ton adresse email favorite" class="newsletter-input" required>
-                <button type="submit" class="btn btn-orange">Rejoindre le cercle</button>
+                <button type="submit" class="btn btn-premium">JE TÉLÉCHARGE MON KIT D'URGENCE</button>
             </form>
-            
+
+            <p class="footer-micro-copy">
+                En téléchargeant ce kit, tu rejoins Le Journal PEPPS : 1 à 2 emails par mois avec des exercices de prise de parole, des coulisses de conférences et des outils pour impacter et engager ton audience (réunion, pitch, scène). Aucun spam.
+            </p>
+
             <div class="copyright">
-                © La Fabrique PEPPS 2024 - Design Rock & Baroque
+                © La Fabrique PEPPS 2024 - Leadership Organique & Premium Design
             </div>
         </div>
     </footer>
