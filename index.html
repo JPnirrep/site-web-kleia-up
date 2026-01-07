@@ -4,12 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Fabrique PEPPS - Incarne ton Autorité Organique</title>
-    <meta name="description" content="Coaching scénique et leadership pour entrepreneurs hypersensibles. Passez du trac à la confiance pour être écouté·e avec La Fabrique PEPPS.">
     
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="La Fabrique PEPPS - Incarne ton Autorité">
-    <meta property="og:description" content="Le rendez-vous des leaders qui veulent prendre la parole pour marquer les esprits, sans stress ni masque.">
+    <!-- META SEO -->
+    <meta name="description" content="La Fabrique PEPPS : Coaching prise de parole et leadership pour entrepreneurs hypersensibles. Formations gestion émotions, optimisme, prise de parole public pour profils HPI/HSP atypiques.">
+    <meta name="keywords" content="hypersensible, coaching prise de parole, entrepreneur HSP, formation gestion émotions, peur parler public introverti, leadership authentique HPI">
+    <meta name="author" content="Sandrina Perrin - La Fabrique PEPPS">
+
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:title" content="La Fabrique PEPPS - Leadership Organique pour Hypersensibles">
+    <meta property="og:description" content="Coaching scénique et leadership pour entrepreneurs hypersensibles (HPI/HSP). Passe du trac à l'impact sans masque.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lafabriquepepps.com">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="La Fabrique PEPPS - Leadership pour Hypersensibles">
+    <meta name="twitter:description" content="Coaching prise de parole entrepreneurs hypersensibles HPI/HSP">
+
+    <!-- GEO Localisation -->
+    <meta name="geo.region" content="FR-PDL">
+    <meta name="geo.placename" content="Poiroux, Pays de la Loire">
+    <meta name="geo.position" content="46.5;-1.5">
 
     <!-- Import Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,18 +35,13 @@
     <style>
         /* --- VARIABLES & RESET --- */
         :root {
-            /* Palette Leadership Organique */
-            --bg-cream: #FAF9F6;       /* Fond Dominant */
-            --bg-off-white: #FFFFFF;   /* Fond Cartes */
-            --color-burgundy: #580017; /* Premium & Action */
-            --color-accent-red: #D70040; /* Accent Énergie */
-            --color-text: #1A1A1A;     /* Texte & Structure */
-            
-            /* Typographie */
+            --bg-cream: #FAF9F6;
+            --bg-off-white: #FFFFFF;
+            --color-burgundy: #580017;
+            --color-accent-red: #D70040;
+            --color-text: #1A1A1A;
             --font-title: 'Playfair Display', serif;
             --font-body: 'Montserrat', sans-serif;
-            
-            /* Ombres */
             --shadow-soft: 0 10px 30px rgba(88, 0, 23, 0.08);
             --shadow-hover: 0 15px 40px rgba(88, 0, 23, 0.15);
         }
@@ -53,7 +64,6 @@
             overflow-x: hidden;
         }
 
-        /* --- TYPOGRAPHIE --- */
         h1, h2, h3 {
             font-family: var(--font-title);
             color: var(--color-text);
@@ -101,7 +111,18 @@
             box-shadow: var(--shadow-hover);
         }
 
-        /* --- HEADER --- */
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--color-burgundy);
+            color: var(--color-burgundy);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--color-burgundy);
+            color: white;
+        }
+
+        /* --- HEADER & DROPDOWN --- */
         header {
             position: sticky;
             top: 0;
@@ -131,6 +152,7 @@
             display: flex;
             list-style: none;
             gap: 30px;
+            align-items: center;
         }
 
         .nav-links a {
@@ -143,9 +165,63 @@
             color: var(--color-burgundy);
         }
 
+        /* Dropdown Style */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle {
+            cursor: pointer;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--bg-off-white);
+            min-width: 280px;
+            box-shadow: var(--shadow-hover);
+            border-radius: 12px;
+            padding: 20px;
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 200;
+            border: 1px solid rgba(88, 0, 23, 0.1);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: flex;
+        }
+
+        .dropdown-category {
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-burgundy);
+            margin-bottom: 5px;
+            list-style: none;
+        }
+
+        .dropdown-menu li {
+            list-style: none;
+        }
+
+        .dropdown-menu a {
+            font-size: 0.9rem;
+            color: var(--color-text);
+            display: block;
+            padding: 5px 0;
+        }
+
         /* --- HERO SECTION --- */
         #hero {
-            padding: 80px 0 120px;
+            padding: 80px 0 60px;
             position: relative;
             overflow: hidden;
         }
@@ -157,16 +233,8 @@
             opacity: 0.4;
             z-index: -1;
         }
-        .glow-1 {
-            width: 400px; height: 400px;
-            background: var(--color-burgundy);
-            top: -100px; right: -100px;
-        }
-        .glow-2 {
-            width: 300px; height: 300px;
-            background: var(--color-accent-red);
-            bottom: 50px; left: -50px;
-        }
+        .glow-1 { width: 400px; height: 400px; background: var(--color-burgundy); top: -100px; right: -100px; }
+        .glow-2 { width: 300px; height: 300px; background: var(--color-accent-red); bottom: 50px; left: -50px; }
 
         .hero-grid {
             display: grid;
@@ -178,93 +246,93 @@
         .hero-text .subtitle {
             display: block;
             color: var(--color-burgundy);
-            font-weight: 600;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
+            font-weight: 600; letter-spacing: 2px; font-size: 0.9rem;
+            margin-bottom: 20px; text-transform: uppercase;
         }
 
-        .hero-text h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-        }
-
-        .hero-text p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            max-width: 550px;
-        }
+        .hero-text h1 { font-size: 4rem; margin-bottom: 20px; }
 
         .hero-journal-box {
             background: rgba(255, 255, 255, 0.4);
-            padding: 25px;
-            border-radius: 20px;
+            padding: 25px; border-radius: 20px;
             border: 1px solid rgba(88, 0, 23, 0.1);
-            margin-bottom: 35px;
-            max-width: 580px;
+            margin-bottom: 35px; max-width: 580px;
         }
 
         .hero-journal-subtitle {
-            font-size: 1.05rem !important;
-            font-weight: 600;
-            color: var(--color-text);
-            margin-bottom: 15px !important;
-            line-height: 1.4 !important;
+            font-size: 1.05rem !important; font-weight: 600; color: var(--color-text);
+            margin-bottom: 15px !important; line-height: 1.4 !important;
         }
 
-        .hero-newsletter-form {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
+        .hero-newsletter-form { display: flex; gap: 12px; flex-wrap: wrap; }
         .hero-newsletter-form input {
-            flex: 1;
-            min-width: 180px;
-            padding: 14px 20px;
-            border: 1px solid rgba(88, 0, 23, 0.2);
-            border-radius: 50px;
-            font-family: var(--font-body);
-            font-size: 0.9rem;
-            outline: none;
-            background: var(--bg-cream);
+            flex: 1; min-width: 180px; padding: 14px 20px;
+            border: 1px solid rgba(88, 0, 23, 0.2); border-radius: 50px;
+            font-family: var(--font-body); font-size: 0.9rem; outline: none; background: var(--bg-cream);
         }
 
-        .hero-newsletter-form input:focus {
-            border-color: var(--color-burgundy);
-        }
-
-        .btn-subscribe {
-            padding: 14px 25px !important;
-            font-size: 0.75rem !important;
-            white-space: nowrap;
-        }
-
-        .hero-image-wrapper {
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
-
+        .hero-image-wrapper { position: relative; display: flex; justify-content: center; }
         .hero-image {
-            width: 100%;
-            max-width: 480px;
-            height: 520px;
+            width: 100%; max-width: 480px; height: 520px;
             background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
+            background-size: cover; background-position: center;
             border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
             box-shadow: 20px 20px 0 rgba(88, 0, 23, 0.05);
-            position: relative;
-            z-index: 2;
-            animation: morph 8s ease-in-out infinite;
+            position: relative; z-index: 2; animation: morph 8s ease-in-out infinite;
         }
         
         @keyframes morph {
             0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
             50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
             100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        }
+
+        /* --- SEGMENTATION SECTION --- */
+        .segmentation-section {
+            padding: 60px 0;
+            background: white;
+            text-align: center;
+            border-bottom: 1px solid rgba(88, 0, 23, 0.05);
+        }
+
+        .segmentation-title {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+        }
+
+        .segmentation-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .segment-btn {
+            padding: 30px 40px;
+            background: var(--bg-cream);
+            border: 1px solid rgba(88, 0, 23, 0.1);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            max-width: 450px;
+            text-align: left;
+            display: block;
+        }
+
+        .segment-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-soft);
+            border-color: var(--color-burgundy);
+        }
+
+        .segment-btn h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--color-burgundy);
+        }
+
+        .segment-btn p {
+            font-size: 0.95rem;
+            color: var(--color-text);
         }
 
         /* --- SOCIAL PROOF --- */
@@ -277,260 +345,179 @@
         }
 
         .wave-divider {
-            position: absolute;
-            top: -50px;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-            transform: rotate(180deg);
+            position: absolute; top: -50px; left: 0; width: 100%; overflow: hidden; line-height: 0; transform: rotate(180deg);
         }
+        .wave-divider svg { display: block; width: calc(100% + 1.3px); height: 50px; }
+        .wave-divider .shape-fill { fill: var(--color-burgundy); }
 
-        .wave-divider svg {
-            position: relative;
-            display: block;
-            width: calc(100% + 1.3px);
-            height: 50px;
-        }
-
-        .wave-divider .shape-fill {
-            fill: var(--color-burgundy);
-        }
-
-        .proof-content {
-            padding-top: 40px;
-        }
-
-        .stars {
-            color: var(--color-accent-red);
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            letter-spacing: 5px;
-        }
-
-        .proof-text {
-            font-family: var(--font-title);
-            font-size: 2rem;
-            font-style: italic;
-        }
+        .proof-content { padding-top: 40px; }
+        .stars { color: var(--color-accent-red); font-size: 1.5rem; margin-bottom: 15px; letter-spacing: 5px; }
+        .proof-text { font-family: var(--font-title); font-size: 2rem; font-style: italic; }
 
         /* --- SECTIONS GRID --- */
-        .section-padding {
-            padding: 100px 0;
-        }
-
-        .section-title-wrap {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title {
-            font-size: 3rem;
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 15px auto 0;
-            opacity: 0.8;
-        }
-
-        .grid-layout {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
+        .section-padding { padding: 100px 0; }
+        .section-title-wrap { text-align: center; margin-bottom: 60px; }
+        .section-title { font-size: 3rem; }
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 
         .card-item {
             background-color: var(--bg-off-white);
             border: 1px solid rgba(26, 26, 26, 0.1);
-            border-radius: 12px;
-            padding: 50px 30px;
-            text-align: center;
-            transition: all 0.4s ease;
-            position: relative;
-            box-shadow: var(--shadow-soft);
-            display: flex;
-            flex-direction: column;
+            border-radius: 12px; padding: 50px 30px;
+            text-align: center; transition: all 0.4s ease;
+            position: relative; box-shadow: var(--shadow-soft);
+            display: flex; flex-direction: column;
         }
 
-        .card-item:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--color-burgundy);
-        }
+        .card-item:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); border-color: var(--color-burgundy); }
+        .card-item .icon { font-size: 2.5rem; margin-bottom: 20px; }
+        .card-item h3 { font-size: 1.5rem; margin-bottom: 20px; min-height: 3.6rem; display: flex; align-items: center; justify-content: center; }
+        .card-item p { font-size: 0.95rem; margin-bottom: 25px; flex-grow: 1; }
+        .card-price { display: block; font-size: 1.5rem; font-weight: 700; color: var(--color-burgundy); margin-bottom: 25px; font-family: var(--font-title); }
 
-        .card-item .icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .card-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            min-height: 3.6rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .card-item p {
-            font-size: 0.95rem;
-            margin-bottom: 25px;
-            flex-grow: 1;
-        }
-
-        .card-price {
+        /* Subtitle style for SEO titles */
+        .offer-subtitle {
             display: block;
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             color: var(--color-burgundy);
-            margin-bottom: 25px;
-            font-family: var(--font-title);
+            margin-bottom: 15px;
+            margin-top: -10px;
         }
 
-        .center-cta {
+        /* --- PROGRAMME SIGNATURE --- */
+        .signature-section {
+            background-color: var(--bg-off-white);
+            padding: 100px 0;
+            border-top: 1px solid rgba(88, 0, 23, 0.05);
+        }
+
+        /* Programme Signature - Carte Premium */
+        .offer-card-premium {
+            background: linear-gradient(135deg, #FAF9F6 0%, #FFF8F0 100%);
+            border: 2px solid #580017;
+            padding: 50px 40px;
             text-align: center;
-            margin-top: 50px;
-        }
-
-        /* --- FOOTER & LEAD MAGNET --- */
-        footer {
-            background: var(--color-burgundy);
-            color: white;
-            padding: 100px 0 40px;
-            position: relative;
-        }
-        
-        .footer-wave {
-            position: absolute;
-            top: -49px;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-        }
-        
-        .footer-wave svg {
-            position: relative;
-            display: block;
-            width: calc(100% + 1.3px);
-            height: 50px;
-        }
-        
-        .footer-wave .shape-fill {
-            fill: var(--color-burgundy);
-        }
-
-        .footer-content {
-            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(88, 0, 23, 0.15);
             max-width: 800px;
             margin: 0 auto;
         }
 
-        footer h2 {
-            color: white;
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-            line-height: 1.1;
-        }
-
-        .footer-lead-subtitle {
-            font-size: 1.4rem;
-            font-family: var(--font-title);
-            font-style: italic;
-            margin-bottom: 40px;
-            opacity: 0.9;
-        }
-
-        .lead-magnet-details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-            text-align: left;
-            margin-bottom: 50px;
-        }
-
-        .lead-item {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .lead-item strong {
+        .offer-icon {
+            font-size: 3rem;
             display: block;
-            margin-bottom: 8px;
-            color: var(--bg-cream);
-        }
-
-        .lead-item p {
-            font-size: 0.85rem;
-            line-height: 1.4;
-            opacity: 0.8;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
             margin-bottom: 20px;
         }
 
-        .newsletter-input {
-            flex: 1;
-            min-width: 250px;
-            padding: 18px 25px;
-            border: none;
-            border-radius: 50px;
-            font-family: var(--font-body);
-            font-size: 1rem;
-            outline: none;
+        .offer-category {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            color: #580017;
+            margin-bottom: 20px;
+            font-weight: 600;
         }
 
-        .footer-micro-copy {
-            font-size: 0.75rem;
-            opacity: 0.6;
-            max-width: 600px;
-            margin: 20px auto 0;
+        .offer-title-premium {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
             line-height: 1.4;
+            color: #1A1A1A;
+            margin-bottom: 15px;
+            font-weight: 700;
         }
 
-        .copyright {
-            margin-top: 80px;
-            font-size: 0.8rem;
-            opacity: 0.5;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 30px;
+        .offer-subtitle-premium {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #580017;
+            margin-bottom: 25px;
+            font-weight: 400;
         }
 
-        /* --- RESPONSIVE --- */
+        .offer-description {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #4A3B32;
+            margin-bottom: 30px;
+        }
+
+        .offer-price-premium {
+            font-size: 2rem;
+            color: #580017;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        /* --- FOOTER & LEAD MAGNET --- */
+        footer { background: var(--color-burgundy); color: white; padding: 100px 0 40px; position: relative; }
+        .footer-wave { position: absolute; top: -49px; left: 0; width: 100%; overflow: hidden; line-height: 0; }
+        .footer-wave svg { display: block; width: calc(100% + 1.3px); height: 50px; }
+        .footer-wave .shape-fill { fill: var(--color-burgundy); }
+        .footer-content { text-align: center; max-width: 800px; margin: 0 auto; }
+        footer h2 { color: white; font-size: 2.8rem; margin-bottom: 15px; }
+        .lead-magnet-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; text-align: left; margin-bottom: 50px; }
+        .lead-item { background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .newsletter-form { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; margin-bottom: 20px; }
+        .newsletter-input { flex: 1; min-width: 250px; padding: 18px 25px; border: none; border-radius: 50px; font-family: var(--font-body); font-size: 1rem; outline: none; }
+
         @media (max-width: 900px) {
             .nav-links { display: none; }
             .hero-grid { grid-template-columns: 1fr; text-align: center; }
             .hero-text h1 { font-size: 3rem; }
-            .hero-text p { margin-left: auto; margin-right: auto; }
-            .hero-journal-box { margin-left: auto; margin-right: auto; }
+            .hero-text p, .hero-journal-box { margin-left: auto; margin-right: auto; }
             footer h2 { font-size: 2rem; }
         }
-
-        @media (max-width: 600px) {
-            .hero-newsletter-form {
-                flex-direction: column;
-            }
-            .hero-newsletter-form input {
-                width: 100%;
-            }
-            .newsletter-form {
-                flex-direction: column;
-            }
-            .newsletter-input {
-                width: 100%;
-            }
-        }
     </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "La Fabrique PEPPS",
+      "description": "Coaching scénique et leadership pour entrepreneurs hypersensibles",
+      "url": "https://lafabriquepepps.com",
+      "telephone": "+33-XXX",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Poiroux",
+        "addressRegion": "Pays de la Loire",
+        "addressCountry": "FR"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Sandrina Perrin"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Formations PEPPS",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Course",
+              "name": "Formation Gestion Émotions Entrepreneur Hypersensible",
+              "description": "Atelier optimisme stratégique 3h pour entrepreneurs HSP",
+              "provider": {"@type": "Organization", "name": "La Fabrique PEPPS"}
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Course",
+              "name": "Vaincre Peur Parler Public Hypersensibles Introvertis",
+              "description": "Formation prise de parole pour introvertis et hypersensibles",
+              "provider": {"@type": "Organization", "name": "La Fabrique PEPPS"}
+            }
+          }
+        ]
+      }
+    }
+    </script>
 </head>
 <body>
 
@@ -542,11 +529,27 @@
         <div class="container">
             <nav role="navigation" aria-label="Menu principal">
                 <a href="#" class="logo">La Fabrique <span>PEPPS</span></a>
+                
                 <ul class="nav-links">
                     <li><a href="#hero">Manifeste</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" aria-haspopup="true">Découvrir les Offres ▼</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-category">🎁 Kits & Outils</li>
+                            <li><a href="#footer-form">→ Kit d'Urgence Gratuit</a></li>
+                            <li><a href="#">→ Carnets PEPPS</a></li>
+                            
+                            <li class="dropdown-category">🎯 Ateliers Focus</li>
+                            <li><a href="#ateliers-focus">→ L'Optimisme Stratégique (3h)</a></li>
+                            <li><a href="#ateliers-focus">→ Oser Sa Voix (3h)</a></li>
+                            
+                            <li class="dropdown-category">🏆 Programme Signature</li>
+                            <li><a href="#programme-signature">→ L'Incarnation (Candidature)</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#journal-pepps">Journal</a></li>
-                    <li><a href="#offres">Parcours</a></li>
                 </ul>
+                
                 <a href="#hero-form" class="btn btn-premium">JE M'ABONNE</a>
             </nav>
         </div>
@@ -570,14 +573,29 @@
                                 <button type="submit" class="btn btn-premium btn-subscribe">JE M'ABONNE AU JOURNAL PEPPS</button>
                             </form>
                         </div>
-
                         <p>Transforme ton hypersensibilité en une puissance magnétique. Ne porte plus de masque, révèle ton aura.</p>
-                        
-                        <a href="#offres" class="btn btn-premium">Découvrir la méthode</a>
+                        <a href="#need-section" class="btn btn-premium">Découvrir la méthode</a>
                     </div>
                     <div class="hero-image-wrapper">
                         <div class="hero-image" role="img" aria-label="Sandrina de La Fabrique PEPPS"></div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOUVELLE SECTION : SEGMENTATION DES BESOINS -->
+        <section id="need-section" class="segmentation-section">
+            <div class="container">
+                <h2 class="segmentation-title">Quel est ton <em>besoin</em> aujourd'hui ?</h2>
+                <div class="segmentation-grid">
+                    <a href="#footer-form" class="segment-btn">
+                        <h3>Apprivoiser mon trac maintenant</h3>
+                        <p>Je cherche des outils concrets et gratuits pour retrouver mon calme avant une intervention immédiate.</p>
+                    </a>
+                    <a href="#offres-intro" class="segment-btn">
+                        <h3>Incarner mon leadership sur la durée</h3>
+                        <p>Je veux transformer ma posture, arrêter de me suradapter et devenir une figure de référence écoutée.</p>
+                    </a>
                 </div>
             </div>
         </section>
@@ -595,32 +613,51 @@
             </div>
         </section>
 
-        <!-- PARCOURS POUR ÊTRE ÉCOUTÉ·E -->
-        <section id="offres" class="section-padding">
+        <!-- SECTION ATELIERS FOCUS -->
+        <section id="ateliers-focus" class="section-padding">
             <div class="container">
-                <div class="section-title-wrap">
-                    <h2 class="section-title">Parcours pour <em>Être Écouté·e</em></h2>
+                <div id="offres-intro" class="section-title-wrap">
+                    <h2 class="section-title">Ateliers <em>Focus</em></h2>
+                    <p class="section-subtitle">Des formats intensifs de 3h pour débloquer un levier précis de ton autorité.</p>
                 </div>
                 <div class="grid-layout">
                     <article class="card-item">
-                        <h3>Coaching Scénique</h3>
-                        <p>Transforme ton anxiété en énergie de présence. Que ce soit pour une réunion stratégique, un pitch réseau ou une conférence, arrête de te suradapter et deviens inoubliable.</p>
-                        <span class="card-price">950€</span>
-                        <a href="#" class="btn btn-premium">Postuler</a>
+                        <span class="icon">🚀</span>
+                        <h3>Formation Gestion Émotions Entrepreneur Hypersensible</h3>
+                        <p class="offer-subtitle">L'Optimisme Stratégique - Atelier Express 3h</p>
+                        <p>Arrêter de ruminer : transforme tes montagnes russes émotionnelles en carburant. Pour entrepreneurs hypersensibles qui subissent le stress.</p>
+                        <span class="card-price">190€ / 3h</span>
+                        <a href="#" class="btn btn-premium">S'inscrire</a>
                     </article>
                     <article class="card-item">
-                        <h3>Conférences</h3>
-                        <p>Conférences interactives sur l'optimisme, le rire en entreprise et l'affirmation de soi. 30 ans d'expérience sur scène et en entreprise, pour des interventions qui engagent vraiment.</p>
-                        <span class="card-price">Sur Devis</span>
-                        <a href="#" class="btn btn-premium">Réserver</a>
-                    </article>
-                    <article class="card-item">
-                        <h3>Le Cercle</h3>
-                        <p>Ressources privées pour leaders qui veulent être écoutés : exercices de prise de parole (réunion, pitch, scène), outils PEPPS, coulisses de conférences marquantes.</p>
-                        <span class="card-price">Offert</span>
+                        <span class="icon">📢</span>
+                        <h3>Vaincre Peur Parler Public - Hypersensibles Introvertis</h3>
+                        <p class="offer-subtitle">Oser Sa Voix - Kit Démarrage Prise de Parole</p>
+                        <p>Techniques corps-mental pour oser ta 1ère vidéo, live ou réunion. Fini tremblements, gorge nouée et rougissements.</p>
+                        <span class="card-price">190€ / 3h</span>
                         <a href="#" class="btn btn-premium">S'inscrire</a>
                     </article>
                 </div>
+            </div>
+        </section>
+
+        <!-- SECTION PROGRAMME SIGNATURE -->
+        <section id="programme-signature" class="signature-section">
+            <div class="container">
+                <div class="section-title-wrap">
+                    <h2 class="section-title">Programme <em>Signature</em></h2>
+                </div>
+                <article class="offer-card-premium">
+                    <div class="offer-icon">🏆</div>
+                    <p class="offer-category">PROGRAMME SIGNATURE</p>
+                    <h3 class="offer-title-premium">Coaching Leadership Dirigeants Hypersensibles HPI HSP</h3>
+                    <p class="offer-subtitle-premium">L'Incarnation</p>
+                    <p class="offer-description">
+                        Transforme ta singularité en autorité magnétique. Arrête de t'épuiser derrière un masque pro. Programme 3-6 mois sur candidature.
+                    </p>
+                    <p class="offer-price-premium">À partir de 2500€</p>
+                    <a href="#" class="btn btn-premium">DÉPOSER MA CANDIDATURE</a>
+                </article>
             </div>
         </section>
 
@@ -639,13 +676,13 @@
                     </div>
                     <div class="card-item">
                         <span class="icon" aria-hidden="true">🎬</span>
-                        <h3>Coulisses de conférences & stratégies pour captiver</h3>
+                        <h3>Coulisses & Stratégies</h3>
                         <p>Découvre comment Sandrina construit des interventions qui marquent les esprits (+ extraits du podcast "L'Instant PEPPS" et techniques pour captiver ton audience).</p>
                     </div>
                     <div class="card-item">
                         <span class="icon" aria-hidden="true">🔥</span>
-                        <h3>Outils pour leaders qui veulent être écoutés</h3>
-                        <p>Invitations prioritaires aux ateliers de prise de parole, lives thématiques et ressources exclusives (comme le Carnet Physique PEPPS).</p>
+                        <h3>Ressources Leaders</h3>
+                        <p>Invitations prioritaires aux ateliers, lives thématiques et ressources exclusives (comme le Carnet Physique PEPPS).</p>
                     </div>
                 </div>
                 <div class="center-cta">
@@ -656,7 +693,7 @@
     </main>
 
     <!-- FOOTER & LEAD MAGNET -->
-    <footer role="contentinfo">
+    <footer id="kit-urgence" role="contentinfo">
         <div class="footer-wave" aria-hidden="true">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
@@ -664,7 +701,7 @@
         </div>
         <div class="container footer-content">
             <h2>Gorge nouée avant ta réunion ?<br>Blanc avant ton pitch ?</h2>
-            <p class="footer-lead-subtitle">Récupère ton calme et ta clarté en 7 minutes chrono avec le Kit d'Urgence PEPPS.</p>
+            <p class="footer-lead-subtitle" style="font-family: var(--font-title); font-style: italic; font-size: 1.4rem; margin-bottom: 40px; opacity: 0.9;">Récupère ton calme et ta clarté en 7 minutes chrono avec le Kit d'Urgence PEPPS.</p>
             
             <div class="lead-magnet-details">
                 <div class="lead-item">
@@ -690,28 +727,21 @@
                 En téléchargeant ce kit, tu rejoins Le Journal PEPPS : 1 à 2 emails par mois avec des exercices de prise de parole, des coulisses de conférences et des outils pour captiver et engager ton audience (réunion, pitch, scène). Aucun spam.
             </p>
 
-            <div class="copyright">
+            <div class="copyright" style="margin-top: 80px; font-size: 0.8rem; opacity: 0.5; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 30px;">
                 © La Fabrique PEPPS 2024 - Leadership Organique & Premium Design
             </div>
         </div>
     </footer>
 
     <script>
-        // Simple mock for form submission
         document.querySelectorAll('form').forEach(form => {
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
                 const btn = this.querySelector('button');
                 const originalText = btn.textContent;
-                
-                // Visual feedback
                 btn.textContent = "MERCI ! À TRÈS VITE.";
                 btn.style.backgroundColor = "#D70040";
-                
-                // Clear inputs
                 this.querySelectorAll('input').forEach(input => input.value = '');
-                
-                // Revert button after 3 seconds
                 setTimeout(() => {
                     btn.textContent = originalText;
                     btn.style.backgroundColor = "";
