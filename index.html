@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,41 +27,453 @@
     <meta name="geo.placename" content="Poiroux, Pays de la Loire">
     <meta name="geo.position" content="46.5;-1.5">
 
-    <!-- Tailwind CSS CDN & Config -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        cream: '#FAF9F6',
-                        offWhite: '#FFFFFF',
-                        burgundy: '#580017',
-                        accentRed: '#D70040',
-                        dark: '#1A1A1A',
-                    },
-                    fontFamily: {
-                        title: ['Playfair Display', 'serif'],
-                        body: ['Montserrat', 'sans-serif'],
-                    },
-                    boxShadow: {
-                        soft: '0 10px 30px rgba(88, 0, 23, 0.08)',
-                        hover: '0 15px 40px rgba(88, 0, 23, 0.15)',
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- Custom CSS pour animations et effets complexes -->
-    <link rel="stylesheet" href="css/custom.css">
-
     <!-- Import Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-    <!-- Schema.org JSON-LD -->
+    <style>
+        /* --- VARIABLES & RESET --- */
+        :root {
+            --bg-cream: #FAF9F6;
+            --bg-off-white: #FFFFFF;
+            --color-burgundy: #580017;
+            --color-accent-red: #D70040;
+            --color-text: #1A1A1A;
+            --font-title: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+            --shadow-soft: 0 10px 30px rgba(88, 0, 23, 0.08);
+            --shadow-hover: 0 15px 40px rgba(88, 0, 23, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--color-text);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-title);
+            color: var(--color-text);
+            line-height: 1.2;
+        }
+
+        h1 em, h2 em {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--color-burgundy);
+        }
+
+        a { text-decoration: none; color: inherit; transition: color 0.3s; }
+
+        /* --- UTILS --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+            box-shadow: var(--shadow-soft);
+            border-radius: 50px;
+            text-align: center;
+        }
+
+        .btn-premium {
+            background-color: var(--color-burgundy);
+            color: white;
+        }
+
+        .btn-premium:hover {
+            transform: scale(1.05);
+            background-color: var(--color-accent-red);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--color-burgundy);
+            color: var(--color-burgundy);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--color-burgundy);
+            color: white;
+        }
+
+        /* --- HEADER & DROPDOWN --- */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(250, 249, 246, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(26, 26, 26, 0.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-title);
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--color-text);
+        }
+        
+        .logo span { color: var(--color-burgundy); }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--color-text);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-burgundy);
+        }
+
+        /* Dropdown Style */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle {
+            cursor: pointer;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--bg-off-white);
+            min-width: 280px;
+            box-shadow: var(--shadow-hover);
+            border-radius: 12px;
+            padding: 20px;
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 200;
+            border: 1px solid rgba(88, 0, 23, 0.1);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: flex;
+        }
+
+        .dropdown-category {
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-burgundy);
+            margin-bottom: 5px;
+            list-style: none;
+        }
+
+        .dropdown-menu li {
+            list-style: none;
+        }
+
+        .dropdown-menu a {
+            font-size: 0.9rem;
+            color: var(--color-text);
+            display: block;
+            padding: 5px 0;
+        }
+
+        /* --- HERO SECTION --- */
+        #hero {
+            padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glow-circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            z-index: -1;
+        }
+        .glow-1 { width: 400px; height: 400px; background: var(--color-burgundy); top: -100px; right: -100px; }
+        .glow-2 { width: 300px; height: 300px; background: var(--color-accent-red); bottom: 50px; left: -50px; }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-text .subtitle {
+            display: block;
+            color: var(--color-burgundy);
+            font-weight: 600; letter-spacing: 2px; font-size: 0.9rem;
+            margin-bottom: 20px; text-transform: uppercase;
+        }
+
+        .hero-text h1 { font-size: 4rem; margin-bottom: 20px; }
+
+        .hero-journal-box {
+            background: rgba(255, 255, 255, 0.4);
+            padding: 25px; border-radius: 20px;
+            border: 1px solid rgba(88, 0, 23, 0.1);
+            margin-bottom: 35px; max-width: 580px;
+        }
+
+        .hero-journal-subtitle {
+            font-size: 1.05rem !important; font-weight: 600; color: var(--color-text);
+            margin-bottom: 15px !important; line-height: 1.4 !important;
+        }
+
+        .hero-newsletter-form { display: flex; gap: 12px; flex-wrap: wrap; }
+        .hero-newsletter-form input {
+            flex: 1; min-width: 180px; padding: 14px 20px;
+            border: 1px solid rgba(88, 0, 23, 0.2); border-radius: 50px;
+            font-family: var(--font-body); font-size: 0.9rem; outline: none; background: var(--bg-cream);
+        }
+
+        .hero-image-wrapper { position: relative; display: flex; justify-content: center; }
+        .hero-image {
+            width: 100%; max-width: 480px; height: 520px;
+            background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop');
+            background-size: cover; background-position: center;
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            box-shadow: 20px 20px 0 rgba(88, 0, 23, 0.05);
+            position: relative; z-index: 2; animation: morph 8s ease-in-out infinite;
+        }
+        
+        @keyframes morph {
+            0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+            100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        }
+
+        /* --- SEGMENTATION SECTION --- */
+        .segmentation-section {
+            padding: 60px 0;
+            background: white;
+            text-align: center;
+            border-bottom: 1px solid rgba(88, 0, 23, 0.05);
+        }
+
+        .segmentation-title {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+        }
+
+        .segmentation-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .segment-btn {
+            padding: 30px 40px;
+            background: var(--bg-cream);
+            border: 1px solid rgba(88, 0, 23, 0.1);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            max-width: 450px;
+            text-align: left;
+            display: block;
+        }
+
+        .segment-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-soft);
+            border-color: var(--color-burgundy);
+        }
+
+        .segment-btn h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--color-burgundy);
+        }
+
+        .segment-btn p {
+            font-size: 0.95rem;
+            color: var(--color-text);
+        }
+
+        /* --- SOCIAL PROOF --- */
+        #social-proof {
+            background-color: var(--color-burgundy);
+            color: var(--bg-cream);
+            padding-bottom: 60px;
+            position: relative;
+            text-align: center;
+        }
+
+        .wave-divider {
+            position: absolute; top: -50px; left: 0; width: 100%; overflow: hidden; line-height: 0; transform: rotate(180deg);
+        }
+        .wave-divider svg { display: block; width: calc(100% + 1.3px); height: 50px; }
+        .wave-divider .shape-fill { fill: var(--color-burgundy); }
+
+        .proof-content { padding-top: 40px; }
+        .stars { color: var(--color-accent-red); font-size: 1.5rem; margin-bottom: 15px; letter-spacing: 5px; }
+        .proof-text { font-family: var(--font-title); font-size: 2rem; font-style: italic; }
+
+        /* --- SECTIONS GRID --- */
+        .section-padding { padding: 100px 0; }
+        .section-title-wrap { text-align: center; margin-bottom: 60px; }
+        .section-title { font-size: 3rem; }
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+        .card-item {
+            background-color: var(--bg-off-white);
+            border: 1px solid rgba(26, 26, 26, 0.1);
+            border-radius: 12px; padding: 50px 30px;
+            text-align: center; transition: all 0.4s ease;
+            position: relative; box-shadow: var(--shadow-soft);
+            display: flex; flex-direction: column;
+        }
+
+        .card-item:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); border-color: var(--color-burgundy); }
+        .card-item .icon { font-size: 2.5rem; margin-bottom: 20px; }
+        .card-item h3 { font-size: 1.5rem; margin-bottom: 20px; min-height: 3.6rem; display: flex; align-items: center; justify-content: center; }
+        .card-item p { font-size: 0.95rem; margin-bottom: 25px; flex-grow: 1; }
+        .card-price { display: block; font-size: 1.5rem; font-weight: 700; color: var(--color-burgundy); margin-bottom: 25px; font-family: var(--font-title); }
+
+        /* Subtitle style for SEO titles */
+        .offer-subtitle {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-burgundy);
+            margin-bottom: 15px;
+            margin-top: -10px;
+        }
+
+        /* --- PROGRAMME SIGNATURE --- */
+        .signature-section {
+            background-color: var(--bg-off-white);
+            padding: 100px 0;
+            border-top: 1px solid rgba(88, 0, 23, 0.05);
+        }
+
+        /* Programme Signature - Carte Premium */
+        .offer-card-premium {
+            background: linear-gradient(135deg, #FAF9F6 0%, #FFF8F0 100%);
+            border: 2px solid #580017;
+            padding: 50px 40px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(88, 0, 23, 0.15);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .offer-icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .offer-category {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            color: #580017;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .offer-title-premium {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            line-height: 1.4;
+            color: #1A1A1A;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .offer-subtitle-premium {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #580017;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        .offer-description {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #4A3B32;
+            margin-bottom: 30px;
+        }
+
+        .offer-price-premium {
+            font-size: 2rem;
+            color: #580017;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        /* --- FOOTER & LEAD MAGNET --- */
+        footer { background: var(--color-burgundy); color: white; padding: 100px 0 40px; position: relative; }
+        .footer-wave { position: absolute; top: -49px; left: 0; width: 100%; overflow: hidden; line-height: 0; }
+        .footer-wave svg { display: block; width: calc(100% + 1.3px); height: 50px; }
+        .footer-wave .shape-fill { fill: var(--color-burgundy); }
+        .footer-content { text-align: center; max-width: 800px; margin: 0 auto; }
+        footer h2 { color: white; font-size: 2.8rem; margin-bottom: 15px; }
+        .lead-magnet-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; text-align: left; margin-bottom: 50px; }
+        .lead-item { background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .newsletter-form { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; margin-bottom: 20px; }
+        .newsletter-input { flex: 1; min-width: 250px; padding: 18px 25px; border: none; border-radius: 50px; font-family: var(--font-body); font-size: 1rem; outline: none; }
+
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-text h1 { font-size: 3rem; }
+            .hero-text p, .hero-journal-box { margin-left: auto; margin-right: auto; }
+            footer h2 { font-size: 2rem; }
+        }
+    </style>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -107,215 +519,215 @@
     }
     </script>
 </head>
-<body class="bg-cream text-dark font-body leading-relaxed overflow-x-hidden">
+<body>
 
     <div class="glow-circle glow-1" aria-hidden="true"></div>
     <div class="glow-circle glow-2" aria-hidden="true"></div>
 
     <!-- HEADER -->
-    <header role="banner" class="sticky top-0 z-[100] bg-cream/95 backdrop-blur-md py-5 border-b border-dark/5">
-        <div class="max-w-[1200px] mx-auto px-5">
-            <nav role="navigation" aria-label="Menu principal" class="flex justify-between items-center">
-                <a href="#" class="font-title font-bold text-xl text-dark">La Fabrique <span class="text-burgundy">PEPPS</span></a>
+    <header role="banner">
+        <div class="container">
+            <nav role="navigation" aria-label="Menu principal">
+                <a href="#" class="logo">La Fabrique <span>PEPPS</span></a>
                 
-                <ul class="hidden md:flex list-none gap-8 items-center">
-                    <li><a href="#hero" class="font-medium text-[0.95rem] hover:text-burgundy transition-colors">Manifeste</a></li>
-                    <li class="dropdown relative">
-                        <a href="#" class="dropdown-toggle cursor-pointer pb-2 flex items-center gap-1 font-medium text-[0.95rem] hover:text-burgundy transition-colors" aria-haspopup="true">Découvrir les Offres ▼</a>
-                        <ul class="dropdown-menu absolute top-full left-0 bg-offWhite min-w-[280px] shadow-hover rounded-xl p-5 hidden flex-col gap-4 z-[200] border border-burgundy/10">
-                            <li class="font-bold text-[0.75rem] uppercase tracking-widest text-burgundy mb-1 list-none">🎁 Kits & Outils</li>
-                            <li class="list-none"><a href="#footer-form" class="text-[0.9rem] py-1 block hover:text-burgundy transition-colors">→ Kit d'Urgence Gratuit</a></li>
-                            <li class="list-none"><a href="#" class="text-[0.9rem] py-1 block hover:text-burgundy transition-colors">→ Carnets PEPPS</a></li>
+                <ul class="nav-links">
+                    <li><a href="#hero">Manifeste</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" aria-haspopup="true">Découvrir les Offres ▼</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-category">🎁 Kits & Outils</li>
+                            <li><a href="#footer-form">→ Kit d'Urgence Gratuit</a></li>
+                            <li><a href="#">→ Carnets PEPPS</a></li>
                             
-                            <li class="font-bold text-[0.75rem] uppercase tracking-widest text-burgundy mb-1 list-none">🎯 Ateliers Focus</li>
-                            <li class="list-none"><a href="#ateliers-focus" class="text-[0.9rem] py-1 block hover:text-burgundy transition-colors">→ L'Optimisme Stratégique (3h)</a></li>
-                            <li class="list-none"><a href="#ateliers-focus" class="text-[0.9rem] py-1 block hover:text-burgundy transition-colors">→ Oser Sa Voix (3h)</a></li>
+                            <li class="dropdown-category">🎯 Ateliers Focus</li>
+                            <li><a href="#ateliers-focus">→ L'Optimisme Stratégique (3h)</a></li>
+                            <li><a href="#ateliers-focus">→ Oser Sa Voix (3h)</a></li>
                             
-                            <li class="font-bold text-[0.75rem] uppercase tracking-widest text-burgundy mb-1 list-none">🏆 Programme Signature</li>
-                            <li class="list-none"><a href="#programme-signature" class="text-[0.9rem] py-1 block hover:text-burgundy transition-colors">→ L'Incarnation (Candidature)</a></li>
+                            <li class="dropdown-category">🏆 Programme Signature</li>
+                            <li><a href="#programme-signature">→ L'Incarnation (Candidature)</a></li>
                         </ul>
                     </li>
-                    <li><a href="#journal-pepps" class="font-medium text-[0.95rem] hover:text-burgundy transition-colors">Journal</a></li>
+                    <li><a href="#journal-pepps">Journal</a></li>
                 </ul>
                 
-                <a href="#hero-form" class="btn-transition px-9 py-3.5 bg-burgundy text-white font-semibold uppercase tracking-widest rounded-full shadow-soft hover:scale-105 hover:bg-accentRed hover:shadow-hover">JE M'ABONNE</a>
+                <a href="#hero-form" class="btn btn-premium">JE M'ABONNE</a>
             </nav>
         </div>
     </header>
 
     <main role="main">
         <!-- HERO SECTION -->
-        <section id="hero" class="py-20 lg:pb-15 relative overflow-hidden">
-            <div class="max-w-[1200px] mx-auto px-5">
-                <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] items-center gap-15 lg:gap-20">
-                    <div class="hero-text text-center lg:text-left">
-                        <span class="block text-burgundy font-semibold tracking-[2px] text-[0.9rem] mb-5 uppercase">Leadership Organique</span>
-                        <h1 class="font-title text-4xl lg:text-6xl mb-5 leading-[1.2]">Incarne ton <em class="italic font-normal text-burgundy">autorité naturelle</em>.</h1>
+        <section id="hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-text">
+                        <span class="subtitle">Leadership Organique</span>
+                        <h1>Incarne ton <em>autorité naturelle</em>.</h1>
                         
-                        <div class="bg-white/40 p-6 lg:p-7 rounded-[20px] border border-burgundy/10 mb-9 max-w-[580px] mx-auto lg:mx-0">
-                            <p class="font-semibold text-dark mb-4 leading-[1.4] text-[1.05rem]">Reçois Le Journal PEPPS : le rendez-vous des leaders qui veulent prendre la parole pour captiver ton audience (réunion, pitch, conférence), sans stress ni masque.</p>
+                        <div class="hero-journal-box">
+                            <p class="hero-journal-subtitle">Reçois Le Journal PEPPS : le rendez-vous des leaders qui veulent prendre la parole pour captiver ton audience (réunion, pitch, conférence), sans stress ni masque.</p>
                             
-                            <form id="hero-form" class="flex flex-wrap gap-3" aria-label="S'abonner au Journal PEPPS">
-                                <input type="text" name="firstname" placeholder="Ton prénom" required aria-label="Ton prénom" class="flex-1 min-w-[180px] px-5 py-3.5 border border-burgundy/20 rounded-full font-body text-[0.9rem] outline-none bg-cream focus:border-burgundy transition-colors">
-                                <input type="email" name="email" placeholder="Ton email" required aria-label="Ton adresse email" class="flex-1 min-w-[180px] px-5 py-3.5 border border-burgundy/20 rounded-full font-body text-[0.9rem] outline-none bg-cream focus:border-burgundy transition-colors">
-                                <button type="submit" class="btn-transition px-6 py-3.5 bg-burgundy text-white font-semibold text-[0.75rem] uppercase tracking-widest rounded-full shadow-soft hover:bg-accentRed whitespace-nowrap">JE M'ABONNE AU JOURNAL PEPPS</button>
+                            <form id="hero-form" class="hero-newsletter-form" aria-label="S'abonner au Journal PEPPS">
+                                <input type="text" name="firstname" placeholder="Ton prénom" required aria-label="Ton prénom">
+                                <input type="email" name="email" placeholder="Ton email" required aria-label="Ton adresse email">
+                                <button type="submit" class="btn btn-premium btn-subscribe">JE M'ABONNE AU JOURNAL PEPPS</button>
                             </form>
                         </div>
-                        <p class="text-lg mb-8 max-w-[550px] mx-auto lg:mx-0">Transforme ton hypersensibilité en une puissance magnétique. Ne porte plus de masque, révèle ton aura.</p>
-                        <a href="#need-section" class="btn-transition px-9 py-3.5 bg-burgundy text-white font-semibold uppercase tracking-widest rounded-full shadow-soft hover:scale-105 hover:bg-accentRed hover:shadow-hover">Découvrir la méthode</a>
+                        <p>Transforme ton hypersensibilité en une puissance magnétique. Ne porte plus de masque, révèle ton aura.</p>
+                        <a href="#need-section" class="btn btn-premium">Découvrir la méthode</a>
                     </div>
-                    <div class="flex justify-center relative">
-                        <div class="hero-image animate-morph w-full max-w-[480px] h-[400px] lg:h-[520px] bg-[url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center shadow-[20px_20px_0_rgba(88,0,23,0.05)] relative z-[2]"></div>
+                    <div class="hero-image-wrapper">
+                        <div class="hero-image" role="img" aria-label="Sandrina de La Fabrique PEPPS"></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION : SEGMENTATION DES BESOINS -->
-        <section id="need-section" class="py-15 bg-white text-center border-b border-burgundy/5">
-            <div class="max-w-[1200px] mx-auto px-5 py-16">
-                <h2 class="font-title text-3xl lg:text-4xl mb-12 leading-[1.2]">Quel est ton <em class="italic font-normal text-burgundy">besoin</em> aujourd'hui ?</h2>
-                <div class="flex flex-wrap justify-center gap-8">
-                    <a href="#footer-form" class="block text-left p-8 lg:p-10 bg-cream border border-burgundy/10 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-soft hover:border-burgundy max-w-[450px]">
-                        <h3 class="text-xl font-title text-burgundy mb-3">Apprivoiser mon trac maintenant</h3>
-                        <p class="text-[0.95rem] text-dark">Je cherche des outils concrets et gratuits pour retrouver mon calme avant une intervention immédiate.</p>
+        <!-- NOUVELLE SECTION : SEGMENTATION DES BESOINS -->
+        <section id="need-section" class="segmentation-section">
+            <div class="container">
+                <h2 class="segmentation-title">Quel est ton <em>besoin</em> aujourd'hui ?</h2>
+                <div class="segmentation-grid">
+                    <a href="#footer-form" class="segment-btn">
+                        <h3>Apprivoiser mon trac maintenant</h3>
+                        <p>Je cherche des outils concrets et gratuits pour retrouver mon calme avant une intervention immédiate.</p>
                     </a>
-                    <a href="#offres-intro" class="block text-left p-8 lg:p-10 bg-cream border border-burgundy/10 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-soft hover:border-burgundy max-w-[450px]">
-                        <h3 class="text-xl font-title text-burgundy mb-3">Incarner mon leadership sur la durée</h3>
-                        <p class="text-[0.95rem] text-dark">Je veux transformer ma posture, arrêter de me suradapter et devenir une figure de référence écoutée.</p>
+                    <a href="#offres-intro" class="segment-btn">
+                        <h3>Incarner mon leadership sur la durée</h3>
+                        <p>Je veux transformer ma posture, arrêter de me suradapter et devenir une figure de référence écoutée.</p>
                     </a>
                 </div>
             </div>
         </section>
 
         <!-- SOCIAL PROOF -->
-        <section id="social-proof" class="bg-burgundy text-cream pb-16 relative text-center">
-            <div class="absolute -top-[50px] left-0 w-full overflow-hidden leading-[0] rotate-180" aria-hidden="true">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="block w-[calc(100%+1.3px)] h-[50px]">
-                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill-burgundy"></path>
+        <section id="social-proof">
+            <div class="wave-divider" aria-hidden="true">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
                 </svg>
             </div>
-            <div class="max-w-[1200px] mx-auto px-5 pt-12">
-                <div class="text-accentRed text-2xl mb-4 tracking-[5px]" aria-label="5 étoiles sur 5">★★★★★</div>
-                <p class="font-title text-2xl lg:text-3xl italic">"Ils ont validé leur singularité sans se fragiliser."</p>
+            <div class="container proof-content">
+                <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+                <p class="proof-text">"Ils ont validé leur singularité sans se fragiliser."</p>
             </div>
         </section>
 
         <!-- SECTION ATELIERS FOCUS -->
-        <section id="ateliers-focus" class="py-24">
-            <div class="max-w-[1200px] mx-auto px-5">
-                <div id="offres-intro" class="text-center mb-16">
-                    <h2 class="font-title text-4xl lg:text-5xl leading-[1.2]">Ateliers <em class="italic font-normal text-burgundy">Focus</em></h2>
-                    <p class="text-lg lg:max-w-[600px] mx-auto mt-4 opacity-80">Des formats intensifs de 3h pour débloquer un levier précis de ton autorité.</p>
+        <section id="ateliers-focus" class="section-padding">
+            <div class="container">
+                <div id="offres-intro" class="section-title-wrap">
+                    <h2 class="section-title">Ateliers <em>Focus</em></h2>
+                    <p class="section-subtitle">Des formats intensifs de 3h pour débloquer un levier précis de ton autorité.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <article class="card-transition bg-offWhite border border-dark/10 rounded-xl p-10 lg:p-12 text-center relative shadow-soft flex flex-col hover:-translate-y-2 hover:shadow-hover hover:border-burgundy">
-                        <span class="text-4xl mb-5 block">🚀</span>
-                        <h3 class="text-2xl font-title mb-5 min-h-[3.6rem] flex items-center justify-center leading-tight">Formation Gestion Émotions Entrepreneur Hypersensible</h3>
-                        <p class="block text-[0.85rem] font-semibold uppercase tracking-widest text-burgundy mb-4 -mt-2">L'Optimisme Stratégique - Atelier Express 3h</p>
-                        <p class="text-[0.95rem] mb-6 flex-grow">Arrêter de ruminer : transforme tes montagnes russes émotionnelles en carburant. Pour entrepreneurs hypersensibles qui subissent le stress.</p>
-                        <span class="block text-2xl font-bold text-burgundy mb-6 font-title">190€ / 3h</span>
-                        <a href="#" class="btn-transition px-9 py-3.5 bg-burgundy text-white font-semibold uppercase tracking-widest rounded-full shadow-soft hover:bg-accentRed">S'inscrire</a>
+                <div class="grid-layout">
+                    <article class="card-item">
+                        <span class="icon">🚀</span>
+                        <h3>Formation Gestion Émotions Entrepreneur Hypersensible</h3>
+                        <p class="offer-subtitle">L'Optimisme Stratégique - Atelier Express 3h</p>
+                        <p>Arrêter de ruminer : transforme tes montagnes russes émotionnelles en carburant. Pour entrepreneurs hypersensibles qui subissent le stress.</p>
+                        <span class="card-price">190€ / 3h</span>
+                        <a href="#" class="btn btn-premium">S'inscrire</a>
                     </article>
-                    <article class="card-transition bg-offWhite border border-dark/10 rounded-xl p-10 lg:p-12 text-center relative shadow-soft flex flex-col hover:-translate-y-2 hover:shadow-hover hover:border-burgundy">
-                        <span class="text-4xl mb-5 block">📢</span>
-                        <h3 class="text-2xl font-title mb-5 min-h-[3.6rem] flex items-center justify-center leading-tight">Vaincre Peur Parler Public - Hypersensibles Introvertis</h3>
-                        <p class="block text-[0.85rem] font-semibold uppercase tracking-widest text-burgundy mb-4 -mt-2">Oser Sa Voix - Kit Démarrage Prise de Parole</p>
-                        <p class="text-[0.95rem] mb-6 flex-grow">Techniques corps-mental pour oser ta 1ère vidéo, live ou réunion. Fini tremblements, gorge nouée et rougissements.</p>
-                        <span class="block text-2xl font-bold text-burgundy mb-6 font-title">190€ / 3h</span>
-                        <a href="#" class="btn-transition px-9 py-3.5 bg-burgundy text-white font-semibold uppercase tracking-widest rounded-full shadow-soft hover:bg-accentRed">S'inscrire</a>
+                    <article class="card-item">
+                        <span class="icon">📢</span>
+                        <h3>Vaincre Peur Parler Public - Hypersensibles Introvertis</h3>
+                        <p class="offer-subtitle">Oser Sa Voix - Kit Démarrage Prise de Parole</p>
+                        <p>Techniques corps-mental pour oser ta 1ère vidéo, live ou réunion. Fini tremblements, gorge nouée et rougissements.</p>
+                        <span class="card-price">190€ / 3h</span>
+                        <a href="#" class="btn btn-premium">S'inscrire</a>
                     </article>
                 </div>
             </div>
         </section>
 
         <!-- SECTION PROGRAMME SIGNATURE -->
-        <section id="programme-signature" class="bg-offWhite py-24 border-t border-burgundy/5">
-            <div class="max-w-[1200px] mx-auto px-5">
-                <div class="text-center mb-16">
-                    <h2 class="font-title text-4xl lg:text-5xl leading-[1.2]">Programme <em class="italic font-normal text-burgundy">Signature</em></h2>
+        <section id="programme-signature" class="signature-section">
+            <div class="container">
+                <div class="section-title-wrap">
+                    <h2 class="section-title">Programme <em>Signature</em></h2>
                 </div>
-                <article class="max-w-[800px] mx-auto p-10 lg:p-16 bg-gradient-to-br from-cream to-[#FFF8F0] border-2 border-burgundy rounded-[20px] text-center shadow-hover">
-                    <div class="text-5xl mb-5 block">🏆</div>
-                    <p class="uppercase tracking-[2px] text-[0.85rem] text-burgundy mb-5 font-semibold">PROGRAMME SIGNATURE</p>
-                    <h3 class="text-2xl lg:text-3xl font-title mb-4 font-bold leading-relaxed">Coaching Leadership Dirigeants Hypersensibles HPI HSP</h3>
-                    <p class="font-body text-lg italic text-burgundy mb-6">L'Incarnation</p>
-                    <p class="text-[1.05rem] leading-[1.7] text-[#4A3B32] mb-8">
+                <article class="offer-card-premium">
+                    <div class="offer-icon">🏆</div>
+                    <p class="offer-category">PROGRAMME SIGNATURE</p>
+                    <h3 class="offer-title-premium">Coaching Leadership Dirigeants Hypersensibles HPI HSP</h3>
+                    <p class="offer-subtitle-premium">L'Incarnation</p>
+                    <p class="offer-description">
                         Transforme ta singularité en autorité magnétique. Arrête de t'épuiser derrière un masque pro. Programme 3-6 mois sur candidature.
                     </p>
-                    <p class="text-3xl font-bold text-burgundy mb-8">À partir de 2500€</p>
-                    <a href="#" class="btn-transition px-9 py-3.5 bg-burgundy text-white font-semibold uppercase tracking-widest rounded-full shadow-soft hover:bg-accentRed">DÉPOSER MA CANDIDATURE</a>
+                    <p class="offer-price-premium">À partir de 2500€</p>
+                    <a href="#" class="btn btn-premium">DÉPOSER MA CANDIDATURE</a>
                 </article>
             </div>
         </section>
 
         <!-- JOURNAL PEPPS SECTION -->
-        <section id="journal-pepps" class="py-24 bg-cream border-t border-burgundy/5">
-            <div class="max-w-[1200px] mx-auto px-5">
-                <div class="text-center mb-16">
-                    <h2 class="font-title text-4xl lg:text-5xl leading-[1.2]">Le Journal <em class="italic font-normal text-burgundy">PEPPS</em></h2>
-                    <p class="text-lg lg:max-w-[600px] mx-auto mt-4 opacity-80">Ton compagnon de route pour prendre la parole pour marquer les esprits, dans TOUS tes contextes professionnels.</p>
+        <section id="journal-pepps" class="section-padding" style="background-color: var(--bg-cream); border-top: 1px solid rgba(88, 0, 23, 0.05);">
+            <div class="container">
+                <div class="section-title-wrap">
+                    <h2 class="section-title">Le Journal <em>PEPPS</em></h2>
+                    <p class="section-subtitle">Ton compagnon de route pour prendre la parole pour marquer les esprits, dans TOUS tes contextes professionnels.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-offWhite border border-dark/10 rounded-xl p-10 text-center relative shadow-soft flex flex-col hover:-translate-y-2 card-transition">
-                        <span class="text-4xl mb-5" aria-hidden="true">🎤</span>
-                        <h3 class="text-xl font-title mb-5 min-h-[3.6rem] flex items-center justify-center">Exercices de prise de parole concrets</h3>
-                        <p class="text-[0.95rem] flex-grow">Apprivoise ton trac avant ta réunion, ton pitch réseau ou ta présentation. Même si tu te sens "en surchauffe", transforme ce stress en énergie d'engagement.</p>
+                <div class="grid-layout">
+                    <div class="card-item">
+                        <span class="icon" aria-hidden="true">🎤</span>
+                        <h3>Exercices de prise de parole concrets</h3>
+                        <p>Apprivoise ton trac avant ta réunion, ton pitch réseau ou ta présentation. Même si tu te sens "en surchauffe", transforme ce stress en énergie d'engagement.</p>
                     </div>
-                    <div class="bg-offWhite border border-dark/10 rounded-xl p-10 text-center relative shadow-soft flex flex-col hover:-translate-y-2 card-transition">
-                        <span class="text-4xl mb-5" aria-hidden="true">🎬</span>
-                        <h3 class="text-xl font-title mb-5 min-h-[3.6rem] flex items-center justify-center">Coulisses & Stratégies</h3>
-                        <p class="text-[0.95rem] flex-grow">Découvre comment Sandrina construit des interventions qui marquent les esprits (+ extraits du podcast "L'Instant PEPPS" et techniques pour captiver ton audience).</p>
+                    <div class="card-item">
+                        <span class="icon" aria-hidden="true">🎬</span>
+                        <h3>Coulisses & Stratégies</h3>
+                        <p>Découvre comment Sandrina construit des interventions qui marquent les esprits (+ extraits du podcast "L'Instant PEPPS" et techniques pour captiver ton audience).</p>
                     </div>
-                    <div class="bg-offWhite border border-dark/10 rounded-xl p-10 text-center relative shadow-soft flex flex-col hover:-translate-y-2 card-transition">
-                        <span class="text-4xl mb-5" aria-hidden="true">🔥</span>
-                        <h3 class="text-xl font-title mb-5 min-h-[3.6rem] flex items-center justify-center">Ressources Leaders</h3>
-                        <p class="text-[0.95rem] flex-grow">Invitations prioritaires aux ateliers, lives thématiques et ressources exclusives (comme le Carnet Physique PEPPS).</p>
+                    <div class="card-item">
+                        <span class="icon" aria-hidden="true">🔥</span>
+                        <h3>Ressources Leaders</h3>
+                        <p>Invitations prioritaires aux ateliers, lives thématiques et ressources exclusives (comme le Carnet Physique PEPPS).</p>
                     </div>
                 </div>
-                <div class="text-center mt-12">
-                    <a href="#hero-form" class="btn-transition px-9 py-3.5 bg-burgundy text-white font-semibold uppercase tracking-widest rounded-full shadow-soft hover:bg-accentRed">JE M'ABONNE GRATUITEMENT</a>
+                <div class="center-cta">
+                    <a href="#hero-form" class="btn btn-premium">JE M'ABONNE GRATUITEMENT</a>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- FOOTER & LEAD MAGNET -->
-    <footer id="kit-urgence" role="contentinfo" class="bg-burgundy text-white pt-24 pb-12 relative">
-        <div class="absolute -top-[49px] left-0 w-full overflow-hidden leading-[0]" aria-hidden="true">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="block w-[calc(100%+1.3px)] h-[50px]">
-                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill-burgundy"></path>
+    <footer id="kit-urgence" role="contentinfo">
+        <div class="footer-wave" aria-hidden="true">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
             </svg>
         </div>
-        <div class="max-w-[800px] mx-auto px-5 text-center">
-            <h2 class="text-white text-3xl lg:text-4xl font-title mb-4">Gorge nouée avant ta réunion ?<br>Blanc avant ton pitch ?</h2>
-            <p class="font-title italic text-xl mb-12 opacity-90 leading-relaxed">Récupère ton calme et ta clarté en 7 minutes chrono avec le Kit d'Urgence PEPPS.</p>
+        <div class="container footer-content">
+            <h2>Gorge nouée avant ta réunion ?<br>Blanc avant ton pitch ?</h2>
+            <p class="footer-lead-subtitle" style="font-family: var(--font-title); font-style: italic; font-size: 1.4rem; margin-bottom: 40px; opacity: 0.9;">Récupère ton calme et ta clarté en 7 minutes chrono avec le Kit d'Urgence PEPPS.</p>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mb-16">
-                <div class="bg-white/5 p-6 rounded-xl border border-white/10">
-                    <strong class="block mb-2 text-cream">🎧 Audio SOS Ancrage (3 min)</strong>
-                    <p class="text-[0.85rem] leading-[1.4] opacity-80">Respiration guidée par Sandrina pour calmer ton stress avant de prendre la parole (réunion, pitch, présentation).</p>
+            <div class="lead-magnet-details">
+                <div class="lead-item">
+                    <strong>🎧 Audio SOS Ancrage (3 min)</strong>
+                    <p>Respiration guidée par Sandrina pour calmer ton stress avant de prendre la parole (réunion, pitch, présentation).</p>
                 </div>
-                <div class="bg-white/5 p-6 rounded-xl border border-white/10">
-                    <strong class="block mb-2 text-cream">📄 Double Page Magique</strong>
-                    <p class="text-[0.85rem] leading-[1.4] opacity-80">PDF interactif : Outil "Météo Intérieure + Brain Dump" pour décharger ton mental et clarifier tes idées avant ton intervention.</p>
+                <div class="lead-item">
+                    <strong>📄 Double Page Magique</strong>
+                    <p>PDF interactif : Outil "Météo Intérieure + Brain Dump" pour décharger ton mental et clarifier tes idées avant ton intervention.</p>
                 </div>
-                <div class="bg-white/5 p-6 rounded-xl border border-white/10">
-                    <strong class="block mb-2 text-cream">🎬 Vidéo Déculpabilisation</strong>
-                    <p class="text-[0.85rem] leading-[1.4] opacity-80">"Tu n'es pas cassé·e, tu es juste en surchauffe" — comprends pourquoi ton cerveau réagit comme ça face à l'enjeu.</p>
+                <div class="lead-item">
+                    <strong>🎬 Vidéo Déculpabilisation</strong>
+                    <p>"Tu n'es pas cassé·e, tu es juste en surchauffe" — comprends pourquoi ton cerveau réagit comme ça face à l'enjeu.</p>
                 </div>
             </div>
 
-            <form id="footer-form" class="flex flex-wrap gap-4 justify-center mb-6" aria-label="Télécharger le Kit d'Urgence PEPPS">
-                <input type="email" name="email" placeholder="Ton adresse email favorite" required aria-label="Adresse email pour recevoir le kit" class="flex-1 min-w-[250px] px-6 py-4 rounded-full font-body text-lg outline-none text-dark focus:ring-2 focus:ring-accentRed transition-all">
-                <button type="submit" class="btn-transition px-9 py-4 bg-burgundy border-2 border-white/20 text-white font-semibold uppercase tracking-widest rounded-full shadow-soft hover:bg-accentRed hover:border-transparent">JE TÉLÉCHARGE MON KIT D'URGENCE</button>
+            <form id="footer-form" class="newsletter-form" aria-label="Télécharger le Kit d'Urgence PEPPS">
+                <input type="email" name="email" placeholder="Ton adresse email favorite" class="newsletter-input" required aria-label="Adresse email pour recevoir le kit">
+                <button type="submit" class="btn btn-premium">JE TÉLÉCHARGE MON KIT D'URGENCE</button>
             </form>
 
-            <p class="text-[0.75rem] opacity-60 max-w-[600px] mx-auto mt-6 leading-[1.4]">
+            <p class="footer-micro-copy">
                 En téléchargeant ce kit, tu rejoins Le Journal PEPPS : 1 à 2 emails par mois avec des exercices de prise de parole, des coulisses de conférences et des outils pour captiver et engager ton audience (réunion, pitch, scène). Aucun spam.
             </p>
 
-            <div class="mt-20 text-[0.8rem] opacity-50 border-t border-white/10 pt-10">
+            <div class="copyright" style="margin-top: 80px; font-size: 0.8rem; opacity: 0.5; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 30px;">
                 © La Fabrique PEPPS 2024 - Leadership Organique & Premium Design
             </div>
         </div>
