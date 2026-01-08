@@ -78,4 +78,24 @@
 /* --- WAVE DIVIDERS (SVG Fill) --- */
 .shape-fill-burgundy {
     fill: var(--color-burgundy);
+
+    /* --- HOVER EFFECTS BOUTONS (FIX ANIMATIONS) --- */
+.btn-premium:hover,
+button:hover,
+a.btn:hover {
+  transform: scale(1.05) !important;
+  background-color: var(--color-accent-red) !important;
+  box-shadow: 0 15px 40px rgba(215, 0, 64, 0.3) !important;
+}
+
+.btn-outline:hover {
+  transform: scale(1.05) !important;
+  background-color: var(--color-burgundy) !important;
+  color: white !important;
+}
+
+/* Force transition sur tous les boutons */
+button, a.btn, .btn {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
 }
