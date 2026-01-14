@@ -326,20 +326,32 @@
             position: relative;
             display: flex;
             justify-content: center;
+            z-index: 2;
         }
 
-        .hero-image {
+        .hero-image-bubble {
             width: 100%;
-            max-width: 480px;
-            height: 520px;
-            background-image: url('./assets/sandrina perrin photo site pepps.webp');
-            background-size: cover;
-            background-position: center 15%;
+            max-width: 450px;
+            height: 500px;
+            background-color: var(--bg-cream);
             border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-            box-shadow: 20px 20px 0 rgba(88, 0, 23, 0.05);
-            position: relative;
-            z-index: 2;
+            overflow: hidden;
+            box-shadow: 20px 20px 60px rgba(88, 0, 23, 0.12);
+            border: 12px solid white;
             animation: morph 8s ease-in-out infinite;
+            position: relative;
+        }
+
+        .hero-image-bubble img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 10%;
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image-bubble:hover img {
+            transform: scale(1.05);
         }
 
         @keyframes morph {
@@ -805,7 +817,10 @@
                         <a href="#need-section" class="btn btn-premium">Découvrir la méthode</a>
                     </div>
                     <div class="hero-image-wrapper">
-                        <div class="hero-image" role="img" aria-label="Sandrina de La Fabrique PEPPS"></div>
+                        <div class="hero-image-bubble">
+                            <img src="./assets/sandrina perrin photo site pepps.webp"
+                                alt="Sandrina Perrin - La Fabrique PEPPS">
+                        </div>
                     </div>
                 </div>
             </div>
