@@ -99,9 +99,10 @@
 
         .btn {
             display: inline-block;
-            padding: 14px 36px;
+            padding: 12px 32px;
             font-family: var(--font-body);
             font-weight: 600;
+            font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             cursor: pointer;
@@ -132,6 +133,10 @@
         .btn-outline:hover {
             background-color: var(--color-burgundy);
             color: white;
+        }
+
+        .shadow-sm {
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
         }
 
         /* --- HEADER & NAVIGATION --- */
@@ -872,31 +877,17 @@
                 </button>
 
                 <ul class="nav-links">
-                    <li><a href="#hero" class="nav-link">Manifeste</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true">Accompagnements ▼</a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-category">🎁 Kits & Outils</li>
-                            <li><a href="#footer-form">→ Kit d'Urgence Gratuit</a></li>
-                            <li><a href="#">→ Carnets KLEIA-UP</a></li>
-
-                            <li class="dropdown-category">🎯 Ateliers Focus</li>
-                            <li><a href="#ateliers-focus">→ L'Optimisme Stratégique</a></li>
-                            <li><a href="#ateliers-focus">→ Oser Sa Voix</a></li>
-
-                            <li class="dropdown-category">🏆 Programme Signature</li>
-                            <li><a href="#programme-signature">→ L'Incarnation</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#journal-pepps" class="nav-link">KLEIA-UP Info</a></li>
+                    <li><a href="#hero" class="nav-link">MANIFESTE</a></li>
+                    <li><a href="#need-section" class="nav-link">ACCOMPAGNEMENTS</a></li>
+                    <li><a href="#le-journal" class="nav-link">LE JOURNAL</a></li>
                     <li class="mobile-only-cta">
-                        <a href="#hero-form" class="btn btn-premium">JE M'ABONNE</a>
+                        <a href="#hero-form" class="btn btn-premium shadow-sm">JE VEUX PRENDRE MA PLACE</a>
                     </li>
                 </ul>
             </nav>
 
             <div class="header-cta">
-                <a href="#hero-form" class="btn btn-premium">JE M'ABONNE</a>
+                <a href="#hero-form" class="btn btn-premium shadow-sm">JE VEUX PRENDRE MA PLACE</a>
             </div>
         </div>
     </header>
@@ -1025,7 +1016,7 @@
         </section>
 
         <!-- JOURNAL KLEIA-UP SECTION -->
-        <section id="journal-pepps" class="section-padding"
+        <section id="le-journal" class="section-padding"
             style="background-color: var(--bg-cream); border-top: 1px solid rgba(88, 0, 23, 0.05);">
             <div class="container">
                 <div class="section-title-wrap">
