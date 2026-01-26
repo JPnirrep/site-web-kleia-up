@@ -8,6 +8,29 @@
 
 ---
 
+## 🎨 RÈGLES TYPOGRAPHIQUES (GRAVÉES DANS LE MARBRE)
+
+### 1. POLICES (FONTS)
+*   **Titres (Hn)** : `Forum` (Serif).
+*   **Interface / Corps** : `Montserrat` (Sans-serif).
+
+### 2. HIÉRARCHIE VISUELLE (TITRES)
+*   **H1 (Hero)** : Casse phrase obligatoire (sauf exception purement éditoriale type slogan).
+*   **H2 / H3 (Sections)** : Uppercase (tout majuscule) **AUTORISÉ** pour les grands piliers :
+    *   *PROGRAMME SIGNATURE*
+    *   *L’INSTANT KLEIA*
+    *   *ATELIERS FOCUS*
+*   **Emphase** : Italique + Couleur Bordeaux (`#580017`). Jamais sur des blocs entiers, uniquement mots-clés.
+
+### 3. INTERFACE (NAVIGATION, BOUTONS, LABELS)
+*   **Style** : `UPPERCASE` (Tout majuscule).
+*   **Propriétés techniques** :
+    *   `letter-spacing: 1px`
+    *   `font-weight: 600`
+*   **Corps de texte / Formulaires** : Casse phrase (Sentence case) pour garder la chaleur et l'humain.
+
+---
+
 ## ⚠️ AVERTISSEMENT CRITIQUE - LIRE AVANT TOUTE MODIFICATION
 
 **CE DESIGN EST MAINTENANT IMMUABLE ET PROTÉGÉ**
