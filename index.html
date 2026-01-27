@@ -34,7 +34,8 @@
     <!-- Import Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Montserrat:wght@300;400;500;600;700&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Forum&family=Montserrat:wght@300;400;500;600;700&family=Syne:wght@400..800&display=swap"
         rel="stylesheet">
 
     <style>
@@ -47,6 +48,7 @@
             --color-text: #1A1A1A;
             --font-title: 'Forum', cursive;
             --font-body: 'Montserrat', sans-serif;
+            --font-syne: 'Syne', sans-serif;
             --shadow-soft: 0 10px 30px rgba(88, 0, 23, 0.08);
             --shadow-hover: 0 15px 40px rgba(88, 0, 23, 0.15);
         }
@@ -336,6 +338,162 @@
             .menu-burger.active .burger-bar:nth-child(3) {
                 transform: rotate(-45deg) translate(7px, -7px);
             }
+        }
+
+
+        /* --- MIROIR DOULEUR SECTION --- */
+        #miroir-douleur {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            background-color: var(--bg-cream);
+        }
+
+        .pain-blob-morph {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 24rem;
+            height: 24rem;
+            background-color: var(--color-burgundy);
+            opacity: 0.05;
+            filter: blur(64px);
+            margin-right: -12rem;
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            animation: morph 8s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .pain-content-wrapper {
+            position: relative;
+            z-index: 10;
+        }
+
+        .pain-main-title {
+            font-family: var(--font-syne);
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            color: var(--color-text);
+        }
+
+        @media (min-width: 768px) {
+            .pain-main-title {
+                font-size: 4.5rem;
+            }
+        }
+
+        .pain-gradient-text {
+            background: linear-gradient(to right, var(--color-burgundy), var(--color-text));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .pain-description {
+            font-size: 1.25rem;
+            color: #374151;
+            margin-bottom: 4rem;
+            line-height: 1.6;
+            max-width: 42rem;
+        }
+
+        .pain-grid {
+            display: grid;
+            gap: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        @media (min-width: 768px) {
+            .pain-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .pain-col-left h3 {
+            font-family: var(--font-syne);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-burgundy);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+        }
+
+        .pain-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .pain-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #1f2937;
+        }
+
+        .pain-list-marker {
+            color: var(--color-burgundy);
+            font-weight: bold;
+            margin-right: 0.75rem;
+            margin-top: 0.1rem;
+        }
+
+        .pain-card {
+            background-color: var(--color-text);
+            padding: 2rem;
+            border-radius: 1rem;
+            color: white;
+            box-shadow: var(--shadow-hover);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pain-card-accent {
+            position: absolute;
+            top: -1rem;
+            right: -1rem;
+            width: 3rem;
+            height: 3rem;
+            background-color: var(--color-burgundy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            z-index: 2;
+        }
+
+        .pain-card h3 {
+            font-family: var(--font-syne);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-style: italic;
+            color: white;
+        }
+
+        .pain-card p {
+            color: #D1D5DB;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .pain-card .highlight {
+            color: var(--bg-cream);
+            font-weight: 700;
+            display: block;
+            margin-top: 1.5rem;
+        }
+
+        .pain-cta-container {
+            margin-top: 5rem;
+            text-align: center;
         }
 
         /* --- HERO SECTION --- */
@@ -924,6 +1082,82 @@
                             <img src="./assets/sandrina perrin photo site pepps.webp" alt="Sandrina Perrin - KLEIA-UP">
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MIROIR DOULEUR SECTION -->
+        <section id="miroir-douleur">
+            <!-- Background Decor - La Bulle Liquide (Morph Effect) -->
+            <div class="pain-blob-morph"></div>
+
+            <div class="container pain-content-wrapper">
+                <div style="max-width: 56rem; margin: 0 auto;"> <!-- max-w-4xl mx-auto -->
+
+                    <!-- Main de Fer : L'Accroche Rock -->
+                    <h2 class="pain-main-title">
+                        Le monde n'a pas besoin <br>
+                        <span class="pain-gradient-text">
+                            d'un leader de plus qui se cache.
+                        </span>
+                    </h2>
+
+                    <p class="pain-description">
+                        Vous avez le message. Vous avez l'expertise. Mais au moment de prendre la place, votre système
+                        nerveux se fige. Vous restez "dans le bois", invisible, pendant que d'autres moins légitimes
+                        occupent le terrain.
+                    </p>
+
+                    <!-- Le Miroir : Les Points de Douleur -->
+                    <div class="pain-grid">
+
+                        <div class="pain-col-left">
+                            <h3>Le coût du silence</h3>
+                            <ul class="pain-list">
+                                <li>
+                                    <span class="pain-list-marker">—</span>
+                                    <p>L'épuisement chronique à force de vous sur-adapter aux codes de leadership
+                                        agressifs.</p>
+                                </li>
+                                <li>
+                                    <span class="pain-list-marker">—</span>
+                                    <p>La frustration de voir vos idées portées (et malmenées) par d'autres.</p>
+                                </li>
+                                <li>
+                                    <span class="pain-list-marker">—</span>
+                                    <p>Le sentiment d'être une imposture malgré des années de pratique.</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="pain-card">
+                            <!-- Accent Liquide -->
+                            <div class="pain-card-accent">!</div>
+
+                            <h3>L'inconfort nécessaire :</h3>
+                            <p>
+                                Votre sensibilité n'est pas un frein à votre leadership, c'est son moteur. Mais tant que
+                                vous ne l'aurez pas incarnée, elle restera votre prison.
+                            </p>
+                            <p class="highlight">
+                                Il est temps de sortir du bois.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- CTA Transition -->
+                    <div class="pain-cta-container">
+                        <button class="btn btn-premium" style="display: inline-flex; align-items: center; gap: 10px;">
+                            <span>DÉCOUVRIR LA MÉTHODE KLEIA</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </button>
+                    </div>
+
                 </div>
             </div>
         </section>
