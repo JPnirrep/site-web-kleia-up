@@ -341,159 +341,278 @@
         }
 
 
-        /* --- MIROIR DOULEUR SECTION --- */
+        /* --- MIROIR DOULEUR SECTION (REFONTE "Main de fer") --- */
         #miroir-douleur {
             padding: 100px 0;
             position: relative;
             overflow: hidden;
             background-color: var(--bg-cream);
+            font-family: var(--font-body);
+            /* Montserrat Dominant */
         }
 
-        .pain-blob-morph {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 24rem;
-            height: 24rem;
-            background-color: var(--color-burgundy);
-            opacity: 0.05;
-            filter: blur(64px);
-            margin-right: -12rem;
-            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-            animation: morph 8s ease-in-out infinite;
-            z-index: 0;
-        }
+        /* Décorations d'arrière-plan */
+        /* Décorations d'arrière-plan supprimées */
 
         .pain-content-wrapper {
             position: relative;
             z-index: 10;
+            max-width: 1150px;
+            /* slightly tighter than main container */
+            margin: 0 auto;
         }
 
-        .pain-main-title {
-            font-family: var(--font-syne);
-            font-size: 3rem;
+        /* En-tête de section */
+        .pain-header {
+            margin-bottom: 4rem;
+        }
+
+        .pain-surtitle {
+            color: var(--color-burgundy);
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 1.5rem;
+        }
+
+        .pain-title {
+            font-family: var(--font-body);
+            /* Force Montserrat as per request */
             font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 2rem;
             color: var(--color-text);
+            font-size: 2.2rem;
+            line-height: 1.1;
+            margin-bottom: 2.5rem;
+            letter-spacing: -0.02em;
         }
 
         @media (min-width: 768px) {
-            .pain-main-title {
-                font-size: 4.5rem;
+            .pain-title {
+                font-size: 3.5rem;
             }
         }
 
-        .pain-gradient-text {
-            background: linear-gradient(to right, var(--color-burgundy), var(--color-text));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+        .pain-title .highlight-red {
+            color: var(--color-burgundy);
         }
 
-        .pain-description {
-            font-size: 1.25rem;
-            color: #374151;
-            margin-bottom: 4rem;
-            line-height: 1.6;
+        .pain-title .highlight-italic {
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .pain-quote-block {
+            border-left: 4px solid var(--color-burgundy);
+            padding-left: 2rem;
             max-width: 42rem;
         }
 
-        .pain-grid {
-            display: grid;
-            gap: 3rem;
-            padding-top: 3rem;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        .pain-quote-text {
+            font-size: 1.2rem;
+            color: #374151;
+            /* Gray-700 */
+            line-height: 1.6;
+            font-weight: 500;
         }
 
         @media (min-width: 768px) {
-            .pain-grid {
+            .pain-quote-text {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* Grille Bento */
+        .pain-bento-grid {
+            display: grid;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        @media (min-width: 900px) {
+            .pain-bento-grid {
                 grid-template-columns: 1fr 1fr;
             }
         }
 
-        .pain-col-left h3 {
-            font-family: var(--font-syne);
+        /* Colonne Gauche : Liste */
+        .pain-col-left {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .pain-list-title {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--color-burgundy);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 1.5rem;
-        }
-
-        .pain-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .pain-list li {
+            color: var(--color-text);
             display: flex;
-            align-items: flex-start;
+            align-items: center;
+            gap: 1rem;
             margin-bottom: 1rem;
-            font-size: 1.1rem;
-            color: #1f2937;
         }
 
-        .pain-list-marker {
-            color: var(--color-burgundy);
-            font-weight: bold;
-            margin-right: 0.75rem;
-            margin-top: 0.1rem;
-        }
-
-        .pain-card {
-            background-color: var(--color-text);
-            padding: 2rem;
-            border-radius: 1rem;
-            color: white;
-            box-shadow: var(--shadow-hover);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .pain-card-accent {
-            position: absolute;
-            top: -1rem;
-            right: -1rem;
+        .pain-list-title::before {
+            content: '';
+            display: block;
             width: 3rem;
-            height: 3rem;
+            height: 2px;
+            background-color: var(--color-text);
+        }
+
+        .pain-item {
+            margin-bottom: 2rem;
+        }
+
+        .pain-item h4 {
+            color: var(--color-burgundy);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-body);
+        }
+
+        .pain-item p {
+            color: #4B5563;
+            /* Gray-600 */
+            line-height: 1.6;
+        }
+
+        /* Colonne Droite : Carte "Parole Incarnée" */
+        .pain-card-impact {
             background-color: var(--color-burgundy);
+            /* Fond Bordeaux demandé */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            /* Bordure blanche subtile */
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            position: relative;
+            color: white;
+            /* Texte de base en blanc */
+            box-shadow: 0 20px 25px -5px rgba(88, 0, 23, 0.25);
+        }
+
+        @media (min-width: 768px) {
+            .pain-card-impact {
+                padding: 4rem;
+            }
+        }
+
+        /* Bulle Orange avec Point d'exclamation */
+        .pain-card-bubble-orange {
+            position: absolute;
+            top: -1.5rem;
+            right: -1.5rem;
+            width: 4rem;
+            height: 4rem;
+            background-color: #F97316;
+            color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: white;
-            z-index: 2;
+            font-size: 2rem;
+            font-weight: 800;
+            font-family: var(--font-body);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 20;
+            transform: rotate(10deg);
         }
 
-        .pain-card h3 {
-            font-family: var(--font-syne);
-            font-size: 1.5rem;
+        .pain-card-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .pain-card-title {
+            font-size: 1.8rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            color: white;
+            /* Titre en blanc */
+            line-height: 1.2;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .pain-card-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        .pain-card-text {
+            font-size: 1.1rem;
+            color: #E5E7EB;
+            /* Gris très clair (Gray-200) pour lisibilité sur fond sombre */
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        .pain-card-footer {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            /* Séparateur blanc subtil */
+        }
+
+        .pain-card-quote {
+            font-weight: 700;
             font-style: italic;
             color: white;
+            /* Citation en blanc */
         }
 
-        .pain-card p {
-            color: #D1D5DB;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .pain-card .highlight {
-            color: var(--bg-cream);
-            font-weight: 700;
-            display: block;
-            margin-top: 1.5rem;
-        }
-
-        .pain-cta-container {
-            margin-top: 5rem;
+        /* CTA */
+        .pain-action-area {
+            margin-top: 6rem;
             text-align: center;
+        }
+
+        .btn-black-pill {
+            display: inline-flex;
+            position: relative;
+            padding: 1.25rem 2.5rem;
+            background-color: #1A1A1A;
+            color: white;
+            border-radius: 9999px;
+            overflow: hidden;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-black-pill:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .btn-black-pill::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: var(--color-burgundy);
+            transform: translateX(-100%);
+            transition: transform 0.5s ease-out;
+            z-index: 0;
+        }
+
+        .btn-black-pill:hover::before {
+            transform: translateX(0);
+        }
+
+        .btn-black-pill span {
+            position: relative;
+            z-index: 10;
+        }
+
+        .pain-action-subtext {
+            margin-top: 1.5rem;
+            color: #9CA3AF;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
 
         /* --- HERO SECTION --- */
@@ -1088,74 +1207,92 @@
 
         <!-- MIROIR DOULEUR SECTION -->
         <section id="miroir-douleur">
-            <!-- Background Decor - La Bulle Liquide (Morph Effect) -->
-            <div class="pain-blob-morph"></div>
+            <!-- Background Elements (Supprimés pour fond crème uni) -->
 
-            <div class="container pain-content-wrapper">
-                <div style="max-width: 56rem; margin: 0 auto;"> <!-- max-w-4xl mx-auto -->
+            <div class="container">
+                <div class="pain-content-wrapper">
 
-                    <!-- Main de Fer : L'Accroche Rock -->
-                    <h2 class="pain-main-title">
-                        Le monde n'a pas besoin <br>
-                        <span class="pain-gradient-text">
-                            d'un leader de plus qui se cache.
-                        </span>
-                    </h2>
+                    <!-- ACCROCHE : L'AUTORITÉ CLAIRE (Montserrat ExtraBold) -->
+                    <div class="pain-header">
+                        <span class="pain-surtitle">Le constat Kleia</span>
+                        <h2 class="pain-title">
+                            La place que vous ne prenez pas <br>
+                            est <span class="highlight-italic">déjà</span> <span class="highlight-red">occupée par
+                                d'autres.</span>
+                        </h2>
 
-                    <p class="pain-description">
-                        Vous avez le message. Vous avez l'expertise. Mais au moment de prendre la place, votre système
-                        nerveux se fige. Vous restez "dans le bois", invisible, pendant que d'autres moins légitimes
-                        occupent le terrain.
-                    </p>
+                        <div class="pain-quote-block">
+                            <p class="pain-quote-text">
+                                "Votre message est une puissance qui s'étouffe. À force d'attendre d'être prêt, vous
+                                laissez le monde se priver de votre vision."
+                            </p>
+                        </div>
+                    </div>
 
-                    <!-- Le Miroir : Les Points de Douleur -->
-                    <div class="pain-grid">
+                    <!-- LE MIROIR : STRUCTURE BENTO (Lisibilité Maximum) -->
+                    <div class="pain-bento-grid">
 
+                        <!-- Colonne Gauche : Les Coûts du Silence -->
                         <div class="pain-col-left">
-                            <h3>Le coût du silence</h3>
-                            <ul class="pain-list">
-                                <li>
-                                    <span class="pain-list-marker">—</span>
-                                    <p>L'épuisement chronique à force de vous sur-adapter aux codes de leadership
-                                        agressifs.</p>
-                                </li>
-                                <li>
-                                    <span class="pain-list-marker">—</span>
-                                    <p>La frustration de voir vos idées portées (et malmenées) par d'autres.</p>
-                                </li>
-                                <li>
-                                    <span class="pain-list-marker">—</span>
-                                    <p>Le sentiment d'être une imposture malgré des années de pratique.</p>
-                                </li>
-                            </ul>
+                            <h3 class="pain-list-title">
+                                Le prix de l'invisibilité
+                            </h3>
+
+                            <div>
+                                <div class="pain-item">
+                                    <h4>L'épuisement de la sur-adaptation</h4>
+                                    <p>Vouloir rentrer dans le moule des leaders bruyants consume votre énergie vitale.
+                                    </p>
+                                </div>
+
+                                <div class="pain-item">
+                                    <h4>La dépossession de vos idées</h4>
+                                    <p>D'autres s'approprient vos concepts parce qu'ils osent les porter, même
+                                        maladroitement.</p>
+                                </div>
+
+                                <div class="pain-item">
+                                    <h4>Le sentiment d'imposture</h4>
+                                    <p>Le décalage entre ce que vous savez et ce que vous montrez crée une dissonance
+                                        épuisante.</p>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="pain-card">
-                            <!-- Accent Liquide -->
-                            <div class="pain-card-accent">!</div>
+                        <!-- Colonne Droite : L'Impact (Main de Fer dans un cadre Velours) -->
+                        <div class="pain-card-impact">
+                            <!-- Bulle Orange Visible -->
+                            <div class="pain-card-bubble-orange">!</div>
 
-                            <h3>L'inconfort nécessaire :</h3>
-                            <p>
-                                Votre sensibilité n'est pas un frein à votre leadership, c'est son moteur. Mais tant que
-                                vous ne l'aurez pas incarnée, elle restera votre prison.
-                            </p>
-                            <p class="highlight">
-                                Il est temps de sortir du bois.
-                            </p>
+                            <div class="pain-card-content">
+                                <p class="pain-card-title">
+                                    La <span style="color: #FFD700;">parole incarnée</span> n'est pas une
+                                    performance.
+                                </p>
+                                <p class="pain-card-text">
+                                    C'est l'alignement entre votre être profond et l'espace que vous occupez. Ce
+                                    n'est pas "apprendre à parler", c'est <span
+                                        style="color: white; font-weight: 700;">décider d'exister.</span>
+                                </p>
+
+                                <div class="pain-card-footer">
+                                    <p class="pain-card-quote">
+                                        "On ne devient pas leader par hasard, on le devient par choix."
+                                    </p>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
 
-                    <!-- CTA Transition -->
-                    <div class="pain-cta-container">
-                        <button class="btn btn-premium" style="display: inline-flex; align-items: center; gap: 10px;">
-                            <span>DÉCOUVRIR LA MÉTHODE KLEIA</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </button>
+                    <!-- CTA : L'APPEL À L'ACTION -->
+                    <div class="pain-action-area">
+                        <a href="#need-section" class="btn-black-pill">
+                            <span>Incarner mon leadership</span>
+                        </a>
+                        <p class="pain-action-subtext">
+                            Oser sortir du bois — Méthode Kleia
+                        </p>
                     </div>
 
                 </div>
