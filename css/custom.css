@@ -4,15 +4,24 @@
     --color-burgundy: #580017;
     --color-accent-red: #D70040;
     --color-text: #1A1A1A;
+
     --font-title: 'Playfair Display', serif;
     --font-body: 'Montserrat', sans-serif;
 }
 
 /* --- ANIMATIONS COMPLEXES --- */
 @keyframes morph {
-    0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-    50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
-    100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
 }
 
 .animate-morph {
@@ -60,7 +69,10 @@
 
 /* --- ACCESSIBILITÉ HSP / SENSIBLE --- */
 @media (prefers-reduced-motion: reduce) {
-    *, ::before, ::after {
+
+    *,
+    ::before,
+    ::after {
         animation-delay: -1ms !important;
         animation-duration: 1ms !important;
         animation-iteration-count: 1 !important;
@@ -69,6 +81,7 @@
         transition-duration: 0s !important;
         transition-delay: 0s !important;
     }
+
     .animate-morph {
         animation: none !important;
         border-radius: 50% !important;
@@ -78,24 +91,26 @@
 /* --- WAVE DIVIDERS (SVG Fill) --- */
 .shape-fill-burgundy {
     fill: var(--color-burgundy);
+}
 
-    /* --- HOVER EFFECTS BOUTONS (FIX ANIMATIONS) --- */
+/* --- HOVER EFFECTS BOUTONS (FIX ANIMATIONS) --- */
 .btn-premium:hover,
 button:hover,
 a.btn:hover {
-  transform: scale(1.05) !important;
-  background-color: var(--color-accent-red) !important;
-  box-shadow: 0 15px 40px rgba(215, 0, 64, 0.3) !important;
+    transform: scale(1.05) !important;
+    background-color: var(--color-accent-red) !important;
+    box-shadow: 0 15px 40px rgba(215, 0, 64, 0.3) !important;
 }
 
 .btn-outline:hover {
-  transform: scale(1.05) !important;
-  background-color: var(--color-burgundy) !important;
-  color: white !important;
+    transform: scale(1.05) !important;
+    background-color: var(--color-burgundy) !important;
+    color: white !important;
 }
 
 /* Force transition sur tous les boutons */
-button, a.btn, .btn {
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-}
+button,
+a.btn,
+.btn {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
 }
