@@ -572,6 +572,12 @@ header {
     font-style: italic;
 }
 
+/* Hero micro-proof aligned variant */
+.hero-micro-proof--aligned {
+    text-align: left;
+    padding-left: 35px;
+}
+
 /* Legacy support */
 .hero-text .subtitle {
     display: block;
@@ -678,6 +684,24 @@ header {
 .infusion-phrase strong {
     color: var(--color-burgundy);
     font-weight: 700;
+}
+
+/* Infusion link - styled as inline CTA */
+.infusion-link {
+    color: var(--color-burgundy);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid var(--color-burgundy);
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+}
+
+.infusion-link:hover {
+    color: #7a0020;
+    border-bottom-color: #7a0020;
+    background: rgba(88, 0, 23, 0.06);
+    padding: 2px 6px;
+    border-radius: 4px;
 }
 
 /* --- MIROIR DOULEUR SECTION --- */
