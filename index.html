@@ -31,1062 +31,15 @@
     <meta name="geo.placename" content="Poiroux, Pays de la Loire">
     <meta name="geo.position" content="46.5;-1.5">
 
-    <!-- Import Google Fonts -->
+    <!-- Import Google Fonts (optimized) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Forum&family=Montserrat:wght@300;400;500;600;700&family=Syne:wght@400..800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Forum&family=Montserrat:wght@300;400;500;600;700;800&family=Syne:wght@400..800&display=swap"
         rel="stylesheet">
 
-    <style>
-        /* --- VARIABLES & RESET --- */
-        :root {
-            --bg-cream: #FAF9F6;
-            --bg-off-white: #FFFFFF;
-            --color-burgundy: #580017;
-            --color-accent-red: #D70040;
-            --color-text: #1A1A1A;
-            --font-title: 'Forum', cursive;
-            --font-body: 'Montserrat', sans-serif;
-            --font-syne: 'Syne', sans-serif;
-            --shadow-soft: 0 10px 30px rgba(88, 0, 23, 0.08);
-            --shadow-hover: 0 15px 40px rgba(88, 0, 23, 0.15);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-cream);
-            color: var(--color-text);
-            font-family: var(--font-body);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1,
-        h2,
-        h3 {
-            font-family: var(--font-title);
-            color: var(--color-text);
-            line-height: 1.2;
-        }
-
-        h1 em,
-        h2 em {
-            font-style: italic;
-            font-weight: 400;
-            color: var(--color-burgundy);
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: color 0.3s;
-        }
-
-        /* --- UTILS --- */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 32px;
-            font-family: var(--font-body);
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: none;
-            box-shadow: var(--shadow-soft);
-            border-radius: 50px;
-            text-align: center;
-        }
-
-        .btn-premium {
-            background-color: var(--color-burgundy);
-            color: white;
-        }
-
-        .btn-premium:hover {
-            transform: scale(1.05);
-            background-color: var(--color-accent-red);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--color-burgundy);
-            color: var(--color-burgundy);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--color-burgundy);
-            color: white;
-        }
-
-        .shadow-sm {
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
-        }
-
-        /* --- HEADER & NAVIGATION --- */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            height: auto;
-            min-height: 90px;
-            padding: 15px 0;
-            background: rgba(250, 249, 246, 0.98);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(88, 0, 23, 0.05);
-            display: flex;
-            align-items: center;
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-
-        .logo {
-            font-family: var(--font-title);
-            font-weight: 700;
-            font-size: 1.4rem;
-            color: var(--color-text);
-            white-space: nowrap;
-            z-index: 1001;
-        }
-
-        .logo span {
-            color: var(--color-burgundy);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 45px;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-            transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-        }
-
-        .nav-link {
-            font-family: var(--font-body);
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--color-text);
-            padding: 10px 0;
-            line-height: 1;
-            transition: color 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .nav-link:hover {
-            color: var(--color-burgundy);
-        }
-
-        .mobile-only-cta {
-            display: none;
-        }
-
-        /* Burger Menu */
-        .menu-burger {
-            display: none;
-            flex-direction: column;
-            justify-content: space-around;
-            width: 26px;
-            height: 20px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            z-index: 1001;
-            padding: 0;
-        }
-
-        .burger-bar {
-            width: 100%;
-            height: 2px;
-            background-color: var(--color-burgundy);
-            transition: 0.3s;
-        }
-
-        /* Dropdown Style */
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-toggle {
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%) translateY(10px);
-            background: var(--bg-off-white);
-            min-width: 280px;
-            box-shadow: var(--shadow-hover);
-            border-radius: 12px;
-            padding: 25px;
-            display: none;
-            flex-direction: column;
-            gap: 15px;
-            z-index: 200;
-            border: 1px solid rgba(88, 0, 23, 0.1);
-        }
-
-        .dropdown:hover .dropdown-menu {
-            display: flex;
-        }
-
-        .dropdown-category {
-            font-weight: 700;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--color-burgundy);
-            margin-bottom: 5px;
-            list-style: none;
-        }
-
-        .dropdown-menu li {
-            list-style: none;
-        }
-
-        .dropdown-menu a {
-            font-size: 0.9rem;
-            color: var(--color-text);
-            display: block;
-            padding: 5px 0;
-            text-transform: none;
-            letter-spacing: normal;
-        }
-
-        /* Responsive Breakpoints */
-        @media (max-width: 1100px) {
-            .nav-links {
-                gap: 20px;
-            }
-        }
-
-        @media (max-width: 850px) {
-            .header-cta {
-                display: none;
-            }
-
-            .menu-burger {
-                display: flex;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 100%;
-                height: 100vh;
-                background: var(--bg-cream);
-                flex-direction: column;
-                justify-content: center;
-                gap: 40px;
-                padding: 20px;
-            }
-
-            .nav-links.active {
-                right: 0;
-            }
-
-            .nav-link {
-                font-size: 1.5rem;
-            }
-
-            .mobile-only-cta {
-                display: block;
-                margin-top: 20px;
-            }
-
-            /* Animation Burger */
-            .menu-burger.active .burger-bar:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-            }
-
-            .menu-burger.active .burger-bar:nth-child(2) {
-                opacity: 0;
-            }
-
-            .menu-burger.active .burger-bar:nth-child(3) {
-                transform: rotate(-45deg) translate(7px, -7px);
-            }
-        }
-
-
-        /* --- MIROIR DOULEUR SECTION (REFONTE "Main de fer") --- */
-        #miroir-douleur {
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-            background-color: var(--bg-cream);
-            font-family: var(--font-body);
-            /* Montserrat Dominant */
-        }
-
-        /* Décorations d'arrière-plan */
-        /* Décorations d'arrière-plan supprimées */
-
-        .pain-content-wrapper {
-            position: relative;
-            z-index: 10;
-            max-width: 1150px;
-            /* slightly tighter than main container */
-            margin: 0 auto;
-        }
-
-        /* En-tête de section */
-        .pain-header {
-            margin-bottom: 4rem;
-        }
-
-        .pain-surtitle {
-            color: var(--color-burgundy);
-            font-weight: 700;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            display: block;
-            margin-bottom: 1.5rem;
-        }
-
-        .pain-title {
-            font-family: var(--font-body);
-            /* Force Montserrat as per request */
-            font-weight: 800;
-            color: var(--color-text);
-            font-size: 2.2rem;
-            line-height: 1.1;
-            margin-bottom: 2.5rem;
-            letter-spacing: -0.02em;
-        }
-
-        @media (min-width: 768px) {
-            .pain-title {
-                font-size: 3.5rem;
-            }
-        }
-
-        .pain-title .highlight-red {
-            color: var(--color-burgundy);
-        }
-
-        .pain-title .highlight-italic {
-            font-weight: 300;
-            font-style: italic;
-        }
-
-        .pain-quote-block {
-            border-left: 4px solid var(--color-burgundy);
-            padding-left: 2rem;
-            max-width: 42rem;
-        }
-
-        .pain-quote-text {
-            font-size: 1.2rem;
-            color: #374151;
-            /* Gray-700 */
-            line-height: 1.6;
-            font-weight: 500;
-        }
-
-        @media (min-width: 768px) {
-            .pain-quote-text {
-                font-size: 1.4rem;
-            }
-        }
-
-        /* Grille Bento */
-        .pain-bento-grid {
-            display: grid;
-            gap: 3rem;
-            align-items: flex-start;
-        }
-
-        @media (min-width: 900px) {
-            .pain-bento-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        /* Colonne Gauche : Liste */
-        .pain-col-left {
-            display: flex;
-            flex-direction: column;
-            gap: 3rem;
-        }
-
-        .pain-list-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-text);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .pain-list-title::before {
-            content: '';
-            display: block;
-            width: 3rem;
-            height: 2px;
-            background-color: var(--color-text);
-        }
-
-        .pain-item {
-            margin-bottom: 2rem;
-        }
-
-        .pain-item h4 {
-            color: var(--color-burgundy);
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            font-family: var(--font-body);
-        }
-
-        .pain-item p {
-            color: #4B5563;
-            /* Gray-600 */
-            line-height: 1.6;
-        }
-
-        /* Colonne Droite : Carte "Parole Incarnée" */
-        .pain-card-impact {
-            background-color: var(--color-burgundy);
-            /* Fond Bordeaux demandé */
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            /* Bordure blanche subtile */
-            border-radius: 1.5rem;
-            padding: 2.5rem;
-            position: relative;
-            color: white;
-            /* Texte de base en blanc */
-            box-shadow: 0 20px 25px -5px rgba(88, 0, 23, 0.25);
-        }
-
-        @media (min-width: 768px) {
-            .pain-card-impact {
-                padding: 4rem;
-            }
-        }
-
-        /* Bulle Orange avec Point d'exclamation */
-        .pain-card-bubble-orange {
-            position: absolute;
-            top: -1.5rem;
-            right: -1.5rem;
-            width: 4rem;
-            height: 4rem;
-            background-color: #F97316;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: 800;
-            font-family: var(--font-body);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            z-index: 20;
-            transform: rotate(10deg);
-        }
-
-        .pain-card-content {
-            position: relative;
-            z-index: 10;
-        }
-
-        .pain-card-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: white;
-            /* Titre en blanc */
-            line-height: 1.2;
-            margin-bottom: 2rem;
-        }
-
-        @media (min-width: 768px) {
-            .pain-card-title {
-                font-size: 2.2rem;
-            }
-        }
-
-        .pain-card-text {
-            font-size: 1.1rem;
-            color: #E5E7EB;
-            /* Gris très clair (Gray-200) pour lisibilité sur fond sombre */
-            margin-bottom: 2.5rem;
-            line-height: 1.6;
-        }
-
-        .pain-card-footer {
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
-            /* Séparateur blanc subtil */
-        }
-
-        .pain-card-quote {
-            font-weight: 700;
-            font-style: italic;
-            color: white;
-            /* Citation en blanc */
-        }
-
-        /* CTA */
-        .pain-action-area {
-            margin-top: 6rem;
-            text-align: center;
-        }
-
-        .btn-black-pill {
-            display: inline-flex;
-            position: relative;
-            padding: 1.25rem 2.5rem;
-            background-color: #1A1A1A;
-            color: white;
-            border-radius: 9999px;
-            overflow: hidden;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-black-pill:hover {
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
-            transform: translateY(-2px);
-        }
-
-        .btn-black-pill::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-color: var(--color-burgundy);
-            transform: translateX(-100%);
-            transition: transform 0.5s ease-out;
-            z-index: 0;
-        }
-
-        .btn-black-pill:hover::before {
-            transform: translateX(0);
-        }
-
-        .btn-black-pill span {
-            position: relative;
-            z-index: 10;
-        }
-
-        .pain-action-subtext {
-            margin-top: 1.5rem;
-            color: #9CA3AF;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        /* --- HERO SECTION --- */
-        #hero {
-            padding: 80px 0 60px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .glow-circle {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.4;
-            z-index: -1;
-        }
-
-        .glow-1 {
-            width: 400px;
-            height: 400px;
-            background: var(--color-burgundy);
-            top: -100px;
-            right: -100px;
-        }
-
-        .glow-2 {
-            width: 300px;
-            height: 300px;
-            background: var(--color-accent-red);
-            bottom: 50px;
-            left: -50px;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.1fr;
-            align-items: center;
-            gap: 60px;
-        }
-
-        .hero-text .subtitle {
-            display: block;
-            color: var(--color-burgundy);
-            font-weight: 600;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .hero-text h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-        }
-
-        .hero-journal-box {
-            background: rgba(255, 255, 255, 0.4);
-            padding: 25px;
-            border-radius: 20px;
-            border: 1px solid rgba(88, 0, 23, 0.1);
-            margin-bottom: 35px;
-            max-width: 580px;
-        }
-
-        .hero-journal-subtitle {
-            font-size: 1.05rem !important;
-            font-weight: 600;
-            color: var(--color-text);
-            margin-bottom: 15px !important;
-            line-height: 1.4 !important;
-        }
-
-        .hero-newsletter-form {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .hero-newsletter-form input {
-            flex: 1;
-            min-width: 180px;
-            padding: 14px 20px;
-            border: 1px solid rgba(88, 0, 23, 0.2);
-            border-radius: 50px;
-            font-family: var(--font-body);
-            font-size: 0.9rem;
-            outline: none;
-            background: var(--bg-cream);
-        }
-
-        .hero-image-wrapper {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            z-index: 2;
-        }
-
-        .hero-image-bubble {
-            width: 100%;
-            max-width: 450px;
-            height: 500px;
-            background-color: var(--bg-cream);
-            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-            overflow: hidden;
-            box-shadow: 20px 20px 60px rgba(88, 0, 23, 0.12);
-            border: 12px solid white;
-            animation: morph 8s ease-in-out infinite;
-            position: relative;
-        }
-
-        .hero-image-bubble img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 10%;
-            transition: transform 0.5s ease;
-        }
-
-        .hero-image-bubble:hover img {
-            transform: scale(1.05);
-        }
-
-        @keyframes morph {
-            0% {
-                border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-            }
-
-            50% {
-                border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
-            }
-
-            100% {
-                border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-            }
-        }
-
-        /* --- SEGMENTATION SECTION --- */
-        .segmentation-section {
-            padding: 60px 0;
-            background: white;
-            text-align: center;
-            border-bottom: 1px solid rgba(88, 0, 23, 0.05);
-        }
-
-        .segmentation-title {
-            font-size: 2.2rem;
-            margin-bottom: 40px;
-        }
-
-        .segmentation-grid {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .segment-btn {
-            padding: 30px 40px;
-            background: var(--bg-cream);
-            border: 1px solid rgba(88, 0, 23, 0.1);
-            border-radius: 15px;
-            transition: all 0.3s ease;
-            max-width: 450px;
-            text-align: left;
-            display: block;
-        }
-
-        .segment-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-soft);
-            border-color: var(--color-burgundy);
-        }
-
-        .segment-btn h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--color-burgundy);
-        }
-
-        .segment-btn p {
-            font-size: 0.95rem;
-            color: var(--color-text);
-        }
-
-        /* --- SOCIAL PROOF --- */
-        #social-proof {
-            background-color: var(--color-burgundy);
-            color: var(--bg-cream);
-            padding-bottom: 60px;
-            position: relative;
-            text-align: center;
-        }
-
-        .wave-divider {
-            position: absolute;
-            top: -50px;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-            transform: rotate(180deg);
-        }
-
-        .wave-divider svg {
-            display: block;
-            width: calc(100% + 1.3px);
-            height: 50px;
-        }
-
-        .wave-divider .shape-fill {
-            fill: var(--color-burgundy);
-        }
-
-        .proof-content {
-            padding-top: 40px;
-        }
-
-        .stars {
-            color: var(--color-accent-red);
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            letter-spacing: 5px;
-        }
-
-        .proof-text {
-            font-family: var(--font-title);
-            font-size: 2rem;
-            font-style: italic;
-        }
-
-        /* --- SECTIONS GRID --- */
-        .section-padding {
-            padding: 100px 0;
-        }
-
-        .section-title-wrap {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title {
-            font-size: 3rem;
-        }
-
-        .grid-layout {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .card-item {
-            background-color: var(--bg-off-white);
-            border: 1px solid rgba(26, 26, 26, 0.1);
-            border-radius: 12px;
-            padding: 50px 30px;
-            text-align: center;
-            transition: all 0.4s ease;
-            position: relative;
-            box-shadow: var(--shadow-soft);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card-item:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--color-burgundy);
-        }
-
-        .card-item .icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .card-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            min-height: 3.6rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .card-item p {
-            font-size: 0.95rem;
-            margin-bottom: 25px;
-            flex-grow: 1;
-        }
-
-        .card-price {
-            display: block;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-burgundy);
-            margin-bottom: 25px;
-            font-family: var(--font-title);
-        }
-
-        /* Subtitle style for SEO titles */
-        .offer-subtitle {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--color-burgundy);
-            margin-bottom: 15px;
-            margin-top: -10px;
-        }
-
-        /* --- PROGRAMME SIGNATURE --- */
-        .signature-section {
-            background-color: var(--bg-off-white);
-            padding: 100px 0;
-            border-top: 1px solid rgba(88, 0, 23, 0.05);
-        }
-
-        /* Programme Signature - Carte Premium */
-        .offer-card-premium {
-            background: linear-gradient(135deg, #FAF9F6 0%, #FFF8F0 100%);
-            border: 2px solid #580017;
-            padding: 50px 40px;
-            text-align: center;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(88, 0, 23, 0.15);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .offer-icon {
-            font-size: 3rem;
-            display: block;
-            margin-bottom: 20px;
-        }
-
-        .offer-category {
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.85rem;
-            color: #580017;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .offer-title-premium {
-            font-family: 'Forum', cursive;
-            font-size: 1.8rem;
-            line-height: 1.4;
-            color: #1A1A1A;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .offer-subtitle-premium {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
-            font-style: italic;
-            color: #580017;
-            margin-bottom: 25px;
-            font-weight: 400;
-        }
-
-        .offer-description {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: #4A3B32;
-            margin-bottom: 30px;
-        }
-
-        .offer-price-premium {
-            font-size: 2rem;
-            color: #580017;
-            font-weight: 700;
-            margin-bottom: 30px;
-        }
-
-        /* --- FOOTER & LEAD MAGNET --- */
-        footer {
-            background: var(--color-burgundy);
-            color: white;
-            padding: 100px 0 40px;
-            position: relative;
-        }
-
-        .footer-wave {
-            position: absolute;
-            top: -49px;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-        }
-
-        .footer-wave svg {
-            display: block;
-            width: calc(100% + 1.3px);
-            height: 50px;
-        }
-
-        .footer-wave .shape-fill {
-            fill: var(--color-burgundy);
-        }
-
-        .footer-content {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        footer h2 {
-            color: white;
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-        }
-
-        .lead-magnet-details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-            text-align: left;
-            margin-bottom: 50px;
-        }
-
-        .lead-item {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .newsletter-input {
-            flex: 1;
-            min-width: 250px;
-            padding: 18px 25px;
-            border: none;
-            border-radius: 50px;
-            font-family: var(--font-body);
-            font-size: 1rem;
-            outline: none;
-        }
-
-        @media (max-width: 900px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-text h1 {
-                font-size: 3rem;
-            }
-
-            .hero-text p,
-            .hero-journal-box {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            footer h2 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="./css/main.css">
 
     <script type="application/ld+json">
     {
@@ -1143,7 +96,8 @@
     <header role="banner">
         <div class="container header-container">
             <a href="#" class="logo">
-                <img src="./assets/logo_kleia.png" alt="KLEIA - Leadership & Parole incarnée" style="height: 140px;">
+                <img src="./assets/logo_kleia.png" alt="KLEIA - Leadership & Parole incarnée" width="140" height="100"
+                    loading="eager">
             </a>
 
             <nav role="navigation" aria-label="Menu principal">
@@ -1158,57 +112,85 @@
                     <li><a href="#need-section" class="nav-link">L'EXPÉRIENCE</a></li>
                     <li><a href="#le-journal" class="nav-link">L'INSTANT KLEIA</a></li>
                     <li class="mobile-only-cta">
-                        <a href="#quiz" class="btn btn-premium shadow-sm">ÉVALUER MON QUOTIENT</a>
+                        <a href="#quiz" class="btn btn-primary">PRENDRE MA PLACE (3 MIN)</a>
                     </li>
                 </ul>
             </nav>
 
             <div class="header-cta">
-                <a href="#quiz" class="btn btn-premium shadow-sm">ÉVALUER MON QUOTIENT</a>
+                <a href="#quiz" class="btn btn-primary">PRENDRE MA PLACE (3 MIN)</a>
             </div>
         </div>
     </header>
 
     <main role="main">
-        <!-- HERO SECTION -->
-        <section id="hero">
+        <!-- HERO SECTION - Neuromarketing Optimized -->
+        <section id="hero" class="hero-section">
             <div class="container">
                 <div class="hero-grid">
                     <div class="hero-text">
-                        <span class="hero-overline"
-                            style="display: block; color: var(--color-burgundy); font-weight: 600; letter-spacing: 4px; font-size: 0.9rem; margin-bottom: 20px; text-transform: uppercase;">LEADERSHIP
-                            ORGANIQUE</span>
-                        <h1
-                            style="font-family: var(--font-title); font-size: 4.5rem; line-height: 1.1; margin-bottom: 30px;">
-                            Incarne ton <br><em>autorité naturelle</em>.</h1>
+                        <span class="hero-eyebrow">Leadership organique pour hypersensibles (HPI/HSP)</span>
 
-                        <p class="hero-subtitle"
-                            style="font-size: 1.25rem !important; color: var(--color-text); margin-bottom: 40px; line-height: 1.6;">
-                            Transforme ton hypersensibilité en une puissance magnétique.</p>
+                        <h1 class="hero-title hero-title--bold">
+                            Incarne ton<br><em>autorité naturelle.</em>
+                        </h1>
 
-                        <a href="#quiz" class="btn btn-premium btn-lg"
-                            style="padding: 16px 40px; font-size: 1rem;">Évaluer mon Quotient de Leadership Organique (3
-                            min)</a>
-                    </div>
-                    <div class="hero-image-wrapper">
-                        <div class="hero-image-glow">
-                            <!-- Glow effects behind image -->
-                            <div class="glow-circle glow-1" style="top: 10%; right: 10%; opacity: 0.6;"></div>
-                            <div class="glow-circle glow-2" style="bottom: 10%; left: 10%; opacity: 0.5;"></div>
+                        <p class="hero-subtitle">
+                            Tant que tu te tais, ta place est occupée par le bruit des autres.
+                            Ce test révèle ce qui freine ta parole pour que tu cesses de t'effacer.
+                        </p>
+
+                        <!-- CTA DECISION ZONE -->
+                        <div class="cta-decision-zone">
+                            <p class="cta-urgency-phrase">
+                                Chaque jour où tu te tais, quelqu'un d'autre prend ta place.<br>
+                                <strong>Tu commences quand ?</strong>
+                            </p>
+
+                            <a href="#quiz" class="btn btn-primary hero-cta">
+                                COMMENCER À PRENDRE MA PLACE (3 min)
+                            </a>
+
+                            <p class="cta-reassurance">
+                                <span class="cta-exit">⚡ Le test est ta porte de sortie.</span><br>
+                                <span class="cta-proof">Tu n'as rien à prouver, juste à te montrer.</span>
+                            </p>
                         </div>
-                        <img src="./assets/sandrina perrin photo site pepps.webp" alt="Sandrina Perrin - KLEIA-UP"
-                            style="max-width: 100%; height: auto; position: relative; z-index: 2; filter: drop-shadow(0 20px 40px rgba(88,0,23,0.3));">
+
+                        <p class="hero-micro-proof">
+                            Quiz de posture et leadership — par Sandrina Perrin.
+                        </p>
+                    </div>
+
+                    <div class="hero-image-wrapper">
+                        <div class="hero-image-glow" aria-hidden="true"></div>
+                        <img src="./assets/sandrina perrin photo site pepps.webp"
+                            alt="Sandrina Perrin - Coach Leadership pour Hypersensibles" width="450" height="540"
+                            loading="eager" class="hero-image">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- MIROIR DOULEUR SECTION -->
-        <section id="miroir-douleur">
-            <!-- Background Elements (Supprimés pour fond crème uni) -->
+        <!-- TRANSITION BLOCK -->
+        <section class="hero-transition">
+            <div class="container">
+                <p class="transition-text">
+                    Chaque seconde d'invisibilité a un prix. Voici ce que tu paies réellement en restant en retrait.
+                    <strong>Le test est ta porte de sortie.</strong>
+                </p>
+            </div>
+        </section>
 
+        <!-- MIROIR DOULEUR SECTION - Visual Rupture -->
+        <section id="miroir-douleur" class="visual-rupture">
             <div class="container">
                 <div class="pain-content-wrapper">
+
+                    <!-- Infusion phrase -->
+                    <p class="infusion-phrase">
+                        Si tu te reconnais ici, <strong>ne scrolle pas sans avoir fait le test.</strong>
+                    </p>
 
                     <!-- ACCROCHE : L'AUTORITÉ CLAIRE (Montserrat ExtraBold) -->
                     <div class="pain-header">
@@ -1319,24 +301,65 @@
             </div>
         </section>
 
-        <!-- SOCIAL PROOF -->
-        <section id="social-proof">
-            <div class="wave-divider" aria-hidden="true">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                    preserveAspectRatio="none">
-                    <path
-                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                        class="shape-fill"></path>
-                </svg>
+        <!-- SOCIAL PROOF - Featured Quote + Marquee -->
+        <section id="social-proof" class="social-proof-marquee">
+            <div class="container">
+                <p class="proof-micro-phrase">Tu n'es pas la première à ressentir ça, ni la dernière à t'en libérer.</p>
+                <h3 class="proof-title">Ils ont validé leur singularité sans se fragiliser.</h3>
+                <p class="proof-subtitle">Marques, dirigeants et créateurs accompagnés par KLEIA-UP.</p>
+
+                <!-- Featured Quote - Marika (Premium Editorial) -->
+                <blockquote class="featured-quote featured-quote--editorial">
+                    <p class="quote-text">« Je suis sortie de scène en me sentant enfin à ma place. »</p>
+                    <footer class="quote-signature">
+                        <span class="signature-jewel" aria-hidden="true">✦</span>
+                        <span class="signature-name">Marika</span>
+                        <span class="signature-sep">·</span>
+                        <span class="signature-role">ENTREPRENEURE</span>
+                    </footer>
+                </blockquote>
+
+                <!-- Infusion phrase -->
+                <p class="proof-infusion">
+                    La seule différence entre elles et toi, c'est qu'elles ont dit <strong>oui</strong> une première
+                    fois.
+                </p>
             </div>
-            <div class="container proof-content">
-                <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
-                <p class="proof-text">"Ils ont validé leur singularité sans se fragiliser."</p>
+
+            <!-- Marquee for other testimonials -->
+            <div class="marquee-wrapper" aria-label="Témoignages clients">
+                <div class="marquee-track">
+                    <div class="marquee-item testimonial">
+                        <span class="testimonial-quote">« Ma conférence ressemble enfin à mon niveau d'exigence
+                            intérieure. »</span>
+                        <span class="testimonial-author">— Cécile, <em>auteure à succès</em></span>
+                    </div>
+                    <div class="marquee-item separator">✦</div>
+                    <div class="marquee-item testimonial">
+                        <span class="testimonial-quote">« J'ose chanter et prendre la parole sans m'excuser d'être
+                            sensible. »</span>
+                        <span class="testimonial-author">— Virginie, <em>thérapeute et chanteuse</em></span>
+                    </div>
+                    <div class="marquee-item separator">✦</div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="marquee-item testimonial">
+                        <span class="testimonial-quote">« Ma conférence ressemble enfin à mon niveau d'exigence
+                            intérieure. »</span>
+                        <span class="testimonial-author">— Cécile, <em>auteure à succès</em></span>
+                    </div>
+                    <div class="marquee-item separator">✦</div>
+                    <div class="marquee-item testimonial">
+                        <span class="testimonial-quote">« J'ose chanter et prendre la parole sans m'excuser d'être
+                            sensible. »</span>
+                        <span class="testimonial-author">— Virginie, <em>thérapeute et chanteuse</em></span>
+                    </div>
+                    <div class="marquee-item separator">✦</div>
+                </div>
             </div>
         </section>
 
-        <!-- SECTION ATELIERS FOCUS -->
-        <section id="ateliers-focus" class="section-padding">
+        <!-- SECTION ATELIERS FOCUS - White Background Contrast -->
+        <section id="ateliers-focus" class="section-padding white-bg">
             <div class="container">
                 <div id="offres-intro" class="section-title-wrap">
                     <h2 class="section-title">ATELIERS <em>FOCUS</em></h2>
@@ -1351,7 +374,7 @@
                         <p>Arrêter de ruminer : transforme tes montagnes russes émotionnelles en carburant. Pour
                             entrepreneurs hypersensibles qui subissent le stress.</p>
                         <span class="card-price">190€ / 3h</span>
-                        <a href="#" class="btn btn-premium">S'inscrire</a>
+                        <a href="#" class="btn btn-secondary">S'inscrire</a>
                     </article>
                     <article class="card-item">
                         <span class="icon">📢</span>
@@ -1382,7 +405,7 @@
                         Programme 3-6 mois sur candidature.
                     </p>
                     <p class="offer-price-premium">À partir de 2500€</p>
-                    <a href="#" class="btn btn-premium">DÉPOSER MA CANDIDATURE</a>
+                    <a href="#" class="btn btn-secondary">DÉPOSER MA CANDIDATURE</a>
                 </article>
             </div>
         </section>
