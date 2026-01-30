@@ -123,6 +123,35 @@
         </div>
     </header>
 
+    <!-- ============================================
+         BANDEAU LOGOS PARTENAIRES - DÉFILANT
+         Pour ajouter un logo : 
+         1. Placer l'image dans /assets/logos-partners/
+         2. Ajouter une balise <img> dans la liste ci-dessous
+         ============================================ -->
+    <section class="partners-banner" aria-label="Ils nous font confiance">
+        <div class="partners-track">
+            <!-- === LOGOS PARTENAIRES (dupliquer pour effet infini) === -->
+            <div class="partners-slide">
+                <!-- NOTE: Pour le moment on utilise les images combinées. 
+                     Pour un meilleur rendu, fournir les logos séparément. -->
+                <img src="./assets/logos-partners/logos-row-1.png"
+                    alt="Vendée Grand Littoral, Le Café des Entrepreneuses, Microsoft, Le Figaro Magazine, Familles Rurales Vendée"
+                    class="partner-logo partner-logo--wide">
+                <img src="./assets/logos-partners/club-reveuses-entrepreneuses.png"
+                    alt="Club des Rêveuses Entrepreneuses" class="partner-logo">
+            </div>
+            <!-- Duplication pour boucle infinie -->
+            <div class="partners-slide">
+                <img src="./assets/logos-partners/logos-row-1.png"
+                    alt="Vendée Grand Littoral, Le Café des Entrepreneuses, Microsoft, Le Figaro Magazine, Familles Rurales Vendée"
+                    class="partner-logo partner-logo--wide">
+                <img src="./assets/logos-partners/club-reveuses-entrepreneuses.png"
+                    alt="Club des Rêveuses Entrepreneuses" class="partner-logo">
+            </div>
+        </div>
+    </section>
+
     <main role="main">
         <!-- HERO SECTION - Neuromarketing Optimized -->
         <section id="hero" class="hero-section">

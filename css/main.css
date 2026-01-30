@@ -179,6 +179,131 @@ header {
     align-items: center;
 }
 
+/* =========================================================
+   PARTNERS BANNER - Bandeau logos défilants
+   ========================================================= */
+.partners-banner {
+    width: 100%;
+    background: linear-gradient(180deg, rgba(250, 249, 246, 0.95) 0%, rgba(255, 255, 255, 0.98) 100%);
+    border-bottom: 1px solid rgba(88, 0, 23, 0.06);
+    padding: 12px 0;
+    margin-top: 90px;
+    /* Compense le header fixed */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Gradient fade edges */
+.partners-banner::before,
+.partners-banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.partners-banner::before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(250, 249, 246, 1) 0%, transparent 100%);
+}
+
+.partners-banner::after {
+    right: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(250, 249, 246, 1) 100%);
+}
+
+/* Track container */
+.partners-track {
+    display: flex;
+    animation: partnersScroll 35s linear infinite;
+    width: fit-content;
+}
+
+/* Pause on hover for accessibility */
+.partners-track:hover {
+    animation-play-state: paused;
+}
+
+/* Slide group */
+.partners-slide {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 0 30px;
+}
+
+/* Individual logo */
+.partner-logo {
+    height: 40px;
+    width: auto;
+    max-width: 140px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all 0.4s ease;
+}
+
+.partner-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.08);
+}
+
+/* Wide variant for combined logo images */
+.partner-logo--wide {
+    max-width: 500px;
+    height: 45px;
+}
+
+/* Animation keyframes */
+@keyframes partnersScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .partners-track {
+        animation: none;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .partners-banner {
+        padding: 10px 0;
+    }
+
+    .partners-slide {
+        gap: 40px;
+        padding: 0 20px;
+    }
+
+    .partner-logo {
+        height: 32px;
+        max-width: 110px;
+    }
+}
+
+@media (max-width: 480px) {
+    .partners-slide {
+        gap: 30px;
+    }
+
+    .partner-logo {
+        height: 26px;
+        max-width: 90px;
+    }
+}
+
 .header-container {
     display: flex;
     justify-content: space-between;
