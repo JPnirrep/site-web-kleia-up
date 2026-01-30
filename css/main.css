@@ -218,8 +218,9 @@ header {
 /* Track container */
 .partners-track {
     display: flex;
-    animation: partnersScroll 10s linear infinite;
-    width: fit-content;
+    animation: partnersScroll 25s linear infinite;
+    width: max-content;
+    gap: 0;
 }
 
 /* Pause on hover for accessibility */
@@ -231,8 +232,9 @@ header {
 .partners-slide {
     display: flex;
     align-items: center;
-    gap: 60px;
-    padding: 0 30px;
+    gap: 50px;
+    padding: 0 25px;
+    flex-shrink: 0;
 }
 
 /* Individual logo */
@@ -258,15 +260,14 @@ header {
     height: 45px;
 }
 
-/* Animation keyframes - défile de 1/6 pour boucle parfaite avec 6 copies */
+/* Animation keyframes - défile de 50% pour boucle parfaite */
 @keyframes partnersScroll {
     0% {
         transform: translateX(0);
     }
 
     100% {
-        /* Défile de 16.666% = 1/6 du contenu total (1 slide sur 6) */
-        transform: translateX(-16.6667%);
+        transform: translateX(-50%);
     }
 }
 
