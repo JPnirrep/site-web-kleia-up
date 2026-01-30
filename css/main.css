@@ -218,7 +218,7 @@ header {
 /* Track container */
 .partners-track {
     display: flex;
-    animation: partnersScroll 35s linear infinite;
+    animation: partnersScroll 10s linear infinite;
     width: fit-content;
 }
 
@@ -258,14 +258,15 @@ header {
     height: 45px;
 }
 
-/* Animation keyframes */
+/* Animation keyframes - défile de 1/6 pour boucle parfaite avec 6 copies */
 @keyframes partnersScroll {
     0% {
         transform: translateX(0);
     }
 
     100% {
-        transform: translateX(-50%);
+        /* Défile de 16.666% = 1/6 du contenu total (1 slide sur 6) */
+        transform: translateX(-16.6667%);
     }
 }
 
