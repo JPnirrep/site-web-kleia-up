@@ -186,9 +186,8 @@ header {
     width: 100%;
     background: linear-gradient(180deg, rgba(250, 249, 246, 0.95) 0%, rgba(255, 255, 255, 0.98) 100%);
     border-bottom: 1px solid rgba(88, 0, 23, 0.06);
-    padding: 12px 0;
-    margin-top: 90px;
-    /* Compense le header fixed */
+    padding: 10px 0;
+    margin-top: 0;
     overflow: hidden;
     position: relative;
 }
