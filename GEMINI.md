@@ -31,6 +31,45 @@ site-web-kleia-up/
     └── check-site.md
 ```
 
+### Supervision et cohérence (Mode Superviseur)
+Quand je demande de :
+- "vérifie la cohérence"
+- "récap de session"
+- "supervise"
+- ou toute variante similaire
+
+➡️ **Tu lances automatiquement le workflow `/supervise`** qui produit un rapport court (alertes, suggestions, todo).
+
+**En fin de session** : tu me proposes automatiquement un récap et la mise à jour de la documentation.
+
+### Documentation automatique
+À chaque fin de session ou sauvegarde majeure :
+- Mettre à jour `README.md` avec les changements
+- Documenter les nouveaux workflows/scripts/règles
+
+## Principes de développement
+- ❌ Ne jamais casser le code existant
+- ✅ Capitaliser sur l'existant
+- ✅ Voies simples, efficaces, frugales
+- ✅ Design moderne et premium
+
+## Structure du projet
+```
+site-web-kleia-up/
+├── index.html          # Page principale
+├── css/                # Styles CSS
+├── assets/             # Images et ressources
+├── scripts/            # Scripts d'automatisation (PowerShell)
+│   └── verify-visual.ps1
+├── GEMINI.md           # Règles du workspace
+└── .agent/
+    ├── workflows/      # Workflows Antigravity
+    │   ├── check-site.md
+    │   └── supervise.md
+    └── rules/          # Règles agent
+        └── supervisor.md
+```
+
 ## Contraintes techniques
 - Site statique (HTML/CSS/JS vanilla)
 - Compatible Hostinger (si migration future)
