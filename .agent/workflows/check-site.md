@@ -2,44 +2,23 @@
 description: Vérification visuelle du site KLEIA-UP sur GitHub Pages
 ---
 
-# Workflow : Vérification visuelle du site
+# Workflow : Vérification visuelle du site KLEIA-UP
 
 ## Objectif
-Pousser les modifications sur GitHub puis ouvrir le site déployé pour vérification visuelle, sans passer par un serveur localhost.
+Pousser les modifications sur GitHub, attendre la build GitHub Pages, puis ouvrir le site déployé dans Chrome pour vérification visuelle.
 
 ## Étapes
 
 // turbo-all
 
-1. Vérifier s'il y a des modifications à committer :
+1. Lancer le script de vérification visuelle :
 ```powershell
-git status
-```
-
-2. Si des modifications existent, les ajouter :
-```powershell
-git add .
-```
-
-3. Créer un commit avec un message descriptif :
-```powershell
-git commit -m "🔄 Update pour vérification visuelle"
-```
-
-4. Pousser les modifications sur GitHub :
-```powershell
-git push
-```
-
-5. Attendre quelques secondes pour que GitHub Pages se mette à jour (environ 30-60 secondes).
-
-6. Ouvrir Chrome avec le site GitHub Pages :
-```powershell
-start chrome "https://jpnirrep.github.io/site-web-kleia-up/"
+powershell -ExecutionPolicy Bypass -File "c:\Users\JP\Documents\GitHub\site-web-kleia-up\site-web-kleia-up\scripts\verify-visual.ps1"
 ```
 
 ## Notes
-- Les étapes 2-4 sont ignorées automatiquement s'il n'y a pas de modifications
-- Le déploiement GitHub Pages peut prendre 30-60 secondes après un push
-- Le site affiché est la version déployée sur GitHub Pages
+- Ce workflow est déclenché automatiquement quand tu demandes de "pousser et voir le résultat visuel" ou "vérifier visuellement le site"
+- Le script gère automatiquement : `git add`, `git commit`, `git push`, attente de 45s, ouverture de Chrome
+- Si aucune modification n'est détectée, le push est ignoré et le site s'ouvre directement
+- URL du site : https://jpnirrep.github.io/site-web-kleia-up/
 - Répertoire de travail : `c:\Users\JP\Documents\GitHub\site-web-kleia-up\site-web-kleia-up`
