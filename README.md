@@ -3,7 +3,7 @@
 ## 🔒 VERSION STABLE - SITE STATIQUE HAUTE PERFORMANCE
 
 ![Status](https://img.shields.io/badge/status-PRODUCTION-success)
-![Version](https://img.shields.io/badge/version-v2.0--CLEAN-blue)
+![Version](https://img.shields.io/badge/version-v2.1--AUTOMATION-blue)
 ![Architecture](https://img.shields.io/badge/architecture-VANILLA%20HTML%2FCSS-green)
 
 ---
@@ -21,11 +21,20 @@ site-web-kleia-up/
 ├── assets/
 │   ├── logo_kleia.png
 │   └── sandrina perrin photo site pepps.webp
+├── scripts/
+│   └── verify-visual.ps1   # Script de vérification visuelle
+├── GEMINI.md           # Règles du workspace Antigravity
 ├── .htaccess           # Configuration Apache
 ├── .gitignore          # Exclusions Git
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml  # Déploiement automatique GitHub Pages
+├── .agent/
+│   ├── workflows/
+│   │   ├── check-site.md   # Workflow push + preview
+│   │   └── supervise.md    # Workflow supervision
+│   └── rules/
+│       └── supervisor.md   # Règles mode superviseur
 └── README.md           # Ce fichier
 ```
 
@@ -182,7 +191,14 @@ git push
 
 ## 📝 HISTORIQUE DES VERSIONS
 
-### v2.0-CLEAN (30/01/2026) - VERSION ACTUELLE
+### v2.1-AUTOMATION (09/02/2026) - VERSION ACTUELLE
+- ✅ Workflow `/check-site` : push + preview automatique
+- ✅ Workflow `/supervise` : supervision et récap de session
+- ✅ Script `verify-visual.ps1` : vérification visuelle
+- ✅ Règles agent superviseur
+- ✅ Documentation auto du README en fin de session
+
+### v2.0-CLEAN (30/01/2026)
 - ✅ Nettoyage des fichiers React/Vite/TypeScript parasites
 - ✅ Architecture 100% Vanilla confirmée
 - ✅ Documentation mise à jour
