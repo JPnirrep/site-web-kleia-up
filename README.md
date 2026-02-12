@@ -191,7 +191,13 @@ git push
 
 ## 📝 HISTORIQUE DES VERSIONS
 
-### v2.1-AUTOMATION (09/02/2026) - VERSION ACTUELLE
+### v2.2-GEO (12/02/2026) - VERSION ACTUELLE
+- ✅ **GEO Ready** : Création de `llms.txt` pour référencement IA
+- ✅ **Refonte Interface** : Section "Le Cercle" (ex-Newsletter) avec design immersif
+- ✅ **SEO Sémantique** : Schema.org enrichi + Aria-labels
+- ✅ **Assets** : Mise à jour photo Hero
+
+### v2.1-AUTOMATION (09/02/2026)
 - ✅ Workflow `/check-site` : push + preview automatique
 - ✅ Workflow `/supervise` : supervision et récap de session
 - ✅ Script `verify-visual.ps1` : vérification visuelle
