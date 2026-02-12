@@ -44,45 +44,93 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "KLEIA-UP",
-      "description": "Coaching scénique et leadership pour entrepreneurs hypersensibles",
-      "url": "https://lafabriquepepps.com",
-      "telephone": "+33-XXX",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Poiroux",
-        "addressRegion": "Pays de la Loire",
-        "addressCountry": "FR"
-      },
-      "founder": {
-        "@type": "Person",
-        "name": "Sandrina Perrin"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Formations KLEIA-UP",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Course",
-              "name": "Formation Gestion Émotions Entrepreneur Hypersensible",
-              "description": "Atelier optimisme stratégique 3h pour entrepreneurs HSP",
-              "provider": {"@type": "Organization", "name": "KLEIA-UP"}
-            }
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://lafabriquepepps.com/#organization",
+          "name": "KLEIA-UP",
+          "description": "Coaching scénique et leadership pour entrepreneurs hypersensibles (HPI/HSP).",
+          "url": "https://lafabriquepepps.com",
+          "logo": "https://lafabriquepepps.com/assets/logo_kleia.png",
+          "image": "https://lafabriquepepps.com/assets/sandrina%20perrin%20photo%20site%20pepps.webp",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Poiroux",
+            "addressRegion": "Pays de la Loire",
+            "addressCountry": "FR"
           },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Course",
-              "name": "Vaincre Peur Parler Public Hypersensibles Introvertis",
-              "description": "Formation prise de parole pour introvertis et hypersensibles",
-              "provider": {"@type": "Organization", "name": "KLEIA-UP"}
-            }
+          "founder": {
+            "@type": "Person",
+            "name": "Sandrina Perrin",
+            "jobTitle": "Coach Leadership & Prise de Parole",
+            "sameAs": [
+              "https://www.linkedin.com/in/sandrina-perrin/",
+              "https://www.instagram.com/sandrina_kleia_up/"
+            ]
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Formations Leadership & Prise de Parole",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Course",
+                  "name": "Formation Gestion Émotions Entrepreneur Hypersensible",
+                  "description": "Atelier optimisme stratégique 3h pour entrepreneurs HSP"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Course",
+                  "name": "Vaincre Peur Parler Public Hypersensibles Introvertis",
+                  "description": "Formation prise de parole pour introvertis et hypersensibles"
+                }
+              }
+            ]
           }
-        ]
-      }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Pourquoi je m'épuise à essayer de rentrer dans le moule ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Vouloir rentrer dans le moule des leaders bruyants consume votre énergie vitale. C'est ce qu'on appelle l'épuisement de la sur-adaptation."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Pourquoi d'autres s'approprient mes idées ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "D'autres s'approprient vos concepts parce qu'ils osent les porter, même maladroitement, alors que votre silence laisse la place libre."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Pourquoi je ressens un syndrome de l'imposture ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Le décalage entre ce que vous savez (votre expertise intérieure) et ce que vous montrez crée une dissonance épuisante qui nourrit le doute."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://lafabriquepepps.com/#website",
+          "url": "https://lafabriquepepps.com",
+          "name": "KLEIA-UP",
+          "description": "Incarne ton autorité naturelle.",
+          "publisher": {
+            "@id": "https://lafabriquepepps.com/#organization"
+          }
+        }
+      ]
     }
     </script>
 </head>
@@ -439,7 +487,8 @@
                         <p>Arrêter de ruminer : transforme tes montagnes russes émotionnelles en carburant. Pour
                             entrepreneurs hypersensibles qui subissent le stress.</p>
                         <span class="card-price">190€ / 3h</span>
-                        <a href="#" class="btn btn-secondary">S'inscrire</a>
+                        <a href="#" class="btn btn-secondary"
+                            aria-label="S'inscrire à l'atelier Gestion des Émotions">S'inscrire</a>
                     </article>
                     <article class="card-item">
                         <span class="icon">📢</span>
@@ -448,7 +497,8 @@
                         <p>Techniques corps-mental pour oser ta 1ère vidéo, live ou réunion. Fini tremblements, gorge
                             nouée et rougissements.</p>
                         <span class="card-price">190€ / 3h</span>
-                        <a href="#" class="btn btn-premium">S'inscrire</a>
+                        <a href="#" class="btn btn-premium"
+                            aria-label="S'inscrire à l'atelier Vaincre la peur de parler en public">S'inscrire</a>
                     </article>
                 </div>
             </div>
@@ -470,7 +520,8 @@
                         Programme 3-6 mois sur candidature.
                     </p>
                     <p class="offer-price-premium">À partir de 2500€</p>
-                    <a href="#" class="btn btn-secondary">DÉPOSER MA CANDIDATURE</a>
+                    <a href="#" class="btn btn-secondary"
+                        aria-label="Candidater au programme signature L'Incarnation">DÉPOSER MA CANDIDATURE</a>
                 </article>
             </div>
         </section>
@@ -505,7 +556,8 @@
                     </div>
                 </div>
                 <div class="center-cta">
-                    <a href="#hero-form" class="btn btn-premium">JE M'ABONNE GRATUITEMENT</a>
+                    <a href="#hero-form" class="btn btn-premium"
+                        aria-label="S'abonner à la newsletter L'Instant Kleia">JE M'ABONNE GRATUITEMENT</a>
                 </div>
             </div>
         </section>
