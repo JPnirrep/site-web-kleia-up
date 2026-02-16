@@ -135,12 +135,9 @@ a {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 20px;
-    /* Tighter grouping */
+    gap: 45px;
     align-items: center;
     margin: 0;
-    margin-left: 40px;
-    /* Moderate separation - prevents breaking horizontal layout */
     padding: 0;
     transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
