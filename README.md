@@ -191,7 +191,13 @@ git push
 
 ## 📝 HISTORIQUE DES VERSIONS
 
-### v2.2-GEO (12/02/2026) - VERSION ACTUELLE
+### v2.3-VISUAL (16/02/2026) - DERNIÈRE MISE À JOUR
+- ✅ **Brand Hierarchy** : Logo signature 100px et Header 130px pour une autorité maximale
+- ✅ **Portrait Signature** : Recadrage stratégique de l'image fondatrice (Ancrage sommet, Zoom 1.4x)
+- ✅ **Bandeau Partenaires** : Restauration complète du défilement infini et des styles
+- ✅ **CTA Optimization** : Bouton Header compacté sur 2 lignes pour un meilleur équilibre visuel
+
+### v2.2-GEO (12/02/2026)
 - ✅ **GEO Ready** : Création de `llms.txt` pour référencement IA
 - ✅ **Refonte Interface** : Section "Le Cercle" (ex-Newsletter) avec design immersif
 - ✅ **SEO Sémantique** : Schema.org enrichi + Aria-labels
