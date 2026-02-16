@@ -110,7 +110,7 @@ a {
 .btn-primary {
     background: linear-gradient(135deg, var(--color-burgundy) 0%, #7a0020 100%);
     color: white;
-    padding: 14px 24px;
+    padding: 12px 20px;
     max-width: 220px;
     font-size: 0.8rem;
     font-weight: 700;
@@ -163,7 +163,7 @@ header {
 }
 
 .logo {
-    margin-right: 80px;
+    margin-right: 100px;
 }
 
 .nav-links {
