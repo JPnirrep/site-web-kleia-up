@@ -132,6 +132,26 @@ a {
 
 /* ... */
 
+/* --- HEADER & NAVIGATION --- */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: auto;
+    min-height: 90px;
+    padding: 15px 0;
+    background: rgba(250, 249, 246, 0.98);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(88, 0, 23, 0.05);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -265,6 +285,53 @@ a {
     padding: 5px 0;
     text-transform: none;
     letter-spacing: normal;
+}
+
+/* --- PARTNER BANNER --- */
+.partners-banner {
+    padding: 15px 0;
+    background: var(--bg-off-white);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    position: relative;
+}
+
+.partners-track {
+    display: flex;
+    animation: partnersScroll 25s linear infinite;
+}
+
+.partners-slide {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 0 25px;
+    flex-shrink: 0;
+}
+
+.partner-logo {
+    height: 40px;
+    width: auto;
+    max-width: 140px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.partner-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+@keyframes partnersScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 /* --- HERO SECTION (2026 Version) --- */
