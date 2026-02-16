@@ -138,8 +138,8 @@ header {
     top: 0;
     z-index: 1000;
     height: auto;
-    min-height: 90px;
-    padding: 15px 0;
+    min-height: 100px;
+    padding: 20px 0;
     background: rgba(250, 249, 246, 0.98);
     backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(88, 0, 23, 0.05);
@@ -160,6 +160,7 @@ header {
     gap: 45px;
     align-items: center;
     margin: 0;
+    margin-left: 30px;
     padding: 0;
     transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
