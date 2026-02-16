@@ -110,13 +110,15 @@ a {
 .btn-primary {
     background: linear-gradient(135deg, var(--color-burgundy) 0%, #7a0020 100%);
     color: white;
-    padding: 12px 20px;
-    max-width: 220px;
+    padding: 10px 15px;
+    max-width: 200px;
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 1px;
-    line-height: 1.1;
+    line-height: 1.2;
     text-align: center;
+    white-space: normal;
+    display: inline-block;
     box-shadow:
         0 4px 15px rgba(88, 0, 23, 0.3),
         0 2px 4px rgba(88, 0, 23, 0.2);
@@ -140,8 +142,8 @@ header {
     top: 0;
     z-index: 1000;
     height: auto;
-    min-height: 120px;
-    padding: 20px 0;
+    min-height: 130px;
+    padding: 15px 5%;
     background: rgba(250, 249, 246, 0.98);
     backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(88, 0, 23, 0.05);
@@ -157,13 +159,13 @@ header {
 }
 
 .logo img {
-    height: 80px;
+    height: 100px;
     width: auto;
     object-fit: contain;
 }
 
 .logo {
-    margin-right: 100px;
+    margin-right: 80px;
 }
 
 .nav-links {
