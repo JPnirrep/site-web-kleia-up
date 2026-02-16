@@ -316,6 +316,74 @@ header {
         /* Hide in header, show in menu or just hide for now to declutter */
     }
 
+    /* Global Media Fluidity */
+    img,
+    video,
+    iframe {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Container Adjustments */
+    .container {
+        padding: 0 15px;
+        /* Reduced from 20px/default */
+    }
+
+    /* Typography Refinements */
+    body {
+        font-size: 16px;
+        /* Minimum for legibility */
+    }
+
+    h1,
+    .hero-title {
+        font-size: clamp(2.2rem, 8vw, 3rem);
+        /* Dynamic resizing */
+        line-height: 1.1;
+    }
+
+    h2,
+    .section-title,
+    .pain-title {
+        font-size: clamp(1.8rem, 6vw, 2.2rem);
+        line-height: 1.2;
+    }
+
+    h3 {
+        font-size: clamp(1.4rem, 5vw, 1.8rem);
+    }
+
+    /* Hero Section Specifics */
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .hero-text {
+        align-items: center;
+    }
+
+    .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-cta {
+        align-self: center;
+    }
+
+    .hero-image-wrapper {
+        order: -1;
+    }
+
+    /* Bento Grid Adjustment */
+    .pain-bento-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
     /* Option: Add CTA inside nav-links on mobile */
     .nav-links::after {
         content: "JE TÉLÉCHARGE MON KIT";
