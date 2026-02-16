@@ -110,14 +110,18 @@ a {
 .btn-primary {
     background: linear-gradient(135deg, var(--color-burgundy) 0%, #7a0020 100%);
     color: white;
-    padding: 16px 40px;
-    font-size: 0.95rem;
+    padding: 14px 24px;
+    /* Reduced from 16px 40px to tighten */
+    font-size: 0.9rem;
+    /* Slightly smaller to fit tight */
     font-weight: 700;
-    letter-spacing: 1.2px;
+    letter-spacing: 1px;
     box-shadow:
         0 4px 15px rgba(88, 0, 23, 0.3),
         0 2px 4px rgba(88, 0, 23, 0.2);
 }
+
+/* ... existing hover styles ... */
 
 .btn-primary:hover {
     transform: translateY(-3px) scale(1.02);
@@ -127,216 +131,17 @@ a {
     background: linear-gradient(135deg, #7a0020 0%, var(--color-burgundy) 100%);
 }
 
-/* SECONDARY CTA - Supporting action (Ateliers, Products) */
-.btn-secondary {
-    background-color: var(--color-burgundy);
-    color: white;
-    padding: 12px 28px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.8px;
-}
-
-.btn-secondary:hover {
-    transform: translateY(-2px);
-    background-color: #7a0020;
-    box-shadow: 0 6px 18px rgba(88, 0, 23, 0.25);
-}
-
-/* TERTIARY CTA - Minimal action (Learn more, Links) */
-.btn-tertiary {
-    background: transparent;
-    color: var(--color-burgundy);
-    border: 1.5px solid rgba(88, 0, 23, 0.3);
-    padding: 10px 24px;
-    font-size: 0.82rem;
-    font-weight: 500;
-    letter-spacing: 0.6px;
-}
-
-.btn-tertiary:hover {
-    border-color: var(--color-burgundy);
-    background: rgba(88, 0, 23, 0.04);
-    transform: translateY(-1px);
-}
-
-.shadow-sm {
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-}
-
-/* --- HEADER & NAVIGATION --- */
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    height: auto;
-    min-height: 90px;
-    padding: 15px 0;
-    background: rgba(250, 249, 246, 0.98);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(88, 0, 23, 0.05);
-    display: flex;
-    align-items: center;
-}
-
-/* =========================================================
-   PARTNERS BANNER - Bandeau logos défilants
-   ========================================================= */
-.partners-banner {
-    width: 100%;
-    background: linear-gradient(180deg, rgba(250, 249, 246, 0.95) 0%, rgba(255, 255, 255, 0.98) 100%);
-    border-bottom: 1px solid rgba(88, 0, 23, 0.06);
-    padding: 10px 0;
-    margin-top: 0;
-    overflow: hidden;
-    position: relative;
-}
-
-/* Gradient fade edges */
-.partners-banner::before,
-.partners-banner::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 80px;
-    height: 100%;
-    z-index: 10;
-    pointer-events: none;
-}
-
-.partners-banner::before {
-    left: 0;
-    background: linear-gradient(90deg, rgba(250, 249, 246, 1) 0%, transparent 100%);
-}
-
-.partners-banner::after {
-    right: 0;
-    background: linear-gradient(90deg, transparent 0%, rgba(250, 249, 246, 1) 100%);
-}
-
-/* Track container */
-.partners-track {
-    display: flex;
-    animation: partnersScroll 25s linear infinite;
-    width: max-content;
-    gap: 0;
-}
-
-/* Pause on hover for accessibility */
-.partners-track:hover {
-    animation-play-state: paused;
-}
-
-/* Slide group */
-.partners-slide {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    padding: 0 25px;
-    flex-shrink: 0;
-}
-
-/* Individual logo */
-.partner-logo {
-    height: 40px;
-    width: auto;
-    max-width: 140px;
-    object-fit: contain;
-    filter: grayscale(100%);
-    opacity: 0.6;
-    transition: all 0.4s ease;
-}
-
-.partner-logo:hover {
-    filter: grayscale(0%);
-    opacity: 1;
-    transform: scale(1.08);
-}
-
-/* Wide variant for combined logo images */
-.partner-logo--wide {
-    max-width: 500px;
-    height: 45px;
-}
-
-/* Animation keyframes - défile de 50% pour boucle parfaite */
-@keyframes partnersScroll {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-/* Accessibility: respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    .partners-track {
-        animation: none;
-    }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .partners-banner {
-        padding: 10px 0;
-    }
-
-    .partners-slide {
-        gap: 40px;
-        padding: 0 20px;
-    }
-
-    .partner-logo {
-        height: 32px;
-        max-width: 110px;
-    }
-}
-
-@media (max-width: 480px) {
-    .partners-slide {
-        gap: 30px;
-    }
-
-    .partner-logo {
-        height: 26px;
-        max-width: 90px;
-    }
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.logo {
-    font-family: var(--font-title);
-    font-weight: 700;
-    font-size: 1.4rem;
-    color: var(--color-text);
-    white-space: nowrap;
-    z-index: 1001;
-}
-
-.logo span {
-    color: var(--color-burgundy);
-}
-
-.logo img {
-    height: 100px;
-    width: auto;
-}
+/* ... */
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 60px;
-    /* Increased from 45px for breathability */
+    gap: 30px;
+    /* Tightened from 60px to group text links */
     align-items: center;
     margin: 0;
+    margin-left: 60px;
+    /* Force separation from Logo */
     padding: 0;
     transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
