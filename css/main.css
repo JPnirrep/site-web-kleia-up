@@ -143,6 +143,8 @@ header {
     background: rgba(250, 249, 246, 0.98);
     backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(88, 0, 23, 0.05);
+    display: flex;
+    align-items: center;
 }
 
 .header-container {
@@ -299,6 +301,8 @@ header {
 .partners-track {
     display: flex;
     animation: partnersScroll 25s linear infinite;
+    width: max-content;
+    gap: 0;
 }
 
 .partners-slide {
