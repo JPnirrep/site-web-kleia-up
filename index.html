@@ -671,6 +671,15 @@
             });
         });
 
+        // Fermer le menu si on clique sur le pseudo-bouton injecté via CSS ::after
+        // (Note: C'est un hack CSS, en JS pur il vaudrait mieux un vrai bouton dans le HTML)
+        nav.addEventListener('click', (e) => {
+            if (e.target === nav) {
+                burger.classList.remove('active');
+                nav.classList.remove('active');
+            }
+        });
+
         // Gestion des formulaires
         document.querySelectorAll('form').forEach(form => {
             form.addEventListener('submit', function (e) {

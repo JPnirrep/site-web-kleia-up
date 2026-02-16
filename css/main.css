@@ -232,7 +232,7 @@ header {
     display: none;
     flex-direction: column;
     justify-content: space-around;
-    width: 26px;
+    width: 28px;
     height: 20px;
     background: transparent;
     border: none;
@@ -245,7 +245,91 @@ header {
     width: 100%;
     height: 2px;
     background-color: var(--color-burgundy);
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+/* Burger Animation */
+.menu-burger.active .burger-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-burger.active .burger-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-burger.active .burger-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    header {
+        min-height: 90px;
+        padding: 10px 20px;
+    }
+
+    .logo img {
+        height: 60px;
+    }
+
+    .logo {
+        margin-right: 0;
+    }
+
+    .menu-burger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--bg-cream);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin: 0;
+        padding: 40px;
+        z-index: 1000;
+        transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+        box-shadow: -10px 0 30px rgba(88, 0, 23, 0.1);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+    }
+
+    .nav-separator {
+        display: none;
+    }
+
+    .header-cta {
+        display: none;
+        /* Hide in header, show in menu or just hide for now to declutter */
+    }
+
+    /* Option: Add CTA inside nav-links on mobile */
+    .nav-links::after {
+        content: "JE TÉLÉCHARGE MON KIT";
+        display: block;
+        margin-top: 20px;
+        font-family: var(--font-body);
+        font-weight: 700;
+        color: white;
+        background: var(--color-burgundy);
+        padding: 12px 24px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        cursor: pointer;
+    }
 }
 
 /* Dropdown Style */
