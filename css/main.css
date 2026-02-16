@@ -6,17 +6,17 @@
     /* Empêche le padding de grossir les éléments */
 }
 
+/* 1. Verrouillage du scroll horizontal sur le parent */
 html,
 body {
-    width: 100%;
-    max-width: 100vw;
-    /* Force la limite à la largeur de la fenêtre */
+    width: 100% !important;
+    max-width: 100vw !important;
     overflow-x: hidden !important;
-    /* INTERDIT tout dépassement horizontal */
     position: relative;
-    /* Ancre la page */
     margin: 0;
     padding: 0;
+    touch-action: pan-y;
+    /* Interdit le scroll horizontal tactile, autorise vertical */
 }
 
 /* SÉCURITÉ SUPPLÉMENTAIRE POUR LES IMAGES */
@@ -315,27 +315,35 @@ header {
     }
 
     .nav-links {
-        position: fixed;
+        position: fixed !important;
+        /* Sort du flux du document */
         top: 0;
-        right: -100%;
+        right: 0;
         width: 100%;
         height: 100vh;
-        background-color: var(--bg-cream);
+
+        /* LA CLEF : On le cache complètement quand il n'est pas actif */
+        transform: translateX(100%);
+        visibility: hidden;
+        /* Le navigateur l'ignore totalement */
+        transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+        z-index: 9999;
+        background-color: var(--color-burgundy);
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 30px;
         margin: 0;
         padding: 40px;
-        z-index: 1000;
-        transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), right 0s;
         box-shadow: -10px 0 30px rgba(88, 0, 23, 0.1);
-        transform: translateX(100%);
-        right: 0;
     }
 
     .nav-links.active {
         transform: translateX(0);
+        visibility: visible;
+        /* On le rend visible uniquement maintenant */
     }
 
     .nav-link {
@@ -2008,7 +2016,4 @@ footer h2 {
     .pain-bento-grid {
         grid-template-columns: 1fr 1fr;
     }
-} 
- / *   D E B U G   -   I D E N T I F I C A T I O N   O V E R F L O W   * / 
- *   {   o u t l i n e :   1 p x   s o l i d   r e d   ! i m p o r t a n t ;   }  
- 
+}
