@@ -110,8 +110,8 @@ a {
 .btn-primary {
     background: linear-gradient(135deg, var(--color-burgundy) 0%, #7a0020 100%);
     color: white;
-    padding: 14px 20px;
-    /* Further reduced from 14px 24px */
+    padding: 12px 16px;
+    /* Aggressively reduced for tighter fit */
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 1px;
@@ -135,12 +135,12 @@ a {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 25px;
-    /* Further tightened from 30px */
+    gap: 20px;
+    /* Tighter grouping */
     align-items: center;
     margin: 0;
-    margin-left: 100px;
-    /* Increased from 60px to push further from logo */
+    margin-left: 150px;
+    /* Significant separation from logo */
     padding: 0;
     transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
