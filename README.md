@@ -191,7 +191,13 @@ git push
 
 ## 📝 HISTORIQUE DES VERSIONS
 
-### v2.3-VISUAL (16/02/2026) - DERNIÈRE MISE À JOUR
+### v2.4-PERF (16/02/2026) - DERNIÈRE MISE À JOUR
+- ✅ **Performance Web** : `fetchpriority="high"` (Hero) et `loading="lazy"` (Below-the-fold) implémentés.
+- ✅ **SEO Technique** : Création de `robots.txt`, `sitemap.xml` et optimisation des balises `alt`.
+- ✅ **Mobile UX Fix** : Suppression du scroll horizontal parasite via verrouillage viewport (`touch-action`) et visibility overlay.
+- ✅ **Menu Burger** : Refonte de la navigation mobile pour plus de fluidité et de stabilité.
+
+### v2.3-VISUAL (16/02/2026)
 - ✅ **Brand Hierarchy** : Logo signature 100px et Header 130px pour une autorité maximale
 - ✅ **Portrait Signature** : Recadrage stratégique de l'image fondatrice (Ancrage sommet, Zoom 1.4x)
 - ✅ **Bandeau Partenaires** : Restauration complète du défilement infini et des styles
