@@ -110,11 +110,13 @@ a {
 .btn-primary {
     background: linear-gradient(135deg, var(--color-burgundy) 0%, #7a0020 100%);
     color: white;
-    padding: 12px 16px;
-    /* Aggressively reduced for tighter fit */
-    font-size: 0.9rem;
+    padding: 14px 24px;
+    max-width: 200px;
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 1px;
+    line-height: 1.2;
+    text-align: center;
     box-shadow:
         0 4px 15px rgba(88, 0, 23, 0.3),
         0 2px 4px rgba(88, 0, 23, 0.2);
@@ -154,13 +156,19 @@ header {
     width: 100%;
 }
 
+.logo img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 45px;
+    gap: 50px;
     align-items: center;
     margin: 0;
-    margin-left: 30px;
+    margin-left: 60px;
     padding: 0;
     transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
