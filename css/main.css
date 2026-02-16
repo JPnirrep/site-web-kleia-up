@@ -1,16 +1,42 @@
+/* RESET OBLIGATOIRE - À METTRE TOUT EN HAUT DU CSS */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    /* Empêche le padding de grossir les éléments */
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100vw;
+    /* Force la limite à la largeur de la fenêtre */
+    overflow-x: hidden !important;
+    /* INTERDIT tout dépassement horizontal */
+    position: relative;
+    /* Ancre la page */
+    margin: 0;
+    padding: 0;
+}
+
+/* SÉCURITÉ SUPPLÉMENTAIRE POUR LES IMAGES */
+img,
+video,
+iframe,
+canvas,
+svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* Évite les marges fantômes sous les images */
+}
+
 /* =========================================================
    KLEIA-UP - Main Stylesheet
    Merged from inline styles + custom.css
    ========================================================= */
 
 /* --- VARIABLES & RESET --- */
-html,
-body {
-    overflow-x: hidden;
-    width: 100%;
-    position: relative;
-}
-
 :root {
     --bg-cream: #FAF9F6;
     --bg-off-white: #FFFFFF;
