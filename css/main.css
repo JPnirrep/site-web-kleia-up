@@ -2008,4 +2008,7 @@ footer h2 {
     .pain-bento-grid {
         grid-template-columns: 1fr 1fr;
     }
-}
+} 
+ / *   D E B U G   -   I D E N T I F I C A T I O N   O V E R F L O W   * / 
+ *   {   o u t l i n e :   1 p x   s o l i d   r e d   ! i m p o r t a n t ;   }  
+ 
