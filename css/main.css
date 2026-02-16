@@ -139,8 +139,8 @@ a {
     /* Tighter grouping */
     align-items: center;
     margin: 0;
-    margin-left: 150px;
-    /* Significant separation from logo */
+    margin-left: 40px;
+    /* Moderate separation - prevents breaking horizontal layout */
     padding: 0;
     transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
