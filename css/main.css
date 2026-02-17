@@ -2019,40 +2019,66 @@ footer h2 {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 .pilier-card {
     background: white;
-    padding: 30px;
+    padding: 2rem;
+    /* Generous padding as requested */
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    /* Pro B2B Shadow */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 100%;
-    /* Ensure equal height in grid */
-    border: 1px solid rgba(88, 0, 23, 0.05);
+    border: 1px solid rgba(88, 0, 23, 0.08);
+    /* Fine border */
+    text-align: left;
+    /* Left aligned */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .pilier-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(88, 0, 23, 0.08);
-    border-color: rgba(88, 0, 23, 0.1);
+    box-shadow: 0 10px 30px rgba(88, 0, 23, 0.1);
+    border-color: var(--color-burgundy);
 }
 
 .pilier-card h3 {
     color: var(--color-burgundy);
     margin-bottom: 15px;
-    font-size: 1.3rem;
-    font-family: var(--font-title);
+    font-size: 1.2rem;
+    font-family: var(--font-body);
+    /* More modern B2B look */
     font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .pilier-card p {
     font-size: 0.95rem;
-    line-height: 1.7;
+    line-height: 1.6;
     color: var(--color-text);
     opacity: 0.9;
+}
+
+/* Quote Bridge / Transition */
+.quote-bridge {
+    text-align: center;
+    margin: 4rem 0;
+    padding: 3rem 1rem;
+    background-color: #f8f9fa;
+    border-left: 4px solid #333;
+    border-radius: 4px;
+}
+
+.quote-bridge p {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+    font-family: var(--font-title);
 }
 
 /* Desktop Grid */
@@ -2061,5 +2087,7 @@ footer h2 {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
+        align-items: stretch;
+        /* Stretch cards to equal height */
     }
 }
