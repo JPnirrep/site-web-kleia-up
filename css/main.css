@@ -501,14 +501,17 @@ header {
 }
 
 .partner-logo {
-    height: 40px;
+    height: 80px;
+    /* Doubled size as requested (40px -> 80px) */
     width: auto;
-    max-width: 140px;
-    object-fit: contain;
+    max-width: unset;
+    /* Allow full size */
     /* Removed filters for full color/opacity as requested */
     filter: none !important;
     opacity: 1 !important;
     transition: all 0.3s ease;
+    margin: 0 40px;
+    /* Add spacing between logos */
 }
 
 .partner-logo:hover {
@@ -522,7 +525,8 @@ header {
     }
 
     100% {
-        transform: translateX(-50%);
+        transform: translateX(-33.33333%);
+        /* For 3 duplicated sets of logos */
     }
 }
 
