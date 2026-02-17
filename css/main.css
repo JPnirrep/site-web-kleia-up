@@ -171,15 +171,16 @@ a {
 
 /* --- HEADER & NAVIGATION --- */
 header {
-    position: sticky;
+    position: sticky !important;
     top: 0;
-    z-index: 1000;
+    z-index: 10000;
     height: auto;
     min-height: 130px;
     padding: 15px 5%;
     background: rgba(250, 249, 246, 0.98);
     backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(88, 0, 23, 0.05);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(88, 0, 23, 0.08);
     display: flex;
     align-items: center;
 }
