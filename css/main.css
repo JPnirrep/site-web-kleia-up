@@ -2008,3 +2008,53 @@ footer h2 {
         grid-template-columns: 1fr 1fr;
     }
 }
+
+/* --- 3 PILLARS SECTION (Clean Grid) --- */
+.piliers-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 40px;
+}
+
+.pilier-card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    /* Pro B2B Shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    /* Ensure equal height in grid */
+    border: 1px solid rgba(88, 0, 23, 0.05);
+}
+
+.pilier-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(88, 0, 23, 0.08);
+    border-color: rgba(88, 0, 23, 0.1);
+}
+
+.pilier-card h3 {
+    color: var(--color-burgundy);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    font-family: var(--font-title);
+    font-weight: 700;
+}
+
+.pilier-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    opacity: 0.9;
+}
+
+/* Desktop Grid */
+@media (min-width: 992px) {
+    .piliers-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
