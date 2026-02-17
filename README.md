@@ -3,7 +3,7 @@
 ## 🔒 VERSION STABLE - SITE STATIQUE HAUTE PERFORMANCE
 
 ![Status](https://img.shields.io/badge/status-PRODUCTION-success)
-![Version](https://img.shields.io/badge/version-v2.1--AUTOMATION-blue)
+![Version](https://img.shields.io/badge/version-v2.5--SEO--PERF-blue)
 ![Architecture](https://img.shields.io/badge/architecture-VANILLA%20HTML%2FCSS-green)
 
 ---
@@ -191,7 +191,12 @@ git push
 
 ## 📝 HISTORIQUE DES VERSIONS
 
-### v2.4-PERF (16/02/2026) - DERNIÈRE MISE À JOUR
+### v2.5-SEO-PERF (17/02/2026) - DERNIÈRE MISE À JOUR
+- ✅ **Audit WCAG** : Harmonisation du menu mobile (Bourgogne sur Crème) pour une lisibilité maximale (~14:1 de contraste).
+- ✅ **SEO Social** : Migration des balises OpenGraph vers l'URL GitHub Pages et ajout de l'image de preview.
+- ✅ **Performance** : Mise en place de `scripts/minify-css.ps1` (Minification CSS auto, réduction de 39 KB à 25 KB).
+
+### v2.4-PERF (16/02/2026)
 - ✅ **Performance Web** : `fetchpriority="high"` (Hero) et `loading="lazy"` (Below-the-fold) implémentés.
 - ✅ **SEO Technique** : Création de `robots.txt`, `sitemap.xml` et optimisation des balises `alt`.
 - ✅ **Mobile UX Fix** : Suppression du scroll horizontal parasite via verrouillage viewport (`touch-action`) et visibility overlay.
