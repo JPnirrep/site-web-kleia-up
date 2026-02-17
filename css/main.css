@@ -68,6 +68,8 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
+    padding-top: 130px;
+    /* Compensation pour le header fixed deskop */
 }
 
 h1,
@@ -171,9 +173,12 @@ a {
 
 /* --- HEADER & NAVIGATION --- */
 header {
-    position: sticky !important;
+    position: fixed !important;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 10000;
+    /* Priorité haute pour rester au dessus de tout */
     height: auto;
     min-height: 130px;
     padding: 15px 5%;
@@ -181,6 +186,8 @@ header {
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(88, 0, 23, 0.08);
+    box-shadow: 0 4px 20px rgba(88, 0, 23, 0.05);
+    /* Ombre légère pour détacher du contenu */
     display: flex;
     align-items: center;
 }
@@ -1942,6 +1949,11 @@ footer h2 {
 
     .lead-magnet-details {
         grid-template-columns: 1fr;
+    }
+
+    body {
+        padding-top: 90px;
+        /* Compensation mobile */
     }
 
     .newsletter-input {
