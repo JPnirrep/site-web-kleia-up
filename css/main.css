@@ -315,43 +315,12 @@ header {
     }
 
     .nav-links {
-        position: fixed !important;
-        /* Sort du flux du document */
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100vh;
-
-        /* LA CLEF : On le cache complètement quand il n'est pas actif */
-        transform: translateX(100%);
-        visibility: hidden;
-        /* Le navigateur l'ignore totalement */
-        transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
-
-        z-index: 9999;
-        background-color: var(--color-burgundy);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        margin: 0;
-        padding: 40px;
-        box-shadow: -10px 0 30px rgba(88, 0, 23, 0.1);
-    }
-
-    .nav-links.active {
-        transform: translateX(0);
-        visibility: visible;
-        /* On le rend visible uniquement maintenant */
+        display: none;
+        /* Cache les liens desktop par défaut, seront gérés dans le bloc 850px */
     }
 
     .nav-link {
         font-size: 1.2rem;
-    }
-
-    .nav-separator {
-        display: none;
     }
 
     .header-cta {
@@ -1841,25 +1810,34 @@ footer h2 {
     }
 
     .nav-links {
-        position: fixed;
+        position: fixed !important;
         top: 0;
-        right: -100%;
+        right: 0;
         width: 100%;
         height: 100vh;
         background: var(--bg-cream);
+        display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         gap: 40px;
-        padding: 20px;
-        display: flex;
+        padding: 40px;
+        z-index: 9999;
+        transform: translateX(100%);
+        visibility: hidden;
+        transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1), visibility 0.4s;
+        box-shadow: -10px 0 30px rgba(88, 0, 23, 0.1);
     }
 
     .nav-links.active {
-        right: 0;
+        transform: translateX(0);
+        visibility: visible;
     }
 
     .nav-link {
         font-size: 1.5rem;
+        color: var(--color-burgundy);
+        font-weight: 700;
     }
 
     .mobile-only-cta {
