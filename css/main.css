@@ -506,6 +506,8 @@ header {
     max-width: 140px;
     object-fit: contain;
     /* Removed filters for full color/opacity as requested */
+    filter: none !important;
+    opacity: 1 !important;
     transition: all 0.3s ease;
 }
 
