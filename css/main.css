@@ -479,7 +479,7 @@ header {
 /* --- PARTNER BANNER --- */
 .partners-banner {
     padding: 15px 0;
-    background: var(--bg-off-white);
+    background: var(--bg-cream);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     overflow: hidden;
     position: relative;
@@ -590,7 +590,7 @@ header {
     color: var(--color-burgundy);
     font-weight: 600;
     letter-spacing: 3px;
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     margin-bottom: 15px;
     text-transform: uppercase;
     opacity: 0.9;
