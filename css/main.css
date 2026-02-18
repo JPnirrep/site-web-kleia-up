@@ -2082,12 +2082,111 @@ footer h2 {
 }
 
 /* Desktop Grid */
+/* Desktop Grid - Forced 3 columns */
 @media (min-width: 992px) {
     .piliers-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
         gap: 2rem;
         align-items: stretch;
-        /* Stretch cards to equal height */
+    }
+}
+
+/* --- ENTERPRISE SECTION UPDATES --- */
+
+.benefit-text {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed rgba(88, 0, 23, 0.1);
+    font-weight: 600;
+    color: var(--color-burgundy);
+    font-size: 0.9rem;
+}
+
+.conference-secondary-card {
+    margin-top: 50px;
+    padding: 40px;
+    background: rgba(88, 0, 23, 0.02);
+    border: 1px solid rgba(88, 0, 23, 0.08);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.conference-secondary-card:hover {
+    background: rgba(88, 0, 23, 0.04);
+    box-shadow: var(--shadow-soft);
+}
+
+.conference-secondary-card h3 {
+    color: var(--color-burgundy);
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.conference-secondary-card p {
+    font-size: 1.1rem;
+    max-width: 800px;
+}
+
+.transition-hook {
+    text-align: center;
+    margin: 80px 0 40px;
+}
+
+.transition-hook .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.transition-hook .section-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.center-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* --- PARTNERS LOGO TRACK --- */
+.partners-logo-track {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    /* Espacement généreux pour laisser respirer */
+    padding: 3rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.partners-logo-track img {
+    max-height: 60px;
+    /* Uniformise la hauteur visuelle */
+    width: auto;
+    object-fit: contain;
+    filter: none !important;
+    /* Maximise l'impact visuel et preuve sociale */
+    opacity: 1 !important;
+    transition: transform 0.3s ease;
+}
+
+.partners-logo-track img:hover {
+    transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+    .partners-logo-track {
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+
+    .partners-logo-track img {
+        max-height: 45px;
     }
 }

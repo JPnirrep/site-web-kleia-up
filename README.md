@@ -3,7 +3,7 @@
 ## 🔒 VERSION STABLE - SITE STATIQUE HAUTE PERFORMANCE
 
 ![Status](https://img.shields.io/badge/status-PRODUCTION-success)
-![Version](https://img.shields.io/badge/version-v2.5--SEO--PERF-blue)
+![Version](https://img.shields.io/badge/version-v2.6--CORP--REBRAND-blue)
 ![Architecture](https://img.shields.io/badge/architecture-VANILLA%20HTML%2FCSS-green)
 
 ---
@@ -191,10 +191,12 @@ git push
 
 ## 📝 HISTORIQUE DES VERSIONS
 
-### v2.5-SEO-PERF (17/02/2026) - DERNIÈRE MISE À JOUR
-- ✅ **Audit WCAG** : Harmonisation du menu mobile (Bourgogne sur Crème) pour une lisibilité maximale (~14:1 de contraste).
-- ✅ **SEO Social** : Migration des balises OpenGraph vers l'URL GitHub Pages et ajout de l'image de preview.
-- ✅ **Performance** : Mise en place de `scripts/minify-css.ps1` (Minification CSS auto, réduction de 39 KB à 25 KB).
+### v2.6-CORP-REBRAND (18/02/2026) - DERNIÈRE MISE À JOUR
+- ✅ **Refonte Entreprises** : Nouveau positionnement stratégique QVT/RSE et contenu optimisé.
+- ✅ **Bandeau Logos Premium** : Intégration de 7 logos partenaires avec optimisation performance (CLS 0, Lazy loading) et respect des couleurs d'origine.
+- ✅ **Layout Grid** : Fixation du layout 3-colonnes immuable sur desktop pour les piliers d'engagement.
+
+### v2.5-SEO-PERF (17/02/2026)
 
 ### v2.4-PERF (16/02/2026)
 - ✅ **Performance Web** : `fetchpriority="high"` (Hero) et `loading="lazy"` (Below-the-fold) implémentés.
