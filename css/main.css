@@ -1593,11 +1593,49 @@ header {
     margin-bottom: 30px;
 }
 
-.offer-price-premium {
-    font-size: 2rem;
-    color: #580017;
+/* --- PRICING CARD PREMIUM --- */
+.pricing-card-premium {
+    background: linear-gradient(145deg, #ffffff 0%, #FAF9F6 100%);
+    border: 1px solid rgba(88, 0, 23, 0.1);
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 40px;
+    box-shadow: var(--shadow-soft);
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pricing-card-premium h4 {
+    color: var(--color-burgundy);
+    font-size: 1.4rem;
+    font-family: var(--font-body);
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--color-burgundy);
+    display: inline-block;
+}
+
+.pricing-card-premium ul {
+    list-style: none;
+    padding: 0;
+}
+
+.pricing-card-premium li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    color: var(--color-text);
+}
+
+.pricing-card-premium li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-burgundy);
+    font-weight: 700;
 }
 
 /* --- FOOTER & LEAD MAGNET --- */
@@ -2222,6 +2260,7 @@ footer h2 {
         transform: translateX(-100%);
     }
 }
+
 /* FIX CTA BUTTON - FOND TRANSPARENT ET UNE SEULE LIGNE */
 .cta-decision-zone {
     background: transparent !important;
@@ -2229,10 +2268,11 @@ footer h2 {
     box-shadow: none !important;
     border: none !important;
 }
+
 .cta-decision-zone .hero-cta {
-white-space: nowrap !important;
-width: auto !important;
-display: inline-block !important;
-padding: 15px 40px !important;
-text-align: center;
+    white-space: nowrap !important;
+    width: auto !important;
+    display: inline-block !important;
+    padding: 15px 40px !important;
+    text-align: center;
 }
