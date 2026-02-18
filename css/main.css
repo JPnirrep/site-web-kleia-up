@@ -1,4 +1,4 @@
-/* RESET OBLIGATOIRE - À METTRE TOUT EN HAUT DU CSS */
+﻿/* RESET OBLIGATOIRE - À METTRE TOUT EN HAUT DU CSS */
 *,
 *::before,
 *::after {
@@ -2152,69 +2152,55 @@ footer h2 {
     margin-top: 40px;
 }
 
-/* --- LOGO INFINITE MARQUEE --- */
 
-/* Conteneur principal qui masque ce qui déborde */
+/* --- LOGO INFINITE MARQUEE (BLINDÉ) --- */
+
+/* Conteneur principal - Forçage Horizontal Absolu */
 .logo-marquee-wrapper {
-    display: flex;
+    display: flex !important;
+    flex-direction: row !important; /* Empêche le passage en colonne */
+    flex-wrap: nowrap !important;   /* Interdit le retour à la ligne */
     overflow: hidden;
     user-select: none;
-    gap: 4rem;
-    /* Espace entre le groupe 1 et le groupe 2 */
-    padding: 3rem 0;
     width: 100%;
+    padding: 3rem 0;
+    position: relative;
 }
 
-/* La piste qui défile */
+/* La piste qui défile - Forçage Horizontal */
 .logo-marquee-content {
-    flex-shrink: 0;
-    display: flex;
+    display: flex !important;
+    flex-direction: row !important; /* Empêche le passage en colonne */
+    flex-wrap: nowrap !important;
     align-items: center;
     justify-content: space-around;
-    gap: 4rem;
-    /* Espace entre chaque logo */
+    flex-shrink: 0;
     min-width: 100%;
-    animation: scroll-marquee 30s linear infinite;
+    gap: 4rem;
+    padding-right: 4rem; /* Compense le gap pour une boucle 100% invisible */
+    animation: scroll-marquee 25s linear infinite;
 }
 
-/* Mettre l'animation en pause au survol (Bonus UX Premium) */
+/* Pause au survol */
 .logo-marquee-wrapper:hover .logo-marquee-content {
     animation-play-state: paused;
 }
 
-/* Harmonisation stricte des logos */
+/* Harmonisation des logos */
 .logo-marquee-content img {
-    max-height: 45px;
-    /* Hauteur maximale fixe pour tous */
-    width: auto;
+    max-height: 45px !important;
+    width: auto !important;
     object-fit: contain;
+    display: block; /* Empêche les marges fantômes inline */
     filter: none;
-    /* S'assurer qu'ils sont bien en couleur */
 }
 
-/* L'animation mathématique parfaite */
+/* L'animation simplifiée et parfaite */
 @keyframes scroll-marquee {
     from {
         transform: translateX(0);
     }
-
     to {
-        /* On recule de 100% (la largeur d'un groupe) + l'espace du gap */
-        transform: translateX(calc(-100% - 4rem));
-    }
-}
-
-@media (max-width: 768px) {
-    .logo-marquee-wrapper {
-        gap: 2rem;
-        padding: 2rem 0;
-    }
-
-    .logo-marquee-content {
-        gap: 2rem;
-    }
-
-    .logo-marquee-content img {
-        max-height: 35px;
+        transform: translateX(-100%);
     }
 }
