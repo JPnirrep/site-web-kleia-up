@@ -2173,10 +2173,8 @@ footer h2 {
 
     /* RÉDUCTION DE L'ESPACE VERTICAL (Plus élégant) */
     padding: 1.5rem 0 !important;
-    background-color: #fafafa;
+    background-color: transparent !important;
     position: relative;
-    border-top: 1px solid rgba(88, 0, 23, 0.05);
-    border-bottom: 1px solid rgba(88, 0, 23, 0.05);
 }
 
 /* La piste qui défile - Forçage Horizontal */
