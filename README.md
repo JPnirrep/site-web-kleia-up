@@ -193,8 +193,10 @@ git push
 
 ### v2.6-CORP-REBRAND (18/02/2026) - DERNIÈRE MISE À JOUR
 - ✅ **Refonte Entreprises** : Nouveau positionnement stratégique QVT/RSE et contenu optimisé.
-- ✅ **Bandeau Logos Premium** : Intégration de 7 logos partenaires avec optimisation performance (CLS 0, Lazy loading) et respect des couleurs d'origine.
-- ✅ **Layout Grid** : Fixation du layout 3-colonnes immuable sur desktop pour les piliers d'engagement.
+- ✅ **Bandeau Logos Premium** : Intégration de 7 logos partenaires avec défilement "Infinite Marquee".
+- ✅ **Design Edge-to-Edge** : Rendu pleine largeur via technique de breakout (`calc(-50vw + 50%)`) pour un look ultra-moderne.
+- ✅ **Intégration Invisible** : Harmonisation parfaite du fond (`bg-cream`) et silhouette affinée (`1.5rem` padding).
+- ✅ **Optimisation Performance** : Zéro JS, minification CSS, et chargement différé (lazy loading).
 
 ### v2.5-SEO-PERF (17/02/2026)
 
