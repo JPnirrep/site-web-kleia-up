@@ -196,6 +196,8 @@ git push
 - ✅ **Bandeau Logos Premium** : Intégration de 7 logos partenaires avec défilement "Infinite Marquee".
 - ✅ **Design Edge-to-Edge** : Rendu pleine largeur via technique de breakout (`calc(-50vw + 50%)`) pour un look ultra-moderne.
 - ✅ **Intégration Invisible** : Harmonisation parfaite du fond (`bg-cream`) et silhouette affinée (`1.5rem` padding).
+- ✅ **Offre B2B Clarifiée** : Tarification intégrée (1782 €) et suppression de la mention HT pour clarté maximale.
+- ✅ **UX/UI Gaming** : Correction typographique des titres (Casse mixte) pour plus de lisibilité.
 - ✅ **Optimisation Performance** : Zéro JS, minification CSS, et chargement différé (lazy loading).
 
 ### v2.5-SEO-PERF (17/02/2026)
