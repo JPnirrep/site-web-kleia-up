@@ -76,7 +76,10 @@ site-web-kleia-up/
 - Pas de serveur backend requis
 - Build GitHub Pages : ~45 secondes après push
 
-## ✅ À faire (Prochaine Session)
-- [ ] **Audit WCAG** : Vérifier les contrastes du nouveau menu (Bourgogne sur Crème) pour l'accessibilité.
-- [ ] **Previews Sociaux** : Optimiser les balises OpenGraph (OG:Image) pour garantir une belle apparence lors du partage sur LinkedIn/Instagram.
-- [ ] **Minification CSS** : Étudier l'ajout d'un script de minification pour `main.css`.
+## ✅ Historique (Session v2.5-SEO-PERF)
+- [x] **Audit WCAG** : Vérifier les contrastes du nouveau menu (Bourgogne sur Crème) pour l'accessibilité.
+- [x] **Previews Sociaux** : Optimiser les balises OpenGraph (OG:Image) pour garantir une belle apparence lors du partage sur LinkedIn/Instagram.
+- [x] **Minification CSS** : Étudier l'ajout d'un script de minification pour `main.css`.
+
+## ⏩ À faire (Prochaine Session)
+- [ ] *Définir les objectifs de la prochaine session*
