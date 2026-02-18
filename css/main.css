@@ -2222,3 +2222,17 @@ footer h2 {
         transform: translateX(-100%);
     }
 }
+/* FIX CTA BUTTON - FOND TRANSPARENT ET UNE SEULE LIGNE */
+.cta-decision-zone {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+.cta-decision-zone .hero-cta {
+white-space: nowrap !important;
+width: auto !important;
+display: inline-block !important;
+padding: 15px 40px !important;
+text-align: center;
+}
