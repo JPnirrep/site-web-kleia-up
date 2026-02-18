@@ -2173,7 +2173,7 @@ footer h2 {
 
     /* RÉDUCTION DE L'ESPACE VERTICAL (Plus élégant) */
     padding: 1.5rem 0 !important;
-    background-color: transparent !important;
+    background-color: var(--bg-cream) !important;
     position: relative;
 }
 
