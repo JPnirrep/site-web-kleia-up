@@ -3,7 +3,7 @@
 ## 🔒 VERSION STABLE - SITE STATIQUE HAUTE PERFORMANCE
 
 ![Status](https://img.shields.io/badge/status-PRODUCTION-success)
-![Version](https://img.shields.io/badge/version-v2.6--CORP--REBRAND-blue)
+![Version](https://img.shields.io/badge/version-v2.7--CORP--RANADE-blue)
 ![Architecture](https://img.shields.io/badge/architecture-VANILLA%20HTML%2FCSS-green)
 
 ---
@@ -42,15 +42,17 @@ site-web-kleia-up/
 - **HTML5** : Structure sémantique
 - **CSS3** : Styles et animations natives
 - **JavaScript Vanilla** : Interactions minimales (inline)
-- **Google Fonts** : Forum + Montserrat + Syne
+- **Google Fonts** : Syne (Accents)
+- **Fontshare** : Ranade (Titres & Corps)
 
 ---
 
 ## 🎨 RÈGLES TYPOGRAPHIQUES (GRAVÉES DANS LE MARBRE)
 
 ### 1. POLICES (FONTS)
-*   **Titres (Hn)** : `Forum` (Serif).
-*   **Interface / Corps** : `Montserrat` (Sans-serif).
+*   **Titres (Hn)** : `Ranade` (Sans-serif Moderne).
+*   **Interface / Corps** : `Ranade` (Sans-serif Moderne).
+*   **Accents** : `Syne`.
 
 ### 2. HIÉRARCHIE VISUELLE (TITRES)
 *   **H1 (Hero)** : Casse phrase obligatoire (sauf exception purement éditoriale type slogan).
@@ -79,14 +81,14 @@ site-web-kleia-up/
 2. **NE JAMAIS** migrer vers React ou tout autre framework
 3. **NE JAMAIS** ajouter de dépendances npm
 4. **NE JAMAIS** supprimer les animations CSS natives
-5. **NE JAMAIS** modifier la palette de couleurs burgundy (#580017)
+5. **NE JAMAIS** modifier la palette de couleurs burgundy (#8B1D3D) sans directive stratégique.
 6. **NE JAMAIS** toucher au fichier `index.html` sans backup préalable
 7. **NE JAMAIS** utiliser d'IA pour "améliorer" le design
 
 ### ✅ CE QUI FONCTIONNE PARFAITEMENT
 
 - ✨ **Animations CSS natives** : morph, waves, hover effects
-- 🎨 **Design burgundy premium** : #580017, #D70040, #FAF9F6
+- 🎨 **Design burgundy premium** : #8B1D3D, #D70040, #FAF9F6
 - 📱 **Responsive design** : mobile, tablet, desktop
 - 🚀 **Performance** : chargement ultra-rapide, zéro dépendance
 - 🎯 **SEO** : balises meta complètes, schema.org
