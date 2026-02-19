@@ -43,7 +43,7 @@ svg {
     --color-burgundy: #580017;
     --color-accent-red: #D70040;
     --color-text: #1A1A1A;
-    --font-title: 'Forum', cursive;
+    --font-title: 'Montserrat', system-ui, -apple-system, sans-serif;
     --font-body: 'Montserrat', sans-serif;
     --font-syne: 'Syne', sans-serif;
     --shadow-soft: 0 10px 30px rgba(88, 0, 23, 0.08);
@@ -2303,29 +2303,60 @@ footer h2 {
     color: #5d6d7e;
     font-style: italic;
 }
+
 /* --- MANIFESTO SECTION (BORDEAUX CARTRIDGE) --- */
 .manifesto-section {
-    background-color: #8B1D3D !important; /* Bordeaux CTA */
+    background-color: #8B1D3D !important;
+    /* Bordeaux CTA */
     color: #ffffff !important;
     padding: 5rem 2rem;
     text-align: center;
     margin: 4rem auto;
-    border-radius: 8px; /* Optional: adds to the 'cartridge' feel if inside container */
+    border-radius: 8px;
+    /* Optional: adds to the 'cartridge' feel if inside container */
     box-shadow: 0 10px 30px rgba(139, 29, 61, 0.2);
 }
 
-.manifesto-section h2 { 
-    font-size: 3rem !important; 
-    margin-bottom: 2rem !important; 
+.manifesto-section h2 {
+    font-size: 3rem !important;
+    margin-bottom: 2rem !important;
     color: #ffffff !important;
-    font-family: 'Forum', cursive;
+    font-family: var(--font-body);
 }
 
-.manifesto-section p { 
-    max-width: 800px; 
-    margin: 0 auto; 
-    font-size: 1.3rem !important; 
-    line-height: 1.8 !important; 
+/* === TYPOGRAPHY MODERNIZATION - ZERO SERIF === */
+
+/* Keynote Format Header */
+.format-keynote-header {
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    font-weight: 800 !important;
+    color: #8B1D3D !important;
+    font-family: var(--font-body) !important;
+}
+
+/* Massive Price Styling */
+.price-massive {
+    font-weight: 900 !important;
+    font-size: 1.2em;
+    /* Relative boost to current header size */
+    display: inline-block;
+}
+
+/* "POUR ALLER PLUS LOIN" Declaration */
+.title-declaration {
+    font-size: 2.5rem !important;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: var(--font-body) !important;
+}
+
+.manifesto-section p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.3rem !important;
+    line-height: 1.8 !important;
     color: rgba(255, 255, 255, 0.9) !important;
 }
 
