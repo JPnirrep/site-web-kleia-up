@@ -40,7 +40,7 @@ svg {
 :root {
     --bg-cream: #FAF9F6;
     --bg-off-white: #FFFFFF;
-    --color-burgundy: #580017;
+    --color-burgundy: #8B1D3D;
     --color-accent-red: #D70040;
     --color-text: #1A1A1A;
     --font-title: 'Ranade', system-ui, -apple-system, sans-serif;
@@ -1432,6 +1432,7 @@ header {
 
 .section-title {
     font-size: 3rem;
+    color: var(--color-burgundy);
 }
 
 .section-subtitle {
@@ -2313,15 +2314,51 @@ footer h2 {
     text-align: center;
     margin: 4rem auto;
     border-radius: 8px;
-    /* Optional: adds to the 'cartridge' feel if inside container */
     box-shadow: 0 10px 30px rgba(139, 29, 61, 0.2);
+    font-family: var(--font-body);
 }
 
-.manifesto-section h2 {
-    font-size: 3rem !important;
-    margin-bottom: 2rem !important;
+.manifesto-cartouche h2 {
+    font-size: 2.5rem !important;
     color: #ffffff !important;
-    font-family: var(--font-body);
+    margin: 0;
+    text-transform: none;
+    font-weight: 700;
+}
+
+/* CTA Thematiqe Button Styling */
+.cta-thematique {
+    background-color: var(--color-burgundy) !important;
+    color: white !important;
+    border: none !important;
+    padding: 14px 28px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    font-family: var(--font-body) !important;
+}
+
+.cta-thematique:hover {
+    background-color: #a32248 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 29, 61, 0.3);
+}
+
+.manifesto-section p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.3rem !important;
+    line-height: 1.8 !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.manifesto-section strong {
+    color: #ffffff !important;
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 /* === TYPOGRAPHY MODERNIZATION - ZERO SERIF === */
@@ -2350,12 +2387,6 @@ footer h2 {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-family: var(--font-body) !important;
-}
-
-.manifesto-section p {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.3rem !important;
     line-height: 1.8 !important;
     color: rgba(255, 255, 255, 0.9) !important;
 }
