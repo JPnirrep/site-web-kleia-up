@@ -2303,3 +2303,34 @@ footer h2 {
     color: #5d6d7e;
     font-style: italic;
 }
+/* --- MANIFESTO SECTION (BORDEAUX CARTRIDGE) --- */
+.manifesto-section {
+    background-color: #8B1D3D !important; /* Bordeaux CTA */
+    color: #ffffff !important;
+    padding: 5rem 2rem;
+    text-align: center;
+    margin: 4rem auto;
+    border-radius: 8px; /* Optional: adds to the 'cartridge' feel if inside container */
+    box-shadow: 0 10px 30px rgba(139, 29, 61, 0.2);
+}
+
+.manifesto-section h2 { 
+    font-size: 3rem !important; 
+    margin-bottom: 2rem !important; 
+    color: #ffffff !important;
+    font-family: 'Forum', cursive;
+}
+
+.manifesto-section p { 
+    max-width: 800px; 
+    margin: 0 auto; 
+    font-size: 1.3rem !important; 
+    line-height: 1.8 !important; 
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.manifesto-section strong {
+    color: #ffffff !important;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
