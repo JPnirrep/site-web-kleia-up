@@ -43,8 +43,8 @@ svg {
     --color-burgundy: #580017;
     --color-accent-red: #D70040;
     --color-text: #1A1A1A;
-    --font-title: 'Poppins', system-ui, -apple-system, sans-serif;
-    --font-body: 'Poppins', sans-serif;
+    --font-title: 'Ranade', system-ui, -apple-system, sans-serif;
+    --font-body: 'Ranade', sans-serif;
     --font-syne: 'Syne', sans-serif;
     --shadow-soft: 0 10px 30px rgba(88, 0, 23, 0.08);
     --shadow-hover: 0 15px 40px rgba(88, 0, 23, 0.15);
