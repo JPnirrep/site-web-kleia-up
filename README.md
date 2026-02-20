@@ -193,8 +193,14 @@ git push
 
 ## 📝 HISTORIQUE DES VERSIONS
 
-### v2.6-CORP-REBRAND (18/02/2026) - DERNIÈRE MISE À JOUR
-- ✅ **Refonte Entreprises** : Nouveau positionnement stratégique QVT/RSE et contenu optimisé.
+### v2.7-CORP-RANADE (20/02/2026) - DERNIÈRE MISE À JOUR
+- ✅ **Optimisation "Gold Shine"** : Application d'un dégradé métallique (`#B8860B`, `#F9E498`, `#D4AF37`) sur les éléments Signature et le titre du Manifeste.
+- ✅ **Le Souffle du Hero** : Ajustement sémantique et typographique du paragraphe d'introduction pour plus de respiration.
+- ✅ **Manifeste "Staccato"** : Réécriture du texte avec un rythme saccadé pour maximiser l'impact cognitif.
+- ✅ **Précision HPS** : Ajustement sémantique inclusif et validation de l'approche ("également besoin de sentinelles").
+- ✅ **CI/CD** : Correction de l'id manquante dans `deploy.yml` pour la récupération correcte de l'URL.
+
+### v2.6-CORP-REBRAND (18/02/2026)
 - ✅ **Bandeau Logos Premium** : Intégration de 7 logos partenaires avec défilement "Infinite Marquee".
 - ✅ **Design Edge-to-Edge** : Rendu pleine largeur via technique de breakout (`calc(-50vw + 50%)`) pour un look ultra-moderne.
 - ✅ **Intégration Invisible** : Harmonisation parfaite du fond (`bg-cream`) et silhouette affinée (`1.5rem` padding).
