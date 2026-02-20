@@ -8,7 +8,10 @@ Site web statique pour KLEIA-UP, hébergé sur GitHub Pages.
 ## Règles d'automatisation
 
 ### Vérification visuelle (Push + Preview)
+**NOUVELLE CONSIGNE GLOBALE** : À chaque fois que je fais une itération ou que je modifie le code, tu dois **OBLIGATOIREMENT** rafraîchir la page (lancer le workflow `/check-site`) pour que je puisse vérifier dans Chrome.
+
 Quand je demande de :
+- faire une itération, modifier le site
 - "pousser les modifications sur GitHub"
 - "vérifier visuellement le site"
 - "voir le résultat sur le site"
