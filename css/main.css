@@ -2396,3 +2396,54 @@ footer h2 {
     text-decoration: underline;
     text-underline-offset: 4px;
 }
+
+/* --- CENTER HERO EFFECT - CONFERENCE SIGNATURE --- */
+.card-signature {
+    transform: scale(1.05);
+    border: 2px solid #D4AF37 !important;
+    border-top: 4px solid #D4AF37 !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 15px 40px rgba(88, 0, 23, 0.15);
+    z-index: 2;
+    background-color: #FFFFFF;
+}
+
+.card-signature:hover {
+    transform: scale(1.07);
+}
+
+.badge-signature {
+    background-color: #D4AF37;
+    color: #8B1D3D;
+    font-family: 'Ranade', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 6px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.cta-signature {
+    background-color: #D4AF37 !important;
+    color: #8B1D3D !important;
+    font-weight: 800 !important;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3) !important;
+}
+
+.cta-signature:hover {
+    background-color: #B8860B !important;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .card-signature {
+        transform: scale(1);
+        margin: 20px 0;
+    }
+
+    .card-signature:hover {
+        transform: scale(1.02);
+    }
+}
