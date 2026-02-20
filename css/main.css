@@ -2318,6 +2318,17 @@ footer h2 {
     font-family: var(--font-body);
 }
 
+.manifesto-section h2 {
+    margin-bottom: 2.5rem;
+    font-family: 'Ranade', sans-serif;
+    font-weight: 800;
+    font-size: 2.3rem;
+    background: linear-gradient(135deg, #B8860B 0%, #F9E498 50%, #D4AF37 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
 .manifesto-cartouche h2 {
     font-size: 2.5rem !important;
     color: #ffffff !important;
