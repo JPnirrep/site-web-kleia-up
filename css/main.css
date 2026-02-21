@@ -2398,6 +2398,9 @@ footer h2 {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    text-align: center;
+    margin-top: 80px;
+    line-height: 1.2;
 }
 
 .manifesto-cartouche h2 {
