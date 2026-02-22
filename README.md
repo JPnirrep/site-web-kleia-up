@@ -193,7 +193,12 @@ git push
 
 ## 📝 HISTORIQUE DES VERSIONS
 
-### v2.7-CORP-RANADE (20/02/2026) - DERNIÈRE MISE À JOUR
+### v2.8-ATELIERS-REBRAND (22/02/2026) - DERNIÈRE MISE À JOUR
+- ✅ **Mutation Visuelle** : Refonte premium des cartes "Ateliers" avec icônes SVG OR brossé, asymétrie organique temporelle, et élévation au survol.
+- ✅ **CTA Stratégique** : Création du bouton "CONCRÉTISONS VOTRE ÉLAN", design "pill" bordeaux avec balayage lumineux doré (animation CSS) relié directement à Calendly.
+- ✅ **Lisibilité & Logistique** : Ajustement des espacements (margin-bottom, padding, line-height 1.3), injection élégante des durées des interventions et forçage visuel bordeaux ultra spécifique de la section transition.
+
+### v2.7-CORP-RANADE (20/02/2026)
 - ✅ **Optimisation "Gold Shine"** : Application d'un dégradé métallique (`#B8860B`, `#F9E498`, `#D4AF37`) sur les éléments Signature et le titre du Manifeste.
 - ✅ **Le Souffle du Hero** : Ajustement sémantique et typographique du paragraphe d'introduction pour plus de respiration.
 - ✅ **Manifeste "Staccato"** : Réécriture du texte avec un rythme saccadé pour maximiser l'impact cognitif.
