@@ -350,13 +350,29 @@
             <section id="ateliers" class="section-padding white-bg">
                 <div class="container">
 
+                    <!-- SVG Definitions for Gold Shine -->
+                    <svg width="0" height="0" style="display: block; position: absolute;">
+                        <defs>
+                            <linearGradient id="gold-shine" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#B8860B" />
+                                <stop offset="50%" stop-color="#F9E498" />
+                                <stop offset="100%" stop-color="#D4AF37" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
 
                     <div class="grid-layout">
                         <!-- Format Court -->
-                        <article class="card-item">
-                            <span class="icon">⚡</span>
-                            <h3>Format Court (Ateliers Collaboratifs & Sensibilisation)</h3>
-                            <p class="offer-subtitle">Outils : Tables rondes, Cafés échanges, Rigologie, World Café.</p>
+                        <article class="atelier-card">
+                            <svg viewBox="0 0 24 24" class="atelier-icon" aria-hidden="true">
+                                <path fill="url(#gold-shine)"
+                                    d="M12 2L14 9L21 9L15 13.5L17 21L12 16.5L7 21L9 13.5L3 9L10 9L12 2Z" />
+                            </svg>
+                            <h3
+                                style="color: var(--color-burgundy); font-weight: 800; font-family: 'Ranade', sans-serif;">
+                                Format Court (Ateliers Collaboratifs & Sensibilisation)</h3>
+                            <p class="offer-subtitle" style="font-weight: 500;">Outils : Tables rondes, Cafés échanges,
+                                Rigologie, World Café.</p>
                             <p><strong>Thème :</strong> Communiquer positivement et réveiller la joie de vivre.</p>
                             <p class="benefit-text">👉 Renforce le lien social immédiatement, brise la glace et infuse
                                 une
@@ -364,10 +380,16 @@
                         </article>
 
                         <!-- Format Approfondi -->
-                        <article class="card-item">
-                            <span class="icon">🛠️</span>
-                            <h3>Format Approfondi (Immersion & Transformation)</h3>
-                            <p class="offer-subtitle">Outils : Serious Games, Ateliers de cohésion poussés, Mises en
+                        <article class="atelier-card">
+                            <svg viewBox="0 0 24 24" class="atelier-icon" aria-hidden="true">
+                                <path fill="url(#gold-shine)"
+                                    d="M19 3H5L2 9L12 22L22 9L19 3ZM6.5 9L12 18.5L17.5 9H6.5Z" />
+                            </svg>
+                            <h3
+                                style="color: var(--color-burgundy); font-weight: 800; font-family: 'Ranade', sans-serif;">
+                                Format Approfondi (Immersion & Transformation)</h3>
+                            <p class="offer-subtitle" style="font-weight: 500;">Outils : Serious Games, Ateliers de
+                                cohésion poussés, Mises en
                                 situation.</p>
                             <p><strong>Thème :</strong> Ancrer les pratiques QVT et aligner les équipes.</p>
                             <p class="benefit-text">👉 Dénoue les blocages profonds, crée un langage commun solide et
@@ -375,8 +397,9 @@
                         </article>
                     </div>
 
-                    <div class="center-cta">
-                        <a href="#contact" class="btn btn-premium">DEMANDER LE CATALOGUE ATELIERS</a>
+                    <div class="center-cta" style="margin-top: 50px;">
+                        <a href="https://calendly.com/sandrina-perrin" target="_blank"
+                            class="btn-atelier-immersion">CONCRÉTISONS VOTRE ÉLAN</a>
                     </div>
                 </div>
             </section>
