@@ -2666,6 +2666,18 @@ footer h2 {
     text-align: center;
 }
 
+.btn-social-outline {
+    background-color: transparent !important;
+    border: 2px solid #8B1D3D !important;
+    color: #8B1D3D !important;
+    transition: all 0.3s ease;
+}
+
+.btn-social-outline:hover {
+    background-color: #8B1D3D !important;
+    color: #FFFFFF !important;
+}
+
 .shine-effect {
     position: relative;
     overflow: hidden;
