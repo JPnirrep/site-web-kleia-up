@@ -718,7 +718,8 @@ header {
     }
 }
 
-.hero-section-corp .hero-image {
+.hero-section-corp .hero-image,
+.hero-section .hero-image {
     /* Maintien de la taille d'origine */
     width: 100%;
     height: auto;
