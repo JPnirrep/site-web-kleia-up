@@ -465,15 +465,15 @@
             <form id="reach-form" class="reach-form" onsubmit="handleReachSubmit(event)">
                 <div class="form-group">
                     <label for="reach-prenom">Prénom</label>
-                    <input type="text" id="reach-prenom" name="prenom" required>
+                    <input type="text" id="reach-prenom" name="prenom" required autocomplete="given-name">
                 </div>
                 <div class="form-group">
                     <label for="reach-nom">Nom</label>
-                    <input type="text" id="reach-nom" name="nom" required>
+                    <input type="text" id="reach-nom" name="nom" required autocomplete="family-name">
                 </div>
                 <div class="form-group">
                     <label for="reach-email">Email</label>
-                    <input type="email" id="reach-email" name="email" required>
+                    <input type="email" id="reach-email" name="email" required autocomplete="email">
                 </div>
                 <button type="submit" class="btn btn-primary pill-shape shine-effect"
                     style="width: 100%; font-family: 'Ranade', sans-serif; font-weight: 700; background-color: #8B1D3D; color: white; margin-top: 20px;">VALIDER</button>
@@ -482,6 +482,14 @@
     </div>
 
     <script>
+        // Capture les données de navigation si présentes (ex: ?email=jean@truc.com&nom=Dupont)
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('email')) document.getElementById('reach-email').value = urlParams.get('email');
+            if (urlParams.has('prenom')) document.getElementById('reach-prenom').value = urlParams.get('prenom');
+            if (urlParams.has('nom')) document.getElementById('reach-nom').value = urlParams.get('nom');
+        });
+
         function openModal(e) {
             e.preventDefault();
             document.getElementById('modal-contact').classList.add('active');
