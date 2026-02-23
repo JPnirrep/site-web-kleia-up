@@ -85,3 +85,6 @@ site-web-kleia-up/
 - [x] **Optimisation CSS** : Layout grid immuable et externalisation totale des styles.
 
 ## ✅ Historique (Session v2.5-SEO-PERF)
+
+## 🎯 TODO PROCHAINE SESSION
+- [ ] **Formulaire Hostinger Reach** : Finaliser l'intégration et la stratégie d'envoi du formulaire modal (`#modal-contact` dans `entreprises.html`) vers Hostinger (gestion de la validation de saisie, traitement des données reçues).
