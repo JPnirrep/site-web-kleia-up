@@ -32,6 +32,11 @@
     <!-- Preload/Prefetch for instant navigation -->
     <link rel="prefetch" href="index.html">
     <link rel="prerender" href="index.html">
+
+    <!-- Anti-Cache stricte -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
 </head>
 
 <body>
@@ -55,9 +60,9 @@
                     <li><a href="#conference" class="nav-link">LA CONFÉRENCE</a></li>
                     <li><a href="#ateliers" class="nav-link">LES ATELIERS</a></li>
 
-                    <!-- Bridge to Individual (Masqué temporairement) -->
-                    <li class="nav-separator" aria-hidden="true" style="display: none;">|</li>
-                    <li style="display: none;"><a href="index.html" class="nav-link-subtle">ESPACE PARTICULIERS</a></li>
+                    <!-- Bridge to Individual (Condamné) -->
+                    <!-- <li class="nav-separator" aria-hidden="true" style="display: none;">|</li>
+                    <li style="display: none;"><a href="index.html" class="nav-link-subtle">ESPACE PARTICULIERS</a></li> -->
                 </ul>
             </nav>
 
@@ -467,9 +472,9 @@
 
                     <div class="copyright"
                         style="margin-top: 80px; font-size: 0.8rem; opacity: 0.5; text-align: center;">
-                        © KLEIA-UP 2026 - <a href="index.html"
+                        © KLEIA-UP 2026 <!-- - <a href="index.html"
                             style="color: inherit; text-decoration: underline; display: none;">Retour au
-                            site Particuliers</a>
+                            site Particuliers</a> -->
                     </div>
                 </div>
             </footer>
