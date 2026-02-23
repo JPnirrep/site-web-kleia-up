@@ -62,7 +62,9 @@
             </nav>
 
             <div class="header-cta">
-                <a href="#contact" class="btn btn-primary">DEMANDER UN DEVIS</a>
+                <a href="#modal-contact" class="btn btn-primary shine-effect pill-shape" onclick="openModal(event)"
+                    style="font-family: 'Ranade', sans-serif; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; color: white; background-color: #8B1D3D;">DÉCLENCHONS
+                    NOTRE ÉCHANGE</a>
             </div>
         </div>
     </header>
@@ -86,11 +88,10 @@
                             sens. »
                         </p>
                         <div class="cta-decision-zone" style="margin-top: 40px !important;">
-                            <a href="https://www.linkedin.com/in/sandrina-perrin-conference-formation/" target="_blank"
-                                rel="noopener noreferrer" class="btn btn-premium hero-cta"
-                                style="font-family: 'Ranade', sans-serif; text-transform: uppercase; letter-spacing: 1px; font-weight: 500;">MA
-                                DÉMARCHE &
-                                MON ENGAGEMENT</a>
+                            <a href="#modal-contact" class="btn btn-premium hero-cta cta-reach shine-effect pill-shape"
+                                onclick="openModal(event)"
+                                style="font-family: 'Ranade', sans-serif; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; color: white; background-color: #8B1D3D;">DÉCLENCHONS
+                                NOTRE ÉCHANGE</a>
                         </div>
                     </div>
                     <div class="hero-image-wrapper">
@@ -406,8 +407,10 @@
                     </div>
 
                     <div class="center-cta" style="margin-top: 50px;">
-                        <a href="https://calendly.com/sandrina-perrin" target="_blank"
-                            class="btn-atelier-immersion">CONCRÉTISONS VOTRE ÉLAN</a>
+                        <a href="#modal-contact" class="btn-atelier-immersion cta-reach shine-effect pill-shape"
+                            onclick="openModal(event)"
+                            style="font-family: 'Ranade', sans-serif; font-weight: 700; color: white; background-color: #8B1D3D;">CONCRÉTIONS
+                            VOTRE ÉLAN</a>
                     </div>
                 </div>
             </section>
@@ -419,7 +422,10 @@
                     <p>Contactez-nous pour construire une intervention sur-mesure.</p>
 
                     <div style="margin-top: 30px;">
-                        <a href="mailto:contact@kleia-up.com" class="btn btn-premium">DEMANDER UN DEVIS</a>
+                        <a href="#modal-contact" class="btn btn-premium cta-reach shine-effect pill-shape"
+                            onclick="openModal(event)"
+                            style="font-family: 'Ranade', sans-serif; font-weight: 700; color: white; background-color: #8B1D3D;">DÉCLENCHONS
+                            NOTRE ÉCHANGE</a>
                     </div>
 
                     <div class="copyright"
@@ -445,6 +451,55 @@
             });
         }
     </script>
+
+    <!-- Modal Reach Contact -->
+    <div id="modal-contact" class="modal-overlay" aria-hidden="true" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal(event)" aria-label="Fermer">×</button>
+            <h2 style="font-family: 'Ranade', sans-serif; font-weight: 800; color: #8B1D3D; margin-bottom: 20px;">
+                DÉCLENCHONS NOTRE ÉCHANGE</h2>
+            <p style="margin-bottom: 30px; font-size: 1.1rem; color: #1A1A1A;">Laissez-nous vos coordonnées, nous
+                reviendrons vers vous très vite.</p>
+
+            <!-- Code Formulaire Hostinger Reach (Préparation) -->
+            <form id="reach-form" class="reach-form" onsubmit="handleReachSubmit(event)">
+                <div class="form-group">
+                    <label for="reach-prenom">Prénom</label>
+                    <input type="text" id="reach-prenom" name="prenom" required>
+                </div>
+                <div class="form-group">
+                    <label for="reach-nom">Nom</label>
+                    <input type="text" id="reach-nom" name="nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="reach-email">Email</label>
+                    <input type="email" id="reach-email" name="email" required>
+                </div>
+                <button type="submit" class="btn btn-primary pill-shape shine-effect"
+                    style="width: 100%; font-family: 'Ranade', sans-serif; font-weight: 700; background-color: #8B1D3D; color: white; margin-top: 20px;">VALIDER</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal(e) {
+            e.preventDefault();
+            document.getElementById('modal-contact').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(e) {
+            if (e) e.preventDefault();
+            document.getElementById('modal-contact').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        function handleReachSubmit(e) {
+            e.preventDefault();
+            // Traitement Hostinger Reach (à venir)
+            // Redirection automatique vers l'agenda de Sandrina
+            window.location.href = "https://calendly.com/sandrina-perrin";
+        }
+    </script>
+
     <!-- Test Webhook Hostinger -->
 </body>
 

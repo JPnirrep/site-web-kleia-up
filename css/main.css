@@ -2651,3 +2651,136 @@ footer h2 {
     color: #8B1D3D !important;
     background: none !important;
 }
+
+/* ========================================================================= */
+/* MODAL REACH & CTA STYLES                                                  */
+/* ========================================================================= */
+
+.pill-shape {
+    border-radius: 50px !important;
+    padding: 15px 35px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: none !important;
+    text-align: center;
+}
+
+.shine-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.shine-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(212, 175, 55, 0.6) 50%, rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-25deg);
+    animation: goldShineSweep 5s infinite;
+}
+
+@keyframes goldShineSweep {
+    0% {
+        left: -150%;
+    }
+
+    20% {
+        left: 250%;
+    }
+
+    100% {
+        left: 250%;
+    }
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal Content */
+.modal-content {
+    background: #FAF9F6;
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(139, 29, 61, 0.2);
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+/* Modal Close Button */
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #8B1D3D;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: #000;
+}
+
+/* Reach Form */
+.reach-form .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.reach-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-family: 'Ranade', sans-serif;
+    color: #1A1A1A;
+}
+
+.reach-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #CCC;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.reach-form input:focus {
+    outline: none;
+    border-color: #8B1D3D;
+    box-shadow: 0 0 0 2px rgba(139, 29, 61, 0.1);
+}
