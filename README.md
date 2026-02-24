@@ -275,7 +275,7 @@ git push
 ## 👤 CONTACT
 
 **Propriétaire** : KLEIA-UP  
-**Site web** : https://jpnirrep.github.io/site-web-kleia-up/  
+**Site web** : https://kleia-up.fr/  
 **GitHub** : https://github.com/JPnirrep
 
 ---
