@@ -20,7 +20,7 @@ site-web-kleia-up/
 │   └── main.css        # Styles Vanilla (35 KB)
 ├── assets/
 │   ├── logo_kleia.png
-│   └── sandrina perrin photo site pepps.webp
+│   └── sandrina-kleia-up.webp
 ├── scripts/
 │   └── verify-visual.ps1   # Script de vérification visuelle
 ├── GEMINI.md           # Règles du workspace Antigravity
@@ -180,7 +180,7 @@ git push
 ## 🌐 DÉPLOIEMENT
 
 ### GitHub Pages (actif)
-- **URL** : https://jpnirrep.github.io/site-web-kleia-up/
+- **URL** : https://jk-up.com
 - **Source** : Branch `main`
 - **Build** : Automatique à chaque push
 
