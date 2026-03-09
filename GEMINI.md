@@ -83,8 +83,8 @@ site-web-kleia-up/
 - [x] **Refonte Entreprises** : Nouveau positionnement stratégique QVT/RSE.
 - [x] **Bandeau Logos** : Intégration premium des 7 logos partenaires (Performance & Accessibilité).
 - [x] **Optimisation CSS** : Layout grid immuable et externalisation totale des styles.
-
-## ✅ Historique (Session v2.5-SEO-PERF)
+- [x] **Unification & B2C** : Refonte du Manifeste avec Onde et Animations. Déploiement du Header Premium Glassmorphism (Or/Bordeaux) de l'Espace Entreprise vers le Hub B2C et Manifeste.
+- [x] **Correction UI** : Agrandissement structurel du container maître à 1536px pour supporter les écrans Ultrawide.
 
 ## 🎯 TODO PROCHAINE SESSION
 - [ ] **Formulaire Hostinger Reach** : Finaliser l'intégration et la stratégie d'envoi du formulaire modal (`#modal-contact` dans `entreprises.html`) vers Hostinger (gestion de la validation de saisie, traitement des données reçues).
