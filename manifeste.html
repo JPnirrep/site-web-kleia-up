@@ -95,7 +95,7 @@
             }
         }
 
-        /* SVG Wave Separator */
+        /* Onde Vaporeuse (Asymétrique, légère) */
         .wave-separator {
             position: absolute;
             bottom: -1px;
@@ -108,13 +108,29 @@
 
         .wave-separator svg {
             display: block;
-            width: calc(100% + 1.3px);
-            height: 60px;
+            width: calc(150% + 1.3px);
+            height: 40px;
+            transform: translateX(-10%);
         }
 
-        .wave-separator .shape-fill {
+        .wave-separator .shape-fill-1 {
             fill: #FAFAFA;
-            /* Couleur de la section suivante */
+            opacity: 0.1;
+        }
+
+        .wave-separator .shape-fill-2 {
+            fill: #FAFAFA;
+            opacity: 0.2;
+        }
+
+        .wave-separator .shape-fill-3 {
+            fill: #FAFAFA;
+            opacity: 0.3;
+        }
+
+        .wave-separator .shape-fill-main {
+            fill: #FAFAFA;
+            opacity: 1;
         }
 
         /* Animations 'Living Text' */
@@ -122,6 +138,19 @@
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 1.2s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        /* Fade-in hyper lent pour le titre */
+        .fade-in-slow {
+            opacity: 0;
+            animation: fadeInSlow 2s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        @keyframes fadeInSlow {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .delay-1 {
@@ -156,9 +185,9 @@
             }
         }
 
-        /* Header unifié basé sur entreprises.html */
+        /* Header unifié B2C - Radana Regular, 90% opacity */
         .header-unifie {
-            background-color: rgba(139, 29, 61, 0.95);
+            background-color: rgba(139, 29, 61, 0.90);
             backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
@@ -169,17 +198,55 @@
         .header-unifie .nav-link {
             color: #FDFCF0;
             font-family: 'Ranade', sans-serif;
+            font-weight: 400;
+            /* Regular */
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
         .header-unifie .nav-link-subtle {
             color: rgba(253, 252, 240, 0.7);
+            font-family: 'Ranade', sans-serif;
+            font-weight: 400;
+            /* Regular */
         }
 
         .header-unifie .logo img {
+            /* Rendu Or */
             filter: brightness(0) invert(1) sepia(100%) hue-rotate(5deg) saturate(200%) brightness(1.7);
-            /* Rendu Or/Blanc */
+        }
+
+        /* Bouton CTA Header - Contour Or, texte Crème */
+        .btn-outline-gold {
+            border: 1px solid var(--color-accent-gold);
+            color: #FDFCF0;
+            font-family: 'Ranade', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 10px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: 400;
+            background: transparent;
+        }
+
+        .btn-outline-gold:hover {
+            background-color: var(--color-accent-gold);
+            color: #8B1D3D;
+        }
+
+        /* Scroll Reveal des Missions */
+        .reveal-mission {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .reveal-mission.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .manifesto-grid {
@@ -252,9 +319,7 @@
             </nav>
 
             <div class="header-cta">
-                <a href="#footer-form" class="btn btn-primary shine-effect pill-shape"
-                    style="font-family: 'Ranade', sans-serif; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; color: #8B1D3D; background-color: var(--color-accent-gold); border: none;">REJOINDRE
-                    L'ÉLAN</a>
+                <a href="#footer-form" class="btn-outline-gold pill-shape">REJOINDRE L'ÉLAN</a>
             </div>
         </div>
     </header>
@@ -267,9 +332,9 @@
                     style="font-family: 'Ranade', sans-serif; font-weight: 800; color: #8B1D3D; font-size: 1.5rem; letter-spacing: 2px; display: inline-block; border-bottom: 2px solid var(--color-accent-gold); padding-bottom: 5px; margin-bottom: 20px;">
                     LE SENS
                 </span>
-                <h1 class="hero-title hero-title--bold"
+                <h1 class="hero-title hero-title--bold fade-in-slow"
                     style="font-family: 'Ranade', sans-serif; font-size: 3.8rem; color: #111; line-height: 1.1;">
-                    Un mouvement<br><em class="gold-shine-text" style="font-style: italic;">de réconciliation.</em>
+                    Un mouvement<br><em style="color: #8B1D3D; font-style: italic;">de réconciliation.</em>
                 </h1>
                 <p class="hero-subtitle fade-in-up delay-1"
                     style="margin-top: 30px; font-size: 1.35rem; line-height: 1.8; font-family: 'Ranade', sans-serif; font-weight: 400; color: #222;">
@@ -288,13 +353,13 @@
                 </p>
             </div>
 
-            <!-- SVG Wave Separator sans couture vers #FAFAFA -->
+            <!-- SVG Onde Vaporeuse (Asymétrique, 4 couches, plate) -->
             <div class="wave-separator">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                    preserveAspectRatio="none">
-                    <path
-                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                        class="shape-fill"></path>
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,80 C300,30 600,100 1200,60 L1200,120 L0,120 Z" class="shape-fill-1"></path>
+                    <path d="M0,90 C400,110 800,20 1200,70 L1200,120 L0,120 Z" class="shape-fill-2"></path>
+                    <path d="M0,100 C500,40 900,120 1200,80 L1200,120 L0,120 Z" class="shape-fill-3"></path>
+                    <path d="M0,110 C600,80 1000,110 1200,100 L1200,120 L0,120 Z" class="shape-fill-main"></path>
                 </svg>
             </div>
         </section>
@@ -400,6 +465,18 @@
     </footer>
 
     <script>
+        // Menu Burger Logic
+        const burger = document.querySelector('.menu-burger');
+        const nav = document.querySelector('.nav-links');
+
+        if (burger) {
+            burger.addEventListener('click', () => {
+                burger.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+        }
+
+        // Newsletter Form Feedback
         document.querySelectorAll('form').forEach(form => {
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
@@ -413,6 +490,28 @@
                     btn.style.backgroundColor = "";
                 }, 3000);
             });
+        });
+
+        // Scroll Reveal Missions Logic
+        document.addEventListener("DOMContentLoaded", () => {
+            const cards = document.querySelectorAll('.mission-card');
+
+            // Appliquer l'état initial et le décalage dynamique (0.2s ch)
+            cards.forEach((card, index) => {
+                card.classList.add('reveal-mission');
+                card.style.transitionDelay = `${index * 0.2}s`;
+            });
+
+            // Observer pour déclencher la visibilité au scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            cards.forEach(card => observer.observe(card));
         });
     </script>
 </body>
