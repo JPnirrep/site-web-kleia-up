@@ -95,9 +95,9 @@ a {
 
 /* --- UTILS --- */
 .container {
-    max-width: 1200px;
+    max-width: 1536px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 5vw;
 }
 
 .btn {
@@ -615,11 +615,11 @@ header {
 
 /* Subtitle - max 2 lignes */
 .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: clamp(1.1rem, 1.5vw, 1.3rem);
     color: var(--color-text);
     margin-bottom: 25px;
     line-height: 1.6;
-    max-width: 480px;
+    max-width: 650px;
     opacity: 0.9;
 }
 
