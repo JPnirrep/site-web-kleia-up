@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KLEIA-UP - Le Mouvement</title>
+
+    <!-- META SEO -->
+    <meta name="description"
+        content="Le mouvement Kleia-up remet l'humain et l'hypersensibilité au centre de l'action. Découvrez nos missions pour les dirigeants atypiques.">
+    <meta name="keywords" content="mouvement, hypersensible, leadership, vision, Kleia-up">
+    <meta name="author" content="Sandrina Perrin - KLEIA-UP">
+
+    <!-- Import Google Fonts (optimized) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://api.fontshare.com/v2/css?f[]=ranade@300,400,500,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+        .header-manifeste {
+            background-color: rgba(139, 29, 61, 0.95);
+            /* #8B1D3D transparent */
+            backdrop-filter: blur(10px);
+            position: sticky;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .header-manifeste .nav-link {
+            color: #FDFCF0;
+            font-family: 'Ranade', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .header-manifeste .btn-outline-gold {
+            border: 1px solid var(--color-accent-gold);
+            color: var(--color-accent-gold);
+            font-family: 'Ranade', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 10px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .header-manifeste .btn-outline-gold:hover {
+            background-color: var(--color-accent-gold);
+            color: #8B1D3D;
+        }
+
+        .manifesto-header {
+            padding: 120px 0 100px;
+            text-align: center;
+            background: linear-gradient(135deg, #FDFCF0 0%, rgba(139, 29, 61, 0.05) 100%);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            font-family: 'Ranade', sans-serif;
+        }
+
+        /* Onde animée en arrière-plan (Plexus Shockwave) */
+        .manifesto-header::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(139, 29, 61, 0.1) 0%, transparent 60%);
+            transform: translate(-50%, -50%) scale(0.5);
+            animation: pulse-wave 8s infinite alternate ease-in-out;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @keyframes pulse-wave {
+            0% {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: 1;
+            }
+        }
+
+        /* SVG Wave Separator */
+        .wave-separator {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            z-index: 2;
+        }
+
+        .wave-separator svg {
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 60px;
+        }
+
+        .wave-separator .shape-fill {
+            fill: #FAFAFA;
+            /* Couleur de la section suivante */
+        }
+
+        /* Animations 'Living Text' */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .delay-1 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Effet Gold Shine sur texte */
+        .gold-shine-text {
+            background: linear-gradient(to right, #8B1D3D 20%, #D4AF37 50%, #8B1D3D 80%);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: shine-text 3s linear infinite;
+            font-weight: 800;
+        }
+
+        @keyframes shine-text {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        /* Header unifié basé sur entreprises.html */
+        .header-unifie {
+            background-color: rgba(139, 29, 61, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .header-unifie .nav-link {
+            color: #FDFCF0;
+            font-family: 'Ranade', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .header-unifie .nav-link-subtle {
+            color: rgba(253, 252, 240, 0.7);
+        }
+
+        .header-unifie .logo img {
+            filter: brightness(0) invert(1) sepia(100%) hue-rotate(5deg) saturate(200%) brightness(1.7);
+            /* Rendu Or/Blanc */
+        }
+
+        .manifesto-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        .mission-card {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(88, 0, 23, 0.05);
+            border-top: 4px solid var(--color-primary);
+            transition: transform 0.3s ease;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .mission-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .mission-title {
+            font-family: var(--font-title);
+            color: var(--color-primary);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .vision-section {
+            background-color: var(--color-primary);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            border-radius: 12px;
+            margin: 60px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER UNIFIÉ (Structure Entreprises) -->
+    <header role="banner" class="header-unifie">
+        <div class="container header-container">
+            <a href="particuliers.html" class="logo">
+                <img src="./assets/logo_kleia.png" alt="Logo KLEIA-UP" width="140" height="100" loading="eager"
+                    style="filter: brightness(0) invert(1) sepia(100%) hue-rotate(5deg) saturate(200%) brightness(1.7);">
+            </a>
+
+            <nav role="navigation" aria-label="Menu principal">
+                <button class="menu-burger" aria-label="Ouvrir le menu">
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                </button>
+
+                <ul class="nav-links">
+                    <li><a href="particuliers.html" class="nav-link">ACCUEIL B2C</a></li>
+                    <li><a href="particuliers.html#programme-signature" class="nav-link">PROGRAMMES</a></li>
+                    <li class="nav-separator" aria-hidden="true" style="color: rgba(253,252,240,0.5);">|</li>
+                    <li><a href="entreprises.html" class="nav-link-subtle">ESPACE PROFESSIONNEL</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-cta">
+                <a href="#footer-form" class="btn btn-primary shine-effect pill-shape"
+                    style="font-family: 'Ranade', sans-serif; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; color: #8B1D3D; background-color: var(--color-accent-gold); border: none;">REJOINDRE
+                    L'ÉLAN</a>
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
+        <!-- HEADER MANIFESTE -->
+        <section class="manifesto-header">
+            <div class="container fade-in-up" style="max-width: 800px; position: relative;">
+                <span class="hero-eyebrow"
+                    style="font-family: 'Ranade', sans-serif; font-weight: 800; color: #8B1D3D; font-size: 1.5rem; letter-spacing: 2px; display: inline-block; border-bottom: 2px solid var(--color-accent-gold); padding-bottom: 5px; margin-bottom: 20px;">
+                    LE SENS
+                </span>
+                <h1 class="hero-title hero-title--bold"
+                    style="font-family: 'Ranade', sans-serif; font-size: 3.8rem; color: #111; line-height: 1.1;">
+                    Un mouvement<br><em class="gold-shine-text" style="font-style: italic;">de réconciliation.</em>
+                </h1>
+                <p class="hero-subtitle fade-in-up delay-1"
+                    style="margin-top: 30px; font-size: 1.35rem; line-height: 1.8; font-family: 'Ranade', sans-serif; font-weight: 400; color: #222;">
+                    C’est le refus du désert de lien. C’est une <strong class="gold-shine-text">onde qui part du
+                        plexus</strong> — ces fameux <strong style="color: #8B1D3D; font-weight: 700;">papillons dans le
+                        ventre</strong> — pour aller bousculer les codes figés
+                    des entreprises et des institutions.
+                </p>
+                <p class="hero-subtitle fade-in-up delay-2"
+                    style="font-size: 1.35rem; line-height: 1.8; font-family: 'Ranade', sans-serif; font-weight: 400; color: #222;">
+                    Ici, nous remettons la <strong style="color: #8B1D3D; font-weight: 700;">joie</strong>, l’<strong
+                        style="color: #8B1D3D; font-weight: 700;">enthousiasme</strong> et l’<strong
+                        style="color: #8B1D3D; font-weight: 700;">humain</strong> au centre de l’échiquier. Nous ne
+                    faisons pas que
+                    "travailler" : nous créons des <strong class="gold-shine-text">expériences de vie</strong>.
+                </p>
+            </div>
+
+            <!-- SVG Wave Separator sans couture vers #FAFAFA -->
+            <div class="wave-separator">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- MISSIONS -->
+        <section class="section-padding" style="background-color: #FAFAFA;">
+            <div class="container">
+                <div class="section-title-wrap">
+                    <h2 class="section-title">NOS <em>MISSIONS</em> DE DIFFUSION</h2>
+                </div>
+
+                <div class="manifesto-grid">
+                    <div class="mission-card">
+                        <span class="mission-icon">🦁</span>
+                        <h3 class="mission-title">Réveiller la Leader qui s’ignore</h3>
+                        <p>J’accompagne l’entrepreneuse vibrante et la manager engagée à assumer leur voix. Ton "Je"
+                            d'experte est une force, ton leadership sensible est une boussole.</p>
+                    </div>
+
+                    <div class="mission-card">
+                        <span class="mission-icon">💎</span>
+                        <h3 class="mission-title">L’Hypersensibilité comme Stratégie</h3>
+                        <p>Je place l’hypersensible au cœur des structures. Pourquoi ? Parce qu’elle est la clé de
+                            l’agilité, de l’empathie et de la vision de demain. Elle n'est plus "à inclure", elle est
+                            celle qui guide.</p>
+                    </div>
+
+                    <div class="mission-card">
+                        <span class="mission-icon">⚡</span>
+                        <h3 class="mission-title">Infuser l’Optimisme d’Action</h3>
+                        <p>Par mes conférences et ateliers, je brise le silence et la grisaille institutionnelle.
+                            J'utilise les neurosciences pour valider une certitude : un collectif qui vibre est un
+                            collectif qui réussit.</p>
+                    </div>
+
+                    <div class="mission-card">
+                        <span class="mission-icon">🎤</span>
+                        <h3 class="mission-title">Rayonner par la Parole Juste</h3>
+                        <p>Créer ta conférence ou ton atelier signature pour diffuser, toi aussi, ton message d'un monde
+                            meilleur. Ta voix est l'outil de ton engagement.</p>
+                    </div>
+
+                    <div class="mission-card">
+                        <span class="mission-icon">🤝</span>
+                        <h3 class="mission-title">Oser l'Inclusion Réelle</h3>
+                        <p>Créer un monde qui respecte la différence, où la bienveillance n'est pas un concept
+                            marketing, mais une réalité organique.</p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 40px;">
+                    <p
+                        style="font-family: var(--font-title); font-style: italic; font-size: 2rem; color: var(--color-primary); opacity: 0.8;">
+                        « L’humain d’abord. Toujours. »
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- VISION APOTHEOSE -->
+        <section class="container">
+            <div class="vision-section shadow-lg">
+                <span style="font-size: 3rem; display: block; margin-bottom: 20px;">🌱</span>
+                <h2 style="font-family: var(--font-title); font-size: 3rem; margin-bottom: 30px; letter-spacing: -1px;">
+                    La Vision : De l'Impact au Déclic
+                </h2>
+                <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto 30px; line-height: 1.8; opacity: 0.9;">
+                    Le mouvement Kleia-up existe pour que chaque passage — conférence ou accompagnement — provoque un
+                    séisme de conscience. Mon but ? Que tu deviennes une inspiratrice de l’humain.
+                </p>
+                <p
+                    style="font-size: 1.3rem; max-width: 700px; margin: 0 auto 40px; line-height: 1.8; opacity: 0.9; font-weight: bold; color: var(--color-accent-gold);">
+                    C'est un espace pour grandir ensemble, sans masque, dans le respect de nos identités plurielles.
+                </p>
+            </div>
+        </section>
+
+        <!-- CONCLUSION & NEWSLETTER -->
+        <section class="section-padding"
+            style="background-color: var(--bg-cream); border-top: 1px solid rgba(88, 0, 23, 0.05); text-align: center;">
+            <div class="container" style="max-width: 600px;">
+                <div class="section-title-wrap">
+                    <h2 class="section-title">Envie de <em>coulisses</em> et de <em>déclics</em> ?</h2>
+                    <p class="section-subtitle">Je te partage mes aventures, mes doutes et mes clés pour muscler ton
+                        assertivité sans perdre ton âme. Rejoins la Newsletter : ton rendez-vous hebdo pour oser
+                        l'humain et l'audace.</p>
+                </div>
+                <form id="footer-form" class="newsletter-form" aria-label="Rejoindre la newsletter">
+                    <input type="email" name="email" placeholder="Ton adresse email favorite" class="newsletter-input"
+                        required>
+                    <button type="submit" class="btn btn-premium">JE REJOINS LE MOUVEMENT</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER SIMPLE -->
+    <footer style="background-color: var(--color-primary); color: white; padding: 40px 20px; text-align: center;">
+        <div class="copyright" style="font-size: 0.9rem; opacity: 0.6;">
+            © KLEIA-UP 2026 - Leadership Organique & Premium Design
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const btn = this.querySelector('button');
+                const originalText = btn.textContent;
+                btn.textContent = "MERCI ! À BIENTÔT.";
+                btn.style.backgroundColor = "#D70040";
+                this.querySelectorAll('input').forEach(input => input.value = '');
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.backgroundColor = "";
+                }, 3000);
+            });
+        });
+    </script>
+</body>
+
+</html>
