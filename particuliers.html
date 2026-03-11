@@ -139,85 +139,6 @@
       ]
     }
     </script>
-    <style>
-        :root {
-            --color-burgundy: #8B1D3D;
-            --color-accent-gold: #D4AF37;
-            --bg-cream: #FDFCF0;
-        }
-
-        .header-unifie {
-            background-color: rgba(139, 29, 61, 0.90) !important;
-            backdrop-filter: blur(10px) !important;
-            -webkit-backdrop-filter: blur(10px) !important;
-            position: fixed !important;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 10000;
-            border-bottom: none !important;
-        }
-
-        .header-unifie .nav-link {
-            color: var(--bg-cream) !important;
-            font-family: 'Ranade', sans-serif !important;
-            font-weight: 400 !important;
-            text-transform: uppercase !important;
-            letter-spacing: 2px !important;
-        }
-
-        .header-unifie .nav-link-subtle {
-            color: rgba(253, 252, 240, 0.7) !important;
-            font-family: 'Ranade', sans-serif !important;
-            font-weight: 400 !important;
-        }
-
-        .header-unifie .logo img {
-            filter: brightness(0) invert(1) sepia(100%) hue-rotate(5deg) saturate(200%) brightness(1.7);
-        }
-
-        .header-unifie .burger-bar {
-            background-color: var(--bg-cream) !important;
-        }
-
-        .btn-outline-gold {
-            border: 1px solid var(--color-accent-gold);
-            color: var(--bg-cream);
-            background: transparent;
-            font-family: 'Ranade', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            padding: 10px 24px;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-            position: relative;
-            overflow: hidden;
-            display: inline-block;
-        }
-
-        .btn-outline-gold:hover {
-            background-color: var(--color-burgundy);
-            color: var(--bg-cream);
-        }
-
-        .btn-outline-gold::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(120deg, transparent, rgba(212, 175, 55, 0.4), transparent);
-            transition: all 0.5s ease;
-        }
-
-        .btn-outline-gold:hover::before {
-            left: 100%;
-            transition: all 0.5s ease;
-        }
-    </style>
 </head>
 
 <body>
@@ -255,43 +176,31 @@
         </div>
     </header>
 
-    <!-- ============================================
-         BANDEAU LOGOS PARTENAIRES - DÉFILANT
-         Pour ajouter un logo : 
-         1. Placer l'image dans /assets/logos-partners/
-         2. Ajouter une balise <img> dans la liste ci-dessous
-         ============================================ -->
     <section class="partners-banner" aria-label="Ils nous font confiance">
-        <div class="partners-track">
-            <!-- SLIDE 1: contient 4 répétitions pour remplir l'écran -->
-            <div class="partners-slide">
-                <img src="./assets/logos-partners/logos-row-1.png" alt="Logos des partenaires et références de KLEIA-UP"
-                    class="partner-logo partner-logo--wide" loading="lazy">
-
-                <img src="./assets/logos-partners/logos-row-1.png" alt="Logos des partenaires et références de KLEIA-UP"
-                    class="partner-logo partner-logo--wide" loading="lazy">
-
-                <img src="./assets/logos-partners/logos-row-1.png" alt="Logos des partenaires et références de KLEIA-UP"
-                    class="partner-logo partner-logo--wide" loading="lazy">
-
-                <img src="./assets/logos-partners/logos-row-1.png" alt="Logos des partenaires et références de KLEIA-UP"
-                    class="partner-logo partner-logo--wide" loading="lazy">
-
+        <div class="logo-marquee-wrapper">
+            <!-- Groupe 1 -->
+            <div class="logo-marquee-content">
+                <img src="./assets/logos-partners/ateliers-durables.png" alt="Logo partenaire - Les Ateliers Durables" width="120" height="60" loading="lazy">
+                <img src="./assets/logos-partners/UDAMS85-logo-horizontal-_1_.webp" alt="Logo partenaire - UDAMS 85" width="120" height="60" loading="lazy">
+                <img src="./assets/logos-partners/familles-rurales.png" alt="Logo partenaire - Familles Rurales" width="120" height="60" loading="lazy">
+                <img src="./assets/logos-partners/club-reveuses.png" alt="Logo partenaire - Club des Rêveuses Entrepreneuses" width="120" height="60" loading="lazy">
+                <img src="./assets/logos-partners/le-figaro.png" alt="Logo partenaire - Le Figaro Magazine" width="120" height="60" loading="lazy">
+                <img src="./assets/logos-partners/microsoft.png" alt="Logo partenaire - Microsoft" width="120" height="60" loading="lazy">
+                <img src="./assets/logos-partners/vendee-grand-littoral.png" alt="Logo partenaire - Vendée Grand Littoral" width="120" height="60" loading="lazy">
+                <img src="./assets/logos-partners/Actual.png" alt="Logo partenaire - Actual" width="120" height="60" loading="lazy">
+                <img src="./assets/logos-partners/CEVA.jpg" alt="Logo partenaire - Ceva" width="120" height="60" loading="lazy">
             </div>
-            <!-- SLIDE 2: copie identique pour boucle infinie -->
-            <div class="partners-slide">
-                <img src="./assets/logos-partners/logos-row-1.png" alt="Logos des partenaires et références de KLEIA-UP"
-                    class="partner-logo partner-logo--wide" loading="lazy">
-
-                <img src="./assets/logos-partners/logos-row-1.png" alt="Logos des partenaires et références de KLEIA-UP"
-                    class="partner-logo partner-logo--wide" loading="lazy">
-
-                <img src="./assets/logos-partners/logos-row-1.png" alt="Logos des partenaires et références de KLEIA-UP"
-                    class="partner-logo partner-logo--wide" loading="lazy">
-
-                <img src="./assets/logos-partners/logos-row-1.png" alt="Logos des partenaires et références de KLEIA-UP"
-                    class="partner-logo partner-logo--wide" loading="lazy">
-
+            <!-- Groupe 2 (Dupliqué pour boucle infinie) -->
+            <div class="logo-marquee-content" aria-hidden="true">
+                <img src="./assets/logos-partners/ateliers-durables.png" alt="Logo partenaire - Les Ateliers Durables" width="120" height="60" loading="lazy">
+                <img src="./assets/logos-partners/UDAMS85-logo-horizontal-_1_.webp" alt="Logo partenaire - UDAMS 85" width="120" height="60" loading="lazy">
+                <img src="./assets/logos-partners/familles-rurales.png" alt="Logo partenaire - Familles Rurales" width="120" height="60" loading="lazy">
+                <img src="./assets/logos-partners/club-reveuses.png" alt="Logo partenaire - Club des Rêveuses Entrepreneuses" width="120" height="60" loading="lazy">
+                <img src="./assets/logos-partners/le-figaro.png" alt="Logo partenaire - Le Figaro Magazine" width="120" height="60" loading="lazy">
+                <img src="./assets/logos-partners/microsoft.png" alt="Logo partenaire - Microsoft" width="120" height="60" loading="lazy">
+                <img src="./assets/logos-partners/vendee-grand-littoral.png" alt="Logo partenaire - Vendée Grand Littoral" width="120" height="60" loading="lazy">
+                <img src="./assets/logos-partners/Actual.png" alt="Logo partenaire - Actual" width="120" height="60" loading="lazy">
+                <img src="./assets/logos-partners/CEVA.jpg" alt="Logo partenaire - Ceva" width="120" height="60" loading="lazy">
             </div>
         </div>
     </section>
