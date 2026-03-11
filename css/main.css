@@ -183,7 +183,7 @@ header {
     -webkit-backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(139, 29, 61, 0.1);
     transition: all 0.3s ease;
-    padding: 15px 0;
+    padding: 12px 0; /* Réduit de 20% (15px -> 12px) */
 }
 
 /* Variante Sombre (si besoin futur) */
@@ -201,7 +201,7 @@ header.header-dark {
 }
 
 .logo img {
-    height: 80px;
+    height: 64px; /* Réduit de 20% (80px -> 64px) */
     width: auto;
     object-fit: contain;
     transition: transform 0.3s ease;
