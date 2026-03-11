@@ -68,7 +68,7 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
-    padding-top: 95px; /* Aligné sur la hauteur du header (95px) */
+    padding-top: 0; /* Suppression pour permettre l'overlay du header */
 }
 
 h1,
