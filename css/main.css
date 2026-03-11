@@ -806,6 +806,9 @@ header.header-dark .nav-link-subtle {
 
 .hero-section-corp .hero-image-wrapper {
     z-index: 2;
+    max-width: 90%; /* Réduction pour éviter de mordre sur le header */
+    margin-top: 60px; /* Décalage vertical forcé vers le bas */
+    margin-left: auto;
 }
 
 @keyframes morphing-blob {
