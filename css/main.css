@@ -641,7 +641,7 @@ header.header-dark .nav-link-subtle {
 
 /* --- HERO SECTION (2026 Version) --- */
 .hero-section {
-    padding: 120px 0 60px; /* Réduction du padding pour que le contenu (texte/image) remonte sous la vitre du header */
+    padding: 180px 0 60px; /* Augmenté pour faire descendre l'image hors du logo/menu */
     position: relative;
     overflow: hidden;
     min-height: 85vh;
