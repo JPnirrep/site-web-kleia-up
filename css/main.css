@@ -1443,13 +1443,15 @@ header.header-dark .nav-link-subtle {
 }
 
 .quote-text {
-    font-family: var(--font-title);
-    font-size: 1.65rem;
+    font-family: var(--font-body);
+    font-size: 1.15rem;
     color: var(--color-text);
-    line-height: 1.6;
-    margin-bottom: 24px;
+    opacity: 0.85;
+    line-height: 1.7;
+    margin-bottom: 20px;
     font-style: italic;
-    letter-spacing: 0.005em;
+    font-weight: 400;
+    letter-spacing: 0.02em;
     background: none !important;
 }
 
@@ -2160,7 +2162,7 @@ footer h2 {
     }
 
     .quote-text {
-        font-size: 1.35rem;
+        font-size: 1.05rem;
     }
 
     .quote-signature {
