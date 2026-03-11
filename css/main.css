@@ -171,41 +171,25 @@ a {
 
 /* ... */
 
-/* --- HEADER UNIFIÉ (Glassmorphism Premium) --- */
-.header-unifie {
-    background-color: rgba(139, 29, 61, 0.90) !important;
-    backdrop-filter: blur(10px) !important;
-    -webkit-backdrop-filter: blur(10px) !important;
+/* --- HEADER & NAVIGATION (Style Premium Unifié) --- */
+header {
     position: fixed !important;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10000;
-    border-bottom: none !important;
-    min-height: auto !important;
-    padding: 10px 0 !important;
+    background: rgba(253, 252, 240, 0.95); /* Fond crème très clair par défaut */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(139, 29, 61, 0.1);
+    transition: all 0.3s ease;
+    padding: 15px 0;
 }
 
-.header-unifie .nav-link {
-    color: var(--bg-cream) !important;
-    font-family: var(--font-title) !important;
-    font-weight: 400 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 2px !important;
-}
-
-.header-unifie .nav-link-subtle {
-    color: rgba(253, 252, 240, 0.7) !important;
-    font-family: var(--font-title) !important;
-    font-weight: 400 !important;
-}
-
-.header-unifie .logo img {
-    filter: brightness(0) invert(1) sepia(100%) hue-rotate(5deg) saturate(200%) brightness(1.7);
-}
-
-.header-unifie .burger-bar {
-    background-color: var(--bg-cream) !important;
+/* Variante Sombre (si besoin futur) */
+header.header-dark {
+    background: rgba(139, 29, 61, 0.95) !important;
+    border-bottom: none;
 }
 
 .header-container {
@@ -213,47 +197,70 @@ a {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    padding: 0 5%;
 }
 
 .logo img {
-    height: 100px;
+    height: 80px;
     width: auto;
     object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
-.logo {
-    margin-right: 80px;
+header.header-dark .logo img {
+    filter: brightness(0) invert(1) sepia(100%) hue-rotate(5deg) saturate(200%) brightness(1.7);
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 50px;
+    gap: 40px;
     align-items: center;
     margin: 0;
-    margin-left: 60px;
     padding: 0;
-    transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .nav-link {
-    font-family: var(--font-body);
-    font-size: 0.85rem;
+    font-family: var(--font-title);
+    font-size: 0.9rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     color: var(--color-text);
-    padding: 10px 0;
-    line-height: 1;
     transition: color 0.3s ease;
-    white-space: nowrap;
+}
+
+header.header-dark .nav-link {
+    color: var(--bg-cream) !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--color-burgundy);
+}
+
+.nav-link-subtle {
+    font-family: var(--font-title);
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--color-text);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+header.header-dark .nav-link-subtle {
+    color: rgba(253, 252, 240, 0.7) !important;
+}
+
+.nav-link-subtle:hover {
+    opacity: 1;
+    color: var(--color-burgundy);
 }
 
 .nav-separator {
-    color: #DDDDDD;
+    color: rgba(139, 29, 61, 0.2);
     font-weight: 300;
-    font-size: 1.2rem;
-    user-select: none;
 }
 
 /* --- BOUTONS PREMIUM ET GOLD --- */
