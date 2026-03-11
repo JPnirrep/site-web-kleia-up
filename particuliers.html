@@ -721,6 +721,13 @@
                 }, 3000);
             });
         });
+
+        // Accélération vidéo X1.5
+        window.addEventListener('load', () => {
+            document.querySelectorAll('video').forEach(video => {
+                video.playbackRate = 1.5;
+            });
+        });
     </script>
 </body>
 
