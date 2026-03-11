@@ -79,12 +79,11 @@ site-web-kleia-up/
 - Pas de serveur backend requis
 - Build GitHub Pages : ~45 secondes après push
 
-## ✅ Historique (Session v2.6-CORP-REBRAND)
-- [x] **Refonte Entreprises** : Nouveau positionnement stratégique QVT/RSE.
-- [x] **Bandeau Logos** : Intégration premium des 7 logos partenaires (Performance & Accessibilité).
-- [x] **Optimisation CSS** : Layout grid immuable et externalisation totale des styles.
-- [x] **Unification & B2C** : Refonte du Manifeste avec Onde et Animations. Déploiement du Header Premium Glassmorphism (Or/Bordeaux) de l'Espace Entreprise vers le Hub B2C et Manifeste.
-- [x] **Correction UI** : Agrandissement structurel du container maître à 1536px pour supporter les écrans Ultrawide.
+## ✅ Historique (Session v2.9-GLASSMORPHISM)
+- [x] **Unification Globale** : Standardisation du header premium fixe sur `entreprises.html`, `particuliers.html` et `manifeste.html`.
+- [x] **Transparence & Blur** : Fix critique de l'effet Glassmorphism (ivoire translucide / flou 25px).
+- [x] **Correctifs UI/UX** : Recalage du bandeau de logos et redimensionnement du blob (Sandrina) sur la page Particuliers.
+- [x] **Optimisation Structurelle** : Ajustement des paddings Hero pour compenser les headers fixes.
 
 ## 🎯 TODO PROCHAINE SESSION
 - [ ] **Formulaire Hostinger Reach** : Finaliser l'intégration et la stratégie d'envoi du formulaire modal (`#modal-contact` dans `entreprises.html`) vers Hostinger (gestion de la validation de saisie, traitement des données reçues).
