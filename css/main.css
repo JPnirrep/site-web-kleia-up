@@ -264,15 +264,21 @@ header.header-dark .nav-link-subtle {
 
 /* --- VARIATION CORPORATE (ROCK & GOLD - FIXED) --- */
 .header-corp {
-    background: rgba(250, 249, 246, 0.7) !important; /* Opacité réduite pour une transparence visible */
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    position: fixed; /* OBLIGATOIRE pour l'overlay */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.4) !important; /* Blanc translucide pour contraste maximal sur fond beige */
+    backdrop-filter: blur(25px) saturate(200%); /* Flou renforcé pour l'effet "cristallin" */
+    -webkit-backdrop-filter: blur(25px) saturate(200%);
     padding: 10px 0 !important;
-    border: none !important;
-    box-shadow: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important; /* Filet de lumière discret */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05) !important;
     height: 95px !important;
     display: flex;
     align-items: center;
+    transition: background 0.4s ease, backdrop-filter 0.4s ease;
 }
 
 .header-corp .header-container {
@@ -635,10 +641,10 @@ header.header-dark .nav-link-subtle {
 
 /* --- HERO SECTION (2026 Version) --- */
 .hero-section {
-    padding: 160px 0 60px; /* Compensation augmentée pour le header en overlay (95px + padding) */
+    padding: 120px 0 60px; /* Réduction du padding pour que le contenu (texte/image) remonte sous la vitre du header */
     position: relative;
     overflow: hidden;
-    min-height: calc(85vh);
+    min-height: 85vh;
     /* Generous whitespace = symbolizes "taking your place" */
     display: flex;
     align-items: center;
