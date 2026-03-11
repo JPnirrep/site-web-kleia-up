@@ -1,4 +1,4 @@
-﻿/* RESET OBLIGATOIRE - À METTRE TOUT EN HAUT DU CSS */
+/* RESET OBLIGATOIRE - À METTRE TOUT EN HAUT DU CSS */
 *,
 *::before,
 *::after {
@@ -171,25 +171,41 @@ a {
 
 /* ... */
 
-/* --- HEADER & NAVIGATION --- */
-header {
+/* --- HEADER UNIFIÉ (Glassmorphism Premium) --- */
+.header-unifie {
+    background-color: rgba(139, 29, 61, 0.90) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
     position: fixed !important;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10000;
-    /* Priorité haute pour rester au dessus de tout */
-    height: auto;
-    min-height: 130px;
-    padding: 15px 5%;
-    background: rgba(250, 249, 246, 0.98);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(88, 0, 23, 0.08);
-    box-shadow: 0 4px 20px rgba(88, 0, 23, 0.05);
-    /* Ombre légère pour détacher du contenu */
-    display: flex;
-    align-items: center;
+    border-bottom: none !important;
+    min-height: auto !important;
+    padding: 10px 0 !important;
+}
+
+.header-unifie .nav-link {
+    color: var(--bg-cream) !important;
+    font-family: var(--font-title) !important;
+    font-weight: 400 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+}
+
+.header-unifie .nav-link-subtle {
+    color: rgba(253, 252, 240, 0.7) !important;
+    font-family: var(--font-title) !important;
+    font-weight: 400 !important;
+}
+
+.header-unifie .logo img {
+    filter: brightness(0) invert(1) sepia(100%) hue-rotate(5deg) saturate(200%) brightness(1.7);
+}
+
+.header-unifie .burger-bar {
+    background-color: var(--bg-cream) !important;
 }
 
 .header-container {
@@ -233,36 +249,50 @@ header {
     white-space: nowrap;
 }
 
-.nav-link:hover,
-.nav-link.active {
-    color: var(--color-burgundy);
-}
-
-/* New Subtle Link for Universe Switch */
-.nav-link-subtle {
-    font-family: var(--font-body);
-    font-size: 0.75rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-text);
-    opacity: 0.6;
-    transition: all 0.3s ease;
-    border-bottom: 1px solid transparent;
-}
-
-.nav-link-subtle:hover,
-.nav-link-subtle.active {
-    opacity: 1;
-    color: var(--color-burgundy);
-    border-bottom: 1px solid var(--color-burgundy);
-}
-
 .nav-separator {
     color: #DDDDDD;
     font-weight: 300;
     font-size: 1.2rem;
     user-select: none;
+}
+
+/* --- BOUTONS PREMIUM ET GOLD --- */
+.btn-outline-gold {
+    border: 1px solid var(--color-accent-gold, #D4AF37);
+    color: var(--bg-cream, #FDFCF0);
+    background: transparent;
+    font-family: var(--font-title);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.btn-outline-gold:hover {
+    background-color: var(--color-burgundy);
+    color: var(--bg-cream);
+}
+
+.btn-outline-gold::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(212, 175, 55, 0.4), transparent);
+    transition: all 0.5s ease;
+}
+
+.btn-outline-gold:hover::before {
+    left: 100%;
+    transition: all 0.5s ease;
 }
 
 .mobile-only-cta {
@@ -477,7 +507,7 @@ header {
     letter-spacing: normal;
 }
 
-/* --- PARTNER BANNER --- */
+/* --- PARTNER BANNER & MARQUEE --- */
 .partners-banner {
     padding: 15px 0;
     background: transparent !important;
@@ -486,6 +516,45 @@ header {
     position: relative;
 }
 
+/* Nouveau système Marquee unifié */
+.logo-marquee-wrapper {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: 0;
+    padding: 20px 0;
+}
+
+.logo-marquee-content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    min-width: 100%;
+    gap: 50px;
+    animation: partnersScroll 30s linear infinite;
+    padding-right: 50px;
+}
+
+.logo-marquee-content img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    filter: none;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.logo-marquee-content img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+@keyframes partnersScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+/* Legacy support (to be cleaned later if unused) */
 .partners-track {
     display: flex;
     animation: partnersScroll 25s linear infinite;
@@ -503,32 +572,12 @@ header {
 
 .partner-logo {
     height: 80px;
-    /* Doubled size as requested (40px -> 80px) */
     width: auto;
     max-width: unset;
-    /* Allow full size */
-    /* Removed filters for full color/opacity as requested */
     filter: none !important;
     opacity: 1 !important;
     transition: all 0.3s ease;
     margin: 0 40px;
-    /* Add spacing between logos */
-}
-
-.partner-logo:hover {
-    transform: scale(1.05);
-    /* Just a subtle scale on hover */
-}
-
-@keyframes partnersScroll {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-33.33333%);
-        /* For 3 duplicated sets of logos */
-    }
 }
 
 /* --- HERO SECTION (2026 Version) --- */
