@@ -264,9 +264,9 @@ header.header-dark .nav-link-subtle {
 
 /* --- VARIATION CORPORATE (ROCK & GOLD - FIXED) --- */
 .header-corp {
-    background: var(--bg-cream) !important; /* Fusion chromatique parfaite avec le fond du site */
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    background: rgba(250, 249, 246, 0.45) !important; /* Ivoire translucide pour l'effet de fusion */
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     padding: 10px 0 !important;
     border: none !important;
     box-shadow: none !important;
@@ -635,10 +635,10 @@ header.header-dark .nav-link-subtle {
 
 /* --- HERO SECTION (2026 Version) --- */
 .hero-section {
-    padding: 70px 0 60px;
+    padding: 160px 0 60px; /* Compensation augmentée pour le header en overlay (95px + padding) */
     position: relative;
     overflow: hidden;
-    min-height: calc(80vh - 90px);
+    min-height: calc(85vh);
     /* Generous whitespace = symbolizes "taking your place" */
     display: flex;
     align-items: center;
