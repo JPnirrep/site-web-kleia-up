@@ -193,7 +193,14 @@ git push
 
 ## 📝 HISTORIQUE DES VERSIONS
 
-### v2.8-ATELIERS-REBRAND (22/02/2026) - DERNIÈRE MISE À JOUR
+### v2.9-GLASSMORPHISM (11/03/2026) - DERNIÈRE MISE À JOUR
+- ✅ **Unification Premium** : Déploiement du header `.header-corp` (Glassmorphism, fixed) sur l'ensemble du site (Entreprises, Particuliers, Manifeste).
+- ✅ **Transparence Apple-like** : Optimisation de l'effet "vitre" (blur 25px, backdrop-filter) sur fond beige ivoire.
+- ✅ **Recalage Logos (B2C)** : Décalage vertical du bandeau de logos (110px) pour visibilité parfaite sous le menu fixe.
+- ✅ **Harmonie du Blob** : Redimensionnement à 85% et décalage de Sandrina sur la page Particuliers pour supprimer les chevauchements.
+- ✅ **Ajustements Manifeste** : Recalage de la section titre pour une immersion immédiate.
+
+### v2.8-ATELIERS-REBRAND (22/02/2026)
 - ✅ **Mutation Visuelle** : Refonte premium des cartes "Ateliers" avec icônes SVG OR brossé, asymétrie organique temporelle, et élévation au survol.
 - ✅ **CTA Stratégique** : Création du bouton "CONCRÉTISONS VOTRE ÉLAN", design "pill" bordeaux avec balayage lumineux doré (animation CSS) relié directement à Calendly.
 - ✅ **Lisibilité & Logistique** : Ajustement des espacements (margin-bottom, padding, line-height 1.3), injection élégante des durées des interventions et forçage visuel bordeaux ultra spécifique de la section transition.
