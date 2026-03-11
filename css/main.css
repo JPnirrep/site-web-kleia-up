@@ -264,11 +264,12 @@ header.header-dark .nav-link-subtle {
 
 /* --- VARIATION CORPORATE (ROCK & GOLD - FIXED) --- */
 .header-corp {
-    background: rgba(253, 252, 240, 0.85) !important; /* Plus de transparence pour la continuité */
+    background: var(--bg-cream) !important; /* Fusion chromatique parfaite avec le fond du site */
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     padding: 10px 0 !important;
-    border-bottom: none !important; /* Suppression de la séparation franche */
+    border: none !important;
+    box-shadow: none !important;
     height: 95px !important;
     display: flex;
     align-items: center;
