@@ -2621,8 +2621,8 @@ footer h2 {
 .gold-shine-text {
     display: inline;
     font-weight: 700;
-    color: #D4AF37;
-    background: linear-gradient(90deg, #B8860B, #F9E498, #D4AF37, #B8860B);
+    color: #B8860B;
+    background: linear-gradient(90deg, #8B6508, #D4AF37, #A67C00, #8B6508);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
