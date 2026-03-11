@@ -639,6 +639,14 @@ header.header-dark .nav-link-subtle {
     margin: 0 40px;
 }
 
+/* --- MANIFESTO SECTION --- */
+.manifesto-header {
+    padding: 160px 0 80px !important;
+    text-align: center;
+    position: relative;
+    background-color: var(--bg-cream);
+}
+
 /* --- HERO SECTION (2026 Version) --- */
 .hero-section {
     padding: 180px 0 60px; /* Augmenté pour faire descendre l'image hors du logo/menu */
