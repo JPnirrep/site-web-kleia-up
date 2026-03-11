@@ -2617,24 +2617,22 @@ footer h2 {
     font-weight: 300;
 }
 
-/* Effet Gold Shine */
+/* Effet Gold Shine Stabilisé (Correction Conflit) */
 .gold-shine-text {
-    position: relative;
     display: inline;
     font-weight: 700;
-    color: #D4AF37; /* Base Or */
+    color: #D4AF37;
     background: linear-gradient(90deg, #B8860B, #F9E498, #D4AF37, #B8860B);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: goldShineSweep 3s linear infinite;
+    animation: textGoldFlow 4s linear infinite;
 }
 
-@keyframes goldShineSweep {
-    to {
-        background-position: 200% center;
-    }
+@keyframes textGoldFlow {
+    from { background-position: 0% center; }
+    to { background-position: 200% center; }
 }
 
 /* Colonne Vidéo & Blob */
