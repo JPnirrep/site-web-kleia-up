@@ -649,7 +649,7 @@ header.header-dark .nav-link-subtle {
 
 /* --- HERO SECTION (2026 Version) --- */
 .hero-section {
-    padding: 180px 0 60px; /* Augmenté pour faire descendre l'image hors du logo/menu */
+    padding: 60px 0 60px !important; /* Réduit car le bandeau logos au-dessus assure déjà l'espacement initial */
     position: relative;
     overflow: hidden;
     min-height: 85vh;
@@ -762,6 +762,10 @@ header.header-dark .nav-link-subtle {
     justify-content: center;
     align-items: center;
     z-index: 2;
+    max-width: 85%; /* Réduit pour éviter tout chevauchement avec le header/logos */
+    margin-top: 40px; /* Décalage vertical forcé pour le blob Sandrina */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-image-glow {
