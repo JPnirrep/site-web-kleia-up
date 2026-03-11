@@ -68,8 +68,7 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
-    padding-top: 130px;
-    /* Compensation pour le header fixed deskop */
+    padding-top: 95px; /* Aligné sur la hauteur du header (95px) */
 }
 
 h1,
@@ -265,12 +264,12 @@ header.header-dark .nav-link-subtle {
 
 /* --- VARIATION CORPORATE (ROCK & GOLD - FIXED) --- */
 .header-corp {
-    background: rgba(253, 252, 240, 0.95) !important; /* Retour au fond clair du site */
+    background: rgba(253, 252, 240, 0.85) !important; /* Plus de transparence pour la continuité */
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     padding: 10px 0 !important;
-    border-bottom: 1px solid rgba(139, 29, 61, 0.1) !important;
-    height: 95px !important; /* Hauteur augmentée pour le logo */
+    border-bottom: none !important; /* Suppression de la séparation franche */
+    height: 95px !important;
     display: flex;
     align-items: center;
 }
