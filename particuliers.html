@@ -396,9 +396,28 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
+            
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const flipCards = document.querySelectorAll('.flip-card');
+                    const section = document.getElementById('need-section');
+                    
+                    if (section && flipCards.length > 0) {
+                        const observer = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                // Si la section n'est plus visible à l'écran, on referme les cartes
+                                if (!entry.isIntersecting) {
+                                    flipCards.forEach(card => card.classList.remove('flipped'));
+                                }
+                            });
+                        }, { threshold: 0 });
+                        
+                        observer.observe(section);
+                    }
+                });
+            </script>
         </section>
 
         <!-- SOCIAL PROOF - Featured Quote + Marquee -->
