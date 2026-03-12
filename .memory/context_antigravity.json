@@ -1,0 +1,43 @@
+{
+  "session": "v3.0-B2C-IMMERSION",
+  "date": "2026-03-12",
+  "project": "site-web-kleia-up",
+  "architecture": {
+    "type": "Static HTML/CSS (Vanilla)",
+    "hosting": "Hostinger / GitHub Pages",
+    "main_entry": "individuel-groupe.html",
+    "navigation_piliers": [
+      "Individuel / Groupe",
+      "Entreprises",
+      "Le Manifeste"
+    ]
+  },
+  "strategic_pivots": {
+    "terminology": {
+      "old": "Le Cercle",
+      "new": "Le Mouvement"
+    },
+    "default_page": "individuel-groupe.html",
+    "lead_magnet": {
+      "id": "kit-d-urgence",
+      "link": "https://tinyurl.com/kleia-kit",
+      "cta_text": "JE TÉLÉCHARGE MON KIT D'URGENCE"
+    }
+  },
+  "branding_tokens": {
+    "primary_color": "#8B1D3D (Bordeaux)",
+    "accent_text": "Gold Shine Effect",
+    "typography": {
+      "titles": "Ranade",
+      "accents": "Syne"
+    }
+  },
+  "deployment_status": {
+    "github": "Synced (branch: main)",
+    "hostinger": "Hooked (Auto-deploy active)",
+    "verified_url": "https://kleia-up.fr/individuel-groupe.html"
+  },
+  "next_steps": [
+    "Finaliser l'intégration du formulaire Hostinger Reach sur entreprises.html"
+  ]
+}
