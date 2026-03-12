@@ -63,3 +63,23 @@ Options -Indexes
 
 # UTF-8 encoding
 AddDefaultCharset UTF-8
+
+# =========================================================
+# URL REWRITING - Clean URLs & Redirects
+# =========================================================
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Redirect entreprise.html (singulier) to entreprises.html (pluriel)
+    RewriteRule ^entreprise\.html$ entreprises [R=301,L]
+
+    # Force URL without .html extension (Internal)
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.html -f
+    RewriteRule ^([^/]+)$ $1.html [L]
+
+    # Redirect physical .html to clean URL (External)
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*\.html\ HTTP/
+    RewriteRule ^(.*)\.html$ /$1 [R=301,L]
+</IfModule>
