@@ -25,12 +25,15 @@ Quand je demande de :
 ## Structure du projet
 ```
 site-web-kleia-up/
-├── index.html          # Page principale
-├── css/                # Styles CSS
-├── assets/             # Images et ressources
-├── scripts/            # Scripts d'automatisation (PowerShell)
+├── index.html           # Redirection vers entreprises.html
+├── individuel-groupe.html # Page Individuel / Groupe (ex-particuliers)
+├── entreprises.html     # Page Entreprises
+├── manifeste.html       # Le Manifeste
+├── css/                 # Styles CSS
+├── assets/              # Images et ressources
+├── scripts/             # Scripts d'automatisation (PowerShell)
 │   └── verify-visual.ps1
-└── .agent/workflows/   # Workflows Antigravity
+└── .agent/workflows/    # Workflows Antigravity
     └── check-site.md
 ```
 
@@ -59,17 +62,20 @@ Quand je demande de :
 ## Structure du projet
 ```
 site-web-kleia-up/
-├── index.html          # Page principale
-├── css/                # Styles CSS
-├── assets/             # Images et ressources
-├── scripts/            # Scripts d'automatisation (PowerShell)
+├── index.html           # Redirection
+├── individuel-groupe.html # Page Individuel / Groupe
+├── entreprises.html     # Page Entreprises
+├── manifeste.html       # Le Manifeste
+├── css/                 # Styles CSS
+├── assets/              # Images et ressources
+├── scripts/             # Scripts d'automatisation (PowerShell)
 │   └── verify-visual.ps1
-├── GEMINI.md           # Règles du workspace
+├── GEMINI.md            # Règles du workspace
 └── .agent/
-    ├── workflows/      # Workflows Antigravity
+    ├── workflows/       # Workflows Antigravity
     │   ├── check-site.md
     │   └── supervise.md
-    └── rules/          # Règles agent
+    └── rules/           # Règles agent
         └── supervisor.md
 ```
 
@@ -83,7 +89,8 @@ site-web-kleia-up/
 - [x] **Refonte Offre Signature** : Remplacement de l'ancienne section sur `particuliers.html` par l'architecture `.signature-immersive-v2` asymétrique (60/40) premium et l'offre secondaire Conférence.
 - [x] **UX/UI Gamification** : Transformation de la section des "Besoins" avec des Flip Cards CSS 3D (retournement au clic) avec reset automatique (Intersection Observer).
 - [x] **Cohérence des CTA** : Modification de la stratégie de liens (Ancrage interne direct sur la page plutôt que des renvois externes brisés) pour l'intégration au Cercle et au Kit d'Urgence.
-- [x] **Unification Scroll** : Harmonisation des couleurs de fond en `var(--bg-cream)` pour une transition fluide et un scrolling immersif continu.
+- [x] **Transition Individuel / Groupe** : Renommage de `particuliers.html` en `individuel-groupe.html` et harmonisation de la terminologie dans tous les headers du site.
+- [x] **Formulaire Hostinger Reach** : Finaliser l'intégration et la stratégie d'envoi du formulaire modal (`#modal-contact` dans `entreprises.html`) vers Hostinger (gestion de la validation de saisie, traitement des données reçues).
 
 ## 🎯 TODO PROCHAINE SESSION
 - [ ] **Formulaire Hostinger Reach** : Finaliser l'intégration et la stratégie d'envoi du formulaire modal (`#modal-contact` dans `entreprises.html`) vers Hostinger (gestion de la validation de saisie, traitement des données reçues).
