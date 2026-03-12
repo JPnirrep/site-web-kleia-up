@@ -370,17 +370,33 @@
             <div class="container">
                 <h2 class="segmentation-title">Quel est ton <em>besoin</em> aujourd'hui ?</h2>
                 <div class="segmentation-grid">
-                    <a href="https://9000-firebase-studio-1768817684890.cluster-cbeiita7rbe7iuwhvjs5zww2i4.cloudworkstations.dev"
-                        class="segment-btn">
-                        <h3>Apprivoiser mon trac maintenant</h3>
-                        <p>Je cherche des outils concrets et gratuits pour retrouver mon calme avant une intervention
-                            immédiate.</p>
-                    </a>
-                    <a href="#programme-signature" class="segment-btn">
-                        <h3>Incarner mon leadership sur la durée</h3>
-                        <p>Je veux transformer ma posture, arrêter de me suradapter et devenir une figure de référence
-                            écoutée.</p>
-                    </a>
+                    
+                    <!-- CARTE 1 : Trac (Flip) -->
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front segment-btn">
+                                <h3>Apprivoiser mon trac maintenant</h3>
+                                <p>Je cherche des outils concrets et gratuits pour retrouver mon calme avant une intervention immédiate.</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <a href="https://9000-firebase-studio-1768817684890.cluster-cbeiita7rbe7iuwhvjs5zww2i4.cloudworkstations.dev" class="btn btn-premium shine-effect" style="width: 100%;">JE TÉLÉCHARGE MON KIT D'URGENCE</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- CARTE 2 : Leadership (Flip) -->
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front segment-btn">
+                                <h3>Incarner mon leadership sur la durée</h3>
+                                <p>Je veux transformer ma posture, arrêter de me suradapter et devenir une figure de référence écoutée.</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <a href="#programme-signature" class="flip-cta-gold">Découvrir le programme Signature</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
