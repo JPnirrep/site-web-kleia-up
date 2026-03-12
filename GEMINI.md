@@ -88,12 +88,13 @@ site-web-kleia-up/
 ## ✅ Historique (Session v3.0-B2C-IMMERSION)
 - [x] **Refonte Offre Signature** : Remplacement de l'ancienne section sur `particuliers.html` par l'architecture `.signature-immersive-v2` asymétrique (60/40) premium et l'offre secondaire Conférence.
 - [x] **UX/UI Gamification** : Transformation de la section des "Besoins" avec des Flip Cards CSS 3D (retournement au clic) avec reset automatique (Intersection Observer).
-- [x] **Cohérence des CTA** : Modification de la stratégie de liens (Ancrage interne direct sur la page plutôt que des renvois externes brisés) pour l'intégration au Cercle et au Kit d'Urgence.
-- [x] **Transition Individuel / Groupe** : Renommage de `particuliers.html` en `individuel-groupe.html` et harmonisation de la terminologie dans tous les headers du site.
-- [x] **Formulaire Hostinger Reach** : Finalisation de l'intégration du formulaire modal et stratégie d'envoi.
-- [x] **Redirection d'Accueil** : Mise à jour de `index.html` pour rediriger vers la page Individuel / Groupe par défaut.
-- [x] **Optimisation Conversion** : Migration des CTA "Kit d'Urgence" vers le lien TinyURL et simplification du footer en bouton d'action directe.
-- [x] **Navigation Unifiée** : Ajout du lien Manifeste sur Entreprises et mise à jour du lien LinkedIn de Sandrina.
+- [x] **Cohérence des CTA** : Correction des ancrages stratégiques (REJOINDRE LE MOUVEMENT pointant vers le bas de page `#kit-urgence`).
+- [x] **Lisibilité Premium** : Refonte du bouton "JE TÉLÉCHARGE MON KIT" dans le footer (contraste maximal Blanc sur Bordeaux).
+- [x] **Restauration Manifeste** : Retour au design premium, unification du header/footer et réactivation du blob vidéo organique (version frugale 350px).
+- [x] **Stabilité Globale** : Correction du header translucide (glassmorphism) pour protéger la lisibilité lors du scroll.
+- [x] **Transition Individuel / Groupe** : Renommage de `particuliers.html` en `individuel-groupe.html` et harmonisation de la terminologie.
+- [x] **Redirection d'Accueil** : Mise à jour de `index.html` pour rediriger vers la page B2C par défaut.
 
 ## 🎯 TODO PROCHAINE SESSION
 - [ ] **Formulaire Hostinger Reach** : Finaliser l'intégration et la stratégie d'envoi du formulaire modal (`#modal-contact` dans `entreprises.html`) vers Hostinger (gestion de la validation de saisie, traitement des données reçues).
+- [ ] **Audit Responsif Final** : Vérification minutieuse des nouvelles sections (Flip Cards, Signature v2) sur les tablettes et petits smartphones.
