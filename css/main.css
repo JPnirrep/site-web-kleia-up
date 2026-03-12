@@ -997,11 +997,11 @@ header.header-dark .nav-link-subtle {
 .cta-decision-zone .hero-cta {
     display: inline-block;
     margin: 0 auto;
-    white-space: nowrap !important;
+    white-space: nowrap;
     text-align: center;
-    width: auto !important;
+    width: auto;
     max-width: 100%;
-    padding: 15px 40px !important;
+    padding: 15px 40px;
 }
 
 .cta-reassurance {
@@ -2142,6 +2142,14 @@ footer h2 {
         font-size: 0.85rem;
     }
 
+    /* CTA button: allow text to wrap on tablets/mobile */
+    .cta-decision-zone .hero-cta {
+        white-space: normal !important;
+        width: 100% !important;
+        padding: 15px 25px !important;
+        box-sizing: border-box;
+    }
+
     .hero-image-wrapper {
         order: -1;
         margin-bottom: 20px;
@@ -2303,6 +2311,14 @@ footer h2 {
 
     .newsletter-input {
         min-width: 100%;
+    }
+
+    /* CTA button: compact on small phones */
+    .cta-decision-zone .hero-cta {
+        white-space: normal !important;
+        width: 100% !important;
+        padding: 14px 16px !important;
+        font-size: 0.82rem !important;
     }
 }
 
@@ -2568,10 +2584,10 @@ footer h2 {
 }
 
 .cta-decision-zone .hero-cta {
-    white-space: nowrap !important;
-    width: auto !important;
+    white-space: nowrap;
+    width: auto;
     display: inline-block !important;
-    padding: 15px 40px !important;
+    padding: 15px 40px;
     text-align: center;
 }
 
