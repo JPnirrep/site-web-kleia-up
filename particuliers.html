@@ -529,26 +529,84 @@
         </section>
 
 
-        <!-- SECTION PROGRAMME SIGNATURE -->
-        <section id="programme-signature" class="signature-section">
+        <!-- SECTION PROGRAMME SIGNATURE & CONFÉRENCE -->
+        <style>
+            .signature-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 40px;
+                align-items: stretch;
+            }
+            @media (min-width: 992px) {
+                .signature-grid {
+                    grid-template-columns: 1.3fr 1fr;
+                }
+            }
+        </style>
+        <section id="programme-signature" class="signature-section" style="padding: 100px 0; background-color: var(--bg-cream);">
             <div class="container">
-                <div class="section-title-wrap">
-                    <h2 class="section-title">PROGRAMME <em>SIGNATURE</em></h2>
+                <div class="section-title-wrap" style="margin-bottom: 60px;">
+                    <h2 class="section-title" style="font-family: 'Ranade', sans-serif; font-weight: 800; color: #8B1D3D; margin-bottom: 15px;">PROGRAMME <em>SIGNATURE</em></h2>
+                    <p class="section-subtitle" style="font-size: 1.15rem; opacity: 0.85; max-width: 700px; margin: 0 auto;">Incarne ton autorité organique sans t'épuiser derrière un masque professionnel.</p>
                 </div>
-                <article class="offer-card-premium">
-                    <div class="offer-icon">🏆</div>
-                    <p class="offer-category">PROGRAMME SIGNATURE</p>
-                    <h3 class="offer-title-premium">Coaching Leadership Dirigeants Hypersensibles HPI HSP</h3>
-                    <p class="offer-subtitle-premium">L'Incarnation</p>
-                    <p class="offer-description">
-                        <strong>Ce n'est pas une simple formation, c'est une transformation identitaire.</strong><br>
-                        Transforme ta singularité en autorité magnétique. Arrête de t'épuiser derrière un masque pro.
-                        Accompagnement individuel et collectif sur 3 à 6 mois (sur candidature uniquement).
-                    </p>
-                    <p class="offer-price-premium">À partir de 2500€</p>
-                    <a href="#" class="btn btn-secondary"
-                        aria-label="Candidater au programme signature L'Incarnation">DÉPOSER MA CANDIDATURE</a>
-                </article>
+                
+                <div class="signature-grid">
+                    
+                    <!-- L'OFFRE PRINCIPALE (INDIVIDUELLE) -->
+                    <article class="offer-card-premium" style="margin: 0; display: flex; flex-direction: column; justify-content: space-between; border: 2px solid #D4AF37; box-shadow: 0 20px 40px rgba(139, 29, 61, 0.15); transform: scale(1.02); z-index: 2; padding: 40px 30px; text-align: left; background: #ffffff;">
+                        <div>
+                            <div class="offer-icon" style="font-size: 2.5rem; margin-bottom: 15px; text-align: center;">👑</div>
+                            <p class="offer-category" style="color: #D4AF37; letter-spacing: 2px; font-weight: 700; text-align: center; margin-bottom: 15px;">PROGRAMME INDIVIDUEL</p>
+                            <h3 style="font-size: 1.9rem; line-height: 1.2; margin-bottom: 5px; color: #1A1A1A; font-family: 'Ranade', sans-serif; font-weight: 800; text-align: center;">Somatic Leadership &<br>Affirmation de Soi</h3>
+                            <p style="font-style: italic; opacity: 0.8; margin-bottom: 30px; color: #580017; text-align: center; font-weight: 500;">Transformation identitaire sur 6 mois</p>
+                            
+                            <p style="font-size: 1.05rem; line-height: 1.6; color: #4A3B32; margin-bottom: 25px;">
+                                <strong>Ce n'est pas une formation théorique, c'est un laboratoire pratique.</strong><br>
+                                Apprends à poser tes limites et à prendre ta place via une approche corporelle (Somatic) et stratégique. Fini la surcharge mentale et la sur-adaptation.
+                            </p>
+                            
+                            <ul style="list-style: none; padding-left: 0; font-size: 0.95rem; line-height: 1.6; color: #1A1A1A;">
+                                <li style="margin-bottom: 12px; display: flex; gap: 10px;"><span style="color: #D4AF37;">✦</span> <div><strong>Accompagnement VIP :</strong> 1h tous les 15 jours avec Sandrina</div></li>
+                                <li style="margin-bottom: 12px; display: flex; gap: 10px;"><span style="color: #D4AF37;">✦</span> <div><strong>Plateforme 24/7 :</strong> Micro-learning actionnable (Vidéos < 10 mn) avec suivi intégré</div></li>
+                                <li style="margin-bottom: 12px; display: flex; gap: 10px;"><span style="color: #D4AF37;">✦</span> <div><strong>La Box KLEIA :</strong> Carnet physique exclusif + 36 cartes d'actions/défis expédiés chez toi</div></li>
+                            </ul>
+                        </div>
+                        
+                        <div style="margin-top: 35px; text-align: center;">
+                            <p style="font-size: 1.8rem; margin-bottom: 5px; color: #8B1D3D; font-family: 'Ranade', sans-serif; font-weight: 800;">1 997 €</p>
+                            <p style="font-size: 0.85rem; opacity: 0.6; margin-bottom: 25px;">(Possibilité de règlement en 6 fois)</p>
+                            <a href="#" class="btn btn-premium shine-effect" style="width: 100%; display: inline-block;">DÉPOSER MA CANDIDATURE</a>
+                            <p style="font-size: 0.75rem; margin-top: 15px; opacity: 0.7; line-height: 1.4;"><em>Uniquement sur sélection. Cadre structurant (contrat d'engagement).<br>Option : -10% sur la Création de Conférence Signature ou un futur séminaire.</em></p>
+                        </div>
+                    </article>
+                    
+                    <!-- L'OFFRE SECONDAIRE (CONFÉRENCE) -->
+                    <article class="atelier-card" style="margin: 0; background-color: #FAFAFA; border: 1px solid rgba(88, 0, 23, 0.08); box-shadow: 0 10px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between; padding: 40px 30px; text-align: left; transform: scale(1);">
+                        <div>
+                            <div class="offer-icon" style="font-size: 2.2rem; margin-bottom: 15px;">🎤</div>
+                            <p style="color: #8B1D3D; font-size: 0.75rem; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 10px;">FORMAT COURT / MENTORAT</p>
+                            <h3 style="font-size: 1.5rem; color: #1A1A1A; margin-bottom: 15px; font-family: 'Ranade', sans-serif; font-weight: 800;">Crée Ta Conférence<br>Signature</h3>
+                            
+                            <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text); margin-bottom: 20px;">
+                                Tu as déjà validé ton autorité naturelle (Affirmation de soi acquise) et tu es prêt(e) à monter sur scène ? 
+                            </p>
+                            <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text); margin-bottom: 25px;">
+                                Cet accompagnement ciblé te permet de <strong>structurer, scénariser et incarner</strong> ta keynote ou ton pitch à fort impact.
+                            </p>
+                            
+                            <ul style="list-style: none; padding-left: 0; font-size: 0.9rem; line-height: 1.5; color: var(--color-text); opacity: 0.9;">
+                                <li style="margin-bottom: 10px; display: flex; gap: 8px;"><span style="color: #8B1D3D;">→</span> <div>Scénarisation et fil rouge (Storytelling)</div></li>
+                                <li style="margin-bottom: 10px; display: flex; gap: 8px;"><span style="color: #8B1D3D;">→</span> <div>Occupation de l'espace scénique</div></li>
+                                <li style="margin-bottom: 10px; display: flex; gap: 8px;"><span style="color: #8B1D3D;">→</span> <div>Gestion de l'énergie et rythme (Somatic)</div></li>
+                            </ul>
+                        </div>
+                        
+                        <div style="margin-top: 25px;">
+                            <a href="#" class="btn btn-secondary" style="width: 100%; border: 2px solid #8B1D3D; color: #8B1D3D; text-align: center; background: transparent;">PRENDRE RDV POUR EN PARLER</a>
+                        </div>
+                    </article>
+                    
+                </div>
             </div>
         </section>
 
