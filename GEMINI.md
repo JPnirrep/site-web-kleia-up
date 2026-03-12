@@ -79,11 +79,11 @@ site-web-kleia-up/
 - Pas de serveur backend requis
 - Build GitHub Pages : ~45 secondes après push
 
-## ✅ Historique (Session v2.9-GLASSMORPHISM)
-- [x] **Unification Globale** : Standardisation du header premium fixe sur `entreprises.html`, `particuliers.html` et `manifeste.html`.
-- [x] **Transparence & Blur** : Fix critique de l'effet Glassmorphism (ivoire translucide / flou 25px).
-- [x] **Correctifs UI/UX** : Recalage du bandeau de logos et redimensionnement du blob (Sandrina) sur la page Particuliers.
-- [x] **Optimisation Structurelle** : Ajustement des paddings Hero pour compenser les headers fixes.
+## ✅ Historique (Session v3.0-B2C-IMMERSION)
+- [x] **Refonte Offre Signature** : Remplacement de l'ancienne section sur `particuliers.html` par l'architecture `.signature-immersive-v2` asymétrique (60/40) premium et l'offre secondaire Conférence.
+- [x] **UX/UI Gamification** : Transformation de la section des "Besoins" avec des Flip Cards CSS 3D (retournement au clic) avec reset automatique (Intersection Observer).
+- [x] **Cohérence des CTA** : Modification de la stratégie de liens (Ancrage interne direct sur la page plutôt que des renvois externes brisés) pour l'intégration au Cercle et au Kit d'Urgence.
+- [x] **Unification Scroll** : Harmonisation des couleurs de fond en `var(--bg-cream)` pour une transition fluide et un scrolling immersif continu.
 
 ## 🎯 TODO PROCHAINE SESSION
 - [ ] **Formulaire Hostinger Reach** : Finaliser l'intégration et la stratégie d'envoi du formulaire modal (`#modal-contact` dans `entreprises.html`) vers Hostinger (gestion de la validation de saisie, traitement des données reçues).
