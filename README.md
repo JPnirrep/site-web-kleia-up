@@ -3,7 +3,7 @@
 ## 🔒 VERSION STABLE - SITE STATIQUE HAUTE PERFORMANCE
 
 ![Status](https://img.shields.io/badge/status-PRODUCTION-success)
-![Version](https://img.shields.io/badge/version-v2.7--CORP--RANADE-blue)
+![Version](https://img.shields.io/badge/version-v3.0--B2C--IMMERSION-blue)
 ![Architecture](https://img.shields.io/badge/architecture-VANILLA%20HTML%2FCSS-green)
 
 ---
@@ -193,7 +193,14 @@ git push
 
 ## 📝 HISTORIQUE DES VERSIONS
 
-### v2.9-GLASSMORPHISM (11/03/2026) - DERNIÈRE MISE À JOUR
+### v3.0-B2C-IMMERSION (12/03/2026) - SESSION ACTUELLE
+- ✅ **Renommage Stratégique** : Migration de `particuliers.html` vers `individuel-groupe.html` et redirection de la page d'accueil (`index.html`) pour une immersion B2C immédiate.
+- ✅ **Pivot Sémantique** : Remplacement de "Cercle" par "**Mouvement**" sur 100% du site pour une identité de marque plus audacieuse et dynamique.
+- ✅ **Optimisation Conversion** : Migration des CTAs "Kit d'Urgence" vers le lien TinyURL direct et simplification du footer (suppression du formulaire doublon).
+- ✅ **Interconnexion Globale** : Unification des menus de navigation entre les espaces Entreprises, Individuel/Groupe et Manifeste.
+- ✅ **Corrections UX** : Fix de l'ancre du header CTA et mise à jour du lien LinkedIn Fondatrice.
+
+### v2.9-GLASSMORPHISM (11/03/2026)
 - ✅ **Unification Premium** : Déploiement du header `.header-corp` (Glassmorphism, fixed) sur l'ensemble du site (Entreprises, Particuliers, Manifeste).
 - ✅ **Transparence Apple-like** : Optimisation de l'effet "vitre" (blur 25px, backdrop-filter) sur fond beige ivoire.
 - ✅ **Recalage Logos (B2C)** : Décalage vertical du bandeau de logos (110px) pour visibilité parfaite sous le menu fixe.
