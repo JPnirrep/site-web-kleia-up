@@ -45,7 +45,7 @@
             </nav>
 
             <div class="header-cta">
-                <a href="#newsletter" class="btn btn-primary pill-shape shine-effect">
+                <a href="#kit-urgence" class="btn btn-primary pill-shape shine-effect">
                     REJOINDRE LE MOUVEMENT
                 </a>
             </div>
@@ -57,9 +57,9 @@
         <section class="manifesto-header" style="padding: 140px 0 60px !important;">
             <div class="container fade-in-up" style="max-width: 900px; text-align: center;">
                 
-                <!-- BLOB VIDÉO ORGANIQUE (Large Version) -->
-                <div class="metamorphose-col-video" style="margin-bottom: 40px; display: flex; justify-content: center;">
-                    <div class="video-organic-blob" style="width: 450px; height: 450px;">
+                <!-- BLOB VIDÉO ORGANIQUE (Version Frugale) -->
+                <div class="metamorphose-col-video" style="margin-bottom: 30px; display: flex; justify-content: center;">
+                    <div class="video-organic-blob" style="width: 350px; height: 350px;">
                         <video autoplay loop muted playsinline class="blob-video">
                             <source src="./assets/video/kleia.mp4" type="video/mp4">
                         </video>
@@ -165,28 +165,53 @@
             </div>
         </section>
 
-        <!-- NEWSLETTER -->
-        <section id="newsletter" class="section-padding" style="background-color: #fff; text-align: center;">
-            <div class="container" style="max-width: 600px;">
-                <h2 class="section-title">SUIVRE LE <em>MOUVEMENT</em></h2>
-                <p class="section-subtitle">Rejoins les coulisses et reçois ton kit d'urgence pour incarner ton autorité.</p>
-                <form id="manifesto-form" class="newsletter-form" style="margin-top: 30px;">
-                    <input type="email" placeholder="Ton adresse email favorite" class="newsletter-input" required style="width: 100%; margin-bottom: 15px;">
-                    <button type="submit" class="btn btn-premium" style="width: 100%;">JE REJOINS L'ONDE</button>
-                </form>
-            </div>
-        </section>
     </main>
 
-    <footer style="background-color: #1a1a1a; color: #fff; padding: 60px 0 30px;">
-        <div class="container" style="text-align: center;">
-            <div class="footer-logo" style="margin-bottom: 30px;">
-                <img src="./assets/logo_kleia.png" alt="KLEIA-UP" width="100" style="filter: brightness(0) invert(1);">
+    <!-- FOOTER & LEAD MAGNET -->
+    <footer id="kit-urgence" role="contentinfo">
+        <div class="footer-wave" aria-hidden="true">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+        <div class="container footer-content">
+            <h2>Gorge nouée avant ta réunion ?<br>Blanc avant ton pitch ?</h2>
+            <p class="footer-lead-subtitle"
+                style="font-family: var(--font-title); font-style: italic; font-size: 1.4rem; margin-bottom: 40px; opacity: 0.9;">
+                Récupère ton calme et ta clarté en 7 minutes chrono avec le Kit d'Urgence KLEIA-UP.</p>
+
+            <div class="lead-magnet-details">
+                <div class="lead-item">
+                    <strong>🎧 Audio SOS Ancrage (3 min)</strong>
+                    <p>Respiration guidée par Sandrina pour calmer ton stress avant de prendre la parole.</p>
+                </div>
+                <div class="lead-item">
+                    <strong>📄 Double Page Magique</strong>
+                    <p>PDF interactif : Outil "Météo Intérieure + Brain Dump" pour décharger ton mental.</p>
+                </div>
+                <div class="lead-item">
+                    <strong>🎬 Vidéo Déculpabilisation</strong>
+                    <p>"Tu n'es pas cassé·e, tu es juste en surchauffe" — comprends ton cerveau.</p>
+                </div>
             </div>
-            <p style="font-size: 0.9rem; opacity: 0.5; letter-spacing: 1px;">
-                © 2026 KLEIA-UP. TOUS DROITS RÉSERVÉS. <br>
-                DESIGN PREMIUM & LEADERSHIP ORGANIQUE.
+
+            <div class="newsletter-cta-wrapper" style="text-align: center; margin-top: 30px;">
+                <a href="https://tinyurl.com/kleia-kit" target="_blank" rel="noopener" class="btn" style="background: white; color: var(--color-burgundy); font-weight: 800; border: none; padding: 18px 40px; border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                    JE TÉLÉCHARGE MON KIT D'URGENCE
+                </a>
+            </div>
+
+            <p class="footer-micro-copy">
+                En téléchargeant ce kit, tu rejoins Le Mouvement KLEIA-UP. Aucun spam.
             </p>
+
+            <div class="copyright"
+                style="margin-top: 80px; font-size: 0.8rem; opacity: 0.5; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 30px;">
+                © KLEIA-UP 2026 - Leadership Organique & Premium Design
+            </div>
         </div>
     </footer>
 
@@ -202,19 +227,6 @@
             });
         }
 
-        // Newsletter Form Feedback
-        document.getElementById('manifesto-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const btn = this.querySelector('button');
-            const originalText = btn.textContent;
-            btn.textContent = "BIENVENUE DANS L'ONDE !";
-            btn.style.backgroundColor = "#D70040";
-            this.querySelector('input').value = '';
-            setTimeout(() => {
-                btn.textContent = originalText;
-                btn.style.backgroundColor = "";
-            }, 3000);
-        });
 
         // Accélération vidéo X1.5 pour le dynamisme organique
         window.addEventListener('load', () => {
