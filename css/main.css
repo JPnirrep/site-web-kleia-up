@@ -652,7 +652,7 @@ header.header-dark .nav-link-subtle {
 .hero-section {
     padding: 60px 0 60px !important; /* Réduit car le bandeau logos au-dessus assure déjà l'espacement initial */
     position: relative;
-    overflow: hidden;
+    overflow: visible; /* Modifié pour permettre à la lumière du glow de diffuser vers le haut ! */
     min-height: 85vh;
     /* Generous whitespace = symbolizes "taking your place" */
     display: flex;
@@ -662,7 +662,7 @@ header.header-dark .nav-link-subtle {
 #hero {
     padding: 50px 0 40px;
     position: relative;
-    overflow: hidden;
+    overflow: visible; /* Modifié pour permettre à la lumière de diffuser */
 }
 
 .glow-circle {
@@ -2477,7 +2477,7 @@ footer h2 {
 
     /* RÉDUCTION DE L'ESPACE VERTICAL (Plus élégant) */
     padding: 1.5rem 0 !important;
-    background-color: var(--bg-cream) !important;
+    background-color: transparent !important; /* Effet totalement flottant !!! */
     position: relative;
 }
 
