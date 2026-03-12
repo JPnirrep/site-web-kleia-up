@@ -54,11 +54,21 @@
 
     <main role="main">
         <!-- HERO MANIFESTE -->
-        <section class="manifesto-header">
-            <div class="container fade-in-up" style="max-width: 900px;">
+        <section class="manifesto-header" style="padding: 100px 0 60px !important;">
+            <div class="container fade-in-up" style="max-width: 900px; text-align: center;">
+                
+                <!-- BLOB VIDÉO ORGANIQUE (Large Version) -->
+                <div class="metamorphose-col-video" style="margin-bottom: 40px;">
+                    <div class="video-organic-blob" style="width: 500px; height: 500px;">
+                        <video autoplay loop muted playsinline class="blob-video">
+                            <source src="./assets/video/kleia.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
                 <span class="hero-eyebrow">LE MOUVEMENT</span>
                 <h1 class="hero-title">LE MANIFESTE <br><em class="gold-shine-text">KLEIA-UP</em></h1>
-                <p class="hero-subtitle" style="margin-top: 40px; font-weight: 500;">
+                <p class="hero-subtitle" style="margin-top: 30px; font-weight: 500;">
                     Le mouvement qui refuse le <span class="gold-shine-text">"désert de lien"</span>.
                 </p>
                 <div class="manifesto-intro-text" style="max-width: 750px; margin: 0 auto; text-align: left;">
@@ -205,6 +215,13 @@
                 btn.textContent = originalText;
                 btn.style.backgroundColor = "";
             }, 3000);
+        });
+
+        // Accélération vidéo X1.5 pour le dynamisme organique
+        window.addEventListener('load', () => {
+            document.querySelectorAll('video').forEach(video => {
+                video.playbackRate = 1.5;
+            });
         });
     </script>
 </body>
