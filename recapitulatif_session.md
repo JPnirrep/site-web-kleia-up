@@ -1,35 +1,31 @@
-# Récapitulatif de Session - Projets KLEIA-UP
+# Récapitulatif de Session - KLEIA-UP
 
-**Date :** 11 Mars 2026
+**Date :** 12 Mars 2026
+**Focus :** Transition stratégique Individuel / Groupe & Harmonisation globale.
 
-## Ce qui a été accompli
+## Réalisations majeures
 
-### 1. Métamorphose "UX 2026" de la Section Manifeste (Particuliers)
-- Transformation visuelle complète : layout deux colonnes avec espacement "Premium"
-- Intégration de la **vidéo de Sandrina** dans un "blob organique" asymétrique.
-- **Accélération X1.5** de la vidéo via JavaScript pour dynamiser l'élan.
-- Application de l'effet **Gold Shine** sur les mots clés ("onde qui part du plexus", "joie") avec bouton "DÉCOUVRIR LE MANIFESTE".
+### 1. Pivot Sémantique & Branding
+- **Adieu "Le Cercle", bienvenue "Le Mouvement"** : Remplacement systématique de toute la terminologie "Cercle" par "**Mouvement**" sur l'ensemble du site (Titres, CTA, Navigation, Footer).
+- **Harmonisation des CTA** : Mise à jour des boutons vers "**JE REJOINS LE MOUVEMENT**" pour une cohérence parfaite avec le Manifeste.
 
-### 2. Purge et Unification du Workspace (Le grand nettoyage)
-- Résolution du problème de "convergence" : le code local ne correspondait pas au site en ligne.
-- Identification de multiples dossiers obsolètes liés à "La Fabrique PEPPS".
-- **Action** : Suppression pure et simple des doublons et traces de l'ancienne marque.
-- L'espace de travail est maintenant unifié sous le répertoire `site-web-kleia-up` uniquement.
+### 2. Restructuration & SEO
+- **Renommage Stratégique** : `particuliers.html` est devenu `individuel-groupe.html` pour mieux refléter la cible élargie.
+- **Nouvelle Home Page** : Mise à jour de `index.html` pour faire de l'espace **Individuel / Groupe** la page d'accueil par défaut du site.
+- **Mise à jour SEO** : Synchronisation des balises `<title>`, `og:title` et `og:url` sur toutes les pages.
 
-### 3. Corrections de Design Fin (Lisibilité & Élégance)
-- **Le Conflit "Gold Shine" Résolu** : L'animation qui projetait l'effet (et le texte) hors de la zone a été corrigée et stabilisée.
-- **Augmentation du Contraste** : Les teintes jaunes trop lumineuses fuyant sur le fond blanc ont été assombries vers un or/bronze (#B8860B, #8B6508), assurant une lisibilité maximale pour les yeux.
-- **Refonte de la Citation** (Témoignage de Cécile Neuville) : Passage d'un texte "massif et agressif" (Titre) à un texte "Ouvrage d'Art" (Corps), taille et opacité réduites, améliorant radicalement le confort de lecture et l'immersion premium.
+### 3. Navigation & Connectivité
+- **Interconnexion Totale** : Mise à jour des liens dans les headers de `entreprises.html`, `manifeste.html` et `individuel-groupe.html`.
+- **Pont Entreprises** : Réactivation et enrichissement du menu sur la page Entreprises pour inclure les piliers "Individuel / Groupe" et "Manifeste".
 
-### 4. Code & Sécurité
-- Tous les ajustements ont été committés ligne par ligne.
-- Synchronisation complète réussie vers le dépôt **GitHub**.
+### 4. Optimisation des Conversions
+- **Kit d'Urgence Direct** : Intégration du lien `https://tinyurl.com/kleia-kit` sur tous les CTA "Kit d'Urgence".
+- **Simplification du Footer** : Remplacement du formulaire email (doublon) par un bouton d'action directe vers le lien TinyURL pour une meilleure vélocité de conversion.
+- **LinkedIn Sync** : Mise à jour du profil de Sandrina vers l'URL active la plus récente.
 
-## Pour la prochaine session (Next Steps)
+### 5. Technique & Déploiement
+- **Bug Fix** : Correction de l'ancre du header CTA qui pointait vers un ID erroné.
+- **Vérification Hostinger** : Validation en temps réel de la synchronisation entre GitHub et le domaine `kleia-up.fr`.
 
-1. **Déploiement Hostinger**
-   - L'objectif prioritaire sera de configurer le pont entre le dépôt GitHub de KLEIA-UP et Hostinger, soit via **GitHub Actions** (nécessite credentials FTP/SFTP), soit via l'intégration Git native de Hostinger.
-   - Cela permettra que chaque "push" (sauvegarde ici) se mette à jour **en ligne chez les visiteurs** en quelques secondes, sans plus jamais copier/coller.
-
-2. **Formulaires (Hostinger Reach)**
-   - Prendre le code des formulaires existants et l'intégrer à la base Hostinger Reach, une fois l'accès configuré.
+---
+**STATUT FINAL : TOUT EST EN LIGNE ET OPÉRATIONNEL.** 🚀

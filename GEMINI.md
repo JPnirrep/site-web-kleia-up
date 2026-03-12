@@ -25,7 +25,7 @@ Quand je demande de :
 ## Structure du projet
 ```
 site-web-kleia-up/
-├── index.html           # Redirection vers entreprises.html
+├── index.html           # Redirection vers individuel-groupe.html
 ├── individuel-groupe.html # Page Individuel / Groupe (ex-particuliers)
 ├── entreprises.html     # Page Entreprises
 ├── manifeste.html       # Le Manifeste
@@ -90,7 +90,10 @@ site-web-kleia-up/
 - [x] **UX/UI Gamification** : Transformation de la section des "Besoins" avec des Flip Cards CSS 3D (retournement au clic) avec reset automatique (Intersection Observer).
 - [x] **Cohérence des CTA** : Modification de la stratégie de liens (Ancrage interne direct sur la page plutôt que des renvois externes brisés) pour l'intégration au Cercle et au Kit d'Urgence.
 - [x] **Transition Individuel / Groupe** : Renommage de `particuliers.html` en `individuel-groupe.html` et harmonisation de la terminologie dans tous les headers du site.
-- [x] **Formulaire Hostinger Reach** : Finaliser l'intégration et la stratégie d'envoi du formulaire modal (`#modal-contact` dans `entreprises.html`) vers Hostinger (gestion de la validation de saisie, traitement des données reçues).
+- [x] **Formulaire Hostinger Reach** : Finalisation de l'intégration du formulaire modal et stratégie d'envoi.
+- [x] **Redirection d'Accueil** : Mise à jour de `index.html` pour rediriger vers la page Individuel / Groupe par défaut.
+- [x] **Optimisation Conversion** : Migration des CTA "Kit d'Urgence" vers le lien TinyURL et simplification du footer en bouton d'action directe.
+- [x] **Navigation Unifiée** : Ajout du lien Manifeste sur Entreprises et mise à jour du lien LinkedIn de Sandrina.
 
 ## 🎯 TODO PROCHAINE SESSION
 - [ ] **Formulaire Hostinger Reach** : Finaliser l'intégration et la stratégie d'envoi du formulaire modal (`#modal-contact` dans `entreprises.html`) vers Hostinger (gestion de la validation de saisie, traitement des données reçues).
