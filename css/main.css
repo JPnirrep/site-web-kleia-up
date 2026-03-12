@@ -570,7 +570,7 @@ header.header-dark .nav-link-subtle {
 .partners-banner {
     padding: 110px 0 15px; /* Augmenté (95px header + 15px padding) pour sortir de derrière le header fixe */
     background: transparent !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: none; /* Suppression de la bordure pour un effet totalement flottant / aérien */
     overflow: hidden;
     position: relative;
 }
@@ -600,6 +600,7 @@ header.header-dark .nav-link-subtle {
     object-fit: contain;
     filter: none;
     opacity: 0.8;
+    mix-blend-mode: multiply; /* Effet de lévitation sans fond blanc pour les JPEGs */
     transition: all 0.3s ease;
 }
 
