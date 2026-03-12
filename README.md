@@ -197,8 +197,10 @@ git push
 - ✅ **Renommage Stratégique** : Migration de `particuliers.html` vers `individuel-groupe.html` et redirection de la page d'accueil (`index.html`) pour une immersion B2C immédiate.
 - ✅ **Pivot Sémantique** : Remplacement de "Cercle" par "**Mouvement**" sur 100% du site pour une identité de marque plus audacieuse et dynamique.
 - ✅ **Optimisation Conversion** : Migration des CTAs "Kit d'Urgence" vers le lien TinyURL direct et simplification du footer (suppression du formulaire doublon).
-- ✅ **Interconnexion Globale** : Unification des menus de navigation entre les espaces Entreprises, Individuel/Groupe et Manifeste.
-- ✅ **Corrections UX** : Fix de l'ancre du header CTA et mise à jour du lien LinkedIn Fondatrice.
+- ✅ **Gamification Flip Cards** : Transformation de la section des "Besoins" avec des cartes 3D interactives.
+- ✅ **Restauration Manifeste** : Retour au design premium, unification du header/footer et réactivation du blob vidéo organique.
+- ✅ **Stabilité Header** : Fix du header translucide (glassmorphism) pour la lisibilité au scroll.
+- ✅ **Correctifs Design** : Amélioration du contraste des boutons footer (Blanc sur Bordeaux) et recalage des ancres CTA.
 
 ### v2.9-GLASSMORPHISM (11/03/2026)
 - ✅ **Unification Premium** : Déploiement du header `.header-corp` (Glassmorphism, fixed) sur l'ensemble du site (Entreprises, Particuliers, Manifeste).
