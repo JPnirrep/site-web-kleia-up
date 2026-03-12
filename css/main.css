@@ -305,16 +305,16 @@ header.header-dark .nav-link-subtle {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.4) !important; /* Blanc translucide pour contraste maximal sur fond beige */
-    backdrop-filter: blur(25px) saturate(200%); /* Flou renforcé pour l'effet "cristallin" */
-    -webkit-backdrop-filter: blur(25px) saturate(200%);
+    background: transparent !important; /* Totalement transparent pour éviter la bande blanche */
+    backdrop-filter: none !important; /* Désactivation du flou pour une transparence pure */
+    -webkit-backdrop-filter: none !important;
     padding: 10px 0 !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important; /* Filet de lumière discret */
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05) !important;
+    border-bottom: none !important; /* Suppression du filet pour plus de légèreté */
+    box-shadow: none !important; /* Suppression de l'ombre */
     height: 95px !important;
     display: flex;
     align-items: center;
-    transition: background 0.4s ease, backdrop-filter 0.4s ease;
+    transition: background 0.4s ease;
 }
 
 .header-corp .header-container {
