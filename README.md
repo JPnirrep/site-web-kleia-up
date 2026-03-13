@@ -3,7 +3,7 @@
 ## 🔒 VERSION STABLE - SITE STATIQUE HAUTE PERFORMANCE
 
 ![Status](https://img.shields.io/badge/status-PRODUCTION-success)
-![Version](https://img.shields.io/badge/version-v3.0--B2C--IMMERSION-blue)
+![Version](https://img.shields.io/badge/version-v3.6--STABLE--PREMIUM-blue)
 ![Architecture](https://img.shields.io/badge/architecture-VANILLA%20HTML%2FCSS-green)
 
 ---
@@ -193,7 +193,14 @@ git push
 
 ## 📝 HISTORIQUE DES VERSIONS
 
-### v3.0-B2C-IMMERSION (12/03/2026) - SESSION ACTUELLE
+### v3.6-STABLE-PREMIUM (13/03/2026) - BASE DE RÉFÉRENCE
+- ✅ **Unification Premium** : Harmonisation totale des boutons sur Individuel, Entreprises et Manifeste.
+- ✅ **Effet 3D Liftoff** : Élévation de 8px au survol avec inversion de couleur et ombre portée dynamique.
+- ✅ **Hostinger Cache Bypass** : Configuration `.htaccess` agressive et système de versioning automatique (`?v=3.6`) pour briser le cache serveur.
+- ✅ **Responsive Fondatrice** : Correction des bugs d'affichage sur mobile pour l'image et le texte de la section "La Fondatrice".
+- ✅ **Nettoyage Qualité** : Suppression de l'erreur 404 Favicon et harmonisation des boutons LinkedIn.
+
+### v3.0-B2C-IMMERSION (12/03/2026)
 - ✅ **Renommage Stratégique** : Migration de `particuliers.html` vers `individuel-groupe.html` et redirection de la page d'accueil (`index.html`) pour une immersion B2C immédiate.
 - ✅ **Pivot Sémantique** : Remplacement de "Cercle" par "**Mouvement**" sur 100% du site pour une identité de marque plus audacieuse et dynamique.
 - ✅ **Optimisation Conversion** : Migration des CTAs "Kit d'Urgence" vers le lien TinyURL direct et simplification du footer (suppression du formulaire doublon).

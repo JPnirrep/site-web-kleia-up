@@ -86,6 +86,11 @@ site-web-kleia-up/
 - Build GitHub Pages : ~45 secondes après push
 
 ## ✅ Historique (Session v3.0-B2C-IMMERSION)
+- [x] **v3.6-STABLE-PREMIUM (13/03/2026)** : Version de référence. Unification totale des boutons premium (Individuel, Entreprises, Manifeste).
+- [x] **Boutons 3D Liftoff** : Élévation de 8px au survol, inversion chromatique blanc/bordeaux.
+- [x] **Neutralisation Cache Hostinger** : Configuration .htaccess agressive (max-age=0) et versioning system (?v=3.6).
+- [x] **Correction Fondatrice** : Responsive total du blob et du texte sur mobile.
+- [x] **Nettoyage Console** : Suppression erreur 404 Favicon, harmonisation LinkedIn.
 - [x] **Refonte Offre Signature** : Remplacement de l'ancienne section sur `particuliers.html` par l'architecture `.signature-immersive-v2` asymétrique (60/40) premium et l'offre secondaire Conférence.
 - [x] **UX/UI Gamification** : Transformation de la section des "Besoins" avec des Flip Cards CSS 3D (retournement au clic) avec reset automatique (Intersection Observer).
 - [x] **Cohérence des CTA** : Correction des ancrages stratégiques (REJOINDRE LE MOUVEMENT pointant vers le bas de page `#kit-urgence`).
@@ -96,5 +101,5 @@ site-web-kleia-up/
 - [x] **Redirection d'Accueil** : Mise à jour de `index.html` pour rediriger vers la page B2C par défaut.
 
 ## 🎯 TODO PROCHAINE SESSION
-- [ ] **Formulaire Hostinger Reach** : Finaliser l'intégration et la stratégie d'envoi du formulaire modal (`#modal-contact` dans `entreprises.html`) vers Hostinger (gestion de la validation de saisie, traitement des données reçues).
-- [ ] **Audit Responsif Final** : Vérification minutieuse des nouvelles sections (Flip Cards, Signature v2) sur les tablettes et petits smartphones.
+- [ ] **Formulaire Hostinger Reach** : Finaliser l'intégration et la stratégie d'envoi du formulaire modal (`#modal-contact` dans `entreprises.html`).
+- [ ] **Audit Responsif Final** : Vérification minutieuse sur tablettes et petits smartphones.
