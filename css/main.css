@@ -2778,26 +2778,34 @@ footer h2 {
 /* Bouton CTA Premium */
 .btn-premium-manifeste {
     display: inline-block;
-    padding: 16px 40px;
-    border: 1px solid var(--color-burgundy);
+    padding: 16px 45px;
+    border: none;
     color: var(--color-burgundy);
-    background: transparent;
+    background: #FFFFFF;
     font-family: 'Ranade', sans-serif;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 0.9rem;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
     text-decoration: none;
+    box-shadow: 0 10px 30px rgba(88, 0, 23, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05);
+    transform: translateY(0);
 }
 
 .btn-premium-manifeste:hover {
-    background-color: var(--color-burgundy);
-    color: var(--bg-cream);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-soft);
+    background-color: #FFFFFF;
+    color: var(--color-burgundy);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(88, 0, 23, 0.25), 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-premium-manifeste:active {
+    transform: translateY(-2px) scale(0.98);
+    box-shadow: 0 5px 15px rgba(88, 0, 23, 0.2);
+    transition: all 0.1s ease;
 }
 
 /* Transition Onde Vaporeuse (SVG) */
