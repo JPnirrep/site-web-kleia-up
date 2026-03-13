@@ -20,6 +20,49 @@
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./css/main.css?v=3.7">
+    <style>
+        /* Spécificité pour page courte avec Hero Foncé */
+        .header-corp {
+            background: transparent !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            border-bottom: none !important;
+            box-shadow: none !important;
+        }
+        .header-corp .nav-link {
+            color: #fff !important;
+        }
+        .header-corp .logo img {
+            filter: brightness(0) invert(1);
+        }
+        .header-corp .menu-burger .burger-bar {
+            background-color: #fff !important;
+        }
+
+        /* Fix Impact Contrast */
+        .hero-title em {
+            color: #D4AF37 !important; /* Gold for premium contrast on burgundy */
+            font-family: var(--font-syne);
+            font-weight: 800;
+        }
+
+        /* Premium Vignettes */
+        .program-img-wrapper {
+            height: 200px;
+            overflow: hidden;
+            border-radius: 8px 8px 0 0;
+            background: var(--color-burgundy);
+        }
+        .program-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .card-item:hover .program-img-wrapper img {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 
 <body>
@@ -74,27 +117,39 @@
                 <div class="grid-layout" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
                     
                     <!-- Programme 1: Signature -->
-                    <div class="card-item card-item--immersive" style="background: #fff; border: 1px solid rgba(139, 29, 61, 0.1);">
-                        <span class="icon" aria-hidden="true" style="font-size: 3rem;">✦</span>
-                        <h3 style="color: var(--color-burgundy);">L'Incarnation (Signature)</h3>
-                        <p>Le parcours de transformation profonde sur 6 mois pour ancrer ton leadership organique. Individuel + Plateforme + Box physique.</p>
-                        <a href="individuel-groupe.html#programme-signature" class="btn btn-primary" style="margin-top: 20px; width: 100%;">DÉCOUVRIR</a>
+                    <div class="card-item card-item--immersive" style="background: #fff; border: 1px solid rgba(139, 29, 61, 0.1); padding: 0;">
+                        <div class="program-img-wrapper">
+                            <img src="./assets/programmes/incarnation.png" alt="L'Incarnation Signature">
+                        </div>
+                        <div style="padding: 30px;">
+                            <h3 style="color: var(--color-burgundy); margin-bottom: 15px;">L'Incarnation (Signature)</h3>
+                            <p>Le parcours de transformation profonde sur 6 mois pour ancrer ton leadership organique. Individuel + Plateforme + Box physique.</p>
+                            <a href="individuel-groupe.html#programme-signature" class="btn btn-primary" style="margin-top: 20px; width: 100%; background: var(--color-burgundy);">DÉCOUVRIR LE PARCOURS</a>
+                        </div>
                     </div>
 
                     <!-- Programme 2: Entreprise -->
-                    <div class="card-item card-item--immersive" style="background: #fff; border: 1px solid rgba(139, 29, 61, 0.1);">
-                        <span class="icon" aria-hidden="true" style="font-size: 3rem;">🏢</span>
-                        <h3 style="color: var(--color-burgundy);">Espace Entreprise</h3>
-                        <p>Séminaires, formations managers et ateliers RH. Remettez l'humain et l'optimisme au cœur de vos équipes.</p>
-                        <a href="entreprises.html" class="btn btn-primary" style="margin-top: 20px; width: 100%;">DÉCOUVRIR</a>
+                    <div class="card-item card-item--immersive" style="background: #fff; border: 1px solid rgba(139, 29, 61, 0.1); padding: 0;">
+                        <div class="program-img-wrapper">
+                            <img src="./assets/programmes/entreprise.png" alt="Espace Entreprise">
+                        </div>
+                        <div style="padding: 30px;">
+                            <h3 style="color: var(--color-burgundy); margin-bottom: 15px;">Espace Entreprise</h3>
+                            <p>Séminaires, formations managers et ateliers RH. Remettez l'humain et l'optimisme au cœur de vos institutions.</p>
+                            <a href="entreprises.html" class="btn btn-primary" style="margin-top: 20px; width: 100%; background: var(--color-burgundy);">DÉCOUVRIR L'OFFRE B2B</a>
+                        </div>
                     </div>
 
-                    <!-- Programme 3: Ateliers Focus -->
-                    <div class="card-item card-item--immersive" style="background: #fff; border: 1px solid rgba(139, 29, 61, 0.1);">
-                        <span class="icon" aria-hidden="true" style="font-size: 3rem;">🔥</span>
-                        <h3 style="color: var(--color-burgundy);">Ateliers Focus</h3>
-                        <p>Formats courts (3h) pour débloquer un point précis : Gestion des émotions ou Prise de parole pour introvertis.</p>
-                        <a href="individuel-groupe.html#need-section" class="btn btn-primary" style="margin-top: 20px; width: 100%;">DÉCOUVRIR</a>
+                    <!-- Programme 3: Conférence -->
+                    <div class="card-item card-item--immersive" style="background: #fff; border: 1px solid rgba(139, 29, 61, 0.1); padding: 0;">
+                        <div class="program-img-wrapper">
+                            <img src="./assets/programmes/conference.png" alt="La Conférence">
+                        </div>
+                        <div style="padding: 30px;">
+                            <h3 style="color: var(--color-burgundy); margin-bottom: 15px;">La Conférence Immersion</h3>
+                            <p>Un format court et puissant pour déclencher le mouvement au sein d'un groupe ou d'une communauté.</p>
+                            <a href="individuel-groupe.html#need-section" class="btn btn-primary" style="margin-top: 20px; width: 100%; background: var(--color-burgundy);">VOIR LES THÉMATIQUES</a>
+                        </div>
                     </div>
 
                 </div>
