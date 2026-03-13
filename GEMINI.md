@@ -93,7 +93,14 @@ site-web-kleia-up/
 - Pas de serveur backend requis
 - Build GitHub Pages : ~45 secondes après push
 
-## ✅ Historique (Session v3.8-SEO-EXPANSION)
+## ✅ Historique (Session v3.9-DEEP-PREMIUM)
+- [x] **v3.9-DEEP-PREMIUM (13/03/2026)** : Refonte visuelle haute-couture et densification stratégique.
+- [x] **Design Médaillon** : Implémentation de vignettes circulaires flottantes avec bordures Gold et effets de zoom sur la page `programmes.html`.
+- [x] **Assets Premium** : Génération et intégration de 3 visuels abstraits haute qualité pour les offres Signature, Entreprise et Conférence.
+- [x] **Header Dynamique** : Correction de la transparence du header sur `programmes.html` (transparence totale sur Hero bordeaux) pour une immersion parfaite.
+- [x] **Densification Home** : Enrichissement de la section "Miroir de douleur" (Bento Grid 3 colonnes) et amélioration du Hero (double CTA, texte percutant).
+- [x] **Polissage `a-propos.html`** : Réintégration du lien LinkedIn avec icône SVG, optimisation des marges organiques et du CTA final.
+
 - [x] **v3.8-SEO-EXPANSION (13/03/2026)** : Déploiement de l'arborescence complète (5 nouvelles pages).
 - [x] **Architecture Connectée** : Création de `a-propos.html`, `programmes.html`, `journal.html`, `contact.html`.
 - [x] **Navigation Globale** : Unification du menu de navigation sur l'ensemble du site (8 pages).
@@ -101,20 +108,9 @@ site-web-kleia-up/
 - [x] **SEO Sémantique** : Injection de mots-clés stratégiques (leadership organique, rigologie, conférencière) dans les nouvelles routes.
 
 - [x] **v3.7-STABLE-PREMIUM (13/03/2026)** : Version de référence finale. Activation du formulaire de contact PHP (Option B) avec double notification (Sandrina + JP).
-- [x] **Boutons 3D Liftoff** : Élévation de 8px au survol, inversion chromatique blanc/bordeaux.
-- [x] **Neutralisation Cache Hostinger** : Configuration .htaccess agressive (max-age=0) et versioning system (?v=3.7).
-- [x] **Correction Fondatrice** : Responsive total du blob et du texte sur mobile.
-- [x] **Nettoyage Console** : Suppression erreur 404 Favicon, harmonisation LinkedIn.
-- [x] **Refonte Offre Signature** : Architecture `.signature-immersive-v2` asymétrique (60/40) premium et l'offre secondaire Conférence.
-- [x] **UX/UI Gamification** : Transformation de la section des "Besoins" avec des Flip Cards CSS 3D (retournement au clic) avec reset automatique (Intersection Observer).
-- [x] **Cohérence des CTA** : Correction des ancrages stratégiques (REJOINDRE LE MOUVEMENT pointant vers le bas de page `#kit-urgence`).
-- [x] **Lisibilité Premium** : Refonte du bouton "JE TÉLÉCHARGE MON KIT" dans le footer (contraste maximal Blanc sur Bordeaux).
-- [x] **Restauration Manifeste** : Retour au design premium, unification du header/footer et réactivation du blob vidéo organique (version frugale 350px).
-- [x] **Stabilité Globale** : Correction du header translucide (glassmorphism) pour protéger la lisibilité lors du scroll.
-- [x] **Transition Individuel / Groupe** : Renommage de `particuliers.html` en `individuel-groupe.html` et harmonisation de la terminologie.
-- [x] **Redirection d'Accueil** : Mise à jour de `index.html` pour rediriger vers la page B2C par défaut.
 
 ## 🎯 TODO PROCHAINE SESSION
 - [ ] **Audit Indexation Réel** : Vérifier la remontée des nouvelles pages dans Google Search Console d'ici 48-72h.
+- [ ] **Polissage Journal** : Ajouter des visuels d'en-tête pour les articles du blog pour augmenter le temps de rétention.
 - [ ] **Formulaire Hostinger Reach** : Finaliser l'intégration et la stratégie d'envoi du formulaire modal (`#modal-contact` dans `entreprises.html`).
 - [ ] **Audit Responsif Final** : Vérification minutieuse sur tablettes et petits smartphones.
