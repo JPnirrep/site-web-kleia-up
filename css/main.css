@@ -2568,11 +2568,32 @@ footer h2 {
 }
 
 .cta-decision-zone .hero-cta {
-    white-space: nowrap !important;
+    white-space: normal !important; /* Libération responsive */
     width: auto !important;
+    max-width: 100% !important;
     display: inline-block !important;
-    padding: 15px 40px !important;
+    padding: 18px 45px !important;
     text-align: center;
+    background: #FFFFFF !important;
+    color: var(--color-burgundy) !important;
+    border: none !important;
+    border-radius: 50px !important;
+    font-weight: 800 !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    box-shadow: 0 10px 30px rgba(88, 0, 23, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05) !important;
+    transform: translateY(0);
+}
+
+.cta-decision-zone .hero-cta:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: 0 20px 40px rgba(88, 0, 23, 0.25), 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+    background: #FFFFFF !important;
+}
+
+.cta-decision-zone .hero-cta:active {
+    transform: translateY(-2px) scale(0.98) !important;
+    box-shadow: 0 5px 15px rgba(88, 0, 23, 0.2) !important;
+    transition: all 0.1s ease !important;
 }
 
 /* --- INTRO MANIFESTE ENTREPRISE --- */
