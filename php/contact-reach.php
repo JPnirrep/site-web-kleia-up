@@ -7,7 +7,7 @@
 header('Content-Type: application/json; charset=utf-8');
 
 // 1. Configuration - REMPLACE PAR TON EMAIL SI BESOIN
-$to = "contact@kleia-up.fr"; 
+$to = "sandrina@kleia-up.fr"; 
 $subject = "🚀 Nouveau Contact Entreprise - KLEIA-UP";
 
 // 2. Récupération et nettoyage des données
