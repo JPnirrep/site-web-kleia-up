@@ -2964,8 +2964,8 @@ footer h2 {
 .cta-linkedin:hover {
     background: rgba(139, 29, 61, 0.05) !important;
     border-color: #8B1D3D !important;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(139, 29, 61, 0.1);
+    transform: translateY(-8px) scale(1.02); /* Effet 3D boosté */
+    box-shadow: 0 15px 30px rgba(139, 29, 61, 0.2), 0 5px 10px rgba(0, 0, 0, 0.05);
 }
 
 /* Transition Onde Vaporeuse (SVG) */
