@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACTER KLEIA-UP - Coaching Leadership</title>
+
+    <!-- META SEO -->
+    <meta name="description"
+        content="Contactez Sandrina Perrin et l'équipe KLEIA-UP. Demande de devis pour coaching leadership, interventions entreprises ou renseignement sur nos programmes.">
+    <meta name="keywords"
+        content="contact coach, devis coaching leadership, Sandrina Perrin contact, formation entreprise devis">
+    <meta name="author" content="Sandrina Perrin - KLEIA-UP">
+
+    <!-- Import Google Fonts (optimized) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://api.fontshare.com/v2/css?f[]=ranade@300,400,500,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/main.css?v=3.7">
+</head>
+
+<body>
+
+    <header class="header-corp" role="banner">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="./assets/logo_kleia.png" alt="Logo KLEIA-UP"
+                    width="140" height="100" loading="eager">
+            </a>
+
+            <nav role="navigation" aria-label="Menu principal">
+                <button class="menu-burger" aria-label="Ouvrir le menu">
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                </button>
+
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">ACCUEIL</a></li>
+                    <li><a href="manifeste.html" class="nav-link">MANIFESTE</a></li>
+                    <li><a href="programmes.html" class="nav-link">PROGRAMMES</a></li>
+                    <li><a href="a-propos.html" class="nav-link">À PROPOS</a></li>
+                    <li><a href="journal.html" class="nav-link">JOURNAL</a></li>
+                    <li><a href="contact.html" class="nav-link active">CONTACT</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-cta">
+                <a href="journal.html" class="btn btn-primary pill-shape shine-effect">
+                    REJOINDRE LE MOUVEMENT
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
+        <!-- HERO CONTACT -->
+        <section class="section-padding" style="padding-top: 160px; background-color: var(--bg-cream);">
+            <div class="container" style="text-align: center;">
+                <h1 class="hero-title">Ouvrons le <em>Dialogue</em></h1>
+                <p class="hero-subtitle" style="max-width: 700px; margin: 0 auto;">
+                    Vous avez une question sur un programme ? Un projet pour votre entreprise ? Ou simplement l'envie de dire bonjour ? Écrivez-nous.
+                </p>
+            </div>
+        </section>
+
+        <!-- FORM SECTION -->
+        <section class="section-padding" style="background-color: #fff;">
+            <div class="container" style="max-width: 700px;">
+                <form action="php/contact.php" method="POST" class="contact-form" style="display: flex; flex-direction: column; gap: 20px;">
+                    <div class="form-group" style="display: flex; gap: 20px;">
+                        <div style="flex: 1;">
+                            <label for="name" style="display: block; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; font-size: 0.8rem;">Nom complet</label>
+                            <input type="text" id="name" name="name" required style="width: 100%; padding: 15px; border: 1px solid rgba(139, 29, 61, 0.2); border-radius: 4px;">
+                        </div>
+                        <div style="flex: 1;">
+                            <label for="email" style="display: block; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; font-size: 0.8rem;">Email</label>
+                            <input type="email" id="email" name="email" required style="width: 100%; padding: 15px; border: 1px solid rgba(139, 29, 61, 0.2); border-radius: 4px;">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="subject" style="display: block; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; font-size: 0.8rem;">Objet de la demande</label>
+                        <select id="subject" name="subject" style="width: 100%; padding: 15px; border: 1px solid rgba(139, 29, 61, 0.2); border-radius: 4px; background: #fff;">
+                            <option value="individuel">Coaching Individuel</option>
+                            <option value="entreprise">Coaching Entreprise / Séminaire</option>
+                            <option value="manifeste">Mouvement / Presse</option>
+                            <option value="autre">Autre chose</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="message" style="display: block; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; font-size: 0.8rem;">Message</label>
+                        <textarea id="message" name="message" rows="6" required style="width: 100%; padding: 15px; border: 1px solid rgba(139, 29, 61, 0.2); border-radius: 4px;"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary pill-shape shine-effect" style="width: 100%; padding: 20px; font-weight: 800;">ENVOYER MA DEMANDE</button>
+                    <p style="font-size: 0.8rem; opacity: 0.6; text-align: center;">Nous vous répondrons sous 48h ouvrées.</p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer style="padding: 40px 0; background-color: var(--bg-cream); text-align: center;">
+        <div class="container">
+            <div class="copyright" style="font-size: 0.8rem; opacity: 0.5;">
+                © KLEIA-UP 2026
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const burger = document.querySelector('.menu-burger');
+        const nav = document.querySelector('.nav-links');
+        if (burger) {
+            burger.addEventListener('click', () => {
+                burger.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+
+</html>
