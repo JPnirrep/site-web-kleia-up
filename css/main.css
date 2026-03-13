@@ -3373,4 +3373,39 @@ footer h2 {
 
 .conf-secondary-list .diamond-icon {
     font-size: 1rem;
-}
+}
+
+/* --- LEAD MAGNET PREMIUM BUTTON (FOOTER) --- */
+.btn-kit-premium {
+    background: #FFFFFF !important;
+    color: #8B1D3D !important;
+    font-weight: 800 !important;
+    border: none !important;
+    padding: 18px 45px !important;
+    border-radius: 50px !important;
+    font-size: 1rem !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    /* Effet initial de décollage */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.1) !important;
+    transform: translateY(0);
+}
+
+.btn-kit-premium:hover {
+    /* Il se détache encore plus au survol */
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+.btn-kit-premium:active {
+    /* Effet de pression au clic */
+    transform: translateY(-2px) scale(0.98) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.1s ease;
+}
+
