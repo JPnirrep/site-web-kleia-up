@@ -2,7 +2,7 @@
 # Script de vérification visuelle du site KLEIA-UP
 # Usage: powershell -File scripts/verify-visual.ps1
 
-$root = "c:\Users\JP\Documents\GitHub\site-web-kleia-up\site-web-kleia-up"
+$root = "c:\Users\JP\Documents\GitHub\site-web-kleia-up"
 Set-Location $root
 
 Write-Host "📂 Répertoire: $root" -ForegroundColor Cyan
