@@ -1,33 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jpnirrep.github.io/site-web-kleia-up/</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://kleia-up.fr/</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://jpnirrep.github.io/site-web-kleia-up/entreprises.html</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://kleia-up.fr/entreprises.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jpnirrep.github.io/site-web-kleia-up/#need-section</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://kleia-up.fr/manifeste.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jpnirrep.github.io/site-web-kleia-up/#programme-signature</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://jpnirrep.github.io/site-web-kleia-up/#le-journal</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://kleia-up.fr/individuel-groupe.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
 </urlset>

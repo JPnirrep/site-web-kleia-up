@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jpnirrep.github.io/site-web-kleia-up/sitemap.xml
+Sitemap: https://kleia-up.fr/sitemap.xml
