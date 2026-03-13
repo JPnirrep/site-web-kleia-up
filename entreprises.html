@@ -27,7 +27,7 @@
     <link href="https://api.fontshare.com/v2/css?f[]=ranade@300,400,500,700,800,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./css/main.css?v=3.6">
+    <link rel="stylesheet" href="./css/main.css?v=3.7">
 
     <!-- Preload/Prefetch for instant navigation -->
     <link rel="prefetch" href="index.html">
@@ -538,11 +538,44 @@
             document.getElementById('modal-contact').classList.remove('active');
             document.body.style.overflow = '';
         }
-        function handleReachSubmit(e) {
+        async function handleReachSubmit(e) {
             e.preventDefault();
-            // Traitement Hostinger Reach (à venir)
-            // Redirection automatique vers l'agenda de Sandrina
-            window.location.href = "https://calendar.google.com/calendar/appointments/schedules/AcZssZ3Ap30f8OGJhuD038R_nIP9by6iuDtia6aplu2ffnQAoo24JIq7NKyR7rMHI7qFQmTA8vzsUJ5p";
+            
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerText;
+            
+            // État de chargement visuel
+            submitBtn.innerText = "ENVOI EN COURS...";
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = "0.7";
+
+            try {
+                const formData = new FormData(form);
+                
+                // Envoi des données au script PHP
+                const response = await fetch('./php/contact-reach.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.status === 'success') {
+                    // Succès : Redirection vers l'agenda de Sandrina
+                    window.location.href = "https://calendar.google.com/calendar/appointments/schedules/AcZssZ3Ap30f8OGJhuD038R_nIP9by6iuDtia6aplu2ffnQAoo24JIq7NKyR7rMHI7qFQmTA8vzsUJ5p";
+                } else {
+                    alert("Désolé, une erreur est survenue lors de l'envoi. Veuillez réessayer ou nous contacter sur LinkedIn.");
+                    submitBtn.innerText = originalBtnText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = "1";
+                }
+            } catch (error) {
+                console.error("Erreur technique:", error);
+                // Même en cas d'erreur technique du script PHP, on redirige quand même vers l'agenda 
+                // pour ne pas perdre le prospect, mais on tente de garder les données
+                window.location.href = "https://calendar.google.com/calendar/appointments/schedules/AcZssZ3Ap30f8OGJhuD038R_nIP9by6iuDtia6aplu2ffnQAoo24JIq7NKyR7rMHI7qFQmTA8vzsUJ5p";
+            }
         }
     </script>
 
