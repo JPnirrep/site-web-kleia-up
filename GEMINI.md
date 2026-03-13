@@ -93,7 +93,13 @@ site-web-kleia-up/
 - Pas de serveur backend requis
 - Build GitHub Pages : ~45 secondes après push
 
-## ✅ Historique (Session v3.0-B2C-IMMERSION)
+## ✅ Historique (Session v3.8-SEO-EXPANSION)
+- [x] **v3.8-SEO-EXPANSION (13/03/2026)** : Déploiement de l'arborescence complète (5 nouvelles pages).
+- [x] **Architecture Connectée** : Création de `a-propos.html`, `programmes.html`, `journal.html`, `contact.html`.
+- [x] **Navigation Globale** : Unification du menu de navigation sur l'ensemble du site (8 pages).
+- [x] **Optimisation AIO** : Mise à jour du `sitemap.xml` et du fichier `llms.txt` pour les agents IA.
+- [x] **SEO Sémantique** : Injection de mots-clés stratégiques (leadership organique, rigologie, conférencière) dans les nouvelles routes.
+
 - [x] **v3.7-STABLE-PREMIUM (13/03/2026)** : Version de référence finale. Activation du formulaire de contact PHP (Option B) avec double notification (Sandrina + JP).
 - [x] **Boutons 3D Liftoff** : Élévation de 8px au survol, inversion chromatique blanc/bordeaux.
 - [x] **Neutralisation Cache Hostinger** : Configuration .htaccess agressive (max-age=0) et versioning system (?v=3.7).
@@ -109,5 +115,6 @@ site-web-kleia-up/
 - [x] **Redirection d'Accueil** : Mise à jour de `index.html` pour rediriger vers la page B2C par défaut.
 
 ## 🎯 TODO PROCHAINE SESSION
+- [ ] **Audit Indexation Réel** : Vérifier la remontée des nouvelles pages dans Google Search Console d'ici 48-72h.
 - [ ] **Formulaire Hostinger Reach** : Finaliser l'intégration et la stratégie d'envoi du formulaire modal (`#modal-contact` dans `entreprises.html`).
 - [ ] **Audit Responsif Final** : Vérification minutieuse sur tablettes et petits smartphones.
