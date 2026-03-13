@@ -2,10 +2,18 @@
 
 ## Contexte
 Site web statique pour KLEIA-UP, hébergé sur GitHub Pages.
-- **URL de production** : https://jpnirrep.github.io/site-web-kleia-up/
+- **URL de production** : https://kleia-up.fr/
+- **Statut SEO** : Validé Google Search Console (Mars 2026)
 - **Hébergement** : GitHub Pages (déploiement automatique sur push)
 
-## Règles d'automatisation
+## 🛠️ Configuration SEO & Indexation
+Audit profond (13/03/2026) :
+1. **Domaine d'Autorité** : kleia-up.fr.
+2. **Page d'Accueil** : `index.html` est la landing page officielle.
+3. **Validation Google** : Balise Meta Search Console active.
+4. **Sitemap** : URLs harmonisées sur kleia-up.fr.
+
+## 📐 Architecture
 
 ### Vérification visuelle (Push + Preview)
 **NOUVELLE CONSIGNE GLOBALE** : À chaque fois que je fais une itération ou que je modifie le code, tu dois **OBLIGATOIREMENT** rafraîchir la page (lancer le workflow `/check-site`) pour que je puisse vérifier dans Chrome.
