@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /scripts/
+Disallow: /php/
+Disallow: /.agent/
+Disallow: /.git/
 
 Sitemap: https://kleia-up.fr/sitemap.xml
