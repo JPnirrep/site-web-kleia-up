@@ -94,6 +94,8 @@ site-web-kleia-up/
 - Build GitHub Pages : ~45 secondes après push
 
 ## ✅ Historique (Session v3.9-DEEP-PREMIUM)
+- [x] **v3.9.1-SEMANTIC-BOOST (16/03/2026)** : Remplacement de "transformation identitaire" par "libération de ton leadership" sur `individuel-groupe.html`.
+
 - [x] **v3.9-SURGE-REFINEMENT (16/03/2026)** : Correction chirurgicale sur `programmes.html`.
 - [x] **Harmonisation UX** : Suppression du style discordant sur le mot "Impact" pour une cohérence charte totale.
 - [x] **Évolution Sémantique** : Remplacement de "ancrer" par "révéler" et "organique" par "authentique" dans les vignettes.
