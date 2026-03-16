@@ -193,6 +193,12 @@ git push
 
 ## 📝 HISTORIQUE DES VERSIONS
 
+### v3.9.3-RAYONNANCE-IMPACT (16/03/2026)
+- ✅ **Optimisation IMPACT** : Le mot est désormais en MAJUSCULES, gras (900), non-italique, avec un halo de lumière (`text-shadow`) doré boosté pour une rayonnance maximale sur fond bordeaux.
+- ✅ **Pivot Sémantique Signature** : Remplacement de "transformation profonde" par "qui libère enfin ton essence et tes talents".
+- ✅ **Évolution Lexicale** : Migration de "transformation identitaire" vers "**libération de ton leadership**" sur `individuel-groupe.html`.
+- ✅ **Harmonisation Vocabulaire** : Remplacement de "ancrer" par "révéler" et "organique" par "authentique" pour plus de modernité.
+
 ### v3.6-STABLE-PREMIUM (13/03/2026) - BASE DE RÉFÉRENCE
 - ✅ **Unification Premium** : Harmonisation totale des boutons sur Individuel, Entreprises et Manifeste.
 - ✅ **Effet 3D Liftoff** : Élévation de 8px au survol avec inversion de couleur et ombre portée dynamique.
