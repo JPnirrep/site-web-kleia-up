@@ -193,6 +193,10 @@ git push
 
 ## 📝 HISTORIQUE DES VERSIONS
 
+### v3.9.5-PROPOS-REFINEMENT (16/03/2026)
+- ✅ **Autorité Flash** : Remplacement de "La Fabrique PEPPS" par le Podcast "Les Coulisses du Speaker" (plus de 80 épisodes) pour un EEAT boosté.
+- ✅ **Design Bijou** : Refonte du bloc CTA final (plus compact, moins massif). Boutons Or Royal avec effet `shine-effect` (balayage) et texte bordeaux pour une visibilité totale. Libération des contraintes de largeur (bouton sur une seule ligne).
+
 ### v3.9.4-SEO-PULSE (16/03/2026)
 - ✅ **Blindage SEO et indexation profonde** : Injection de balises canoniques, optimisation des titres et descriptions uniques pour les 8 pages du site. Sécurisation de `robots.txt`.
 ### v3.9.3-RAYONNANCE-IMPACT (16/03/2026)

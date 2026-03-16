@@ -94,6 +94,9 @@ site-web-kleia-up/
 - Build GitHub Pages : ~45 secondes après push
 
 ## ✅ Historique (Session v3.9.3-RAYONNANCE-IMPACT)
+- [x] **v3.9.5-PROPOS-REFINEMENT (16/03/2026)** : Refonte de l'autorité et du design "A Propos".
+- [x] **Autorité Flash** : Remplacement de "Fabrique PEPPS" par le Podcast "Les Coulisses du Speaker" (80+ épisodes).
+- [x] **Design Bijou** : Compression du bloc CTA final, boutons Or Royal avec effet balayage shine, et correction de la lisibilité/largeur.
 - [x] **v3.9.4-SEO-PULSE (16/03/2026)** : Blindage SEO et indexation profonde.
 - [x] **Meta Pulse** : Titres et descriptions uniques pour les 8 pages, injection de balises canoniques pour éviter le duplicate content.
 - [x] **Sécurité Indexation** : Mise à jour de `robots.txt` pour exclure les dossiers techniques (`/scripts`, `/php`).
