@@ -94,6 +94,11 @@ site-web-kleia-up/
 - Build GitHub Pages : ~45 secondes après push
 
 ## ✅ Historique (Session v3.9-DEEP-PREMIUM)
+- [x] **v3.9-SURGE-REFINEMENT (16/03/2026)** : Correction chirurgicale sur `programmes.html`.
+- [x] **Harmonisation UX** : Suppression du style discordant sur le mot "Impact" pour une cohérence charte totale.
+- [x] **Évolution Sémantique** : Remplacement de "ancrer" par "révéler" et "organique" par "authentique" dans les vignettes.
+- [x] **Actualisation Offre** : Mise à jour de la promesse "Signature" (libération de l'essence et des talents).
+
 - [x] **v3.9-DEEP-PREMIUM (13/03/2026)** : Refonte visuelle haute-couture et densification stratégique.
 - [x] **Design Médaillon** : Implémentation de vignettes circulaires flottantes avec bordures Gold et effets de zoom sur la page `programmes.html`.
 - [x] **Assets Premium** : Génération et intégration de 3 visuels abstraits haute qualité pour les offres Signature, Entreprise et Conférence.
