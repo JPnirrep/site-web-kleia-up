@@ -193,6 +193,8 @@ git push
 
 ## 📝 HISTORIQUE DES VERSIONS
 
+### v3.9.4-SEO-PULSE (16/03/2026)
+- ✅ **Blindage SEO et indexation profonde** : Injection de balises canoniques, optimisation des titres et descriptions uniques pour les 8 pages du site. Sécurisation de `robots.txt`.
 ### v3.9.3-RAYONNANCE-IMPACT (16/03/2026)
 - ✅ **Optimisation IMPACT** : Le mot est désormais en MAJUSCULES, gras (900), non-italique, avec un halo de lumière (`text-shadow`) doré boosté pour une rayonnance maximale sur fond bordeaux.
 - ✅ **Pivot Sémantique Signature** : Remplacement de "transformation profonde" par "qui libère enfin ton essence et tes talents".

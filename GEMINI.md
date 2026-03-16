@@ -94,6 +94,9 @@ site-web-kleia-up/
 - Build GitHub Pages : ~45 secondes après push
 
 ## ✅ Historique (Session v3.9.3-RAYONNANCE-IMPACT)
+- [x] **v3.9.4-SEO-PULSE (16/03/2026)** : Blindage SEO et indexation profonde.
+- [x] **Meta Pulse** : Titres et descriptions uniques pour les 8 pages, injection de balises canoniques pour éviter le duplicate content.
+- [x] **Sécurité Indexation** : Mise à jour de `robots.txt` pour exclure les dossiers techniques (`/scripts`, `/php`).
 - [x] **v3.9.3-RAYONNANCE-IMPACT (16/03/2026)** : Optimisation finale de la rayonnance et sémantique.
 - [x] **Rayonnance IMPACT** : `IMPACT` en majuscules, gras (900), sans italique, avec `text-shadow` doré pour un effet lumineux sur fond bordeaux.
 - [x] **v3.9.2-GOLD-RESTORE (16/03/2026)** : Restauration de l'or brillant via la classe globale `.gold-shine-text`.
