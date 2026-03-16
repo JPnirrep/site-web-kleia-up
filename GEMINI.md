@@ -93,7 +93,10 @@ site-web-kleia-up/
 - Pas de serveur backend requis
 - Build GitHub Pages : ~45 secondes après push
 
-## ✅ Historique (Session v3.9-DEEP-PREMIUM)
+## ✅ Historique (Session v3.9.3-RAYONNANCE-IMPACT)
+- [x] **v3.9.3-RAYONNANCE-IMPACT (16/03/2026)** : Optimisation finale de la rayonnance et sémantique.
+- [x] **Rayonnance IMPACT** : `IMPACT` en majuscules, gras (900), sans italique, avec `text-shadow` doré pour un effet lumineux sur fond bordeaux.
+- [x] **v3.9.2-GOLD-RESTORE (16/03/2026)** : Restauration de l'or brillant via la classe globale `.gold-shine-text`.
 - [x] **v3.9.1-SEMANTIC-BOOST (16/03/2026)** : Remplacement de "transformation identitaire" par "libération de ton leadership" sur `individuel-groupe.html`.
 
 - [x] **v3.9-SURGE-REFINEMENT (16/03/2026)** : Correction chirurgicale sur `programmes.html`.
