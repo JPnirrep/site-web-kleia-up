@@ -10,6 +10,7 @@ header('Content-Type: application/json; charset=utf-8');
 $to = "sandrina@kleia-up.fr, jpp180866@gmail.com"; 
 $subject = "=?UTF-8?B?".base64_encode("🚀 Nouveau Contact Entreprise - KLEIA-UP")."?=";
 $from = "noreply@kleia-up.fr";
+$cns_endpoint = "http://bot.antigravity-brain.com/leads"; // Central CNS Endpoint (Firebase Hub)
 
 // 2. Récupération et nettoyage des données
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -26,6 +27,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo json_encode(['status' => 'error', 'message' => 'Email invalide.']);
         exit;
     }
+
+    // --- CNS SYNC (Souveraineté & Mémoire Permanente) ---
+    // On pousse vers le Cerveau Central même avant l'envoi de l'email.
+    $lead_payload = [
+        "member_id" => "ANTIGRAVITY-CNS-KLEIA-UP",
+        "name" => $nom_complet,
+        "email" => $email,
+        "subject" => $subject_form,
+        "message" => $message_user,
+        "metadata" => [
+            "ip" => $_SERVER['REMOTE_ADDR'],
+            "origin" => "Website KLEIA-UP",
+            "device" => $_SERVER['HTTP_USER_AGENT']
+        ]
+    ];
+
+    $ch = curl_init($cns_endpoint);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($lead_payload));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 3); // Ne bloque pas si le CNS est hors-ligne
+    $cns_push = curl_exec($ch);
+    curl_close($ch);
 
     // 3. Construction du message (Format Clair et Holistique)
     $message = "Bonjour,\n\n";
