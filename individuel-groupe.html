@@ -776,17 +776,36 @@
 
         // Gestion des formulaires
         document.querySelectorAll('form').forEach(form => {
-            form.addEventListener('submit', function (e) {
+            form.addEventListener('submit', async function (e) {
                 e.preventDefault();
                 const btn = this.querySelector('button');
                 const originalText = btn.textContent;
-                btn.textContent = "MERCI ! À TRÈS VITE.";
-                btn.style.backgroundColor = "#D70040";
-                this.querySelectorAll('input').forEach(input => input.value = '');
-                setTimeout(() => {
-                    btn.textContent = originalText;
-                    btn.style.backgroundColor = "";
-                }, 3000);
+
+                // État de chargement
+                btn.textContent = "ENVOI EN COURS...";
+                btn.disabled = true;
+
+                try {
+                    const formData = new FormData(this);
+                    // On utilise le bridge souverain
+                    const response = await fetch('./php/contact-reach.php', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    btn.textContent = "MERCI ! À TRÈS VITE.";
+                    btn.style.backgroundColor = "#D70040";
+                    this.querySelectorAll('input, textarea').forEach(input => input.value = '');
+
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.disabled = false;
+                        btn.style.backgroundColor = "";
+                    }, 3000);
+                } catch (error) {
+                    btn.textContent = "ESSAYER À NOUVEAU";
+                    btn.disabled = false;
+                }
             });
         });
 
