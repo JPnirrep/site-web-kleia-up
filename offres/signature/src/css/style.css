@@ -385,9 +385,47 @@ section[style*="background-color: var(--color-burgundy-dark)"] .mirror-card:hove
     margin-bottom: 15px;
 }
 
-/* Responsive */
+/* Responsive & Adaptive Refinement 2026 */
+@media (max-width: 1024px) {
+    .container { padding: 0 30px; }
+    .hero-title { font-size: 3.2rem; }
+    .logo-hero { width: 90%; }
+}
+
 @media (max-width: 768px) {
-    .hero-title { font-size: 2.5rem; }
-    .box-preview { flex-direction: column; padding: 40px; }
-    .testimonial-box { padding: 40px 20px; }
+    section { padding: 60px 0; }
+    .hero { padding-top: 40px; min-height: 80vh; }
+    .hero-title { font-size: 2.2rem; }
+    .hero-subtitle { font-size: 1.2rem; margin-bottom: 30px; }
+    .logo-hero { width: 100%; margin-top: 0; margin-bottom: 20px; }
+
+    .box-preview { 
+        flex-direction: column; 
+        padding: 40px 25px; 
+        gap: 30px;
+        text-align: center;
+    }
+
+    .box-content { text-align: left; }
+    .box-content h2 { font-size: 1.8rem; text-align: center; }
+    .box-content p { text-align: center; }
+    .box-content ul { padding-left: 10px; }
+    .box-content .btn { width: 100%; text-align: center; }
+
+    .testimonial-featured { padding: 40px 25px; }
+    .testimonial-featured .testimonial-text { font-size: 1.3rem; }
+    .testimonial-featured .quote-mark { font-size: 6rem; top: -10px; left: 20px; }
+
+    .faq-question { padding: 20px; font-size: 1rem; }
+    .faq-answer { padding: 0 20px 20px; font-size: 0.95rem; }
+
+    .btn { padding: 16px 30px; width: 100%; text-align: center; font-size: 0.9rem; }
+}
+
+@media (max-width: 480px) {
+    .hero-title { font-size: 1.8rem; }
+    .container { padding: 0 20px; }
+    h2 { font-size: 1.8rem; }
+    .mirror-card { padding: 30px 20px; }
+    .logo-hero { margin-top: -20px; }
 }
