@@ -13,26 +13,33 @@ $from = "noreply@kleia-up.fr";
 
 // 2. Récupération et nettoyage des données
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $prenom = strip_tags(trim($_POST['prenom']));
-    $nom = strip_tags(trim($_POST['nom']));
-    $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
+    // Mapping souple (Supporte 'name' de contact.html et 'prenom/nom' de entreprises.html)
+    $prenom = isset($_POST['prenom']) ? strip_tags(trim($_POST['prenom'])) : '';
+    $nom = isset($_POST['nom']) ? strip_tags(trim($_POST['nom'])) : '';
+    $nom_complet = isset($_POST['name']) ? strip_tags(trim($_POST['name'])) : "$prenom $nom";
 
-    if (empty($prenom) || empty($nom) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo json_encode(['status' => 'error', 'message' => 'Données invalides.']);
+    $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
+    $subject_form = isset($_POST['subject']) ? strip_tags(trim($_POST['subject'])) : 'Mouvement / Journal';
+    $message_user = isset($_POST['message']) ? strip_tags(trim($_POST['message'])) : 'Inscription au mouvement (Newsletter)';
+
+    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo json_encode(['status' => 'error', 'message' => 'Email invalide.']);
         exit;
     }
 
-    // 3. Construction du message
+    // 3. Construction du message (Format Clair et Holistique)
     $message = "Bonjour,\n\n";
-    $message .= "Un nouveau prospect a valide le formulaire Entreprises :\n\n";
+    $message .= "Une nouvelle interaction a eu lieu sur KLEIA-UP :\n\n";
     $message .= "--------------------------------------------------\n";
-    $message .= "Prenom : $prenom\n";
-    $message .= "Nom    : $nom\n";
-    $message .= "Email  : $email\n";
+    $message .= "Type : $subject_form\n";
+    $message .= "Nom  : $nom_complet\n";
+    $message .= "Email : $email\n";
     $message .= "--------------------------------------------------\n\n";
-    $message .= "L'utilisateur a ete redirige vers l'agenda Google.\n";
+    $message .= "Message/Infos :\n$message_user\n\n";
+    $message .= "--------------------------------------------------\n";
+    $message .= "L'utilisateur a été notifié de la réception du message.\n";
 
-    // 4. En-têtes optimisés pour Gmail
+    // 4. En-têtes optimisés pour Gmail et Souveraineté
     $headers = "From: KLEIA-UP <$from>\r\n";
     $headers .= "Reply-To: $email\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
