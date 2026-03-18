@@ -119,7 +119,43 @@
                 nav.classList.toggle('active');
             });
         }
+
+        // --- ENVOI DE FORMULAIRE SÉCURISÉ (BRIDGE CNS) ---
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const btn = this.querySelector('button');
+                const originalText = btn.textContent;
+                
+                btn.textContent = "ENVOI EN COURS...";
+                btn.disabled = true;
+
+                try {
+                    const formData = new FormData(this);
+                    const response = await fetch(this.action, {
+                        method: 'POST',
+                        body: formData
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (result.status === 'success') {
+                        btn.textContent = "MERCI ! À TRÈS VITE.";
+                        this.reset();
+                    } else {
+                        btn.textContent = "ERREUR. RÉESSAYEZ.";
+                    }
+                } catch (error) {
+                    btn.textContent = "ERROR. VÉRIFIEZ L'ENVOI.";
+                } finally {
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.disabled = false;
+                    }, 4000);
+                }
+            });
+        }
     </script>
 </body>
-
 </html>

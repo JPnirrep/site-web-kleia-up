@@ -12,6 +12,31 @@ $subject = "=?UTF-8?B?".base64_encode("🚀 Nouveau Contact Entreprise - KLEIA-U
 $from = "noreply@kleia-up.fr";
 $cns_endpoint = "http://bot.antigravity-brain.com/leads"; // Central CNS Endpoint (Firebase Hub)
 
+/**
+ * Fonction de Push CNS (Central Nervous System)
+ * Avec détection de connectivité pour éviter de bloquer le script
+ */
+function push_to_cns($url, $payload) {
+    if (!$url) return false;
+    
+    // Vérification rapide de la résolution DNS pour éviter le hang
+    $host = parse_url($url, PHP_URL_HOST);
+    if (gethostbyname($host) === $host) {
+        // Le domaine ne résout pas encore (pas configuré)
+        return false;
+    }
+
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 2); 
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 2);
+    $result = @curl_exec($ch);
+    curl_close($ch);
+    return $result;
+}
+
 // 2. Récupération et nettoyage des données
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Mapping souple (Supporte 'name' de contact.html et 'prenom/nom' de entreprises.html)
@@ -29,7 +54,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // --- CNS SYNC (Souveraineté & Mémoire Permanente) ---
-    // On pousse vers le Cerveau Central même avant l'envoi de l'email.
     $lead_payload = [
         "member_id" => "ANTIGRAVITY-CNS-KLEIA-UP",
         "name" => $nom_complet,
@@ -37,19 +61,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         "subject" => $subject_form,
         "message" => $message_user,
         "metadata" => [
-            "ip" => $_SERVER['REMOTE_ADDR'],
+            "ip" => $_SERVER['REMOTE_ADDR'] ?? 'unknown',
             "origin" => "Website KLEIA-UP",
-            "device" => $_SERVER['HTTP_USER_AGENT']
+            "device" => $_SERVER['HTTP_USER_AGENT'] ?? 'unknown'
         ]
     ];
 
-    $ch = curl_init($cns_endpoint);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($lead_payload));
-    curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 3); // Ne bloque pas si le CNS est hors-ligne
-    $cns_push = curl_exec($ch);
-    curl_close($ch);
+    push_to_cns($cns_endpoint, $lead_payload);
 
     // 3. Construction du message (Format Clair et Holistique)
     $message = "Bonjour,\n\n";
@@ -64,10 +82,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $message .= "L'utilisateur a été notifié de la réception du message.\n";
 
     // 4. En-têtes optimisés pour Gmail et Souveraineté
+    // Ajout d'un identifiant de message unique pour Gmail
+    $msg_id = "<" . time() . "-" . md5($email) . "@kleia-up.fr>";
+    
     $headers = "From: KLEIA-UP <$from>\r\n";
     $headers .= "Reply-To: $email\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    $headers .= "Message-ID: $msg_id\r\n";
     $headers .= "X-Mailer: PHP/" . phpversion();
 
     // 5. Envoi avec paramètre d'enveloppe (-f) pour éviter le spam
