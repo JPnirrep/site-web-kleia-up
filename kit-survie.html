@@ -41,16 +41,25 @@
         .container { @apply max-w-7xl mx-auto px-6 lg:px-8; }
         .card-shadow { box-shadow: 0 10px 30px -10px rgba(74, 14, 14, 0.15); }
 
-        /* EFFET BLOB SANDRINA */
-        .blob-shape {
-            border-radius: 50% 50% 30% 70% / 60% 40% 60% 40%;
-            border: 4px solid #8B1D3D;
-            box-shadow: 0 20px 40px rgba(139, 29, 61, 0.2);
-            transition: all 0.5s ease;
+        /* EFFET BLOB SANDRINA (Format Vertical & Morphing Organique) */
+        .blob-shape-container {
+            @apply w-full max-w-[320px] h-[450px] relative transition-transform duration-700;
+            filter: drop-shadow(0 20px 40px rgba(139, 29, 61, 0.25));
         }
-        .blob-shape:hover {
-            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-            transform: scale(1.02);
+        .blob-shape-container:hover {
+            @apply scale-[1.03];
+        }
+        .blob-image {
+            @apply w-full h-full object-cover border-[4px] border-[#8B1D3D];
+            object-position: center 10%; /* Préserve le visage et la posture haute */
+            animation: morph-organic 15s infinite alternate ease-in-out;
+        }
+
+        @keyframes morph-organic {
+            0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+            34% { border-radius: 70% 30% 50% 50% / 30% 60% 40% 70%; }
+            67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; }
+            100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
         }
 
         /* BOUTON PREMIUM SHINE */
@@ -207,21 +216,23 @@
     </section>
 
     <!-- 4. AUTHORITY SECTION -->
-    <section class="py-20 lg:py-32 bg-gray-50">
+    <section class="py-24 lg:py-40 bg-gray-50 overflow-hidden">
         <div class="container max-w-6xl">
-            <div class="bg-white p-10 md:p-16 rounded-[3rem] card-shadow border border-primary/5">
-                <div class="grid md:grid-cols-3 gap-12 items-center">
+            <div class="bg-white p-12 md:p-20 rounded-[4rem] card-shadow border border-primary/5">
+                <div class="grid md:grid-cols-3 gap-16 lg:gap-24 items-center">
                     <div class="md:col-span-1 flex justify-center">
-                        <img src="assets/images/sandrina-kleia.webp?v=2" alt="Sandrina Photo" class="blob-shape w-64 h-64 object-cover">
+                        <div class="blob-shape-container">
+                            <img src="assets/images/sandrina-kleia.webp?v=2" alt="Sandrina Photo" class="blob-image">
+                        </div>
                     </div>
                     <div class="md:col-span-2 text-center md:text-left">
-                        <h2 class="font-headline text-3xl md:text-4xl font-bold text-primary">
+                        <h2 class="font-headline text-3xl md:text-4xl lg:text-5xl font-bold text-primary">
                             Par Sandrina, experte en Leadership Incarné
                         </h2>
-                        <p class="mt-6 text-lg text-foreground/80 leading-relaxed">
+                        <p class="mt-8 text-xl text-foreground/80 leading-relaxed">
                             Experte en Leadership, Parole Incarnée et Hypersensibilité. Conférencière. Coach Scénique. Auteure. Fondatrice de Kleia.
                         </p>
-                        <blockquote class="mt-8 border-l-8 border-[#c5a059] pl-6 italic text-2xl font-medium text-primary">
+                        <blockquote class="mt-10 border-l-8 border-[#c5a059] pl-8 italic text-2xl font-medium text-primary leading-relaxed">
                             "Je ne vous apprends pas à parler, je vous apprends à Être écoutée et à incarner votre message."
                         </blockquote>
                     </div>
