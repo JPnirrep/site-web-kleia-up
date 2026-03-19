@@ -94,6 +94,8 @@ site-web-kleia-up/
 - Build GitHub Pages : ~45 secondes après push
 
 ## ✅ Historique (Session v3.9.3-RAYONNANCE-IMPACT)
+- [x] **v3.10.2-REDIRECT-B2B (19/03/2026)** : Correction de la redirection du bloc Conférence sur `programmes.html` vers `entreprises.html#conference`.
+- [x] **v3.10.1-KIT-INTEGRATION (19/03/2026)** : Redirection de tous les CTA "Kit d'Urgence" vers la page interne `kit-survie.html` (suppression de TinyURL/Firebase).
 - [x] **v3.10-KIT-SOUVERAIN (19/03/2026)** : Migration et souveraineté du "Kit de Survie".
 - [x] **Fidélité Totale** : Reproduction exacte de la structure Firebase Studio (Bio, Témoignages, CTA intermédiaires).
 - [x] **Design Organique** : Implémentation du Blob morphing vertical pour Sandrina (15s morphing) et boutons Shine.

@@ -3,7 +3,7 @@
 ## 🔒 VERSION STABLE - SITE STATIQUE HAUTE PERFORMANCE
 
 ![Status](https://img.shields.io/badge/status-PRODUCTION-success)
-![Version](https://img.shields.io/badge/version-v3.6--STABLE--PREMIUM-blue)
+![Version](https://img.shields.io/badge/version-v3.10.2--B2B--KITS-blue)
 ![Architecture](https://img.shields.io/badge/architecture-VANILLA%20HTML%2FCSS-green)
 
 ---
@@ -16,6 +16,7 @@
 ```
 site-web-kleia-up/
 ├── index.html          # FICHIER PRINCIPAL
+├── kit-survie.html     # NOUVEAU : Page Kit de Survie intégrée (Souveraineté)
 ├── css/
 │   └── main.css        # Styles Vanilla (35 KB)
 ├── assets/
@@ -192,6 +193,13 @@ git push
 ---
 
 ## 📝 HISTORIQUE DES VERSIONS
+
+### v3.10.2-REDIRECT-B2B (19/03/2026)
+- ✅ **Cohérence Immersion** : Redirection du bouton "Conférence Immersion" de la page `programmes.html` vers la section consacrée du monde Entreprise (`entreprises.html#conference`).
+
+### v3.10.1-KIT-INTEGRATION (19/03/2026)
+- ✅ **Souveraineté Totale** : Suppression définitive de toutes les URLs TinyURL et Firebase Studio.
+- ✅ **Navigation Interne** : Toutes les instances du "Kit d'Utilisation" pointent désormais vers `kit-survie.html` en local.
 
 ### v3.9.5-PROPOS-REFINEMENT (16/03/2026)
 - ✅ **Autorité Flash** : Remplacement de "La Fabrique PEPPS" par le Podcast "Les Coulisses du Speaker" (plus de 80 épisodes) pour un EEAT boosté.
