@@ -192,14 +192,15 @@ git push
 
 ---
 
-## 📝 HISTORIQUE DES VERSIONS
+### ✅ Historique des Versions (Récents)
 
-### v3.10.2-REDIRECT-B2B (19/03/2026)
-- ✅ **Cohérence Immersion** : Redirection du bouton "Conférence Immersion" de la page `programmes.html` vers la section consacrée du monde Entreprise (`entreprises.html#conference`).
-
-### v3.10.1-KIT-INTEGRATION (19/03/2026)
-- ✅ **Souveraineté Totale** : Suppression définitive de toutes les URLs TinyURL et Firebase Studio.
-- ✅ **Navigation Interne** : Toutes les instances du "Kit d'Utilisation" pointent désormais vers `kit-survie.html` en local.
+- **v3.12.0-SEO-GEO (19/03/2026)** : Blindage SEO/GEO. Sitemap rafraîchi, Meta OG pour LinkedIn sur le Kit, injection JSON-LD FAQ pour l'IA sur l'accueil.
+- **v3.11.0-DUAL-SPACE (19/03/2026)** : Déploiement du sélecteur "POUR TOI | L'ENTREPRISE" dans le header global. Correction CTA vers #kit-urgence.
+- **v3.10.2 (19/03/2026)** : Correction redirection bloc Conférence immersion.
+- **v3.10.1 (19/03/2026)** : Unification globale des liens vers `kit-survie.html`.
+- **v3.10 (19/03/2026)** : Migration souveraine du Kit de Survie (Bye bye Firebase Studio).
+- **v3.9.5 (16/03/2026)** : Refonte autorité "À Propos" et podcast.
+- **v3.9.3 (16/03/2026)** : Polissage Rayonnance IMPACT (Or & Bordeaux). "Kit d'Utilisation" pointent désormais vers `kit-survie.html` en local.
 
 ### v3.9.5-PROPOS-REFINEMENT (16/03/2026)
 - ✅ **Autorité Flash** : Remplacement de "La Fabrique PEPPS" par le Podcast "Les Coulisses du Speaker" (plus de 80 épisodes) pour un EEAT boosté.
