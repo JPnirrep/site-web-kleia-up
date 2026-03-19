@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kit de Survie : Leadership & Parole Incarnée | KLEIA</title>
+    <meta name="description" content="Le protocole exact pour éliminer la surcharge mentale et activer votre Power Posture en 12 minutes.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
+    <!-- Base Styles (Simplifiés pour FVP) -->
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        :root {
+            --primary-gold: #c5a059;
+            --deep-red: #4A0E0E;
+            --dark-bg: #1a1a1a;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .font-headline {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Hero Section */
+        .hero-kit {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .logo-container img {
+            height: 60px;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--primary-gold);
+            font-weight: 500;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            color: var(--deep-red);
+        }
+
+        .hero-text {
+            font-size: 1.25rem;
+            color: #555;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        /* Modules Section */
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, min-minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .module-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid rgba(197, 160, 89, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .module-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .module-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .module-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--deep-red);
+            margin-bottom: 10px;
+        }
+
+        .module-subtitle {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: var(--primary-gold);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-gold);
+            font-weight: bold;
+        }
+
+        /* Capture Section */
+        .capture-container {
+            background: var(--deep-red);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .form-card {
+            background: white;
+            max-width: 500px;
+            margin: 40px auto 0;
+            padding: 40px;
+            border-radius: 20px;
+            color: #333;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .form-group {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 20px;
+            background: var(--deep-red);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-submit:hover {
+            background: #6b1414;
+            transform: scale(1.02);
+        }
+
+        .btn-success {
+            background: #27ae60 !important;
+        }
+
+        .trust-note {
+            margin-top: 15px;
+            font-size: 0.75rem;
+            color: #888;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .hero-kit { padding: 40px 20px; }
+            .form-card { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero-kit">
+        <div class="container">
+            <div class="logo-container">
+                <img src="assets/images/kleia-logoV12.png" alt="Kleia Logo">
+                <span class="tagline">Leadership & Parole incarnée</span>
+            </div>
+            
+            <div class="grid-2">
+                <div class="hero-content">
+                    <h1 class="font-headline">Ne prenez plus jamais la parole avec la boule au ventre.</h1>
+                    <p class="hero-text">
+                        Le protocole exact pour éliminer la surcharge mentale, activer votre 'Power Posture' et captiver votre audience. <strong>En 12 minutes chrono.</strong>
+                    </p>
+                    <a href="#capture" class="btn-royal" style="text-decoration: none; display: inline-block;">
+                        <span class="gold-shine-text">TÉLÉCHARGER MON PROTOCOLE GRATUIT</span>
+                    </a>
+                </div>
+                <div class="hero-visual">
+                    <!-- Placeholder pour l'image mockup du kit -->
+                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80" alt="Kit de Survie" style="width: 100%; border-radius: 20px; box-shadow: 0 30px 60px rgba(0,0,0,0.15);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" style="padding: 100px 20px;">
+        <h2 class="font-headline" style="text-align: center; color: var(--deep-red); margin-bottom: 50px;">Votre Protocole de Survie en 3 Modules</h2>
+        
+        <div class="modules-grid">
+            <div class="module-card">
+                <span class="module-icon">🌙</span>
+                <div class="module-subtitle">PDF & AUDIO</div>
+                <h3 class="module-title">Module 1 : La Veille</h3>
+                <ul class="feature-list">
+                    <li>La méthode de "Décharge Mentale" pour dormir sereinement</li>
+                    <li>La Checklist de ciblage (Message Clé ?)</li>
+                    <li>Exercice de transformation des doutes</li>
+                </ul>
+            </div>
+            
+            <div class="module-card">
+                <span class="module-icon">☀️</span>
+                <div class="module-subtitle">VIDÉO & AUDIO</div>
+                <h3 class="module-title">Module 2 : Le Matin J</h3>
+                <ul class="feature-list">
+                    <li>Session guidée "Libération Émotionnelle"</li>
+                    <li>Audio d'Ancrage Terre/Ciel</li>
+                    <li>Guide des Mantras de Puissance</li>
+                </ul>
+            </div>
+            
+            <div class="module-card">
+                <span class="module-icon">⚡</span>
+                <div class="module-subtitle">5 MIN AVANT (VIDÉO)</div>
+                <h3 class="module-title">Module 3 : La Green Zone</h3>
+                <ul class="feature-list">
+                    <li>Activation du Mantra de Puissance</li>
+                    <li>La Power Posture (Technique Wonder Woman)</li>
+                    <li>Rituel de transition flash</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="capture" class="capture-container">
+        <div class="container">
+            <h2 class="font-headline" style="font-size: 2.5rem;">Prêt à transformer votre présence ?</h2>
+            <p style="opacity: 0.9;">Entrez vos détails pour recevoir l'accès immédiat au protocole complet.</p>
+            
+            <div class="form-card">
+                <form id="kitForm">
+                    <div class="form-group">
+                        <label for="firstName">Prénom</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Votre prénom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email professionnel</label>
+                        <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp (Optionnel)</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" placeholder="Ex: +33 6 12 34 56 78">
+                        <p style="font-size: 0.7rem; color: #999; margin-top: 5px;">Pour recevoir les audios sur mobile.</p>
+                    </div>
+                    
+                    <button type="submit" id="submitBtn" class="btn-submit">
+                        RECEVOIR MON PROTOCOLE D'URGENCE
+                    </button>
+                    
+                    <p class="trust-note">🔒 Vos données sont précieuses et resteront privées.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 50px; text-align: center; background: #f9f9f9; color: #999; font-size: 0.8rem;">
+        &copy; 2026 KLEIA. Tous droits réservés. <br>
+        <a href="index.html" style="color: var(--primary-gold);">Retour au site principal</a>
+    </footer>
+
+    <script>
+        document.getElementById('kitForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const btn = document.getElementById('submitBtn');
+            const firstName = document.getElementById('firstName').value;
+            const email = document.getElementById('email').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            
+            btn.innerText = "ENVOI EN COURS...";
+            btn.disabled = true;
+
+            // Préparation des données pour ton script PHP (Souveraineté Antigravity)
+            const formData = new FormData();
+            formData.append('name', firstName);
+            formData.append('email', email);
+            formData.append('subject', 'Demande de Kit de Survie');
+            formData.append('message', 'Inscription Kit de Survie. WhatsApp: ' + (whatsapp || 'Non renseigné'));
+
+            fetch('php/contact-reach.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                // Effet "Bouton Caméléon" demandé
+                btn.innerText = "MERCI ! CLIQUEZ ICI";
+                btn.classList.add('btn-success');
+                btn.disabled = false;
+                
+                // Le bouton devient le lien de téléchargement direct
+                btn.onclick = function() {
+                    window.open('https://drive.google.com/file/d/1WTu-2xrKLWlSuYPswdVjbbE4kQZQ61hO/view?usp=drive_link', '_blank');
+                };
+                
+                // Optionnel : Redirection automatique après 3 secondes ou petit message
+                console.log("Lead capturé avec succès dans Firestore via CNS Hub.");
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+                btn.innerText = "ERREUR. RÉESSAYEZ ?";
+                btn.disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>
