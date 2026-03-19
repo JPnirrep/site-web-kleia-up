@@ -296,6 +296,25 @@ header.header-dark .nav-link-subtle {
 .nav-separator {
     color: rgba(139, 29, 61, 0.2);
     font-weight: 300;
+    font-size: 0.8rem;
+    pointer-events: none;
+    user-select: none;
+}
+
+.nav-link.active {
+    color: var(--color-burgundy);
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-burgundy);
+    border-radius: 2px;
 }
 
 /* --- VARIATION CORPORATE (ROCK & GOLD - FIXED) --- */
