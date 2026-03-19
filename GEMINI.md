@@ -94,6 +94,12 @@ site-web-kleia-up/
 - Build GitHub Pages : ~45 secondes après push
 
 ## ✅ Historique (Session v3.9.3-RAYONNANCE-IMPACT)
+- [x] **v3.10-KIT-SOUVERAIN (19/03/2026)** : Migration et souveraineté du "Kit de Survie".
+- [x] **Fidélité Totale** : Reproduction exacte de la structure Firebase Studio (Bio, Témoignages, CTA intermédiaires).
+- [x] **Design Organique** : Implémentation du Blob morphing vertical pour Sandrina (15s morphing) et boutons Shine.
+- [x] **Micro-Interactions** : Ajout d'effets 3D au survol sur les modules et les promesses.
+- [x] **Lead Capture** : Connexion au backend PHP (`contact-reach.php`) avec effet Caméléon (bouton vert + lien Drive) au succès.
+
 - [x] **v3.9.5-PROPOS-REFINEMENT (16/03/2026)** : Refonte de l'autorité et du design "A Propos".
 - [x] **Autorité Flash** : Remplacement de "Fabrique PEPPS" par le Podcast "Les Coulisses du Speaker" (80+ épisodes).
 - [x] **Design Bijou** : Compression du bloc CTA final, boutons Or Royal avec effet balayage shine, et correction de la lisibilité/largeur.
@@ -126,7 +132,7 @@ site-web-kleia-up/
 - [x] **v3.7-STABLE-PREMIUM (13/03/2026)** : Version de référence finale. Activation du formulaire de contact PHP (Option B) avec double notification (Sandrina + JP).
 
 ## 🎯 TODO PROCHAINE SESSION
-- [ ] **Audit Indexation Réel** : Vérifier la remontée des nouvelles pages dans Google Search Console d'ici 48-72h.
-- [ ] **Polissage Journal** : Ajouter des visuels d'en-tête pour les articles du blog pour augmenter le temps de rétention.
-- [ ] **Formulaire Hostinger Reach** : Finaliser l'intégration et la stratégie d'envoi du formulaire modal (`#modal-contact` dans `entreprises.html`).
-- [ ] **Audit Responsif Final** : Vérification minutieuse sur tablettes et petits smartphones.
+- [ ] **Audit Indexation Réel** : Vérifier la remontée de `kit-survie.html` dans Google Search Console.
+- [ ] **Sitemap Update** : Ajouter manuellement le Kit dans `sitemap.xml`.
+- [ ] **Polissage Journal** : Ajouter des visuels d'en-tête pour les articles du blog.
+- [ ] **Audit Responsif Final** : Vérification minutieuse du Kit sur tablettes et mobiles.
