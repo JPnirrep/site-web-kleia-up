@@ -94,6 +94,16 @@ site-web-kleia-up/
 - Build GitHub Pages : ~45 secondes après push
 
 ## ✅ Historique (Session v3.9.3-RAYONNANCE-IMPACT)
+- [x] **v3.12.0-SEO-GEO-PULSE (19/03/2026)** : Blindage total SEO et indexation IA.
+- [x] **Meta-Data Pulse** : Injection des balises Open Graph et Twitter Card sur `kit-survie.html`.
+- [x] **GEO AI Search** : Enrichissement du fichier `llms.txt` avec des métadonnées d'entités (Sandrina Perrin, Leadership Organique) et ajout de JSON-LD FAQ sur l'accueil pour les agents conversationnels.
+- [x] **Sitemap Pulse** : Ajout du Kit de Survie dans le `sitemap.xml` et actualisation des dates d'indexation.
+
+- [x] **v3.11.0-DUAL-SPACE (19/03/2026)** : Déploiement de la navigation duale et correction critique du CTA Header.
+- [x] **Navigation Duale** : Implémentation du sélecteur `POUR TOI | L'ENTREPRISE` dans le header de toutes les pages pour clarifier instantanément les deux univers.
+- [x] **Correction CTA Header** : Redirection globale du bouton "JE REJOINS LE MOUVEMENT" vers `#kit-urgence` (individuel) ou le modal contact (entreprise), assurant une conversion cohérente sur toutes les pages, y compris `index.html`.
+- [x] **Style Actif** : Ajout d'un soulignement bordeaux dynamique pour marquer l'espace de navigation courant.
+
 - [x] **v3.10.2-REDIRECT-B2B (19/03/2026)** : Correction de la redirection du bloc Conférence sur `programmes.html` vers `entreprises.html#conference`.
 - [x] **v3.10.1-KIT-INTEGRATION (19/03/2026)** : Redirection de tous les CTA "Kit d'Urgence" vers la page interne `kit-survie.html` (suppression de TinyURL/Firebase).
 - [x] **v3.10-KIT-SOUVERAIN (19/03/2026)** : Migration et souveraineté du "Kit de Survie".
