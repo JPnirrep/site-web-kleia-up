@@ -40,6 +40,52 @@
         }
         .container { @apply max-w-7xl mx-auto px-6 lg:px-8; }
         .card-shadow { box-shadow: 0 10px 30px -10px rgba(74, 14, 14, 0.15); }
+
+        /* EFFET BLOB SANDRINA */
+        .blob-shape {
+            border-radius: 50% 50% 30% 70% / 60% 40% 60% 40%;
+            border: 4px solid #8B1D3D;
+            box-shadow: 0 20px 40px rgba(139, 29, 61, 0.2);
+            transition: all 0.5s ease;
+        }
+        .blob-shape:hover {
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            transform: scale(1.02);
+        }
+
+        /* BOUTON PREMIUM SHINE */
+        .btn-premium {
+            @apply relative overflow-hidden transition-all duration-300;
+            background: linear-gradient(135deg, #8B1D3D 0%, #7a0020 100%);
+            box-shadow: 0 10px 25px -5px rgba(139, 29, 61, 0.4);
+        }
+        .btn-premium:hover {
+            @apply -translate-y-1 scale-[1.02];
+            box-shadow: 0 15px 35px -5px rgba(139, 29, 61, 0.5);
+        }
+        .btn-premium::before {
+            content: '';
+            @apply absolute top-0 -left-full w-full h-full;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: all 0.6s ease;
+        }
+        .btn-premium:hover::before {
+            @apply left-full;
+        }
+
+        /* CARD 3D HOVER */
+        .card-3d {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.6s ease;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        .card-3d:hover {
+            transform: translateY(-10px) rotateX(4deg) rotateY(2deg);
+            box-shadow: 0 25px 50px -12px rgba(74, 14, 14, 0.2);
+        }
+        .card-3d > * {
+            transform: translateZ(20px);
+        }
     </style>
 </head>
 <body class="bg-white">
@@ -63,7 +109,7 @@
                         Le protocole exact pour éliminer la surcharge mentale, activer votre 'Power Posture' et captiver votre audience. En 12 minutes chrono.
                     </p>
                     <div class="mt-12">
-                        <a href="#capture" class="inline-block bg-[#ef4444] hover:bg-[#dc2626] text-white px-12 py-6 rounded-md text-xl font-bold shadow-2xl transition-transform hover:scale-105 active:scale-95 uppercase tracking-wide">
+                        <a href="#capture" class="btn-premium px-12 py-6 rounded-md text-xl font-bold uppercase tracking-wide text-white inline-block">
                             TÉLÉCHARGER MON PROTOCOLE D'URGENCE GRATUIT
                         </a>
                     </div>
@@ -89,19 +135,19 @@
                 </div>
                 
                 <div class="mt-16 grid md:grid-cols-3 gap-8">
-                    <div class="bg-primary/[0.02] p-8 rounded-3xl flex flex-col items-center text-center transition-all hover:bg-white hover:card-shadow group border border-transparent hover:border-primary/5">
+                    <div class="card-3d bg-primary/[0.02] p-8 rounded-3xl flex flex-col items-center text-center transition-all hover:bg-white group border border-transparent hover:border-primary/5">
                         <div class="w-16 h-16 mb-6 flex items-center justify-center bg-red-50 rounded-2xl text-red-600 transition-transform group-hover:scale-110">
                             <i data-lucide="x-circle" class="w-10 h-10"></i>
                         </div>
                         <p class="text-lg font-medium text-primary/80">Arrêtez la surcharge émotionnelle qui brouille votre message</p>
                     </div>
-                    <div class="bg-primary/[0.02] p-8 rounded-3xl flex flex-col items-center text-center transition-all hover:bg-white hover:card-shadow group border border-transparent hover:border-primary/5">
+                    <div class="card-3d bg-primary/[0.02] p-8 rounded-3xl flex flex-col items-center text-center transition-all hover:bg-white group border border-transparent hover:border-primary/5">
                         <div class="w-16 h-16 mb-6 flex items-center justify-center bg-green-50 rounded-2xl text-green-700 transition-transform group-hover:scale-110">
                             <i data-lucide="check-circle" class="w-10 h-10"></i>
                         </div>
                         <p class="text-lg font-medium text-primary/80">Transformez vos doutes en Super Pouvoirs (Sourire, Présence)</p>
                     </div>
-                    <div class="bg-primary/[0.02] p-8 rounded-3xl flex flex-col items-center text-center transition-all hover:bg-white hover:card-shadow group border border-transparent hover:border-primary/5">
+                    <div class="card-3d bg-primary/[0.02] p-8 rounded-3xl flex flex-col items-center text-center transition-all hover:bg-white group border border-transparent hover:border-primary/5">
                         <div class="w-16 h-16 mb-6 flex items-center justify-center bg-green-50 rounded-2xl text-green-700 transition-transform group-hover:scale-110">
                             <i data-lucide="check-circle" class="w-10 h-10"></i>
                         </div>
@@ -121,7 +167,7 @@
             
             <div class="grid md:grid-cols-3 gap-10">
                 <!-- Module 1 -->
-                <div class="bg-white p-10 rounded-3xl card-shadow border border-primary/5 relative overflow-hidden group">
+                <div class="card-3d bg-white p-10 rounded-3xl border border-primary/5 relative overflow-hidden group">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-110"></div>
                     <i data-lucide="moon" class="w-14 h-14 mb-6 text-primary"></i>
                     <h3 class="font-headline text-2xl font-bold text-primary mb-2">Module 1 : La Veille</h3>
@@ -133,7 +179,7 @@
                     </ul>
                 </div>
                 <!-- Module 2 -->
-                <div class="bg-white p-10 rounded-3xl card-shadow border border-primary/5 relative overflow-hidden group">
+                <div class="card-3d bg-white p-10 rounded-3xl border border-primary/5 relative overflow-hidden group">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-110"></div>
                     <i data-lucide="sunrise" class="w-14 h-14 mb-6 text-primary"></i>
                     <h3 class="font-headline text-2xl font-bold text-primary mb-2 text-primary">Module 2 : Le Matin J</h3>
@@ -145,7 +191,7 @@
                     </ul>
                 </div>
                 <!-- Module 3 -->
-                <div class="bg-white p-10 rounded-3xl card-shadow border border-primary/5 relative overflow-hidden group">
+                <div class="card-3d bg-white p-10 rounded-3xl border border-primary/5 relative overflow-hidden group">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-110"></div>
                     <i data-lucide="zap" class="w-14 h-14 mb-6 text-primary"></i>
                     <h3 class="font-headline text-2xl font-bold text-primary mb-2">Module 3 : La 'Green Zone'</h3>
@@ -166,7 +212,7 @@
             <div class="bg-white p-10 md:p-16 rounded-[3rem] card-shadow border border-primary/5">
                 <div class="grid md:grid-cols-3 gap-12 items-center">
                     <div class="md:col-span-1 flex justify-center">
-                        <img src="assets/images/sandrina-kleia.webp?v=2" alt="Sandrina Photo" class="rounded-full w-64 h-64 object-cover shadow-2xl border-8 border-white">
+                        <img src="assets/images/sandrina-kleia.webp?v=2" alt="Sandrina Photo" class="blob-shape w-64 h-64 object-cover">
                     </div>
                     <div class="md:col-span-2 text-center md:text-left">
                         <h2 class="font-headline text-3xl md:text-4xl font-bold text-primary">
@@ -193,7 +239,7 @@
             <p class="mt-6 text-xl text-foreground/70 mb-12">
                 Recevez votre protocole d'urgence pour éliminer la surcharge mentale, activer votre 'Power Posture' et captiver votre audience. En 12 minutes chrono.
             </p>
-            <a href="#capture" class="inline-block bg-[#ef4444] hover:bg-[#dc2626] text-white px-12 py-6 rounded-md text-xl font-bold shadow-2xl transition-all hover:scale-105 uppercase tracking-wide">
+            <a href="#capture" class="btn-premium px-12 py-6 rounded-md text-xl font-bold uppercase tracking-wide text-white inline-block">
                 TÉLÉCHARGER MON PROTOCOLE D'URGENCE GRATUIT
             </a>
         </div>
@@ -279,9 +325,8 @@
                         </div>
                     </div>
                     
-                    <button type="submit" id="submitBtn" class="sm:col-span-2 w-full bg-[#ef4444] hover:bg-[#dc2626] text-white py-8 rounded-2xl text-xl font-black shadow-2xl transition-all uppercase tracking-widest overflow-hidden relative group">
-                        <span class="relative z-10">RECEVOIR MON PROTOCOLE D'URGENCE MAINTENANT</span>
-                        <div class="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                    <button type="submit" id="submitBtn" class="btn-premium sm:col-span-2 w-full text-white py-8 rounded-2xl text-xl font-black uppercase tracking-widest">
+                        RECEVOIR MON PROTOCOLE D'URGENCE MAINTENANT
                     </button>
                     
                     <div class="sm:col-span-2 mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground font-medium">
@@ -331,8 +376,8 @@
             .then(response => {
                 // Effet Caméléon Fidèle
                 btn.innerText = "MERCI ! CLIQUEZ ICI POUR TÉLÉCHARGER";
-                btn.classList.replace('bg-[#ef4444]', 'bg-green-600');
-                btn.classList.replace('hover:bg-[#dc2626]', 'hover:bg-green-700');
+                btn.classList.remove('btn-premium');
+                btn.classList.add('bg-green-600', 'hover:bg-green-700');
                 btn.disabled = false;
                 
                 btn.onclick = function(ev) {
