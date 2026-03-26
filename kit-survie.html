@@ -401,46 +401,66 @@
     </footer>
 
     <script>
-        // Initialize Lucide Icons
+        // 🛡️ VAGUS OS - KLEIA CAPTURE ENGINE V8.3
         lucide.createIcons();
 
-        document.getElementById('kitForm').addEventListener('submit', function(e) {
+        document.getElementById('kitForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const btn = document.getElementById('submitBtn');
             const firstName = document.getElementById('firstName').value;
             const email = document.getElementById('email').value;
             const whatsapp = document.getElementById('whatsapp').value;
             
-            btn.innerHTML = '<span class="flex items-center justify-center gap-3"><i data-lucide="loader-2" class="animate-spin"></i> ENVOI EN COURS...</span>';
+            // État de chargement
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span class="flex items-center justify-center gap-3"><i data-lucide="loader-2" class="animate-spin"></i> CONNEXION À VAGUS OS...</span>';
             btn.disabled = true;
             lucide.createIcons();
 
-            const formData = new FormData();
-            formData.append('name', firstName);
-            formData.append('email', email);
-            formData.append('subject', 'Demande de Kit de Survie');
-            formData.append('message', 'Inscription Kit de Survie. WhatsApp: ' + (whatsapp || 'Non renseigné'));
+            const payload = {
+                first_name: firstName,
+                email: email,
+                whatsapp: whatsapp || "",
+                list_id: 14 // CHALLENGE-PAQUES-2026
+            };
 
-            fetch('php/contact-reach.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                // Effet Caméléon Fidèle
-                btn.innerText = "MERCI ! CLIQUEZ ICI POUR TÉLÉCHARGER";
-                btn.classList.remove('btn-premium');
-                btn.classList.add('bg-green-600', 'hover:bg-green-700');
+            try {
+                // Appel vers ton VPS OVH (Port 80)
+                const response = await fetch('http://135.125.53.215/vagus/capture/kleia', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    // 🎉 SUCCÈS - L'utilisateur est soit nouveau, soit mis à jour
+                    btn.innerHTML = "MERCI ! DÉCOUVREZ VOTRE ZONE DE PUISSANCE";
+                    btn.classList.remove('btn-premium');
+                    btn.classList.add('bg-green-600', 'hover:bg-green-700');
+                    btn.disabled = false;
+                    
+                    // Transformation du bouton en bouton de téléchargement + Instructions
+                    btn.onclick = function(ev) {
+                        ev.preventDefault();
+                        // 1. Ouvrir le Kit PDF
+                        window.open('https://drive.google.com/file/d/1WTu-2xrKLWlSuYPswdVjbbE4kQZQ61hO/view?usp=drive_link', '_blank');
+                        // 2. Rediriger vers WhatsApp après 1 seconde
+                        setTimeout(() => {
+                            window.location.href = "https://chat.whatsapp.com/EfmYUfLlnnn7PWnfmItHQW";
+                        }, 1500);
+                    };
+                    
+                    // Alerte de bienvenue (optionnelle mais sympa)
+                    alert("✨ Inscription validée ! Votre protocole s'ouvre. \n\nIMPORTANT : Rejoignez le groupe de Sandrina juste après.");
+                    
+                } else {
+                    throw new Error("Erreur de synchronisation");
+                }
+            } catch (error) {
+                console.error("❌ Erreur Vagus Engine:", error);
+                btn.innerText = "ERREUR DE CONNEXION. RÉESSAYEZ ?";
                 btn.disabled = false;
-                
-                btn.onclick = function(ev) {
-                    ev.preventDefault();
-                    window.open('https://drive.google.com/file/d/1WTu-2xrKLWlSuYPswdVjbbE4kQZQ61hO/view?usp=drive_link', '_blank');
-                };
-            })
-            .catch(error => {
-                btn.innerText = "ERREUR. RÉESSAYEZ ?";
-                btn.disabled = false;
-            });
+            }
         });
     </script>
 </body>
