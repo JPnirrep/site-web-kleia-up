@@ -6,11 +6,10 @@
 
 header('Content-Type: application/json; charset=utf-8');
 
-// 1. Configuration
+// 1. Configuration Vagus OS (V8.3)
+$cns_endpoint = "http://135.125.53.215:8001/capture"; // VPS OVH Direct Bridge
 $to = "sandrina@kleia-up.fr, jpp180866@gmail.com"; 
-$subject = "=?UTF-8?B?".base64_encode("🚀 Nouveau Contact Entreprise - KLEIA-UP")."?=";
 $from = "noreply@kleia-up.fr";
-$cns_endpoint = "http://bot.antigravity-brain.com/leads"; // Central CNS Endpoint (Firebase Hub)
 
 /**
  * Fonction de Push CNS (Central Nervous System)

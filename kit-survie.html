@@ -401,10 +401,10 @@
     </footer>
 
     <script>
-        // 🛡️ VAGUS OS - KLEIA CAPTURE ENGINE V8.3
+        // 🛡️ VAGUS OS - KLEIA CAPTURE ENGINE V8.3 (Secure Bridge)
         lucide.createIcons();
 
-        document.getElementById('kitForm').addEventListener('submit', async function(e) {
+        document.getElementById('kitForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = document.getElementById('submitBtn');
             const firstName = document.getElementById('firstName').value;
@@ -417,21 +417,17 @@
             btn.disabled = true;
             lucide.createIcons();
 
-            const payload = {
-                name: firstName,
-                email: email,
-                message: "Inscription Challenge Pâques. WhatsApp: " + (whatsapp || "Non renseigné"),
-                subject: "CHALLENGE-PAQUES-2026"
-            };
+            const formData = new FormData();
+            formData.append('name', firstName);
+            formData.append('email', email);
+            formData.append('subject', 'CHALLENGE-PAQUES-2026');
+            formData.append('message', 'Inscription Challenge Pâques. WhatsApp: ' + (whatsapp || 'Non renseigné'));
 
-            try {
-                // APPEL DIRECT AU MEMBER OS SUR LE PORT 8001
-                const response = await fetch('http://135.125.53.215:8001/capture', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
+            fetch('php/contact-reach.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
                 if (response.ok) {
                     btn.innerHTML = "MERCI ! DÉCOUVREZ VOTRE ZONE DE PUISSANCE";
                     btn.classList.remove('btn-premium');
@@ -448,14 +444,14 @@
                     
                     alert("✨ Inscription validée ! \n\nVotre kit est prêt. Rejoignez le groupe WhatsApp juste après !");
                 } else {
-                    throw new Error("Erreur de sync");
+                    throw new Error();
                 }
-            } catch (error) {
-                console.error("❌ Erreur Vagus Engine:", error);
-                btn.innerHTML = originalText; // On remet le texte original en cas d'erreur
+            })
+            .catch(error => {
+                btn.innerHTML = originalText;
                 btn.disabled = false;
                 alert("Oups ! Petit souci de connexion. Veuillez réessayer.");
-            }
+            });
         });
     </script>
 </body>
