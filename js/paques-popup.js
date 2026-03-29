@@ -1,7 +1,7 @@
 /**
  * 🥚 KLEIA-UP - POP-UP CHALLENGE DE PÂQUES 2026
  * Design: Blanc Perle Noble / Version Intégrale (Compacte)
- * Deployment: Final Production Build
+ * Deployment: Final Production Build (v1.1)
  */
 
 (function() {
@@ -118,7 +118,7 @@
                         
                         <div class="paques-context">
                             ✨ <span class="paques-highlight">BIENVENUE DANS VOTRE ZONE DE PUISSANCE !</span> ✨<br><br>
-                            "Arrêtez de convaincre, commencez à rayonner : 3 jours pour desserrer le frein à main de votre puissance naturelle."<br><br>
+                            "Arrêtez de convaincre, commencez à rayonner : 4 jours pour desserrer le frein à main de votre puissance naturelle."<br><br>
                             Vous avez déjà votre Kit de Survie, vous connaissez donc l'équation. Ici, on passe de la théorie à la biologie. Pour une femme HPS, l'affirmation de soi est le moteur de sa liberté, quel que soit son métier. 🚀
                         </div>
 
@@ -138,7 +138,7 @@
                                 <input type="email" id="paques-email" class="paques-input" placeholder="Ton email privé" required>
                                 <input type="tel" id="paques-whatsapp" class="paques-input" placeholder="Ton numéro WhatsApp (Optionnel)">
                                 <button type="submit" class="paques-btn" id="paques-submit">JE M'INSCRIS AU CHALLENGE</button>
-                                <p class="paques-footer">Un seul clic pour faire partie de la communauté</p>
+                                <p class="paques-footer">Un seul clic pour faire partie de la communauté et recevoir votre kit de survie</p>
                             </form>
                         </div>
                     </div>
