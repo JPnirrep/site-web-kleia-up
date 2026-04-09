@@ -3,7 +3,7 @@
 ## 🔒 VERSION STABLE - SITE STATIQUE HAUTE PERFORMANCE
 
 ![Status](https://img.shields.io/badge/status-PRODUCTION-success)
-![Version](https://img.shields.io/badge/version-v3.10.2--B2B--KITS-blue)
+![Version](https://img.shields.io/badge/version-v3.13.0--CHALLENGE--CLEANUP-blue)
 ![Architecture](https://img.shields.io/badge/architecture-VANILLA%20HTML%2FCSS-green)
 
 ---
@@ -31,6 +31,8 @@ site-web-kleia-up/
 │   └── workflows/
 │       └── deploy.yml  # Déploiement automatique GitHub Pages
 ├── .agent/
+│   ├── archives/
+│   │   └── challenge-paques-2026.md # ARCHIVE : Code complet du challenge
 │   ├── workflows/
 │   │   ├── check-site.md   # Workflow push + preview
 │   │   └── supervise.md    # Workflow supervision
@@ -193,6 +195,8 @@ git push
 ---
 
 ### ✅ Historique des Versions (Récents)
+
+- **v3.13.0-CHALLENGE-CLEANUP (09/04/2026)** : Désactivation du Challenge de Pâques 2026. Archivage du code dans `.agent/archives/`, retrait du popup sur l'accueil et retour aux tags standards pour le Kit de Survie.
 
 - **v3.12.0-SEO-GEO (19/03/2026)** : Blindage SEO/GEO. Sitemap rafraîchi, Meta OG pour LinkedIn sur le Kit, injection JSON-LD FAQ pour l'IA sur l'accueil.
 - **v3.11.0-DUAL-SPACE (19/03/2026)** : Déploiement du sélecteur "POUR TOI | L'ENTREPRISE" dans le header global. Correction CTA vers #kit-urgence.
