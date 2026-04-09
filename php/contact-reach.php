@@ -33,6 +33,7 @@ function push_to_cns($url, $payload) {
     curl_setopt($ch, CURLOPT_TIMEOUT, 2); 
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 2);
     $result = @curl_exec($ch);
+    curl_close($ch);
     return $result;
 }
 
