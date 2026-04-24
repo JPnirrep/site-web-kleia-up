@@ -1,0 +1,142 @@
+{
+  "client": "Barnaby Benezech",
+  "coach": "Sandrina",
+  "date": "2026-04-22",
+  "session_id": "B01-BASELINE",
+  "status": "In Progress",
+  "baseline_scores": {
+    "non_verbal": {
+      "contact_visuel": 3,
+      "ancrage_sol": 4,
+      "gestuelle": 4
+    },
+    "para_verbal": {
+      "maitrise_debit": 3,
+      "relief_vocal": 4
+    },
+    "verbal": {
+      "presence": 4,
+      "clarte_articulation": 6
+    }
+  },
+  "content": {
+    "introduction": "Cet audit est une immersion dans ta pratique actuelle. L’objectif est de confronter la solidité de ton expertise sur la Réalité Étendue (XR) à la manière dont ton corps et ta voix la projettent.",
+    "forces": [
+      {
+        "title": "Un capital sympathie immédiat",
+        "description": "Ton sourire est sincère, ton ouverture faciale est réelle. C'est un atout précieux pour créer ce climat de confiance nécessaire à toute écoute."
+      },
+      {
+        "title": "Une maîtrise technique et linguistique",
+        "description": "Tu possèdes une autorité naturelle dans l'anglais technique. Ta diction est claire, ton débit est lisible ; c'est un levier de crédibilité incontestable."
+      },
+      {
+        "title": "Une rigueur intellectuelle",
+        "description": "Ton exposé suit un plan impeccable (VR, AR, MR). La justesse de tes termes techniques démontre une réflexion structurée et un respect total de ton sujet."
+      }
+    ],
+    "analysis": [
+      {
+        "id": "accroche",
+        "title": "II. L'Accroche : La première impression",
+        "details": "Cette phase est décisive. D'un point de vue neuroscientifique, l'auditoire active ses neurones miroirs dès les premières secondes.",
+        "items": [
+          {
+            "indicator": "Le regard : une trajectoire d'évitement",
+            "observation": "Dès l'introduction, ton regard fuit les examinateurs pour s'ancrer au-dessus de l'horizon.",
+            "impact": "L'auditeur sent que tu es enfermé dans ta 'bulle', servant ton texte plutôt que ton public."
+          },
+          {
+            "indicator": "La gestuelle : signaux de tension",
+            "observation": "Tes mains cherchent un appui — ce mouvement réflexe vers les poches est une recherche de protection immédiate.",
+            "impact": "Perception d'un besoin de protection qui peut trahir ton inconfort."
+          },
+          {
+            "indicator": "L'ancrage et la posture",
+            "observation": "Le balancement d'un pied sur l'autre et la remontée de tes épaules vers les oreilles.",
+            "impact": "Confirme une charge de stress qui entrave ta sérénité."
+          }
+        ]
+      },
+      {
+        "id": "presence",
+        "title": "III. La présence corporelle",
+        "details": "Ton corps est le véhicule de ton expertise, mais une tension perceptible en occulte aujourd'hui toute la légitimité.",
+        "items": [
+          {
+            "indicator": "La gestion du regard",
+            "observation": "Trop souvent dirigé au-dessus de l'audience, créant une rupture.",
+            "impact": "Nécessite d'être ramené vers l'autre pour privilégier une interaction habitée."
+          },
+          {
+            "indicator": "La stabilité de l'ancrage",
+            "observation": "Micro-oscillations et balancement pendulaire constant.",
+            "impact": "Crée un 'flou' qui fatigue l'observateur. L'assise solide est sine qua non pour projeter la stabilité."
+          },
+          {
+            "indicator": "La mis-asymétrie gestuelle",
+            "observation": "Bras droit verrouillé par le support, quand le gauche illustre le propos.",
+            "impact": "Redondance marquée créant une déconnexion ; les gestes doivent s'ouvrir vers l'autre."
+          }
+        ]
+      },
+      {
+        "id": "vocal",
+        "title": "IV. L'expression vocale, le silence et le souffle",
+        "details": "Ta voix porte, mais elle répond à l'impératif de la 'récitation'. Elle doit servir la transmission.",
+        "items": [
+          {
+            "indicator": "Le rythme et la respiration",
+            "observation": "Précipitation trahissant une crainte de l'oubli.",
+            "impact": "Nécessite d'intégrer des temps de respiration ventrale pour réguler le flux nerveux."
+          },
+          {
+            "indicator": "Le silence habité",
+            "observation": "Manque de silences après des affirmations fortes.",
+            "impact": "L'audience a besoin de temps pour 'digérer' la complexité des concepts."
+          },
+          {
+            "indicator": "La prosodie et le relief",
+            "observation": "Diction parfois écrasée sur les finales de mots (plosives).",
+            "impact": "Rend le discours linéaire ; le relief vocal redonne du poids à l'essentiel."
+          }
+        ]
+      },
+      {
+        "id": "message",
+        "title": "V. La force du message : De la récitation à l'incarnation",
+        "details": "Ton contenu est techniquement solide, mais reste emprisonné dans une structure scolaire.",
+        "items": [
+          {
+            "indicator": "De la récitation à l'incarnation",
+            "observation": "Effort de mémoire permanent qui occulte ta conviction.",
+            "impact": "Tu ne dis plus ton texte, tu dois le vivre pour que corps, voix et pensée ne fassent qu'un."
+          },
+          {
+            "indicator": "La portée des mots",
+            "observation": "Lexique précis mais trop descriptif.",
+            "impact": "L'intégration de verbes d'action est nécessaire pour sortir d'une neutralité injuste pour ton sujet."
+          }
+        ]
+      }
+    ],
+    "roadmap": [
+      { "session": 1, "title": "Accueil, Diagnostic et Échanges", "status": "Completed" },
+      { "session": 2, "title": "Ton Pourquoi et forces de caractère", "status": "Upcoming" },
+      { "session": 3, "title": "L'art de l'ouverture et connexion au regard", "status": "Upcoming" },
+      { "session": 4, "title": "Libération gestuelle et désasymétrie", "status": "Upcoming" },
+      { "session": 5, "title": "Rythme, silences, respiration et incarnation", "status": "Upcoming" },
+      { "session": 6, "title": "Atelier de fusion (Verbal/Non-verbal)", "status": "Upcoming" },
+      { "session": 7, "title": "Approfondissement de l'incarnation", "status": "Upcoming" },
+      { "session": 8, "title": "Simulation finale et consolidation", "status": "Upcoming" }
+    ],
+    "synthesis": {
+      "title": "VII. Synthèse : Le mécanisme de protection",
+      "description": "Le constat révèle un 'parasitage du sourire' : ce sourire identique agit comme un bouclier émotionnel pour masquer ton inconfort. Nous allons transformer ce bouclier en une puissance de transmission sereine."
+    }
+  },
+  "assets": {
+    "video": "260422_Barnaby.mov",
+    "diagnostic_pdf": "Diagnostic de Posture Oratoire Barnaby Benezech.pdf"
+  }
+}

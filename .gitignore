@@ -15,3 +15,7 @@ Desktop.ini
 # Backup files
 *.bak
 *.backup
+
+# Fichiers lourds (Vidéos, etc.)
+*.mov
+*.mp4
