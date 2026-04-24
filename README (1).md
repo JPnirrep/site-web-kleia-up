@@ -1,0 +1,333 @@
+# 🏛️ KLEIA-UP - Site Web Officiel
+
+## 🔒 VERSION STABLE - SITE STATIQUE HAUTE PERFORMANCE
+
+![Status](https://img.shields.io/badge/status-PRODUCTION-success)
+![Version](https://img.shields.io/badge/version-v3.10.2--B2B--KITS-blue)
+![Architecture](https://img.shields.io/badge/architecture-VANILLA%20HTML%2FCSS-green)
+
+---
+
+## 🎯 ARCHITECTURE
+
+**Site 100% statique** — Zéro dépendance, zéro framework, performance maximale.
+
+### Structure des fichiers
+```
+site-web-kleia-up/
+├── index.html          # FICHIER PRINCIPAL
+├── kit-survie.html     # NOUVEAU : Page Kit de Survie intégrée (Souveraineté)
+├── css/
+│   └── main.css        # Styles Vanilla (35 KB)
+├── assets/
+│   ├── logo_kleia.png
+│   └── sandrina-kleia-up.webp
+├── scripts/
+│   └── verify-visual.ps1   # Script de vérification visuelle
+├── GEMINI.md           # Règles du workspace Antigravity
+├── .htaccess           # Configuration Apache
+├── .gitignore          # Exclusions Git
+├── .github/
+│   └── workflows/
+│       └── deploy.yml  # Déploiement automatique GitHub Pages
+├── .agent/
+│   ├── workflows/
+│   │   ├── check-site.md   # Workflow push + preview
+│   │   └── supervise.md    # Workflow supervision
+│   └── rules/
+│       └── supervisor.md   # Règles mode superviseur
+└── README.md           # Ce fichier
+```
+
+### Technologies utilisées
+- **HTML5** : Structure sémantique
+- **CSS3** : Styles et animations natives
+- **JavaScript Vanilla** : Interactions minimales (inline)
+- **Google Fonts** : Syne (Accents)
+- **Fontshare** : Ranade (Titres & Corps)
+
+---
+
+## 🎨 RÈGLES TYPOGRAPHIQUES (GRAVÉES DANS LE MARBRE)
+
+### 1. POLICES (FONTS)
+*   **Titres (Hn)** : `Ranade` (Sans-serif Moderne).
+*   **Interface / Corps** : `Ranade` (Sans-serif Moderne).
+*   **Accents** : `Syne`.
+
+### 2. HIÉRARCHIE VISUELLE (TITRES)
+*   **H1 (Hero)** : Casse phrase obligatoire (sauf exception purement éditoriale type slogan).
+*   **H2 / H3 (Sections)** : Uppercase (tout majuscule) **AUTORISÉ** pour les grands piliers :
+    *   *PROGRAMME SIGNATURE*
+    *   *L'INSTANT KLEIA*
+    *   *ATELIERS FOCUS*
+*   **Emphase** : Italique + Couleur Bordeaux (`#580017`). Jamais sur des blocs entiers, uniquement mots-clés.
+
+### 3. INTERFACE (NAVIGATION, BOUTONS, LABELS)
+*   **Style** : `UPPERCASE` (Tout majuscule).
+*   **Propriétés techniques** :
+    *   `letter-spacing: 1px`
+    *   `font-weight: 600`
+*   **Corps de texte / Formulaires** : Casse phrase (Sentence case) pour garder la chaleur et l'humain.
+
+---
+
+## ⚠️ AVERTISSEMENT CRITIQUE - LIRE AVANT TOUTE MODIFICATION
+
+**CE DESIGN EST MAINTENANT IMMUABLE ET PROTÉGÉ**
+
+### 🚫 INTERDICTIONS ABSOLUES
+
+1. **NE JAMAIS** migrer vers Tailwind CSS
+2. **NE JAMAIS** migrer vers React ou tout autre framework
+3. **NE JAMAIS** ajouter de dépendances npm
+4. **NE JAMAIS** supprimer les animations CSS natives
+5. **NE JAMAIS** modifier la palette de couleurs burgundy (#8B1D3D) sans directive stratégique.
+6. **NE JAMAIS** toucher au fichier `index.html` sans backup préalable
+7. **NE JAMAIS** utiliser d'IA pour "améliorer" le design
+
+### ✅ CE QUI FONCTIONNE PARFAITEMENT
+
+- ✨ **Animations CSS natives** : morph, waves, hover effects
+- 🎨 **Design burgundy premium** : #8B1D3D, #D70040, #FAF9F6
+- 📱 **Responsive design** : mobile, tablet, desktop
+- 🚀 **Performance** : chargement ultra-rapide, zéro dépendance
+- 🎯 **SEO** : balises meta complètes, schema.org
+- 🔗 **GitHub Pages** : déploiement automatique activé
+
+---
+
+## 🖥️ TESTER LOCALEMENT
+
+### Méthode 1 : Double-clic (le plus simple)
+1. Ouvrir l'explorateur de fichiers
+2. Double-cliquer sur `index.html`
+3. Le site s'ouvre dans ton navigateur par défaut
+
+### Méthode 2 : Live Server (recommandé pour le développement)
+1. Installer l'extension **Live Server** dans VS Code
+2. Clic droit sur `index.html` → **Open with Live Server**
+3. La page se rafraîchit automatiquement à chaque modification
+
+---
+
+## 🛡️ SAUVEGARDES ET PROTECTION
+
+### Branche principale
+```
+main (branch) - Version de production
+```
+
+### Branches de sauvegarde
+```
+STABLE-BACKUP-2026-01-08 - Backup du design original
+pre-cleanup-2026-01-30   - Backup avant nettoyage des fichiers Vite
+```
+
+### Tag de version
+```
+v1.0-STABLE - Version stable tagée et protégée
+```
+
+---
+
+## 🔧 PROCÉDURES DE MAINTENANCE
+
+### 🚨 En cas de problème - RESTAURATION D'URGENCE
+
+Si le site est cassé, suivre cette procédure **IMMÉDIATEMENT** :
+
+```bash
+# Option 1 : Restaurer depuis le tag
+git checkout v1.0-STABLE
+git push origin main --force
+
+# Option 2 : Restaurer depuis la branche de backup
+git checkout STABLE-BACKUP-2026-01-08
+git checkout -b main-restored
+git push origin main-restored:main --force
+```
+
+### ✅ Modifications autorisées (avec précautions)
+
+#### Textes et contenus
+- Modifier les textes dans les balises HTML
+- Mettre à jour les tarifs et offres
+- Changer les images (conserver les mêmes dimensions)
+
+#### Méthode sécurisée pour modifier
+```bash
+# 1. Créer une branche de test
+git checkout -b test-modif-YYYY-MM-DD
+
+# 2. Faire les modifications
+# 3. Tester localement
+# 4. Si OK, merger
+
+git checkout main
+git merge test-modif-YYYY-MM-DD
+git push
+```
+
+### 🚫 Modifications INTERDITES
+
+- Ne JAMAIS toucher au CSS sans backup
+- Ne JAMAIS installer de dépendances npm
+- Ne JAMAIS ajouter de frameworks CSS/JS
+- Ne JAMAIS modifier la structure HTML sans backup
+
+---
+
+## 🌐 DÉPLOIEMENT
+
+### GitHub Pages (actif)
+- **URL** : https://jk-up.com
+- **Source** : Branch `main`
+- **Build** : Automatique à chaque push
+
+### Vérifier le déploiement
+1. Aller sur Actions : https://github.com/JPnirrep/site-web-kleia-up/actions
+2. Vérifier que "Deploy static content to Pages" est en succès (✅)
+3. Tester le site en ligne
+
+---
+
+### ✅ Historique des Versions (Récents)
+
+- **v3.12.0-SEO-GEO (19/03/2026)** : Blindage SEO/GEO. Sitemap rafraîchi, Meta OG pour LinkedIn sur le Kit, injection JSON-LD FAQ pour l'IA sur l'accueil.
+- **v3.11.0-DUAL-SPACE (19/03/2026)** : Déploiement du sélecteur "POUR TOI | L'ENTREPRISE" dans le header global. Correction CTA vers #kit-urgence.
+- **v3.10.2 (19/03/2026)** : Correction redirection bloc Conférence immersion.
+- **v3.10.1 (19/03/2026)** : Unification globale des liens vers `kit-survie.html`.
+- **v3.10 (19/03/2026)** : Migration souveraine du Kit de Survie (Bye bye Firebase Studio).
+- **v3.9.5 (16/03/2026)** : Refonte autorité "À Propos" et podcast.
+- **v3.9.3 (16/03/2026)** : Polissage Rayonnance IMPACT (Or & Bordeaux). "Kit d'Utilisation" pointent désormais vers `kit-survie.html` en local.
+
+### v3.9.5-PROPOS-REFINEMENT (16/03/2026)
+- ✅ **Autorité Flash** : Remplacement de "La Fabrique PEPPS" par le Podcast "Les Coulisses du Speaker" (plus de 80 épisodes) pour un EEAT boosté.
+- ✅ **Design Bijou** : Refonte du bloc CTA final (plus compact, moins massif). Boutons Or Royal avec effet `shine-effect` (balayage) et texte bordeaux pour une visibilité totale. Libération des contraintes de largeur (bouton sur une seule ligne).
+
+### v3.9.4-SEO-PULSE (16/03/2026)
+- ✅ **Blindage SEO et indexation profonde** : Injection de balises canoniques, optimisation des titres et descriptions uniques pour les 8 pages du site. Sécurisation de `robots.txt`.
+### v3.9.3-RAYONNANCE-IMPACT (16/03/2026)
+- ✅ **Optimisation IMPACT** : Le mot est désormais en MAJUSCULES, gras (900), non-italique, avec un halo de lumière (`text-shadow`) doré boosté pour une rayonnance maximale sur fond bordeaux.
+- ✅ **Pivot Sémantique Signature** : Remplacement de "transformation profonde" par "qui libère enfin ton essence et tes talents".
+- ✅ **Évolution Lexicale** : Migration de "transformation identitaire" vers "**libération de ton leadership**" sur `individuel-groupe.html`.
+- ✅ **Harmonisation Vocabulaire** : Remplacement de "ancrer" par "révéler" et "organique" par "authentique" pour plus de modernité.
+
+### v3.6-STABLE-PREMIUM (13/03/2026) - BASE DE RÉFÉRENCE
+- ✅ **Unification Premium** : Harmonisation totale des boutons sur Individuel, Entreprises et Manifeste.
+- ✅ **Effet 3D Liftoff** : Élévation de 8px au survol avec inversion de couleur et ombre portée dynamique.
+- ✅ **Hostinger Cache Bypass** : Configuration `.htaccess` agressive et système de versioning automatique (`?v=3.6`) pour briser le cache serveur.
+- ✅ **Responsive Fondatrice** : Correction des bugs d'affichage sur mobile pour l'image et le texte de la section "La Fondatrice".
+- ✅ **Nettoyage Qualité** : Suppression de l'erreur 404 Favicon et harmonisation des boutons LinkedIn.
+
+### v3.0-B2C-IMMERSION (12/03/2026)
+- ✅ **Renommage Stratégique** : Migration de `particuliers.html` vers `individuel-groupe.html` et redirection de la page d'accueil (`index.html`) pour une immersion B2C immédiate.
+- ✅ **Pivot Sémantique** : Remplacement de "Cercle" par "**Mouvement**" sur 100% du site pour une identité de marque plus audacieuse et dynamique.
+- ✅ **Optimisation Conversion** : Migration des CTAs "Kit d'Urgence" vers le lien TinyURL direct et simplification du footer (suppression du formulaire doublon).
+- ✅ **Gamification Flip Cards** : Transformation de la section des "Besoins" avec des cartes 3D interactives.
+- ✅ **Restauration Manifeste** : Retour au design premium, unification du header/footer et réactivation du blob vidéo organique.
+- ✅ **Stabilité Header** : Fix du header translucide (glassmorphism) pour la lisibilité au scroll.
+- ✅ **Correctifs Design** : Amélioration du contraste des boutons footer (Blanc sur Bordeaux) et recalage des ancres CTA.
+
+### v2.9-GLASSMORPHISM (11/03/2026)
+- ✅ **Unification Premium** : Déploiement du header `.header-corp` (Glassmorphism, fixed) sur l'ensemble du site (Entreprises, Particuliers, Manifeste).
+- ✅ **Transparence Apple-like** : Optimisation de l'effet "vitre" (blur 25px, backdrop-filter) sur fond beige ivoire.
+- ✅ **Recalage Logos (B2C)** : Décalage vertical du bandeau de logos (110px) pour visibilité parfaite sous le menu fixe.
+- ✅ **Harmonie du Blob** : Redimensionnement à 85% et décalage de Sandrina sur la page Particuliers pour supprimer les chevauchements.
+- ✅ **Ajustements Manifeste** : Recalage de la section titre pour une immersion immédiate.
+
+### v2.8-ATELIERS-REBRAND (22/02/2026)
+- ✅ **Mutation Visuelle** : Refonte premium des cartes "Ateliers" avec icônes SVG OR brossé, asymétrie organique temporelle, et élévation au survol.
+- ✅ **CTA Stratégique** : Création du bouton "CONCRÉTISONS VOTRE ÉLAN", design "pill" bordeaux avec balayage lumineux doré (animation CSS) relié directement à Calendly.
+- ✅ **Lisibilité & Logistique** : Ajustement des espacements (margin-bottom, padding, line-height 1.3), injection élégante des durées des interventions et forçage visuel bordeaux ultra spécifique de la section transition.
+
+### v2.7-CORP-RANADE (20/02/2026)
+- ✅ **Optimisation "Gold Shine"** : Application d'un dégradé métallique (`#B8860B`, `#F9E498`, `#D4AF37`) sur les éléments Signature et le titre du Manifeste.
+- ✅ **Le Souffle du Hero** : Ajustement sémantique et typographique du paragraphe d'introduction pour plus de respiration.
+- ✅ **Manifeste "Staccato"** : Réécriture du texte avec un rythme saccadé pour maximiser l'impact cognitif.
+- ✅ **Précision HPS** : Ajustement sémantique inclusif et validation de l'approche ("également besoin de sentinelles").
+- ✅ **CI/CD** : Correction de l'id manquante dans `deploy.yml` pour la récupération correcte de l'URL.
+
+### v2.6-CORP-REBRAND (18/02/2026)
+- ✅ **Bandeau Logos Premium** : Intégration de 7 logos partenaires avec défilement "Infinite Marquee".
+- ✅ **Design Edge-to-Edge** : Rendu pleine largeur via technique de breakout (`calc(-50vw + 50%)`) pour un look ultra-moderne.
+- ✅ **Intégration Invisible** : Harmonisation parfaite du fond (`bg-cream`) et silhouette affinée (`1.5rem` padding).
+- ✅ **Offre B2B Clarifiée** : Tarification intégrée (1782 €) et suppression de la mention HT pour clarté maximale.
+- ✅ **UX/UI Gaming** : Correction typographique des titres (Casse mixte) pour plus de lisibilité.
+- ✅ **Optimisation Performance** : Zéro JS, minification CSS, et chargement différé (lazy loading).
+
+### v2.5-SEO-PERF (17/02/2026)
+
+### v2.4-PERF (16/02/2026)
+- ✅ **Performance Web** : `fetchpriority="high"` (Hero) et `loading="lazy"` (Below-the-fold) implémentés.
+- ✅ **SEO Technique** : Création de `robots.txt`, `sitemap.xml` et optimisation des balises `alt`.
+- ✅ **Mobile UX Fix** : Suppression du scroll horizontal parasite via verrouillage viewport (`touch-action`) et visibility overlay.
+- ✅ **Menu Burger** : Refonte de la navigation mobile pour plus de fluidité et de stabilité.
+
+### v2.3-VISUAL (16/02/2026)
+- ✅ **Brand Hierarchy** : Logo signature 100px et Header 130px pour une autorité maximale
+- ✅ **Portrait Signature** : Recadrage stratégique de l'image fondatrice (Ancrage sommet, Zoom 1.4x)
+- ✅ **Bandeau Partenaires** : Restauration complète du défilement infini et des styles
+- ✅ **CTA Optimization** : Bouton Header compacté sur 2 lignes pour un meilleur équilibre visuel
+
+### v2.2-GEO (12/02/2026)
+- ✅ **GEO Ready** : Création de `llms.txt` pour référencement IA
+- ✅ **Refonte Interface** : Section "Le Cercle" (ex-Newsletter) avec design immersif
+- ✅ **SEO Sémantique** : Schema.org enrichi + Aria-labels
+- ✅ **Assets** : Mise à jour photo Hero
+
+### v2.1-AUTOMATION (09/02/2026)
+- ✅ Workflow `/check-site` : push + preview automatique
+- ✅ Workflow `/supervise` : supervision et récap de session
+- ✅ Script `verify-visual.ps1` : vérification visuelle
+- ✅ Règles agent superviseur
+- ✅ Documentation auto du README en fin de session
+
+### v2.0-CLEAN (30/01/2026)
+- ✅ Nettoyage des fichiers React/Vite/TypeScript parasites
+- ✅ Architecture 100% Vanilla confirmée
+- ✅ Documentation mise à jour
+- ✅ Zéro dépendance npm
+
+### v1.0-STABLE (08/01/2026)
+- ✅ Design original restauré et protégé
+- ✅ Animations CSS natives fonctionnelles
+- ✅ Revert de la migration Tailwind ratée
+
+---
+
+## ❓ QUESTIONS FRÉQUENTES
+
+### Q: Comment tester mes modifications ?
+**R: Double-clic sur `index.html` ou utilise l'extension Live Server dans VS Code.**
+
+### Q: Puis-je améliorer le design avec une IA ?
+**R: NON. Le design actuel fonctionne parfaitement. Toute tentative d'\"amélioration\" a déjà cassé le site.**
+
+### Q: Puis-je migrer vers Tailwind/React ?
+**R: NON. JAMAIS. C'est déjà été tenté et a échoué. Les animations ne fonctionnent plus avec ces frameworks.**
+
+### Q: Comment ajouter du contenu ?
+**R: Modifier uniquement les TEXTES dans les balises HTML. Ne JAMAIS toucher au CSS ni à la structure.**
+
+### Q: Le site est cassé, que faire ?
+**R: Suivre la procédure de restauration d'urgence ci-dessus. Restaurer depuis v1.0-STABLE.**
+
+---
+
+## 👤 CONTACT
+
+**Propriétaire** : KLEIA-UP  
+**Site web** : https://kleia-up.fr/  
+**GitHub** : https://github.com/JPnirrep
+
+---
+
+## 📜 LICENCE
+
+Copyright © 2024-2026 KLEIA-UP - Tous droits réservés
+
+---
+
+> ⚠️ **RAPPEL FINAL** : Ce design est **IMMUABLE**. Toute tentative de modification majeure doit être précédée d'une sauvegarde complète et testée dans une branche séparée. En cas de doute, **NE RIEN MODIFIER**.
