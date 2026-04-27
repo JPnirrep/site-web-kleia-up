@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Diagnostic Officiel V2 | Barnaby Benezech x KLEIA-UP</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=ranade@300,400,500,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-burgundy: #8B1D3D;
+            --color-text: #2d3436;
+            --color-grey-light: #f1f2f6;
+            --font-main: 'Ranade', sans-serif;
+            --font-title: 'Syne', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #fff;
+            font-family: var(--font-main);
+            color: var(--color-text);
+            line-height: 1.6;
+            -webkit-print-color-adjust: exact;
+        }
+
+        @page { size: A4; margin: 0; }
+
+        .a4-page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 0 auto;
+            position: relative;
+            background: white;
+            page-break-after: always;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 2px solid var(--color-burgundy);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .logo img { height: 70px; }
+
+        .doc-title { text-align: right; max-width: 60%; }
+        .doc-title h1 {
+            font-family: var(--font-title);
+            font-size: 1.4rem;
+            color: var(--color-burgundy);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+        .doc-meta { font-size: 0.8rem; color: #636e72; }
+
+        .client-info {
+            background: var(--color-grey-light);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .info-item label {
+            display: block;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: var(--color-burgundy);
+        }
+        .info-item span { font-size: 1rem; font-weight: 500; }
+
+        h2 {
+            font-family: var(--font-title);
+            font-size: 1.3rem;
+            color: var(--color-burgundy);
+            margin: 25px 0 12px 0;
+            border-left: 4px solid var(--color-burgundy);
+            padding-left: 15px;
+            page-break-after: avoid;
+        }
+
+        h3 { font-family: var(--font-title); font-size: 1.1rem; color: var(--color-burgundy); margin: 20px 0 10px 0; }
+
+        p { margin-bottom: 12px; text-align: justify; font-size: 0.95rem; }
+
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.85rem; }
+        th, td { border: 1px solid #dfe6e9; padding: 10px; text-align: left; vertical-align: top; }
+        th { background: var(--color-burgundy); color: white; }
+
+        .highlight-box {
+            background: rgba(139, 29, 61, 0.05);
+            border: 1px solid rgba(139, 29, 61, 0.1);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        ul { margin-bottom: 15px; padding-left: 20px; font-size: 0.95rem; }
+        li { margin-bottom: 8px; }
+
+        .footer {
+            position: absolute;
+            bottom: 15mm;
+            left: 20mm;
+            right: 20mm;
+            border-top: 1px solid #dfe6e9;
+            padding-top: 10px;
+            font-size: 0.75rem;
+            color: #b2bec3;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .version-badge {
+            background: var(--color-burgundy);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        @media print {
+            body { background: none; }
+            .a4-page { width: 100%; margin: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- PAGE 1 -->
+    <div class="a4-page">
+        <div class="header">
+            <div class="logo"><img src="/assets/images/kleia-logoV12.png" alt="KLEIA-UP"></div>
+            <div class="doc-title">
+                <h1>Diagnostic de Posture Oratoire <span class="version-badge">V2 ENRICHIE</span></h1>
+                <p>Barnaby Benezech</p>
+                <p class="doc-meta">Référence : B01-AUDIT-2026-V2</p>
+            </div>
+        </div>
+
+        <div class="client-info">
+            <div class="info-item"><label>Client</label><span>Barnaby Benezech</span></div>
+            <div class="info-item"><label>Coach</label><span>Sandrina Perrin</span></div>
+            <div class="info-item"><label>Dernière Mise à jour</label><span>27 Avril 2026</span></div>
+            <div class="info-item"><label>Projet</label><span>Leadership & Parole Incarnée</span></div>
+        </div>
+
+        <p><em>Précision : Cette version V2 intègre l'analyse approfondie des séquences vidéo réalisée lors de la session de debriefing du 27/04.</em></p>
+        <p>Cet audit est une immersion dans ta pratique actuelle. L'objectif est de confronter la solidité de ton expertise sur la Réalité Étendue (XR) à la manière dont ton corps et ta voix la projettent. Ici, rien n'est laissé au hasard : on fige un instantané pour révéler les zones de friction entre la profondeur de ton savoir et la fluidité de sa transmission.</p>
+
+        <h2>I. Tes forces : Le socle de ta présence</h2>
+        <ul>
+            <li><strong>Un capital sympathie immédiat :</strong> Ton sourire est sincère, ton ouverture faciale est réelle. C'est un atout précieux pour créer ce climat de confiance nécessaire à toute écoute.</li>
+            <li><strong>Une maîtrise technique et linguistique :</strong> Tu possèdes une autorité naturelle dans l'anglais technique. Ta diction est claire, ton débit est lisible ; c'est un levier de crédibilité incontestable.</li>
+            <li><strong>Une rigueur intellectuelle :</strong> Ton exposé suit un plan impeccable (VR, AR, MR). La justesse de tes termes techniques démontre une réflexion structurée et un respect total de ton sujet.</li>
+        </ul>
+
+        <h2>II. L'Accroche : La première impression</h2>
+        <p>Cette phase est décisive. D'un point de vue neuroscientifique, l'auditoire évalue ton état émotionnel dès les premières secondes.</p>
+        <ul>
+            <li><strong>L'instabilité pré-oratoire :</strong> Avant même la prise de parole, ton corps trahit une tension latente. On observe une oscillation du buste et un réajustement compulsif du gilet qui révèlent une difficulté à habiter l'espace immobile.</li>
+            <li><strong>Le regard : une trajectoire d'évitement :</strong> Dès l'introduction, ton regard fuit les examinateurs pour s'ancrer au-dessus de l'horizon. C'est le signal "je suis seul avec moi-même" : tu es enfermé dans ta bulle de mémorisation.</li>
+            <li><strong>La gestuelle de réassurance :</strong> Tes mains cherchent un appui immédiat, se serrant l'une contre l'autre. Ce mouvement réflexe est une recherche de protection qui entrave ta présence.</li>
+        </ul>
+
+        <div class="footer"><span>© KLEIA-UP 2026 - Confidentiel</span><span>Page 1 / 3</span></div>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="a4-page">
+        <div class="header">
+            <div class="logo"><img src="/assets/images/kleia-logoV12.png" alt="KLEIA-UP"></div>
+            <div class="doc-title">
+                <h1>Diagnostic de Posture Oratoire</h1>
+                <p class="doc-meta">Référence : B01-AUDIT-2026-V2</p>
+            </div>
+        </div>
+
+        <h2>III. La présence corporelle</h2>
+        <ul>
+            <li><strong>La dynamique de recul spatial :</strong> À mesure que ton discours se déploie, ton corps opère un recul progressif vers le mur. Tu t'éloignes physiquement de ton auditoire, cherchant un appui dorsal inconscient qui réduit ton rayonnement.</li>
+            <li><strong>Micro-signes et fatigue perceptible :</strong> Des tensions spécifiques au niveau des lèvres trahissent la peur de l'oubli. On note également une fatigue importante qui altère ton ancrage, notamment visible à la séquence 13.55.</li>
+            <li><strong>Le balancement pendulaire :</strong> Ton ancrage reste fragile, marqué par un balancement constant d'un pied sur l'autre et des épaules qui oscillent latéralement, fatiguant l'œil de l'observateur.</li>
+        </ul>
+
+        <h2>IV. L'expression vocale, le silence et le souffle</h2>
+        <ul>
+            <li><strong>Le rythme et la respiration :</strong> Ta précipitation trahit une crainte de l'oubli. Intégrer des temps de respiration ventrale permet de poser ta voix.</li>
+            <li><strong>Le silence habité :</strong> Apprendre à marquer le silence après une affirmation forte est crucial pour laisser l'auditeur digérer tes concepts.</li>
+        </ul>
+
+        <h2>V. La force du message : De la récitation à l'incarnation</h2>
+        <ul>
+            <li><strong>Le piège de la conclusion "Libération" :</strong> Ta fin de prestation est marquée par un relâchement prématuré du corps et une relecture hâtive des notes. On ressent une forme de "délivrance" qui dissout l'impact de tes derniers mots. **Affirme ton message jusqu'au bout.**</li>
+            <li><strong>La portée des mots :</strong> Ton lexique est précis mais trop descriptif. L'intégration de verbes d'action est impérative pour sortir de la structure scolaire.</li>
+        </ul>
+
+        <div class="footer"><span>© KLEIA-UP 2026 - Confidentiel</span><span>Page 2 / 3</span></div>
+    </div>
+
+    <!-- PAGE 3 -->
+    <div class="a4-page">
+        <div class="header">
+            <div class="logo"><img src="/assets/images/kleia-logoV12.png" alt="KLEIA-UP"></div>
+            <div class="doc-title">
+                <h1>Diagnostic de Posture Oratoire</h1>
+                <p class="doc-meta">Référence : B01-AUDIT-2026-V2</p>
+            </div>
+        </div>
+
+        <h2>VI. Feuille de route du coaching (8 heures)</h2>
+        <table>
+            <tr><th>Séance</th><th>Module de Coaching & Objectifs</th></tr>
+            <tr><td>H1</td><td>Diagnostic & Échanges sur les observations vidéo (séance validée)</td></tr>
+            <tr><td>H2</td><td>Identification des forces & **Initiation aux Neurosciences du stress**</td></tr>
+            <tr><td>H3</td><td>L'art de l'ouverture, connexion au regard & Gestion de la "bulle"</td></tr>
+            <tr><td>H4</td><td>Libération gestuelle, désymétrie & **Ancrage postural**</td></tr>
+            <tr><td>H5</td><td>Rythme, silences et respiration ventrale</td></tr>
+            <tr><td>H6</td><td>**Entraînement : Alignement du Verbal et Non-Verbal**</td></tr>
+            <tr><td>H7</td><td>**Incarnation : Lâcher le texte & Mind Mapping**</td></tr>
+            <tr><td>H8</td><td>**Consolidation finale & Simulation de réussite**</td></tr>
+        </table>
+
+        <h2>VII. Synthèse : Le mécanisme de protection</h2>
+        <div class="highlight-box">
+            <p>Le constat révèle un "parasitage du sourire" agissant comme un bouclier émotionnel. En t'appuyant sur tes forces et les nouveaux outils (Mind Mapping, Manette), nous allons transformer ce bouclier en une puissance de transmission sereine.</p>
+        </div>
+
+        <table>
+            <tr><th>Signal Clé</th><th>Interprétation</th><th>Action Corrective</th></tr>
+            <tr><td>Recul spatial</td><td>Fuite inconsciente</td><td>Ancrage frontal engagé</td></tr>
+            <tr><td>Oscillation gilet</td><td>Micro-stress visible</td><td>Gestuelle d'appui libérée</td></tr>
+            <tr><td>Regard fuyant</td><td>Mémorisation isolée</td><td>Connexion oculaire habitée</td></tr>
+        </table>
+
+        <div class="footer"><span>© KLEIA-UP 2026 - Confidentiel</span><span>Page 3 / 3</span></div>
+    </div>
+</body>
+</html>

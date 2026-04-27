@@ -1,9 +1,11 @@
 /* 
-   LOGIC ENGINE BARNABY V3.0 - NAVIGATION MENU & CLEANUP
+   LOGIC ENGINE BARNABY V3.1 - SECURITY & ROLES
    Powered by OPENCODE
 */
 
 let currentData = null;
+const userRole = sessionStorage.getItem('kleia_role') || 'visitor';
+const userName = sessionStorage.getItem('kleia_user') || 'Visiteur';
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
@@ -12,10 +14,21 @@ document.addEventListener('DOMContentLoaded', async () => {
         currentData = await response.json();
         
         initDashboard(currentData);
+        applyRoleRestrictions();
     } catch (error) {
         console.error("Erreur :", error);
     }
 });
+
+function applyRoleRestrictions() {
+    if (userRole === 'visitor') {
+        // Masquer tous les éléments marqués comme privés
+        document.querySelectorAll('.private-content').forEach(el => {
+            el.style.display = 'none';
+        });
+        console.log("KLEIA : Mode Visiteur activé (contenu restreint)");
+    }
+}
 
 function initDashboard(data) {
     initRadarChart(data.baseline_scores);
@@ -28,7 +41,13 @@ function initDashboard(data) {
 
 function renderRoadmapMenu(roadmap) {
     const container = document.getElementById('roadmap-container');
-    container.innerHTML = roadmap.map(r => `
+    
+    // FILTRAGE : Si visiteur, on ne garde que H1
+    const visibleRoadmap = (userRole === 'visitor') 
+        ? roadmap.filter(r => r.session === 1)
+        : roadmap;
+
+    container.innerHTML = visibleRoadmap.map(r => `
         <div class="roadmap-item ${r.status.toLowerCase()} ${r.session === 1 ? 'active' : ''}" 
              onclick="switchSession(${r.session})" id="nav-h${r.session}">
             <span style="font-size: 0.7rem; color: var(--color-gold); font-weight: 800;">H${r.session}</span>
@@ -38,14 +57,13 @@ function renderRoadmapMenu(roadmap) {
 }
 
 function switchSession(sessionId) {
-    // Animation de transition
     const zone = document.getElementById('main-content-zone');
     zone.style.opacity = '0';
     
     setTimeout(() => {
-        // Mise à jour visuelle du menu
         document.querySelectorAll('.roadmap-item').forEach(el => el.classList.remove('active'));
-        document.getElementById(`nav-h${sessionId}`).classList.add('active');
+        const activeNav = document.getElementById(`nav-h${sessionId}`);
+        if (activeNav) activeNav.classList.add('active');
         
         renderSessionView(sessionId);
         zone.style.opacity = '1';
@@ -56,7 +74,6 @@ function renderSessionView(sessionId) {
     const analysisZone = document.getElementById('analysis-content');
     
     if (sessionId === 1) {
-        // MODULE H1 : ACCUEIL & DIAGNOSTIC
         analysisZone.innerHTML = `
             <div class="dynamic-title-bar">
                 <h2 class="card-title" style="margin-bottom: 0;">📋 H1 : Diagnostic & Échanges</h2>
@@ -83,7 +100,6 @@ function renderSessionView(sessionId) {
             </div>
         `;
     } else {
-        // AUTRES MODULES (H2 à H8)
         analysisZone.innerHTML = `
             <h2 class="card-title">🚀 H${sessionId} : ${currentData.content.roadmap[sessionId-1].title}</h2>
             <div style="background: rgba(255,255,255,0.02); padding: 40px; border-radius: 16px; text-align: center; border: 1px dashed var(--glass-border);">
@@ -92,11 +108,20 @@ function renderSessionView(sessionId) {
             </div>
         `;
     }
+    
+    // Réappliquer les restrictions après chaque changement de vue
+    applyRoleRestrictions();
 }
 
-// Graphiques (inchangés mais encapsulés)
+function logout() {
+    sessionStorage.clear();
+    window.location.href = 'login.html';
+}
+
 function initRadarChart(scores) {
-    const ctx = document.getElementById('radarChart').getContext('2d');
+    const canvas = document.getElementById('radarChart');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
     new Chart(ctx, {
         type: 'radar',
         data: {
@@ -117,6 +142,7 @@ function initRadarChart(scores) {
 
 function renderGauges(scores) {
     const container = document.getElementById('gauges-container');
+    if (!container) return;
     const metrics = [
         { label: "Non-Verbal", score: (scores.non_verbal.contact_visuel + scores.non_verbal.ancrage_sol + scores.non_verbal.gestuelle) / 3 },
         { label: "Para-Verbal", score: (scores.para_verbal.maitrise_debit + scores.para_verbal.relief_vocal) / 2 },
