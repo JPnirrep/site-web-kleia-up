@@ -1,0 +1,23 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // --- ACCÈS SÉCURISÉ PAR JETON (BARNABY & ADMIN) ---
+    match /access_tokens/{tokenId} {
+      // Lecture autorisée uniquement si on connaît le code exact
+      allow get: if true;
+      // Interdiction totale de lister ou d'écrire (Sécurité Maximale)
+      allow list, write: if false;
+    }
+
+    // --- ADMIN (JEAN-PHILIPPE) ---
+    function isAdmin() {
+      return request.auth != null && request.auth.token.email == 'jpp180866@gmail.com';
+    }
+
+    match /{document=**} {
+      allow read, write: if isAdmin();
+    }
+  }
+}
