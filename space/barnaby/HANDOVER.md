@@ -17,12 +17,17 @@ Le dashboard privé "Barnaby" est désormais **pleinement fonctionnel en local a
 4. **Optimisation Lecteur Vidéo :**
    - Ajout des attributs `playsinline` et `preload="auto"` pour une expérience utilisateur premium.
 
+### 🛠️ Travaux accomplis lors de cette session (27 Avril) :
+1. **Intégration Calendrier (Sandrina) :**
+   - Ajout d'une section "Ton prochain palier" avec lien vers le Google Calendar de Sandrina.
+   - Design Premium (Gold Glassmorphism) et bouton CTA contrasté.
+   - Optimisation responsive complète.
+
 ## 🚀 Prochaines Étapes pour la reprise :
-- **Intégrer le contenu de la session H2** (actuellement grisée avec opacité à 0.3 en CSS) dès que la session de coaching aura eu lieu.
-- **Ajouter d'autres documents d'évaluation** (profil VIA, etc.) selon l'avancée de l'accompagnement de Barnaby.
-- **Répliquer l'architecture** pour de futurs coachés en dupliquant ce modèle `barnaby` robuste.
+- **Intégrer le contenu de la session H2** dès que la session aura eu lieu.
+- **Ajouter d'autres documents d'évaluation**.
 
 ---
-*Dernière mise à jour : 25 Avril 2026 - Migration format vidéo validée.*
+*Dernière mise à jour : 27 Avril 2026 - Intégration calendrier validée.*
 
 
