@@ -60,7 +60,7 @@ function renderSessionView(sessionId) {
         analysisZone.innerHTML = `
             <div class="dynamic-title-bar">
                 <h2 class="card-title" style="margin-bottom: 0;">📋 H1 : Diagnostic & Échanges</h2>
-                <a href="/coaching_data/barnaby/diagnostic_officiel.html" target="_blank" class="btn-premium">📄 Voir Document Officiel</a>
+                <a href="/coaching_data/barnaby/diagnostic_officiel_V3_Augmented.html" target="_blank" class="btn-premium">📄 Voir l'analyse de la vidéo</a>
             </div>
             
             <div class="interaction-zone" style="background: rgba(255,255,255,0.02); padding: 25px; border-radius: 16px; border-left: 2px solid var(--color-gold);">

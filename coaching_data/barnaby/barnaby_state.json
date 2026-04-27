@@ -2,7 +2,8 @@
   "client": "Barnaby Benezech",
   "coach": "Sandrina",
   "date": "2026-04-22",
-  "session_id": "B01-BASELINE",
+  "last_update": "2026-04-27",
+  "session_id": "B01-BASELINE-AUGMENTED",
   "status": "In Progress",
   "baseline_scores": {
     "non_verbal": {
@@ -20,7 +21,7 @@
     }
   },
   "content": {
-    "introduction": "Cet audit est une immersion dans ta pratique actuelle. L’objectif est de confronter la solidité de ton expertise sur la Réalité Étendue (XR) à la manière dont ton corps et ta voix la projettent.",
+    "introduction": "Cet audit est une immersion dans ta pratique actuelle. L’objectif est de confronter la solidité de ton expertise sur la Réalité Étendue (XR) à la manière dont ton corps et ta voix la projettent. (Version enrichie le 27/04).",
     "forces": [
       {
         "title": "Un capital sympathie immédiat",
@@ -39,104 +40,100 @@
       {
         "id": "accroche",
         "title": "II. L'Accroche : La première impression",
-        "details": "Cette phase est décisive. D'un point de vue neuroscientifique, l'auditoire active ses neurones miroirs dès les premières secondes.",
+        "details": "Cette phase est décisive. D'un point de vue neuroscientifique, l'auditoire évalue ton état émotionnel dès les premières secondes.",
         "items": [
           {
-            "indicator": "Le regard : une trajectoire d'évitement",
-            "observation": "Dès l'introduction, ton regard fuit les examinateurs pour s'ancrer au-dessus de l'horizon.",
-            "impact": "L'auditeur sent que tu es enfermé dans ta 'bulle', servant ton texte plutôt que ton public."
+            "indicator": "Instabilité pré-oratoire",
+            "observation": "Oscillation du buste et ajustement compulsif du gilet avant même le premier mot.",
+            "impact": "Sensation d'instabilité transmise à l'auditoire dès l'attente."
           },
           {
-            "indicator": "La gestuelle : signaux de tension",
-            "observation": "Tes mains cherchent un appui — ce mouvement réflexe vers les poches est une recherche de protection immédiate.",
-            "impact": "Perception d'un besoin de protection qui peut trahir ton inconfort."
+            "indicator": "Le regard : trajectoire d'évitement",
+            "observation": "Regard qui fuit les examinateurs pour s'ancrer au-dessus de l'horizon (bulle de mémorisation).",
+            "impact": "Rupture immédiate du lien ; tu sers ton texte au lieu de servir ton public."
           },
           {
-            "indicator": "L'ancrage et la posture",
-            "observation": "Le balancement d'un pied sur l'autre et la remontée de tes épaules vers les oreilles.",
-            "impact": "Confirme une charge de stress qui entrave ta sérénité."
+            "indicator": "Gestuelle de réassurance",
+            "observation": "Mains qui se serrent l'une contre l'autre en recherche de protection réflexe.",
+            "impact": "Signale un besoin de contenance du stress qui entrave ta présence."
           }
         ]
       },
       {
         "id": "presence",
         "title": "III. La présence corporelle",
-        "details": "Ton corps est le véhicule de ton expertise, mais une tension perceptible en occulte aujourd'hui toute la légitimité.",
+        "details": "Ton corps est le véhicule de ton expertise. Sa dynamique actuelle trahit une fuite inconsciente.",
         "items": [
           {
-            "indicator": "La gestion du regard",
-            "observation": "Trop souvent dirigé au-dessus de l'audience, créant une rupture.",
-            "impact": "Nécessite d'être ramené vers l'autre pour privilégier une interaction habitée."
+            "indicator": "Dynamique de recul spatial",
+            "observation": "Recul progressif vers le mur à mesure que l'exposé avance.",
+            "impact": "Perte de leadership spatial et recherche d'appui dorsal limitant."
           },
           {
-            "indicator": "La stabilité de l'ancrage",
-            "observation": "Micro-oscillations et balancement pendulaire constant.",
-            "impact": "Crée un 'flou' qui fatigue l'observateur. L'assise solide est sine qua non pour projeter la stabilité."
+            "indicator": "Micro-signes faciaux et fatigue",
+            "observation": "Tensions labiales (peur de l'oubli) et fatigue perceptible à 13.55.",
+            "impact": "Affecte ton ancrage global et la fluidité émotionnelle du message."
           },
           {
-            "indicator": "La mis-asymétrie gestuelle",
-            "observation": "Bras droit verrouillé par le support, quand le gauche illustre le propos.",
-            "impact": "Redondance marquée créant une déconnexion ; les gestes doivent s'ouvrir vers l'autre."
+            "indicator": "Balancement pendulaire",
+            "observation": "Oscillations latérales des épaules et balancement d'un pied sur l'autre.",
+            "impact": "Crée un 'flou' visuel qui fatigue l'observateur et dilue l'autorité du propos."
           }
         ]
       },
       {
         "id": "vocal",
         "title": "IV. L'expression vocale, le silence et le souffle",
-        "details": "Ta voix porte, mais elle répond à l'impératif de la 'récitation'. Elle doit servir la transmission.",
+        "details": "Ta voix doit sortir de la 'récitation' pour devenir un outil de transmission incarné.",
         "items": [
           {
-            "indicator": "Le rythme et la respiration",
+            "indicator": "Rythme et respiration",
             "observation": "Précipitation trahissant une crainte de l'oubli.",
-            "impact": "Nécessite d'intégrer des temps de respiration ventrale pour réguler le flux nerveux."
+            "impact": "Nécessite une respiration ventrale pour poser le flux nerveux."
           },
           {
             "indicator": "Le silence habité",
-            "observation": "Manque de silences après des affirmations fortes.",
-            "impact": "L'audience a besoin de temps pour 'digérer' la complexité des concepts."
-          },
-          {
-            "indicator": "La prosodie et le relief",
-            "observation": "Diction parfois écrasée sur les finales de mots (plosives).",
-            "impact": "Rend le discours linéaire ; le relief vocal redonne du poids à l'essentiel."
+            "observation": "Manque de pauses respiratoires après les affirmations fortes.",
+            "impact": "L'audience ne peut pas 'digérer' la complexité de tes concepts XR."
           }
         ]
       },
       {
         "id": "message",
         "title": "V. La force du message : De la récitation à l'incarnation",
-        "details": "Ton contenu est techniquement solide, mais reste emprisonné dans une structure scolaire.",
+        "details": "Ton contenu technique doit s'incarner dans une structure libérée du cadre scolaire.",
         "items": [
           {
-            "indicator": "De la récitation à l'incarnation",
-            "observation": "Effort de mémoire permanent qui occulte ta conviction.",
-            "impact": "Tu ne dis plus ton texte, tu dois le vivre pour que corps, voix et pensée ne fassent qu'un."
+            "indicator": "La conclusion 'Libération'",
+            "observation": "Relâchement prématuré du corps et relecture hâtive des notes en fin de prestation.",
+            "impact": "Dissolution de l'impact final ; l'affirmation doit être tenue jusqu'au bout."
           },
           {
-            "indicator": "La portée des mots",
+            "indicator": "Portée des mots",
             "observation": "Lexique précis mais trop descriptif.",
-            "impact": "L'intégration de verbes d'action est nécessaire pour sortir d'une neutralité injuste pour ton sujet."
+            "impact": "Besoin impératif de verbes d'action pour incarner ta vision."
           }
         ]
       }
     ],
     "roadmap": [
-      { "session": 1, "title": "Accueil, Diagnostic et Échanges", "status": "Completed" },
-      { "session": 2, "title": "Ton Pourquoi et forces de caractère", "status": "Upcoming" },
-      { "session": 3, "title": "L'art de l'ouverture et connexion au regard", "status": "Upcoming" },
-      { "session": 4, "title": "Libération gestuelle et désasymétrie", "status": "Upcoming" },
-      { "session": 5, "title": "Rythme, silences, respiration et incarnation", "status": "Upcoming" },
-      { "session": 6, "title": "Atelier de fusion (Verbal/Non-verbal)", "status": "Upcoming" },
-      { "session": 7, "title": "Approfondissement de l'incarnation", "status": "Upcoming" },
-      { "session": 8, "title": "Simulation finale et consolidation", "status": "Upcoming" }
+      { "session": 1, "title": "Accueil, Diagnostic et Observations Vidéo", "status": "Completed" },
+      { "session": 2, "title": "Forces de caractère & Neurosciences du stress", "status": "Upcoming" },
+      { "session": 3, "title": "L'art de l'ouverture & Sortie de la 'bulle'", "status": "Upcoming" },
+      { "session": 4, "title": "Libération gestuelle & Ancrage postural frontal", "status": "Upcoming" },
+      { "session": 5, "title": "Rythme, silences et respiration ventrale", "status": "Upcoming" },
+      { "session": 6, "title": "Entraînement : Alignement Verbal et Non-Verbal", "status": "Upcoming" },
+      { "session": 7, "title": "Incarnation : Lâcher le texte & Mind Mapping", "status": "Upcoming" },
+      { "session": 8, "title": "Consolidation finale & Simulation de réussite", "status": "Upcoming" }
     ],
     "synthesis": {
       "title": "VII. Synthèse : Le mécanisme de protection",
-      "description": "Le constat révèle un 'parasitage du sourire' : ce sourire identique agit comme un bouclier émotionnel pour masquer ton inconfort. Nous allons transformer ce bouclier en une puissance de transmission sereine."
+      "description": "Le 'bouclier du sourire' et la fuite spatiale seront transformés, via le Mind Mapping et l'ancrage, en une puissance de transmission sereine."
     }
   },
   "assets": {
-    "video": "260422_Barnaby.mov",
-    "diagnostic_pdf": "Diagnostic de Posture Oratoire Barnaby Benezech.pdf"
+    "video": "260422_Barnaby.mp4",
+    "diagnostic_file": "diagnostic_officiel_V3_Augmented.html",
+    "audio_analysis": "analyse_audio_sandrina_270426.md"
   }
 }
