@@ -12,7 +12,7 @@
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/coaching/barnaby/style.css">
     <style>
         .roadmap-item { cursor: pointer; transition: all 0.3s; }
         .roadmap-item:hover { transform: translateX(10px); background: rgba(255,255,255,0.1); }
@@ -27,18 +27,7 @@
     <div class="container">
         <header>
             <div class="logo-zone">
-                <!-- Filtre magique pour rendre le blanc transparent -->
-                <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
-                    <filter id="remove-white">
-                        <!-- Matrice de couleur : Si R=255, G=255, B=255, l'opacité devient 0 -->
-                        <feColorMatrix type="matrix" values="
-                            1 0 0 0 0
-                            0 1 0 0 0
-                            0 0 1 0 0
-                            -1 -1 -1 0 3" />
-                    </filter>
-                </svg>
-                <img src="/assets/images/LOGO KLEIA HD V3.png" alt="KLEIA-UP" class="dynamic-logo" style="filter: url(#remove-white);">
+                <img src="/assets/images/kleia-logo-black-hd.png" alt="KLEIA-UP" class="dynamic-logo">
             </div>
             <div class="client-status">
                 <h1>BARNABY</h1>
@@ -90,6 +79,6 @@
         </footer>
     </div>
 
-    <script src="app.js"></script>
+    <script src="/coaching/barnaby/app.js"></script>
 </body>
 </html>
