@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Prospectus Kleia-Up - Le Manifeste</title>
+    <style>
+        :root {
+            --bg-cream: #FAF9F6;
+            --color-burgundy: #8B1D3D;
+            --color-accent-red: #D70040;
+            --color-text: #1A1A1A;
+            --font-title: 'Ranade', system-ui, sans-serif;
+            --font-body: 'Syne', system-ui, sans-serif;
+        }
+
+        @page { size: A4 portrait; margin: 0; }
+        
+        * {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        body { margin: 0; padding: 0; background: var(--bg-cream); font-family: var(--font-title); }
+
+        .page { 
+            width: 210mm; height: 297mm; 
+            background: var(--bg-cream);
+            position: relative;
+            padding: 15mm 20mm 20mm 20mm;
+            box-sizing: border-box;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            break-before: page;
+        }
+
+        @media print {
+            body { background: var(--bg-cream); }
+            .page { 
+                margin: 0; 
+                box-shadow: none; 
+            }
+        }
+
+        h1 { font-size: 36px; color: var(--color-burgundy); margin-bottom: 8mm; text-transform: uppercase; text-align: center; }
+        
+        .content-columns {
+            column-count: 2;
+            column-gap: 10mm;
+            flex-grow: 1;
+            font-family: var(--font-body); 
+            font-size: 10.5pt; 
+            line-height: 1.35; 
+            color: var(--color-text);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 5mm;
+            break-inside: avoid;
+        }
+
+        h2 { 
+            font-size: 11.5pt; 
+            color: var(--color-burgundy); 
+            margin: 4mm 0 1.5mm 0; 
+            text-transform: uppercase; 
+            font-weight: 800; 
+            break-after: avoid; 
+        }
+        
+        p { margin: 0 0 2.5mm 0; }
+        
+        strong { color: var(--color-burgundy); }
+        em { color: var(--color-accent-red); font-weight: 600; font-style: normal; }
+        
+        .quote-block {
+            border-left: 3px solid var(--color-burgundy);
+            padding-left: 8px;
+            margin: 4mm 0;
+            font-style: italic;
+            break-inside: avoid;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <h1>MANIFESTE KLEIA-UP</h1>
+        
+        <div class="content-columns">
+            <img src="../assets/images/avec Axel.png" class="hero-image" alt="Sandrina et Axel">
+            
+            <h2>✦ Qui est Sandrina ?</h2>
+            <p>Je suis conférencière, coach scénique et fondatrice du mouvement <strong>Kleia-Up</strong>. Depuis plus de dix ans, j'interviens auprès d'entreprises, de mutuelles, d'institutions de santé, de collectivités et d'associations — partout où des femmes et des hommes donnent le meilleur d'eux-mêmes, souvent en silence, souvent à bout de souffle.</p>
+            <p>Formée à la psychologie positive, à l'intelligence émotionnelle et à la rigologie, je dirige aussi <strong>Souffles Positifs</strong>. Ma conviction centrale : les voix sensibles ne sont pas un problème à gérer. Ce sont les voix qui transforment les organisations.</p>
+
+            <h2>✦ Ce que nous voyons — et refusons d'ignorer</h2>
+            <p>Dans vos organisations, quelque chose se fissure. Les risques psychosociaux explosent. Les équipes se fatiguent. Le turnover monte. Les talents les plus sensibles, les plus engagés, partent ou se taisent.</p>
+            <p>Les réponses classiques ne suffisent plus. Un atelier yoga par-ci, une corbeille de fruits par-là : le bien-être gadget a fait son temps. Ce dont vos équipes ont besoin, c'est d'une <em>stratégie de santé globale et de durabilité humaine</em>, ancrée dans la performance réelle.</p>
+
+            <h2>✦ Ce que nous croyons</h2>
+            <p><strong>La Joie est stratégique.</strong> Ce n'est pas un luxe. La joie est un carburant de performance et de résilience.</p>
+            <p><strong>L'Enthousiasme est contagieux.</strong> Un leader qui communique avec authenticité crée une onde de fond. C'est l'<strong>autorité organique</strong> : elle ne s'impose pas, elle rayonne.</p>
+            <p><strong>L'Humain est au centre.</strong> La boussole n'est pas le process, c'est la personne.</p>
+
+            <h2>✦ Ce que Kleia-Up incarne</h2>
+            <p>Kleia-Up est un mouvement de réconciliation : entre performance et bienveillance, sensibilité et leadership, excellence et joie. Nous venons vous aider à les <em>mettre en mouvement</em> — concrètement, durablement, humainement.</p>
+            <p>Ton "Je" d'experte est une force. Ton leadership sensible est ta boussole. Ton hypersensibilité, bien pilotée, est ta clé pour l'agilité.</p>
+
+            <h2>✦ Pour qui ?</h2>
+            <p>Aux mutuelles, entreprises à mission, institutions qui ont compris que la qualité de vie au travail est un levier de performance, et que les talents sensibles sont les premiers vecteurs d'innovation.</p>
+
+            <h2>✦ Notre promesse</h2>
+            <p>Nous ne faisons pas que travailler avec vous. Nous créons des <strong>expériences de vie</strong>. Des conférences qui brisent le silence, des formations qui ancrent des pratiques concrètes.</p>
+            
+            <div class="quote-block">
+                <p>C'est une onde qui part du plexus. Ces fameux papillons dans le ventre qui disent qu'il est temps. Temps de bousculer les codes figés. Temps que votre organisation respire — vraiment.</p>
+            </div>
+            <p><strong style="color: var(--color-burgundy);">Bienvenue dans le mouvement Kleia-Up.</strong></p>
+        </div>
+    </div>
+</body>
+</html>
