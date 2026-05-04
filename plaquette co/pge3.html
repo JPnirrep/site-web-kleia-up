@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Prospectus Kleia-Up - Nos Chemins</title>
+    <style>
+        :root {
+            --bg-cream: #FAF9F6;
+            --color-burgundy: #8B1D3D;
+            --color-accent-red: #D70040;
+            --color-text: #1A1A1A;
+            --font-title: 'Ranade', system-ui, sans-serif;
+            --font-body: 'Syne', system-ui, sans-serif;
+        }
+
+        @page { size: A4 portrait; margin: 0; }
+        
+        * {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background: var(--bg-cream); 
+            font-family: var(--font-title); 
+        }
+
+        .page { 
+            width: 210mm; 
+            height: 297mm; 
+            background: var(--bg-cream);
+            margin: 10mm auto;
+            position: relative;
+            padding: 15mm 20mm 20mm 20mm;
+            box-sizing: border-box;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media print {
+            body { background: none; }
+            .page { 
+                margin: 0; 
+                box-shadow: none; 
+            }
+        }
+
+        h1 { 
+            font-size: 26px; 
+            color: var(--color-burgundy); 
+            margin-bottom: 10mm; 
+            text-transform: uppercase; 
+            text-align: center; 
+        }
+        
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10mm;
+            flex-grow: 1;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 115mm; /* Hauteur augmentée pour voir le personnage en pied */
+            object-fit: cover;
+            object-position: center center;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            margin-bottom: 6mm;
+        }
+
+        .text-box { 
+            font-family: var(--font-body); 
+            font-size: 10.5pt; 
+            line-height: 1.35; 
+            color: var(--color-text); 
+        }
+
+        h2 { 
+            font-size: 12pt; 
+            color: var(--color-burgundy); 
+            margin: 4mm 0 2mm 0; 
+            text-transform: uppercase; 
+            font-weight: 800; 
+        }
+
+        p { margin: 0 0 3mm 0; }
+        
+        strong { color: var(--color-burgundy); }
+        em { color: var(--color-accent-red); font-weight: 600; font-style: normal; }
+        
+        .quote-block {
+            border-left: 3px solid var(--color-burgundy);
+            padding-left: 8px;
+            margin: 4mm 0;
+            font-style: italic;
+        }
+
+        .format-badge {
+            display: inline-block;
+            background: rgba(139, 29, 61, 0.05);
+            padding: 1.5mm 3mm;
+            border-radius: 4px;
+            border-left: 2px solid var(--color-burgundy);
+            margin-bottom: 2mm;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <h1>NOS CHEMINS — L'OFFRE KLEIA-UP</h1>
+        
+        <div class="main-grid">
+            <!-- COLONNE GAUCHE -->
+            <div class="text-box">
+                <img src="../assets/images/conf1.2.png" class="hero-image" alt="Sandrina en action">
+                
+                <h2>✦ Deux portes d'entrée</h2>
+                <p>Une approche centrée sur la <strong>résilience</strong> et la <strong>durabilité humaine</strong> : nous ne vendons pas du bien-être gadget, nous déployons la vitalité organisationnelle à travers deux chemins complémentaires, adaptés à vos enjeux.</p>
+
+                <h2>✦ Formats Modulables</h2>
+                <p>Nos interventions s'adaptent à vos besoins et à vos équipes :</p>
+                <p><span class="format-badge">Conférences inspirantes</span><br>
+                Pour vos journées QVT, semaines de la santé mentale ou séminaires d'équipe.</p>
+                <p><span class="format-badge">Ateliers interactifs</span><br>
+                Des parcours en 3 à 6 modules thématiques (optimisme, joie, parole authentique, neuro-inclusion).</p>
+            </div>
+
+            <!-- COLONNE DROITE -->
+            <div class="text-box">
+                <p><span class="format-badge">Masterclass & Coaching</span><br>
+                Pour vos comités de direction, managers de proximité, ou porte-parole.</p>
+                
+                <h2>✦ Le Parcours Résilience & Impact</h2>
+                <p><em>Santé globale & vitalité organisationnelle.</em><br>
+                Accompagner vos équipes à naviguer l'incertitude sans s'épuiser, en installant une culture de résilience, de joie et de communication authentique.</p>
+                
+                <p><strong>L'Optimisme Pragmatique :</strong> Ni naïf, ni cynique, mais orienté solutions et lucidité sur les contraintes. Outils de résilience face au changement.</p>
+                
+                <p><strong>La Joie comme levier :</strong> Approche par la psychologie positive et le rire pour renforcer cohésion, confiance et plaisir de travailler ensemble.</p>
+                
+                <p><strong>La Neuro-inclusion :</strong> Intégrer et valoriser les profils atypiques (hypersensibles) pour innover. Transformer la sensibilité en super-pouvoir d'écoute.</p>
+
+                <h2>✦ La Masterclass Leadership Organique</h2>
+                <p><em>Performance & soft skills managériales.</em><br>
+                Aider vos managers à oser l'humain pour déclencher l'élan collectif, en alignant posture, parole et sens.</p>
+
+                <p><strong>Prise de parole incarnée :</strong> Passer du trac à l'impact. Travail corporel et vocal pour sécuriser les prises de parole stratégiques.</p>
+                
+                <p><strong>Posture optimiste :</strong> Ancrer un état d'esprit de leader capable de tenir un cap clair dans l'incertitude. Redonner du sens lors des transformations.</p>
+                
+                <div class="quote-block">
+                    <p>Faire évoluer vos actions vers une stratégie de durabilité humaine, mesurable et alignée avec votre mission sociale.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

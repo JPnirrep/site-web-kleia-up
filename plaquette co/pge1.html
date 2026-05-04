@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Prospectus Kleia-Up - Couverture</title>
+    <style>
+        :root {
+            --bg-cream: #FAF9F6;
+            --color-burgundy: #8B1D3D;
+            --color-text: #1A1A1A;
+            --font-title: 'Ranade', system-ui, sans-serif;
+            --font-body: 'Syne', system-ui, sans-serif;
+        }
+
+        /* Print Settings A4 */
+        @page { size: A4 portrait; margin: 0; }
+        
+        * {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background: var(--bg-cream); 
+            font-family: var(--font-title);
+        }
+
+        .page { 
+            width: 210mm; 
+            height: 297mm; 
+            background: var(--bg-cream);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20mm;
+            box-sizing: border-box;
+            overflow: hidden;
+            text-align: center;
+            break-before: page;
+        }
+
+        @media print {
+            body { background: var(--bg-cream); }
+            .page { 
+                margin: 0; 
+                box-shadow: none; 
+            }
+        }
+
+        /* Layout */
+        .title-block { 
+            margin-bottom: 15mm;
+        }
+        
+        h1 { 
+            font-size: 100px; 
+            color: var(--color-burgundy);
+            margin: 0;
+            line-height: 0.9;
+            letter-spacing: -3px;
+            text-transform: uppercase;
+        }
+
+        .subtitle { 
+            font-size: 26px; 
+            margin-top: 15px; 
+            color: var(--color-text);
+            font-family: var(--font-body);
+            font-weight: 400;
+        }
+
+        .hero-image {
+            width: 85%;
+            height: 50%;
+            margin-bottom: 15mm;
+            background-image: url('../assets/images/Sandrina coaching1.JPG');
+            background-size: cover;
+            background-position: center 10%;
+            border-radius: 8px;
+        }
+
+        .footer { 
+            font-size: 28px; 
+            color: var(--color-burgundy);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: 700;
+        }
+        .footer .company { font-size: 20px; font-weight: normal; margin-top: 8px; display: block; letter-spacing: 2px;}
+        .footer .slogan { font-size: 16px; font-weight: normal; margin-top: 4px; display: block; opacity: 0.8; letter-spacing: 1px;}
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="title-block">
+            <h1>Oser<br>L'Humain</h1>
+            <div class="subtitle">L'optimisme est un levier stratégique qui insuffle l'énergie au cœur de vos institutions et <br> fédére vos équipes</div>
+        </div>
+        <div class="hero-image"></div>
+        <div class="footer">
+            Sandrina Perrin
+            <span class="company">Kleia-Up</span>
+            <span class="slogan">Leadership organique pour hypersensibles (HPI/HSP)</span>
+        </div>
+    </div>
+</body>
+</html>
