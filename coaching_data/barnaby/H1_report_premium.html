@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Compte-Rendu de Séance H1 | Barnaby x KLEIA-UP</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=ranade@300,400,500,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-burgundy: #8B1D3D;
+            --color-gold: #D4AF37;
+            --color-text: #2d3436;
+            --color-grey-light: #f1f2f6;
+            --font-main: 'Ranade', sans-serif;
+            --font-title: 'Syne', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #f8f9fa;
+            font-family: var(--font-main);
+            color: var(--color-text);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .a4-page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 25mm;
+            margin: 0 auto;
+            position: relative;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 4px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 2px solid var(--color-burgundy);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .logo img { height: 60px; }
+
+        .doc-title { text-align: right; }
+        .doc-title h1 {
+            font-family: var(--font-title);
+            font-size: 1.2rem;
+            color: var(--color-burgundy);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+        .doc-meta { font-size: 0.8rem; color: #636e72; font-weight: 500; }
+
+        .client-info {
+            background: var(--color-grey-light);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .info-item label {
+            display: block;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: var(--color-burgundy);
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .info-item span { font-size: 1rem; font-weight: 600; color: #2d3436; }
+
+        h2 {
+            font-family: var(--font-title);
+            font-size: 1.3rem;
+            color: var(--color-burgundy);
+            margin: 35px 0 15px 0;
+            display: flex;
+            align-items: center;
+        }
+        h2::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(139, 29, 61, 0.1);
+            margin-left: 20px;
+        }
+
+        h3 { 
+            font-family: var(--font-title); 
+            font-size: 1.05rem; 
+            color: var(--color-burgundy); 
+            margin: 25px 0 10px 0;
+            background: rgba(139, 29, 61, 0.05);
+            padding: 8px 15px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        p { margin-bottom: 15px; text-align: justify; font-size: 0.95rem; color: #444; }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(139, 29, 61, 0.03) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            position: relative;
+        }
+        .highlight-box::before {
+            content: "💡";
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: white;
+            padding: 0 10px;
+            font-size: 1.2rem;
+        }
+
+        ul, ol { margin-bottom: 20px; padding-left: 25px; }
+        li { margin-bottom: 12px; font-size: 0.95rem; color: #444; }
+        li strong { color: var(--color-burgundy); }
+
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #999;
+        }
+
+        @media print {
+            body { padding: 0; background: white; }
+            .a4-page { box-shadow: none; margin: 0; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="a4-page">
+        <div class="header">
+            <div class="logo"><img src="../../assets/images/LOGO KLEIA HD V3.png" alt="KLEIA-UP"></div>
+            <div class="doc-title">
+                <h1>Compte-rendu de séance de coaching</h1>
+                <p class="doc-meta">Référence : B01-H1-RECAP-V4</p>
+            </div>
+        </div>
+
+        <div class="client-info">
+            <div class="info-item"><label>À l'attention de</label><span>Barnaby</span></div>
+            <div class="info-item"><label>Objet</label><span>Compte-rendu de séance et plan d'action</span></div>
+            <div class="info-item"><label>Prochain rendez-vous</label><span>Jeudi 7 mai à 11h00</span></div>
+            <div class="info-item"><label>Session</label><span>H1 : Accueil & Audit</span></div>
+        </div>
+
+        <p>Bonjour Barnaby,</p>
+        <p>Voici le récapitulatif de notre échange d'aujourd'hui, l'analyse de ta première vidéo, et la feuille de route que nous avons définie ensemble pour te préparer sereinement à ton oral du 16 juin.</p>
+
+        <h2>🔍 1. Analyse de ta vidéo : Comprendre ton stress pour mieux l'apprivoiser</h2>
+        <p>Lors de l'enregistrement, l'anxiété t'a fait passer en mode "pilote automatique". C'est une réaction normale du système nerveux face au stress, mais cela a eu des impacts sur ton non-verbal :</p>
+        <ul>
+            <li><strong>Ta posture et tes gestes :</strong> Tu manquais d'ancrage au sol (mouvements de balancier), tu avais tendance à te mettre en retrait près de l'ordinateur, et tes mains cherchaient à te rassurer (mains dans les poches ou gestes parasites).</li>
+            <li><strong>Ton regard :</strong> Ton regard fuyait souvent vers le haut ou vers l'écran, ce qui t'a déconnecté de ton auditoire.</li>
+            <li><strong>Ta voix :</strong> Le rythme manquait de silences et de respiration, et la fin de tes phrases avait tendance à "s'écraser", donnant l'impression que tu récitais plutôt que de partager une passion.</li>
+        </ul>
+
+        <div class="highlight-box">
+            <p><strong>La bonne nouvelle : Tu as d'immenses atouts sur lesquels nous allons capitaliser !</strong></p>
+            <p>Tu possèdes un <strong>capital sympathie très fort</strong> avec un sourire sincère qui inspire immédiatement confiance. De plus, ton bilinguisme français/anglais est un énorme avantage qui te donne une grande crédibilité et t'aide à maîtriser le vocabulaire technique de ton projet en design.</p>
+        </div>
+
+        <h2>🧠 2. Ta méthode de préparation sur-mesure (Adaptée à ta dyslexie et ton hypersensibilité)</h2>
+        <p>Parce que tu es dyslexique, la rédaction classique d'un texte est contre-productive et génère du stress. Voici ton nouveau protocole de préparation :</p>
+        <ol>
+            <li><strong>Le Mind Mapping :</strong> Au lieu de faire des phrases, structure tes grandes parties (intro, développement, conclusion) sous forme de carte mentale avec des mots-clés. C'est idéal pour ton fonctionnement en arborescence.</li>
+            <li><strong>La méthode de l'Audio :</strong> Prépare ton oral <strong>à voix haute</strong>. Enregistre-toi sur ton téléphone, écoute-toi, corrige ce qui ne va pas, et recommence jusqu'à ce que tu sois satisfait. Tu pourras ensuite utiliser une Intelligence Artificielle pour retranscrire ton audio en texte.</li>
+            <li><strong>La gestion du temps (Hypersensibilité) :</strong> La peur de dépasser le temps limite te paralyse. Pour te rassurer, entraîne-toi à faire une présentation légèrement plus courte (ex: 13 ou 14 minutes au lieu de 15). Savoir que tu as une marge t'aidera à ralentir ton débit de parole.</li>
+            <li><strong>Le point d'ancrage visuel :</strong> Pour affronter le regard du jury, repère dès ton entrée la personne qui te semble la plus bienveillante. Fais-en ton "ressort" visuel vers qui te tourner quand le stress monte.</li>
+        </ol>
+
+        <h2>🎯 3. Notre programme pour les 8 heures d'accompagnement</h2>
+        <p>Nous avons ajusté notre programme pour qu'il colle parfaitement à tes besoins :</p>
+        <ul>
+            <li><strong>Heure 2 (Le 7 mai) :</strong> Définition de ton "Pourquoi" et analyse de tes <strong>forces de caractère</strong>. S'appuyer sur qui tu es vraiment va générer de la dopamine et apaiser ton système nerveux.</li>
+            <li><strong>Heure 3 :</strong> L'art de l'ouverture et "sortir de ta bulle" (exercices pour libérer ton corps et gérer ton stress).</li>
+            <li><strong>Heure 4 :</strong> Libération gestuelle et ancrage postural. <strong>Tu devras venir avec ton introduction prête</strong> pour qu'on commence à s'entraîner dessus.</li>
+            <li><strong>Heures 5 à 8 :</strong> Étoffement de ton texte global (Rythme, silence, respiration) et entraînements intensifs réguliers.</li>
+        </ul>
+
+        <h2>✅ 4. Ton plan d'action immédiat (À faire avant le 7 mai)</h2>
+        <ul>
+            <li><strong>Réserver :</strong> Positionne dès aujourd'hui tes prochaines séances sur mon agenda en ligne (idéalement une fois par semaine).</li>
+            <li><strong>Faire le test :</strong> Passe le test des forces de caractère (environ 25 minutes) au moins la veille de notre rendez-vous. Envoie-moi la feuille de résultats par SMS pour que je puisse te préparer ton livret personnalisé.</li>
+            <li><strong>Préparer ton intro :</strong> Commence à travailler l'introduction de ta "phase 3" en utilisant la méthode de l'enregistrement vocal.</li>
+        </ul>
+
+        <p style="margin-top: 30px;">N'oublie pas : <strong>c'est la préparation qui fera baisser ton stress</strong>. L'objectif final n'est pas la perfection technique, mais de passer de la récitation à l'incarnation de ton projet.</p>
+        
+        <p>On se voit le 7 mai ! N'hésite pas à m'envoyer un SMS (ou un audio WhatsApp !) si tu as la moindre question d'ici là.</p>
+
+        <div class="footer">
+            <span>© 2026 KLEIA-UP - Document Confidentiel</span>
+            <span>Coach : Sandrina Perrin</span>
+        </div>
+    </div>
+</body>
+</html>

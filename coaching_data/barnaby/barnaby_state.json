@@ -117,7 +117,7 @@
       }
     ],
     "roadmap": [
-      { "session": 1, "title": "Accueil, Diagnostic et Observations Vidéo", "status": "Completed" },
+      { "session": 1, "title": "Accueil, Audit et Observations Vidéo", "status": "Completed" },
       { "session": 2, "title": "Forces de caractère & Neurosciences du stress", "status": "Upcoming" },
       { "session": 3, "title": "L'art de l'ouverture & Sortie de la 'bulle'", "status": "Upcoming" },
       { "session": 4, "title": "Libération gestuelle & Ancrage postural frontal", "status": "Upcoming" },

@@ -76,27 +76,48 @@ function renderSessionView(sessionId) {
     if (sessionId === 1) {
         analysisZone.innerHTML = `
             <div class="dynamic-title-bar">
-                <h2 class="card-title" style="margin-bottom: 0;">📋 H1 : Diagnostic & Échanges</h2>
-                <a href="/coaching_data/barnaby/diagnostic_officiel_V3_Augmented.html" target="_blank" class="btn-premium">📄 Voir l'analyse de la vidéo</a>
+                <h2 class="card-title" style="margin-bottom: 0;">📋 H1 : Audit & Échanges</h2>
+                <div class="actions-group" style="display: flex; gap: 10px;">
+                    <a href="/coaching_data/barnaby/diagnostic_officiel_V3_Augmented.html" target="_blank" class="btn-premium">👁️ Voir l'audit initial</a>
+                    <a href="/coaching_data/barnaby/H1_report_premium.html?v=5.1" target="_blank" class="btn-premium private-content">📄 Compte-rendu de la séance numéro 1</a>
+                </div>
             </div>
             
-            <div class="interaction-zone" style="background: rgba(255,255,255,0.02); padding: 25px; border-radius: 16px; border-left: 2px solid var(--color-gold);">
-                <h3 style="color: var(--color-gold); margin-bottom: 15px;">Compte-rendu de la séance</h3>
-                <p style="font-size: 0.95rem; opacity: 0.8;">[Bientôt disponible] Le compte-rendu détaillé de l'échange initial sera injecté ici.</p>
-                <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
-                    <h3 style="color: var(--color-gold); margin-bottom: 15px;">Vidéo de l'échange</h3>
-                    <p style="font-size: 0.85rem; font-style: italic; opacity: 0.6;">Le replay de la visioconférence sera accessible dans cet espace.</p>
+            <div class="interaction-zone" style="background: rgba(255,255,255,0.02); padding: 30px; border-radius: 20px; border-left: 3px solid var(--color-gold); margin-bottom: 40px;">
+                <h3 style="color: var(--color-gold); margin-bottom: 15px;">🔍 Synthèse de l'Audit Initial</h3>
+                <p style="font-size: 0.95rem; opacity: 0.8; line-height: 1.6;">
+                    L'analyse de ta première prise de parole révèle un <strong>fort potentiel de communication</strong> masqué par des mécanismes de protection liés au stress. 
+                    Ton sourire sincère et ta maîtrise technique sont tes piliers. Nous allons travailler sur l'ancrage (stabilité au sol) et le regard pour te reconnecter à ton public.
+                </p>
+                <div style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 0.85rem;">
+                    <div style="background: rgba(139, 29, 61, 0.1); padding: 15px; border-radius: 10px;">
+                        <span style="color: var(--color-gold); font-weight: 800;">POINT DE VIGILANCE</span><br>
+                        Le balancement (oscillation) qui trahit l'anxiété.
+                    </div>
+                    <div style="background: rgba(139, 29, 61, 0.1); padding: 15px; border-radius: 10px;">
+                        <span style="color: var(--color-gold); font-weight: 800;">OBJECTIF H2</span><br>
+                        Comprendre les neurosciences du stress pour le dompter.
+                    </div>
                 </div>
             </div>
 
-            <div style="margin-top: 40px;">
-                <h3 style="color: var(--color-gold); font-family: var(--font-title); margin-bottom: 20px;">Synthèse de l'Audit</h3>
-                ${currentData.content.analysis.map(sec => `
-                    <div style="margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
-                        <h4 style="font-size: 1rem; margin-bottom: 10px;">${sec.title}</h4>
-                        <p style="font-size: 0.85rem; opacity: 0.6;">${sec.details}</p>
+            <div class="video-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px;">
+                <div class="video-container">
+                    <h3 style="color: var(--color-gold); font-size: 0.9rem; margin-bottom: 15px; text-transform: uppercase;">🎥 Replay de la Session</h3>
+                    <div style="background: #000; border-radius: 15px; overflow: hidden; position: relative; padding-top: 56.25%;">
+                        <video id="replay-video" controls playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                            <source src="/coaching_data/barnaby/260428 video_RVS Barnaby-1.mp4" type="video/mp4">
+                        </video>
                     </div>
-                `).join('')}
+                </div>
+                <div class="video-container">
+                    <h3 style="color: var(--color-gold); font-size: 0.9rem; margin-bottom: 15px; text-transform: uppercase;">👁️ Vidéo d'Audit</h3>
+                    <div style="background: #000; border-radius: 15px; overflow: hidden; position: relative; padding-top: 56.25%;">
+                        <video id="audit-video-h1" controls playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                            <source src="/coaching_data/barnaby/260422_Barnaby.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
             </div>
         `;
     } else {
