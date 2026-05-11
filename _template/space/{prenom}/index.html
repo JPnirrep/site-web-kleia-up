@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KLEIA UP | {Prenom}</title>
+    <link rel="icon" type="image/png" href="/assets/images/kleia-logo-black-hd.png">
+
+    <!-- SECURITY GUARD -->
+    <script>
+        if (sessionStorage.getItem('kleia_auth') !== 'true') {
+            window.location.href = 'login.html';
+        }
+    </script>
+
+    <!-- Fonts -->
+    <link href="https://api.fontshare.com/v2/css?f[]=ranade@300,400,500,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+
+    <!-- Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <link rel="stylesheet" href="/space/{prenom}/style.css">
+    <style>
+        .roadmap-item { cursor: pointer; transition: all 0.3s; }
+        .roadmap-item:hover { transform: translateX(10px); background: rgba(255,255,255,0.1); }
+        .roadmap-item.active { border-left: 4px solid var(--color-gold); background: rgba(212, 175, 55, 0.1); }
+        #main-content-zone { animation: fadeIn 0.5s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+    <div class="bg-glow"></div>
+
+    <div class="container">
+        <header>
+            <div class="logo-zone">
+                <img src="/assets/images/kleia-logo-black-hd.png" alt="KLEIA-UP" class="dynamic-logo">
+            </div>
+            <div class="client-status">
+                <h1>{PRENOM}</h1>
+                <p style="opacity: 0.5; font-size: clamp(0.7rem, 2.5vw, 1.1rem);">Espace de coaching personnel</p>
+            </div>
+        </header>
+
+        <main id="main-content-zone">
+            <!-- SECTION 1 : RADAR & VIDEO -->
+            <section class="grid-top">
+                <div class="glass-card">
+                    <h2 class="card-title">📊 Baseline</h2>
+                    <div style="height: 300px; margin-bottom: 30px;">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                    <div id="gauges-container"></div>
+                </div>
+
+                <div class="glass-card">
+                    <h2 class="card-title">🎥 Session Audit</h2>
+                    <div style="background: #000; border-radius: 20px; overflow: hidden; position: relative; padding-top: 56.25%;">
+                        <video id="session-video" controls playsinline preload="auto" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                            <source src="/coaching_data/{prenom}/{prenom}_session.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div style="margin-top: 30px;">
+                        <h3 style="font-size: 0.9rem; color: var(--color-gold); text-transform: uppercase;">Tes premières impressions :</h3>
+                        <textarea id="session-notes" rows="3" placeholder="Écris ici ton ressenti après avoir visionné ta vidéo..."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2 : DIAGNOSTIC & NAV MENU -->
+            <section class="grid-bottom">
+                <div class="glass-card" id="analysis-content">
+                    <!-- Contenu injecté dynamiquement par app.js -->
+                </div>
+
+                <div class="glass-card">
+                    <h2 class="card-title">🎯 Objectif 8h</h2>
+                    <p style="font-size: 0.75rem; opacity: 0.5; margin-bottom: 20px;">Sélectionne une séance pour revoir tes acquis.</p>
+                    <div id="roadmap-container"></div>
+                </div>
+            </section>
+
+            <!-- SECTION 3 : ACTION CALENDAR -->
+            <section class="grid-action">
+                <div class="glass-card calendar-card">
+                    <div class="calendar-info">
+                        <h2 class="card-title" style="margin-bottom: 0;">📅 Ton prochain palier</h2>
+                        <p>Prêt à ancrer tes progrès ? Réserve ta prochaine session de coaching avec Sandrina pour continuer ton ascension.</p>
+                    </div>
+                    <a href="https://calendar.app.google/ik4sFyhWkBMBNwE76" target="_blank" class="btn-premium btn-calendar">
+                        Réserver ma séance
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer style="margin-top: 100px; text-align: center; opacity: 0.3; padding-bottom: 50px;">
+            <p><img src="/assets/images/kleia-logo-black-hd.png" style="height: 15px; vertical-align: middle; margin-right: 8px; filter: brightness(0.8);">© KLEIA-UP 2026 | Incarne ton autorité naturelle.</p>
+            <button onclick="logout()" style="background: transparent; border: none; color: var(--color-gold); cursor: pointer; font-family: 'Ranade', sans-serif; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 10px; opacity: 0.5;">[ Déconnexion ]</button>
+        </footer>
+    </div>
+
+    <script src="/space/{prenom}/app.js"></script>
+</body>
+</html>

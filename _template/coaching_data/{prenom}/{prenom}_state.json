@@ -1,0 +1,78 @@
+{
+  "client": "{Prenom}",
+  "coach": "Sandrina",
+  "date": "[Date première session]",
+  "last_update": "[Date dernière màj]",
+  "session_id": "BXX-BASELINE",
+  "status": "In Progress",
+  "baseline_scores": {
+    "non_verbal": {
+      "contact_visuel": 5,
+      "ancrage_sol": 5,
+      "gestuelle": 5
+    },
+    "para_verbal": {
+      "maitrise_debit": 5,
+      "relief_vocal": 5
+    },
+    "verbal": {
+      "presence": 5,
+      "clarte_articulation": 5
+    }
+  },
+  "content": {
+    "introduction": "Description de l'audit et du contexte du coaching.",
+    "forces": [
+      {
+        "title": "Force 1",
+        "description": "Description de la première force observée."
+      },
+      {
+        "title": "Force 2",
+        "description": "Description de la deuxième force observée."
+      },
+      {
+        "title": "Force 3",
+        "description": "Description de la troisième force observée."
+      }
+    ],
+    "analysis": [
+      {
+        "id": "session_1",
+        "title": "H1. Analyse de la session baseline",
+        "details": "Analyse détaillée de la première session vidéo.",
+        "items": [
+          {
+            "indicator": "Indicateur 1",
+            "observation": "Observation de l'indicateur",
+            "impact": "Impact sur l'auditoire"
+          },
+          {
+            "indicator": "Indicateur 2",
+            "observation": "Observation de l'indicateur",
+            "impact": "Impact sur l'auditoire"
+          }
+        ]
+      }
+    ],
+    "roadmap": [
+      { "session": 1, "title": "Accueil, Audit et Observations Vidéo", "status": "Completed" },
+      { "session": 2, "title": "Forces de caractère & Neurosciences du stress", "status": "Upcoming" },
+      { "session": 3, "title": "L'art de l'ouverture & Sortie de la 'bulle'", "status": "Upcoming" },
+      { "session": 4, "title": "Libération gestuelle & Ancrage postural frontal", "status": "Upcoming" },
+      { "session": 5, "title": "Rythme, silences et respiration ventrale", "status": "Upcoming" },
+      { "session": 6, "title": "Entraînement : Alignement Verbal et Non-Verbal", "status": "Upcoming" },
+      { "session": 7, "title": "Incarnation : Lâcher le texte & Mind Mapping", "status": "Upcoming" },
+      { "session": 8, "title": "Consolidation finale & Simulation de réussite", "status": "Upcoming" }
+    ],
+    "synthesis": {
+      "title": "Synthèse",
+      "description": "Résumé global du diagnostic et de la stratégie de coaching."
+    }
+  },
+  "assets": {
+    "video": "{prenom}_session.mp4",
+    "diagnostic_file": "diagnostic.html",
+    "audio_analysis": ""
+  }
+}

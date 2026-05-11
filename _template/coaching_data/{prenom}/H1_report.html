@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Compte-Rendu de Séance H1 | {Prenom} x KLEIA-UP</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=ranade@300,400,500,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-burgundy: #8B1D3D;
+            --color-gold: #D4AF37;
+            --color-text: #2d3436;
+            --color-grey-light: #f1f2f6;
+            --font-main: 'Ranade', sans-serif;
+            --font-title: 'Syne', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #f8f9fa; font-family: var(--font-main); color: var(--color-text); line-height: 1.6; padding: 40px 20px; }
+        .a4-page { width: 210mm; min-height: 297mm; padding: 25mm; margin: 0 auto; position: relative; background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-radius: 4px; }
+        .header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--color-burgundy); padding-bottom: 20px; margin-bottom: 30px; }
+        .logo img { height: 60px; }
+        .doc-title { text-align: right; }
+        .doc-title h1 { font-family: var(--font-title); font-size: 1.2rem; color: var(--color-burgundy); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; }
+        .doc-meta { font-size: 0.8rem; color: #636e72; font-weight: 500; }
+        .client-info { background: var(--color-grey-light); padding: 20px; border-radius: 8px; margin-bottom: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .info-item label { display: block; font-size: 0.65rem; text-transform: uppercase; font-weight: 800; color: var(--color-burgundy); letter-spacing: 1px; margin-bottom: 4px; }
+        .info-item span { font-size: 1rem; font-weight: 600; color: #2d3436; }
+        h2 { font-family: var(--font-title); font-size: 1.2rem; color: var(--color-burgundy); margin: 35px 0 15px 0; border-left: 4px solid var(--color-burgundy); padding-left: 15px; }
+        p { margin-bottom: 15px; text-align: justify; font-size: 0.95rem; }
+        ul { margin-bottom: 20px; padding-left: 20px; }
+        li { margin-bottom: 10px; font-size: 0.95rem; }
+        strong { color: var(--color-burgundy); }
+        .highlight { background: rgba(139, 29, 61, 0.05); border-left: 4px solid var(--color-gold); padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-size: 0.9rem; }
+        .footer { margin-top: 60px; border-top: 1px solid #dfe6e9; padding-top: 15px; font-size: 0.75rem; color: #b2bec3; text-align: center; }
+        @media print { body { background: none; padding: 0; } .a4-page { box-shadow: none; padding: 20mm; } }
+    </style>
+</head>
+<body>
+    <div class="a4-page">
+        <div class="header">
+            <div class="logo"><img src="../../../assets/images/LOGO KLEIA HD V3.png" alt="KLEIA-UP"></div>
+            <div class="doc-title">
+                <h1>Compte-Rendu de Séance</h1>
+                <p class="doc-meta">Session H1 — {Prenom}</p>
+            </div>
+        </div>
+
+        <div class="client-info">
+            <div class="info-item"><label>Client</label><span>{Prenom}</span></div>
+            <div class="info-item"><label>Coach</label><span>Sandrina Perrin</span></div>
+            <div class="info-item"><label>Date</label><span>[Date]</span></div>
+            <div class="info-item"><label>Séance</label><span>H1 — Baseline</span></div>
+        </div>
+
+        <p>Voici le récapitulatif de notre échange, l'analyse de ta première vidéo, et la feuille de route que nous avons définie ensemble.</p>
+
+        <h2>1. Analyse de ta vidéo</h2>
+        <p>[Analyse personnalisée de la session vidéo : posture, gestuelle, regard, voix, stress observé.]</p>
+        <ul>
+            <li><strong>[Point 1]</strong> — Description.</li>
+            <li><strong>[Point 2]</strong> — Description.</li>
+            <li><strong>[Point 3]</strong> — Description.</li>
+        </ul>
+
+        <div class="highlight">
+            💡 <strong>La bonne nouvelle :</strong> [Forces identifiées et axes de progression positifs.]
+        </div>
+
+        <h2>2. Ta méthode de préparation sur-mesure</h2>
+        <p>[Méthodologie personnalisée adaptée au profil du client : mind mapping, audio, ancrage visuel, etc.]</p>
+        <ol>
+            <li>[Méthode 1]</li>
+            <li>[Méthode 2]</li>
+            <li>[Méthode 3]</li>
+            <li>[Méthode 4]</li>
+        </ol>
+
+        <h2>3. Notre programme pour les 8 heures</h2>
+        <p>[Calendrier et objectifs des prochaines séances.]</p>
+
+        <h2>4. Plan d'action immédiat</h2>
+        <ul>
+            <li>[Action 1 — À faire avant prochaine séance]</li>
+            <li>[Action 2 — À faire avant prochaine séance]</li>
+            <li>[Action 3 — À faire avant prochaine séance]</li>
+        </ul>
+
+        <div class="footer">
+            <p>© KLEIA-UP 2026 — *Oser l'humain, déclencher l'élan.*</p>
+        </div>
+    </div>
+</body>
+</html>
