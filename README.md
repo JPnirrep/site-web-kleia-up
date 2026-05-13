@@ -196,6 +196,8 @@ git push
 
 ### ✅ Historique des Versions (Récents)
 
+- **v3.14.0-DYNAMIC-COCKPIT (13/05/2026)** : Refonte majeure de l'architecture du cockpit de coaching. Transition vers un moteur de rendu piloté par les données (`barnaby_state.json`) dans `app.js`, intégration dynamique des replays vidéo Hostinger, et enrichissement du rapport H2 Premium (Musique, Respiration, Bio).
+
 - **v3.13.0-CHALLENGE-CLEANUP (09/04/2026)** : Désactivation du Challenge de Pâques 2026. Archivage du code dans `.agent/archives/`, retrait du popup sur l'accueil et retour aux tags standards pour le Kit de Survie.
 
 - **v3.12.0-SEO-GEO (19/03/2026)** : Blindage SEO/GEO. Sitemap rafraîchi, Meta OG pour LinkedIn sur le Kit, injection JSON-LD FAQ pour l'IA sur l'accueil.
