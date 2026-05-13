@@ -36,7 +36,7 @@ function initDashboard(data) {
     
     // Par défaut, on affiche le module 1 (H1)
     renderSessionView(1); 
-    renderRoadmapMenu(data.content.roadmap);
+    renderRoadmapMenu(data.roadmap);
 }
 
 function renderRoadmapMenu(roadmap) {
@@ -76,10 +76,11 @@ function renderSessionView(sessionId) {
     const basePath = "../../coaching_data/barnaby/";
     const resolvePath = (file) => (file && file.startsWith('http')) ? file : `${basePath}${file}`;
 
-    const sessionInfo = currentData.sessions_content[sessionId];
-    const videoFile = currentData.assets[`video_h${sessionId}`];
-    const replayFile = currentData.assets[`replay_h${sessionId}`];
-    const reportFile = currentData.assets[`report_h${sessionId}`];
+    const sessionKey = String(sessionId);
+    const sessionInfo = currentData.sessions_content[sessionKey];
+    const videoFile = currentData.assets[`video_h${sessionKey}`];
+    const replayFile = currentData.assets[`replay_h${sessionKey}`];
+    const reportFile = currentData.assets[`report_h${sessionKey}`];
 
     let videoHTML = '';
     if (videoFile || replayFile) {
@@ -131,7 +132,7 @@ function renderSessionView(sessionId) {
         `;
     } else {
         analysisZone.innerHTML = `
-            <h2 class="card-title">🚀 H${sessionId} : ${currentData.content.roadmap[sessionId-1].title}</h2>
+            <h2 class="card-title">🚀 H${sessionId} : ${currentData.roadmap[sessionId-1].title}</h2>
             <div style="background: rgba(255,255,255,0.02); padding: 40px; border-radius: 16px; text-align: center; border: 1px dashed var(--glass-border);">
                 <p style="opacity: 0.5;">Cette séance n'a pas encore eu lieu.</p>
                 <p style="font-size: 0.8rem; margin-top: 10px; color: var(--color-gold);">Prépare tes forces pour la suite du voyage.</p>
