@@ -28,8 +28,8 @@
         .a4-page {
             width: 210mm;
             min-height: 297mm;
-            padding: 25mm;
-            margin: 0 auto;
+            padding: 20mm;
+            margin: 0 auto 40px auto;
             position: relative;
             background: white;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
@@ -132,14 +132,16 @@
 
         .fiche-exercice {
             border: 1px solid #eee;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
             background: #fff;
+            page-break-inside: avoid;
         }
-        .fiche-num { color: var(--color-gold); font-weight: 900; font-size: 0.8rem; }
-        .fiche-title { font-family: var(--font-title); color: var(--color-burgundy); font-size: 1.1rem; margin-bottom: 10px; }
-
+        .fiche-num { color: var(--color-gold); font-weight: 900; font-size: 0.8rem; letter-spacing: 2px; }
+        .fiche-title { font-family: var(--font-title); color: var(--color-burgundy); font-size: 1.2rem; margin-bottom: 15px; text-transform: uppercase; }
+        .fiche-section-title { font-size: 0.7rem; text-transform: uppercase; font-weight: 800; color: #999; margin: 15px 0 5px 0; }
+        
         .footer {
             margin-top: 50px;
             padding-top: 20px;
@@ -150,104 +152,201 @@
             color: #999;
         }
 
+        .page-break { page-break-before: always; }
+
         @media print {
             body { padding: 0; background: white; }
-            .a4-page { box-shadow: none; margin: 0; width: 100%; }
+            .a4-page { box-shadow: none; margin: 0; width: 100%; border: none; }
             .no-print { display: none; }
         }
     </style>
 </head>
 <body>
+    <!-- PAGE 1 : SYNTHESE & OBSERVATIONS -->
     <div class="a4-page">
         <div class="header">
             <div class="logo"><img src="../../assets/images/LOGO KLEIA HD V3.png" alt="KLEIA-UP"></div>
             <div class="doc-title">
                 <h1>Compte-rendu de séance de coaching</h1>
-                <p class="doc-meta">Référence : B01-H2-RECAP-V1</p>
+                <p class="doc-meta">Référence : B01-H2-RECAP-FULL-V2</p>
             </div>
         </div>
 
         <div class="client-info">
             <div class="info-item"><label>À l'attention de</label><span>Barnaby Benezech</span></div>
-            <div class="info-item"><label>Coach</label><span>Sandrina Perrin</span></div>
             <div class="info-item"><label>Date de séance</label><span>12 mai 2026</span></div>
-            <div class="info-item"><label>Session</label><span>H2 : Ancrage & Posture</span></div>
+            <div class="info-item"><label>Session</label><span>H2 : Ancrage & Posture (Visioconférence)</span></div>
+            <div class="info-item"><label>Coach</label><span>Sandrina Perrin</span></div>
         </div>
 
-        <p>Bonjour Barnaby,</p>
-        <p>Cette deuxième séance a été dense et riche en expérimentations corporelles. Nous avons posé les bases de ton <strong>ancrage</strong> et de ta <strong>présence</strong>. L'objectif est maintenant de transformer ces exercices en réflexes pour que ton corps devienne ton meilleur allié face au jury.</p>
-
-        <h2>🎯 1. Objectifs de la séance</h2>
+        <h2>🎯 1. Objectifs globaux & spécifiques</h2>
+        <p>Utiliser le corps comme ressource principale pour réduire le stress, préparer l'oral de manière adaptée à ton profil (Mind Map) et développer une posture assurée face au jury.</p>
         <ul>
-            <li><strong>Ancrage :</strong> Installer les premiers exercices physiques utilisables au quotidien.</li>
-            <li><strong>Posture :</strong> Travailler l'alignement, l'ouverture de la cage thoracique et l'espace occupé.</li>
-            <li><strong>Gestion du stress :</strong> Identifier les tics nerveux et poser les bases de la respiration régulatrice.</li>
+            <li>Installer les exercices d'ancrage corporel quotidiens.</li>
+            <li>Travailler l'alignement, les épaules et l'espace occupé.</li>
+            <li>Apprivoiser la gestuelle de soutien au discours.</li>
+            <li>Identifier les tics de stress et poser les bases de la respiration.</li>
         </ul>
 
-        <h2>🔍 2. Observations & Points d'appui</h2>
+        <h2>🔍 2. Ce qui a été abordé</h2>
         <div class="highlight-box">
-            <p><strong>Tes forces motrices :</strong></p>
-            <ul>
-                <li><strong>Fond & Narration :</strong> Tu maîtrises ton sujet et tu as un talent naturel pour raconter des histoires avec richesse de détails.</li>
-                <li><strong>Proprioception :</strong> Tu ressens très rapidement les effets des exercices corporels, ce qui va accélérer ton apprentissage.</li>
-                <li><strong>Atout Relationnel :</strong> Ton sourire facile reste ta ressource n°1 pour créer du lien avec ton auditoire.</li>
-            </ul>
+            <p><strong>Rappel crucial :</strong> Les supports doivent être créés À PARTIR de ce qu'on veut dire, pas l'inverse. La structure (Mind Map) avance en parallèle du design.</p>
+        </div>
+        <ol>
+            <li>Identification des forces personnelles.</li>
+            <li>Exercices d'ancrage corporel (Kit de 11 fiches).</li>
+            <li>Travail sur la puissance du corps et la posture.</li>
+            <li>Marche en rythme, présence et regard.</li>
+            <li>Travail sur les gestes des mains (Sacs de sable, Élastiques).</li>
+            <li>Gestion du stress et système nerveux (Cohérence cardiaque).</li>
+            <li>Simulation d'entrée en salle d'oral.</li>
+        </ol>
+
+        <h2>📊 3. Observations du Coach</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div>
+                <h3 style="background: rgba(46, 204, 113, 0.1); color: #27ae60;">Points d'appui</h3>
+                <ul style="font-size: 0.85rem;">
+                    <li>Aisance réelle sur le fond du sujet.</li>
+                    <li>Pas timide face au regard de l'autre.</li>
+                    <li>Capacité à raconter avec naturel.</li>
+                    <li>Bonne proprioception (ressenti rapide).</li>
+                    <li>Sourire facile (ressource précieuse).</li>
+                </ul>
+            </div>
+            <div>
+                <h3 style="background: rgba(231, 76, 60, 0.1); color: #c0392b;">Points de vigilance</h3>
+                <ul style="font-size: 0.85rem;">
+                    <li>Enfermement corporel sous stress.</li>
+                    <li>Balancement d'un pied sur l'autre.</li>
+                    <li>Micro-tics (toucher le pull, ajuster).</li>
+                    <li>Surcharge mentale par hyper-contrôle.</li>
+                    <li>Remplisseurs de discours ('Et donc...').</li>
+                </ul>
+            </div>
         </div>
 
-        <p><strong>Points de vigilance identifiés :</strong></p>
+        <h2>🧠 4. Prises de conscience de Barnaby</h2>
         <ul>
-            <li><strong>Enfermement :</strong> Sous stress, ton corps a tendance à se recroqueviller (épaules tombantes, respiration bloquée).</li>
-            <li><strong>Instabilité :</strong> Apparition d'un balancement d'un pied sur l'autre dès que l'inconfort monte.</li>
-            <li><strong>Surcharge mentale :</strong> Attention à ne pas vouloir tout contrôler en même temps ; fais confiance à ton corps entraîné.</li>
+            <li><strong>Mots-clés :</strong> Présent, Découverte.</li>
+            <li><em>"Ça me nettoie les mauvaises odeurs dans mon cerveau."</em> (après les exercices).</li>
+            <li><em>"Je suis attaché et je suis pas à l'aise dans mon propre corps."</em> (constat central).</li>
+            <li><em>"Je commence à comprendre mes défauts et comment ne pas les faire."</em></li>
         </ul>
 
-        <h2>🛠️ 3. Tes Fiches Exercices (Le Kit de Survie)</h2>
+        <div class="footer">
+            <span>© 2026 KLEIA-UP - Document Confidentiel</span>
+            <span>Page 1/3</span>
+        </div>
+    </div>
+
+    <!-- PAGE 2 : LE KIT DE SURVIE (FICHES 1 A 6) -->
+    <div class="a4-page">
+        <h2>🛠️ 5. Le Kit de Survie (Fiches Exercices)</h2>
         
         <div class="fiche-exercice">
             <span class="fiche-num">FICHE 1</span>
             <h4 class="fiche-title">Ancrage "SHUTAÏDO"</h4>
-            <p><strong>Objectif :</strong> Se reconnecter au corps, renforcer l'ancrage au sol, prendre de l'espace.</p>
-            <p><em>Consigne personnalisée :</em> Barnaby, fais cet exercice en GRAND. Ne reste pas dans ton coin, occupe l'espace avec tes bras.</p>
+            <p><strong>Objectif :</strong> Se reconnecter au corps, renforcer l'ancrage au sol.</p>
+            <p><strong>Déroulé :</strong> Debout, bras sur les côtés. Soulever vers le ciel (paumes haut), redescendre le long de la colonne, remonter, recommencer 3 fois.</p>
+            <p><em>Consigne Barnaby :</em> À faire en GRAND, occupe l'espace !</p>
         </div>
 
         <div class="fiche-exercice">
             <span class="fiche-num">FICHE 2</span>
             <h4 class="fiche-title">Taper des pieds / Claquer les talons</h4>
-            <p><strong>Objectif :</strong> Remettre de l'énergie dans les pieds, signaler au système nerveux que "tout va bien, je suis là".</p>
-            <p><em>Usage discret :</em> Tu peux claquer légèrement les talons l'un contre l'autre pendant l'oral si tu sens un flottement.</p>
+            <p><strong>Objectif :</strong> Signaler au système nerveux que "tout va bien".</p>
+            <p><strong>Usage :</strong> Avant l'oral (fort) ou pendant (discret avec les talons).</p>
+        </div>
+
+        <div class="fiche-exercice">
+            <span class="fiche-num">FICHE 3</span>
+            <h4 class="fiche-title">Étirement / Prise de place (Posture de victoire)</h4>
+            <p><strong>Objectif :</strong> Ouvrir la cage thoracique, libérer la respiration et la voix.</p>
+            <p><strong>Déroulé :</strong> S'étirer dans toutes les directions, occuper tout l'espace possible, respirer.</p>
+        </div>
+
+        <div class="fiche-exercice">
+            <span class="fiche-num">FICHE 4</span>
+            <h4 class="fiche-title">Redressement du haut du corps</h4>
+            <p><strong>Objectif :</strong> Corriger l'enroulement des épaules, libérer les poumons.</p>
+            <p><strong>Variante mur :</strong> Position "chandelier" contre le mur, pousser avec les paumes en inspirant.</p>
+        </div>
+
+        <div class="fiche-exercice">
+            <span class="fiche-num">FICHE 5</span>
+            <h4 class="fiche-title">Fil de soie (Alignement vertical)</h4>
+            <p><strong>Objectif :</strong> Axe vertical stable, menton bien placé, regard horizontal.</p>
+            <p><strong>Repère :</strong> Imaginer un fil qui tire le sommet du crâne vers le haut.</p>
+        </div>
+
+        <div class="fiche-exercice">
+            <span class="fiche-num">FICHE 6</span>
+            <h4 class="fiche-title">Marche en rythme avec arrêts regard</h4>
+            <p><strong>Objectif :</strong> Travailler la présence, le regard assumé et la stabilité.</p>
+            <p><strong>Consigne :</strong> S'arrêter, se redresser, et regarder devant soi comme si c'était le jury.</p>
+        </div>
+
+        <div class="footer">
+            <span>© 2026 KLEIA-UP - Document Confidentiel</span>
+            <span>Page 2/3</span>
+        </div>
+    </div>
+
+    <!-- PAGE 3 : LE KIT DE SURVIE (FIN) & PLAN D'ACTION -->
+    <div class="a4-page">
+        <div class="fiche-exercice">
+            <span class="fiche-num">FICHE 7</span>
+            <h4 class="fiche-title">Sacs de sable au bout des doigts</h4>
+            <p><strong>Objectif :</strong> Relâcher les bras et éviter les gestes parasites (micro-tics).</p>
+            <p><strong>Image :</strong> Imaginer un petit poids suspendu à chaque doigt pour ancrer les mains.</p>
+        </div>
+
+        <div class="fiche-exercice">
+            <span class="fiche-num">FICHE 8</span>
+            <h4 class="fiche-title">Élastiques entre les poignets</h4>
+            <p><strong>Objectif :</strong> Maîtriser l'amplitude des gestes, éviter les grands gestes incontrôlés.</p>
+            <p><strong>Consigne :</strong> Imaginer un élastique de la largeur du buste qui contient ta zone de confort.</p>
+        </div>
+
+        <div class="fiche-exercice">
+            <span class="fiche-num">FICHE 9</span>
+            <h4 class="fiche-title">Secouage anti-freeze (Mode Zèbre)</h4>
+            <p><strong>Objectif :</strong> Décharger la tension, sortir d'un état de figement.</p>
+            <p><strong>Action :</strong> Secouer vigoureusement une main, puis l'autre, puis les jambes.</p>
         </div>
 
         <div class="fiche-exercice">
             <span class="fiche-num">FICHE 10</span>
-            <h4 class="fiche-title">Cohérence cardiaque 5-5-5-5</h4>
-            <p><strong>Objectif :</strong> Réguler le système nerveux, passer du stress inhibiteur au stress moteur.</p>
-            <p><em>Routine :</em> Utilise l'application <strong>RespiRelax+</strong> 3 fois par jour (matin, midi, soir).</p>
+            <h4 class="fiche-title">Respiration 5-5-5-5 & Cohérence Cardiaque</h4>
+            <p><strong>Objectif :</strong> Réguler le système nerveux. Inspir 5s, Blocage 5s, Expir 5s, Blocage 5s.</p>
+            <p><strong>Outil :</strong> Application RespiRelax+ (3 fois par jour).</p>
         </div>
 
-        <h2>✅ 4. Ton Plan d'Action (D'ici le 19 mai)</h2>
-        <p><strong>Entraînement quotidien (5 à 10 min) :</strong></p>
-        <ul>
-            <li>Pratiquer le <strong>Shutaïdo</strong> et l'<strong>étirement de victoire</strong> chaque matin.</li>
-            <li>Travailler le <strong>redressement du haut du corps</strong> devant le miroir à la salle de sport.</li>
-            <li>Pratiquer la <strong>marche en rythme avec arrêts regard</strong> pour assumer ta présence.</li>
-        </ul>
-
-        <p><strong>Préparation du contenu :</strong></p>
-        <ul>
-            <li>Finaliser la <strong>Mind Map</strong> de ton discours (idées -> mots-clés).</li>
-            <li>Rédiger ton <strong>introduction complète</strong> (accroche, présentation, plan).</li>
-            <li><strong>Défi :</strong> M'envoyer une vidéo de ton introduction la veille de notre prochaine séance.</li>
-        </ul>
-
-        <div class="highlight-box" style="background: rgba(139, 29, 61, 0.05);">
-            <p><strong>La pensée clé :</strong> "Le corps avant les mots. Si ton corps est ancré et droit, ta voix et tes mots viendront naturellement. L'inverse ne fonctionne pas."</p>
+        <div class="fiche-exercice">
+            <span class="fiche-num">FICHE 11</span>
+            <h4 class="fiche-title">Simulation d'entrée en salle d'oral</h4>
+            <p><strong>Objectif :</strong> Sécuriser les premières secondes cruciales.</p>
+            <p><strong>Routine :</strong> Frapper, entrer, dire "Bonjour" en regardant le jury imaginair, avancer, se redresser.</p>
         </div>
 
-        <p>On se retrouve le <strong>mardi 19 mai</strong> pour travailler ta voix et ajuster ton introduction !</p>
+        <h2>🎯 6. Plan d'actions d'ici le 19 mai</h2>
+        <div style="background: var(--color-grey-light); padding: 20px; border-radius: 12px;">
+            <ul>
+                <li><strong>Entraînement corporel :</strong> 5 à 10 min/jour (Shutaïdo, Posture de victoire, Redressement).</li>
+                <li><strong>Gestion du stress :</strong> Cohérence cardiaque 3x/jour.</li>
+                <li><strong>Contenu :</strong> Mind Map (grandes idées) + Rédaction de l'intro complète.</li>
+                <li><strong>Défi :</strong> Se filmer debout et envoyer la vidéo de l'intro à Sandrina.</li>
+            </ul>
+        </div>
+
+        <h2>📅 7. Prochaine séance</h2>
+        <p><strong>Date : Mardi 19 mai 2026</strong></p>
+        <p>Thèmes : Travail approfondi sur la voix (projection), ajustement de l'intro et bilan des exercices pratiques.</p>
 
         <div class="footer">
             <span>© 2026 KLEIA-UP - Document Confidentiel</span>
-            <span>Coach : Sandrina Perrin</span>
+            <span>Page 3/3</span>
         </div>
     </div>
 </body>
