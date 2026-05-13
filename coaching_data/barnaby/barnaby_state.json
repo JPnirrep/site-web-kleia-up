@@ -2,13 +2,13 @@
   "client": "Barnaby Benezech",
   "coach": "Sandrina",
   "date": "2026-04-22",
-  "last_update": "2026-04-27",
-  "session_id": "B01-BASELINE-AUGMENTED",
+  "last_update": "2026-05-13",
+  "session_id": "B01-SESSION-H2",
   "status": "In Progress",
   "baseline_scores": {
     "non_verbal": {
       "contact_visuel": 3,
-      "ancrage_sol": 4,
+      "ancrage_sol": 5,
       "gestuelle": 4
     },
     "para_verbal": {
@@ -16,7 +16,7 @@
       "relief_vocal": 4
     },
     "verbal": {
-      "presence": 4,
+      "presence": 5,
       "clarte_articulation": 6
     }
   },
@@ -118,7 +118,7 @@
     ],
     "roadmap": [
       { "session": 1, "title": "Accueil, Audit et Observations Vidéo", "status": "Completed" },
-      { "session": 2, "title": "Forces de caractère & Neurosciences du stress", "status": "Upcoming" },
+      { "session": 2, "title": "Forces de caractère & Neurosciences du stress", "status": "Completed" },
       { "session": 3, "title": "L'art de l'ouverture & Sortie de la 'bulle'", "status": "Upcoming" },
       { "session": 4, "title": "Libération gestuelle & Ancrage postural frontal", "status": "Upcoming" },
       { "session": 5, "title": "Rythme, silences et respiration ventrale", "status": "Upcoming" },

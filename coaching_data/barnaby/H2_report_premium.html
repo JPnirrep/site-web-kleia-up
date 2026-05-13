@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Compte-Rendu de Séance H2 | Barnaby x KLEIA-UP</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=ranade@300,400,500,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-burgundy: #8B1D3D;
+            --color-gold: #D4AF37;
+            --color-text: #2d3436;
+            --color-grey-light: #f1f2f6;
+            --font-main: 'Ranade', sans-serif;
+            --font-title: 'Syne', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #f8f9fa;
+            font-family: var(--font-main);
+            color: var(--color-text);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .a4-page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 25mm;
+            margin: 0 auto;
+            position: relative;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 4px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 2px solid var(--color-burgundy);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .logo img { height: 60px; }
+
+        .doc-title { text-align: right; }
+        .doc-title h1 {
+            font-family: var(--font-title);
+            font-size: 1.2rem;
+            color: var(--color-burgundy);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+        .doc-meta { font-size: 0.8rem; color: #636e72; font-weight: 500; }
+
+        .client-info {
+            background: var(--color-grey-light);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .info-item label {
+            display: block;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: var(--color-burgundy);
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .info-item span { font-size: 1rem; font-weight: 600; color: #2d3436; }
+
+        h2 {
+            font-family: var(--font-title);
+            font-size: 1.3rem;
+            color: var(--color-burgundy);
+            margin: 35px 0 15px 0;
+            display: flex;
+            align-items: center;
+        }
+        h2::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(139, 29, 61, 0.1);
+            margin-left: 20px;
+        }
+
+        h3 { 
+            font-family: var(--font-title); 
+            font-size: 1.05rem; 
+            color: var(--color-burgundy); 
+            margin: 25px 0 10px 0;
+            background: rgba(139, 29, 61, 0.05);
+            padding: 8px 15px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        p { margin-bottom: 15px; text-align: justify; font-size: 0.95rem; color: #444; }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(139, 29, 61, 0.03) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            position: relative;
+        }
+        .highlight-box::before {
+            content: "💡";
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: white;
+            padding: 0 10px;
+            font-size: 1.2rem;
+        }
+
+        ul, ol { margin-bottom: 20px; padding-left: 25px; }
+        li { margin-bottom: 12px; font-size: 0.95rem; color: #444; }
+        li strong { color: var(--color-burgundy); }
+
+        .fiche-exercice {
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background: #fff;
+        }
+        .fiche-num { color: var(--color-gold); font-weight: 900; font-size: 0.8rem; }
+        .fiche-title { font-family: var(--font-title); color: var(--color-burgundy); font-size: 1.1rem; margin-bottom: 10px; }
+
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #999;
+        }
+
+        @media print {
+            body { padding: 0; background: white; }
+            .a4-page { box-shadow: none; margin: 0; width: 100%; }
+            .no-print { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="a4-page">
+        <div class="header">
+            <div class="logo"><img src="../../assets/images/LOGO KLEIA HD V3.png" alt="KLEIA-UP"></div>
+            <div class="doc-title">
+                <h1>Compte-rendu de séance de coaching</h1>
+                <p class="doc-meta">Référence : B01-H2-RECAP-V1</p>
+            </div>
+        </div>
+
+        <div class="client-info">
+            <div class="info-item"><label>À l'attention de</label><span>Barnaby Benezech</span></div>
+            <div class="info-item"><label>Coach</label><span>Sandrina Perrin</span></div>
+            <div class="info-item"><label>Date de séance</label><span>12 mai 2026</span></div>
+            <div class="info-item"><label>Session</label><span>H2 : Ancrage & Posture</span></div>
+        </div>
+
+        <p>Bonjour Barnaby,</p>
+        <p>Cette deuxième séance a été dense et riche en expérimentations corporelles. Nous avons posé les bases de ton <strong>ancrage</strong> et de ta <strong>présence</strong>. L'objectif est maintenant de transformer ces exercices en réflexes pour que ton corps devienne ton meilleur allié face au jury.</p>
+
+        <h2>🎯 1. Objectifs de la séance</h2>
+        <ul>
+            <li><strong>Ancrage :</strong> Installer les premiers exercices physiques utilisables au quotidien.</li>
+            <li><strong>Posture :</strong> Travailler l'alignement, l'ouverture de la cage thoracique et l'espace occupé.</li>
+            <li><strong>Gestion du stress :</strong> Identifier les tics nerveux et poser les bases de la respiration régulatrice.</li>
+        </ul>
+
+        <h2>🔍 2. Observations & Points d'appui</h2>
+        <div class="highlight-box">
+            <p><strong>Tes forces motrices :</strong></p>
+            <ul>
+                <li><strong>Fond & Narration :</strong> Tu maîtrises ton sujet et tu as un talent naturel pour raconter des histoires avec richesse de détails.</li>
+                <li><strong>Proprioception :</strong> Tu ressens très rapidement les effets des exercices corporels, ce qui va accélérer ton apprentissage.</li>
+                <li><strong>Atout Relationnel :</strong> Ton sourire facile reste ta ressource n°1 pour créer du lien avec ton auditoire.</li>
+            </ul>
+        </div>
+
+        <p><strong>Points de vigilance identifiés :</strong></p>
+        <ul>
+            <li><strong>Enfermement :</strong> Sous stress, ton corps a tendance à se recroqueviller (épaules tombantes, respiration bloquée).</li>
+            <li><strong>Instabilité :</strong> Apparition d'un balancement d'un pied sur l'autre dès que l'inconfort monte.</li>
+            <li><strong>Surcharge mentale :</strong> Attention à ne pas vouloir tout contrôler en même temps ; fais confiance à ton corps entraîné.</li>
+        </ul>
+
+        <h2>🛠️ 3. Tes Fiches Exercices (Le Kit de Survie)</h2>
+        
+        <div class="fiche-exercice">
+            <span class="fiche-num">FICHE 1</span>
+            <h4 class="fiche-title">Ancrage "SHUTAÏDO"</h4>
+            <p><strong>Objectif :</strong> Se reconnecter au corps, renforcer l'ancrage au sol, prendre de l'espace.</p>
+            <p><em>Consigne personnalisée :</em> Barnaby, fais cet exercice en GRAND. Ne reste pas dans ton coin, occupe l'espace avec tes bras.</p>
+        </div>
+
+        <div class="fiche-exercice">
+            <span class="fiche-num">FICHE 2</span>
+            <h4 class="fiche-title">Taper des pieds / Claquer les talons</h4>
+            <p><strong>Objectif :</strong> Remettre de l'énergie dans les pieds, signaler au système nerveux que "tout va bien, je suis là".</p>
+            <p><em>Usage discret :</em> Tu peux claquer légèrement les talons l'un contre l'autre pendant l'oral si tu sens un flottement.</p>
+        </div>
+
+        <div class="fiche-exercice">
+            <span class="fiche-num">FICHE 10</span>
+            <h4 class="fiche-title">Cohérence cardiaque 5-5-5-5</h4>
+            <p><strong>Objectif :</strong> Réguler le système nerveux, passer du stress inhibiteur au stress moteur.</p>
+            <p><em>Routine :</em> Utilise l'application <strong>RespiRelax+</strong> 3 fois par jour (matin, midi, soir).</p>
+        </div>
+
+        <h2>✅ 4. Ton Plan d'Action (D'ici le 19 mai)</h2>
+        <p><strong>Entraînement quotidien (5 à 10 min) :</strong></p>
+        <ul>
+            <li>Pratiquer le <strong>Shutaïdo</strong> et l'<strong>étirement de victoire</strong> chaque matin.</li>
+            <li>Travailler le <strong>redressement du haut du corps</strong> devant le miroir à la salle de sport.</li>
+            <li>Pratiquer la <strong>marche en rythme avec arrêts regard</strong> pour assumer ta présence.</li>
+        </ul>
+
+        <p><strong>Préparation du contenu :</strong></p>
+        <ul>
+            <li>Finaliser la <strong>Mind Map</strong> de ton discours (idées -> mots-clés).</li>
+            <li>Rédiger ton <strong>introduction complète</strong> (accroche, présentation, plan).</li>
+            <li><strong>Défi :</strong> M'envoyer une vidéo de ton introduction la veille de notre prochaine séance.</li>
+        </ul>
+
+        <div class="highlight-box" style="background: rgba(139, 29, 61, 0.05);">
+            <p><strong>La pensée clé :</strong> "Le corps avant les mots. Si ton corps est ancré et droit, ta voix et tes mots viendront naturellement. L'inverse ne fonctionne pas."</p>
+        </div>
+
+        <p>On se retrouve le <strong>mardi 19 mai</strong> pour travailler ta voix et ajuster ton introduction !</p>
+
+        <div class="footer">
+            <span>© 2026 KLEIA-UP - Document Confidentiel</span>
+            <span>Coach : Sandrina Perrin</span>
+        </div>
+    </div>
+</body>
+</html>

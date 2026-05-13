@@ -120,6 +120,33 @@ function renderSessionView(sessionId) {
                 </div>
             </div>
         `;
+    } else if (sessionId === 2) {
+        analysisZone.innerHTML = `
+            <div class="dynamic-title-bar">
+                <h2 class="card-title" style="margin-bottom: 0;">📋 H2 : Ancrage & Posture</h2>
+                <div class="actions-group" style="display: flex; gap: 10px;">
+                    <a href="/coaching_data/barnaby/H2_report_premium.html" target="_blank" class="btn-premium private-content">📄 Compte-rendu de la séance numéro 2</a>
+                </div>
+            </div>
+            
+            <div class="interaction-zone" style="background: rgba(255,255,255,0.02); padding: 30px; border-radius: 20px; border-left: 3px solid var(--color-gold); margin-bottom: 40px;">
+                <h3 style="color: var(--color-gold); margin-bottom: 15px;">🔍 Synthèse H2 : Le corps comme ressource</h3>
+                <p style="font-size: 0.95rem; opacity: 0.8; line-height: 1.6;">
+                    Nous avons posé les premières briques de ton <strong>ancrage Shutaïdo</strong> et travaillé sur l'ouverture de ta cage thoracique. 
+                    L'enjeu est de briser le cercle vicieux du stress qui te recroqueville. Tes forces narratives sont ton moteur, nous allons les incarner dans une posture de puissance.
+                </p>
+                <div style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 0.85rem;">
+                    <div style="background: rgba(139, 29, 61, 0.1); padding: 15px; border-radius: 10px;">
+                        <span style="color: var(--color-gold); font-weight: 800;">DÉCOUVERTE</span><br>
+                        "Ça me nettoie les mauvaises odeurs dans mon cerveau."
+                    </div>
+                    <div style="background: rgba(139, 29, 61, 0.1); padding: 15px; border-radius: 10px;">
+                        <span style="color: var(--color-gold); font-weight: 800;">PROCHAIN PAS</span><br>
+                        Mind Mapping & Intro prête pour la séance 3.
+                    </div>
+                </div>
+            </div>
+        `;
     } else {
         analysisZone.innerHTML = `
             <h2 class="card-title">🚀 H${sessionId} : ${currentData.content.roadmap[sessionId-1].title}</h2>
