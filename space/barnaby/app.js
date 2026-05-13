@@ -73,13 +73,51 @@ function switchSession(sessionId) {
 function renderSessionView(sessionId) {
     const analysisZone = document.getElementById('analysis-content');
     
+    // Gestion dynamique des vidéos
+    const videoFile = currentData.assets[`video_h${sessionId}`];
+    const replayFile = currentData.assets[`replay_h${sessionId}`];
+    const basePath = "../../coaching_data/barnaby/";
+
+    let videoHTML = '';
+    if (videoFile || replayFile) {
+        videoHTML = `<div class="video-grid" style="display: grid; grid-template-columns: ${replayFile && videoFile ? '1fr 1fr' : '1fr'}; gap: 20px; margin-top: 30px;">`;
+        
+        if (replayFile) {
+            videoHTML += `
+                <div class="video-container">
+                    <h3 style="color: var(--color-gold); font-size: 0.9rem; margin-bottom: 15px; text-transform: uppercase;">🎥 Replay de la Session</h3>
+                    <div style="background: #000; border-radius: 15px; overflow: hidden; position: relative; padding-top: 56.25%;">
+                        <video id="replay-video" controls playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                            <source src="${basePath}${replayFile}" type="video/mp4">
+                        </video>
+                    </div>
+                </div>`;
+        }
+
+        if (videoFile) {
+            videoHTML += `
+                <div class="video-container">
+                    <h3 style="color: var(--color-gold); font-size: 0.9rem; margin-bottom: 15px; text-transform: uppercase;">👁️ Vidéo d'Analyse</h3>
+                    <div style="background: #000; border-radius: 15px; overflow: hidden; position: relative; padding-top: 56.25%;">
+                        <video id="audit-video" controls playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                            <source src="${basePath}${videoFile}" type="video/mp4">
+                        </video>
+                    </div>
+                    <p style="font-size: 0.7rem; opacity: 0.5; margin-top: 10px; text-align: center;">Note : Si la vidéo ne s'affiche pas en ligne, elle est accessible sur le Drive partagé.</p>
+                </div>`;
+        }
+        
+        videoHTML += `</div>`;
+    }
+
+    const reportFile = currentData.assets[`report_h${sessionId}`];
+
     if (sessionId === 1) {
         analysisZone.innerHTML = `
             <div class="dynamic-title-bar">
                 <h2 class="card-title" style="margin-bottom: 0;">📋 H1 : Audit & Échanges</h2>
                 <div class="actions-group" style="display: flex; gap: 10px;">
-                    <a href="../../coaching_data/barnaby/diagnostic_officiel_V3_Augmented.html" target="_blank" class="btn-premium">👁️ Voir l'audit initial</a>
-                    <a href="../../coaching_data/barnaby/H1_report_premium.html?v=5.1" target="_blank" class="btn-premium private-content">📄 Compte-rendu de la séance numéro 1</a>
+                    ${reportFile ? `<a href="${basePath}${reportFile}" target="_blank" class="btn-premium">👁️ Voir l'audit initial</a>` : ''}
                 </div>
             </div>
             
@@ -89,43 +127,15 @@ function renderSessionView(sessionId) {
                     L'analyse de ta première prise de parole révèle un <strong>fort potentiel de communication</strong> masqué par des mécanismes de protection liés au stress. 
                     Ton sourire sincère et ta maîtrise technique sont tes piliers. Nous allons travailler sur l'ancrage (stabilité au sol) et le regard pour te reconnecter à ton public.
                 </p>
-                <div style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 0.85rem;">
-                    <div style="background: rgba(139, 29, 61, 0.1); padding: 15px; border-radius: 10px;">
-                        <span style="color: var(--color-gold); font-weight: 800;">POINT DE VIGILANCE</span><br>
-                        Le balancement (oscillation) qui trahit l'anxiété.
-                    </div>
-                    <div style="background: rgba(139, 29, 61, 0.1); padding: 15px; border-radius: 10px;">
-                        <span style="color: var(--color-gold); font-weight: 800;">OBJECTIF H2</span><br>
-                        Comprendre les neurosciences du stress pour le dompter.
-                    </div>
-                </div>
             </div>
-
-            <div class="video-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px;">
-                <div class="video-container">
-                    <h3 style="color: var(--color-gold); font-size: 0.9rem; margin-bottom: 15px; text-transform: uppercase;">🎥 Replay de la Session</h3>
-                    <div style="background: #000; border-radius: 15px; overflow: hidden; position: relative; padding-top: 56.25%;">
-                        <video id="replay-video" controls playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                            <source src="../../coaching_data/barnaby/260428 video_RVS Barnaby-1.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-                <div class="video-container">
-                    <h3 style="color: var(--color-gold); font-size: 0.9rem; margin-bottom: 15px; text-transform: uppercase;">👁️ Vidéo d'Audit</h3>
-                    <div style="background: #000; border-radius: 15px; overflow: hidden; position: relative; padding-top: 56.25%;">
-                        <video id="audit-video-h1" controls playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                            <source src="../../coaching_data/barnaby/260422_Barnaby.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-            </div>
+            ${videoHTML}
         `;
     } else if (sessionId === 2) {
         analysisZone.innerHTML = `
             <div class="dynamic-title-bar">
                 <h2 class="card-title" style="margin-bottom: 0;">📋 H2 : Ancrage & Posture</h2>
                 <div class="actions-group" style="display: flex; gap: 10px;">
-                    <a href="../../coaching_data/barnaby/H2_report_premium.html" target="_blank" class="btn-premium private-content">📄 Compte-rendu de la séance numéro 2</a>
+                    ${reportFile ? `<a href="${basePath}${reportFile}" target="_blank" class="btn-premium private-content">📄 Compte-rendu de la séance numéro 2</a>` : ''}
                 </div>
             </div>
             
@@ -135,17 +145,8 @@ function renderSessionView(sessionId) {
                     Nous avons posé les premières briques de ton <strong>ancrage Shutaïdo</strong> et travaillé sur l'ouverture de ta cage thoracique. 
                     L'enjeu est de briser le cercle vicieux du stress qui te recroqueville. Tes forces narratives sont ton moteur, nous allons les incarner dans une posture de puissance.
                 </p>
-                <div style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 0.85rem;">
-                    <div style="background: rgba(139, 29, 61, 0.1); padding: 15px; border-radius: 10px;">
-                        <span style="color: var(--color-gold); font-weight: 800;">DÉCOUVERTE</span><br>
-                        "Ça me nettoie les mauvaises odeurs dans mon cerveau."
-                    </div>
-                    <div style="background: rgba(139, 29, 61, 0.1); padding: 15px; border-radius: 10px;">
-                        <span style="color: var(--color-gold); font-weight: 800;">PROCHAIN PAS</span><br>
-                        Mind Mapping & Intro prête pour la séance 3.
-                    </div>
-                </div>
             </div>
+            ${videoHTML}
         `;
     } else {
         analysisZone.innerHTML = `
@@ -153,6 +154,10 @@ function renderSessionView(sessionId) {
             <div style="background: rgba(255,255,255,0.02); padding: 40px; border-radius: 16px; text-align: center; border: 1px dashed var(--glass-border);">
                 <p style="opacity: 0.5;">Cette séance n'a pas encore eu lieu.</p>
                 <p style="font-size: 0.8rem; margin-top: 10px; color: var(--color-gold);">Prépare tes forces pour la suite du voyage.</p>
+            </div>
+            ${videoHTML}
+        `;
+    }forces pour la suite du voyage.</p>
             </div>
         `;
     }

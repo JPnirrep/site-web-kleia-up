@@ -132,8 +132,11 @@
     }
   },
   "assets": {
-    "video": "260422_Barnaby.mp4",
-    "diagnostic_file": "H1_report_premium_v2.html",
+    "video_h1": "260422_Barnaby.mp4",
+    "replay_h1": "260428 video_RVS Barnaby-1.mp4",
+    "report_h1": "H1_report_premium_v2.html",
+    "replay_h2": "260512 video_RVS Barnaby-2.mp4",
+    "report_h2": "H2_report_premium.html",
     "audio_analysis": "analyse_audio_sandrina_270426.md"
   }
 }
