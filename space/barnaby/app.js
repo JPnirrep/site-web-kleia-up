@@ -36,7 +36,7 @@ function initDashboard(data) {
     
     // Par défaut, on affiche le module 1 (H1)
     renderSessionView(1); 
-    renderRoadmapMenu(data.roadmap);
+    renderRoadmapMenu(data.content.roadmap);
 }
 
 function renderRoadmapMenu(roadmap) {
@@ -132,13 +132,10 @@ function renderSessionView(sessionId) {
         `;
     } else {
         analysisZone.innerHTML = `
-            <h2 class="card-title">🚀 H${sessionId} : ${currentData.roadmap[sessionId-1].title}</h2>
+            <h2 class="card-title">🚀 H${sessionId} : ${currentData.content.roadmap[sessionId-1].title}</h2>
             <div style="background: rgba(255,255,255,0.02); padding: 40px; border-radius: 16px; text-align: center; border: 1px dashed var(--glass-border);">
                 <p style="opacity: 0.5;">Cette séance n'a pas encore eu lieu.</p>
                 <p style="font-size: 0.8rem; margin-top: 10px; color: var(--color-gold);">Prépare tes forces pour la suite du voyage.</p>
-            </div>
-        `;
-    }forces pour la suite du voyage.</p>
             </div>
         `;
     }
