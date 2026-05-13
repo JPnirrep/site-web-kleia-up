@@ -92,7 +92,7 @@ function renderSessionView(sessionId) {
                     <h3 style="color: var(--color-gold); font-size: 0.9rem; margin-bottom: 15px; text-transform: uppercase;">🎥 Replay de la Session</h3>
                     <div style="background: #000; border-radius: 15px; overflow: hidden; position: relative; padding-top: 56.25%;">
                         <video id="replay-video" controls playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                            <source src="${resolvePath(replayFile)}" type="video/mp4">
+                            <source src="${resolvePath(replayFile)}">
                         </video>
                     </div>
                 </div>`;
@@ -104,7 +104,7 @@ function renderSessionView(sessionId) {
                     <h3 style="color: var(--color-gold); font-size: 0.9rem; margin-bottom: 15px; text-transform: uppercase;">👁️ Vidéo d'Analyse</h3>
                     <div style="background: #000; border-radius: 15px; overflow: hidden; position: relative; padding-top: 56.25%;">
                         <video id="audit-video" controls playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                            <source src="${resolvePath(videoFile)}" type="video/mp4">
+                            <source src="${resolvePath(videoFile)}">
                         </video>
                     </div>
                 </div>`;
