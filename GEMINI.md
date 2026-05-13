@@ -81,11 +81,110 @@ site-web-kleia-up/
 ├── GEMINI.md            # Règles du workspace
 └── .agent/
     ├── workflows/       # Workflows Antigravity
+# KLEIA-UP - Règles du Workspace
+
+## Contexte
+Site web statique pour KLEIA-UP, hébergé sur GitHub Pages.
+- **URL de production** : https://kleia-up.fr/
+- **Statut SEO** : Validé Google Search Console (Mars 2026)
+- **Hébergement** : GitHub Pages (déploiement automatique sur push)
+
+## 🛠️ Configuration SEO & Indexation
+Audit profond (13/03/2026) :
+1. **Domaine d'Autorité** : kleia-up.fr.
+2. **Page d'Accueil** : `index.html` est la landing page officielle.
+3. **Validation Google** : Balise Meta Search Console active.
+4. **Sitemap** : URLs harmonisées sur kleia-up.fr.
+
+## 📐 Architecture
+
+### Vérification visuelle (Push + Preview)
+**NOUVELLE CONSIGNE GLOBALE** : À chaque fois que je fais une itération ou que je modifie le code, tu dois **OBLIGATOIREMENT** rafraîchir la page (lancer le workflow `/check-site`) pour que je puisse vérifier dans Chrome.
+
+Quand je demande de :
+- faire une itération, modifier le site
+- "pousser les modifications sur GitHub"
+- "vérifier visuellement le site"
+- "voir le résultat sur le site"
+- "push et preview"
+- ou toute variante similaire
+
+➡️ **Tu lances automatiquement le workflow `/check-site`** qui exécute le script `scripts/verify-visual.ps1`.
+
+**Tu ne me demandes PAS de copier-coller les commandes dans le terminal** ; tu les exécutes directement via le workflow, grâce à l'annotation `// turbo-all`.
+
+## Structure du projet
+```
+site-web-kleia-up/
+├── index.html           # Redirection vers individuel-groupe.html
+├── individuel-groupe.html # Page Individuel / Groupe (ex-particuliers)
+├── entreprises.html     # Page Entreprises
+├── manifeste.html       # Le Manifeste
+├── css/                 # Styles CSS
+├── assets/              # Images et ressources
+├── scripts/             # Scripts d'automatisation (PowerShell)
+│   └── verify-visual.ps1
+└── .agent/workflows/    # Workflows Antigravity
+    └── check-site.md
+```
+
+### Supervision et cohérence (Mode Superviseur)
+Quand je demande de :
+- "vérifie la cohérence"
+- "récap de session"
+- "supervise"
+- ou toute variante similaire
+
+➡️ **Tu lances automatiquement le workflow `/supervise`** qui produit un rapport court (alertes, suggestions, todo).
+
+**En fin de session** : tu me proposes automatiquement un récap et la mise à jour de la documentation.
+
+### Documentation automatique
+À chaque fin de session ou sauvegarde majeure :
+- Mettre à jour `README.md` avec les changements
+- Documenter les nouveaux workflows/scripts/рègles
+
+## Principes de développement
+- ❌ Ne jamais casser le code existant
+- ✅ Capitaliser sur l'existant
+- ✅ Voies simples, efficaces, frugales
+- ✅ Design moderne et premium
+
+## Structure du projet
+```
+site-web-kleia-up/
+├── index.html           # Redirection
+├── individuel-groupe.html # Page Individuel / Groupe
+├── entreprises.html     # Page Entreprises
+├── manifeste.html       # Le Manifeste
+├── css/                 # Styles CSS
+├── assets/              # Images et ressources
+├── scripts/             # Scripts d'automatisation (PowerShell)
+│   └── verify-visual.ps1
+├── coaching_data/       # Données de coaching (hors site public)
+│   ├── templates/       # Modèles standardisés (HTML/MD)
+│   └── barnaby/         # Espace client Barnaby
+├── GEMINI.md            # Règles du workspace
+└── .agent/
+    ├── workflows/       # Workflows Antigravity
     │   ├── check-site.md
     │   └── supervise.md
     └── rules/           # Règles agent
         └── supervisor.md
 ```
+
+## 📄 Standards des Comptes-rendus de Coaching
+Pour chaque séance de coaching (Barnaby et clients futurs), les livrables doivent respecter les critères suivants :
+
+1. **Exhaustivité Totale** : Ne jamais synthétiser. Intégrer l'intégralité des notes, toutes les fiches d'exercices, toutes les citations du coaché et le plan d'action détaillé.
+2. **Structure (Trame YAML)** : Suivre l'ordre : Metadata > Objectifs > Ce qui a été abordé > Fiches exercices (Le Kit) > Observations > Prises de conscience > Idées clés > Plan d'actions.
+3. **Design Premium "A4 Digital"** :
+   - Format : Pages blanches 210x297mm avec ombres portées.
+   - Couleurs : Bordeaux (`#8B1D3D`) et Or Royal (`#D4AF37`).
+   - Typographies : **Syne** (Titres) et **Ranade** (Corps).
+4. **Multi-pages** : Si le contenu est long, structurer en plusieurs pages physiques pour maintenir l'aspect "document de prestige".
+5. **Accessibilité** : Mise à jour systématique de `barnaby_state.json` et `app.js` pour intégration immédiate dans le cockpit client.
+6. **Template Source** : Utiliser [session_report_v2.html](file:///c:/Users/JP/Documents/GitHub/site-web-kleia-up/coaching_data/templates/session_report_v2.html) comme base de travail.
 
 ## Contraintes techniques
 - Site statique (HTML/CSS/JS vanilla)

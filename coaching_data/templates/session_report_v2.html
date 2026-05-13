@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Compte-Rendu de Séance {{SESSION_ID}} | {{CLIENT_NAME}} x KLEIA-UP</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=ranade@300,400,500,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-burgundy: #8B1D3D;
+            --color-gold: #D4AF37;
+            --color-text: #2d3436;
+            --color-grey-light: #f1f2f6;
+            --font-main: 'Ranade', sans-serif;
+            --font-title: 'Syne', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #f8f9fa;
+            font-family: var(--font-main);
+            color: var(--color-text);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .a4-page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 0 auto 40px auto;
+            position: relative;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 4px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 2px solid var(--color-burgundy);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .logo img { height: 60px; }
+
+        .doc-title { text-align: right; }
+        .doc-title h1 {
+            font-family: var(--font-title);
+            font-size: 1.2rem;
+            color: var(--color-burgundy);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+        .doc-meta { font-size: 0.8rem; color: #636e72; font-weight: 500; }
+
+        .client-info {
+            background: var(--color-grey-light);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .info-item label {
+            display: block;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: var(--color-burgundy);
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .info-item span { font-size: 1rem; font-weight: 600; color: #2d3436; }
+
+        h2 {
+            font-family: var(--font-title);
+            font-size: 1.3rem;
+            color: var(--color-burgundy);
+            margin: 35px 0 15px 0;
+            display: flex;
+            align-items: center;
+        }
+        h2::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(139, 29, 61, 0.1);
+            margin-left: 20px;
+        }
+
+        h3 { 
+            font-family: var(--font-title); 
+            font-size: 1.05rem; 
+            color: var(--color-burgundy); 
+            margin: 25px 0 10px 0;
+            background: rgba(139, 29, 61, 0.05);
+            padding: 8px 15px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        p { margin-bottom: 15px; text-align: justify; font-size: 0.95rem; color: #444; }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(139, 29, 61, 0.03) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            position: relative;
+        }
+        .highlight-box::before {
+            content: "💡";
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: white;
+            padding: 0 10px;
+            font-size: 1.2rem;
+        }
+
+        ul, ol { margin-bottom: 20px; padding-left: 25px; }
+        li { margin-bottom: 12px; font-size: 0.95rem; color: #444; }
+        li strong { color: var(--color-burgundy); }
+
+        .fiche-exercice {
+            border: 1px solid #eee;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            background: #fff;
+            page-break-inside: avoid;
+        }
+        .fiche-num { color: var(--color-gold); font-weight: 900; font-size: 0.8rem; letter-spacing: 2px; }
+        .fiche-title { font-family: var(--font-title); color: var(--color-burgundy); font-size: 1.2rem; margin-bottom: 15px; text-transform: uppercase; }
+        .fiche-section-title { font-size: 0.7rem; text-transform: uppercase; font-weight: 800; color: #999; margin: 15px 0 5px 0; }
+        
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #999;
+        }
+
+        .page-break { page-break-before: always; }
+
+        @media print {
+            body { padding: 0; background: white; }
+            .a4-page { box-shadow: none; margin: 0; width: 100%; border: none; }
+            .no-print { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- PAGE 1 : SYNTHESE & OBSERVATIONS -->
+    <div class="a4-page">
+        <div class="header">
+            <div class="logo"><img src="../../assets/images/LOGO KLEIA HD V3.png" alt="KLEIA-UP"></div>
+            <div class="doc-title">
+                <h1>Compte-rendu de séance de coaching</h1>
+                <p class="doc-meta">Référence : {{REF_ID}}</p>
+            </div>
+        </div>
+
+        <div class="client-info">
+            <div class="info-item"><label>À l'attention de</label><span>{{CLIENT_NAME}}</span></div>
+            <div class="info-item"><label>Date de séance</label><span>{{DATE}}</span></div>
+            <div class="info-item"><label>Session</label><span>{{SESSION_NAME}}</span></div>
+            <div class="info-item"><label>Coach</label><span>{{COACH_NAME}}</span></div>
+        </div>
+
+        <h2>🎯 1. Objectifs globaux & spécifiques</h2>
+        <p>{{GLOBAL_OBJECTIVE}}</p>
+        <ul>
+            <li>{{OBJECTIVE_1}}</li>
+            <li>{{OBJECTIVE_2}}</li>
+            <li>{{OBJECTIVE_3}}</li>
+        </ul>
+
+        <h2>🔍 2. Ce qui a été abordé</h2>
+        <div class="highlight-box">
+            <p><strong>Note du Coach :</strong> {{COACH_NOTE}}</p>
+        </div>
+        <ol>
+            <li>{{TOPIC_1}}</li>
+            <li>{{TOPIC_2}}</li>
+            <li>{{TOPIC_3}}</li>
+        </ol>
+
+        <h2>📊 3. Observations du Coach</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div>
+                <h3 style="background: rgba(46, 204, 113, 0.1); color: #27ae60;">Points d'appui</h3>
+                <ul style="font-size: 0.85rem;">
+                    <li>{{STRENGTH_1}}</li>
+                    <li>{{STRENGTH_2}}</li>
+                    <li>{{STRENGTH_3}}</li>
+                </ul>
+            </div>
+            <div>
+                <h3 style="background: rgba(231, 76, 60, 0.1); color: #c0392b;">Points de vigilance</h3>
+                <ul style="font-size: 0.85rem;">
+                    <li>{{VIGILANCE_1}}</li>
+                    <li>{{VIGILANCE_2}}</li>
+                    <li>{{VIGILANCE_3}}</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>🧠 4. Prises de conscience du Coaché</h2>
+        <ul>
+            <li>{{INSIGHT_1}}</li>
+            <li>{{INSIGHT_2}}</li>
+        </ul>
+
+        <div class="footer">
+            <span>© 2026 KLEIA-UP - Document Confidentiel</span>
+            <span>Page 1/{{TOTAL_PAGES}}</span>
+        </div>
+    </div>
+
+    <!-- PAGE 2 : LE KIT DE SURVIE (FICHES EXERCICES) -->
+    <div class="a4-page">
+        <h2>🛠️ 5. Le Kit de Survie (Fiches Exercices)</h2>
+        
+        <div class="fiche-exercice">
+            <span class="fiche-num">FICHE 1</span>
+            <h4 class="fiche-title">{{FICHE_TITLE_1}}</h4>
+            <p><strong>Objectif :</strong> {{FICHE_GOAL_1}}</p>
+            <p><strong>Déroulé :</strong> {{FICHE_DESC_1}}</p>
+            <p><em>Consigne personnalisée :</em> {{FICHE_CUSTOM_1}}</p>
+        </div>
+
+        <!-- Répéter les fiches selon besoin -->
+
+        <div class="footer">
+            <span>© 2026 KLEIA-UP - Document Confidentiel</span>
+            <span>Page 2/{{TOTAL_PAGES}}</span>
+        </div>
+    </div>
+
+    <!-- PAGE 3 : PLAN D'ACTION -->
+    <div class="a4-page">
+        <h2>🎯 6. Plan d'actions d'ici la prochaine séance</h2>
+        <div style="background: var(--color-grey-light); padding: 20px; border-radius: 12px;">
+            <ul>
+                <li>{{ACTION_1}}</li>
+                <li>{{ACTION_2}}</li>
+                <li>{{ACTION_3}}</li>
+            </ul>
+        </div>
+
+        <h2>📅 7. Prochaine séance</h2>
+        <p><strong>Date : {{NEXT_SESSION_DATE}}</strong></p>
+        <p>Thèmes : {{NEXT_SESSION_THEMES}}</p>
+
+        <div class="footer">
+            <span>© 2026 KLEIA-UP - Document Confidentiel</span>
+            <span>Page {{TOTAL_PAGES}}/{{TOTAL_PAGES}}</span>
+        </div>
+    </div>
+</body>
+</html>
