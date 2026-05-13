@@ -93,6 +93,7 @@ function renderSessionView(sessionId) {
                     <div style="background: #000; border-radius: 15px; overflow: hidden; position: relative; padding-top: 56.25%;">
                         <video id="replay-video" controls playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
                             <source src="${resolvePath(replayFile)}">
+                            Votre navigateur ne supporte pas la lecture de cette vidéo.
                         </video>
                     </div>
                 </div>`;
