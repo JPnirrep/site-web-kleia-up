@@ -73,10 +73,13 @@ function switchSession(sessionId) {
 function renderSessionView(sessionId) {
     const analysisZone = document.getElementById('analysis-content');
     
-    // Gestion dynamique des vidéos
+    const basePath = "../../coaching_data/barnaby/";
+    const resolvePath = (file) => (file && file.startsWith('http')) ? file : `${basePath}${file}`;
+
+    const sessionInfo = currentData.sessions_content[sessionId];
     const videoFile = currentData.assets[`video_h${sessionId}`];
     const replayFile = currentData.assets[`replay_h${sessionId}`];
-    const basePath = "../../coaching_data/barnaby/";
+    const reportFile = currentData.assets[`report_h${sessionId}`];
 
     let videoHTML = '';
     if (videoFile || replayFile) {
@@ -88,7 +91,7 @@ function renderSessionView(sessionId) {
                     <h3 style="color: var(--color-gold); font-size: 0.9rem; margin-bottom: 15px; text-transform: uppercase;">🎥 Replay de la Session</h3>
                     <div style="background: #000; border-radius: 15px; overflow: hidden; position: relative; padding-top: 56.25%;">
                         <video id="replay-video" controls playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                            <source src="${basePath}${replayFile}" type="video/mp4">
+                            <source src="${resolvePath(replayFile)}" type="video/mp4">
                         </video>
                     </div>
                 </div>`;
@@ -100,50 +103,28 @@ function renderSessionView(sessionId) {
                     <h3 style="color: var(--color-gold); font-size: 0.9rem; margin-bottom: 15px; text-transform: uppercase;">👁️ Vidéo d'Analyse</h3>
                     <div style="background: #000; border-radius: 15px; overflow: hidden; position: relative; padding-top: 56.25%;">
                         <video id="audit-video" controls playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                            <source src="${basePath}${videoFile}" type="video/mp4">
+                            <source src="${resolvePath(videoFile)}" type="video/mp4">
                         </video>
                     </div>
-                    <p style="font-size: 0.7rem; opacity: 0.5; margin-top: 10px; text-align: center;">Note : Si la vidéo ne s'affiche pas en ligne, elle est accessible sur le Drive partagé.</p>
                 </div>`;
         }
         
         videoHTML += `</div>`;
     }
 
-    const reportFile = currentData.assets[`report_h${sessionId}`];
-
-    if (sessionId === 1) {
+    if (sessionInfo) {
         analysisZone.innerHTML = `
             <div class="dynamic-title-bar">
-                <h2 class="card-title" style="margin-bottom: 0;">📋 H1 : Audit & Échanges</h2>
+                <h2 class="card-title" style="margin-bottom: 0;">📋 ${sessionInfo.title}</h2>
                 <div class="actions-group" style="display: flex; gap: 10px;">
-                    ${reportFile ? `<a href="${basePath}${reportFile}" target="_blank" class="btn-premium">👁️ Voir l'audit initial</a>` : ''}
+                    ${reportFile ? `<a href="${resolvePath(reportFile)}" target="_blank" class="btn-premium private-content">📄 Compte-rendu détaillé</a>` : ''}
                 </div>
             </div>
             
             <div class="interaction-zone" style="background: rgba(255,255,255,0.02); padding: 30px; border-radius: 20px; border-left: 3px solid var(--color-gold); margin-bottom: 40px;">
-                <h3 style="color: var(--color-gold); margin-bottom: 15px;">🔍 Synthèse de l'Audit Initial</h3>
+                <h3 style="color: var(--color-gold); margin-bottom: 15px;">${sessionInfo.synthesis_title}</h3>
                 <p style="font-size: 0.95rem; opacity: 0.8; line-height: 1.6;">
-                    L'analyse de ta première prise de parole révèle un <strong>fort potentiel de communication</strong> masqué par des mécanismes de protection liés au stress. 
-                    Ton sourire sincère et ta maîtrise technique sont tes piliers. Nous allons travailler sur l'ancrage (stabilité au sol) et le regard pour te reconnecter à ton public.
-                </p>
-            </div>
-            ${videoHTML}
-        `;
-    } else if (sessionId === 2) {
-        analysisZone.innerHTML = `
-            <div class="dynamic-title-bar">
-                <h2 class="card-title" style="margin-bottom: 0;">📋 H2 : Ancrage & Posture</h2>
-                <div class="actions-group" style="display: flex; gap: 10px;">
-                    ${reportFile ? `<a href="${basePath}${reportFile}" target="_blank" class="btn-premium private-content">📄 Compte-rendu de la séance numéro 2</a>` : ''}
-                </div>
-            </div>
-            
-            <div class="interaction-zone" style="background: rgba(255,255,255,0.02); padding: 30px; border-radius: 20px; border-left: 3px solid var(--color-gold); margin-bottom: 40px;">
-                <h3 style="color: var(--color-gold); margin-bottom: 15px;">🔍 Synthèse H2 : Le corps comme ressource</h3>
-                <p style="font-size: 0.95rem; opacity: 0.8; line-height: 1.6;">
-                    Nous avons posé les premières briques de ton <strong>ancrage Shutaïdo</strong> et travaillé sur l'ouverture de ta cage thoracique. 
-                    L'enjeu est de briser le cercle vicieux du stress qui te recroqueville. Tes forces narratives sont ton moteur, nous allons les incarner dans une posture de puissance.
+                    ${sessionInfo.synthesis_text}
                 </p>
             </div>
             ${videoHTML}
@@ -155,7 +136,6 @@ function renderSessionView(sessionId) {
                 <p style="opacity: 0.5;">Cette séance n'a pas encore eu lieu.</p>
                 <p style="font-size: 0.8rem; margin-top: 10px; color: var(--color-gold);">Prépare tes forces pour la suite du voyage.</p>
             </div>
-            ${videoHTML}
         `;
     }forces pour la suite du voyage.</p>
             </div>

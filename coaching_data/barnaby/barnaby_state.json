@@ -4,7 +4,7 @@
   "date": "2026-04-22",
   "last_update": "2026-05-13",
   "session_id": "B01-SESSION-H2",
-  "status": "In Progress",
+  "status": "Completed",
   "baseline_scores": {
     "non_verbal": {
       "contact_visuel": 3,
@@ -118,7 +118,7 @@
     ],
     "roadmap": [
       { "session": 1, "title": "Accueil, Audit et Observations Vidéo", "status": "Completed" },
-      { "session": 2, "title": "Forces de caractère & Neurosciences du stress", "status": "Completed" },
+      { "session": 2, "title": "Ancrage & Posture", "status": "Completed" },
       { "session": 3, "title": "L'art de l'ouverture & Sortie de la 'bulle'", "status": "Upcoming" },
       { "session": 4, "title": "Libération gestuelle & Ancrage postural frontal", "status": "Upcoming" },
       { "session": 5, "title": "Rythme, silences et respiration ventrale", "status": "Upcoming" },
@@ -135,8 +135,20 @@
     "video_h1": "260422_Barnaby.mp4",
     "replay_h1": "260428 video_RVS Barnaby-1.mp4",
     "report_h1": "H1_report_premium_v2.html",
-    "replay_h2": "260512 video_RVS Barnaby-2.mp4",
+    "replay_h2": "https://kleia-up.fr/coaching_data/barnaby/20260512_video_RVS%20Barnaby-2.mp4",
     "report_h2": "H2_report_premium.html",
     "audio_analysis": "analyse_audio_sandrina_270426.md"
+  },
+  "sessions_content": {
+    "1": {
+      "title": "H1 : Audit & Échanges",
+      "synthesis_title": "🔍 Synthèse de l'Audit Initial",
+      "synthesis_text": "L'analyse de ta première prise de parole révèle un <strong>fort potentiel de communication</strong> masqué par des mécanismes de protection liés au stress. Ton sourire sincère et ta maîtrise technique sont tes piliers. Nous allons travailler sur l'ancrage (stabilité au sol) et le regard pour te reconnecter à ton public."
+    },
+    "2": {
+      "title": "H2 : Ancrage & Posture",
+      "synthesis_title": "🔍 Synthèse H2 : Le corps comme ressource",
+      "synthesis_text": "Nous avons posé les premières briques de ton <strong>ancrage Shutaïdo</strong> et travaillé sur l'ouverture de ta cage thoracique. L'enjeu est de briser le cercle vicieux du stress qui te recroqueville. Tes forces narratives sont ton moteur, nous allons les incarner dans une posture de puissance."
+    }
   }
 }
