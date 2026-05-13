@@ -1,0 +1,12 @@
+{
+  "sessions": [
+    {
+      "id": "3ed938ea",
+      "created_at": "2026-05-06T17:46:40.379844400Z",
+      "updated_at": "2026-05-06T17:48:16.034383500Z",
+      "model": "gemini-2.5-flash",
+      "summary": "Explore et dis-moi ce que tu as compris. ",
+      "message_count": 6
+    }
+  ]
+}
