@@ -27,5 +27,11 @@
 - **Bug Fix** : Correction de l'ancre du header CTA qui pointait vers un ID erroné.
 - **Vérification Hostinger** : Validation en temps réel de la synchronisation entre GitHub et le domaine `kleia-up.fr`.
 
+### 6. Maintenance & Restauration d'Urgence (28 Avril 2026)
+- **Diagnostic de disparition d'assets** : Identification d'une suppression accidentelle du logo racine et de la photo principale lors des mises à jour de l'espace Barnaby.
+- **Restauration Git** : Récupération ciblée des fichiers `assets/logo_kleia.png` et `assets/sandrina-kleia-up.webp` depuis le commit `93786fa`.
+- **Sécurisation** : Vérification que la nouvelle structure de l'espace Barnaby (qui utilise des chemins spécifiques dans `assets/images/`) reste intacte et fonctionnelle.
+- **Synchronisation** : Commit et Push immédiat pour rétablir l'affichage sur le site de production.
+
 ---
 **STATUT FINAL : TOUT EST EN LIGNE ET OPÉRATIONNEL.** 🚀

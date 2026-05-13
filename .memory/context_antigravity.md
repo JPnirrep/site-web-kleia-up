@@ -19,5 +19,19 @@ Ce document sert de point de restauration et de mémoire pour l'assistant Antigr
 - **Ancres & Liens** : Harmonisation effectuée [OK]
 - **CTA Kit d'Urgence** : Pointage externe vers TinyURL [OK]
 
+## 🧩 Projet Actif : Template Coaching + AGORA
+
+### ✅ Template Coaching — Terminé
+- `_template/` opérationnel avec `clone.py` (script de duplication)
+- `space/{prenom}/` + `coaching_data/{prenom}/` — structure complète
+- Auth Firebase via jetons uniques `access_tokens/{code}`
+- Testé : `python _template/clone.py Alice` → OK
+
+### 🆕 Nouveau Projet : AGORA (E-Learning)
+- **Code session** : Agora
+- **Statut** : En attente de la stratégie
+- **Document de mission** : `antigravity-brain/knowledge/KLEIA-UP/mission_agora.md`
+- **Base** : Design system du template coaching
+
 ---
-*Dernière mise à jour : 12/03/2026 18:00*
+*Dernière mise à jour : 11/05/2026 09:15 — Session Agora initialisée*
