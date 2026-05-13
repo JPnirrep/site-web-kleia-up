@@ -3,7 +3,7 @@
 ## 🔒 VERSION STABLE - SITE STATIQUE HAUTE PERFORMANCE
 
 ![Status](https://img.shields.io/badge/status-PRODUCTION-success)
-![Version](https://img.shields.io/badge/version-v3.13.0--CHALLENGE--CLEANUP-blue)
+![Version](https://img.shields.io/badge/version-v3.14.1--VIDEO--FIX-blue)
 ![Architecture](https://img.shields.io/badge/architecture-VANILLA%20HTML%2FCSS-green)
 
 ---
@@ -195,6 +195,8 @@ git push
 ---
 
 ### ✅ Historique des Versions (Récents)
+
+- **v3.14.1-VIDEO-FIX (13/05/2026)** : Correction chirurgicale du nom de fichier `2600512video_RVS Barnaby-2.mov` (zéro supplémentaire sur Hostinger) et optimisation du lecteur vidéo `app.js` pour une meilleure résilience.
 
 - **v3.14.0-DYNAMIC-COCKPIT (13/05/2026)** : Refonte majeure de l'architecture du cockpit de coaching. Transition vers un moteur de rendu piloté par les données (`barnaby_state.json`) dans `app.js`, intégration dynamique des replays vidéo Hostinger, et enrichissement du rapport H2 Premium (Musique, Respiration, Bio).
 
