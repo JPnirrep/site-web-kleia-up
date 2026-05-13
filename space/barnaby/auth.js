@@ -38,29 +38,35 @@ document.getElementById('loginBtn').addEventListener('click', async function() {
 
     if (!firstname || !secretcode) return;
 
+    console.log("Tentative de connexion pour:", firstname);
+
     try {
         // 2. VÉRIFICATION CLOUD (FIREBASE SHIELD)
-        // On cherche un document dont l'ID est le CODE SECRET
         const docRef = doc(db, "access_tokens", secretcode);
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
             const data = docSnap.data();
+            console.log("Jeton trouvé, propriétaire:", data.owner);
             
             // Vérification du prénom associé au jeton
             if (data.owner.toLowerCase() === firstname.toLowerCase()) {
+                console.log("Auth Succès !");
                 sessionStorage.setItem('kleia_auth', 'true');
                 sessionStorage.setItem('kleia_role', data.role || 'client');
                 sessionStorage.setItem('kleia_user', data.owner);
                 window.location.href = 'index.html';
             } else {
+                console.warn("Propriétaire ne correspond pas:", data.owner, "vs", firstname);
                 throw new Error("Identité non concordante");
             }
         } else {
+            console.warn("Jeton non trouvé dans Firestore");
             throw new Error("Jeton invalide");
         }
     } catch (error) {
-        console.error("Auth Error:", error);
+        console.error("Auth Error Detail:", error);
+        errorMsg.textContent = "Erreur de protocole : " + (error.message === "Failed to fetch" ? "Connexion Cloud impossible (vérifiez votre internet ou protocole local)" : error.message);
         errorMsg.style.display = 'block';
     }
 });

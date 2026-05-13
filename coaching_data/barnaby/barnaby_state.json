@@ -8,7 +8,7 @@
   "baseline_scores": {
     "non_verbal": {
       "contact_visuel": 3,
-      "ancrage_sol": 5,
+      "ancrage_sol": 4,
       "gestuelle": 4
     },
     "para_verbal": {
@@ -16,12 +16,12 @@
       "relief_vocal": 4
     },
     "verbal": {
-      "presence": 5,
+      "presence": 4,
       "clarte_articulation": 6
     }
   },
   "content": {
-    "introduction": "Cet audit est une immersion dans ta pratique actuelle. L’objectif est de confronter la solidité de ton expertise sur la Réalité Étendue (XR) à la manière dont ton corps et ta voix la projettent. (Version enrichie le 27/04).",
+    "introduction": "Cet audit est une immersion dans ta pratique actuelle. L’objectif est de confronter la solidité de ton expertise sur la Réalité Étendue (XR) à la manière dont ton corps et ta voix la projettent. (Version exhaustivée le 13/05).",
     "forces": [
       {
         "title": "Un capital sympathie immédiat",
@@ -133,7 +133,7 @@
   },
   "assets": {
     "video": "260422_Barnaby.mp4",
-    "diagnostic_file": "diagnostic_officiel_V3_Augmented.html",
+    "diagnostic_file": "H1_report_premium_v2.html",
     "audio_analysis": "analyse_audio_sandrina_270426.md"
   }
 }

@@ -9,7 +9,7 @@ const userName = sessionStorage.getItem('kleia_user') || 'Visiteur';
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const response = await fetch('/coaching_data/barnaby/barnaby_state.json');
+        const response = await fetch('../../coaching_data/barnaby/barnaby_state.json');
         if (!response.ok) throw new Error('Données introuvables');
         currentData = await response.json();
         
@@ -78,8 +78,8 @@ function renderSessionView(sessionId) {
             <div class="dynamic-title-bar">
                 <h2 class="card-title" style="margin-bottom: 0;">📋 H1 : Audit & Échanges</h2>
                 <div class="actions-group" style="display: flex; gap: 10px;">
-                    <a href="/coaching_data/barnaby/diagnostic_officiel_V3_Augmented.html" target="_blank" class="btn-premium">👁️ Voir l'audit initial</a>
-                    <a href="/coaching_data/barnaby/H1_report_premium.html?v=5.1" target="_blank" class="btn-premium private-content">📄 Compte-rendu de la séance numéro 1</a>
+                    <a href="../../coaching_data/barnaby/diagnostic_officiel_V3_Augmented.html" target="_blank" class="btn-premium">👁️ Voir l'audit initial</a>
+                    <a href="../../coaching_data/barnaby/H1_report_premium.html?v=5.1" target="_blank" class="btn-premium private-content">📄 Compte-rendu de la séance numéro 1</a>
                 </div>
             </div>
             
@@ -106,7 +106,7 @@ function renderSessionView(sessionId) {
                     <h3 style="color: var(--color-gold); font-size: 0.9rem; margin-bottom: 15px; text-transform: uppercase;">🎥 Replay de la Session</h3>
                     <div style="background: #000; border-radius: 15px; overflow: hidden; position: relative; padding-top: 56.25%;">
                         <video id="replay-video" controls playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                            <source src="/coaching_data/barnaby/260428 video_RVS Barnaby-1.mp4" type="video/mp4">
+                            <source src="../../coaching_data/barnaby/260428 video_RVS Barnaby-1.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>
@@ -114,7 +114,7 @@ function renderSessionView(sessionId) {
                     <h3 style="color: var(--color-gold); font-size: 0.9rem; margin-bottom: 15px; text-transform: uppercase;">👁️ Vidéo d'Audit</h3>
                     <div style="background: #000; border-radius: 15px; overflow: hidden; position: relative; padding-top: 56.25%;">
                         <video id="audit-video-h1" controls playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                            <source src="/coaching_data/barnaby/260422_Barnaby.mp4" type="video/mp4">
+                            <source src="../../coaching_data/barnaby/260422_Barnaby.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>
@@ -125,7 +125,7 @@ function renderSessionView(sessionId) {
             <div class="dynamic-title-bar">
                 <h2 class="card-title" style="margin-bottom: 0;">📋 H2 : Ancrage & Posture</h2>
                 <div class="actions-group" style="display: flex; gap: 10px;">
-                    <a href="/coaching_data/barnaby/H2_report_premium.html" target="_blank" class="btn-premium private-content">📄 Compte-rendu de la séance numéro 2</a>
+                    <a href="../../coaching_data/barnaby/H2_report_premium.html" target="_blank" class="btn-premium private-content">📄 Compte-rendu de la séance numéro 2</a>
                 </div>
             </div>
             
