@@ -86,7 +86,7 @@
         '<div class="atelier-grid"><div class="atelier-left">' +
         '<img src="assets/logo_kleia.png" class="atelier-logo" alt="Logo KLEIA-UP">' +
         '<h2 class="atelier-title">Prendre sa place<br><em>sans forcer</em></h2>' +
-        '<p class="atelier-subtitle">Atelier visio — Lundi 2 juin a 12h</p>' +
+        '<p class="atelier-subtitle">Atelier visio — Mardi 2 juin de 12h a 13h</p>' +
         '<div class="atelier-context"><span class="atelier-highlight">Vous sentez-vous encore comme un spectateur de votre propre vie ?</span><br><br>' +
         'Parfois, on a l\'impression d\'avoir un plafond de verre au-dessus de la tete. On attend un signal, une autorisation ou ce fameux sentiment de legitimite qui ne vient jamais. ' +
         'On regarde les autres prendre la parole et occuper l\'espace, pendant qu\'on reste sur la reserve, de peur d\'en faire trop ou de ne pas en faire assez.<br><br>' +

@@ -122,5 +122,16 @@ if (file_exists(__DIR__ . '/firestore.php')) {
     }
 }
 
+// --- Email de confirmation (silencieux, ne bloque pas) ---
+if (file_exists(__DIR__ . '/email-confirmation.php')) {
+    require_once __DIR__ . '/email-confirmation.php';
+    $emailResult = send_confirmation_email($prenom, $nom, $email);
+    if ($emailResult['status'] === 'success') {
+        error_log("[KLEIA] Email envoye a $email");
+    } else {
+        error_log("[KLEIA] Email ECHEC pour $email: " . $emailResult['message']);
+    }
+}
+
 // --- Success ---
 echo json_encode(['status' => 'success', 'message' => 'Inscription enregistree.']);
