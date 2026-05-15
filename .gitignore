@@ -28,6 +28,9 @@ Desktop.ini
 *.bak
 *.backup
 
+# Config locale (cles API, secrets)
+php/config.php
+
 # Fichiers lourds (Vidéos, etc.)
 *.mov
 *.mp4
