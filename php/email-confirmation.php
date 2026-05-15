@@ -7,8 +7,12 @@
 
 function send_confirmation_email($prenom, $nom, $email) {
 
-    // Force majuscule sur le prenom
-    $prenom = mb_strtoupper(mb_substr($prenom, 0, 1)) . mb_strtolower(mb_substr($prenom, 1));
+    // Force majuscule sur le prenom (fallback si mbstring absent)
+    if (function_exists('mb_strtoupper')) {
+        $prenom = mb_strtoupper(mb_substr($prenom, 0, 1)) . mb_strtolower(mb_substr($prenom, 1));
+    } else {
+        $prenom = strtoupper(substr($prenom, 0, 1)) . strtolower(substr($prenom, 1));
+    }
 
     $meetLink = 'https://meet.google.com/wbz-emxy-udw';
     $phoneNumber = '+33 1 87 40 02 06';
@@ -70,6 +74,8 @@ function send_confirmation_email($prenom, $nom, $email) {
     $headers .= "Reply-To: $from\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+    $headers .= "Message-ID: <atelier-" . time() . "-" . substr(md5($email), 0, 8) . "@kleia-up.fr>\r\n";
+    $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
 
     $sent = mail($email, $subject, $html, $headers, "-f$from");
 
