@@ -152,11 +152,33 @@
         submitBtn.disabled = true;
         submitBtn.innerHTML = 'INSCRIPTION EN COURS...';
 
-        // Strategy: Firestore (si dispo) > PHP (si en ligne) > localStorage (toujours)
+        // Strategy: Serveur -> PHP (prioritaire, envoie email), Local -> Firestore > localStorage
         var savePromise;
 
-        if (db) {
-            // Firestore dispo
+        if (isOnline) {
+            // SERVEUR : PHP en priorite (JSON + Firestore Admin + email + Brevo)
+            var fd = new FormData();
+            fd.append('prenom', prenom);
+            fd.append('nom', nom);
+            fd.append('email', email);
+            fd.append('consent', 'true');
+            savePromise = fetch(PHP_URL, { method: 'POST', body: fd }).then(function(r) { return r.json(); }).then(function(d) {
+                if (d.status !== 'success') throw new Error(d.message || 'Erreur serveur');
+                console.log('[KLEIA] PHP OK (email envoye)');
+            });
+            // Bonus: aussi sauver dans Firestore client (silencieux)
+            if (db) {
+                db.collection('atelier_inscriptions').add({
+                    prenom: prenom, nom: nom, email: email.toLowerCase(),
+                    consent: true, consent_at: new Date().toISOString(),
+                    created_at: new Date().toISOString(), brevo_synced: false,
+                    brevo_synced_at: null, source: 'popup-atelier'
+                }).then(function() {
+                    console.log('[KLEIA] Firestore client OK');
+                }).catch(function() {});
+            }
+        } else if (db) {
+            // LOCAL : Firestore client
             savePromise = db.collection('atelier_inscriptions').add({
                 prenom: prenom, nom: nom, email: email.toLowerCase(),
                 consent: true, consent_at: new Date().toISOString(),
@@ -165,19 +187,8 @@
             }).then(function() {
                 console.log('[KLEIA] Firestore OK');
             });
-        } else if (isOnline) {
-            // PHP endpoint
-            var fd = new FormData();
-            fd.append('prenom', prenom);
-            fd.append('nom', nom);
-            fd.append('email', email);
-            fd.append('consent', 'true');
-            savePromise = fetch(PHP_URL, { method: 'POST', body: fd }).then(function(r) { return r.json(); }).then(function(d) {
-                if (d.status !== 'success') throw new Error(d.message || 'Erreur serveur');
-                console.log('[KLEIA] PHP OK');
-            });
         } else {
-            // localStorage fallback
+            // LOCAL : localStorage fallback
             saveLocally(prenom, nom, email);
             savePromise = Promise.resolve();
         }
