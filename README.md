@@ -3,7 +3,7 @@
 ## 🔒 VERSION STABLE - SITE STATIQUE HAUTE PERFORMANCE
 
 ![Status](https://img.shields.io/badge/status-PRODUCTION-success)
-![Version](https://img.shields.io/badge/version-v3.14.1--VIDEO--FIX-blue)
+![Version](https://img.shields.io/badge/version-v3.15.0--ATELIER--POPUP-blue)
 ![Architecture](https://img.shields.io/badge/architecture-VANILLA%20HTML%2FCSS-green)
 
 ---
@@ -195,6 +195,8 @@ git push
 ---
 
 ### ✅ Historique des Versions (Récents)
+
+- **v3.15.0-ATELIER-POPUP (15/05/2026)** : Popup atelier "Prendre sa place sans forcer" (16 mai - 2 juin 2026). 3 couches stockage (Firestore + PHP JSON + localStorage), inscription Brevo liste #14, email confirmation auto (Brevo SMTP From sandrina@kleia-up.fr), lien Meet integre, RGPD natif. Rollback: php/rollback-atelier.php.
 
 - **v3.14.1-VIDEO-FIX (13/05/2026)** : Correction chirurgicale du nom de fichier `2600512video_RVS Barnaby-2.mov` (zéro supplémentaire sur Hostinger) et optimisation du lecteur vidéo `app.js` pour une meilleure résilience.
 

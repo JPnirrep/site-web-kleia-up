@@ -43,8 +43,15 @@ GET /php/brevo-sync.php?token=kleia-bravo-2026
 ```
 
 **API Brevo**:
-- Key: xkeysib-... (fournie)
+- Key: dans php/config.php (non commite)
 - List ID: 14 (CHALLENGE-Juin-2026)
+- Email SMTP: sandrina@kleia-up.fr (sender id:5, SPF a configurer pour delivrabilite optimale)
+
+**Integration**:
+- Firestore: Admin SDK via service account (php/firebase-credentials.json, non commite)
+- Email confirmation: Brevo SMTP automatique (php/email-confirmation.php)
+- Meet: https://meet.google.com/wbz-emxy-udw | Tel: +33 1 87 40 02 06 CODE: 996 704 367#
+- v3.15.0-ATELIER-POPUP
 
 ## Design System
 - Couleur Primaire : #8B1D3D (Bordeaux Noble)
