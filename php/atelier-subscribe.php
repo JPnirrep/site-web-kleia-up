@@ -113,5 +113,14 @@ if (!save_db($db_file, $db_lock, $db)) {
     exit;
 }
 
+// --- Sync Firestore (silencieux, ne bloque pas) ---
+if (file_exists(__DIR__ . '/firestore.php')) {
+    require_once __DIR__ . '/firestore.php';
+    $fireId = firestore_add('atelier_inscriptions', $record);
+    if ($fireId) {
+        error_log("[KLEIA] Firestore OK: $fireId");
+    }
+}
+
 // --- Success ---
 echo json_encode(['status' => 'success', 'message' => 'Inscription enregistree.']);

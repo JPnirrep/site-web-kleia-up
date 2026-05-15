@@ -30,6 +30,10 @@ Desktop.ini
 
 # Config locale (cles API, secrets)
 php/config.php
+php/firebase-credentials.json
+
+# Donnees locales (DB, backups)
+data/
 
 # Fichiers lourds (Vidéos, etc.)
 *.mov
