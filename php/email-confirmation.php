@@ -68,16 +68,14 @@ function send_confirmation_email($prenom, $nom, $email) {
 
     $html .= '</div></body></html>';
 
-    // Envoi via Brevo SMTP (expediteur verifie, Reply-To sandrina@kleia-up.fr)
-    $from = 'sandrina@soufflespositifs.com';
-    $replyTo = 'sandrina@kleia-up.fr';
+    // Envoi via Brevo SMTP (From: sandrina@kleia-up.fr)
+    $from = 'sandrina@kleia-up.fr';
     $fromName = 'Sandrina Perrin - KLEIA-UP';
     $subject = 'Bienvenue — Atelier « Prendre sa place sans forcer »';
 
     $payload = json_encode([
         'sender'   => ['name' => $fromName, 'email' => $from],
         'to'       => [['email' => $email, 'name' => $prenom . ' ' . $nom]],
-        'replyTo'  => ['email' => $replyTo, 'name' => $fromName],
         'subject'  => $subject,
         'htmlContent' => $html,
     ]);
