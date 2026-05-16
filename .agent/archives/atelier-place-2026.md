@@ -1,67 +1,55 @@
 # Archive - Atelier "Prendre sa place sans forcer" (Mai-Juin 2026)
 
-> Ce document archive l'integralite du dispositif deploye pour l'atelier visio du 2 juin 2026.
+> Archive complete du dispositif. Version finale stable - 16 mai 2026.
 
 ## Details Techniques
 - **Offre** : Atelier visio 45 min "Prendre sa place sans forcer"
 - **Periode** : 16 mai au 2 juin 2026 12h00
-- **Design** : Identique a Paques (Blanc Perle Noble)
+- **Design popup** : Identique a Paques (Blanc Perle Noble)
 - **Formulaire** : Prenom, Nom, Email, Consentement RGPD
-- **Inscription** : Mini-DB JSON locale + Brevo Sync
+- **Stockage** : 3 couches (Firestore + PHP JSON + localStorage)
+- **Brevo** : Liste #14 (CHALLENGE-Juin-2026), push automatique
+- **Email confirmation** : mail() Hostinger, texte brut, copie conforme contact-reach.php
+- **Lien Meet** : https://meet.google.com/wbz-emxy-udw | Tel: +33 1 87 40 02 06 CODE: 996 704 367#
 
-## Fichiers concernes
+## Fichiers
 
 | Fichier | Role |
 |---------|------|
-| `js/atelier-popup.js` | Popup IIFE (injection CSS + HTML + logique) |
-| `php/atelier-subscribe.php` | Endpoint POST (validation + stockage JSON) |
-| `atelier-place.html` | Page de confirmation post-inscription |
-| `php/brevo-sync.php` | Script sync vers Brevo (CLI ou HTTP) |
-| `php/rollback-atelier.php` | Securite rollback (backup/restore/status) |
-| `index.html` | Script tag ajoute en L266 |
-| `data/atelier-inscriptions.json` | Mini-DB des inscrits (gitignored) |
-| `data/rollback/index-backup.html` | Backup de index.html avant activation |
+| `js/atelier-popup.js` | Popup IIFE, design Paques, 3 couches stockage |
+| `php/atelier-subscribe.php` | Endpoint inscription (JSON + Firestore + email) |
+| `php/email-confirmation.php` | Email texte brut via mail() Hostinger |
+| `php/brevo-push.php` | Push contact vers liste Brevo #14 |
+| `php/brevo-sync.php` | Batch sync Brevo |
+| `php/firestore.php` | Firestore Admin REST helper |
+| `php/rollback-atelier.php` | Rollback securise (backup/restore/status) |
+| `atelier-place.html` | Page confirmation + lien Meet |
+| `index.html` | +3 scripts (Firebase Compat + popup) |
+
+## Secrets (hors Git)
+
+| Fichier | Contenu |
+|---------|---------|
+| `php/config.php` | Cle API Brevo + list ID |
+| `php/firebase-credentials.json` | Service account Firebase |
+
+## Lecons apprises (email Hostinger)
+
+1. **Reprendre le pattern existant** : contact-reach.php avait deja la recette qui marche. Ne pas reinventer.
+2. **mail() Hostinger = hsendmail -t** : wrapper custom, exige destinataire meme-serveur + header To explicite.
+3. **Pas de HTML** : Hostinger bloque ou mute les emails HTML sortants. Texte brut uniquement.
+4. **Headers obligatoires** : Message-ID (<timestamp-md5@kleia-up.fr>), X-Mailer, Reply-To, -f$from.
+5. **Curl et + dans les emails** : `-d` encode le `+` en espace. Utiliser `--data-urlencode` ou eviter `+alice` en test.
+6. **Eviter Brevo SMTP pour l'envoi** : expediteur non verifie = adresse rewritee. Garder Brevo uniquement pour la liste contacts.
 
 ## Rollback
-
 ```bash
-# Restaurer l'etat avant popup
 php php/rollback-atelier.php restore
-
-# Ou en HTTP
-GET /php/rollback-atelier.php?token=kleia-bravo-2026&action=restore
+# ou HTTP: GET /php/rollback-atelier.php?token=kleia-bravo-2026&action=restore
 ```
 
 ## Sync Brevo
-
 ```bash
-# Lancer la synchro
 php php/brevo-sync.php
-
-# Ou en HTTP
-GET /php/brevo-sync.php?token=kleia-bravo-2026
+# ou HTTP: GET /php/brevo-sync.php?token=kleia-bravo-2026
 ```
-
-**API Brevo**:
-- Key: dans php/config.php (non commite)
-- List ID: 14 (CHALLENGE-Juin-2026)
-- Email SMTP: sandrina@kleia-up.fr (sender id:5, SPF a configurer pour delivrabilite optimale)
-
-**Integration**:
-- Firestore: Admin SDK via service account (php/firebase-credentials.json, non commite)
-- Email confirmation: Brevo SMTP automatique (php/email-confirmation.php)
-- Meet: https://meet.google.com/wbz-emxy-udw | Tel: +33 1 87 40 02 06 CODE: 996 704 367#
-- v3.15.0-ATELIER-POPUP
-
-## Design System
-- Couleur Primaire : #8B1D3D (Bordeaux Noble)
-- Couleur Secondaire : #FDFCF0 (Perle / Creme)
-- Action : Gradient #8B1D3D vers #D70040
-- Animation : blur(15px), translateY(30px) vers 0, cubic-bezier(0.19, 1, 0.22, 1)
-- Police : Ranade (Fontshare)
-
-## Date Logic
-Le popup verifie automatiquement la date :
-- Démarre le 16 mai 2026 00h00
-- S'arrete le 2 juin 2026 12h00
-- localStorage kleia_atelier_closed_2026 pour ne plus reapparaitre

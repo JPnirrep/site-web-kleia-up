@@ -196,7 +196,7 @@ git push
 
 ### ✅ Historique des Versions (Récents)
 
-- **v3.15.0-ATELIER-POPUP (15/05/2026)** : Popup atelier "Prendre sa place sans forcer" (16 mai - 2 juin 2026). 3 couches stockage (Firestore + PHP JSON + localStorage), inscription Brevo liste #14, email confirmation auto (Brevo SMTP From sandrina@kleia-up.fr), lien Meet integre, RGPD natif. Rollback: php/rollback-atelier.php.
+- **v3.15.0-ATELIER-POPUP (15-16/05/2026)** : Popup atelier "Prendre sa place sans forcer" (16 mai - 2 juin 2026). Stockage 3 couches (Firestore + PHP JSON + localStorage), inscription Brevo liste #14, email confirmation texte brut via mail() Hostinger (copie conforme contact-reach.php), lien Google Meet, RGPD natif, rollback securise.
 
 - **v3.14.1-VIDEO-FIX (13/05/2026)** : Correction chirurgicale du nom de fichier `2600512video_RVS Barnaby-2.mov` (zéro supplémentaire sur Hostinger) et optimisation du lecteur vidéo `app.js` pour une meilleure résilience.
 
