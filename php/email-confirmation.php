@@ -1,7 +1,7 @@
 <?php
 /**
  * KLEIA-UP - Email de confirmation atelier
- * Envoi via mail() Hostinger (COPIE CONFORME contact-reach.php, prouve 16/05).
+ * Envoi exactement comme contact-reach.php (prouve 16/05 vers Gmail).
  * From: noreply@kleia-up.fr | Reply-To: sandrina@kleia-up.fr
  */
 
@@ -28,8 +28,7 @@ function send_confirmation_email($prenom, $nom, $email) {
     $html .= '<p style="font-size:0.95rem;color:#1A1A1A;margin-bottom:8px">&#128340; <strong>12h00 &ndash; 13h00</strong> (heure de Paris)</p>';
     $html .= '<p style="font-size:0.95rem;color:#1A1A1A;margin-bottom:15px">&#128205; En visio Google Meet</p>';
     $html .= '<div style="text-align:center;margin-bottom:15px"><a href="' . $meetLink . '" target="_blank" style="display:inline-block;background:linear-gradient(135deg,#8B1D3D 0%,#D70040 100%);color:#FFF;padding:14px 28px;border-radius:12px;text-decoration:none;font-weight:800;font-size:1rem;text-transform:uppercase">Rejoindre la visio</a></div>';
-    $html .= '<p style="font-size:0.82rem;color:#666;text-align:center;margin-bottom:3px">Ou par t&eacute;l&eacute;phone : ' . $phoneNumber . ' &mdash; CODE : ' . $phoneCode . '</p>';
-    $html .= '</div>';
+    $html .= '<p style="font-size:0.82rem;color:#666;text-align:center;margin-bottom:3px">Ou par t&eacute;l&eacute;phone : ' . $phoneNumber . ' &mdash; CODE : ' . $phoneCode . '</p></div>';
     $html .= '<p style="font-size:0.95rem;color:#333;line-height:1.6;margin-bottom:25px">D\'ici l&agrave;, respire. Ta place t\'attend d&eacute;j&agrave;.</p>';
     $html .= '<p style="font-size:0.95rem;color:#1A1A1A;margin-bottom:0">&Agrave; mardi,</p>';
     $html .= '<p style="font-size:1rem;color:#8B1D3D;font-weight:800;margin-bottom:15px">Sandrina</p>';
@@ -37,21 +36,19 @@ function send_confirmation_email($prenom, $nom, $email) {
     $html .= '<p style="font-size:0.75rem;color:#999">KLEIA-UP</p>';
     $html .= '</div></body></html>';
 
-    // Envoi mail() Hostinger (CONFORME contact-reach.php, inside same server)
-    $from = 'noreply@kleia-up.fr';
-    $replyTo = 'sandrina@kleia-up.fr';
-    $fromName = 'Sandrina Perrin - KLEIA-UP';
+    // EXACTEMENT comme contact-reach.php (prouve 16/05)
+    $to = "sandrina@kleia-up.fr, " . $email;
+    $from = "noreply@kleia-up.fr";
     $subject = "=?UTF-8?B?" . base64_encode("Bienvenue - Atelier Prendre sa place sans forcer") . "?=";
-    $msgId = "<atelier-" . time() . "-" . md5($email) . "@kleia-up.fr>";
+    $msg_id = "<" . time() . "-" . md5($email) . "@kleia-up.fr>";
 
-    $headers  = "From: $fromName <$from>\r\n";
-    $headers .= "Reply-To: $replyTo\r\n";
-    $headers .= "Bcc: $replyTo\r\n";
+    $headers = "From: KLEIA-UP <$from>\r\n";
+    $headers .= "Reply-To: sandrina@kleia-up.fr\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-    $headers .= "Message-ID: $msgId\r\n";
+    $headers .= "Message-ID: $msg_id\r\n";
     $headers .= "X-Mailer: PHP/" . phpversion();
 
-    $sent = mail($email, $subject, $html, $headers, "-f$from");
+    $sent = mail($to, $subject, $html, $headers, "-f$from");
     return $sent ? ['status' => 'success', 'message' => 'Email envoye.'] : ['status' => 'error', 'message' => 'Echec envoi mail().'];
 }
