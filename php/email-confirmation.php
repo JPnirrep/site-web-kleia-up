@@ -40,6 +40,7 @@ function send_confirmation_email($prenom, $nom, $email) {
     $msg_id = "<" . time() . "-" . md5($email) . "@kleia-up.fr>";
 
     $headers = "From: KLEIA-UP <$from>\r\n";
+    $headers .= "To: $email\r\n";
     $headers .= "Reply-To: sandrina@kleia-up.fr\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
