@@ -53,3 +53,34 @@ php php/rollback-atelier.php restore
 php php/brevo-sync.php
 # ou HTTP: GET /php/brevo-sync.php?token=kleia-bravo-2026
 ```
+
+## Nettoyage post-challenge (apres le 2 juin 12h00)
+
+Le popup s'arrete automatiquement via le date guard (js/atelier-popup.js L42).
+Pour un nettoyage complet :
+
+```bash
+# 1. Desactiver le popup
+php php/rollback-atelier.php restore
+
+# 2. Supprimer les fichiers atelier (optionnel)
+rm -f js/atelier-popup.js php/atelier-subscribe.php php/email-confirmation.php php/brevo-push.php atelier-place.html
+
+# 3. Archiver la DB
+cp data/atelier-inscriptions.json .agent/archives/atelier-db-2026-06-02.json
+
+# 4. Commit
+git add -A && git commit -m "cleanup: fin atelier juin 2026" && git push
+```
+
+## Historique Git (v3.15.0)
+
+```
+8cb0859 feat: email confirmation auto + lien Meet
+55fcda6 feat: Firestore Admin via service account
+c614116 feat: popup atelier (16 mai - 2 juin 2026)
+dae99d2 fix: email From sandrina@kleia-up.fr via Brevo SMTP
+854c163 docs: v3.15.0-ATELIER-POPUP
+78205d9 fix: email headers renforces
+bfb3874 fix: email via mail() Hostinger conforme contact-reach
+```
