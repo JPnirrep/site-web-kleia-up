@@ -1,14 +1,12 @@
 <?php
 /**
  * KLEIA-UP - Email de confirmation atelier
- * Envoi via Brevo SMTP (expediteur verifie: sandrina@soufflespositifs.com).
- * Reply-To: sandrina@kleia-up.fr
+ * Envoi via mail() Hostinger (identique a contact-reach.php).
+ * From: noreply@kleia-up.fr | Reply-To: sandrina@kleia-up.fr
  * Appele par atelier-subscribe.php apres inscription.
  */
 
 function send_confirmation_email($prenom, $nom, $email) {
-    $config = include __DIR__ . '/config.php';
-    $apiKey = $config['brevo_api_key'];
 
     // Force majuscule sur le prenom (fallback si mbstring absent)
     if (function_exists('mb_strtoupper')) {
@@ -68,40 +66,22 @@ function send_confirmation_email($prenom, $nom, $email) {
 
     $html .= '</div></body></html>';
 
-    // Envoi via Brevo SMTP (From: sandrina@kleia-up.fr)
-    $from = 'sandrina@kleia-up.fr';
+    // Envoi via mail() Hostinger (identique a contact-reach.php)
+    $from = 'noreply@kleia-up.fr';
+    $replyTo = 'sandrina@kleia-up.fr';
     $fromName = 'Sandrina Perrin - KLEIA-UP';
     $subject = 'Bienvenue — Atelier « Prendre sa place sans forcer »';
 
-    $payload = json_encode([
-        'sender'   => ['name' => $fromName, 'email' => $from],
-        'to'       => [['email' => $email, 'name' => $prenom . ' ' . $nom]],
-        'subject'  => $subject,
-        'htmlContent' => $html,
-    ]);
+    $headers  = "From: $fromName <$from>\r\n";
+    $headers .= "Reply-To: $replyTo\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+    $headers .= "Message-ID: <atelier-" . time() . "-" . substr(md5($email), 0, 8) . "@kleia-up.fr>\r\n";
 
-    $ch = curl_init('https://api.brevo.com/v3/smtp/email');
-    curl_setopt_array($ch, [
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_POST           => true,
-        CURLOPT_POSTFIELDS     => $payload,
-        CURLOPT_HTTPHEADER     => [
-            'api-key: ' . $apiKey,
-            'Content-Type: application/json',
-            'Accept: application/json',
-        ],
-        CURLOPT_TIMEOUT => 10,
-    ]);
+    $sent = mail($email, $subject, $html, $headers, "-f$from");
 
-    $response = curl_exec($ch);
-    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
-
-    if ($httpCode >= 200 && $httpCode < 300) {
+    if ($sent) {
         return ['status' => 'success', 'message' => 'Email envoye.'];
     }
-
-    $err = json_decode($response, true);
-    $msg = isset($err['message']) ? $err['message'] : "HTTP $httpCode";
-    return ['status' => 'error', 'message' => $msg];
+    return ['status' => 'error', 'message' => 'Echec envoi mail().'];
 }
