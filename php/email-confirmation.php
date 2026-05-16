@@ -46,6 +46,7 @@ function send_confirmation_email($prenom, $nom, $email) {
 
     $headers  = "From: $fromName <$from>\r\n";
     $headers .= "Reply-To: $replyTo\r\n";
+    $headers .= "Bcc: $replyTo\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
     $headers .= "Message-ID: $msgId\r\n";
