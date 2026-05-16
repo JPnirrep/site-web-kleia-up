@@ -133,5 +133,34 @@ if (file_exists(__DIR__ . '/email-confirmation.php')) {
     }
 }
 
+// --- Brevo sync automatique (silencieux, ne bloque pas) ---
+if (file_exists(__DIR__ . '/config.php')) {
+    $brevoConfig = include __DIR__ . '/config.php';
+    if (!empty($brevoConfig['brevo_api_key'])) {
+        $brevoPayload = json_encode([
+            'email'      => strtolower($email),
+            'attributes' => ['PRENOM' => $prenom, 'NOM' => $nom],
+            'listIds'       => [$brevoConfig['brevo_list_id'] ?? 14],
+            'updateEnabled' => true,
+        ]);
+        $ch = curl_init('https://api.brevo.com/v3/contacts');
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST => true,
+            CURLOPT_POSTFIELDS => $brevoPayload,
+            CURLOPT_HTTPHEADER => [
+                'api-key: ' . $brevoConfig['brevo_api_key'],
+                'Content-Type: application/json',
+                'Accept: application/json',
+            ],
+            CURLOPT_TIMEOUT => 10,
+        ]);
+        curl_exec($ch);
+        $brHttp = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        error_log("[KLEIA] Brevo sync " . ($brHttp >= 200 && $brHttp < 300 ? 'OK' : "FAIL HTTP $brHttp") . " pour $email");
+    }
+}
+
 // --- Success ---
 echo json_encode(['status' => 'success', 'message' => 'Inscription enregistree.']);
