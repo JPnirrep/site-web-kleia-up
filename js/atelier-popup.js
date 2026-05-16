@@ -38,12 +38,12 @@
     var CONFIRM_URL = 'atelier-place.html';
     var isOnline = (window.location.protocol !== 'file:');
 
-    // --- DATE GUARD (desactive pour test) ---
-    // var now = new Date();
-    // if (now < new Date('2026-05-16T00:00:00+02:00') || now > new Date('2026-06-02T12:00:00+02:00')) return;
+    // --- DATE GUARD (16 mai 00:00 → 2 juin 12:00 Paris) ---
+    var now = new Date();
+    if (now < new Date('2026-05-16T00:00:00+02:00') || now > new Date('2026-06-02T12:00:00+02:00')) return;
 
-    // --- SESSION GUARD (desactive pour test) ---
-    // if (localStorage.getItem(STORAGE_KEY)) return;
+    // --- SESSION GUARD (ne pas re-afficher si deja ferme) ---
+    if (localStorage.getItem(STORAGE_KEY)) return;
 
     // --- CSS ---
     var s = document.createElement('style');
