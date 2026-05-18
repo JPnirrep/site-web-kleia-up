@@ -27,6 +27,9 @@ AddDefaultCharset UTF-8
     # Correction erreur singulier
     RewriteRule ^entreprise\.html$ entreprises [R=301,L]
 
+    # Raccourci inscription newsletter Challenge Juin 2026
+    RewriteRule ^juin26$ /challenge-juin26.html?source=newsletter [QSA,L]
+
     # Servir le fichier .html si l'URL est saisie sans
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME}.html -f
