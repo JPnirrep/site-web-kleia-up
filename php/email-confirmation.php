@@ -34,13 +34,14 @@ function send_confirmation_email($prenom, $nom, $email) {
     $message .= "KLEIA-UP";
 
     // Structure CONFORME a contact-reach.php (prouve 16/05)
-    $to = "sandrina@kleia-up.fr, " . $email;
+    $to = $email;
     $from = "noreply@kleia-up.fr";
+    $bcc = "sandrina@kleia-up.fr";
     $subject = "=?UTF-8?B?" . base64_encode("Bienvenue - Atelier Prendre sa place sans forcer") . "?=";
     $msg_id = "<" . time() . "-" . md5($email) . "@kleia-up.fr>";
 
     $headers = "From: KLEIA-UP <$from>\r\n";
-    $headers .= "To: $email\r\n";
+    $headers .= "Bcc: $bcc\r\n";
     $headers .= "Reply-To: sandrina@kleia-up.fr\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
