@@ -1,8 +1,8 @@
 <?php
 /**
  * KLEIA-UP - Email de confirmation atelier
- * Format texte brut (identique a contact-reach.php, prouve fonctionnel).
- * From: noreply@kleia-up.fr | Reply-To: sandrina@kleia-up.fr
+ * Format identique a test-mail.php (prouve fonctionnel sur Hostinger).
+ * Deux envois separes : participant + copie Sandrina.
  */
 
 function send_confirmation_email($prenom, $nom, $email) {
@@ -33,21 +33,26 @@ function send_confirmation_email($prenom, $nom, $email) {
     $message .= "--\n";
     $message .= "KLEIA-UP";
 
-    // Structure CONFORME a contact-reach.php (prouve 16/05)
-    $to = $email;
+    // Email participant (structure identique a test-mail.php qui fonctionne)
     $from = "noreply@kleia-up.fr";
-    $bcc = "sandrina@kleia-up.fr";
-    $subject = "=?UTF-8?B?" . base64_encode("Bienvenue - Atelier Prendre sa place sans forcer") . "?=";
-    $msg_id = "<" . time() . "-" . md5($email) . "@kleia-up.fr>";
+    $subject = "Bienvenue - Atelier Prendre sa place sans forcer";
 
     $headers = "From: KLEIA-UP <$from>\r\n";
-    $headers .= "Bcc: $bcc\r\n";
     $headers .= "Reply-To: sandrina@kleia-up.fr\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-    $headers .= "Message-ID: $msg_id\r\n";
-    $headers .= "X-Mailer: PHP/" . phpversion();
 
-    $sent = mail($to, $subject, $message, $headers, "-f$from");
-    return $sent ? ['status' => 'success', 'message' => 'Email envoye.'] : ['status' => 'error', 'message' => 'Echec envoi mail().'];
+    $sentParticipant = mail($email, $subject, $message, $headers, "-f$from");
+
+    // Copie Sandrina (notification)
+    $notif = "Nouvelle inscription atelier :\n";
+    $notif .= "Nom : $prenom $nom\n";
+    $notif .= "Email : $email\n";
+    $notif .= "Date : " . date('d/m/Y H:i:s') . "\n";
+
+    $sentSandrina = mail("sandrina@kleia-up.fr", "Inscription atelier - $prenom $nom", $notif, $headers, "-f$from");
+
+    return $sentParticipant
+        ? ['status' => 'success', 'message' => 'Email envoye.']
+        : ['status' => 'error', 'message' => 'Echec envoi mail().'];
 }
