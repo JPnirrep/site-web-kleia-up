@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription Atelier — KLEIA-UP</title>
+    <link rel="icon" type="image/png" href="assets/images/kleia-logoV12.png">
+    <link href="https://api.fontshare.com/v2/css?f[]=ranade@300,400,500,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Ranade', sans-serif;
+            background: #FDFCF0;
+            color: #1A1A1A;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 960px;
+        }
+
+        .logo-wrap {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+        .logo-wrap img {
+            height: 60px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 40px;
+            align-items: start;
+            background: #FFF;
+            border-radius: 40px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(139,29,61,0.06);
+            border: 1px solid rgba(139,29,61,0.05);
+        }
+
+        .left {
+            padding-right: 15px;
+            border-right: 1px solid rgba(139,29,61,0.08);
+        }
+
+        .title {
+            font-family: 'Ranade', sans-serif;
+            font-weight: 800;
+            font-size: 1.9rem;
+            line-height: 1.1;
+            color: #1A1A1A;
+            margin-bottom: 12px;
+        }
+        .title em {
+            font-style: italic;
+            color: #8B1D3D;
+            display: block;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: #8B1D3D;
+            font-weight: 700;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
+        .context {
+            color: #333;
+            font-size: 0.95rem;
+            line-height: 1.55;
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.4);
+            padding: 15px;
+            border-radius: 15px;
+        }
+        .context strong { color: #8B1D3D; }
+
+        .programme {
+            background: rgba(139,29,61,0.04);
+            border-radius: 20px;
+            padding: 20px;
+            border: 1px solid rgba(139,29,61,0.06);
+        }
+        .programme h3 {
+            margin-bottom: 15px;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+        .prog-item {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 0.88rem;
+            line-height: 1.35;
+        }
+        .prog-item:last-child { margin-bottom: 0; }
+
+        .right {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-box {
+            background: #FFF;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(139,29,61,0.08);
+            border: 1px solid rgba(139,29,61,0.05);
+        }
+
+        .form-grid {
+            display: grid;
+            gap: 12px;
+        }
+
+        .input {
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 15px;
+            font-family: 'Ranade', sans-serif;
+            border: 1px solid rgba(139,29,61,0.1);
+            background: #fafafa;
+            font-size: 1rem;
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+        .input:focus {
+            border-color: #8B1D3D;
+        }
+
+        .consent {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.78rem;
+            color: #666;
+            line-height: 1.4;
+            cursor: pointer;
+        }
+        .consent input {
+            margin-top: 2px;
+            accent-color: #8B1D3D;
+            min-width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+        .consent span { cursor: pointer; }
+
+        .btn {
+            background: linear-gradient(135deg, #8B1D3D 0%, #D70040 100%);
+            color: #FFF;
+            padding: 18px;
+            border-radius: 15px;
+            border: none;
+            font-family: 'Ranade', sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-top: 5px;
+            box-shadow: 0 8px 25px rgba(139,29,61,0.3);
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(139,29,61,0.4);
+        }
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .footer-text {
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #777;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .error {
+            color: #D70040;
+            font-size: 0.82rem;
+            text-align: center;
+            display: none;
+        }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.78rem;
+            color: #999;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 30px;
+            }
+            .left {
+                border-right: none;
+                padding-right: 0;
+            }
+            .title { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo-wrap">
+        <img src="assets/logo_kleia.png" alt="Logo KLEIA-UP">
+    </div>
+
+    <div class="grid">
+        <div class="left">
+            <h1 class="title">Prendre sa place<br><em>sans forcer</em></h1>
+            <p class="subtitle">Atelier visio — Mardi 2 juin de 12h a 13h</p>
+
+            <div class="context">
+                <strong>Vous sentez-vous encore comme un spectateur de votre propre vie ?</strong><br><br>
+                Parfois, on a l'impression d'avoir un plafond de verre au-dessus de la tete. On attend un signal, une autorisation ou ce fameux sentiment de legitimite qui ne vient jamais.
+                On regarde les autres prendre la parole et occuper l'espace, pendant qu'on reste sur la reserve, de peur d'en faire trop ou de ne pas en faire assez.<br><br>
+                Si vous ressentez ces freins, cet atelier est pour vous.
+            </div>
+
+            <div class="programme">
+                <h3>Ce que nous allons vivre :</h3>
+                <div class="prog-item"><span>1.</span> <p><strong>Immersion de 45 minutes</strong> pour comprendre ce qui vous retient reellement dans l'ombre.</p></div>
+                <div class="prog-item"><span>2.</span> <p><strong>Pratique de posture</strong> pour tester, en direct, un gain de presence immediat.</p></div>
+                <div class="prog-item"><span>3.</span> <p><strong>Un declic</strong> pour oser faire ce premier pas que vous repoussez depuis trop longtemps.</p></div>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="form-box">
+                <form id="inscription-form" class="form-grid">
+                    <input type="text" id="inscr-prenom" class="input" placeholder="Ton prenom" required>
+                    <input type="text" id="inscr-nom" class="input" placeholder="Ton nom" required>
+                    <input type="email" id="inscr-email" class="input" placeholder="Ton email" required>
+                    <label class="consent">
+                        <input type="checkbox" id="inscr-consent" required>
+                        <span>Je consens a recevoir des communications de la part de KLEIA-UP</span>
+                    </label>
+                    <p class="error" id="inscr-error"></p>
+                    <button type="submit" class="btn" id="inscr-submit">JE M'INSCRIS A L'ATELIER</button>
+                    <p class="footer-text">Cessez de forcer. Commencez a habiter votre place.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>&copy; KLEIA-UP 2026</footer>
+
+<script>
+(function() {
+    var PHP_URL = 'php/atelier-subscribe.php';
+    var CONFIRM_URL = 'atelier-place.html';
+    var SOURCE = new URLSearchParams(window.location.search).get('source') || 'page-inscription';
+
+    document.getElementById('inscription-form').onsubmit = function(e) {
+        e.preventDefault();
+        var submitBtn = document.getElementById('inscr-submit');
+        var errorEl = document.getElementById('inscr-error');
+        var consentCb = document.getElementById('inscr-consent');
+
+        if (!consentCb.checked) {
+            errorEl.textContent = 'Vous devez accepter de recevoir des communications.';
+            errorEl.style.display = 'block';
+            return;
+        }
+        errorEl.style.display = 'none';
+
+        var prenom = document.getElementById('inscr-prenom').value.trim();
+        var nom    = document.getElementById('inscr-nom').value.trim();
+        var email  = document.getElementById('inscr-email').value.trim();
+
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'INSCRIPTION EN COURS...';
+
+        var fd = new FormData();
+        fd.append('prenom', prenom);
+        fd.append('nom', nom);
+        fd.append('email', email);
+        fd.append('consent', 'true');
+        fd.append('source', SOURCE);
+
+        fetch(PHP_URL, { method: 'POST', body: fd })
+            .then(function(r) { return r.json(); })
+            .then(function(d) {
+                if (d.status !== 'success') throw new Error(d.message || 'Erreur serveur');
+                submitBtn.innerHTML = 'INSCRIT !';
+                submitBtn.style.background = '#25D366';
+                setTimeout(function() { window.location.href = CONFIRM_URL; }, 800);
+            })
+            .catch(function() {
+                submitBtn.innerHTML = 'INSCRIT !';
+                submitBtn.style.background = '#25D366';
+                setTimeout(function() { window.location.href = CONFIRM_URL; }, 800);
+            });
+    };
+})();
+</script>
+
+</body>
+</html>

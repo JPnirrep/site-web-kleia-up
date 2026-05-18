@@ -61,6 +61,7 @@ $prenom = isset($_POST['prenom']) ? strip_tags(trim($_POST['prenom'])) : '';
 $nom    = isset($_POST['nom'])    ? strip_tags(trim($_POST['nom']))    : '';
 $email  = isset($_POST['email'])  ? filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL) : '';
 $consent = isset($_POST['consent']) ? ($_POST['consent'] === 'true' || $_POST['consent'] === '1') : false;
+$source  = isset($_POST['source'])  ? strip_tags(trim($_POST['source'])) : 'popup-atelier';
 
 // --- Validation ---
 if (empty($prenom) || mb_strlen($prenom) < 2) {
@@ -99,6 +100,7 @@ $record = [
     'nom'         => $nom,
     'email'       => strtolower($email),
     'consent'     => true,
+    'source'      => $source,
     'consent_at'  => date('Y-m-d H:i:s'),
     'created_at'  => date('Y-m-d H:i:s'),
     'brevo_synced' => false,
@@ -139,7 +141,7 @@ if (file_exists(__DIR__ . '/config.php')) {
     if (!empty($brevoConfig['brevo_api_key'])) {
         $brevoPayload = json_encode([
             'email'      => strtolower($email),
-            'attributes' => ['PRENOM' => $prenom, 'NOM' => $nom],
+            'attributes' => ['PRENOM' => $prenom, 'NOM' => $nom, 'SOURCE' => $source],
             'listIds'       => [$brevoConfig['brevo_list_id'] ?? 14],
             'updateEnabled' => true,
         ]);

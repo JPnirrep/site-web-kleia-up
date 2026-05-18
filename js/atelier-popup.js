@@ -37,6 +37,7 @@
     var BREVO_PUSH_URL = 'php/brevo-push.php';
     var CONFIRM_URL = 'atelier-place.html';
     var isOnline = (window.location.protocol !== 'file:');
+    var SOURCE = new URLSearchParams(window.location.search).get('source') || 'popup-atelier';
 
     // --- DATE GUARD (16 mai 00:00 → 2 juin 12:00 Paris) ---
     var now = new Date();
@@ -116,7 +117,6 @@
     var closePopup = function() {
         overlay.classList.remove('active');
         setTimeout(function() { overlay.remove(); }, 600);
-        localStorage.setItem(STORAGE_KEY, 'true');
     };
     closeBtn.onclick = closePopup;
     overlay.onclick = function(e) { if (e.target === overlay) closePopup(); };
@@ -126,7 +126,7 @@
         var key = 'kleia_atelier_inscriptions';
         var list = [];
         try { list = JSON.parse(localStorage.getItem(key) || '[]'); } catch(_) {}
-        list.push({ prenom: prenom, nom: nom, email: email.toLowerCase(), consent: true, created_at: new Date().toISOString(), source: 'popup-atelier-fallback' });
+        list.push({ prenom: prenom, nom: nom, email: email.toLowerCase(), consent: true, created_at: new Date().toISOString(), source: SOURCE });
         localStorage.setItem(key, JSON.stringify(list));
         console.log('[KLEIA] Sauvegarde locale OK (' + list.length + ' entrees)');
     };
@@ -162,6 +162,7 @@
             fd.append('nom', nom);
             fd.append('email', email);
             fd.append('consent', 'true');
+            fd.append('source', SOURCE);
             savePromise = fetch(PHP_URL, { method: 'POST', body: fd }).then(function(r) { return r.json(); }).then(function(d) {
                 if (d.status !== 'success') throw new Error(d.message || 'Erreur serveur');
                 console.log('[KLEIA] PHP OK (email envoye)');
@@ -172,7 +173,7 @@
                     prenom: prenom, nom: nom, email: email.toLowerCase(),
                     consent: true, consent_at: new Date().toISOString(),
                     created_at: new Date().toISOString(), brevo_synced: false,
-                    brevo_synced_at: null, source: 'popup-atelier'
+                    brevo_synced_at: null, source: SOURCE
                 }).then(function() {
                     console.log('[KLEIA] Firestore client OK');
                 }).catch(function() {});
@@ -183,7 +184,7 @@
                 prenom: prenom, nom: nom, email: email.toLowerCase(),
                 consent: true, consent_at: new Date().toISOString(),
                 created_at: new Date().toISOString(), brevo_synced: false,
-                brevo_synced_at: null, source: 'popup-atelier'
+                brevo_synced_at: null, source: SOURCE
             }).then(function() {
                 console.log('[KLEIA] Firestore OK');
             });
@@ -200,6 +201,7 @@
                 bf.append('prenom', prenom);
                 bf.append('nom', nom);
                 bf.append('email', email);
+                bf.append('source', SOURCE);
                 return fetch(BREVO_PUSH_URL, { method: 'POST', body: bf }).catch(function() {
                     console.log('[KLEIA] Brevo push indisponible');
                 });
