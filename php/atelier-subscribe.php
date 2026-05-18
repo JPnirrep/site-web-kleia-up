@@ -87,7 +87,11 @@ $db = load_db($db_file);
 // --- Check duplicate email ---
 foreach ($db as $entry) {
     if (isset($entry['email']) && strtolower($entry['email']) === strtolower($email)) {
-        // Already registered -- success but no duplicate insert
+        // Deja inscrit — renvoi de l'email sans doublon DB
+        if (file_exists(__DIR__ . '/email-confirmation.php')) {
+            require_once __DIR__ . '/email-confirmation.php';
+            send_confirmation_email($entry['prenom'], $entry['nom'], $email);
+        }
         echo json_encode(['status' => 'success', 'message' => 'Deja inscrit.']);
         exit;
     }
