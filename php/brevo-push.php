@@ -20,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $prenom = isset($_POST['prenom']) ? trim($_POST['prenom']) : '';
 $nom    = isset($_POST['nom'])    ? trim($_POST['nom'])    : '';
 $email  = isset($_POST['email'])  ? trim($_POST['email'])  : '';
+$source = isset($_POST['source']) ? trim($_POST['source']) : 'popup-atelier';
 
 if (empty($prenom) || empty($nom) || empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     echo json_encode(['status' => 'error', 'message' => 'Donnees invalides.']);
@@ -31,6 +32,7 @@ $payload = json_encode([
     'attributes' => [
         'PRENOM' => $prenom,
         'NOM'    => $nom,
+        'SOURCE' => $source,
     ],
     'listIds'       => [$listId],
     'updateEnabled' => true,
