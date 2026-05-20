@@ -7,17 +7,17 @@
   "status": "In Progress",
   "baseline_scores": {
     "non_verbal": {
-      "contact_visuel": 5,
-      "ancrage_sol": 6.5,
-      "gestuelle": 5.5
+      "contact_visuel": 3,
+      "ancrage_sol": 4,
+      "gestuelle": 4
     },
     "para_verbal": {
-      "maitrise_debit": 4,
-      "relief_vocal": 5
+      "maitrise_debit": 3,
+      "relief_vocal": 4
     },
     "verbal": {
-      "presence": 6.5,
-      "clarte_articulation": 5
+      "presence": 4,
+      "clarte_articulation": 6
     }
   },
   "content": {
@@ -151,7 +151,12 @@
     "3": {
       "title": "H3 : Voix, Gestuelle & Prise de place",
       "synthesis_title": "Synthèse H3 : Libération vocale et prise de place",
-      "synthesis_text": "Cette séance a été un tournant. Nous avons distingué le trac (énergie positive) du stress (à canaliser), travaillé l'affirmation par l'exercice 'Ma place c'est ici', et libéré ta voix avec 'Bi ba bé bo bu' qui a révélé une vraie présence et une gestuelle naturelle. Ta posture du dos est maintenant solide. Prochain défi : injecter cette passion retrouvée dans ton introduction et préparer la simulation complète avec slides."
+      "synthesis_text": "Cette séance a été un tournant. Nous avons distingué le trac (énergie positive) du stress (à canaliser), travaillé l'affirmation par l'exercice 'Ma place c'est ici', et libéré ta voix avec 'Bi ba bé bo bu' qui a révélé une vraie présence et une gestuelle naturelle. Ta posture du dos est maintenant solide. Prochain défi : injecter cette passion retrouvée dans ton introduction et préparer la simulation complète avec slides.",
+      "scores": {
+        "non_verbal": { "contact_visuel": 5, "ancrage_sol": 6.5, "gestuelle": 5.5 },
+        "para_verbal": { "maitrise_debit": 4, "relief_vocal": 5 },
+        "verbal": { "presence": 6.5, "clarte_articulation": 5 }
+      }
     },
     "4": {
       "title": "H4 : Simulation finale & Passage à l'oral",

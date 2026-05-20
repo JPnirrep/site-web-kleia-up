@@ -4,6 +4,7 @@
 */
 
 let currentData = null;
+let radarChartInstance = null;
 const userRole = sessionStorage.getItem('kleia_role') || 'visitor';
 const userName = sessionStorage.getItem('kleia_user') || 'Visiteur';
 
@@ -64,6 +65,11 @@ function switchSession(sessionId) {
         document.querySelectorAll('.roadmap-item').forEach(el => el.classList.remove('active'));
         const activeNav = document.getElementById(`nav-h${sessionId}`);
         if (activeNav) activeNav.classList.add('active');
+        
+        // Update radar chart and gauges for this session
+        const sessionScores = currentData.sessions_content[sessionId]?.scores || currentData.baseline_scores;
+        initRadarChart(sessionScores);
+        renderGauges(sessionScores);
         
         renderSessionView(sessionId);
         zone.style.opacity = '1';
@@ -154,7 +160,21 @@ function initRadarChart(scores) {
     const canvas = document.getElementById('radarChart');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    new Chart(ctx, {
+
+    if (radarChartInstance) {
+        radarChartInstance.data.datasets[0].data = [
+            scores.non_verbal.contact_visuel,
+            scores.non_verbal.ancrage_sol,
+            scores.non_verbal.gestuelle,
+            scores.para_verbal.maitrise_debit,
+            scores.para_verbal.relief_vocal,
+            scores.verbal.presence
+        ];
+        radarChartInstance.update();
+        return;
+    }
+
+    radarChartInstance = new Chart(ctx, {
         type: 'radar',
         data: {
             labels: ["Regard", "Ancrage", "Geste", "Débit", "Relief", "Présence"],
