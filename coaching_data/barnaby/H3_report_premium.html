@@ -2,121 +2,200 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SÉANCE H3 | Coaching Premium | Barnaby</title>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Ranade:wght@400;700&display=swap" rel="stylesheet">
+    <title>Compte-Rendu de Seance H3 | Barnaby x KLEIA-UP</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=ranade@300,400,500,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --color-bordeaux: #8B1D3D;
-            --color-gold: #D4AF37;
-            --color-text: #1a1a1a;
-            --color-bg: #f8f8f8;
-            --shadow-premium: 0 20px 50px rgba(0,0,0,0.1);
-        }
-
-        * { margin: 0; padding: 0; box-box: border-box; }
-        body { 
-            background: #e0e0e0; 
-            font-family: 'Ranade', sans-serif; 
-            color: var(--color-text);
-            line-height: 1.6;
-            padding: 40px 20px;
-        }
-
-        .page {
-            width: 210mm;
-            min-height: 297mm;
-            background: white;
-            margin: 0 auto 40px;
-            padding: 30mm 25mm;
-            box-shadow: var(--shadow-premium);
-            position: relative;
-            overflow: hidden;
-        }
-
-        header {
-            border-bottom: 2px solid var(--color-gold);
-            padding-bottom: 20px;
-            margin-bottom: 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-        }
-
-        .logo-kleia { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.5rem; color: var(--color-bordeaux); }
-
-        h1 {
-            font-family: 'Syne', sans-serif;
-            font-size: 2.5rem;
-            color: var(--color-bordeaux);
-            line-height: 1.1;
-            margin-bottom: 10px;
-        }
-
-        .metadata { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: #666; }
-
-        section { margin-bottom: 40px; }
-
-        h2 {
-            font-family: 'Syne', sans-serif;
-            font-size: 1.4rem;
-            color: var(--color-gold);
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-left: 4px solid var(--color-bordeaux);
-            padding-left: 15px;
-        }
-
-        .content-placeholder {
-            border: 2px dashed #eee;
-            padding: 40px;
-            text-align: center;
-            color: #aaa;
-            font-style: italic;
-            border-radius: 15px;
-        }
-
-        .footer-page {
-            position: absolute;
-            bottom: 30mm;
-            left: 25mm;
-            right: 25mm;
-            font-size: 0.8rem;
-            color: #aaa;
-            text-align: center;
-            border-top: 1px solid #eee;
-            padding-top: 10px;
-        }
+        :root { --color-burgundy: #8B1D3D; --color-gold: #D4AF37; --color-text: #2d3436; --color-grey-light: #f1f2f6; --font-main: "Ranade", sans-serif; --font-title: "Syne", sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #f8f9fa; font-family: var(--font-main); color: var(--color-text); line-height: 1.6; padding: 40px 20px; }
+        .a4-page { width: 210mm; min-height: 297mm; padding: 20mm; margin: 0 auto 40px auto; position: relative; background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-radius: 4px; }
+        .header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--color-burgundy); padding-bottom: 20px; margin-bottom: 30px; }
+        .logo img { height: 60px; }
+        .doc-title { text-align: right; }
+        .doc-title h1 { font-family: var(--font-title); font-size: 1.2rem; color: var(--color-burgundy); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; }
+        .doc-meta { font-size: 0.8rem; color: #636e72; font-weight: 500; }
+        .client-info { background: var(--color-grey-light); padding: 20px; border-radius: 8px; margin-bottom: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .info-item label { display: block; font-size: 0.65rem; text-transform: uppercase; font-weight: 800; color: var(--color-burgundy); letter-spacing: 1px; margin-bottom: 4px; }
+        .info-item span { font-size: 1rem; font-weight: 600; color: #2d3436; }
+        h2 { font-family: var(--font-title); font-size: 1.3rem; color: var(--color-burgundy); margin: 35px 0 15px 0; display: flex; align-items: center; }
+        h2::after { content: ""; flex: 1; height: 1px; background: rgba(139, 29, 61, 0.1); margin-left: 20px; }
+        h3 { font-family: var(--font-title); font-size: 1.05rem; color: var(--color-burgundy); margin: 25px 0 10px 0; background: rgba(139, 29, 61, 0.05); padding: 8px 15px; border-radius: 4px; display: inline-block; }
+        p { margin-bottom: 15px; text-align: justify; font-size: 0.95rem; color: #444; }
+        .highlight-box { background: linear-gradient(135deg, rgba(139, 29, 61, 0.03) 0%, rgba(212, 175, 55, 0.05) 100%); border: 1px solid rgba(212, 175, 55, 0.2); padding: 25px; border-radius: 12px; margin: 30px 0; position: relative; }
+        .highlight-box::before { content: "\1F4A1"; position: absolute; top: -15px; left: 20px; background: white; padding: 0 10px; font-size: 1.2rem; }
+        .video-box { background: #1a1a1a; border-radius: 12px; padding: 20px; margin: 25px 0; text-align: center; }
+        .video-box video { width: 100%; max-width: 560px; border-radius: 8px; }
+        .video-box .video-label { color: var(--color-gold); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 12px; }
+        ul, ol { margin-bottom: 20px; padding-left: 25px; }
+        li { margin-bottom: 12px; font-size: 0.95rem; color: #444; }
+        li strong { color: var(--color-burgundy); }
+        .fiche-exercice { border: 1px solid #eee; padding: 25px; border-radius: 12px; margin-bottom: 25px; background: #fff; page-break-inside: avoid; }
+        .fiche-num { color: var(--color-gold); font-weight: 900; font-size: 0.8rem; letter-spacing: 2px; }
+        .fiche-title { font-family: var(--font-title); color: var(--color-burgundy); font-size: 1.2rem; margin-bottom: 15px; text-transform: uppercase; }
+        .quote { font-style: italic; border-left: 3px solid var(--color-gold); padding-left: 20px; margin: 15px 0; color: #555; }
+        .progression-bar { display: flex; align-items: center; gap: 15px; margin: 10px 0; }
+        .progression-label { font-size: 0.8rem; font-weight: 700; min-width: 140px; }
+        .progression-track { flex: 1; height: 8px; background: #eee; border-radius: 4px; overflow: hidden; }
+        .progression-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--color-burgundy), var(--color-gold)); }
+        .footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #eee; display: flex; justify-content: space-between; font-size: 0.75rem; color: #999; }
+        .page-break { page-break-before: always; }
+        @media print { body { padding: 0; background: white; } .a4-page { box-shadow: none; margin: 0; width: 100%; border: none; } }
     </style>
 </head>
 <body>
-
-    <div class="page">
-        <header>
-            <div class="logo-kleia">KLEIA-UP</div>
-            <div class="metadata">Session H3 | 19.05.2026</div>
-        </header>
-
-        <h1>Rapport de Session H3</h1>
-        <p style="margin-bottom: 30px;">Libération gestuelle & Ancrage postural frontal.</p>
-
-        <section>
-            <h2>1. Objectifs de la Séance</h2>
-            <div class="content-placeholder">
-                [Contenu à remplir après la séance du 19 mai]
-            </div>
-        </section>
-
-        <section>
-            <h2>2. Exercices & Prises de conscience</h2>
-            <div class="content-placeholder">
-                [Notes en temps réel...]
-            </div>
-        </section>
-
-        <div class="footer-page">KLEIA-UP - Document Confidentiel - Page 1/1</div>
+    <div class="a4-page">
+        <div class="header">
+            <div class="logo"><img src="../../assets/images/LOGO KLEIA HD V3.png" alt="KLEIA-UP"></div>
+            <div class="doc-title"><h1>Compte-rendu de seance de coaching</h1><p class="doc-meta">Reference : B01-H3-RECAP-V1</p></div>
+        </div>
+        <div class="client-info">
+            <div class="info-item"><label>A l attention de</label><span>Barnaby Benezech</span></div>
+            <div class="info-item"><label>Date de seance</label><span>19 mai 2026</span></div>
+            <div class="info-item"><label>Session</label><span>H3 : Voix, Gestuelle and Prise de place (Visio)</span></div>
+            <div class="info-item"><label>Coach</label><span>Sandrina Perrin</span></div>
+        </div>
+        <div class="video-box">
+            <video controls preload="metadata"><source src="H3_coaching_190526.mp4" type="video/mp4">Votre navigateur ne supporte pas la video.</video>
+            <p class="video-label">Replay de la seance H3 -- 19 mai 2026</p>
+        </div>
+        <h2>1. Objectifs de la seance H3</h2>
+        <p>Bilan des exercices mis en place depuis la seance H2, travail approfondi sur la liberation gestuelle, l'ancrage postural frontal, la projection vocale et l'articulation. Objectif central : <strong>transformer le trac en energie positive</strong> et permettre a Barnaby de prendre pleinement sa place.</p>
+        <h2>2. Bilan de la semaine (entre H2 et H3)</h2>
+        <div class="highlight-box"><p><strong>Exercices realises :</strong> Barnaby a pratique les exercices corporels quotidiens (Shutaido, etirements, ancrage). Il ressent un effet benefique de la regularite : <em>Ca fait du bien de le faire chaque jour, ca stimule mon corps.</em></p></div>
+        <p><strong>Video envoyee :</strong> Barnaby s'est filme en presentation (en anglais, traduit en francais). Le coach a observe :</p>
+        <ul><li>Un bon ancrage initial, puis une <strong>remontee dans le stress</strong> au fil de la prestation.</li><li>Des <strong>balancements</strong> et des gestes parasites reapparaissent quand le doute s'installe.</li><li>Le regard part dans toutes les directions, signe d'une <strong>perte de presence</strong>.</li></ul>
+        <h2>3. Distinction clee : Trac vs Stress</h2>
+        <p>Un point fondamental a ete eclairci durant cette seance :</p>
+        <ul><li><strong>Le trac</strong> : une pulsion soudaine, un pic d'energie au moment de passer a l'action. <em>Il est bon.</em> Les acteurs experimentes l'ont encore apres 1 000 scenes. C'est ce qui rend la prestation vivante.</li><li><strong>Le stress</strong> : une anxiete qui s'installe dans la duree (la veille, la nuit...). Celui-la est nefaste et il faut apprendre a le canaliser.</li></ul>
+        <div class="quote">Le trac, c'est le systeme nerveux qui se met en action pour dire : OK, allez, on y va maintenant ! Le tout, c'est qu'apres tu arrives a switcher, que tu ne vives pas ca tout le temps de ta prestation. -- Sandrina</div>
+        <p><strong>Le mecanisme de Barnaby :</strong> en faisant ses exercices, il ressent le trac qui monte. C'est normal. Le reflexe a adopter : <strong>respirer, plaquer les talons, souffler</strong> pour faire redescendre la pression apres les premieres secondes.</p>
+        <h2>4. Progression de Barnaby (H1 vers H3)</h2>
+        <div class="progression-bar"><span class="progression-label">Posture / Dos</span><div class="progression-track"><div class="progression-fill" style="width: 80%;"></div></div></div>
+        <div class="progression-bar"><span class="progression-label">Ancrage au sol</span><div class="progression-track"><div class="progression-fill" style="width: 65%;"></div></div></div>
+        <div class="progression-bar"><span class="progression-label">Gestuelle naturelle</span><div class="progression-track"><div class="progression-fill" style="width: 55%;"></div></div></div>
+        <div class="progression-bar"><span class="progression-label">Projection vocale</span><div class="progression-track"><div class="progression-fill" style="width: 40%;"></div></div></div>
+        <div class="progression-bar"><span class="progression-label">Prise de place</span><div class="progression-track"><div class="progression-fill" style="width: 50%;"></div></div></div>
+        <div class="progression-bar"><span class="progression-label">Passion / Envie</span><div class="progression-track"><div class="progression-fill" style="width: 85%;"></div></div></div>
+        <div class="footer"><span>2026 KLEIA-UP - Document Confidentiel</span><span>Page 1/4</span></div>
     </div>
-
+    <div class="a4-page page-break">
+        <h2>5. Exercices realises en seance H3</h2>
+        <div class="fiche-exercice">
+            <span class="fiche-num">EXERCICE 1</span>
+            <h4 class="fiche-title">Routine d'ancrage complete (autonome)</h4>
+            <p><strong>Objectif :</strong> Barnaby realise seul sa routine pre-parole pour valider son autonomie.</p>
+            <p><strong>Deroule :</strong> Shutaido (bras en grand, attraper l'espace), taper des pieds (sentir les vibrations dans les mollets), claquer des talons, respiration.</p>
+            <p><strong>Correction coach :</strong> Prendre le temps en haut de la montee des bras pour se connecter. Les talons se font a part, sans bouger le reste du corps.</p>
+        </div>
+        <div class="fiche-exercice">
+            <span class="fiche-num">EXERCICE 2</span>
+            <h4 class="fiche-title">Je m'appelle Barnaby et ma place c'est ici</h4>
+            <p><strong>Objectif :</strong> Travail de prise de place et d'affirmation de soi. Exercice de confrontation ludique ou le coach joue la personne qui veut voler sa place.</p>
+            <p><strong>Deroule :</strong> Barnaby repete la phrase avec puissance. Le coach monte en intensite pour pousser Barnaby a <strong>assumer sa legitimite</strong>.</p>
+            <p><strong>Resultat :</strong> Barnaby a senti la difference quand il prenait bien sa place. Il a exprime sa gene face a la confrontation, ce qui est un point de conscience important.</p>
+            <p><div class="quote">Tu dois montrer que tu es la et que tu peux prendre ta place. Le droit de la prendre.</div></p>
+        </div>
+        <div class="fiche-exercice">
+            <span class="fiche-num">EXERCICE 3</span>
+            <h4 class="fiche-title">Simulation d'entree + Introduction</h4>
+            <p><strong>Objectif :</strong> Mettre en pratique l'ancrage, la respiration et l'intro dans des conditions proches du reel.</p>
+            <p><strong>Intro de Barnaby :</strong> <em>Imaginez, vous avez tous un casque de realite virtuelle sur vous, vous le mettez et vous l'allumez, et vous rentrez dans le monde de la realite augmentee. Bonjour, je m'appelle Barnaby et aujourd'hui, je vais vous presenter mon produit personnel qui est le futur de la realite augmentee.</em></p>
+            <p><strong>Observations :</strong><ul><li>Demarrage en trombe -- besoin de <strong>ralentir</strong> et de <strong>souffler avant de parler</strong>.</li><li>Le Bonjour n'etait pas assez affirme.</li><li>Mains figees -- signe de tension, pas de relachement.</li><li>Posture : <strong>nette amelioration du dos</strong> par rapport a H2.</li></ul></p>
+        </div>
+        <div class="fiche-exercice">
+            <span class="fiche-num">EXERCICE 4</span>
+            <h4 class="fiche-title">Liberation vocale -- Brrr et Bi ba be bo bu</h4>
+            <p><strong>Objectif :</strong> Liberer le diaphragme, travailler les intonations et le rythme vocal. Inspire des vocalises des chanteurs d'opera.</p>
+            <p><strong>Deroule :</strong> Barnaby a d'abord tente les Brrr (vibration des levres), puis les syllabes Bi ba be bo bu avec des intonations variees, comme s'il racontait une histoire.</p>
+            <p><strong>Resultat :</strong> <strong>Exercice revelateur !</strong> Barnaby s'est laisse porter, les mains sont venues naturellement, le rythme etait la, l'expressivite aussi.</p>
+            <p><div class="quote">Ca me fait un peu revenir a mon enfance, ou je m'exprimais pas que avec la bouche, mais avec le corps. -- Barnaby</div></p>
+        </div>
+        <div class="fiche-exercice">
+            <span class="fiche-num">EXERCICE 5</span>
+            <h4 class="fiche-title">Articulation -- Virelangue</h4>
+            <p><strong>Objectif :</strong> Travailler l'articulation, le rythme et les silences.</p>
+            <p><strong>Phrase :</strong> <em>Tu t'entetes a tout tenter, tu te tues a tant t'enteter.</em></p>
+            <p><strong>Enseignement :</strong> Sans silences et sans rythme, la phrase est incomprehensible. Les pauses sont <strong>obligatoires</strong> pour que l'auditoire suive.</p>
+            <p><strong>Difficulte specifique Barnaby :</strong> les liaisons en francais (le S qui s'accroche au mot suivant) sont un point de vigilance, car l'anglais ne fonctionne pas ainsi.</p>
+        </div>
+        <div class="fiche-exercice">
+            <span class="fiche-num">EXERCICE 6</span>
+            <h4 class="fiche-title">Passion and Intention sur un texte</h4>
+            <p><strong>Objectif :</strong> Transmettre la passion, pas juste reciter. Le coach doit <strong>sentir</strong> l'enthousiasme de Barnaby pour son sujet.</p>
+            <p><strong>Texte travaille :</strong> <em>Il vient du ciel, il a fait tourner la tete, il ne peut s'expliquer pas. Nul au monde, il ne peut l'acheter.</em></p>
+            <p><strong>Observation :</strong> Le sourire de Barnaby est apparu, on y croit plus. Mais la passion n'etait pas encore pleinement sentie dans l'intro.</p>
+        </div>
+        <div class="footer"><span>2026 KLEIA-UP - Document Confidentiel</span><span>Page 2/4</span></div>
+    </div>
+    <div class="a4-page page-break">
+        <h2>6. Observations du Coach</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div><h3 style="background: rgba(46, 204, 113, 0.1); color: #27ae60;">Points d'appui</h3>
+                <ul style="font-size: 0.85rem;">
+                    <li><strong>Posture du dos :</strong> nette amelioration, Barnaby se tient droit.</li>
+                    <li><strong>Envie / Excitation :</strong> Barnaby est maintenant excite de presenter sa creation. Changement majeur par rapport a H1.</li>
+                    <li><strong>Presence :</strong> vraie presence ressentie par le coach, surtout apres l'exercice Bi ba be bo bu.</li>
+                    <li><strong>Gestuelle liberee :</strong> quand il se laisse porter, les mains viennent au bon endroit naturellement.</li>
+                    <li><strong>Capacite d'auto-observation :</strong> Barnaby identifie lui-meme ses erreurs.</li>
+                    <li><strong>Coherence cardiaque :</strong> dort mieux grace a la pratique.</li>
+                </ul></div>
+            <div><h3 style="background: rgba(231, 76, 60, 0.1); color: #c0392b;">Points de vigilance</h3>
+                <ul style="font-size: 0.85rem;">
+                    <li><strong>Debit trop rapide :</strong> demarre en trombe, ne prend pas le temps de respirer avant de parler.</li>
+                    <li><strong>Mains figees ou micro-tics :</strong> sous stress, les mains se crispent ou reviennent a des gestes parasites.</li>
+                    <li><strong>Regard :</strong> part a droite, a gauche, ne se pose pas (accentue par la visio).</li>
+                    <li><strong>Perfectionnisme :</strong> Barnaby cherche a etre parfait, ce qui genere du stress.</li>
+                    <li><strong>Aversion a la confrontation :</strong> difficulte a s'affirmer face a quelqu'un qui conteste sa place.</li>
+                    <li><strong>Liaisons francaises :</strong> difficulte avec les liaisons (liees a l'habitude de l'anglais).</li>
+                </ul></div>
+        </div>
+        <h2>7. Les 3 forces de Barnaby (actualisees H3)</h2>
+        <div class="highlight-box"><p>Barnaby a actualise ses 3 forces depuis la seance precedente :</p><ol>
+            <li><strong>A l'aise avec son sujet</strong> -- Maitrise du fond, credibilite naturelle.</li>
+            <li><strong>A l'aise en anglais</strong> -- Atout distinctif, bilinguisme valorisant.</li>
+            <li><strong>Excite de presenter sa creation</strong> -- (remplace "pas timide") Cette excitation est une energie motrice a canaliser, pas a supprimer.</li>
+        </ol></div>
+        <h2>8. Messages cles a retenir</h2>
+        <ul>
+            <li><strong>Tu ne seras pas parfait. Tu donneras le meilleur, tout simplement.</strong> -- Lacher le perfectionnisme.</li>
+            <li><strong>C'est toi qui maitrises la situation.</strong> -- Barnaby a le controle : il peut poser un silence, souffler, se retourner vers son slide.</li>
+            <li><strong>Les bras, ca doit devenir quelque chose de naturel.</strong> -- Ne pas reflechir a ses gestes, les laisser venir.</li>
+            <li><strong>Quand on parle, c'est notre corps qui parle en premier.</strong> -- Le corps est le premier vecteur du message.</li>
+            <li><strong>Si tu mets pas l'intonation sur ton texte, on te croit pas.</strong> -- La passion doit etre audible.</li>
+        </ul>
+        <div class="footer"><span>2026 KLEIA-UP - Document Confidentiel</span><span>Page 3/4</span></div>
+    </div>
+    <div class="a4-page page-break">
+        <h2>9. Plan d'actions d'ici le 26 mai (H4)</h2>
+        <div style="background: var(--color-grey-light); padding: 25px; border-radius: 12px;">
+            <h3 style="background: none; margin-top: 0; color: var(--color-burgundy);)">Entrainement quotidien</h3>
+            <ul>
+                <li><strong>Exercices vocaux :</strong> Bi ba be bo bu avec du mouvement et de l'intonation. S'amuser, se raconter une histoire.</li>
+                <li><strong>Articulation :</strong> Virelangues (Tu t'entetes a tout tenter...) pour ralentir le debit et travailler les liaisons.</li>
+                <li><strong>Coherence cardiaque :</strong> 3x/jour, surtout la nuit pour ameliorer le sommeil.</li>
+                <li><strong>Exercices corporels :</strong> Shutaido, talons, etirements -- 5 a 10 min/jour.</li>
+            </ul>
+            <h3 style="background: none; color: var(--color-burgundy);">Preparation contenu</h3>
+            <ul>
+                <li>Preparer les <strong>slides</strong> pour la presentation complete.</li>
+                <li>Travailler l'<strong>intro</strong> en y injectant plus de passion et d'intonation.</li>
+                <li>Identifier un <strong>objet/peluche</strong> a utiliser comme point de regard pour l'entrainement.</li>
+            </ul>
+        </div>
+        <h2>10. Prochaine seance -- H4</h2>
+        <div class="highlight-box">
+            <p><strong>Date prevue :</strong> Mardi 26 mai 2026</p>
+            <p><strong>Programme :</strong></p>
+            <ul>
+                <li>Travail de la <strong>presentation complete avec slides</strong> et ordinateur.</li>
+                <li>Mise en <strong>conditions reelles d'examen</strong>.</li>
+                <li>Ajustement final de l'intro et du rythme global.</li>
+                <li>Integration de la passion dans le discours.</li>
+            </ul>
+        </div>
+        <div class="quote">Allez, super Barnaby. Travaille bien, lache rien, et puis on se dit a la semaine prochaine ! -- Sandrina</div>
+        <div class="footer"><span>2026 KLEIA-UP - Document Confidentiel</span><span>Page 4/4</span></div>
+    </div>
 </body>
 </html>

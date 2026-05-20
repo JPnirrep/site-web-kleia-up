@@ -2,9 +2,9 @@
   "client": "Barnaby Benezech",
   "coach": "Sandrina",
   "date": "2026-04-22",
-  "last_update": "2026-05-13",
-  "session_id": "B01-SESSION-H2",
-  "status": "Completed",
+  "last_update": "2026-05-19",
+  "session_id": "B01-SESSION-H3",
+  "status": "In Progress",
   "baseline_scores": {
     "non_verbal": {
       "contact_visuel": 3,
@@ -119,7 +119,7 @@
     "roadmap": [
       { "session": 1, "title": "Accueil, Audit et Observations Vidéo", "status": "Completed" },
       { "session": 2, "title": "Ancrage & Posture", "status": "Completed" },
-      { "session": 3, "title": "L'art de l'ouverture & Sortie de la 'bulle'", "status": "Upcoming" },
+      { "session": 3, "title": "Voix, Gestuelle & Prise de place", "status": "Completed" },
       { "session": 4, "title": "Libération gestuelle & Ancrage postural frontal", "status": "Upcoming" },
       { "session": 5, "title": "Rythme, silences et respiration ventrale", "status": "Upcoming" },
       { "session": 6, "title": "Entraînement : Alignement Verbal et Non-Verbal", "status": "Upcoming" },
@@ -137,6 +137,8 @@
     "report_h1": "H1_report_premium_v2.html",
     "replay_h2": "2600512video_RVS Barnaby-2.mov",
     "report_h2": "H2_report_premium.html",
+    "replay_h3": "H3_coaching_190526.mp4",
+    "report_h3": "H3_report_premium.html",
     "audio_analysis": "analyse_audio_sandrina_270426.md"
   },
   "sessions_content": {
@@ -149,6 +151,11 @@
       "title": "H2 : Ancrage & Posture",
       "synthesis_title": "🔍 Synthèse H2 : Le corps comme ressource",
       "synthesis_text": "Nous avons posé les premières briques de ton <strong>ancrage Shutaïdo</strong> et travaillé sur l'ouverture de ta cage thoracique. L'enjeu est de briser le cercle vicieux du stress qui te recroqueville. Tes forces narratives sont ton moteur, nous allons les incarner dans une posture de puissance."
+    },
+    "3": {
+      "title": "H3 : Voix, Gestuelle & Prise de place",
+      "synthesis_title": "Synthèse H3 : Libération vocale et prise de place",
+      "synthesis_text": "Cette séance a été un tournant. Nous avons distingué le trac (énergie positive) du stress (à canaliser), travaillé l'affirmation par l'exercice 'Ma place c'est ici', et libéré ta voix avec 'Bi ba bé bo bu' qui a révélé une vraie présence et une gestuelle naturelle. Ta posture du dos est maintenant solide. Prochain défi : injecter cette passion retrouvée dans ton introduction et préparer la simulation complète avec slides."
     }
   }
 }
