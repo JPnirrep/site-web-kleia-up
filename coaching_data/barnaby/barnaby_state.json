@@ -2,22 +2,22 @@
   "client": "Barnaby Benezech",
   "coach": "Sandrina",
   "date": "2026-04-22",
-  "last_update": "2026-05-19",
+  "last_update": "2026-05-20",
   "session_id": "B01-SESSION-H3",
   "status": "In Progress",
   "baseline_scores": {
     "non_verbal": {
-      "contact_visuel": 3,
-      "ancrage_sol": 4,
-      "gestuelle": 4
+      "contact_visuel": 5,
+      "ancrage_sol": 6.5,
+      "gestuelle": 5.5
     },
     "para_verbal": {
-      "maitrise_debit": 3,
-      "relief_vocal": 4
+      "maitrise_debit": 4,
+      "relief_vocal": 5
     },
     "verbal": {
-      "presence": 4,
-      "clarte_articulation": 6
+      "presence": 6.5,
+      "clarte_articulation": 5
     }
   },
   "content": {
@@ -120,11 +120,7 @@
       { "session": 1, "title": "Accueil, Audit et Observations Vidéo", "status": "Completed" },
       { "session": 2, "title": "Ancrage & Posture", "status": "Completed" },
       { "session": 3, "title": "Voix, Gestuelle & Prise de place", "status": "Completed" },
-      { "session": 4, "title": "Libération gestuelle & Ancrage postural frontal", "status": "Upcoming" },
-      { "session": 5, "title": "Rythme, silences et respiration ventrale", "status": "Upcoming" },
-      { "session": 6, "title": "Entraînement : Alignement Verbal et Non-Verbal", "status": "Upcoming" },
-      { "session": 7, "title": "Incarnation : Lâcher le texte & Mind Mapping", "status": "Upcoming" },
-      { "session": 8, "title": "Consolidation finale & Simulation de réussite", "status": "Upcoming" }
+      { "session": 4, "title": "Simulation finale & Passage à l'oral", "status": "Upcoming" }
     ],
     "synthesis": {
       "title": "VII. Synthèse : Le mécanisme de protection",
@@ -156,6 +152,11 @@
       "title": "H3 : Voix, Gestuelle & Prise de place",
       "synthesis_title": "Synthèse H3 : Libération vocale et prise de place",
       "synthesis_text": "Cette séance a été un tournant. Nous avons distingué le trac (énergie positive) du stress (à canaliser), travaillé l'affirmation par l'exercice 'Ma place c'est ici', et libéré ta voix avec 'Bi ba bé bo bu' qui a révélé une vraie présence et une gestuelle naturelle. Ta posture du dos est maintenant solide. Prochain défi : injecter cette passion retrouvée dans ton introduction et préparer la simulation complète avec slides."
+    },
+    "4": {
+      "title": "H4 : Simulation finale & Passage à l'oral",
+      "synthesis_title": "En attente de la séance H4",
+      "synthesis_text": "Dernière séance du parcours. Mise en conditions réelles d'examen avec slides, travail du rythme global, intégration de la passion dans le discours, et ajustements de dernière minute pour un passage serein le jour J."
     }
   }
 }
