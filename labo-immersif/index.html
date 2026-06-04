@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratoire Immersif — Deviens le boss de tes prises de parole | KLEIA-UP</title>
+    <meta name="description" content="Une journée d'expérimentation pure pour reconnecter corps et parole. 30 juin aux Sables d'Olonne. 15 places. 130€.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://api.fontshare.com/v2/css?f[]=ranade@300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <!-- Stripe Buy Button -->
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+</head>
+<body>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero">
+        <div class="hero-split">
+            <div class="hero-image">
+                <img src="./assets/sandrina-kleia-up.webp" alt="Sandrina Perrin — Coach en prise de parole">
+            </div>
+            <div class="hero-content">
+                <a href="/" style="display: inline-block; margin-bottom: 30px;">
+                    <img src="./assets/kleia-logo.png" alt="KLEIA-UP" style="width: 200px; height: auto; transition: opacity 0.3s;">
+                </a>
+                <span class="hero-eyebrow">Laboratoire Immersif — 30 juin 2026</span>
+                <h1 class="hero-title">Deviens le<br><span class="gold-shine-text">boss de tes</span><br>prises de paroles.</h1>
+                <p class="hero-subtitle">Une journée d'expérimentation pure pour reconnecter ce qui a été coupé.<br>Le corps d'abord, le mental après.</p>
+                
+                <div class="hero-meta">
+                    <div class="hero-meta-item">
+                        <span>📍</span> Les Sables d'Olonne
+                    </div>
+                    <div class="hero-meta-item">
+                        <span>📅</span> 30 juin 2026
+                    </div>
+                    <div class="hero-meta-item">
+                        <span>👥</span> 15 places max
+                    </div>
+                    <div class="hero-meta-item">
+                        <span>💰</span> 130 €
+                    </div>
+                </div>
+                
+                <a href="#offre" class="btn btn-primary">Je m'inscris au Labo</a>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <span>Découvrir le Labo</span>
+            <div class="scroll-chevron"></div>
+        </div>
+    </section>
+
+    <!-- ==================== PROOF / CREDENTIALS ==================== -->
+    <section class="section-proof">
+        <div class="container">
+            <div class="proof-grid">
+                <div class="proof-item">
+                    <div class="proof-number">15+</div>
+                    <div class="proof-label">Années d'expertise</div>
+                </div>
+                <div class="proof-item">
+                    <div class="proof-number">200+</div>
+                    <div class="proof-label">Professionnels accompagnés</div>
+                </div>
+                <div class="proof-item">
+                    <div class="proof-number">98%</div>
+                    <div class="proof-label">Taux de satisfaction</div>
+                </div>
+                <div class="proof-item">
+                    <div class="proof-number">6</div>
+                    <div class="proof-label">Entreprises partenaires</div>
+                </div>
+            </div>
+            <div class="logos-row">
+                <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-right: 10px;">Vus chez :</span>
+                <span style="font-weight: 700; color: var(--text-muted);">Le Figaro</span>
+                <span style="font-weight: 700; color: var(--text-muted);">Vendée Grand Littoral</span>
+                <span style="font-weight: 700; color: var(--text-muted);">CEVA</span>
+                <span style="font-weight: 700; color: var(--text-muted);">Familles Rurales</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MIRROR + VISION (COMBINED) ==================== -->
+    <section class="section-mirror-vision">
+        <div class="container">
+            <div class="mv-split">
+                <!-- PAIN SIDE -->
+                <div class="pain-section">
+                    <span class="hero-eyebrow" style="display: block; margin-bottom: 15px;">Ce décalage qui t'épuise</span>
+                    <h2>Tu connais ton sujet.<br>Pourtant, <em>la machine se grippe.</em></h2>
+                    
+                    <div class="mirror-card">
+                        <div class="mirror-icon">😰</div>
+                        <h3>La gorge se serre</h3>
+                        <p>Au moment de te lancer, ton corps te trahit. Tu forces, tu respires mal, tu perds le fil de tes idées.</p>
+                    </div>
+                    
+                    <div class="mirror-card">
+                        <div class="mirror-icon">🧠</div>
+                        <h3>Le mental s'emballe</h3>
+                        <p>Tu prépares tout en amont, mais au moment J, ton cerveau tourne à vide. Tu te sens figé dans la posture du "bon élève".</p>
+                    </div>
+                    
+                    <div class="mirror-card">
+                        <div class="mirror-icon">😩</div>
+                        <h3>Tu repars épuisé</h3>
+                        <p>Chaque prise de parole te coûte. Tu sais que tu devrais aimer ça, mais tu en ressors vidé plutôt qu'inspiré·e.</p>
+                    </div>
+                </div>
+                
+                <!-- SOLUTION SIDE -->
+                <div class="solution-section">
+                    <span class="hero-eyebrow" style="display: block; margin-bottom: 15px; color: var(--color-gold);">La solution</span>
+                    <h2>Tu n'as pas besoin<br>d'un <em>conseil de plus.</em><br>Tu as besoin d'agir.</h2>
+                    <p style="margin-bottom: 30px; font-size: 1.1rem;">Le système nerveux ne négocie pas : il fonctionne par le corps, ensuite par l'esprit. On ne change pas sa présence par le mental — mais par l'action brute.</p>
+                    
+                    <div class="solution-card">
+                        <h3>🎯 Ce qui change</h3>
+                        <p>Tu passeras d'une parole qui force à une présence qui captive. D'un corps en tension à un corps qui habite l'espace. Du contrôle à la fluidité.</p>
+                    </div>
+                    
+                    <div class="solution-card">
+                        <h3>✨ Ce que tu gagnes</h3>
+                        <p>Une répartie naturelle, une assurance ancrée, une joie collective au lieu de la peur du jugement. Le déclic d'une présence magnétique.</p>
+                    </div>
+                    
+                    <div class="punchline-box">
+                        <p>"Tu ne repars pas avec des notes.<br>Tu repars avec un déclic."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 3 PILIERS ==================== -->
+    <section class="section-pillars">
+        <div class="container">
+            <h2>Les 3 piliers du Labo</h2>
+            <p class="subtitle">Une journée d'expérimentation pure à travers ce qui compte vraiment.</p>
+            
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-number">1</div>
+                    <h3><span>Le Jeu</span></h3>
+                    <p>Pour déconnecter le mental et libérer instantanément ta spontanéité. Oublie le contrôle — l'improvisation devient ta nouvelle arme.</p>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="pillar-number">2</div>
+                    <h3><span>Le Corps</span></h3>
+                    <p>Pour ressentir l'impact du regard, de l'ancrage et habiter ton espace. Ton corps devient ton meilleur alliée, pas ton ennemi.</p>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="pillar-number">3</div>
+                    <h3><span>Le Saut dans le vide</span></h3>
+                    <p>Pour muscler ta répartie sans filet. La thérapeutique du dépassement : oser, rater, recommencer, progresser.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== POUR QUI ==================== -->
+    <section class="section-pour-qui">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 50px; font-size: 2.5rem;">Ce Labo est <span class="gold-text">pour toi si...</span></h2>
+            
+            <div class="pq-split">
+                <div class="pq-section pq-for">
+                    <h3>✅ Oui, si...</h3>
+                    <ul class="pq-list">
+                        <li><span class="pq-icon">✨</span> Tu prépares tes interventions mais le Jour J, ça coince</li>
+                        <li><span class="pq-icon">✨</span> Tu veux lâcher tes notes et compter sur ta répartie</li>
+                        <li><span class="pq-icon">✨</span> Tu cherches à captiver dès la première seconde</li>
+                        <li><span class="pq-icon">✨</span> Tu veux transformer la peur du jugement en joie collective</li>
+                        <li><span class="pq-icon">✨</span> Tu es hypersensible et tu veux transformer ça en force</li>
+                        <li><span class="pq-icon">✨</span> Tu en as assez de "forcer" pour être entendu</li>
+                    </ul>
+                </div>
+                
+                <div class="pq-section pq-against">
+                    <h3>🚫 Non, si...</h3>
+                    <ul class="pq-list">
+                        <li><span class="pq-icon">—</span> Tu cherches une formation théorique de plus</li>
+                        <li><span class="pq-icon">—</span> Tu n'es pas prêt à sortir de ta zone de confort</li>
+                        <li><span class="pq-icon">—</span> Tu veux des slides et du PowerPoint</li>
+                        <li><span class="pq-icon">—</span> Tu n'es pas disponible le 30 juin</li>
+                        <li><span class="pq-icon">—</span> Tu n'es pas prêt à t'engager à fond</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== OFFRE ==================== -->
+    <section class="section-offre" id="offre">
+        <div class="container">
+            <div class="offre-card">
+                <div class="offre-header">
+                    <span class="offre-badge">Inscription Labo Immersif</span>
+                    <h2 class="offre-title">Le Labo du 30 juin</h2>
+                    <div class="offre-price">130€ <span>/ personne</span></div>
+                </div>
+                
+                <div class="offre-details">
+                    <div class="offre-detail-item">
+                        <span>📅</span>
+                        <span><strong>30 juin 2026</strong><br>9h30 — 17h30</span>
+                    </div>
+                    <div class="offre-detail-item">
+                        <span>📍</span>
+                        <span><strong>Spot sablais</strong><br>Les Sables d'Olonne</span>
+                    </div>
+                    <div class="offre-detail-item">
+                        <span>👥</span>
+                        <span><strong>15 places max</strong><br>Feedback sur-mesure</span>
+                    </div>
+                    <div class="offre-detail-item">
+                        <span>🍽️</span>
+                        <span><strong>Repas à la carte</strong><br>Pique-nique ou resto</span>
+                    </div>
+                </div>
+                
+                <!-- Formulaire capture email (stockage local) -->
+                <div style="margin-bottom: 30px; padding: 25px; background: var(--bg-cream); border-radius: 15px; text-align: left;">
+                    <h4 style="margin-bottom: 15px; color: var(--color-burgundy);">Pour recevoir ta confirmation par email :</h4>
+                    <form id="participant-form" style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <input type="email" id="email-input" placeholder="Ton email *" required 
+                            style="flex: 1; min-width: 200px; padding: 15px 20px; border: 2px solid rgba(139,29,61,0.1); border-radius: 12px; font-family: inherit; font-size: 1rem; outline: none; transition: border-color 0.3s;">
+                        <input type="text" id="prenom-input" placeholder="Prénom (optionnel)" 
+                            style="flex: 0 0 150px; padding: 15px 20px; border: 2px solid rgba(139,29,61,0.1); border-radius: 12px; font-family: inherit; font-size: 1rem; outline: none; transition: border-color 0.3s;">
+                        <button type="submit" class="btn btn-ghost" style="background: var(--color-burgundy); color: white; border: none;">Valider</button>
+                    </form>
+                    <p id="form-feedback" style="margin-top: 10px; font-size: 0.85rem; color: var(--color-gold); display: none;">✓ Email sauvegardé — tu peux procéder au paiement</p>
+                </div>
+                
+                <!-- Stripe Buy Button -->
+                <div class="offre-cta">
+                    <stripe-buy-button
+                        buy-button-id="buy_btn_1TeHnpK0SHyYtzW3vMx88VR2"
+                        publishable-key="pk_live_51SA6GgK0SHyYtzW3KHuA0wVTpRCTfRn3uY7EmTmKOQzEEraLp8HQe5ysQ2yjmXU9VpnUCPX1eUHtVYsFbozCmlOt00Eij0Ht5O">
+                    </stripe-buy-button>
+                    <p class="cta-note" style="margin-top: 15px;">🔒 Paiement sécurisé par Stripe</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== URGENCE ==================== -->
+    <section class="section-urgence">
+        <div class="container">
+            <div class="urgence-inner">
+                <div class="urgence-stat">
+                    <div class="urgence-number" id="days-counter">0</div>
+                    <div class="urgence-label">Jours avant le Labo</div>
+                </div>
+                <div class="urgence-divider"></div>
+                <div class="urgence-date">
+                    📅 30 juin 2026<br>
+                    Les Sables d'Olonne
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== GARANTIE ==================== -->
+    <section class="section-garantie">
+        <div class="container">
+            <div class="garantie-box">
+                <div class="garantie-icon">🛡️</div>
+                <h3>Mon engagement : bienveillance absolue</h3>
+                <p>Je crée des espaces de confiance où la peur du jugement se transforme instantanément en joie collective. Pas de place pour la morosité théorie descendante. Ici, on ose, on rit, on progresse ensemble. Si après la matinée tu sens que ce n'est pas pour toi, on en parle et on ajuste.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FAQ ==================== -->
+    <section class="section-faq">
+        <div class="container">
+            <div class="faq-header">
+                <span class="hero-eyebrow" style="display: block;">Questions pratiques</span>
+                <h2 style="font-size: 2.5rem; margin-top: 10px;">Tout ce que tu dois <span class="gold-text">savoir</span></h2>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Quel niveau faut-il avoir pour participer ? <div class="chevron"></div></div>
+                    <div class="faq-answer-wrapper">
+                        <div class="faq-answer">Aucun prérequis technique. Le Labo est conçu pour tous les niveaux — du parfait débutant à la personne expérimentée qui veut dépasser un plafond. L'important, c'est ta motivation à oser.</div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Dois-je préparer quelque chose en avance ? <div class="chevron"></div></div>
+                    <div class="faq-answer-wrapper">
+                        <div class="faq-answer">Non. Viens avec ton carnet, ta bouteille d'eau et ton plus beau sourire. Tout le reste, on le construit ensemble dans le Labo. Pas de travail préparatoire requis — juste ta présence et ton ouverture.</div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Le repas est-il inclus ? <div class="chevron"></div></div>
+                    <div class="faq-answer-wrapper">
+                        <div class="faq-answer">Non, le repas n'est pas inclus. Tu peux apporter ton pique-nique ou aller au restaurant du coin. C'est aussi un moment informel pour faire connaissance avec les autres participants.</div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Comment s'habiller pour la journée ? <div class="chevron"></div></div>
+                    <div class="faq-answer-wrapper">
+                        <div class="faq-answer">Choisis des vêtements dans lesquels tu te sens à l'aise pour bouger. On va beaucoup bouger, s'asseoir, se lever, improviser. Privilégie le confort et une tenue qui te donne confiance.</div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Y a-t-il une garantie si je ne suis pas satisfait ? <div class="chevron"></div></div>
+                    <div class="faq-answer-wrapper">
+                        <div class="faq-answer">Je m'engage à créer un espace de bienveillance absolue. Si après la matinée tu sens que ce n'est pas aligné pour toi, on en parle sincèrement. Ma priorité, c'est ta progression — pas ton argent.</div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Que se passe-t-il si le Labo est complet ? <div class="chevron"></div></div>
+                    <div class="faq-answer-wrapper">
+                        <div class="faq-answer">Je limite volontairement à 15 personnes pour garantir un feedback personnalisé. Si le Labo est complet, tu peux t'inscrire sur une liste d'attente ou me demander d'être notifié·e du prochainLabo.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TEMOIGNAGES ==================== -->
+    <section class="section-testimonials">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 50px;">Ce qu’elles·ils <span class="gold-text">en disent</span></h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">“Un véritable déclic. Je n’aurais jamais cru que le corps avait autant de choses à m’apprendre sur ma parole.”</p>
+                    <div class="testimonial-author">
+                        <strong>Marie</strong>
+                        <span>Coach professionnelle</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">“J’ai enfin compris pourquoi je bloquais à chaque prise de parole. Une journée qui change tout.”</p>
+                    <div class="testimonial-author">
+                        <strong>Thomas</strong>
+                        <span>Chef de projet</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">“Sandrina crée un cadre où l’on ose. J’ai retrouvé une spontanéité que je croyais perdue.”</p>
+                    <div class="testimonial-author">
+                        <strong>Camille</strong>
+                        <span>Entrepreneuse</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA FINAL ==================== -->
+    <section class="section-cta">
+        <div class="container" style="max-width: 700px;">
+            <span class="hero-eyebrow" style="display: block;">Le moment est venu</span>
+            <h2 class="cta-title">Prêt à arrêter de forcer<br>et à <em>enfin habiter ta place ?</em></h2>
+            <p class="cta-subtitle">15 places. Le 30 juin. Un déclic qui change tout.<br>Rejoins le Labo avant qu'il ne soit complet.</p>
+            
+            <div class="cta-action">
+                <a href="#offre" class="btn btn-primary" style="padding: 22px 60px; font-size: 1.1rem;">
+                    Je réserve ma place — 130€
+                </a>
+            </div>
+            
+            <p class="cta-note">🔥 Plus que quelques places disponibles</p>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT SANDRINA ==================== -->
+    <section style="background-color: var(--bg-white); padding: 60px 0; border-top: 1px solid rgba(139, 29, 61, 0.05);">
+        <div class="container" style="max-width: 700px; text-align: center;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 10px;">Une question ? <span class="gold-text">Contacte Sandrina</span></h3>
+            <p style="color: var(--text-muted); margin-bottom: 30px;">Disponible pour répondre à toutes tes interrogations avant de t'inscrire.</p>
+            <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap;">
+                <a href="mailto:sandrina@kleia-up.fr" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--color-burgundy); font-weight: 600; padding: 15px 25px; background: var(--bg-cream); border-radius: 15px; transition: var(--transition);">
+                    <span style="font-size: 1.3rem;">✉️</span>
+                    sandrina@kleia-up.fr
+                </a>
+                <a href="tel:+33621013213" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--color-burgundy); font-weight: 600; padding: 15px 25px; background: var(--bg-cream); border-radius: 15px; transition: var(--transition);">
+                    <span style="font-size: 1.3rem;">📞</span>
+                    06 21 01 32 13
+                </a>
+                <a href="https://www.linkedin.com/in/sandrina-perrin-conference-formation/" target="_blank" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--color-burgundy); font-weight: 600; padding: 15px 25px; background: var(--bg-cream); border-radius: 15px; transition: var(--transition);">
+                    <span style="font-size: 1.3rem;">💼</span>
+                    LinkedIn Sandrina
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container">
+            <a href="/">KLEIA-UP</a>
+            <p>© 2026 KLEIA-UP. Tous droits réservés.</p>
+            <div style="margin-top: 15px; font-size: 0.8rem;">
+                <a href="./mentions-legales.html" style="color: inherit; margin-right: 20px; text-decoration: none;">Mentions Légales</a>
+                <a href="./politique-confidentialite.html" style="color: inherit; text-decoration: none;">Politique de confidentialité</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ========== COMPTEUR DYNAMIQUE JOURS AVANT LE LABO ==========
+        (function updateCounter() {
+            const eventDate = new Date(2026, 5, 30); // 30 juin 2026
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            const diffTime = eventDate.getTime() - today.getTime();
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            const counterEl = document.getElementById("days-counter");
+            if (counterEl) {
+                if (diffDays > 0) {
+                    counterEl.textContent = diffDays;
+                } else if (diffDays === 0) {
+                    counterEl.textContent = "JOUR J";
+                } else {
+                    counterEl.textContent = "0";
+                }
+            }
+        })();
+        // ========== FAQ ACCORDION ==========
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                const isActive = item.classList.contains('active');
+                
+                // Close all others
+                document.querySelectorAll('.faq-item').forEach(other => {
+                    if (other !== item) other.classList.remove('active');
+                });
+                
+                item.classList.toggle('active');
+            });
+        });
+        
+        // ========== EMAIL CAPTURE (localStorage) ==========
+        const form = document.getElementById('participant-form');
+        const feedback = document.getElementById('form-feedback');
+        const emailInput = document.getElementById('email-input');
+        const prenomInput = document.getElementById('prenom-input');
+        
+        // Check if already saved
+        const saved = localStorage.getItem('labo_participant');
+        if (saved) {
+            const data = JSON.parse(saved);
+            emailInput.value = data.email || '';
+            prenomInput.value = data.prenom || '';
+            feedback.style.display = 'block';
+            feedback.textContent = '✓ Email déjà sauvegardé — tu peux procéder au paiement';
+        }
+        
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const email = emailInput.value.trim();
+            if (!email) {
+                alert('Merci d\'indiquer ton email pour recevoir ta confirmation.');
+                return;
+            }
+            
+            const participant = {
+                email: email,
+                prenom: prenomInput.value.trim(),
+                source: 'labo_immersif_30_juin_2026',
+                created_at: new Date().toISOString()
+            };
+            
+            localStorage.setItem('labo_participant', JSON.stringify(participant));
+            
+            feedback.style.display = 'block';
+            feedback.textContent = '✓ Email sauvegardé — tu peux procéder au paiement';
+            
+            // Scroll to Stripe button
+            document.querySelector('stripe-buy-button').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+        
+        // ========== SMOOTH SCROLL ==========
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+        
+        // ========== SCROLL INDICATOR CLICK ==========
+        document.querySelector('.scroll-indicator')?.addEventListener('click', function() {
+            const hero = this.closest('.hero');
+            const nextSection = hero.nextElementSibling;
+            if (nextSection) {
+                nextSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+
+</body>
+</html>
