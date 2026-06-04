@@ -224,7 +224,7 @@
                 const participant = JSON.parse(participantData);
                 
                 // Brevo API call via le proxy serveur (cle API protegee)
-                const response = await fetch('/api/v1/brevo/contact', {
+                const response = await fetch('https://formation.kleia-up.fr/api/v1/brevo/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
