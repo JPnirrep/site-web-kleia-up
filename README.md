@@ -198,6 +198,8 @@ git push
 
 - **v3.15.0-ATELIER-POPUP (15-16/05/2026)** : Popup atelier "Prendre sa place sans forcer" (16 mai - 2 juin 2026). Stockage 3 couches (Firestore + PHP JSON + localStorage), inscription Brevo liste #14, email confirmation texte brut via mail() Hostinger (copie conforme contact-reach.php), lien Google Meet, RGPD natif, rollback securise.
 
+- **v3.16.0-SEO-EEAT (08/06/2026)** : Optimisation SEO E-E-A-T complète. JSON-LD enrichi sur 8 pages : `Person` avec `hasCredential` (9 certifications), `alumniOf` (8 organismes), `knowsAbout` (10 domaines). `BreadcrumbList` par page. `hasOfferCatalog` avec vrais tarifs. Pages sans schéma (`a-propos`, `programmes`, `entreprises`, `manifeste`, `contact`, `journal`) désormais couvertes. `robots.txt` optimisé (Disallow ciblés, Crawl-Delay). `sitemap.xml` réécrit (11 URLs). Prix réels ajoutés sur `individuel-groupe.html` (1 997€/997€). Grille des 11 piliers de L'Incarnation sur `programmes.html`.
+
 - **v3.14.1-VIDEO-FIX (13/05/2026)** : Correction chirurgicale du nom de fichier `2600512video_RVS Barnaby-2.mov` (zéro supplémentaire sur Hostinger) et optimisation du lecteur vidéo `app.js` pour une meilleure résilience.
 
 - **v3.14.0-DYNAMIC-COCKPIT (13/05/2026)** : Refonte majeure de l'architecture du cockpit de coaching. Transition vers un moteur de rendu piloté par les données (`barnaby_state.json`) dans `app.js`, intégration dynamique des replays vidéo Hostinger, et enrichissement du rapport H2 Premium (Musique, Respiration, Bio).
