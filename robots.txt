@@ -4,5 +4,19 @@ Disallow: /scripts/
 Disallow: /php/
 Disallow: /.agent/
 Disallow: /.git/
+Disallow: /data/
+Disallow: /_template/
+Disallow: /space/
+Disallow: /coaching_data/
+Disallow: /offres/signature/src/cgv.html
+
+# Pages prioritaires (laisser Googlebot crawler)
+Allow: /individuel-groupe.html
+Allow: /entreprises.html
+Allow: /programmes.html
+Allow: /a-propos.html
 
 Sitemap: https://kleia-up.fr/sitemap.xml
+
+# Crawl-delay pour ne pas surcharger le serveur
+Crawl-Delay: 5

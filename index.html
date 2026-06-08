@@ -53,10 +53,46 @@
       "@context": "https://schema.org",
       "@graph": [
         {
+          "@type": "Person",
+          "@id": "https://kleia-up.fr/#person",
+          "name": "Sandrina Perrin",
+          "givenName": "Sandrina",
+          "familyName": "Perrin",
+          "jobTitle": "Coach Prise de Parole & Leadership pour Profils Atypiques",
+          "description": "Coach experte en leadership organique, conf\u00e9renci\u00e8re et facilitatrice QVT. Fondatrice de KLEIA-UP. Accompagne les entrepreneurs hypersensibles (HPI/HSP) \u00e0 incarner leur autorit\u00e9 naturelle.",
+          "url": "https://kleia-up.fr",
+          "sameAs": [
+            "https://www.linkedin.com/in/sandrina-perrin-conference-formation/",
+            "https://www.instagram.com/sandrina_kleia_up/"
+          ],
+          "worksFor": { "@id": "https://kleia-up.fr/#organization" },
+          "alumniOf": [
+            { "@type": "CollegeOrProgram", "name": "LiveMentor" },
+            { "@type": "CollegeOrProgram", "name": "L'\u00c9cole fran\u00e7aise" },
+            { "@type": "CollegeOrProgram", "name": "IFEDO" },
+            { "@type": "CollegeOrProgram", "name": "Institut Neolys" },
+            { "@type": "CollegeOrProgram", "name": "ZenPro" },
+            { "@type": "CollegeOrProgram", "name": "Seve Association" },
+            { "@type": "CollegeOrProgram", "name": "Universit\u00e9 de Caroline du Nord" },
+            { "@type": "CollegeOrProgram", "name": "Unow" }
+          ],
+          "hasCredential": [
+            { "@type": "EducationalOccupationalCredential", "name": "Prise de parole en public", "credentialCategory": "certification", "recognizedBy": { "@type": "Organization", "name": "LiveMentor" }, "dateCreated": "2022-11" },
+            { "@type": "EducationalOccupationalCredential", "name": "Intervenante en coh\u00e9rence cardiaque", "credentialCategory": "certification", "recognizedBy": { "@type": "Organization", "name": "IFEDO" }, "dateCreated": "2020" },
+            { "@type": "EducationalOccupationalCredential", "name": "Relaxologue", "credentialCategory": "certification", "recognizedBy": { "@type": "Organization", "name": "Institut Neolys" }, "dateCreated": "2020" },
+            { "@type": "EducationalOccupationalCredential", "name": "Analyse transactionnelle", "credentialCategory": "certification", "recognizedBy": { "@type": "Organization", "name": "ZenPro" }, "dateCreated": "2019" },
+            { "@type": "EducationalOccupationalCredential", "name": "Parcours Savoir \u00eatre et vivre ensemble", "credentialCategory": "certification", "recognizedBy": { "@type": "Organization", "name": "Seve Association" }, "dateCreated": "2018" },
+            { "@type": "EducationalOccupationalCredential", "name": "Positive Psychology (96,4%)", "credentialCategory": "certification", "recognizedBy": { "@type": "Organization", "name": "Coursera" }, "dateCreated": "2017-03", "identifier": "E7BN2AKL2D2Q" },
+            { "@type": "EducationalOccupationalCredential", "name": "MOOC Entreprise Agile", "credentialCategory": "certification", "recognizedBy": { "@type": "Organization", "name": "Unow" }, "identifier": "MEA1-1FA0F" },
+            { "@type": "EducationalOccupationalCredential", "name": "Animatrice d'ateliers pratique de l'attention", "credentialCategory": "certification", "recognizedBy": { "@type": "Organization", "name": "Fondation SEVE" }, "dateCreated": "2017-01" }
+          ],
+          "knowsAbout": ["Prise de parole en public","Leadership","Psychologie positive","Hypersensibilit\u00e9 HPI/HSP","Affirmation de soi","Coh\u00e9rence cardiaque","Analyse transactionnelle","Rigologie","Communication non-violente"]
+        },
+        {
           "@type": "ProfessionalService",
           "@id": "https://kleia-up.fr/#organization",
           "name": "KLEIA-UP",
-          "description": "Coaching scénique et leadership pour entrepreneurs hypersensibles (HPI/HSP).",
+          "description": "Coaching sc\u00e9nique et leadership pour entrepreneurs hypersensibles (HPI/HSP). Conf\u00e9rences optimisme et sant\u00e9 mentale en entreprise.",
           "url": "https://kleia-up.fr",
           "logo": "https://kleia-up.fr/assets/logo_kleia.png",
           "image": "https://kleia-up.fr/assets/sandrina-presence-scenique.webp",
@@ -66,75 +102,63 @@
             "addressRegion": "Pays de la Loire",
             "addressCountry": "FR"
           },
-          "founder": {
-            "@type": "Person",
-            "name": "Sandrina Perrin",
-            "jobTitle": "Coach Leadership & Prise de Parole",
-            "sameAs": [
-              "https://www.linkedin.com/in/sandrina-perrin/",
-              "https://www.instagram.com/sandrina_kleia_up/"
-            ]
-          },
+          "founder": { "@id": "https://kleia-up.fr/#person" },
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "Formations Leadership & Prise de Parole",
+            "name": "Programmes Leadership & Prise de Parole",
             "itemListElement": [
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Course",
-                  "name": "Formation Gestion Émotions Entrepreneur Hypersensible",
-                  "description": "Atelier optimisme stratégique 3h pour entrepreneurs HSP"
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Course",
-                  "name": "Vaincre Peur Parler Public Hypersensibles Introvertis",
-                  "description": "Formation prise de parole pour introvertis et hypersensibles"
-                }
-              }
+              { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "L'Incarnation \u2014 Individuel 6 mois", "description": "Coaching 1:1 sur 6 mois - 1 997\u20ac. 1 s\u00e9ance d'1h/15j. Exercices corporels, neurosciences, psychologie positive." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Course", "name": "L'Incarnation \u2014 Groupe", "description": "Petit groupe (5+ pers.) sur 6 mois - 997\u20ac. S\u00e9ances de 2h/15j." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Event", "name": "Conf\u00e9rence Optimisme & Leadership", "description": "Conf\u00e9rences sur mesure : optimisme strat\u00e9gique, management HPS, coh\u00e9sion d'\u00e9quipe." } }
             ]
           }
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Pourquoi je m'épuise à essayer de rentrer dans le moule ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Vouloir rentrer dans le moule des leaders bruyants consume votre énergie vitale. C'est ce qu'on appelle l'épuisement de la sur-adaptation."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Qu'est-ce que le Leadership Organique ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Le leadership organique est une autorité naturelle qui ne repose pas sur le volume sonore mais sur l'alignement entre le message, le corps et l'intention, particulièrement adapté aux profils hypersensibles (HPI/HSP)."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Qui est Sandrina Perrin ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Sandrina Perrin est la fondatrice de KLEIA-UP, experte en leadership incarné, présence scénique et rigologie d'entreprise. Elle accompagne les leaders atypiques à transformer leur sensibilité en force d'impact."
-              }
-            }
-          ]
         },
         {
           "@type": "WebSite",
           "@id": "https://kleia-up.fr/#website",
           "url": "https://kleia-up.fr",
           "name": "KLEIA-UP",
-          "description": "Incarne ton autorité naturelle.",
-          "publisher": {
-            "@id": "https://kleia-up.fr/#organization"
+          "description": "Incarne ton autorit\u00e9 naturelle.",
+          "publisher": { "@id": "https://kleia-up.fr/#organization" },
+          "inLanguage": "fr-FR"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://kleia-up.fr/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://kleia-up.fr/" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Pourquoi je m'\u00e9puise \u00e0 essayer de rentrer dans le moule ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vouloir rentrer dans le moule des leaders bruyants consume votre \u00e9nergie vitale. C'est ce qu'on appelle l'\u00e9puisement de la sur-adaptation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce que le Leadership Organique ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le leadership organique est une autorit\u00e9 naturelle qui ne repose pas sur le volume sonore mais sur l'alignement entre le message, le corps et l'intention, particuli\u00e8rement adapt\u00e9 aux profils hypersensibles (HPI/HSP)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qui est Sandrina Perrin ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sandrina Perrin est la fondatrice de KLEIA-UP, coach experte en leadership incarn\u00e9, pr\u00e9sence sc\u00e9nique et facilitation QVT. Elle accompagne les leaders atypiques \u00e0 transformer leur sensibilit\u00e9 en force d'impact, forte de 15+ ann\u00e9es d'exp\u00e9rience en conf\u00e9rences et accompagnement."
           }
         }
       ]
