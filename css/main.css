@@ -115,6 +115,23 @@ a {
     text-align: center;
 }
 
+.btn-subtle {
+    font-weight: 700;
+    color: var(--color-burgundy);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    display: inline-block;
+}
+.btn-subtle:hover {
+    opacity: 0.6;
+}
+
 .btn-premium {
     background-color: var(--color-burgundy);
     color: white;
@@ -3602,4 +3619,4 @@ footer h2 {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
     transition: all 0.1s ease;
 }
-
+
