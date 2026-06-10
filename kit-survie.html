@@ -6,13 +6,11 @@
     <title>Kit de Survie : Leadership & Parole Incarnée | KLEIA-UP</title>
     <link rel="icon" type="image/png" href="assets/images/kleia-logoV12.png">
     
-    <!-- META SEO PULSE -->
     <meta name="description" content="Téléchargez gratuitement le Kit de Survie KLEIA-UP. Votre protocole d'urgence pour éliminer le trac, activer votre posture de leader et captiver votre audience.">
     <meta name="keywords" content="kit de survie leadership, gestion du trac, prise de parole en public, coaching hypersensibilité, affirmation de soi">
     <meta name="author" content="Sandrina Perrin - KLEIA-UP">
     <link rel="canonical" href="https://kleia-up.fr/kit-survie.html" />
 
-    <!-- Open Graph (Facebook, LinkedIn) -->
     <meta property="og:title" content="Kit de Survie : Leadership & Parole Incarnée | KLEIA-UP">
     <meta property="og:description" content="Le protocole exact pour éliminer la surcharge mentale et captiver votre audience en 12 minutes.">
     <meta property="og:type" content="website">
@@ -20,7 +18,6 @@
     <meta property="og:image" content="https://kleia-up.fr/assets/sandrina-presence-scenique.webp">
     <meta property="og:locale" content="fr_FR">
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Kit de Survie : Leadership & Parole Incarnée | KLEIA-UP">
     <meta name="twitter:description" content="Exprimez-vous avec impact sans porter de masque.">
@@ -29,121 +26,217 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Kit de Survie : Leadership & Parole Incarnée",
-      "description": "Protocole d'urgence complet pour entrepreneurs hypersensibles. Inclut la méthode de décharge mentale, l'audio d'ancrage et la checklist de ciblage.",
-      "brand": {
-        "@type": "Brand",
-        "name": "KLEIA-UP"
-      },
-      "offers": {
-        "@type": "Offer",
-        "url": "https://kleia-up.fr/kit-survie.html",
-        "price": "0.00",
-        "priceCurrency": "EUR",
-        "availability": "https://schema.org/InStock"
-      }
+      "@graph": [
+        { "@type": "Person", "@id": "https://kleia-up.fr/#person", "name": "Sandrina Perrin", "givenName": "Sandrina", "familyName": "Perrin", "jobTitle": "Coach Prise de Parole & Leadership pour Profils Atypiques", "url": "https://kleia-up.fr", "sameAs": ["https://www.linkedin.com/in/sandrina-perrin-conference-formation/","https://www.instagram.com/sandrina_kleia_up/"], "worksFor": {"@id":"https://kleia-up.fr/#organization"} },
+        { "@type": "ProfessionalService", "@id": "https://kleia-up.fr/#organization", "name": "KLEIA-UP", "description": "Coaching scénique et leadership pour entrepreneurs hypersensibles (HPI/HSP).", "url": "https://kleia-up.fr", "logo": "https://kleia-up.fr/assets/logo_kleia.webp", "image": "https://kleia-up.fr/assets/sandrina-presence-scenique.webp", "address": {"@type":"PostalAddress","addressLocality":"Poiroux","addressRegion":"Pays de la Loire","addressCountry":"FR"}, "founder": {"@id":"https://kleia-up.fr/#person"} },
+        { "@type": "WebSite", "@id": "https://kleia-up.fr/#website", "url": "https://kleia-up.fr", "name": "KLEIA-UP", "description": "Incarne ton autorité naturelle.", "publisher": {"@id":"https://kleia-up.fr/#organization"}, "inLanguage": "fr-FR" },
+        { "@type": "BreadcrumbList", "@id": "https://kleia-up.fr/kit-survie/#breadcrumb", "itemListElement": [{"@type":"ListItem","position":1,"name":"Accueil","item":"https://kleia-up.fr/"},{"@type":"ListItem","position":2,"name":"Kit de Survie","item":"https://kleia-up.fr/kit-survie.html"}] },
+        {
+          "@type": "Product",
+          "name": "Kit de Survie : Leadership & Parole Incarnée",
+          "description": "Protocole d'urgence complet pour entrepreneurs hypersensibles. Inclut la méthode de décharge mentale, l'audio d'ancrage et la checklist de ciblage.",
+          "brand": { "@type": "Brand", "name": "KLEIA-UP" },
+          "offers": {
+            "@type": "Offer",
+            "url": "https://kleia-up.fr/kit-survie.html",
+            "price": "0.00",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      ]
     }
     </script>
-    
-    <!-- Scripts & Styles (Tailwind & Icons) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#4A0E0E',
-                        secondary: '#c5a059',
-                        background: '#ffffff',
-                        foreground: '#1a1a1a',
-                        'muted-foreground': '#666666',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        headline: ['Playfair Display', 'serif'],
-                    },
-                }
-            }
-        }
-    </script>
-
-    <style type="text/tailwindcss">
-        @layer base {
-            body { @apply font-sans antialiased text-foreground; }
-        }
-        .container { @apply max-w-7xl mx-auto px-6 lg:px-8; }
-        .card-shadow { box-shadow: 0 10px 30px -10px rgba(74, 14, 14, 0.15); }
-
-        /* EFFET BLOB SANDRINA (Format Vertical & Morphing Organique) */
-        .blob-shape-container {
-            @apply w-full max-w-[320px] h-[450px] relative transition-transform duration-700;
-            filter: drop-shadow(0 20px 40px rgba(139, 29, 61, 0.25));
-        }
-        .blob-shape-container:hover {
-            @apply scale-[1.03];
-        }
-        .blob-image {
-            @apply w-full h-full object-cover;
-            object-position: center 10%; /* Préserve le visage et la posture haute */
-            animation: morph-organic 15s infinite alternate ease-in-out;
-        }
-
-        @keyframes morph-organic {
-            0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
-            34% { border-radius: 70% 30% 50% 50% / 30% 60% 40% 70%; }
-            67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; }
-            100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
-        }
-
-        /* BOUTON PREMIUM SHINE */
-        .btn-premium {
-            @apply relative overflow-hidden transition-all duration-300;
-            background: linear-gradient(135deg, #8B1D3D 0%, #7a0020 100%);
-            box-shadow: 0 10px 25px -5px rgba(139, 29, 61, 0.4);
-        }
-        .btn-premium:hover {
-            @apply -translate-y-1 scale-[1.02];
-            box-shadow: 0 15px 35px -5px rgba(139, 29, 61, 0.5);
-        }
-        .btn-premium::before {
-            content: '';
-            @apply absolute top-0 -left-full w-full h-full;
-            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: all 0.6s ease;
-        }
-        .btn-premium:hover::before {
-            @apply left-full;
-        }
-
-        /* CARD 3D HOVER */
-        .card-3d {
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.6s ease;
-            transform-style: preserve-3d;
-            perspective: 1000px;
-        }
-        .card-3d:hover {
-            transform: translateY(-10px) rotateX(4deg) rotateY(2deg);
-            box-shadow: 0 25px 50px -12px rgba(74, 14, 14, 0.2);
-        }
-        .card-3d > * {
-            transform: translateZ(20px);
-        }
+    <!-- CSS Natif (remplace Tailwind + Lucide) -->
+    <link rel="stylesheet" href="css/kit-survie.css">
+    
+    <style>
+        .bg-red-50 { background: #fef2f2; }
+        .bg-green-50 { background: #f0fdf4; }
+        .text-red-600 { color: #dc2626; }
+        .text-green-700 { color: #16a34a; }
+        .rounded-2xl { border-radius: 1rem; }
+        .rounded-3xl { border-radius: 1.5rem; }
+        .w-16 { width: 4rem; }
+        .h-16 { height: 4rem; }
+        .w-12 { width: 3rem; }
+        .h-12 { height: 3rem; }
+        .w-10 { width: 2.5rem; }
+        .h-10 { height: 2.5rem; }
+        .w-5 { width: 1.25rem; }
+        .h-5 { height: 1.25rem; }
+        .flex { display: flex; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .gap-3 { gap: 0.75rem; }
+        .gap-4 { gap: 1rem; }
+        .gap-8 { gap: 2rem; }
+        .gap-16 { gap: 4rem; }
+        .space-y-4 > * + * { margin-top: 1rem; }
+        .space-y-6 > * + * { margin-top: 1.5rem; }
+        .sm\:col-span-2 { grid-column: span 2; }
+        .sm\:flex-row { flex-direction: row; }
+        .sm\:text-left { text-align: left; }
+        .mt-1 { margin-top: 0.25rem; }
+        .mt-3 { margin-top: 0.75rem; }
+        .mt-4 { margin-top: 1rem; }
+        .mt-6 { margin-top: 1.5rem; }
+        .mt-8 { margin-top: 2rem; }
+        .mt-10 { margin-top: 2.5rem; }
+        .mt-12 { margin-top: 3rem; }
+        .mt-16 { margin-top: 4rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-10 { margin-bottom: 2.5rem; }
+        .mb-16 { margin-bottom: 4rem; }
+        .mb-20 { margin-bottom: 5rem; }
+        .p-8 { padding: 2rem; }
+        .p-10 { padding: 2.5rem; }
+        .p-5 { padding: 1.25rem; }
+        .py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+        .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+        .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+        .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+        .py-24 { padding-top: 6rem; padding-bottom: 6rem; }
+        .px-12 { padding-left: 3rem; padding-right: 3rem; }
+        .pt-6 { padding-top: 1.5rem; }
+        .pr-10 { padding-right: 2.5rem; }
+        .text-xs { font-size: 0.75rem; }
+        .text-sm { font-size: 0.875rem; }
+        .text-lg { font-size: 1.125rem; }
+        .text-xl { font-size: 1.25rem; }
+        .text-2xl { font-size: 1.5rem; }
+        .text-3xl { font-size: 1.875rem; }
+        .text-4xl { font-size: 2.25rem; }
+        .text-5xl { font-size: 3rem; }
+        .text-7xl { font-size: 4.5rem; }
+        .text-gray-400 { color: #9ca3af; }
+        .text-muted-foreground { color: var(--ks-muted); }
+        .text-primary { color: var(--ks-primary); }
+        .text-primary\/80 { color: rgba(74, 14, 14, 0.8); }
+        .text-foreground { color: var(--ks-fg); }
+        .text-foreground\/70 { color: rgba(26, 26, 26, 0.7); }
+        .text-foreground\/80 { color: rgba(26, 26, 26, 0.8); }
+        .text-white { color: #fff; }
+        .text-\[#c5a059\] { color: #c5a059; }
+        .font-medium { font-weight: 500; }
+        .font-bold { font-weight: 700; }
+        .font-black { font-weight: 900; }
+        .font-headline { font-family: var(--ks-font-headline); }
+        .font-sans { font-family: var(--ks-font-body); }
+        .italic { font-style: italic; }
+        .uppercase { text-transform: uppercase; }
+        .tracking-tight { letter-spacing: -0.02em; }
+        .tracking-wide { letter-spacing: 0.025em; }
+        .tracking-widest { letter-spacing: 0.1em; }
+        .leading-tight { line-height: 1.1; }
+        .leading-relaxed { line-height: 1.625; }
+        .text-center { text-align: center; }
+        .border { border: 1px solid; }
+        .border-primary\/5 { border-color: rgba(74, 14, 14, 0.05); }
+        .border-primary\/10 { border-color: rgba(74, 14, 14, 0.1); }
+        .border-transparent { border-color: transparent; }
+        .border-t { border-top: 1px solid; }
+        .border-t-primary\/5 { border-top-color: rgba(74, 14, 14, 0.05); }
+        .border-l-8 { border-left-width: 8px; }
+        .border-\[\#c5a059\] { border-color: #c5a059; }
+        .bg-white { background: #fff; }
+        .bg-primary { background: var(--ks-primary); }
+        .bg-primary\/5 { background: rgba(74, 14, 14, 0.05); }
+        .bg-primary\/10 { background: rgba(74, 14, 14, 0.1); }
+        .bg-primary\/\[0\.02\] { background: rgba(74, 14, 14, 0.02); }
+        .bg-gray-50 { background: #f9fafb; }
+        .bg-gray-50\/50 { background: rgba(249, 250, 251, 0.5); }
+        .bg-green-600 { background: #16a34a; }
+        .hover\:bg-green-700:hover { background: #15803d; }
+        .hover\:bg-white:hover { background: #fff; }
+        .hover\:border-primary\/5:hover { border-color: rgba(74, 14, 14, 0.05); }
+        .hover\:text-\[\#c5a059\]:hover { color: #c5a059; }
+        .hover\:scale-\[1\.02\]:hover { transform: scale(1.02); }
+        .group-hover\:scale-110:hover .group-hover\:scale-110 { transform: scale(1.1); }
+        .transition-all { transition: all 0.3s; }
+        .transition-colors { transition: color 0.2s; }
+        .transition-transform { transition: transform 0.3s; }
+        .rounded-xl { border-radius: 0.75rem; }
+        .rounded-2xl { border-radius: 1rem; }
+        .rounded-3xl { border-radius: 1.5rem; }
+        .rounded-full { border-radius: 50%; }
+        .rounded-\[2\.5rem\] { border-radius: 2.5rem; }
+        .rounded-\[4rem\] { border-radius: 4rem; }
+        .shadow-\[0_35px_60px_-15px_rgba\(74\,14\,14\,0\.3\)\] { box-shadow: 0 35px 60px -15px rgba(74, 14, 14, 0.3); }
+        .object-contain { object-fit: contain; }
+        .object-cover { object-fit: cover; }
+        .max-w-full { max-width: 100%; }
+        .max-w-2xl { max-width: 42rem; }
+        .max-w-3xl { max-width: 48rem; }
+        .max-w-4xl { max-width: 56rem; }
+        .max-w-6xl { max-width: 72rem; }
+        .max-w-\[320px\] { max-width: 320px; }
+        .h-auto { height: auto; }
+        .h-20 { height: 5rem; }
+        .w-full { width: 100%; }
+        .w-auto { width: auto; }
+        .sm\:flex-row { flex-direction: row; }
+        .lg\:flex-row { flex-direction: row; }
+        .lg\:rotate-2 { transform: rotate(2deg); }
+        .lg\:justify-end { justify-content: flex-end; }
+        .lg\:text-left { text-align: left; }
+        .lg\:mx-0 { margin-left: 0; margin-right: 0; }
+        .lg\:py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+        .lg\:py-32 { padding-top: 8rem; padding-bottom: 8rem; }
+        .lg\:py-40 { padding-top: 10rem; padding-bottom: 10rem; }
+        .lg\:gap-24 { gap: 6rem; }
+        .md\:col-span-1 { grid-column: span 1; }
+        .md\:col-span-2 { grid-column: span 2; }
+        .md\:text-xl { font-size: 1.25rem; }
+        .md\:text-2xl { font-size: 1.5rem; }
+        .md\:text-3xl { font-size: 1.875rem; }
+        .md\:text-4xl { font-size: 2.25rem; }
+        .md\:text-5xl { font-size: 3rem; }
+        .md\:p-16 { padding: 4rem; }
+        .md\:p-20 { padding: 5rem; }
+        .md\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+        .group { position: relative; }
+        .shrink-0 { flex-shrink: 0; }
+        .mix-blend-multiply { mix-blend-mode: multiply; }
+        .inline-block { display: inline-block; }
+        .relative { position: relative; }
+        .absolute { position: absolute; }
+        .overflow-hidden { overflow: hidden; }
+        .top-0 { top: 0; }
+        .right-0 { right: 0; }
+        .-mr-16 { margin-right: -4rem; }
+        .-mt-16 { margin-top: -4rem; }
+        .w-32 { width: 8rem; }
+        .h-32 { height: 8rem; }
+        .outline-none { outline: none; }
+        .focus\:ring-4:focus { box-shadow: 0 0 0 4px rgba(139, 29, 61, 0.2); }
+        .focus\:ring-primary\/20:focus { box-shadow: 0 0 0 4px rgba(139, 29, 61, 0.2); }
+        .border-red-50 { border-color: #fef2f2; }
+        .flex-col { flex-direction: column; }
+        @media (min-width: 640px) { .sm\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 768px) { .md\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); } }
+        @media (min-width: 1024px) { .lg\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); } }
+        .justify-between { justify-content: space-between; }
+        .flex-wrap { flex-wrap: wrap; }
+        .list-none { list-style: none; }
+        .block { display: block; }
+        .italic { font-style: italic; }
+        .normal-case { text-transform: none; }
     </style>
 </head>
-<body class="bg-white">
+<body>
 
     <!-- 1. HEADER SECTION -->
     <header class="py-12 lg:py-20">
         <div class="container">
-            <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left mb-16">
+            <div class="flex flex-col sm:flex-row items-center gap-4 mb-16 sm:text-left text-center">
                 <img src="assets/images/kleia-logoV12.png?v=2" alt="Kleia Logo" class="h-20 w-auto mix-blend-multiply">
                 <span class="text-2xl sm:text-3xl text-primary/80 font-medium tracking-tight">
                     Leadership & Parole incarnée
@@ -159,13 +252,13 @@
                         Le protocole exact pour éliminer la surcharge mentale, activer votre 'Power Posture' et captiver votre audience. En 12 minutes chrono.
                     </p>
                     <div class="mt-12">
-                        <a href="#kit-de-survie" class="btn-premium px-12 py-6 rounded-md text-xl font-bold uppercase tracking-wide text-white inline-block">
+                        <a href="#kit-de-survie" class="btn-premium">
                             TÉLÉCHARGER MON PROTOCOLE D'URGENCE GRATUIT
                         </a>
                     </div>
                 </div>
                 <div class="flex justify-center lg:justify-end">
-                    <img src="assets/images/kleia_mockup.jpeg?v=2" alt="Kit Mockup" class="rounded-xl shadow-[0_35px_60px_-15px_rgba(74,14,14,0.3)] object-contain max-w-full h-auto transform lg:rotate-2">
+                    <img src="assets/images/kleia_mockup.jpeg?v=2" alt="Kit Mockup" class="rounded-xl shadow-[0_35px_60px_-15px_rgba(74,14,14,0.3)] object-contain max-w-full h-auto lg:rotate-2">
                 </div>
             </div>
         </div>
@@ -187,19 +280,19 @@
                 <div class="mt-16 grid md:grid-cols-3 gap-8">
                     <div class="card-3d bg-primary/[0.02] p-8 rounded-3xl flex flex-col items-center text-center transition-all hover:bg-white group border border-transparent hover:border-primary/5">
                         <div class="w-16 h-16 mb-6 flex items-center justify-center bg-red-50 rounded-2xl text-red-600 transition-transform group-hover:scale-110">
-                            <i data-lucide="x-circle" class="w-10 h-10"></i>
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
                         </div>
                         <p class="text-lg font-medium text-primary/80">Arrêtez la surcharge émotionnelle qui brouille votre message</p>
                     </div>
                     <div class="card-3d bg-primary/[0.02] p-8 rounded-3xl flex flex-col items-center text-center transition-all hover:bg-white group border border-transparent hover:border-primary/5">
                         <div class="w-16 h-16 mb-6 flex items-center justify-center bg-green-50 rounded-2xl text-green-700 transition-transform group-hover:scale-110">
-                            <i data-lucide="check-circle" class="w-10 h-10"></i>
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                         </div>
                         <p class="text-lg font-medium text-primary/80">Transformez vos doutes en Super Pouvoirs (Sourire, Présence)</p>
                     </div>
                     <div class="card-3d bg-primary/[0.02] p-8 rounded-3xl flex flex-col items-center text-center transition-all hover:bg-white group border border-transparent hover:border-primary/5">
                         <div class="w-16 h-16 mb-6 flex items-center justify-center bg-green-50 rounded-2xl text-green-700 transition-transform group-hover:scale-110">
-                            <i data-lucide="check-circle" class="w-10 h-10"></i>
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                         </div>
                         <p class="text-lg font-medium text-primary/80">Ancrez votre légitimité avec la technique 'Wonder Woman'</p>
                     </div>
@@ -219,37 +312,37 @@
                 <!-- Module 1 -->
                 <div class="card-3d bg-white p-10 rounded-3xl border border-primary/5 relative overflow-hidden group">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-110"></div>
-                    <i data-lucide="moon" class="w-14 h-14 mb-6 text-primary"></i>
+                    <svg class="w-14 h-14 mb-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
                     <h3 class="font-headline text-2xl font-bold text-primary mb-2">Module 1 : La Veille</h3>
-                    <p class="text-xs tracking-widest text-[#c5a059] uppercase font-black mb-8">PDF & AUDIO (Durée : 8 min 24)</p>
+                    <span class="text-xs tracking-widest text-[#c5a059] uppercase font-black mb-8 block">PDF & AUDIO (Durée : 8 min 24)</span>
                     <ul class="space-y-4 text-foreground/80">
-                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-1 shrink-0"></i>La méthode de "Décharge Mentale" pour dormir sereinement</li>
-                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-1 shrink-0"></i>La Checklist de ciblage (Qui ? Pourquoi ? Message Clé ?)</li>
-                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-1 shrink-0"></i>Exercice de transformation des doutes en Super Pouvoirs</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-primary mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>La méthode de "Décharge Mentale" pour dormir sereinement</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-primary mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>La Checklist de ciblage (Qui ? Pourquoi ? Message Clé ?)</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-primary mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Exercice de transformation des doutes en Super Pouvoirs</li>
                     </ul>
                 </div>
                 <!-- Module 2 -->
                 <div class="card-3d bg-white p-10 rounded-3xl border border-primary/5 relative overflow-hidden group">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-110"></div>
-                    <i data-lucide="sunrise" class="w-14 h-14 mb-6 text-primary"></i>
-                    <h3 class="font-headline text-2xl font-bold text-primary mb-2 text-primary">Module 2 : Le Matin J</h3>
-                    <p class="text-xs tracking-widest text-[#c5a059] uppercase font-black mb-8">VIDÉO & AUDIO</p>
+                    <svg class="w-14 h-14 mb-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="M8 6l4-4 4 4"/><path d="M16 18a4 4 0 0 0-8 0"/></svg>
+                    <h3 class="font-headline text-2xl font-bold text-primary mb-2">Module 2 : Le Matin J</h3>
+                    <span class="text-xs tracking-widest text-[#c5a059] uppercase font-black mb-8 block">VIDÉO & AUDIO</span>
                     <ul class="space-y-4 text-foreground/80">
-                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-1 shrink-0"></i>Session guidée "Libération Émotionnelle" (Vidéo)</li>
-                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-1 shrink-0"></i>Audio d'Ancrage Terre/Ciel pour vous sentir solide</li>
-                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-1 shrink-0"></i>Guide des Mantras de Puissance ("Je suis là", "Je suis prête", "Je respire")</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-primary mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Session guidée "Libération Émotionnelle" (Vidéo)</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-primary mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Audio d'Ancrage Terre/Ciel pour vous sentir solide</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-primary mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Guide des Mantras de Puissance ("Je suis là", "Je suis prête", "Je respire")</li>
                     </ul>
                 </div>
                 <!-- Module 3 -->
                 <div class="card-3d bg-white p-10 rounded-3xl border border-primary/5 relative overflow-hidden group">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-110"></div>
-                    <i data-lucide="zap" class="w-14 h-14 mb-6 text-primary"></i>
+                    <svg class="w-14 h-14 mb-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                     <h3 class="font-headline text-2xl font-bold text-primary mb-2">Module 3 : La 'Green Zone'</h3>
-                    <p class="text-xs tracking-widest text-[#c5a059] uppercase font-black mb-8">5 MIN AVANT (Vidéo courte)</p>
+                    <span class="text-xs tracking-widest text-[#c5a059] uppercase font-black mb-8 block">5 MIN AVANT (Vidéo courte)</span>
                     <ul class="space-y-4 text-foreground/80">
-                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-1 shrink-0"></i>Activation du Mantra de Puissance</li>
-                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-1 shrink-0"></i>La Power Posture dans les toilettes (Technique Wonder Woman)</li>
-                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-primary mt-1 shrink-0"></i>Rituel de transition avant d'entrer en scène</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-primary mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Activation du Mantra de Puissance</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-primary mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>La Power Posture dans les toilettes (Technique Wonder Woman)</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-primary mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Rituel de transition avant d'entrer en scène</li>
                     </ul>
                 </div>
             </div>
@@ -262,7 +355,7 @@
             <div class="bg-white p-12 md:p-20 rounded-[4rem] card-shadow border border-primary/5">
                 <div class="grid md:grid-cols-3 gap-16 lg:gap-24 items-center">
                     <div class="md:col-span-1 flex justify-center">
-                        <div class="blob-shape-container">
+                        <div class="blob-container">
                             <img src="assets/images/sandrina-kleia.webp?v=2" alt="Sandrina Photo" class="blob-image">
                         </div>
                     </div>
@@ -291,7 +384,7 @@
             <p class="mt-6 text-xl text-foreground/70 mb-12">
                 Recevez votre protocole d'urgence pour éliminer la surcharge mentale, activer votre 'Power Posture' et captiver votre audience. En 12 minutes chrono.
             </p>
-            <a href="#kit-de-survie" class="btn-premium px-12 py-6 rounded-md text-xl font-bold uppercase tracking-wide text-white inline-block">
+            <a href="#kit-de-survie" class="btn-premium">
                 TÉLÉCHARGER MON PROTOCOLE D'URGENCE GRATUIT
             </a>
         </div>
@@ -313,7 +406,7 @@
                 <!-- Testimonial 1 -->
                 <div class="bg-white p-10 rounded-3xl card-shadow border border-primary/5 flex flex-col justify-between hover:scale-[1.02] transition-transform">
                     <p class="text-lg text-foreground/80 italic mb-10 leading-relaxed">
-                        "Sandrina m’a accompagné pour préparer ma toute première conférence lors d’un séminaire d’entrepreneures. Grâce à elle, je suis passée d’un simple “cours” parlé à une vraie conférence professionnelle, structurée et impactante."
+                        "Sandrina m'a accompagné pour préparer ma toute première conférence lors d'un séminaire d'entrepreneures. Grâce à elle, je suis passée d'un simple 'cours' parlé à une vraie conférence professionnelle, structurée et impactante."
                     </p>
                     <div class="flex items-center gap-4 border-t border-primary/5 pt-6">
                         <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">M</div>
@@ -326,7 +419,7 @@
                 <!-- Testimonial 2 -->
                 <div class="bg-white p-10 rounded-3xl card-shadow border border-primary/5 flex flex-col justify-between hover:scale-[1.02] transition-transform">
                     <p class="text-lg text-foreground/80 italic mb-10 leading-relaxed">
-                        "Monter sur scène était un énorme défi pour moi, d’autant plus que je suis très dure envers moi-même. Avec Sandrina, j’ai pu apprivoiser mon trac et arrêter de m’auto-flageller après coup. Elle a su me montrer concrètement ce qui fonctionnait déjà bien."
+                        "Monter sur scène était un énorme défi pour moi, d'autant plus que je suis très dure envers moi-même. Avec Sandrina, j'ai pu apprivoiser mon trac et arrêter de m'auto-flageller après coup. Elle a su me montrer concrètement ce qui fonctionnait déjà bien."
                     </p>
                     <div class="flex items-center gap-4 border-t border-primary/5 pt-6">
                         <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">J</div>
@@ -339,7 +432,7 @@
                 <!-- Testimonial 3 -->
                 <div class="bg-white p-10 rounded-3xl card-shadow border border-primary/5 flex flex-col justify-between hover:scale-[1.02] transition-transform">
                     <p class="text-lg text-foreground/80 italic mb-10 leading-relaxed">
-                        "Pendant plusieurs semaines, j’envoyais mes vidéos d’entraînement à Sandrina. À chaque fois, elle me faisait des retours ultra pertinents, qui m’aidaient à m’améliorer étape par étape. Cette préparation régulière m’a permis d’arriver prête."
+                        "Pendant plusieurs semaines, j'envoyais mes vidéos d'entraînement à Sandrina. À chaque fois, elle me faisait des retours ultra pertinents, qui m'aidaient à m'améliorer étape par étape. Cette préparation régulière m'a permis d'arriver prête."
                     </p>
                     <div class="flex items-center gap-4 border-t border-primary/5 pt-6">
                         <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">E</div>
@@ -359,30 +452,30 @@
             <h2 class="font-headline text-4xl md:text-5xl font-bold mb-6">Prête à transformer votre impact ?</h2>
             <p class="text-white/80 text-xl mb-12 max-w-2xl mx-auto italic font-medium">Recevez votre protocole d'urgence directement dans votre boîte mail (et sur WhatsApp si vous le souhaitez).</p>
             
-            <div class="bg-white rounded-[2.5rem] p-10 md:p-16 text-foreground shadow-[0_50px_100px_-20px_rgba(74,14,14,0.5)] text-left">
+            <div class="bg-white rounded-[2.5rem] p-10 md:p-16 text-foreground card-shadow-lg text-left">
                 <form id="kitForm" class="grid sm:grid-cols-2 gap-8">
                     <div class="space-y-6 sm:col-span-2">
                         <div>
-                            <label class="block font-bold text-primary mb-3 text-lg lowercase tracking-tighter">Prenom</label>
-                            <input type="text" id="firstName" name="firstName" placeholder="Votre prénom" required class="w-full p-5 border border-primary/10 rounded-2xl bg-gray-50/50 focus:ring-4 focus:ring-primary/20 outline-none transition-all text-lg">
+                            <label class="block font-bold text-primary mb-3 text-lg tracking-tighter">Prenom</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="Votre prénom" required class="w-full p-5 border border-primary/10 rounded-2xl bg-gray-50/50 focus:ring-4 focus:ring-primary/20 outline-none text-lg">
                         </div>
                         <div>
-                            <label class="block font-bold text-primary mb-3 text-lg lowercase tracking-tighter">Email</label>
-                            <input type="email" id="email" name="email" placeholder="votre@email.com" required class="w-full p-5 border border-primary/10 rounded-2xl bg-gray-50/50 focus:ring-4 focus:ring-primary/20 outline-none transition-all text-lg">
+                            <label class="block font-bold text-primary mb-3 text-lg tracking-tighter">Email</label>
+                            <input type="email" id="email" name="email" placeholder="votre@email.com" required class="w-full p-5 border border-primary/10 rounded-2xl bg-gray-50/50 focus:ring-4 focus:ring-primary/20 outline-none text-lg">
                         </div>
                         <div>
-                            <label class="block font-bold text-primary mb-3 text-lg lowercase tracking-tighter">WhatsApp <span class="text-gray-400 font-normal italic">(Optionnel)</span></label>
-                            <input type="tel" id="whatsapp" name="whatsapp" placeholder="Ex: +33 6 12 34 56 78" class="w-full p-5 border border-primary/10 rounded-2xl bg-gray-50/50 focus:ring-4 focus:ring-primary/20 outline-none transition-all text-lg">
+                            <label class="block font-bold text-primary mb-3 text-lg tracking-tighter">WhatsApp <span class="text-gray-400 font-normal italic">(Optionnel)</span></label>
+                            <input type="tel" id="whatsapp" name="whatsapp" placeholder="Ex: +33 6 12 34 56 78" class="w-full p-5 border border-primary/10 rounded-2xl bg-gray-50/50 focus:ring-4 focus:ring-primary/20 outline-none text-lg">
                             <p class="text-sm text-[#c5a059] mt-3 italic font-medium">Pour recevoir votre protocole directement sur mobile.</p>
                         </div>
                     </div>
                     
-                    <button type="submit" id="submitBtn" class="btn-premium sm:col-span-2 w-full text-white py-8 rounded-2xl text-xl font-black uppercase tracking-widest">
+                    <button type="submit" id="submitBtn" class="form-submit">
                         RECEVOIR MON PROTOCOLE D'URGENCE MAINTENANT
                     </button>
                     
                     <div class="sm:col-span-2 mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground font-medium">
-                        <i data-lucide="lock" class="w-4 h-4"></i>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                         Vos données sont sécurisées. Pas de spam, promis.
                     </div>
                 </form>
@@ -393,16 +486,24 @@
     <!-- FOOTER -->
     <footer class="py-20 bg-white text-center">
         <div class="container">
-            <p class="text-muted-foreground font-medium">© 2026 KLEIA. Tous droits réservés.</p>
+            <p class="text-muted-foreground font-medium">&copy; 2026 KLEIA. Tous droits réservés.</p>
             <div class="mt-4">
-                <a href="index.html" class="text-primary hover:text-[#c5a059] transition-colors font-bold text-sm">RETOUR AU SITE PRINCIPAL</a>
+                <a href="index.html" class="footer-link">RETOUR AU SITE PRINCIPAL</a>
             </div>
         </div>
     </footer>
 
     <script>
-        // 🛡️ VAGUS OS - KLEIA CAPTURE ENGINE V8.3 (Secure Bridge)
-        lucide.createIcons();
+        // KLEIA CAPTURE ENGINE (sans Tailwind ni Lucide)
+        function showLoader(btn) {
+            btn.innerHTML = '<span class="flex items-center justify-center gap-3"><svg class="w-5 h-5 icon-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> ENVOI EN COURS...</span>';
+            btn.disabled = true;
+        }
+
+        function resetBtn(btn, text) {
+            btn.innerHTML = text;
+            btn.disabled = false;
+        }
 
         document.getElementById('kitForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -411,11 +512,8 @@
             const email = document.getElementById('email').value;
             const whatsapp = document.getElementById('whatsapp').value;
             
-            // État de chargement discret
             const originalText = btn.innerHTML;
-            btn.innerHTML = '<span class="flex items-center justify-center gap-3"><i data-lucide="loader-2" class="animate-spin"></i> ENVOI EN COURS...</span>';
-            btn.disabled = true;
-            lucide.createIcons();
+            showLoader(btn);
 
             const formData = new FormData();
             formData.append('name', firstName);
@@ -430,8 +528,7 @@
             .then(response => {
                 if (response.ok) {
                     btn.innerHTML = "MERCI ! DÉCOUVREZ VOTRE ZONE DE PUISSANCE";
-                    btn.classList.remove('btn-premium');
-                    btn.classList.add('bg-green-600', 'hover:bg-green-700');
+                    btn.className = 'form-submit form-success';
                     btn.disabled = false;
                     
                     btn.onclick = function(ev) {
@@ -448,8 +545,7 @@
                 }
             })
             .catch(error => {
-                btn.innerHTML = originalText;
-                btn.disabled = false;
+                resetBtn(btn, originalText);
                 alert("Oups ! Petit souci de connexion. Veuillez réessayer.");
             });
         });

@@ -4,30 +4,78 @@
 
 ## Navigation Principale
 
-- [Accueil](https://kleia-up.fr/index.html): Point d'entrée principal. Stratégie de leadership pour profils atypiques.
-- [Le Manifeste](https://kleia-up.fr/manifeste.html): Philosophie du "Mouvement". Refus de la sur-adaptation. Comprendre le concept de "Désert de lien".
-- [Programmes](https://kleia-up.fr/programmes.html): Accès aux offres (Signature, Immersion, Conférences).
-- [À Propos](https://kleia-up.fr/a-propos.html): Parcours de Sandrina Perrin. Influenceur et Speaker. Podcast "Les Coulisses du Speaker".
-- [Journal du Mouvement](https://kleia-up.fr/journal.html): Blog spécialisé (Hypersensibilité, Leadership, Scène).
+- [Accueil](https://kleia-up.fr/): Point d'entrée principal. Stratégie de leadership pour profils atypiques. FAQPage (10 questions), Review (4 témoignages 5/5), OfferCatalog.
+- [Le Manifeste](https://kleia-up.fr/manifeste.html): Philosophie du "Mouvement". Refus de la sur-adaptation. Concept de "Désert de lien".
+- [Programmes](https://kleia-up.fr/programmes.html): Offres Signature (L'Incarnation 1:1 1997€/6mois), Groupe (997€/6mois), Conférences.
+- [À Propos](https://kleia-up.fr/a-propos.html): Parcours de Sandrina Perrin. Podcast "Les Coulisses du Speaker" (80+ épisodes). 9 certifications, 8 formations.
+- [Journal du Mouvement](https://kleia-up.fr/blog.html): 10 articles sur hypersensibilité, leadership, scène, authenticité.
 - [Contact](https://kleia-up.fr/contact.html): Réservation d'appels découverte et demandes de devis corporate.
 
-## Offres Spécifiques
+## Offres
 
-- [Individuel / Groupe](https://kleia-up.fr/individuel-groupe.html): Accompagnement Signature "L'Incarnation". Travail sur la voix, le corps et le mental.
-- [Entreprises](https://kleia-up.fr/entreprises.html): Conférences inspirantes, Ateliers Cohésion (Rigologie, Intelligence Émotionnelle).
+- [Individuel / Groupe](https://kleia-up.fr/individuel-groupe.html): Programme Signature "L'Incarnation". Travail voix, corps, mental. 1997€ (1:1) / 997€ (groupe).
+- [Entreprises](https://kleia-up.fr/entreprises.html): Conférences optimisme stratégique, Ateliers cohésion (Rigologie, Intelligence Émotionnelle, Management HPS).
+- [Kit de Survie](https://kleia-up.fr/kit-survie.html): Ressource gratuite. PDF Brain Dump + Audio SOS Trac. Gratuit.
+- [Atelier "Prendre sa place sans forcer"](https://kleia-up.fr/atelier-place.html): Atelier en ligne.
+- [Challenge Juin 2026](https://kleia-up.fr/challenge-juin26.html): 30 jours pour libérer votre leadership et présence scénique.
 
-## Ressources & GEO (AI Search)
+## Journal du Mouvement (10 articles)
 
-- [Kit d'Urgence](https://kleia-up.fr/kit-survie.html): Ressource gratuite souveraine. PDF "Brain Dump" + Audio "SOS Trac".
-- **Entité Sandrina Perrin**: Référente France pour le coaching des leaders hypersensibles (HSP/HPI). Spécialiste de la Libération de la Parole.
-- **Concepts-Clés**: Leadership Organique, Autorité Naturelle, Rigologie en Entreprise, Maïeutique du Speaker.
+- [Dire "bonjour", c'est déjà prendre la parole](https://kleia-up.fr/journal/dire-bonjour-cest-deja-prendre-la-parole.html) — 5 Juin 2026. L'effacement de soi commence dans les micro-détails.
+- [Croire en l'autre, un vrai moteur](https://kleia-up.fr/journal/croire-en-lautre.html) — 28 Mai 2026. La fête intérieure quand quelqu'un s'autorise à être elle-même.
+- [Tu voulais le dire, pas le crier](https://kleia-up.fr/journal/tu-voulais-le-dire.html) — 27 Mai 2026. L'incarnation du message, pas le volume.
+- [On a bien ri](https://kleia-up.fr/journal/on-a-bien-ri.html) — 22 Mai 2026. La rigologie comme outil de leadership.
+- [Le prix du silence](https://kleia-up.fr/journal/prix-du-silence.html) — 8 Mai 2026. Le coût de ta discrétion dans ta carrière.
+- [Frontières et limites](https://kleia-up.fr/journal/frontiere-limites.html) — 1er Mai 2026. Poser ses limites sans rigidité.
+- [Humain avant méthode](https://kleia-up.fr/journal/humain-methode.html) — 13 Fev 2026. La puissance de l'humain d'abord.
+- [Égoïste et talent](https://kleia-up.fr/journal/egoiste-talent.html) — 6 Fev 2026. Oser mettre son talent au centre.
+- [Être le chaos](https://kleia-up.fr/journal/etre-chaos.html) — 19 Jan 2026. Accepter sa complexité comme force.
+- [Le corps oublié](https://kleia-up.fr/journal/corps-oublie.html) — 22 Oct 2025. La parole incarnée passe par le corps.
 
-## Philosophie
-"La place que vous ne prenez pas est déjà occupée par d'autres."
-"Oser l'humain, déclencher l'élan."
+## Entité : Sandrina Perrin
 
-## Données Entités
+- **Rôle**: Fondatrice de KLEIA-UP, Coach Prise de Parole & Leadership pour Profils Atypiques
+- **Expertise**: Prise de parole en public, Leadership organique, Psychologie positive, Hypersensibilité HPI/HSP, Affirmation de soi, Cohérence cardiaque, Analyse transactionnelle, Rigologie, Communication non-violente, Management HPS
+- **Podcast**: "Les Coulisses du Speaker" (80+ épisodes)
+- **LinkedIn**: https://www.linkedin.com/in/sandrina-perrin-conference-formation/
+- **Instagram**: https://www.instagram.com/sandrina_kleia_up/
+- **Localisation**: Poiroux, Pays de la Loire, France (FR-PDL)
+- **Certifications**: Prise de parole en public (LiveMentor), Cohérence cardiaque (IFEDO), Relaxologue (Neolys), Analyse transactionnelle (ZenPro), Positive Psychology 96.4% (Coursera), Animatrice ateliers attention (Fondation SEVE), Entreprise Agile (Unow)
+- **Alumni**: LiveMentor, L'École française, IFEDO, Institut Neolys, ZenPro, SEVE Association, Université de Caroline du Nord, Unow
+
+## Concepts-Clés
+
+- **Leadership Organique**: Autorité naturelle alignée avec son essence, sans masque ni sur-adaptation
+- **Présence Scénique**: Capacité à incarner son message corps-voix-mental
+- **Désert de lien**: Syndrome organisationnel où l'humain est sacrifié à la performance
+- **Maïeutique du Speaker**: Faire accoucher l'orateur qui est déjà en vous
+- **Rigologie en Entreprise**: Rire comme outil de cohésion et de libération de la parole
+
+## Témoignages (Review 5/5)
+
+- Cécile Neuville : "Avec Sandrina, chaque détail est travaillé : les entrées de scène, la posture, le rythme."
+- Virginie : "J'ose chanter et prendre la parole sans m'excuser d'être sensible."
+- Marika : "Je suis sortie de scène en me sentant enfin à ma place."
+- Cécile : "Ma conférence ressemble enfin à mon niveau d'exigence intérieure."
+
+## FAQ (10 questions clés)
+
+1. Pourquoi je m'épuise à essayer de rentrer dans le moule ? — C'est l'épuisement de la sur-adaptation, fréquent chez HPI/HSP.
+2. Qu'est-ce que le Leadership Organique ? — Autorité naturelle alignée corps-message-intention, sans volume sonore.
+3. Qui est Sandrina Perrin ? — Fondatrice de KLEIA-UP, coach experte en leadership incarné (15+ ans).
+4. Qu'est-ce que le coaching pour hypersensible ? — Accompagnement spécifique transformant la sensibilité en force.
+5. Comment se déroule un accompagnement KLEIA-UP ? — 6 mois, séances 1h/15j (1:1) ou 2h/15j (groupe).
+6. Différence entre HPI et HSP ? — HPI = capacités cognitives supérieures, HSP = système nerveux sensible.
+7. Combien coûte un coaching ? — 1997€ (individuel) / 997€ (groupe), paiement en 6 fois possible.
+8. Comment vaincre le trac quand on est hypersensible ? — Respiration, ancrage corporel, cohérence cardiaque.
+9. Est-ce adapté aux entrepreneurs ? — Oui, conçu pour dirigeants et porteurs de projet.
+10. Comment savoir si L'Incarnation est pour moi ? — Sentiment d'illégitimité, trac, sur-adaptation. Appel découverte gratuit.
+
+## Données Techniques
+
 - **Nom commercial**: KLEIA-UP
-- **Fondatrice**: Sandrina Perrin
-- **Expertise**: Coaching Scénique, Leadership, Rigologie, Psychologie Positive.
-- **Public**: Entrepreneurs, Dirigeants, Personnalités Hypersensibles.
+- **SIRET/N°**: Non disponible en ligne
+- **Type**: ProfessionalService (Schéma.org)
+- **langue**: fr-FR
+- **Pays**: France
+- **Région**: Pays de la Loire (Vendée)

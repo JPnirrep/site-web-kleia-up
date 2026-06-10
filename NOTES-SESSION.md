@@ -1,5 +1,12 @@
+> 
+> Dernière action : v3.18.0-ARTICLE-CHAOS (10/06/2026) — Nouvel article "2026 Chaos ou Apaisement" depuis newsletter Brevo ID 205.
+> 
 # Notes de session — Projet KLEIA-UP
 
+> ✅ Google Business Profile créé — `.agent/google-business-profile-setup.md` pour les données de la fiche
+
+
+> Prochaine action : backlinks (partenariats, podcast invité) ou vidéos YouTube
 ## Pour reprendre le développement
 
 Copie-colle ce message en début de session :
@@ -43,16 +50,37 @@ Copie-colle ce message en début de session :
 - [ ] 8 newsletters Brevo restantes à transformer en articles
 - [ ] Créer la page `journal/leadership-sensible.html` (placeholder existant)
 
+### ✅ v3.18.0 réalisé (10/06/2026)
+- [x] 8 newsletters Brevo transformées en articles (total : 18 articles dans le journal)
+- [x] Nouveaux articles : Chaos ou Apaisement, De la joie de l'audace, Oser prendre sa place, Ce matin là j'ai pleuré, C'est le moment de muer, Communication relations, Écouter sans tes oreilles, Décider
+- [x] Journal mis à jour avec 18 cartes classées par date
+- [x] Sitemap enrichi (30 URLs) et cohérent
+- [x] P0 complété — toutes les newsletters Brevo sont maintenant des articles de blog
+
+
+### ✅ v3.19.0 réalisé (10/06/2026)
+- [x] Page `coaching-vendee.html` créée : landing page SEO locale avec GEO meta, LocalBusiness schema, areaServed
+- [x] Sitemap mis à jour (31 URLs)
+- [x] Lien interne vers coaching-vendee dans le footer
+- [x] P1 : page "Coaching Vendée" faite — reste Google Business Profile + vidéos YouTube
+
 **🟡 P1 — SEO local**
-- [ ] Créer un Google Business Profile
-- [ ] Créer une page "Coaching Vendée" (`coaching-vendee.html`)
+- [x] Créer une page "Coaching Vendée" (`coaching-vendee.html`)
+- [x] Créer un Google Business Profile
 - [ ] Enregistrer 1-2 vidéos YouTube courtes et les embedder
 
-**🟢 P2 — Technique**
-- [ ] CSS critique inline (FCP)
+**🟢 P2 — Technique (suite)**
+- [x] Remplacer Tailwind CDN + Lucide sur `kit-survie.html` par CSS natif
 - [ ] Backlinks (partenariats, podcast invité)
 
-### Commandes utiles
+### ✅ v3.17.0 réalisé (10/06/2026)
+- [x] 4 balises `<title>` cassées réparées (journal, contact, programmes, a-propos)
+- [x] `og:image` + Twitter Cards ajoutés à `entreprises.html`
+- [x] JSON-LD ajouté à `atelier-place.html`, `challenge-juin26.html`, `kit-survie.html` (harmonisé @graph)
+- [x] Sitemap : priorité offres/signature corrigée, tous lastmod → 2026-06-10
+- [x] llms.txt enrichi (10 articles, FAQ, témoignages, entités)
+- [x] Meta GEO ajoutées à contact, atelier-place, challenge-juin26
+- [x] CSS critique inline + deferred stylesheet sur 4 pages principales
 ```bash
 # Récupérer les newsletters Brevo
 python3 -c "
