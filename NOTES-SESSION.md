@@ -6,6 +6,8 @@
 > ✅ Google Business Profile créé — `.agent/google-business-profile-setup.md` pour les données de la fiche
 
 
+
+> Fin de session — tout commit + push + vérifié live sur kleia-up.fr ✅
 > Prochaine action : backlinks (partenariats, podcast invité) ou vidéos YouTube
 ## Pour reprendre le développement
 
