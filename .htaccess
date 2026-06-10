@@ -43,6 +43,10 @@ AddDefaultCharset UTF-8
     RewriteEngine On
     RewriteBase /
 
+    # NE PAS rediriger robots.txt (Google exige qu'il soit servi sans redirect)
+    RewriteCond %{HTTP_HOST} ^kleia-up\.fr$ [NC]
+    RewriteRule ^robots\.txt$ - [L]
+    
     # Redirection domaine racine -> www (canonical)
     RewriteCond %{HTTP_HOST} ^kleia-up\.fr$ [NC]
     RewriteRule ^(.*)$ https://www.kleia-up.fr/$1 [R=301,L]
