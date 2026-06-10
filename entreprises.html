@@ -38,9 +38,17 @@
     <link rel="preload" href="./css/main.css?v=3.8" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="./css/main.css?v=3.8"></noscript>
 
-    <!-- Preload/Prefetch for instant navigation -->
-    <link rel="prefetch" href="index.html">
-    <link rel="prerender" href="index.html">
+    <!-- Speculative loading for instant navigation -->
+    <script type="speculationrules">
+    {
+      "prerender": [
+        {
+          "source": "list",
+          "urls": ["index.html"]
+        }
+      ]
+    }
+    </script>
 
     <!-- Anti-Cache stricte -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
