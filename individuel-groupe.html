@@ -41,7 +41,8 @@
     <link href="https://api.fontshare.com/v2/css?f[]=ranade@300,400,500,700,800,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./css/main.css?v=3.8">
+    <link rel="preload" href="./css/main.css?v=3.8" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="./css/main.css?v=3.8"></noscript>
 
     <!-- Preload/Prefetch for instant navigation -->
     <link rel="prefetch" href="entreprises.html">
@@ -132,6 +133,35 @@
       ]
     }
     </script>
+    <style>
+        :root { --bg-cream: #FAF9F6; --bg-off-white: #FFFFFF; --color-burgundy: #8B1D3D; --color-accent-red: #D70040; --color-text: #1A1A1A; --font-title: 'Ranade', system-ui, -apple-system, sans-serif; --font-body: 'Ranade', sans-serif; --font-syne: 'Syne', sans-serif; --shadow-soft: 0 10px 30px rgba(88, 0, 23, 0.08); --shadow-hover: 0 15px 40px rgba(88, 0, 23, 0.15); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+        body { background-color: var(--bg-cream); color: var(--color-text); font-family: var(--font-body); line-height: 1.6; overflow-x: hidden; }
+        h1, h2, h3 { font-family: var(--font-title); color: var(--color-text); line-height: 1.2; }
+        h1 em, h2 em { font-style: italic; font-weight: 400; color: var(--color-burgundy); }
+        a { text-decoration: none; color: inherit; transition: color 0.3s; }
+        .container { max-width: 1536px; margin: 0 auto; padding: 0 5vw; }
+        .btn { display: inline-block; padding: 12px 28px; font-family: var(--font-title); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border-radius: 50px; transition: all 0.3s ease; cursor: pointer; border: none; font-size: 0.9rem; }
+        .btn-primary { background-color: var(--color-burgundy); color: #fff; border: 2px solid var(--color-burgundy); }
+        .header-corp { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(255,255,255,0.4); backdrop-filter: blur(25px) saturate(200%); -webkit-backdrop-filter: blur(25px) saturate(200%); padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.2); box-shadow: 0 4px 30px rgba(0,0,0,0.05); height: 95px; display: flex; align-items: center; }
+        .header-container { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0 5%; }
+        .header-corp .header-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .logo img { height: 64px; width: auto; }
+        .header-corp .logo img { height: 65px; }
+        .nav-links { display: flex; list-style: none; gap: 40px; align-items: center; margin: 0; padding: 0; }
+        .header-corp .nav-links { gap: 25px; }
+        .nav-link { font-family: var(--font-title); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text); }
+        .header-corp .nav-link { font-size: 14px; font-family: 'Ranade', sans-serif; font-weight: 500; color: var(--color-text); letter-spacing: 0.05em; }
+        .nav-link:hover, .nav-link.active { color: var(--color-burgundy); }
+        .nav-separator { color: rgba(139,29,61,0.2); font-weight: 300; font-size: 0.8rem; pointer-events: none; user-select: none; }
+        .mobile-only-cta { display: none; }
+        .menu-burger { display: none; flex-direction: column; justify-content: space-around; width: 28px; height: 20px; background: transparent; border: none; cursor: pointer; z-index: 1001; padding: 0; }
+        .burger-bar { width: 100%; height: 2px; background-color: var(--color-burgundy); transition: all 0.3s ease; }
+        .menu-burger.active .burger-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .menu-burger.active .burger-bar:nth-child(2) { opacity: 0; }
+        .menu-burger.active .burger-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    </style>
 </head>
 
 <body>
