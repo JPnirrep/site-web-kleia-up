@@ -16,7 +16,7 @@ Allow: /entreprises.html
 Allow: /programmes.html
 Allow: /a-propos.html
 
-Sitemap: https://kleia-up.fr/sitemap.xml
+Sitemap: https://www.kleia-up.fr/sitemap.xml
 
 # Crawl-delay pour ne pas surcharger le serveur
 Crawl-Delay: 5
