@@ -1,5 +1,29 @@
+> Dernière action : v3.21.0-AUDIT-BLOG-TRACKING (11/06/2026) — Audit + P0 blog invisible + GTM/GA4 + BlogPosting + articles similaires
 > 
-> Dernière action : v3.18.0-ARTICLE-CHAOS (10/06/2026) — Nouvel article "2026 Chaos ou Apaisement" depuis newsletter Brevo ID 205.
+> ## Session du 11/06/2026 — Audit + Tracking + SEO
+> 
+> ### Problème identifié
+> - Blog invisible : aucun lien BLOG dans la navigation (7 pages sans lien)
+> 
+> ### Corrections P0
+> - ✅ Lien BLOG ajouté dans nav de toutes les pages
+> - ✅ Breadcrumb JSON-LD corrigé (journal.html → blog.html)
+> - ✅ `index (1).html` (copie obsolète) supprimé
+> 
+> ### Tracking
+> - ✅ GTM-5RP5FZR3 injecté sur 31+ pages
+> - ✅ GA4 G-PBRNYXGCMC injecté sur 32+ pages
+> - ✅ Newsletter link tracé avec `?utm_source=blog`
+> 
+> ### SEO Articles
+> - ✅ Schema `Article` → `BlogPosting` (18 articles)
+> - ✅ Articles similaires (3 par article, contexte différent)
+> - ✅ `llms.txt` mis à jour (10 → 18 articles)
+> 
+> ### Tâches restantes
+> - [ ] Google Search Console : soumettre sitemap `https://kleia-up.fr/sitemap.xml`
+> - [ ] GA4 : vérifier les données après 48h
+> - [ ] Configurer conversions newsletter + appels dans GTM (ouvrir GTM → GA4 event tag)
 > 
 # Notes de session — Projet KLEIA-UP
 
@@ -8,12 +32,12 @@
 
 
 > Fin de session — tout commit + push + vérifié live sur kleia-up.fr ✅
-> Prochaine action : backlinks (partenariats, podcast invité) ou vidéos YouTube
+> Prochaine action : Google Search Console (soumettre sitemap) + GA4 (vérifier données dans 48h) + configurer conversions newsletter dans GTM
 ## Pour reprendre le développement
 
 Copie-colle ce message en début de session :
 
-> Reprends le développement du site kleia-up.fr. Le projet est dans `C:\Users\JP\Documents\GitHub\KLEIA\site-web-kleia-up`. Consulte le `README.md` pour l'historique, puis vérifie l'état actuel des fichiers. Dernière version : v3.16.1-BLOG-10ARTICLES. Il reste des newsletters dans Brevo. Consulte aussi `NOTES-SESSION.md` pour les points d'entrée et les tâches restantes.
+> Reprends le développement du site kleia-up.fr. Le projet est dans `C:\Users\JP\Documents\GitHub\KLEIA\site-web-kleia-up`. Consulte le `README.md` pour l'historique, puis vérifie l'état actuel des fichiers. Dernière version : v3.21.0-AUDIT-BLOG-TRACKING. GTM-5RP5FZR3 + GA4 G-PBRNYXGCMC déployés. Blog visible dans nav. 18 articles en BlogPosting avec articles similaires. Consulte `NOTES-SESSION.md` pour les points d'entrée et les tâches restantes.
 
 ## Contexte technique
 

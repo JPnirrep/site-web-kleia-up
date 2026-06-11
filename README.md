@@ -3,7 +3,7 @@
 ## 🔒 VERSION STABLE - SITE STATIQUE HAUTE PERFORMANCE
 
 ![Status](https://img.shields.io/badge/status-PRODUCTION-success)
-![Version](https://img.shields.io/badge/version-v3.15.0--ATELIER--POPUP-blue)
+![Version](https://img.shields.io/badge/version-v3.21.0--AUDIT--BLOG--TRACKING-blue)
 ![Architecture](https://img.shields.io/badge/architecture-VANILLA%20HTML%2FCSS-green)
 
 ---
