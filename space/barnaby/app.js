@@ -231,8 +231,13 @@ function initEvolutionChart(data) {
     const canvas = document.getElementById('evolutionChart');
     if (!canvas) return;
     
-    // Collecter les sessions qui ont des scores
+    // Collecter les sessions qui ont des scores (ou baseline pour H1)
     const sessions = Object.entries(data.sessions_content)
+        .map(([id, s]) => {
+            // Si H1 n'a pas de scores, utiliser baseline_scores
+            const scores = s.scores || (id === '1' ? data.baseline_scores : null);
+            return [id, { ...s, scores }];
+        })
         .filter(([, s]) => s.scores)
         .sort((a, b) => parseInt(a[0]) - parseInt(b[0]));
     
