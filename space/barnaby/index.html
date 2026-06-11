@@ -40,7 +40,7 @@
             </div>
             <div class="client-status">
                 <h1>BARNABY</h1>
-                <p style="opacity: 0.5; font-size: clamp(0.7rem, 2.5vw, 1.1rem);">Espace de coaching personnel</p>
+                <p id="baseline-text" style="opacity: 0.5; font-size: clamp(0.7rem, 2.5vw, 1.1rem);">Espace de coaching personnel</p>
             </div>
         </header>
 
@@ -65,6 +65,17 @@
                     <div style="margin-top: 30px;">
                         <h3 id="interaction-title" style="font-size: 0.9rem; color: var(--color-gold); text-transform: uppercase;">Tes premières impressions :</h3>
                         <textarea id="session-notes" rows="3" placeholder="Écris ici ton ressenti après avoir visionné ta vidéo..."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 1B : EVOLUTION CHART -->
+            <section class="grid-evolution" style="margin-top: 40px;">
+                <div class="glass-card">
+                    <h2 class="card-title">📈 Évolution H1 → H4</h2>
+                    <p style="font-size: 0.75rem; opacity: 0.5; margin-bottom: 20px;">Progression des scores composites par catégorie.</p>
+                    <div style="height: 300px;">
+                        <canvas id="evolutionChart"></canvas>
                     </div>
                 </div>
             </section>

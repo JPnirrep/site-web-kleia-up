@@ -148,7 +148,12 @@
     "2": {
       "title": "H2 : Ancrage & Posture",
       "synthesis_title": "🔍 Synthèse H2 : Le corps comme ressource",
-      "synthesis_text": "Nous avons posé les premières briques de ton <strong>ancrage Shutaïdo</strong> et travaillé sur l'ouverture de ta cage thoracique. L'enjeu est de briser le cercle vicieux du stress qui te recroqueville. Tes forces narratives sont ton moteur, nous allons les incarner dans une posture de puissance."
+      "synthesis_text": "Nous avons posé les premières briques de ton <strong>ancrage Shutaïdo</strong> et travaillé sur l'ouverture de ta cage thoracique. L'enjeu est de briser le cercle vicieux du stress qui te recroqueville. Tes forces narratives sont ton moteur, nous allons les incarner dans une posture de puissance.",
+      "scores": {
+        "non_verbal": { "contact_visuel": 4, "ancrage_sol": 5.5, "gestuelle": 4.5 },
+        "para_verbal": { "maitrise_debit": 3.5, "relief_vocal": 4.5 },
+        "verbal": { "presence": 5, "clarte_articulation": 5.5 }
+      }
     },
     "3": {
       "title": "H3 : Voix, Gestuelle & Prise de place",

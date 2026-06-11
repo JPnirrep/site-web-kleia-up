@@ -5,6 +5,7 @@
 
 let currentData = null;
 let radarChartInstance = null;
+let evolutionChartInstance = null;
 const userRole = sessionStorage.getItem('kleia_role') || 'visitor';
 const userName = sessionStorage.getItem('kleia_user') || 'Visiteur';
 
@@ -30,12 +31,11 @@ function applyRoleRestrictions() {
         console.log("KLEIA : Mode Visiteur activé (contenu restreint)");
     }
 }
-
 function initDashboard(data) {
     initRadarChart(data.baseline_scores);
     renderGauges(data.baseline_scores);
-    
-    // Par défaut, on affiche le module 1 (H1)
+    renderBaseline(data);
+    initEvolutionChart(data);
     renderSessionView(1); 
     renderRoadmapMenu(data.content.roadmap);
 }
@@ -209,4 +209,122 @@ function renderGauges(scores) {
             <div class="gauge-bar"><div class="gauge-fill" style="width: ${m.score * 10}%"></div></div>
         </div>
     `).join('');
+}
+
+
+function renderBaseline(data) {
+    const el = document.getElementById('baseline-text');
+    if (!el) return;
+    
+    // Trouver la dernière session complétée dans la roadmap
+    const completed = data.content.roadmap
+        .filter(r => r.status === 'Completed')
+        .sort((a, b) => b.session - a.session);
+    
+    const latest = completed[0];
+    if (latest) {
+        el.textContent = `H${latest.session} - ${latest.title} · ${data.last_update}`;
+    }
+}
+
+function initEvolutionChart(data) {
+    const canvas = document.getElementById('evolutionChart');
+    if (!canvas) return;
+    
+    // Collecter les sessions qui ont des scores
+    const sessions = Object.entries(data.sessions_content)
+        .filter(([, s]) => s.scores)
+        .sort((a, b) => parseInt(a[0]) - parseInt(b[0]));
+    
+    if (sessions.length < 2) return;
+    
+    // Mettre à jour le titre de la section avec les bornes réelles
+    const sectionTitle = document.querySelector('.grid-evolution .card-title');
+    if (sectionTitle) {
+        const first = sessions[0][0];
+        const last = sessions[sessions.length - 1][0];
+        sectionTitle.textContent = `📈 Évolution H${first} → H${last}`;
+    }
+    const labels = sessions.map(([id]) => `H${id}`);
+    
+    // Calculer les 3 métriques composites par session
+    function calcMetrics(scores) {
+        return {
+            nonVerbal: (scores.non_verbal.contact_visuel + scores.non_verbal.ancrage_sol + scores.non_verbal.gestuelle) / 3,
+            paraVerbal: (scores.para_verbal.maitrise_debit + scores.para_verbal.relief_vocal) / 2,
+            verbal: scores.verbal.presence
+        };
+    }
+    
+    const nonVerbalData = sessions.map(([, s]) => calcMetrics(s.scores).nonVerbal);
+    const paraVerbalData = sessions.map(([, s]) => calcMetrics(s.scores).paraVerbal);
+    const verbalData = sessions.map(([, s]) => calcMetrics(s.scores).verbal);
+    
+    const ctx = canvas.getContext('2d');
+    
+    if (evolutionChartInstance) {
+        evolutionChartInstance.data.labels = labels;
+        evolutionChartInstance.data.datasets[0].data = nonVerbalData;
+        evolutionChartInstance.data.datasets[1].data = paraVerbalData;
+        evolutionChartInstance.data.datasets[2].data = verbalData;
+        evolutionChartInstance.update();
+        return;
+    }
+    
+    evolutionChartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Non-Verbal',
+                    data: nonVerbalData,
+                    borderColor: '#D4AF37',
+                    backgroundColor: 'rgba(212, 175, 55, 0.1)',
+                    fill: true,
+                    tension: 0.3,
+                    pointBackgroundColor: '#D4AF37'
+                },
+                {
+                    label: 'Para-Verbal',
+                    data: paraVerbalData,
+                    borderColor: '#8B1D3D',
+                    backgroundColor: 'rgba(139, 29, 61, 0.1)',
+                    fill: true,
+                    tension: 0.3,
+                    pointBackgroundColor: '#8B1D3D'
+                },
+                {
+                    label: 'Verbal',
+                    data: verbalData,
+                    borderColor: '#27ae60',
+                    backgroundColor: 'rgba(39, 174, 96, 0.1)',
+                    fill: true,
+                    tension: 0.3,
+                    pointBackgroundColor: '#27ae60'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    min: 0,
+                    max: 10,
+                    ticks: { stepSize: 1, color: 'rgba(255,255,255,0.5)' },
+                    grid: { color: 'rgba(255,255,255,0.05)' }
+                },
+                x: {
+                    ticks: { color: 'rgba(255,255,255,0.5)' },
+                    grid: { display: false }
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: { color: 'rgba(255,255,255,0.7)', boxWidth: 12, padding: 15 }
+                }
+            }
+        }
+    });
 }
