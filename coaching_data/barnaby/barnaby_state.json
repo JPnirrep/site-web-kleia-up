@@ -2,8 +2,8 @@
   "client": "Barnaby Benezech",
   "coach": "Sandrina",
   "date": "2026-04-22",
-  "last_update": "2026-05-20",
-  "session_id": "B01-SESSION-H3",
+  "last_update": "2026-05-29",
+  "session_id": "B01-SESSION-H4",
   "status": "In Progress",
   "baseline_scores": {
     "non_verbal": {
@@ -120,7 +120,7 @@
       { "session": 1, "title": "Accueil, Audit et Observations Vidéo", "status": "Completed" },
       { "session": 2, "title": "Ancrage & Posture", "status": "Completed" },
       { "session": 3, "title": "Voix, Gestuelle & Prise de place", "status": "Completed" },
-      { "session": 4, "title": "Simulation finale & Passage à l'oral", "status": "Upcoming" }
+      { "session": 4, "title": "Simulation finale & Passage à l'oral", "status": "Completed" }
     ],
     "synthesis": {
       "title": "VII. Synthèse : Le mécanisme de protection",
@@ -135,7 +135,9 @@
     "report_h2": "H2_report_premium.html",
     "replay_h3": "H3_coaching_190526.mp4",
     "report_h3": "H3_report_premium.html",
-    "audio_analysis": "analyse_audio_sandrina_270426.md"
+    "audio_analysis": "analyse_audio_sandrina_270426.md",
+    "replay_h4": "2026_05_29 rvs- barnaby.mp4",
+    "report_h4": "H4_report_premium.html"
   },
   "sessions_content": {
     "1": {
@@ -160,8 +162,13 @@
     },
     "4": {
       "title": "H4 : Simulation finale & Passage à l'oral",
-      "synthesis_title": "En attente de la séance H4",
-      "synthesis_text": "Dernière séance du parcours. Mise en conditions réelles d'examen avec slides, travail du rythme global, intégration de la passion dans le discours, et ajustements de dernière minute pour un passage serein le jour J."
+      "synthesis_title": "Synthèse H4 : La répétition générale avec slides",
+      "synthesis_text": "Cette séance a été la simulation complète en conditions réelles d'examen. Barnaby a présenté l'intégralité de son oral en anglais avec slides et télécommande, en deux passages. <strong>Progrès majeurs :</strong> ancrage nickel, routine autonome maîtrisée, télécommande utilisée comme outil d'ancrage naturel, conscience accrue de sa posture. Les 3 forces ont été revisitées avec plus d'assurance. Points de travail : regard jury, rythme du début, articulation, et technique du 'point' pour les descentes vocales. Prochaines étapes : oral blanc le 9 juin, dernier coaching le 11 juin, examen final le 17 juin.",
+      "scores": {
+        "non_verbal": { "contact_visuel": 6, "ancrage_sol": 7, "gestuelle": 6 },
+        "para_verbal": { "maitrise_debit": 5, "relief_vocal": 6 },
+        "verbal": { "presence": 7, "clarte_articulation": 6 }
+      }
     }
   }
 }
