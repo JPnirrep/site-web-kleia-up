@@ -803,11 +803,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const burger = document.querySelector('.menu-burger');
         const nav = document.querySelector('.nav-links');
         const navLinks = document.querySelectorAll('.nav-link');
-
-        burger.addEventListener('click', () => {
-            burger.classList.toggle('active');
-            nav.classList.toggle('active');
-        });
+        if (burger) {
+            burger.addEventListener('click', () => {
+                burger.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+        }
 
         // Fermer le menu au clic sur un lien (pour mobile)
         navLinks.forEach(link => {
