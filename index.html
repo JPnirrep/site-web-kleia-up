@@ -438,5 +438,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
 <script src="./js/atelier-popup.js?v=3.0"></script>
+<script>
+    // Menu Burger Logic
+    const burger = document.querySelector('.menu-burger');
+    const nav = document.querySelector('.nav-links');
+    if (burger) {
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+    }
+</script>
 </body>
 </html>
