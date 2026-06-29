@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KLEIA-UP — Conférences Optimisme Stratégique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./plaquette-reference_files/css" rel="stylesheet">
+<link href="./plaquette-reference_files/css2" rel="stylesheet">
+<style>
+  :root {
+    --burgundy: #8b1d3d; --burgundy-dark: #7a0020;
+    --gold: #c5a028; --cream: #faf9f6; --pearl: #fdfdfd;
+    --white: #ffffff; --black: #1a1a1a; --muted: #6a5458;
+    --font-ranade: "Ranade", system-ui, -apple-system, sans-serif;
+    --font-syne: "Syne", sans-serif;
+    --shadow-soft: 0 10px 30px rgba(88, 0, 23, 0.08);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-font-smoothing: antialiased; }
+  body {
+    font-family: var(--font-ranade); font-size: 11pt;
+    color: var(--black); background: var(--cream); line-height: 1.65;
+  }
+  .page {
+    width: 210mm; min-height: 297mm; margin: 0 auto 24px;
+    position: relative; overflow: hidden;
+    display: flex; flex-direction: column; background: var(--cream);
+  }
+  h1 {
+    font-family: var(--font-syne); font-weight: 700;
+    font-size: 44pt; line-height: 1.05; color: var(--white);
+  }
+  h1 em { display: block; color: var(--gold); font-style: italic; font-weight: 400; }
+  h2 {
+    font-family: var(--font-syne); font-weight: 700;
+    font-size: 26pt; line-height: 1.15; color: var(--burgundy);
+    margin-bottom: 20px;
+  }
+  h3 {
+    font-family: var(--font-ranade); font-weight: 600;
+    font-size: 10pt; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 10px;
+  }
+  h4 {
+    font-family: var(--font-ranade); font-weight: 500;
+    font-size: 11pt; color: var(--burgundy); margin-bottom: 6px;
+  }
+  p { font-size: 10pt; line-height: 1.7; color: var(--black); margin-bottom: 14px; max-width: 52ch; }
+  strong { font-weight: 600; color: var(--burgundy); }
+  .overline {
+    font-family: var(--font-ranade); font-size: 7.5pt;
+    color: var(--gold); letter-spacing: 3px; text-transform: uppercase;
+    margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
+  }
+  .overline::before { content: ""; width: 24px; height: 1px; background: var(--gold); display: block; }
+  .gold-divider { width: 50px; height: 2px; background: var(--gold); margin: 18px 0 24px; }
+  .page-number {
+    position: absolute; bottom: 22px; right: 48px;
+    font-size: 7pt; color: rgba(139, 29, 61, 0.25);
+    letter-spacing: 1.5px; font-family: var(--font-ranade);
+  }
+
+  /* ========== COVER ========== */
+  .page-cover {
+    background: var(--burgundy); justify-content: space-between; position: relative;
+  }
+  .cover-glow {
+    position: absolute; top: -120px; right: -80px;
+    width: 450px; height: 450px;
+    background: radial-gradient(circle, rgba(197, 160, 40, 0.15) 0%, transparent 70%);
+    border-radius: 50%; pointer-events: none;
+  }
+  .cover-photo {
+    position: absolute; bottom: 0; right: 0;
+    width: 42%; height: 75%;
+    overflow: hidden;
+  }
+  .cover-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center 25%;
+    mask-image: linear-gradient(to left, rgba(0,0,0,1) 50%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 50%, transparent 100%);
+  }
+  .cover-top {
+    position: relative; z-index: 2;
+    padding: 40px 48px 0; display: flex; justify-content: space-between; align-items: flex-start;
+  }
+  .cover-logo {
+    font-family: var(--font-syne); font-size: 18pt; font-weight: 700;
+    color: var(--white); letter-spacing: 1px;
+  }
+  .cover-logo-tagline {
+    font-family: var(--font-ranade); font-size: 7pt; font-weight: 300;
+    color: rgba(255, 255, 255, 0.5); letter-spacing: 3px; text-transform: uppercase; margin-top: 3px;
+  }
+  .cover-geo { font-size: 7pt; color: rgba(255, 255, 255, 0.4); letter-spacing: 2px; text-transform: uppercase; text-align: right; font-family: var(--font-ranade); }
+  .cover-hero {
+    position: relative; z-index: 2; padding: 40px 48px 30px;
+    flex: 1; display: flex; flex-direction: column; justify-content: center;
+  }
+  .cover-hero h1 { margin-bottom: 20px; max-width: 14ch; }
+  .cover-sub {
+    font-family: var(--font-ranade); font-size: 11pt;
+    color: rgba(255, 255, 255, 0.7); line-height: 1.65;
+    max-width: 42ch; margin-bottom: 36px;
+  }
+  .cover-formats { display: flex; gap: 30px; }
+  .cover-format-item {
+    font-size: 7pt; color: rgba(255, 255, 255, 0.45);
+    letter-spacing: 2.5px; text-transform: uppercase;
+    padding-top: 10px; border-top: 1px solid rgba(197, 160, 40, 0.3);
+  }
+  .cover-bottom {
+    position: relative; z-index: 2; padding: 22px 48px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .cover-bottom span { font-size: 7.5pt; color: rgba(255, 255, 255, 0.32); letter-spacing: 1px; }
+  .gold-bar { width: 50px; height: 2px; background: var(--gold); }
+
+  /* ========== PAGES INTÉRIEURES ========== */
+  .page-inner { padding: 50px 48px 44px; position: relative; }
+  .page-inner.bg-pearl { background: var(--pearl); }
+  .page-inner.bg-cream { background: var(--cream); }
+
+  /* CARTRIDGE */
+  .manifesto-cartridge {
+    background: var(--burgundy); border-radius: 60px 20px 60px 20px;
+    padding: 32px 38px; margin: 26px 0;
+  }
+  .manifesto-cartridge p {
+    color: var(--white); font-family: var(--font-ranade);
+    font-style: italic; font-size: 12pt; line-height: 1.7;
+    max-width: none; margin: 0;
+  }
+  .manifesto-cartridge p strong { color: var(--gold); font-style: normal; }
+
+  /* GOLD CARTRIDGE */
+  .gold-cartridge {
+    background: linear-gradient(135deg, rgba(197,160,40,0.06), rgba(197,160,40,0.02));
+    border: 1px solid rgba(197,160,40,0.2);
+    border-radius: 20px 60px 20px 60px;
+    padding: 24px 30px; margin: 20px 0;
+  }
+  .gold-cartridge p { font-size: 9.5pt; line-height: 1.65; max-width: none; margin: 0; color: var(--muted); }
+  .gold-cartridge p strong { color: var(--burgundy); }
+
+  /* BIO SECTION */
+  .bio-section {
+    display: flex; gap: 28px; align-items: flex-start; margin: 22px 0;
+  }
+  .bio-portrait {
+    width: 95px; height: 95px; border-radius: 50%; object-fit: cover;
+    border: 3px solid var(--gold); flex-shrink: 0;
+  }
+  .bio-content { flex: 1; }
+  .bio-content p { font-size: 9.5pt; margin-bottom: 8px; max-width: none; }
+  .bio-creds {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px;
+  }
+  .bio-creds span {
+    font-size: 6.5pt; background: rgba(139,29,61,0.06);
+    color: var(--burgundy); padding: 3px 10px; border-radius: 20px;
+    font-weight: 500; letter-spacing: 0.5px;
+  }
+
+  /* PHOTO STRIP */
+  .photo-strip {
+    display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0;
+  }
+  .photo-strip img {
+    width: calc(50% - 5px); height: 110px; object-fit: cover;
+    border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+  }
+
+  /* PILIERS */
+  .piliers-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 22px 0;
+  }
+  .pilier-card {
+    padding: 20px 22px; background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(139, 29, 61, 0.06);
+    border-left: 3px solid var(--gold);
+  }
+  .pilier-card h4 {
+    font-family: var(--font-syne); font-style: italic; font-weight: 400;
+    font-size: 11pt; color: var(--burgundy); margin-bottom: 5px;
+  }
+  .pilier-card p { font-size: 9pt; color: var(--muted); margin: 0; max-width: none; line-height: 1.55; }
+
+  /* PFM GRID */
+  .pfm-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin: 22px 0;
+  }
+  .pfm-card {
+    padding: 22px 18px; background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(139, 29, 61, 0.06);
+    border-top: 3px solid var(--gold); text-align: center;
+  }
+  .pfm-card .pfm-icon { font-size: 28pt; margin-bottom: 8px; }
+  .pfm-card h4 {
+    font-family: var(--font-ranade); font-weight: 600;
+    font-size: 8.5pt; text-transform: uppercase; letter-spacing: 1px;
+    color: var(--burgundy); margin-bottom: 8px;
+  }
+  .pfm-card p { font-size: 8pt; color: var(--muted); margin: 0; max-width: none; line-height: 1.5; }
+  .pfm-card .pfm-action {
+    font-size: 7pt; color: var(--gold); font-weight: 600;
+    margin-top: 8px; padding-top: 6px;
+    border-top: 1px solid rgba(197,160,40,0.15);
+  }
+
+  /* OFFRES */
+  .offres-grid { display: grid; grid-template-columns: 1fr; gap: 0; margin-top: 22px; }
+  .offre-card {
+    background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px);
+    border: 1px solid rgba(139, 29, 61, 0.05);
+    padding: 22px 26px; display: grid;
+    grid-template-columns: 130px 1fr; gap: 24px; align-items: start;
+    border-bottom: 1px solid var(--cream);
+  }
+  .offre-card:first-child { border-radius: 12px 12px 0 0; }
+  .offre-card:last-child { border-radius: 0 0 12px 12px; border-bottom: none; }
+  .offre-type { font-size: 7pt; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 500; display: block; margin-bottom: 5px; }
+  .offre-card h4 {
+    font-family: var(--font-syne); font-style: italic; font-weight: 400;
+    font-size: 16pt; color: var(--burgundy);
+    text-transform: none; letter-spacing: 0; line-height: 1.15; margin: 0;
+  }
+  .offre-card p { font-size: 9pt; margin-bottom: 6px; max-width: none; line-height: 1.55; }
+  .offre-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+  .offre-tag {
+    font-size: 6.5pt; color: var(--burgundy);
+    background: rgba(139, 29, 61, 0.06); padding: 2px 8px;
+    border-radius: 20px; font-weight: 500;
+  }
+
+  /* PRIX */
+  .prix-box {
+    background: var(--burgundy); border-radius: 60px 20px 60px 20px;
+    padding: 24px 32px; margin-top: 22px;
+  }
+  .prix-box-text { color: var(--white); font-size: 10pt; line-height: 1.5; max-width: none; }
+  .prix-box-text strong { color: var(--gold); font-size: 24pt; font-weight: 700; display: block; font-family: var(--font-syne); }
+  .prix-box-note { font-size: 7pt; color: rgba(255,255,255,0.55); margin-top: 4px; }
+
+  /* INCLUS */
+  .inclus-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6px 18px;
+    list-style: none; margin-top: 6px;
+  }
+  .inclus-grid li {
+    font-size: 9pt; color: var(--black);
+    padding-left: 16px; position: relative; line-height: 1.5;
+  }
+  .inclus-grid li::before { content: "—"; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+
+  /* CONTACT */
+  .page-contact { background: var(--burgundy); position: relative; overflow: hidden; }
+  .contact-glow {
+    position: absolute; top: -200px; right: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(197, 160, 40, 0.1) 0%, transparent 70%);
+    border-radius: 50%; pointer-events: none;
+  }
+  .contact-inner {
+    position: relative; z-index: 1;
+    padding: 55px 48px 40px; flex: 1;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .contact-headline {
+    font-family: var(--font-syne); font-size: 32pt;
+    font-weight: 700; color: var(--white); line-height: 1.1;
+    max-width: 16ch; margin-bottom: 24px;
+  }
+  .contact-headline em { display: block; color: var(--gold); font-style: italic; font-weight: 400; }
+  .contact-invite { font-size: 11pt; color: rgba(255, 255, 255, 0.68); line-height: 1.7; max-width: 48ch; margin-bottom: 36px; }
+  .contact-details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .contact-item { border-top: 1px solid rgba(197, 160, 40, 0.4); padding-top: 14px; }
+  .contact-item-label { font-size: 7pt; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; font-family: var(--font-ranade); }
+  .contact-item-value { font-size: 10pt; color: var(--white); line-height: 1.55; }
+  .contact-item-value a { color: var(--white); text-decoration: underline; }
+  .contact-bottom {
+    position: relative; z-index: 1; padding: 20px 48px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .contact-bottom-logo { font-family: var(--font-syne); font-size: 14pt; font-weight: 700; color: var(--white); letter-spacing: 1px; }
+  .contact-bottom-copy { font-size: 7pt; color: rgba(255, 255, 255, 0.3); letter-spacing: 1px; font-family: var(--font-ranade); }
+  .page-cover .page-number, .page-contact .page-number { color: rgba(255, 255, 255, 0.15); }
+
+  @media print {
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    body { background: white; padding: 0; }
+    .page { margin: 0; page-break-after: always; width: 210mm; min-height: 297mm; box-shadow: none; }
+    .page:last-child { page-break-after: avoid; }
+    @page { size: A4 portrait; margin: 0; }
+  }
+  @media screen {
+    body { padding: 24px; background: #d9d4ce; display: flex; flex-direction: column; align-items: center; }
+    .page { box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18); border-radius: 2px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ======== PAGE 1 — COUVERTURE ======== -->
+<div class="page page-cover">
+  <div class="cover-glow"></div>
+  <div class="cover-photo">
+    <img src="./assets/photos-conf/IMG_0042.JPG" alt="Sandrina Perrin">
+  </div>
+
+  <div class="cover-top">
+    <div>
+      <div class="cover-logo">KLEIA-UP</div>
+      <div class="cover-logo-tagline">Conférences &amp; Ateliers</div>
+    </div>
+    <div class="cover-geo">Vendée · Pays de la Loire</div>
+  </div>
+
+  <div class="cover-hero">
+    <div class="overline" style="color:var(--gold)">Optimisme stratégique &amp; leadership sensible</div>
+    <h1>L'Optimisme :<br><em>Le Carburant du Collectif.</em></h1>
+    <p class="cover-sub">
+      Des conférences interactives pour réinsuffler de l'énergie, mobiliser les intelligences et transformer durablement vos collectifs — par les neurosciences, l'expérience et la joie.
+    </p>
+    <div class="cover-formats">
+      <div class="cover-format-item">Conférences</div>
+      <div class="cover-format-item">Ateliers</div>
+      <div class="cover-format-item">Formations</div>
+    </div>
+  </div>
+
+  <div class="cover-bottom">
+    <span>Conférencière &amp; facilitatrice</span>
+    <div class="gold-bar"></div>
+    <span>Sandrina Perrin</span>
+  </div>
+
+  <span class="page-number">01 / 06</span>
+</div>
+
+<!-- ======== PAGE 2 — SANDRINA ======== -->
+<div class="page page-inner bg-pearl">
+  <div class="overline">Qui est Sandrina Perrin</div>
+  <h2>« Que plus aucune voix brillante<br>ne s'éteigne par peur de déranger. »</h2>
+  <div class="gold-divider"></div>
+
+  <div class="bio-section">
+    <img src="./assets/sandrina-kleia-up.webp" alt="Sandrina Perrin" class="bio-portrait">
+    <div class="bio-content">
+      <p>
+        Depuis 2011, Sandrina Perrin accompagne les organisations dans la transformation de leurs collectifs. Conférencière, facilitatrice et coach en leadership sensible, elle intervient auprès d'entreprises, associations et collectivités.
+      </p>
+      <p>
+        Formée aux neurosciences appliquées, à la psychologie positive (VIA Institute), à la 
+        cohérence cardiaque (IFEDO) et à la prise de parole en public (LiveMentor), elle 
+        allie <strong>rigueur scientifique et pragmatisme terrain</strong> pour créer des interventions 
+        qui produisent un impact mesurable.
+      </p>
+      <div class="bio-creds">
+        <span>Neurosciences</span>
+        <span>Psychologie positive</span>
+        <span>VIA 24 forces</span>
+        <span>Cohérence cardiaque</span>
+        <span>Prise de parole</span>
+        <span>Analyse transactionnelle</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGOS PARTENAIRES -->
+  <div style="margin: 18px 0 10px;">
+    <h3 style="font-size:7.5pt; letter-spacing:2px; text-align:center;">Ils nous font confiance</h3>
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-top:10px;">
+      <img src="./assets/logos-partners/UDAMS85-logo-horizontal-_1_.webp" alt="UDAMS 85" style="height:28px; width:auto; opacity:0.65;">
+      <img src="./assets/logos-partners/microsoft.png" alt="Microsoft" style="height:28px; width:auto; opacity:0.65;">
+      <img src="./assets/logos-partners/le-figaro.png" alt="Le Figaro Magazine" style="height:28px; width:auto; opacity:0.65;">
+      <img src="./assets/logos-partners/familles-rurales.png" alt="Familles Rurales" style="height:28px; width:auto; opacity:0.65;">
+      <img src="./assets/logos-partners/club-reveuses.png" alt="Club des Rêveuses" style="height:28px; width:auto; opacity:0.65;">
+      <img src="./assets/logos-partners/vendee-grand-littoral.png" alt="Vendée Grand Littoral" style="height:28px; width:auto; opacity:0.65;">
+      <img src="./assets/logos-partners/ateliers-durables.png" alt="Les Ateliers Durables" style="height:28px; width:auto; opacity:0.65;">
+    </div>
+  </div>
+
+  <!-- TÉMOIGNAGES -->
+  <div style="display:flex; flex-wrap:wrap; gap:12px; margin:16px 0 8px;">
+    <div style="flex:1; min-width:200px; background:rgba(255,255,255,0.6); padding:14px 16px; border-left:3px solid var(--gold); border-radius:4px;">
+      <p style="font-size:7.5pt; font-style:italic; line-height:1.5; margin:0; color:var(--muted);">"Sandrina est intervenue lors de notre séminaire annuel. Taux de satisfaction : 92%. Les équipes en parlent encore 3 mois après."</p>
+      <p style="font-size:7pt; font-weight:600; margin-top:6px; color:var(--burgundy);">— Direction, UDAMS 85 — juin 2026</p>
+    </div>
+    <div style="flex:1; min-width:200px; background:rgba(255,255,255,0.6); padding:14px 16px; border-left:3px solid var(--gold); border-radius:4px;">
+      <p style="font-size:7.5pt; font-style:italic; line-height:1.5; margin:0; color:var(--muted);">"Rigueur scientifique et mise en pratique immédiate. Nos équipes sont reparties avec des outils utilisables dès le lendemain."</p>
+      <p style="font-size:7pt; font-weight:600; margin-top:6px; color:var(--burgundy);">— Responsable RH, secteur sanitaire — mai 2026</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:10px;">Sandrina en action</h3>
+  <div class="photo-strip">
+    <img src="./assets/photos-conf/IMG_0095.JPG" alt="Sandrina en conférence">
+    <img src="./assets/photos-conf/IMG_0060.JPG" alt="Sandrina - exercice interactif">
+    <img src="./assets/photos-conf/IMG_0076.JPG" alt="Sandrina - posture et mouvement">
+    <img src="./assets/photos-conf/IMG_0042.JPG" alt="Sandrina - présence scénique">
+  </div>
+
+  <span class="page-number">02 / 06</span>
+</div>
+
+<!-- ======== PAGE 3 — NOTRE APPROCHE ======== -->
+<div class="page page-inner bg-cream">
+  <div class="overline">Notre approche</div>
+  <h2>L'optimisme n'est pas un vœu.<br>C'est une compétence stratégique.</h2>
+  <div class="gold-divider"></div>
+
+  <p>
+    Dans un monde où l'incertitude fragmente les équipes et épuise l'énergie collective,
+    KLEIA-UP propose une voie différente : faire de l'optimisme un 
+    <strong>levier d'engagement, de résilience et de performance durable</strong>.
+  </p>
+  <p>
+    Nos conférences sont des expériences incarnées. Elles mêlent 
+    <strong>neurosciences, psychologie positive et exercices pratiques</strong>
+    pour créer un vrai déclic — individuel et collectif.
+  </p>
+
+  <div class="manifesto-cartridge">
+    <p>
+      "L'optimiste n'est pas celui qui voit tout en rose. C'est celui qui agit,
+      qui voit dans l'incertitude une opportunité, et qui cultive cette force
+      non seulement pour lui-même, mais aussi pour les autres."<br>
+      <strong>— Christophe André</strong>
+    </p>
+  </div>
+
+  <div class="piliers-grid">
+    <div class="pilier-card">
+      <h4>Neurosciences appliquées</h4>
+      <p>Des recherches validées (Wendy Suzuki, Amy Cuddy, The None Study) traduites en outils concrets pour vos équipes.</p>
+    </div>
+    <div class="pilier-card">
+      <h4>Forces de caractère</h4>
+      <p>Les 24 forces VIA de Peterson &amp; Seligman : chaque participant repart avec la connaissance de ses talents uniques.</p>
+    </div>
+    <div class="pilier-card">
+      <h4>Expérience interactive</h4>
+      <p>Exercices en binômes, postures de puissance, célébration collective — rien de descendant, tout est vécu.</p>
+    </div>
+    <div class="pilier-card">
+      <h4>Impact durable</h4>
+      <p>Des outils que les participants peuvent utiliser dès le lendemain, seuls ou en équipe.</p>
+    </div>
+  </div>
+
+  <span class="page-number">03 / 06</span>
+</div>
+
+<!-- ======== PAGE 4 — PFM ======== -->
+<div class="page page-inner bg-pearl">
+  <div class="overline">Le programme</div>
+  <h2>La méthode PFM —<br>Positive, Forces, Muscle.</h2>
+  <div class="gold-divider"></div>
+
+  <p>
+    Chaque conférence KLEIA-UP suit un fil rouge en trois mouvements, conçus pour
+    <strong>transformer le regard</strong> et donner des clés d'action immédiates.
+  </p>
+
+  <div class="pfm-grid">
+    <div class="pfm-card">
+      <div class="pfm-icon">🧠</div>
+      <h4>Changer la fréquence de votre cerveau</h4>
+      <p>Déjouez le biais de négativité. Passez du mode « survie » au mode « positif » grâce aux neurosciences.</p>
+      <div class="pfm-action">Exercice : échange avec votre voisin</div>
+    </div>
+    <div class="pfm-card">
+      <div class="pfm-icon">💪</div>
+      <h4>Devenir un super-héros du quotidien</h4>
+      <p>Identifiez vos forces de caractère uniques (24 forces VIA). Apprenez à les actionner sans vous épuiser.</p>
+      <div class="pfm-action">Exercice : tableau des forces</div>
+    </div>
+    <div class="pfm-card">
+      <div class="pfm-icon">🏃</div>
+      <h4>Bougez, votre cerveau vous dira merci</h4>
+      <p>Postures de puissance (Amy Cuddy), mouvement et créativité (Wendy Suzuki). Le corps, moteur de l'optimisme.</p>
+      <div class="pfm-action">Exercice : posture Wonder Woman</div>
+    </div>
+  </div>
+
+  <div class="gold-cartridge">
+    <p>
+      <strong>Validé par les neurosciences.</strong> L'étude <em>The None Study</em> démontre que cultiver l'optimisme ajoute <strong>6 ans de vie en bonne santé</strong>. 
+      Les travaux de la <strong>Dre Wendy Suzuki</strong> (NYU) prouvent que 10 minutes de mouvement transforment l'humeur et la créativité. 
+      La chercheuse <strong>Amy Cuddy</strong> (Harvard) a démontré l'impact des postures de puissance sur la confiance et la prise de décision.
+    </p>
+  </div>
+
+  <h3 style="margin-top:22px; margin-bottom:8px;">Au-delà de la conférence</h3>
+  <p style="font-size:9pt;">
+    Chaque thématique peut être prolongée par un <strong>atelier pratique</strong> (2h à ½ journée) ou un 
+    <strong>parcours de formation</strong> (1 à 3 jours) pour ancrer durablement les apprentissages.
+  </p>
+
+  <span class="page-number">04 / 06</span>
+</div>
+
+<!-- ======== PAGE 5 — OFFRES ======== -->
+<div class="page page-inner bg-cream">
+  <div class="overline">Nos offres</div>
+  <h2>Trois formats.<br>Un même engagement d'expérience.</h2>
+  <div class="gold-divider"></div>
+
+  <div class="offres-grid">
+    <div class="offre-card">
+      <div>
+        <span class="offre-type">Format 01</span>
+        <h4>Conférence</h4>
+      </div>
+      <div>
+        <p>
+          Temps fort de <strong>45mn à 1h</strong> pour une prise de conscience collective.
+          Idéal pour ouvrir un séminaire, une assemblée générale ou un temps fort RH.
+        </p>
+        <div class="offre-tags">
+          <span class="offre-tag">Leadership sensible</span>
+          <span class="offre-tag">Optimisme stratégique</span>
+          <span class="offre-tag">Engagement</span>
+          <span class="offre-tag">Sur mesure</span>
+        </div>
+      </div>
+    </div>
+    <div class="offre-card">
+      <div>
+        <span class="offre-type">Format 02</span>
+        <h4>Atelier</h4>
+      </div>
+      <div>
+        <p>
+          Expérience participative de <strong>2h à une demi-journée</strong> pour mettre en pratique les concepts. Idéal pour des séminaires d'équipe ou journées thématiques.
+        </p>
+        <div class="offre-tags">
+          <span class="offre-tag">Forces de caractère</span>
+          <span class="offre-tag">Cohésion d'équipe</span>
+          <span class="offre-tag">QVCT</span>
+          <span class="offre-tag">Prévention</span>
+        </div>
+      </div>
+    </div>
+    <div class="offre-card">
+      <div>
+        <span class="offre-type">Format 03</span>
+        <h4>Formation</h4>
+      </div>
+      <div>
+        <p>
+          Parcours de <strong>1 à 3 jours</strong> pour ancrer durablement les pratiques de leadership sensible, d'optimisme stratégique et de management incarné.
+        </p>
+        <div class="offre-tags">
+          <span class="offre-tag">Parcours sur mesure</span>
+          <span class="offre-tag">Managers &amp; RH</span>
+          <span class="offre-tag">Pratiques durables</span>
+          <span class="offre-tag">Finançable OPCO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <div class="prix-box">
+    <div class="prix-box-text">
+      <strong>Conférence entreprise : 2 480 €</strong>
+      Visio stratégique préparatoire (30-45 min) + animation + débrief post-événement inclus.
+      <div class="prix-box-note">Frais de déplacement non inclus · Associations et collectivités : nous consulter</div>
+    </div>
+  </div>
+
+  <div style="margin-top:12px; text-align:center;">
+    <p style="font-size:7.5pt; color:var(--muted); max-width:none; margin:0;">
+      🎬 <strong>Vidéo de présentation disponible sur demande</strong> — voyez Sandrina en action avant de vous engager.
+    </p>
+  </div>
+
+  <div style="margin-top:20px;">
+    <ul class="inclus-grid">
+      <li>Temps d'échange préparatoire personnalisé</li>
+      <li>Exercices interactifs adaptés à votre public</li>
+      <li>Débrief avec l'équipe organisatrice</li>
+      <li>Prolongement possible en atelier ou parcours</li>
+    </ul>
+  </div>
+
+  <span class="page-number">05 / 06</span>
+</div>
+
+<!-- ======== PAGE 6 — CONTACT ======== -->
+<div class="page page-contact">
+  <div class="contact-glow"></div>
+
+  <div class="contact-inner">
+    <div>
+      <div class="overline" style="color:var(--gold); margin-bottom:20px">Donnez vie à votre projet</div>
+      <div class="contact-headline">
+        Construisons ensemble<br><em>votre prochain temps fort</em><br>humain.
+      </div>
+      <p class="contact-invite">
+        Chaque intervention KLEIA-UP est conçue sur mesure, à partir de vos enjeux, 
+        de votre public et de vos ambitions. Réservez un échange gratuit pour 
+        imaginer l'expérience qui fera la différence.
+      </p>
+    </div>
+
+    <div class="contact-details">
+      <div class="contact-item">
+        <div class="contact-item-label">Site web</div>
+        <div class="contact-item-value"><a href="https://kleia-up.fr">kleia-up.fr</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-label">Contact</div>
+        <div class="contact-item-value">
+          Sandrina Perrin<br>
+          <a href="https://www.linkedin.com/in/sandrina-perrin-conference-formation/">LinkedIn</a><br>
+          Vendée · Pays de la Loire
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-label">Formats</div>
+        <div class="contact-item-value">
+          Conférences<br>
+          Ateliers · Formations
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-bottom">
+    <div class="contact-bottom-logo">KLEIA-UP</div>
+    <div class="contact-bottom-copy">
+      Conférences &amp; Ateliers — kleia-up.fr
+    </div>
+  </div>
+
+  <span class="page-number">06 / 06</span>
+</div>
+
+</body>
+</html>
