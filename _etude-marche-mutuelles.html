@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Étude de Marché — KLEIA-UP × Mutuelles & Assureurs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  @import url('https://api.fontshare.com/v2/css?f[]=ranade@300,400,500,700,800,900&display=swap');
+  :root {
+    --burgundy: #8B1D3D; --burgundy-dark: #6a0020; --gold: #C5A028;
+    --cream: #FAF9F6; --pearl: #FDFDFD; --black: #1A1A1A; --muted: #6A5458;
+    --font-ranade: 'Ranade', system-ui, sans-serif;
+    --font-syne: 'Syne', sans-serif;
+    --green: #2A7D5C; --red: #C0392B; --amber: #D4A017; --blue: #2C6FAA;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-ranade); font-size: 11pt;
+    color: var(--black); background: var(--cream); line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  /* NAV */
+  .nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(139,29,61,0.08); padding: 10px 0;
+  }
+  .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+  .nav-logo { font-family: var(--font-syne); font-weight: 700; font-size: 14pt; color: var(--burgundy); }
+  .nav-links { display: flex; gap: 20px; list-style: none; font-size: 8pt; text-transform: uppercase; letter-spacing: 1px; }
+  .nav-links a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--burgundy); }
+
+  /* HERO */
+  .hero {
+    margin-top: 60px; background: var(--burgundy); padding: 60px 0 50px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -100px; right: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(197,160,40,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero h1 { font-family: var(--font-syne); font-size: 36pt; font-weight: 700; color: #fff; line-height: 1.1; max-width: 14ch; }
+  .hero h1 em { display: block; color: var(--gold); font-style: italic; font-weight: 400; }
+  .hero p { color: rgba(255,255,255,0.7); font-size: 11pt; max-width: 55ch; margin-top: 16px; }
+  .hero-meta { margin-top: 24px; display: flex; gap: 30px; }
+  .hero-meta span { font-size: 7.5pt; color: rgba(255,255,255,0.4); letter-spacing: 1.5px; text-transform: uppercase; }
+
+  /* SECTIONS */
+  section { padding: 50px 0; }
+  section:nth-child(even) { background: var(--pearl); }
+  h2 {
+    font-family: var(--font-syne); font-weight: 700; font-size: 22pt;
+    color: var(--burgundy); margin-bottom: 24px; line-height: 1.15;
+  }
+  h2 .gold { color: var(--gold); font-style: italic; font-weight: 400; display: block; }
+  h3 {
+    font-family: var(--font-ranade); font-weight: 600; font-size: 10pt;
+    text-transform: uppercase; letter-spacing: 2px; color: var(--gold);
+    margin-bottom: 12px; margin-top: 30px;
+  }
+  .gold-divider { width: 50px; height: 2px; background: var(--gold); margin: 0 0 24px; }
+
+  /* TABLES */
+  table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 9.5pt; }
+  th { background: var(--burgundy); color: #fff; padding: 10px 12px; text-align: left; font-weight: 600; font-size: 8pt; text-transform: uppercase; letter-spacing: 1px; }
+  td { padding: 10px 12px; border-bottom: 1px solid rgba(139,29,61,0.06); }
+  tr:hover td { background: rgba(139,29,61,0.03); }
+  .tag { display: inline-block; font-size: 7pt; padding: 2px 8px; border-radius: 12px; font-weight: 600; }
+  .tag-green { background: rgba(42,125,92,0.12); color: var(--green); }
+  .tag-amber { background: rgba(212,160,23,0.12); color: var(--amber); }
+  .tag-red { background: rgba(192,57,43,0.12); color: var(--red); }
+  .tag-blue { background: rgba(44,111,170,0.12); color: var(--blue); }
+
+  /* CARDS */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin: 20px 0; }
+  .card {
+    background: #fff; border-radius: 8px; padding: 20px;
+    border-left: 3px solid var(--gold); box-shadow: 0 4px 15px rgba(88,0,23,0.06);
+  }
+  .card h4 { font-family: var(--font-syne); font-style: italic; font-weight: 400; font-size: 11pt; color: var(--burgundy); margin-bottom: 6px; }
+  .card p { font-size: 9pt; color: var(--muted); line-height: 1.55; }
+  .card .stat { font-family: var(--font-syne); font-size: 24pt; font-weight: 700; color: var(--burgundy); display: block; line-height: 1.1; margin-bottom: 4px; }
+
+  /* CHARTS (CSS-based) */
+  .bar-chart { margin: 20px 0; }
+  .bar-row { display: flex; align-items: center; margin-bottom: 8px; }
+  .bar-label { width: 180px; font-size: 8.5pt; text-align: right; padding-right: 12px; color: var(--muted); font-weight: 500; }
+  .bar-track { flex: 1; height: 22px; background: rgba(139,29,61,0.06); border-radius: 4px; position: relative; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 8px; font-size: 7.5pt; color: #fff; font-weight: 600; }
+  .bar-value { width: 100px; padding-left: 10px; font-size: 8.5pt; font-weight: 600; color: var(--burgundy); }
+
+  .match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+  .match-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: #fff; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+  .match-score { font-size: 16pt; min-width: 30px; text-align: center; }
+  .match-text { font-size: 9pt; }
+  .match-text strong { display: block; color: var(--burgundy); }
+  .match-text span { color: var(--muted); font-size: 8pt; }
+
+  /* SIGNAL CARDS */
+  .signal-card { padding: 18px; border-radius: 8px; margin-bottom: 12px; border-left: 4px solid; }
+  .signal-card.fire { background: rgba(192,57,43,0.03); border-left-color: var(--red); }
+  .signal-card.amber { background: rgba(212,160,23,0.03); border-left-color: var(--amber); }
+  .signal-card h4 { font-size: 10pt; font-weight: 600; color: var(--black); }
+  .signal-card p { font-size: 9pt; color: var(--muted); margin-top: 4px; }
+  .signal-card .source { font-size: 7.5pt; color: var(--muted); opacity: 0.6; margin-top: 6px; }
+
+  /* RECO CARD */
+  .reco-card {
+    background: var(--burgundy); border-radius: 12px; padding: 30px;
+    color: #fff; margin: 20px 0;
+  }
+  .reco-card h3 { color: var(--gold); }
+  .reco-card ol { margin-left: 20px; }
+  .reco-card li { margin-bottom: 10px; font-size: 10pt; }
+  .reco-card li strong { color: var(--gold); }
+
+  /* FOOTER */
+  footer {
+    background: var(--black); color: rgba(255,255,255,0.4); text-align: center;
+    padding: 30px 0; font-size: 8pt; letter-spacing: 1px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 24pt; }
+    .match-grid { grid-template-columns: 1fr; }
+    .bar-label { width: 120px; font-size: 7.5pt; }
+    .bar-value { width: 60px; font-size: 7.5pt; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <div class="nav-logo">KLEIA-UP × ÉTUDE MARCHÉ</div>
+    <ul class="nav-links">
+      <li><a href="#macro">Macro</a></li>
+      <li><a href="#cibles">Cibles</a></li>
+      <li><a href="#match">Adéquation</a></li>
+      <li><a href="#salons">Salons</a></li>
+      <li><a href="#signaux">Signaux</a></li>
+      <li><a href="#gap">Gap Analysis</a></li>
+      <li><a href="#plan">Plan</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1>Mutuelles & Assureurs<br><em>Étude de Marché KLEIA-UP</em></h1>
+    <p>Analyse de l'adéquation entre l'offre de Sandrina Perrin (conférences, ateliers, formations en optimisme stratégique et leadership sensible) et la demande des mutuelles et assureurs français en matière de QVCT, prévention santé mentale et bien-être au travail.</p>
+    <div class="hero-meta">
+      <span>Juin 2026</span>
+      <span>6 groupes analysés</span>
+      <span>14 sources</span>
+      <span>6 signaux business</span>
+    </div>
+  </div>
+</section>
+
+<!-- 1. MACRO SECTOR -->
+<section id="macro">
+  <div class="container">
+    <h2>1. Cartographie du secteur<br><span class="gold">Mutualité & Assurance</span></h2>
+    <div class="gold-divider"></div>
+
+    <div class="card-grid">
+      <div class="card"><span class="stat">~400</span><h4>Mutuelles en France</h4><p>Dont une trentaine de groupes significatifs. Le secteur pèse ~40 Md€ de cotisations santé et prévoyance.</p></div>
+      <div class="card"><span class="stat">~38 M</span><h4>Personnes protégées</h4><p>Adhérents et bénéficiaires couverts par le secteur mutualiste français.</p></div>
+      <div class="card"><span class="stat">~75 000</span><h4>Salariés du secteur</h4><p>Effectifs directs des mutuelles, hors assurances. Source : FNMF.</p></div>
+      <div class="card"><span class="stat">200 M€/an</span><h4>Budget social Malakoff Humanis</h4><p>Exemple de budget annuel dédié aux actions sociales et de prévention pour un seul groupe.</p></div>
+    </div>
+
+    <h3>Classement par chiffre d'affaires</h3>
+    <div class="bar-chart">
+      <div class="bar-row"><div class="bar-label">Groupama</div><div class="bar-track"><div class="bar-fill" style="width:95%;background:var(--burgundy);">18,5 Md€</div></div><div class="bar-value">#1</div></div>
+      <div class="bar-row"><div class="bar-label">AG2R La Mondiale</div><div class="bar-track"><div class="bar-fill" style="width:68%;background:#A03050;">13,1 Md€</div></div><div class="bar-value">#2</div></div>
+      <div class="bar-row"><div class="bar-label">Groupe VYV</div><div class="bar-track"><div class="bar-fill" style="width:58%;background:#B84860;">11,2 Md€</div></div><div class="bar-value">#3</div></div>
+      <div class="bar-row"><div class="bar-label">Groupama (Assurances)</div><div class="bar-track"><div class="bar-fill" style="width:54%;background:#C06070;">10,5 Md€</div></div><div class="bar-value">#4</div></div>
+      <div class="bar-row"><div class="bar-label">MACIF</div><div class="bar-track"><div class="bar-fill" style="width:40%;background:#C87880;">7,8 Md€</div></div><div class="bar-value">#5</div></div>
+      <div class="bar-row"><div class="bar-label">Malakoff Humanis</div><div class="bar-track"><div class="bar-fill" style="width:33%;background:#D09098;">6,4 Md€</div></div><div class="bar-value">#6</div></div>
+    </div>
+    <p style="font-size:8pt;color:var(--muted);margin-top:4px;">Sources : Wikipedia (données 2024-2025), sites corporate. Les CA assurance/mutuelle sont présentés séparément selon les groupes.</p>
+  </div>
+</section>
+
+<!-- 2. CIbles -->
+<section id="cibles">
+  <div class="container">
+    <h2>2. Analyse des groupes cibles<br><span class="gold">6 entités passées au crible</span></h2>
+    <div class="gold-divider"></div>
+
+    <table>
+      <thead><tr><th>Groupe</th><th>CA</th><th>Salariés</th><th>Maturité QVCT</th><th>Décideur clé</th><th>Priorité</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Groupe VYV</strong><br><span style="font-size:8pt;color:var(--muted);">Harmonie Mutuelle, MGEN, MNT</span></td>
+          <td>11,2 Md€</td><td>48 000</td>
+          <td><span class="tag tag-green">★ FORTE</span></td>
+          <td>Delphine Maisonneuve (DG)<br>Samuel Galtié (Dir. santé mentale VYV 3)</td>
+          <td>🔥 #2</td>
+        </tr>
+        <tr>
+          <td><strong>Malakoff Humanis</strong><br><span style="font-size:8pt;color:var(--muted);">Paritaire, mutualiste</span></td>
+          <td>6,4 Md€</td><td>10 500</td>
+          <td><span class="tag tag-green">★ FORTE</span></td>
+          <td>Christophe Scherrer (DG)<br><span style="font-size:7.5pt;color:var(--muted);">Cite santé mentale dans Décideurs Mag (juin 2026)</span></td>
+          <td>🔥 #1</td>
+        </tr>
+        <tr>
+          <td><strong>Groupama</strong><br><span style="font-size:8pt;color:var(--muted);">Assurance mutuelle</span></td>
+          <td>18,5 Md€</td><td>32 000</td>
+          <td><span class="tag tag-amber">★ MOYENNE</span></td>
+          <td>Thierry Martel (DG)</td><td>🟡 #4</td>
+        </tr>
+        <tr>
+          <td><strong>AG2R La Mondiale</strong><br><span style="font-size:8pt;color:var(--muted);">Mutualiste, paritaire</span></td>
+          <td>13,1 Md€</td><td>15 000</td>
+          <td><span class="tag tag-amber">★ MOYENNE</span></td>
+          <td>Fabrice Heyriès (DG)</td><td>🟡 #5</td>
+        </tr>
+        <tr>
+          <td><strong>MACIF</strong><br><span style="font-size:8pt;color:var(--muted);">Groupe Aéma</span></td><td>7,8 Md€</td><td>9 400</td>
+          <td><span class="tag tag-blue">★ À CONFIRMER</span></td><td>—</td><td>🔵 #6</td>
+        </tr>
+        <tr>
+          <td><strong>MAIF</strong><br><span style="font-size:8pt;color:var(--muted);">Assureur militant</span></td>
+          <td>3,5 Md€ (est.)</td><td>—</td>
+          <td><span class="tag tag-blue">★ À CONFIRMER</span></td>
+          <td>Pascal Demurger (DG)</td><td>🔵 #7</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Politiques QVCT documentées</h3>
+    <div class="card-grid">
+      <div class="card">
+        <h4>Groupe VYV — Priorité Santé Mentale</h4>
+        <p>• Plan stratégique VYV 2025<br>• <strong>70 préventeurs</strong> sur tout le territoire<br>• Guide santé mentale 2025<br>• Dispositif « Mon soutien psy » (12 séances)<br>• Label « Prévention Santé + »<br>• Observatoire IPSOS annuel</p>
+      </div>
+      <div class="card">
+        <h4>Malakoff Humanis — 200 M€/an</h4>
+        <p>• Fonds MH Innov (prévention santé)<br>• Services santé au travail / réduction absentéisme<br>• Certifié Top Employer France<br>• RSE Ecovadis Gold (top 2% mondial)<br>• Engagements : handicap, cancer, aidants</p>
+      </div>
+      <div class="card">
+        <h4>Groupama — Rapport RSE 2025</h4>
+        <p>• Stratégie RSE dédiée<br>• Rapport de Durabilité 2025<br>• Axe prévention santé<br>• Culture d'entreprise RSE</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. MATCH -->
+<section id="match">
+  <div class="container">
+    <h2>3. Adequation offre / demande<br><span class="gold">Match Analysis</span></h2>
+    <div class="gold-divider"></div>
+
+    <p style="margin-bottom:20px;">Analyse croisée entre les besoins exprimés par le secteur mutualiste et l'offre actuelle de Sandrina Perrin / KLEIA-UP.</p>
+
+    <div class="match-grid">
+      <div class="match-item"><span class="match-score">🟢</span><div class="match-text"><strong>Santé mentale au travail</strong><span>Groupe VYV (70 préventeurs), Malakoff (Scherrer), presse</span></div></div>
+      <div class="match-item"><span class="match-score">🟢</span><div class="match-text"><strong>Prévention des RPS</strong><span>Groupe VYV, Malakoff, ANACT, Semaine QVCT</span></div></div>
+      <div class="match-item"><span class="match-score">🟢</span><div class="match-text"><strong>Bien-être au travail / QVCT</strong><span>Toutes les mutuelles, Actineo, ANACT</span></div></div>
+      <div class="match-item"><span class="match-score">🟢</span><div class="match-text"><strong>Management & leadership</strong><span>Semaine QVCT 2026 : « Manager, c'est tout un travail ! »</span></div></div>
+      <div class="match-item"><span class="match-score">🟢</span><div class="match-text"><strong>Cohésion d'équipe</strong><span>Séminaires, conventions, AG</span></div></div>
+      <div class="match-item"><span class="match-score">🟢</span><div class="match-text"><strong>Gestion profils HPS / neurodiversité</strong><span>Sujet montant dans les RH</span></div></div>
+      <div class="match-item"><span class="match-score">🟡</span><div class="match-text"><strong>Réduction absentéisme</strong><span>Adressé indirectement via prévention</span></div></div>
+      <div class="match-item"><span class="match-score">🔴</span><div class="match-text"><strong>Sport-santé</strong><span>Hors périmètre Sandrina</span></div></div>
+    </div>
+
+    <h3>Score d'adéquation</h3>
+    <div style="background:#fff;border-radius:8px;padding:24px;text-align:center;box-shadow:0 4px 15px rgba(88,0,23,0.06);margin:16px 0;">
+      <span style="font-family:var(--font-syne);font-size:48pt;font-weight:700;color:var(--green);">6/8</span>
+      <span style="display:block;font-size:10pt;color:var(--muted);">Correspondances directes ou bonnes sur 8 besoins identifiés</span>
+    </div>
+  </div>
+</section>
+
+<!-- 4. SALONS -->
+<section id="salons">
+  <div class="container">
+    <h2>4. Salons & Événements<br><span class="gold">Opportunités terrain</span></h2>
+    <div class="gold-divider"></div>
+
+    <table>
+      <thead><tr><th>Salon</th><th>Date</th><th>Lieu</th><th>Opportunité</th><th>Priorité</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Préventica Lyon</strong></td><td>6-8 oct 2026</td><td>Eurexpo Lyon</td><td>Rubrique « Management Inspirant » · 15 000 décideurs</td><td><span class="tag tag-green">🔴 CANDIDATER</span></td></tr>
+        <tr><td><strong>Semaine QVCT ANACT</strong></td><td>Juin 2027 (prochaine)</td><td>France (50 événements)</td><td>Partenariat MGEN + Mutualité Française</td><td><span class="tag tag-green">🟡 PROPOSER 2027</span></td></tr>
+        <tr><td><strong>Workspace Paris</strong></td><td>16-18 mars 2027</td><td>Porte de Versailles</td><td>20 000 pers., 300 exposants</td><td><span class="tag tag-amber">🔵 SURVEILLER</span></td></tr>
+        <tr><td><strong>People 4 Health</strong></td><td>Annuel</td><td>France</td><td>Salon dédié santé et QVCT</td><td><span class="tag tag-amber">🔵 SURVEILLER</span></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Communautés professionnelles à rejoindre</h3>
+    <div class="card-grid">
+      <div class="card"><h4>Actineo</h4><p>Observatoire QVCT reconnu. Baromètres, publications, réseau de professionnels.</p></div>
+      <div class="card"><h4>Préventica</h4><p>Magazine, webinaires, annuaire, podcasts. 600 exposants, 180 conférences.</p></div>
+      <div class="card"><h4>ANACT / ARACT</h4><p>Agence nationale QVCT. Réseau régional dans toute la France.</p></div>
+      <div class="card"><h4>Cercle Entreprises et Santé</h4><p>Santé au travail, prévention, réseau d'entreprises engagées.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. SIGNAUX -->
+<section id="signaux">
+  <div class="container">
+    <h2>5. Signaux Business<br><span class="gold">Opportunités & alertes</span></h2>
+    <div class="gold-divider"></div>
+
+    <div class="signal-card fire">
+      <h4>🔥 Malakoff Humanis : le DG parle santé mentale dans la presse</h4>
+      <p>Christophe Scherrer (DG) interviewé dans Décideurs Magazine (4 juin 2026) sur le sujet de la santé mentale. Quand le DG porte le sujet, les budgets sont déverrouillés.</p>
+      <div class="source">Source : Décideurs Magazine, 04/06/2026 · newsroom.malakoffhumanis.com</div>
+    </div>
+
+    <div class="signal-card fire">
+      <h4>🔥 Marché à double détente : employeur ET assureur</h4>
+      <p>Les mutuelles sont à la fois employeurs (10 000+ salariés à former) ET assureurs (services de prévention à revendre à leurs entreprises clientes). Sandrina peut vendre sa prestation ×2 à la même entité.</p>
+      <div class="source">Source : Analyse transversale</div>
+    </div>
+
+    <div class="signal-card fire">
+      <h4>🔥 Malakoff Humanis : 200 M€/an en actions sociales</h4>
+      <p>Budget colossal. Même 0,01% = 20 K€/an de conférences pour une seule entité. Sans compter les entreprises clientes.</p>
+      <div class="source">Source : newsroom.malakoffhumanis.com</div>
+    </div>
+
+    <div class="signal-card fire">
+      <h4>🔥 Groupe VYV : 70 préventeurs santé mentale</h4>
+      <p>Opportunité de former/outiller leurs 70 préventeurs via les ateliers Sandrina, plutôt que de vendre des conférences directes.</p>
+      <div class="source">Source : groupe-vyv.fr/sante-mentale</div>
+    </div>
+
+    <div class="signal-card amber">
+      <h4>🟡 Fusion Malakoff / KERIALIS (nov. 2026)</h4>
+      <p>Période de transition = possible gel budgétaire. Anticiper dans le calendrier commercial (viser 2027 ou avant la fusion).</p>
+      <div class="source">Source : newsroom, 23/06/2026</div>
+    </div>
+
+    <div class="signal-card amber">
+      <h4>🟡 Qualiopi / OPCO — statut à vérifier</h4>
+      <p>OPCO Atlas couvre le secteur (200 000 entreprises, 2 M de salariés). Si Sandrina n'a pas Qualiopi, seules les conférences simples (non certifiantes) sont vendables hors OPCO.</p>
+      <div class="source">Source : opco-atlas.fr</div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. GAP -->
+<section id="gap">
+  <div class="container">
+    <h2>6. Analyse d'écart (Gap Analysis)<br><span class="gold">Barrières & leviers</span></h2>
+    <div class="gold-divider"></div>
+
+    <h3>Positionnement vs concurrence</h3>
+    <table>
+      <thead><tr><th>Facteur</th><th>Sandrina (KLEIA-UP)</th><th>Marché concurrentiel</th><th>Commentaire</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Prix conférence</strong></td><td>2 480 €</td><td>1 500 - 5 000 €</td><td><span class="tag tag-green">Dans la moyenne-haute</span></td></tr>
+        <tr><td><strong>Thème phare</strong></td><td>Optimisme stratégique + neurosciences</td><td>Résilience, stress, management générique</td><td><span class="tag tag-green">Différenciant</span></td></tr>
+        <tr><td><strong>Différenciateur</strong></td><td>Forces VIA (psychologie positive), HPS, interactif</td><td>Approches descendantes ou médicales</td><td><span class="tag tag-green">Unique sur le segment</span></td></tr>
+        <tr><td><strong>Notoriété secteur</strong></td><td>Faible (1 logo partenaire UDAMS 85)</td><td>Référencements établis</td><td><span class="tag tag-red">Barrière #1</span></td></tr>
+        <tr><td><strong>Format</strong></td><td>Très interactif, exercices pratiques</td><td>Majoritairement descendant</td><td><span class="tag tag-green">Avantage concurrentiel</span></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Barrières à l'entrée</h3>
+    <div class="card-grid">
+      <div class="card"><h4>🔴 Pas de référence sectorielle</h4><p>Hors UDAMS 85. → <strong>Obtenir 2-3 missions dans le secteur</strong> pour créer un portfolio crédible.</p></div>
+      <div class="card"><h4>🟡 Qualiopi / OPCO non vérifié</h4><p>Si Sandrina a un numéro de formateur (NDA), se faire référencer OPCO Atlas débloque le budget formation des mutuelles.</p></div>
+      <div class="card"><h4>🟡 Prix perçu comme élevé</h4><p>2 480 € est correct pour un grand groupe mais élevé pour une petite mutuelle régionale. → Segmenter la grille tarifaire.</p></div>
+      <div class="card"><h4>🟡 Pas de page dédiée sur le site</h4><p>Créer une page « Mutuelles & Assureurs » sur kleia-up.fr crédibilise le positionnement.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. FINANCEMENT -->
+<section>
+  <div class="container">
+    <h2>OPCO & Financements<br><span class="gold">Levier budgétaire</span></h2>
+    <div class="gold-divider"></div>
+
+    <div class="card-grid">
+      <div class="card"><h4>OPCO Atlas</h4><p>Couvre le secteur des services financiers et du conseil (ASSURANCE, BANQUE, CONSEIL). <strong>200 000+ entreprises, 2 M de salariés.</strong> Site : opco-atlas.fr</p></div>
+      <div class="card"><h4>Conférences simples</h4><p>Finançables sur budget formation sans Qualiopi. Processus facilité si référencement OPCO.</p></div>
+      <div class="card"><h4>Formations certifiantes</h4><p>Qualiopi requis pour les parcours de 1-3 jours. À vérifier si Sandrina a la certification.</p></div>
+      <div class="card"><h4>Budgets mutuelles</h4><p>Plusieurs millions €/an par grand groupe. Exemple : Malakoff Humanis injecte 200 M€/an en actions sociales.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. PLAN D'ACTION -->
+<section id="plan">
+  <div class="container">
+    <h2>7. Plan d'Action Recommandé<br><span class="gold">Priorisé & daté</span></h2>
+    <div class="gold-divider"></div>
+
+    <div class="reco-card">
+      <h3>ACTIONS IMMÉDIATES (30 JOURS)</h3>
+      <ol>
+        <li><strong>Préventica Lyon</strong> — Candidater via <code style="color:#fff;background:rgba(255,255,255,0.15);padding:2px 6px;border-radius:3px;">https://www.preventica.com/demande-participation?fair=9&requestType=parrainer</code> — rubrique Management RH/QVCT</li>
+        <li><strong>Vérifier le statut Qualiopi / NDA</strong> de Sandrina — condition pour le référencement OPCO Atlas</li>
+        <li><strong>Contacter UDAMS 85</strong> pour valoriser les témoignages existants comme référence sectorielle</li>
+      </ol>
+    </div>
+
+    <div class="reco-card" style="background:var(--burgundy-dark);">
+      <h3>ACTIONS À 2 MOIS</h3>
+      <ol>
+        <li><strong>Contacter Malakoff Humanis</strong> en citant la déclaration Christophe Scherrer (Décideurs Mag, juin 2026)</li>
+        <li><strong>Contacter le Groupe VYV</strong> — proposer un atelier pour leurs 70 préventeurs santé mentale</li>
+        <li><strong>Préparer une page « Mutuelles & Assureurs »</strong> sur kleia-up.fr</li>
+      </ol>
+    </div>
+
+    <div class="reco-card" style="background:var(--black);">
+      <h3>ACTIONS 2027</h3>
+      <ol>
+        <li><strong>Proposer intervention Semaine QVCT ANACT 2027</strong> (partenariat MGEN / Mutualité Française)</li>
+        <li><strong>Pipeline LinkedIn</strong> — publier sur la thématique santé mentale au travail en taguant les mutuelles cibles</li>
+      </ol>
+    </div>
+
+    <h3>Scoring des cibles</h3>
+    <table>
+      <thead><tr><th>Priorité</th><th>Cible</th><th>Justification</th><th>Contact</th></tr></thead>
+      <tbody>
+        <tr><td><span class="tag tag-green">#1</span></td><td><strong>Malakoff Humanis</strong></td><td>200 M€/an budget social + DG sensibilisé + 400 000 entreprises clientes</td><td>Christophe Scherrer (DG) · newsroom</td></tr>
+        <tr><td><span class="tag tag-green">#2</span></td><td><strong>Groupe VYV / Harmonie Mutuelle</strong></td><td>UDAMS 85 déjà partenaire + priorité santé mentale + 48 000 salariés</td><td>Delphine Maisonneuve (DG) · Samuel Galtié</td></tr>
+        <tr><td><span class="tag tag-amber">#3</span></td><td><strong>Groupama</strong></td><td>Plus gros CA (18,5 Md€) mais adéquation QVCT à confirmer</td><td>Thierry Martel (DG)</td></tr>
+        <tr><td><span class="tag tag-blue">#4</span></td><td><strong>AG2R, MACIF, MAIF</strong></td><td>Données QVCT partielles — à approfondir via LinkedIn</td><td>Fabrice Heyriès, Pascal Demurger</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section style="background:var(--burgundy);color:#fff;padding:40px 0;">
+  <div class="container" style="text-align:center;">
+    <p style="font-family:var(--font-syne);font-size:16pt;font-weight:700;color:#fff;margin-bottom:12px;">Conclusion</p>
+    <p style="max-width:600px;margin:0 auto;color:rgba(255,255,255,0.8);font-size:10pt;line-height:1.7;">
+      Le marché des mutuelles et assureurs français est <strong style="color:var(--gold);">pertinent et accessible</strong> pour KLEIA-UP. 
+      L'alignement thématique est fort (6/8), le budget existe (200 M€/an pour Malakoff Humanis seul), 
+      et la concurrence directe sur le positionnement « optimisme stratégique + forces VIA » est quasi inexistante.
+    </p>
+    <p style="margin-top:16px;max-width:500px;margin:16px auto 0;color:rgba(255,255,255,0.6);font-size:9pt;">
+      Les barrières sont connues et levables : référence sectorielle (UDAMS 85), 
+      référencement OPCO, et page dédiée sur le site. La prochaine action est <strong style="color:var(--gold);">Préventica Lyon (oct. 2026)</strong>.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    Étude réalisée par Hermes Agent / Vagus OS — Juin 2026<br>
+    Données sourcées : sites corporate, Wikipedia, LinkedIn, presse spécialisée, OPCO Atlas<br>
+    Méthodologie détaillée dans <code style="background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:3px;">kleia-etude-marche/00-methodologie.md</code>
+  </div>
+</footer>
+
+</body>
+</html>
