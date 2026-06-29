@@ -6,6 +6,8 @@ Disallow: /.agent/
 Disallow: /.git/
 Disallow: /data/
 Disallow: /_template/
+Disallow: /_temp_studio_kit/
+Disallow: /_etude
 Disallow: /space/
 Disallow: /coaching_data/
 Disallow: /offres/signature/src/cgv.html
