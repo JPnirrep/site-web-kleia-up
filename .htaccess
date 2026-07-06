@@ -38,25 +38,22 @@
 Options -Indexes
 AddDefaultCharset UTF-8
 
-# 4. REDIRECTIONS SIMPLES
+# 4. REDIRECTIONS ET REWRITES
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /
 
-    # NE PAS rediriger robots.txt (Google exige qu'il soit servi sans redirect)
-    RewriteCond %{HTTP_HOST} ^kleia-up\.fr$ [NC]
-    RewriteRule ^robots\.txt$ - [L]
-    
-    # NE PAS rediriger sitemap.xml (Google exige qu'il soit servi sans redirect)
-    RewriteCond %{HTTP_HOST} ^kleia-up\.fr$ [NC]
-    RewriteRule ^sitemap\.xml$ - [L]
-    
-    # Redirection domaine racine -> www (canonical)
+    # NE PAS rediriger robots.txt et sitemap.xml (Google exige qu'ils soient servis sans redirect)
+    RewriteRule ^(robots\.txt|sitemap\.xml)$ - [L]
+
+    # REDIRECTION HTTP → HTTPS + non-www → www (301 canonical)
+    RewriteCond %{HTTPS} !=on [OR]
+    RewriteCond %{HTTP:X-Forwarded-Proto} !=https [OR]
     RewriteCond %{HTTP_HOST} ^kleia-up\.fr$ [NC]
     RewriteRule ^(.*)$ https://www.kleia-up.fr/$1 [R=301,L]
 
     # Correction erreur singulier
-    RewriteRule ^entreprise\.html$ entreprises [R=301,L]
+    RewriteRule ^entreprise\.html$ https://www.kleia-up.fr/entreprises [R=301,L]
 
     # Raccourci inscription newsletter Challenge Juin 2026
     RewriteRule ^juin26$ /challenge-juin26.html?source=newsletter [QSA,L]
