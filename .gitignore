@@ -39,3 +39,6 @@ data/
 *.mov
 *.mp4
 # Note: Les vidéos de coaching > 100Mo ne peuvent pas être poussées sur GitHub.
+
+# Blog workflow flag
+.gap-pending

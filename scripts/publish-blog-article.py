@@ -45,6 +45,37 @@ def get_brevo_key():
         sys.exit("ERROR: Brevo API key not found in php/config.php")
     return m.group(1)
 
+def get_telegram_config():
+    """Extract Telegram bot token and chat ID from PHP config."""
+    text = CONFIG_FILE.read_text(encoding="utf-8")
+    token = re.search(r"'telegram_bot_token'\s*=>\s*'([^']+)'", text)
+    chat_id = re.search(r"'telegram_chat_id'\s*=>\s*'([^']+)'", text)
+    if not token or not chat_id:
+        return None, None
+    return token.group(1), chat_id.group(1)
+
+def send_telegram(message):
+    """Send a Telegram message via bot API. Silent fail if config missing."""
+    token, chat_id = get_telegram_config()
+    if not token or not chat_id:
+        return False
+    try:
+        import urllib.parse
+        data = urllib.parse.urlencode({
+            'chat_id': chat_id,
+            'text': message,
+            'parse_mode': 'HTML',
+            'disable_web_page_preview': 'true'
+        }).encode()
+        req = Request(f"https://api.telegram.org/bot{token}/sendMessage", data=data)
+        req.add_header("Content-Type", "application/x-www-form-urlencoded")
+        with urlopen(req, timeout=10):
+            pass
+        return True
+    except Exception as e:
+        print(f"  ⚠️ Telegram notification failed: {e}")
+        return False
+
 
 def brevo_get(api_key, path):
     """Call Brevo API GET."""
@@ -471,12 +502,23 @@ def cmd_publish(api_key, campaign_id):
     
     print(f"\n📝 ARTICLE PUBLIÉ : {title}")
     print(f"   URL: https://www.kleia-up.fr/journal/{url_slug}")
-    print(f"   Fichier: journal/{url_slug}.html")
-    print(f"\n⚠️  ACTION REQUISE :")
-    print(f"   1. Édite le contenu de journal/{url_slug}.html")
-    print(f"   2. Vérifie blog.html (carte en position 1)")
-    print(f"   3. git add . && git commit -m 'blog: {title}' && git push")
 
+    # Telegram notification
+    msg = (
+        f"✅ <b>Blog KLEIA-UP</b> — Article publié\n\n"
+        f"📰 <b>{title}</b>\n"
+        f"📅 {sent_fr}\n"
+        f"🔗 kleia-up.fr/journal/{url_slug}"
+    )
+    if send_telegram(msg):
+        print(f"   📱 Notification Telegram envoyée")
+
+
+    # Cleanup pending flag
+    gap_flag = ROOT / ".gap-pending"
+    if gap_flag.exists():
+        gap_flag.unlink()
+        print(f"   🏁 Flag .gap-pending supprimé")
 
 # --- Main ---
 
