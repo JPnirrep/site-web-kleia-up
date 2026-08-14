@@ -64,8 +64,9 @@ AddDefaultCharset UTF-8
     RewriteCond %{DOCUMENT_ROOT}/%1.html -f
     RewriteRule ^(.+)/$ /$1 [R=301,L]
 
-    # Servir le fichier .html si l'URL est saisie sans
+    # Servir le fichier .html si l'URL est saisie sans extension
+    # (test via DOCUMENT_ROOT : sur LiteSpeed, REQUEST_FILENAME n'est pas résolu en chemin FS)
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME}.html -f
+    RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}.html -f
     RewriteRule ^(.*)$ $1.html [L]
 </IfModule>
