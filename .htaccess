@@ -55,6 +55,10 @@ AddDefaultCharset UTF-8
     # Correction erreur singulier
     RewriteRule ^entreprise\.html$ https://www.kleia-up.fr/entreprises [R=301,L]
 
+    # Landing cadeau-livre (lecteurs du livre) — URL courte pour le QR code du livre
+    # (règle R=301 : les réécritures internes [L] sont ignorées sur ce serveur)
+    RewriteRule ^cadeau-livre/?$ https://www.kleia-up.fr/cadeau-livre.html [R=301,L]
+
     # Raccourci inscription newsletter Challenge Juin 2026
     RewriteRule ^juin26$ /challenge-juin26.html?source=newsletter [QSA,L]
 
