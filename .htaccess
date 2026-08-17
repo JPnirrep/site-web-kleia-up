@@ -70,7 +70,8 @@ AddDefaultCharset UTF-8
 
     # Servir le fichier .html si l'URL est saisie sans extension
     # (test via DOCUMENT_ROOT : sur LiteSpeed, REQUEST_FILENAME n'est pas résolu en chemin FS)
+    # NB : la réécriture interne [L] est ignorée par ce serveur -> redirect 301 (comme /cadeau-livre)
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}.html -f
-    RewriteRule ^(.*)$ $1.html [L]
+    RewriteRule ^(.*)$ https://www.kleia-up.fr/$1.html [R=301,L]
 </IfModule>
