@@ -40,180 +40,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <!-- CSS Natif (remplace Tailwind + Lucide) -->
     <link rel="stylesheet" href="css/kit-survie.css">
-<style>
-        .bg-red-50 { background: #fef2f2; }
-        .bg-green-50 { background: #f0fdf4; }
-        .text-red-600 { color: #dc2626; }
-        .text-green-700 { color: #16a34a; }
-        .rounded-2xl { border-radius: 1rem; }
-        .rounded-3xl { border-radius: 1.5rem; }
-        .w-16 { width: 4rem; }
-        .h-16 { height: 4rem; }
-        .w-12 { width: 3rem; }
-        .h-12 { height: 3rem; }
-        .w-10 { width: 2.5rem; }
-        .h-10 { height: 2.5rem; }
-        .w-5 { width: 1.25rem; }
-        .h-5 { height: 1.25rem; }
-        .flex { display: flex; }
-        .items-center { align-items: center; }
-        .justify-center { justify-content: center; }
-        .gap-3 { gap: 0.75rem; }
-        .gap-4 { gap: 1rem; }
-        .gap-8 { gap: 2rem; }
-        .gap-16 { gap: 4rem; }
-        .space-y-4 > * + * { margin-top: 1rem; }
-        .space-y-6 > * + * { margin-top: 1.5rem; }
-        .sm\:col-span-2 { grid-column: span 2; }
-        .sm\:flex-row { flex-direction: row; }
-        .sm\:text-left { text-align: left; }
-        .mt-1 { margin-top: 0.25rem; }
-        .mt-3 { margin-top: 0.75rem; }
-        .mt-4 { margin-top: 1rem; }
-        .mt-6 { margin-top: 1.5rem; }
-        .mt-8 { margin-top: 2rem; }
-        .mt-10 { margin-top: 2.5rem; }
-        .mt-12 { margin-top: 3rem; }
-        .mt-16 { margin-top: 4rem; }
-        .mb-6 { margin-bottom: 1.5rem; }
-        .mb-8 { margin-bottom: 2rem; }
-        .mb-10 { margin-bottom: 2.5rem; }
-        .mb-16 { margin-bottom: 4rem; }
-        .mb-20 { margin-bottom: 5rem; }
-        .p-8 { padding: 2rem; }
-        .p-10 { padding: 2.5rem; }
-        .p-5 { padding: 1.25rem; }
-        .py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
-        .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
-        .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
-        .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
-        .py-24 { padding-top: 6rem; padding-bottom: 6rem; }
-        .px-12 { padding-left: 3rem; padding-right: 3rem; }
-        .pt-6 { padding-top: 1.5rem; }
-        .pr-10 { padding-right: 2.5rem; }
-        .text-xs { font-size: 0.75rem; }
-        .text-sm { font-size: 0.875rem; }
-        .text-lg { font-size: 1.125rem; }
-        .text-xl { font-size: 1.25rem; }
-        .text-2xl { font-size: 1.5rem; }
-        .text-3xl { font-size: 1.875rem; }
-        .text-4xl { font-size: 2.25rem; }
-        .text-5xl { font-size: 3rem; }
-        .text-7xl { font-size: 4.5rem; }
-        .text-gray-400 { color: #9ca3af; }
-        .text-muted-foreground { color: var(--ks-muted); }
-        .text-primary { color: var(--ks-primary); }
-        .text-primary\/80 { color: rgba(74, 14, 14, 0.8); }
-        .text-foreground { color: var(--ks-fg); }
-        .text-foreground\/70 { color: rgba(26, 26, 26, 0.7); }
-        .text-foreground\/80 { color: rgba(26, 26, 26, 0.8); }
-        .text-white { color: #fff; }
-        .text-\[#c5a059\] { color: #c5a059; }
-        .font-medium { font-weight: 500; }
-        .font-bold { font-weight: 700; }
-        .font-black { font-weight: 900; }
-        .font-headline { font-family: var(--ks-font-headline); }
-        .font-sans { font-family: var(--ks-font-body); }
-        .italic { font-style: italic; }
-        .uppercase { text-transform: uppercase; }
-        .tracking-tight { letter-spacing: -0.02em; }
-        .tracking-wide { letter-spacing: 0.025em; }
-        .tracking-widest { letter-spacing: 0.1em; }
-        .leading-tight { line-height: 1.1; }
-        .leading-relaxed { line-height: 1.625; }
-        .text-center { text-align: center; }
-        .border { border: 1px solid; }
-        .border-primary\/5 { border-color: rgba(74, 14, 14, 0.05); }
-        .border-primary\/10 { border-color: rgba(74, 14, 14, 0.1); }
-        .border-transparent { border-color: transparent; }
-        .border-t { border-top: 1px solid; }
-        .border-t-primary\/5 { border-top-color: rgba(74, 14, 14, 0.05); }
-        .border-l-8 { border-left-width: 8px; }
-        .border-\[\#c5a059\] { border-color: #c5a059; }
-        .bg-white { background: #fff; }
-        .bg-primary { background: var(--ks-primary); }
-        .bg-primary\/5 { background: rgba(74, 14, 14, 0.05); }
-        .bg-primary\/10 { background: rgba(74, 14, 14, 0.1); }
-        .bg-primary\/\[0\.02\] { background: rgba(74, 14, 14, 0.02); }
-        .bg-gray-50 { background: #f9fafb; }
-        .bg-gray-50\/50 { background: rgba(249, 250, 251, 0.5); }
-        .bg-green-600 { background: #16a34a; }
-        .hover\:bg-green-700:hover { background: #15803d; }
-        .hover\:bg-white:hover { background: #fff; }
-        .hover\:border-primary\/5:hover { border-color: rgba(74, 14, 14, 0.05); }
-        .hover\:text-\[\#c5a059\]:hover { color: #c5a059; }
-        .hover\:scale-\[1\.02\]:hover { transform: scale(1.02); }
-        .group-hover\:scale-110:hover .group-hover\:scale-110 { transform: scale(1.1); }
-        .transition-all { transition: all 0.3s; }
-        .transition-colors { transition: color 0.2s; }
-        .transition-transform { transition: transform 0.3s; }
-        .rounded-xl { border-radius: 0.75rem; }
-        .rounded-2xl { border-radius: 1rem; }
-        .rounded-3xl { border-radius: 1.5rem; }
-        .rounded-full { border-radius: 50%; }
-        .rounded-\[2\.5rem\] { border-radius: 2.5rem; }
-        .rounded-\[4rem\] { border-radius: 4rem; }
-        .shadow-\[0_35px_60px_-15px_rgba\(74\,14\,14\,0\.3\)\] { box-shadow: 0 35px 60px -15px rgba(74, 14, 14, 0.3); }
-        .object-contain { object-fit: contain; }
-        .object-cover { object-fit: cover; }
-        .max-w-full { max-width: 100%; }
-        .max-w-2xl { max-width: 42rem; }
-        .max-w-3xl { max-width: 48rem; }
-        .max-w-4xl { max-width: 56rem; }
-        .max-w-6xl { max-width: 72rem; }
-        .max-w-\[320px\] { max-width: 320px; }
-        .h-auto { height: auto; }
-        .h-20 { height: 5rem; }
-        .w-full { width: 100%; }
-        .w-auto { width: auto; }
-        .sm\:flex-row { flex-direction: row; }
-        .lg\:flex-row { flex-direction: row; }
-        .lg\:rotate-2 { transform: rotate(2deg); }
-        .lg\:justify-end { justify-content: flex-end; }
-        .lg\:text-left { text-align: left; }
-        .lg\:mx-0 { margin-left: 0; margin-right: 0; }
-        .lg\:py-20 { padding-top: 5rem; padding-bottom: 5rem; }
-        .lg\:py-32 { padding-top: 8rem; padding-bottom: 8rem; }
-        .lg\:py-40 { padding-top: 10rem; padding-bottom: 10rem; }
-        .lg\:gap-24 { gap: 6rem; }
-        .md\:col-span-1 { grid-column: span 1; }
-        .md\:col-span-2 { grid-column: span 2; }
-        .md\:text-xl { font-size: 1.25rem; }
-        .md\:text-2xl { font-size: 1.5rem; }
-        .md\:text-3xl { font-size: 1.875rem; }
-        .md\:text-4xl { font-size: 2.25rem; }
-        .md\:text-5xl { font-size: 3rem; }
-        .md\:p-16 { padding: 4rem; }
-        .md\:p-20 { padding: 5rem; }
-        .md\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
-        .group { position: relative; }
-        .shrink-0 { flex-shrink: 0; }
-        .mix-blend-multiply { mix-blend-mode: multiply; }
-        .inline-block { display: inline-block; }
-        .relative { position: relative; }
-        .absolute { position: absolute; }
-        .overflow-hidden { overflow: hidden; }
-        .top-0 { top: 0; }
-        .right-0 { right: 0; }
-        .-mr-16 { margin-right: -4rem; }
-        .-mt-16 { margin-top: -4rem; }
-        .w-32 { width: 8rem; }
-        .h-32 { height: 8rem; }
-        .outline-none { outline: none; }
-        .focus\:ring-4:focus { box-shadow: 0 0 0 4px rgba(139, 29, 61, 0.2); }
-        .focus\:ring-primary\/20:focus { box-shadow: 0 0 0 4px rgba(139, 29, 61, 0.2); }
-        .border-red-50 { border-color: #fef2f2; }
-        .flex-col { flex-direction: column; }
-        @media (min-width: 640px) { .sm\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 768px) { .md\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); } }
-        @media (min-width: 1024px) { .lg\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); } }
-        .justify-between { justify-content: space-between; }
-        .flex-wrap { flex-wrap: wrap; }
-        .list-none { list-style: none; }
-        .block { display: block; }
-        .italic { font-style: italic; }
-        .normal-case { text-transform: none; }
-    </style>
+
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -266,8 +93,8 @@ Le trait d'union entre mes mots et ta réalité. Trois cadeaux, rien que pour to
 
 <div class="mt-16 grid md:grid-cols-3 gap-8">
 <div class="card-3d bg-primary/[0.02] p-8 rounded-3xl flex flex-col items-center text-center transition-all hover:bg-white group border border-transparent hover:border-primary/5">
-<div class="w-16 h-16 mb-6 flex items-center justify-center bg-red-50 rounded-2xl text-red-600 transition-transform group-hover:scale-110">
-<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+<div class="w-16 h-16 mb-6 flex items-center justify-center bg-primary/10 rounded-2xl text-primary transition-transform group-hover:scale-110">
+<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
 </div>
 <p class="text-lg font-medium text-primary/80">Le Kit de Survie (PDF) : le protocole d'urgence en 3 modules pour vos prises de parole</p>
 </div>
@@ -388,9 +215,11 @@ RÉCUPÉRER MES CADEAUX
 <p class="text-sm text-[#c5a059] mt-3 italic font-medium">Pour vous envoyer vos cadeaux et rester en lien avec vous.</p>
 </div>
 </div>
+<div class="sm:col-span-2">
 <button type="submit" id="submitBtn" class="form-submit">
 RÉCUPÉRER MES CADEAUX MAINTENANT
 </button>
+</div>
 
 <div class="sm:col-span-2 mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground font-medium">
 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -403,9 +232,20 @@ Vos données sont sécurisées. Pas de spam, promis.
 <h3 class="font-headline text-2xl md:text-3xl font-bold text-primary mb-3">Merci <span id="thanksName"></span> ! Vos cadeaux sont prêts.</h3>
 <p class="text-foreground/70">Téléchargez-les ci-dessous. Prenez ce temps, offrez-vous cet espace.</p>
 </div>
-<a href="https://drive.google.com/file/d/1WTu-2xrKLWlSuYPswdVjbbE4kQZQ61hO/view?usp=drive_link" target="_blank" rel="noopener" class="form-submit form-success" style="display:block;text-align:center;text-decoration:none;margin-bottom:1rem" data-download="kit-pdf">TÉLÉCHARGER LE KIT DE SURVIE (PDF)</a>
-<a href="assets/cadeau-livre/visualisation-10-min.mp3" download class="form-submit" style="display:block;text-align:center;text-decoration:none;margin-bottom:1rem" data-download="visualisation-audio">TÉLÉCHARGER LA VISUALISATION (MP3 — 10 MIN)</a>
-<a id="youtubeBonus" href="#" target="_blank" rel="noopener" class="form-submit" style="display:block;text-align:center;text-decoration:none" data-download="video-bonus">REGARDER LA VIDÉO BONUS</a>
+<div class="space-y-4">
+<a href="https://www.kleia-up.fr/assets/cadeau-livre/kit-de-survie.pdf" target="_blank" rel="noopener noreferrer" class="download-btn btn-pdf" data-download="kit-pdf">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+TÉLÉCHARGER LE KIT DE SURVIE (PDF)
+</a>
+<a href="assets/cadeau-livre/visualisation-10-min.mp3" download class="download-btn btn-audio" data-download="visualisation-audio">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+TÉLÉCHARGER LA VISUALISATION (MP3 — 10 MIN)
+</a>
+<a id="youtubeBonus" href="#" target="_blank" rel="noopener noreferrer" class="download-btn btn-youtube" data-download="video-bonus" style="display:none">
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.507 0 9.377-.505A3.017 3.017 0 0 0 23.498 17.814C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path d="M9.75 15.02l5.75-3.27-5.75-3.27v6.54z"/></svg>
+REGARDER LA VIDÉO BONUS SUR YOUTUBE
+</a>
+</div>
 </div>
 </div>
 </div>
