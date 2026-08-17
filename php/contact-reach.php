@@ -93,7 +93,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $headers .= "X-Mailer: PHP/" . phpversion();
 
     // 5. Envoi avec paramètre d'enveloppe (-f) pour éviter le spam
-    if (mail($to, $subject, $message, $headers, "-f$from")) {
+    $mail_ok = mail($to, $subject, $message, $headers, "-f$from");
+
+    // 6. Push Brevo — formulaire cadeau-livre (liste dédiée "cadeau-livre", id 15)
+    // Clé API lue depuis config.php (fichier gitignoré, jamais commité)
+    if ($subject_form === 'KIT-LIVRE-CADEAU') {
+        $brevo_config = include __DIR__ . '/config.php';
+        $brevo_payload = json_encode([
+            'email'         => strtolower($email),
+            'attributes'    => ['PRENOM' => $prenom, 'NOM' => $nom, 'SOURCE' => 'cadeau-livre'],
+            'listIds'       => [15],
+            'updateEnabled' => true,
+        ]);
+        $ch = curl_init('https://api.brevo.com/v3/contacts');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $brevo_payload);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            'api-key: ' . $brevo_config['brevo_api_key'],
+            'Content-Type: application/json',
+            'Accept: application/json',
+        ]);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+        @curl_exec($ch);
+        curl_close($ch);
+    }
+
+    if ($mail_ok) {
         echo json_encode(['status' => 'success', 'message' => 'Email envoyé.']);
     } else {
         echo json_encode(['status' => 'error', 'message' => 'Erreur technique d\'envoi.']);
