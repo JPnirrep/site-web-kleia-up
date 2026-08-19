@@ -55,12 +55,27 @@ AddDefaultCharset UTF-8
     # Correction erreur singulier
     RewriteRule ^entreprise\.html$ https://www.kleia-up.fr/entreprises [R=301,L]
 
+    # Ancien listing du blog (renommé journal.html -> blog.html en 06-2026)
+    RewriteRule ^journal\.html$ https://www.kleia-up.fr/blog.html [R=301,L]
+
+    # Anciens slugs d'articles remplacés par les versions longues (07-2026)
+    RewriteRule ^journal/croire-en-lautre(\.html)?$ https://www.kleia-up.fr/journal/croire-en-lautre-un-vrai-moteur.html [R=301,L]
+    RewriteRule ^journal/prix-du-silence(\.html)?$ https://www.kleia-up.fr/journal/le-prix-du-silence-est-devenu-trop-lourd-la-verite-brute.html [R=301,L]
+    RewriteRule ^journal/on-a-bien-ri(\.html)?$ https://www.kleia-up.fr/journal/alors-sandrina-on-a-bien-ri-aujourdhui.html [R=301,L]
+    RewriteRule ^journal/frontiere-limites(\.html)?$ https://www.kleia-up.fr/journal/ce-que-10-ans-a-la-frontiere-mont-appris-sur-tes-limites.html [R=301,L]
+    RewriteRule ^journal/tu-voulais-le-dire(\.html)?$ https://www.kleia-up.fr/journal/tu-voulais-le-dire-et-tu-as-remis-ton-masque.html [R=301,L]
+
+    # Fichiers parasites (copies accidentelles) -> page canonique
+    RewriteRule ^kit-survie \(1\)\.html$ https://www.kleia-up.fr/kit-survie.html [R=301,L]
+    RewriteRule ^sandbox-entreprises-v2\.html$ https://www.kleia-up.fr/entreprises.html [R=301,L]
+
     # Landing cadeau-livre (lecteurs du livre) — URL courte pour le QR code du livre
     # (règle R=301 : les réécritures internes [L] sont ignorées sur ce serveur)
     RewriteRule ^cadeau-livre/?$ https://www.kleia-up.fr/cadeau-livre.html [R=301,L]
 
     # Raccourci inscription newsletter Challenge Juin 2026
-    RewriteRule ^juin26$ /challenge-juin26.html?source=newsletter [QSA,L]
+    # (rewrite interne [L] ignoré sur ce serveur -> 301 externe)
+    RewriteRule ^juin26$ https://www.kleia-up.fr/challenge-juin26.html?source=newsletter [R=301,L]
 
     # Rediriger /page/ -> /page quand .html existe (évite HTTP 500 Hostinger)
     RewriteCond %{REQUEST_FILENAME} !-d

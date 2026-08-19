@@ -198,13 +198,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="description" content="{escape(desc)}">
     <meta name="keywords" content="{escape(keywords)}">
     <meta name="author" content="Sandrina Perrin - KLEIA-UP">
-    <link rel="canonical" href="https://www.kleia-up.fr/journal/{url_slug}" />
+    <link rel="canonical" href="https://www.kleia-up.fr/journal/{url_slug}.html" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="{escape(title)} | KLEIA-UP">
     <meta property="og:description" content="{escape(desc)}">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.kleia-up.fr/journal/{url_slug}">
+    <meta property="og:url" content="https://www.kleia-up.fr/journal/{url_slug}.html">
     <meta property="og:image" content="https://www.kleia-up.fr/assets/sandrina-presence-scenique.webp">
     <meta property="og:locale" content="fr_FR">
     <meta property="article:published_time" content="{sent_iso}">
