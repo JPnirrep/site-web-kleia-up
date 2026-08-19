@@ -29,6 +29,7 @@ CONFIG_FILE = ROOT / "php" / "config.php"
 JOURNAL_DIR = ROOT / "journal"
 BLOG_FILE = ROOT / "blog.html"
 LLMS_FILE = ROOT / "llms.txt"
+SITEMAP_FILE = ROOT / "sitemap.xml"
 
 MONTHS_FR = {
     1: "Jan", 2: "Fev", 3: "Mar", 4: "Avr", 5: "Mai", 6: "Juin",
@@ -429,6 +430,43 @@ def update_llms(title, url_slug, sent_fr, desc):
     return True
 
 
+def update_sitemap():
+    """Regenerate sitemap.xml from actually served pages.
+
+    Pages racine en .html (URLs réelles servies — les URLs propres 301
+    vers .html sont vues par Google comme des redirections) + scan du
+    dossier journal/. Les pages noindex (cadeau-livre) et les fichiers
+    parasites sont exclus par construction.
+    """
+    ROOT_PAGES = [
+        "a-propos", "atelier-place", "blog", "challenge-juin26", "coaching-vendee",
+        "contact", "entreprises", "individuel-groupe", "kit-survie", "manifeste",
+        "programmes",
+    ]
+
+    locs = ["https://www.kleia-up.fr/"]
+    locs += [f"https://www.kleia-up.fr/{p}.html" for p in ROOT_PAGES]
+    if (ROOT / "labo-immersif" / "index.html").exists():
+        locs.append("https://www.kleia-up.fr/labo-immersif/")
+
+    slugs = sorted(f.stem for f in JOURNAL_DIR.glob("*.html"))
+    locs += [f"https://www.kleia-up.fr/journal/{s}.html" for s in slugs]
+
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ]
+    for loc in locs:
+        lines.append("<url>")
+        lines.append(f"<loc>{loc}</loc>")
+        lines.append("</url>")
+    lines.append("</urlset>")
+
+    SITEMAP_FILE.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    print(f"✅ sitemap.xml — {len(locs)} URLs régénérées")
+    return True
+
+
 def cmd_list(api_key):
     """List recent newsletters not yet on blog."""
     data = brevo_get(api_key, "emailCampaigns?status=sent&limit=50")
@@ -499,6 +537,9 @@ def cmd_publish(api_key, campaign_id):
     
     # Update llms.txt
     update_llms(title, url_slug, sent_fr, desc)
+
+    # Update sitemap.xml
+    update_sitemap()
     
     print(f"\n📝 ARTICLE PUBLIÉ : {title}")
     print(f"   URL: https://www.kleia-up.fr/journal/{url_slug}")
@@ -534,6 +575,7 @@ if __name__ == "__main__":
         print("Usage:")
         print("  python scripts/publish-blog-article.py list          # Lister les newsletters non bloguées")
         print("  python scripts/publish-blog-article.py status        # État du gap")
+        print("  python scripts/publish-blog-article.py sitemap       # Régénérer sitemap.xml depuis les fichiers servis")
         print("  python scripts/publish-blog-article.py <campaign_id> # Publier une newsletter")
         sys.exit(1)
     
@@ -543,6 +585,8 @@ if __name__ == "__main__":
         cmd_list(api_key)
     elif cmd == "status":
         cmd_status(api_key)
+    elif cmd == "sitemap":
+        update_sitemap()
     else:
         try:
             campaign_id = int(cmd)

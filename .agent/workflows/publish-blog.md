@@ -128,7 +128,7 @@ URL : `https://www.kleia-up.fr/blog`
 
 | Fichier | Rôle |
 |---------|------|
-| `scripts/publish-blog-article.py` | Génération article + update blog.html + llms.txt |
+| `scripts/publish-blog-article.py` | Génération article + update blog.html + llms.txt + sitemap.xml |
 | `.agent/workflows/publish-blog.md` | Documentation du workflow |
 | `php/config.php` | Clé API Brevo |
 
@@ -139,7 +139,7 @@ URL : `https://www.kleia-up.fr/blog`
 - [ ] 🔧 Détection des doublons par objet/date plutôt que par slug
 - [ ] 🔧 Insertion à la bonne position chronologique (pas seulement en tête)
 - [ ] 🔧 Auto-génération des articles similaires en bas de page
-- [ ] 🔧 Mise à jour automatique du `sitemap.xml`
+- [x] 🔧 Mise à jour automatique du `sitemap.xml` (19/08/2026 : commande `sitemap` + hook dans publish)
 
 ---
 
