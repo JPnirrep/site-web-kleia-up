@@ -66,8 +66,9 @@ AddDefaultCharset UTF-8
     RewriteRule ^journal/tu-voulais-le-dire(\.html)?$ https://www.kleia-up.fr/journal/tu-voulais-le-dire-et-tu-as-remis-ton-masque.html [R=301,L]
 
     # Fichiers parasites (copies accidentelles) -> page canonique
-    # (LiteSpeed matche le chemin ENCODÉ : %20 et non l'espace littéral)
-    RewriteRule ^kit-survie(%20| )\(1\)\.html$ https://www.kleia-up.fr/kit-survie.html [R=301,L]
+    # (pattern large : l'encodage %20 de LiteSpeed varie selon les versions)
+    RewriteCond %{REQUEST_URI} !^/kit-survie\.html$
+    RewriteRule ^kit-survie.*$ https://www.kleia-up.fr/kit-survie.html [R=301,L]
     RewriteRule ^sandbox-entreprises-v2\.html$ https://www.kleia-up.fr/entreprises.html [R=301,L]
 
     # Landing cadeau-livre (lecteurs du livre) — URL courte pour le QR code du livre
