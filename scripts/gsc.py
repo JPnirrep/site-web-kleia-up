@@ -36,7 +36,7 @@ LOCAL_CONFIG = os.path.join(SCRIPT_DIR, "gsc-local.json")
 
 SCOPE = "https://www.googleapis.com/auth/webmasters"
 REDIRECT_URI = "http://localhost"
-SITE = "https://www.kleia-up.fr/"
+SITE = "https://www.kleia-up.fr/"  # surchargeable dans gsc-local.json ("site")
 AUTH_URL = "https://accounts.google.com/o/oauth2/auth"
 TOKEN_URL = "https://oauth2.googleapis.com/token"
 GSC_BASE = "https://www.googleapis.com/webmasters/v3/sites/"
@@ -155,8 +155,13 @@ def api(method, url, body=None):
         die(f"API GSC HTTP {e.code}: {body_err[:600]}")
 
 
+def site_url():
+    cfg = load_local()
+    return cfg.get("site", SITE)
+
+
 def site_url_encoded():
-    return urllib.parse.quote(SITE, safe="")
+    return urllib.parse.quote(site_url(), safe="")
 
 
 # ---------------------------------------------------------------- auth
@@ -247,10 +252,10 @@ def cmd_sitemap_status():
 
 
 def cmd_submit_sitemap():
-    feed = "sitemap.xml"
+    feed = urllib.parse.urljoin(site_url(), "sitemap.xml")
     url = f"{GSC_BASE}{site_url_encoded()}/sitemaps/{urllib.parse.quote(feed, safe='')}"
     api("PUT", url)
-    print(f"✅ Sitemap soumis: {SITE}{feed}")
+    print(f"✅ Sitemap soumis: {feed}")
     cmd_sitemap_status()
 
 
@@ -258,7 +263,7 @@ def cmd_submit_sitemap():
 def cmd_inspect(urls):
     results = []
     for u in urls:
-        res = api("POST", INSPECT_URL, {"inspectionUrl": u, "siteUrl": SITE})
+        res = api("POST", INSPECT_URL, {"inspectionUrl": u, "siteUrl": site_url()})
         ir = res.get("inspectionResult", {})
         ist = ir.get("indexStatusResult", {})
         coverage = ist.get("coverageState", "?")
