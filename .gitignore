@@ -42,3 +42,7 @@ data/
 
 # Blog workflow flag
 .gap-pending
+
+# Secrets GSC (OAuth local)
+scripts/gsc-local.json
+scripts/gsc-token.json

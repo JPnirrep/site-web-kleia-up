@@ -129,6 +129,7 @@ URL : `https://www.kleia-up.fr/blog`
 | Fichier | Rôle |
 |---------|------|
 | `scripts/publish-blog-article.py` | Génération article + update blog.html + llms.txt + sitemap.xml |
+| `scripts/gsc.py` | Automatisation Google Search Console (sitemap, inspection, stats) — config `gsc-local.json` gitignorée |
 | `.agent/workflows/publish-blog.md` | Documentation du workflow |
 | `php/config.php` | Clé API Brevo |
 
