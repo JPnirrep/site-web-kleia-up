@@ -39,6 +39,9 @@ data/
 *.mov
 *.mp4
 # Note: Les vidéos de coaching > 100Mo ne peuvent pas être poussées sur GitHub.
+# Exceptions: vidéo de présentation Sandrina (plaquette v9, page vidéo)
+!assets/prez_sandrina_v1_web.mp4
+!prez/media/*.mp4
 
 # Blog workflow flag
 .gap-pending
