@@ -8,6 +8,8 @@ Disallow: /data/
 Disallow: /_template/
 Disallow: /_temp_studio_kit/
 Disallow: /_etude
+Disallow: /prez/
+Disallow: /plaquette-mutuelles-v9.html
 Disallow: /space/
 Disallow: /coaching_data/
 Disallow: /offres/signature/src/cgv.html

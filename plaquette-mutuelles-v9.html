@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>KLEIA-UP — Cultiver l'optimisme : 3 clés pour démarrer • Présentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  @import url('https://api.fontshare.com/v2/css?f[]=ranade@300,400,500,600,700&display=swap');
+  :root {
+    --burgundy: #8B1D3D; --burgundy-dark: #6a0020;
+    --gold: #C5A028; --cream: #FAF9F6; --pearl: #FDFDFD;
+    --white: #ffffff; --black: #1A1A1A; --muted: #6A5458;
+    --font-ranade: 'Ranade', system-ui, -apple-system, sans-serif;
+    --font-syne: 'Syne', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-font-smoothing: antialiased; }
+  body {
+    font-family: var(--font-ranade); font-size: 11pt;
+    color: var(--black); background: #2a2224;
+    line-height: 1.6;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 16px;
+  }
+  .page {
+    width: 1120px; min-height: 630px;
+    margin: 0 auto 20px;
+    position: relative;
+    display: flex; flex-direction: column;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+    border-radius: 6px;
+  }
+  .page.page-cover, .page.page-resp, .page.page-contact { overflow: hidden; }
+  h1 {
+    font-family: var(--font-syne); font-weight: 700;
+    font-size: 34pt; line-height: 1.1; color: var(--white);
+  }
+  h1 .gold { display: block; color: var(--gold); font-style: italic; font-weight: 400; }
+  h2 {
+    font-family: var(--font-syne); font-weight: 700;
+    font-size: 20pt; line-height: 1.2; color: var(--burgundy);
+    margin-bottom: 10px;
+  }
+  h2 .gold { display: block; color: var(--gold); font-style: italic; font-weight: 400; }
+  h3 {
+    font-family: var(--font-ranade); font-weight: 600;
+    font-size: 8pt; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 6px;
+  }
+  p { font-size: 9.5pt; line-height: 1.65; color: var(--black); margin-bottom: 8px; max-width: 58ch; }
+  strong { font-weight: 600; color: var(--burgundy); }
+  .overline {
+    font-family: var(--font-ranade); font-size: 6.5pt;
+    color: var(--gold); letter-spacing: 3px; text-transform: uppercase;
+    margin-bottom: 10px; display: flex; align-items: center; gap: 10px;
+  }
+  .overline::before { content: ""; width: 24px; height: 1.5px; background: var(--gold); display: block; }
+  .gold-bar { width: 40px; height: 2px; background: var(--gold); margin: 10px 0 14px; }
+  .page-number {
+    position: absolute; bottom: 12px; right: 32px;
+    font-size: 6.5pt; color: rgba(139,29,61,0.2);
+    letter-spacing: 2px; font-family: var(--font-ranade);
+  }
+
+  /* ========== COVER — PAYSAGE ========== */
+  .page-cover { background: var(--burgundy); position: relative; overflow: hidden; }
+  .cover-glow { position: absolute; top: -160px; right: -60px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(197,160,40,0.10) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 1; }
+  .cover-photo { position: absolute; top: 0; right: 0; width: 55%; height: 100%; overflow: hidden; }
+  .cover-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 68% 32%; mask-image: linear-gradient(to left, rgba(0,0,0,1) 40%, rgba(0,0,0,0.15) 65%, transparent 100%); -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 40%, rgba(0,0,0,0.15) 65%, transparent 100%); }
+  .cover-left { position: relative; z-index: 2; width: 45%; height: 100%; display: flex; flex-direction: column; padding: 40px 36px 16px; }
+  .cover-top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .cover-logo { font-family: var(--font-syne); font-size: 16pt; font-weight: 700; color: var(--white); letter-spacing: 1px; }
+  .cover-logo-sub { font-size: 6pt; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 2px; margin-bottom: 14px; }
+  .cover-geo { font-size: 6.5pt; color: rgba(255,255,255,0.35); letter-spacing: 2px; text-transform: uppercase; text-align: right; }
+  .cover-hero { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 4px 0; }
+  .cover-tagline { font-size: 6.5pt; letter-spacing: 3px; text-transform: uppercase; color: rgba(197,160,40,0.7); margin-bottom: 14px; border-top: 2px solid var(--gold); padding-top: 6px; display: inline-block; width: auto; }
+  .cover-hero h1 { margin-bottom: 14px; }
+  .cover-sub { font-size: 9pt; color: rgba(255,255,255,0.65); max-width: 42ch; line-height: 1.65; margin-bottom: 22px; }
+  .cover-formats { display: flex; gap: 24px; }
+  .cover-fmt { font-size: 6.5pt; color: rgba(255,255,255,0.4); letter-spacing: 2.5px; text-transform: uppercase; padding-top: 8px; border-top: 1px solid rgba(197,160,40,0.25); }
+  .cover-bottom { position: relative; z-index: 2; padding: 14px 36px 10px; border-top: 1px solid rgba(255,255,255,0.08); }
+  .cover-bottom-inner { width: 45%; display: flex; align-items: center; justify-content: space-between; }
+  .cover-bottom-inner .bottom-tag { font-size: 6.5pt; color: rgba(255,255,255,0.28); letter-spacing: 1px; }
+  .cover-bottom-inner .bottom-signature { display: flex; align-items: center; gap: 14px; }
+  .cover-bottom-inner .bottom-signature .gold-bar { width: 36px; height: 2px; background: var(--gold); margin: 0; }
+  .cover-bottom-inner .bottom-signature span { font-size: 8.5pt; color: rgba(255,255,255,0.28); letter-spacing: 1px; }
+  .page-cover .page-number { color: rgba(255,255,255,0.1); }
+
+
+  /* ========== PAGE VIDEO ========== */
+  .page-video { background: var(--burgundy); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .video-glow { position: absolute; top: -160px; left: -60px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(197,160,40,0.10) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 1; }
+  .video-wrap { position: relative; z-index: 2; width: 64%; display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .video-overline { font-family: var(--font-ranade); font-size: 6.5pt; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
+  .video-title { font-family: var(--font-syne); font-weight: 700; font-size: 20pt; line-height: 1.15; color: var(--white); margin: 0 0 14px; }
+  .video-title .gold { color: var(--gold); font-style: italic; font-weight: 400; }
+  .video-frame { position: relative; width: 100%; border-radius: 10px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,0.45); border: 1px solid rgba(197,160,40,0.35); background: #000; }
+  .video-frame video { display: block; width: 100%; height: auto; }
+  .video-sound { position: absolute; right: 12px; bottom: 12px; background: var(--gold); color: var(--burgundy); border: none; border-radius: 30px; font-family: var(--font-ranade); font-size: 8pt; letter-spacing: 1.5px; text-transform: uppercase; padding: 8px 16px; cursor: pointer; font-weight: 600; }
+  .video-caption { font-size: 7.5pt; color: rgba(255,255,255,0.5); margin-top: 12px; letter-spacing: 1px; max-width: none; }
+  .page-video .page-number { color: rgba(255,255,255,0.1); }
+
+  /* ========== INTÉRIEUR ========== */
+  .page-int { background: var(--cream); }
+  .page-body { padding: 30px 44px 24px; flex: 1; overflow-y: auto; }
+  .page-body.bg-pearl { background: var(--pearl); }
+
+  .cartridge-burgundy { background: var(--burgundy); border-radius: 40px 16px 40px 16px; padding: 18px 26px; margin: 12px 0; }
+  .cartridge-burgundy p { color: var(--white); font-style: italic; font-size: 10pt; line-height: 1.6; max-width: none; margin: 0; }
+  .cartridge-burgundy p strong { color: var(--gold); font-style: normal; }
+
+  .cartridge-gold { background: linear-gradient(135deg, rgba(197,160,40,0.06), rgba(197,160,40,0.02)); border: 1px solid rgba(197,160,40,0.18); border-radius: 16px 40px 16px 40px; padding: 14px 22px; margin: 8px 0; }
+  .cartridge-gold p { font-size: 9pt; color: var(--muted); max-width: none; margin: 0; }
+  .cartridge-gold p strong { color: var(--burgundy); }
+
+  /* MOUVEMENT — PAGE 2 */
+  .slide-2 { display: flex; gap: 28px; align-items: stretch; }
+  .slide-2-left { flex: 1.2; display: flex; flex-direction: column; justify-content: center; }
+  .slide-2-right { flex: 0.8; display: flex; flex-direction: column; justify-content: center; }
+  .bio-row { display: flex; gap: 18px; align-items: center; margin: 10px 0; }
+  .bio-portrait { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; object-position: 50% 18%; border: 3px solid var(--gold); flex-shrink: 0; }
+  .bio-text p { font-size: 9pt; margin-bottom: 4px; max-width: none; }
+  .bio-badges { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+  .bio-badges span { font-size: 6pt; background: rgba(139,29,61,0.06); color: var(--burgundy); padding: 2px 8px; border-radius: 20px; font-weight: 500; }
+
+  .logos-strip { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 8px 0 4px; }
+  .logos-strip img { height: 20px; width: auto; opacity: 0.5; }
+
+  .testimonial { background: rgba(255,255,255,0.6); border-radius: 0 6px 6px 0; padding: 10px 14px; border-left: 3px solid var(--gold); margin: 8px 0; }
+  .testimonial p { font-size: 8pt; font-style: italic; color: var(--muted); margin: 0; line-height: 1.55; max-width: none; }
+  .testimonial cite { font-size: 6.5pt; font-weight: 600; color: var(--burgundy); margin-top: 4px; display: block; }
+  .testimonial cite .src { font-weight: 400; color: var(--muted); font-size: 6pt; }
+  .slide2-photo-wrap { position: relative; border-radius: 6px; overflow: hidden; height: 320px; margin-top: 10px; }
+  .slide2-photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; }
+  .slide2-photo-caption { position: absolute; bottom: 6px; right: 8px; font-size: 5.5pt; color: var(--white); text-shadow: 0 1px 4px rgba(0,0,0,0.5); }
+
+  /* KPI — PAGE 3 */
+  .slide-3 { display: flex; gap: 28px; }
+  .slide-3-left { flex: 1; display: flex; flex-direction: column; }
+  .slide-3-right { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 10px; }
+  .kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 8px 0; }
+  .kpi-card { background: rgba(255,255,255,0.5); border-radius: 8px; padding: 12px 14px; border: 1px solid rgba(139,29,61,0.05); }
+  .kpi-card .kpi-num { font-family: var(--font-syne); font-size: 22pt; font-weight: 700; color: var(--burgundy); line-height: 1; }
+  .kpi-card .kpi-num .small { font-size: 11pt; }
+  .kpi-card .kpi-label { font-size: 7.5pt; color: var(--muted); margin-top: 3px; line-height: 1.35; }
+  .kpi-card .kpi-src { font-size: 6pt; color: rgba(106,84,88,0.35); display: block; margin-top: 3px; }
+  .kpi-card.gold { border-left: 3px solid var(--gold); }
+
+  .signal-block { background: linear-gradient(135deg, rgba(197,160,40,0.06), rgba(197,160,40,0.01)); border: 1px solid rgba(197,160,40,0.12); border-radius: 12px; padding: 12px 16px; margin: 6px 0; }
+  .signal-block .label { font-size: 6pt; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); font-weight: 600; display: block; margin-bottom: 2px; }
+  .signal-block p { font-size: 8pt; margin: 0; max-width: none; }
+
+  .roi-encart { background: var(--burgundy); border-radius: 30px 16px 30px 16px; padding: 14px 22px; margin: 8px 0; }
+  .roi-encart p { color: var(--white); font-size: 9pt; max-width: none; margin: 0; }
+  .roi-encart p strong { color: var(--gold); font-size: 18pt; font-weight: 700; font-family: var(--font-syne); display: block; margin-bottom: 2px; }
+  .roi-encart .src { font-size: 6.5pt; color: rgba(255,255,255,0.5); display: block; margin-top: 2px; }
+
+  .chart-row { display: flex; gap: 10px; margin-top: 8px; }
+  .chart-card { flex: 1; background: rgba(255,255,255,0.5); border-radius: 6px; padding: 8px 6px; border: 1px solid rgba(139,29,61,0.04); }
+  .chart-title { font-size: 6pt; font-weight: 600; color: var(--burgundy); letter-spacing: 0.5px; margin-bottom: 3px; }
+  .chart-svg { width: 100%; height: auto; display: block; }
+  .chart-label { font-size: 5.5pt; color: var(--muted); line-height: 1.35; margin-top: 2px; text-align: center; }
+
+  .psy-inverse { background: var(--pearl); border-radius: 12px; padding: 12px 18px; margin: 6px 0; border: 1px solid rgba(197,160,40,0.15); }
+  .psy-inverse p { font-size: 8.5pt; font-style: italic; max-width: none; margin: 0; }
+  .psy-inverse p strong { color: var(--gold); }
+
+  /* CV — PAGE 4 */
+  .cv-intro { display: flex; gap: 20px; align-items: center; margin: 8px 0; }
+  .cv-intro-portrait { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--gold); flex-shrink: 0; }
+  .chiffres-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 14px; }
+  .chiffre-item { text-align: center; background: var(--burgundy); border-radius: 6px; padding: 10px 6px; }
+  .chiffre-item .num { font-family: var(--font-syne); font-size: 16pt; font-weight: 700; color: var(--gold); line-height: 1; }
+  .chiffre-item .label { font-size: 5.5pt; color: rgba(255,255,255,0.7); margin-top: 3px; text-transform: uppercase; }
+
+  .cv-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
+  .cv-card { background: #fff; border-radius: 6px; padding: 12px 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+  .cv-card.burgundy-top { border-top: 3px solid var(--burgundy); }
+  .cv-card.gold-top { border-top: 3px solid var(--gold); }
+  .cv-card h4 { font-family: var(--font-syne); font-size: 7.5pt; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 4px; }
+  .cv-card.burgundy-top h4 { color: var(--burgundy); }
+  .cv-card.gold-top h4 { color: var(--gold); }
+  .cv-card ul { font-size: 7.5pt; color: var(--black); line-height: 1.75; margin: 0; padding-left: 14px; }
+  .cv-card ul li strong { color: var(--burgundy); }
+
+  .cv-banner { background: var(--burgundy); border-radius: 8px; padding: 12px 18px; margin: 10px 0; }
+  .cv-banner h4 { font-family: var(--font-syne); font-size: 7.5pt; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .banner-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 14px; }
+  .banner-item { font-size: 6.5pt; color: rgba(255,255,255,0.85); line-height: 1.45; padding: 3px 0; }
+  .banner-item strong { color: var(--gold); font-weight: 600; }
+
+  .clients-tags { display: flex; flex-wrap: wrap; gap: 4px; margin: 10px 0; justify-content: center; }
+  .clients-tags span { font-size: 6pt; padding: 3px 10px; border-radius: 10px; font-weight: 500; background: rgba(197,160,40,0.08); border: 1px solid rgba(197,160,40,0.15); color: var(--muted); }
+  .clients-tags .highlight { background: rgba(139,29,61,0.08); border-color: var(--burgundy); color: var(--burgundy); font-weight: 700; }
+
+  .testimonials-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin: 10px 0; }
+  .testi-mini { text-align: center; padding: 8px 8px; background: #fff; border-radius: 4px; }
+  .testi-mini p { font-size: 6.5pt; font-style: italic; color: var(--muted); margin: 0; line-height: 1.35; max-width: none; }
+  .testi-mini cite { font-size: 5.5pt; color: var(--gold); margin-top: 2px; display: block; }
+
+  /* OFFRES — PAGE 5 */
+  .offres-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 10px 0; }
+  .offre-c { background: rgba(255,255,255,0.5); border-radius: 8px; padding: 18px 14px; text-align: center; border: 1px solid rgba(139,29,61,0.06); border-top: 3px solid var(--gold); }
+  .offre-icon { font-size: 22pt; margin-bottom: 6px; }
+  .offre-c h4 { font-family: var(--font-syne); font-style: italic; font-weight: 400; font-size: 12pt; color: var(--burgundy); margin-bottom: 2px; }
+  .offre-intent { font-size: 6.5pt; color: var(--gold); font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px; }
+  .offre-c p { font-size: 8pt; color: var(--muted); margin: 0; max-width: none; line-height: 1.5; }
+  .offre-c .offre-prix { font-family: var(--font-syne); font-size: 12pt; font-weight: 700; color: var(--burgundy); margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(139,29,61,0.06); }
+  .offre-c .offre-prix .surs { font-size: 7pt; font-weight: 400; color: var(--muted); }
+
+  .devis-box { background: var(--burgundy); border-radius: 30px 16px 30px 16px; padding: 14px 26px; margin: 8px 0; text-align: center; }
+  .devis-box p { color: var(--white); font-size: 9pt; margin: 0; max-width: none; }
+  .devis-box p strong { color: var(--gold); }
+  .devis-box .note { font-size: 6.5pt; color: rgba(255,255,255,0.5); margin-top: 2px; display: block; }
+
+  /* CIBLES — PAGE 6 */
+  .cibles-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 0; }
+  .cible-c { padding: 12px 16px; background: rgba(255,255,255,0.5); border-radius: 6px; }
+  .cible-c h4 { font-size: 9pt; color: var(--burgundy); margin-bottom: 2px; }
+  .cible-c p { font-size: 7.5pt; color: var(--muted); margin: 0 0 3px; max-width: none; line-height: 1.45; }
+  .cible-tags { display: flex; flex-wrap: wrap; gap: 2px; }
+  .cible-tags span { font-size: 5.5pt; background: rgba(197,160,40,0.1); color: var(--gold); padding: 2px 6px; border-radius: 8px; font-weight: 600; }
+  .cible-benef { font-size: 6.5pt; color: var(--burgundy); font-weight: 500; margin-top: 3px; border-top: 1px solid rgba(139,29,61,0.06); padding-top: 3px; }
+
+  /* CONTACT — PAGE 7 */
+  .page-contact { background: var(--burgundy-dark); position: relative; overflow: hidden; justify-content: center; }
+  .contact-glow { position: absolute; top: -200px; right: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(197,160,40,0.07) 0%, transparent 70%); border-radius: 50%; pointer-events: none; }
+  .contact-inner { position: relative; z-index: 1; padding: 32px 48px 24px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100%; }
+  .contact-h { font-family: var(--font-syne); font-size: 30pt; font-weight: 700; color: var(--white); line-height: 1.1; max-width: 20ch; margin: 0 auto 14px; }
+  .contact-h .gold { display: block; color: var(--gold); font-style: italic; font-weight: 400; }
+  .contact-invite { font-size: 10pt; color: rgba(255,255,255,0.6); max-width: 56ch; margin: 0 auto 22px; line-height: 1.7; }
+  .contact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 720px; margin: 0 auto 20px; }
+  .contact-item { border-top: 1px solid rgba(197,160,40,0.3); padding-top: 10px; }
+  .contact-item .label { font-size: 7pt; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+  .contact-item .value { font-size: 9.5pt; color: var(--white); line-height: 1.4; }
+  .contact-item .value a { color: var(--white); text-decoration: underline; }
+  .cta-btn { display: inline-block; background: var(--gold); color: var(--burgundy-dark); font-weight: 700; font-size: 10pt; letter-spacing: 1px; padding: 12px 32px; border-radius: 40px; text-transform: uppercase; text-decoration: none; font-family: var(--font-ranade); transition: opacity .15s; }
+  .cta-btn:hover { opacity: .9; }
+  .contact-legal { margin-top: 14px; font-size: 6.5pt; color: rgba(255,255,255,0.2); line-height: 1.4; }
+  .page-contact .page-number { color: rgba(255,255,255,0.1); }
+
+  @media print {
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    html, body { background: white; padding: 0; margin: 0; width: 297mm; }
+    .page {
+      width: 297mm; height: 210mm; min-height: 210mm;
+      margin: 0; padding: 0;
+      box-shadow: none; border-radius: 0;
+      page-break-inside: avoid; break-inside: avoid;
+      overflow: hidden;
+    }
+    .page:not(:last-of-type) { page-break-after: always; break-after: page; }
+    .page-body { padding: 24px 36px 18px; }
+    @page { size: A4 landscape; margin: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════
+     SLIDE 1 — COVER
+     ════════════════════════════════════════════════════ -->
+<div class="page page-cover">
+  <div class="cover-glow"></div>
+  <div class="cover-photo">
+    <img src="./assets/sandrina-cover-landscape.png" alt="Sandrina Perrin">
+    <div style="position:absolute;bottom:14px;right:24px;z-index:3;display:flex;align-items:center;gap:10px;">
+      <div style="width:30px;height:2px;background:var(--gold);"></div>
+      <span style="font-family:var(--font-ranade);font-size:8pt;color:rgba(255,255,255,0.65);letter-spacing:1px;">Sandrina Perrin</span>
+    </div>
+  </div>
+  <div class="cover-left">
+    <div class="cover-top">
+      <div>
+        <img src="./assets/logo-kleia-hd.png" alt="KLEIA-UP" style="height:96px;width:auto;display:block;margin-bottom:10px;">
+        <div class="cover-logo-sub">Leadership &amp; Parole incarnée</div>
+      </div>
+      <div class="cover-geo">Vendée · Pays de la Loire</div>
+    </div>
+    <div class="cover-hero">
+      <div class="cover-tagline">Cultiver l'optimisme</div>
+      <h1>Cultiver l'Optimisme&nbsp;:<br><span class="gold">3 clés pour démarrer.</span></h1>
+      <p class="cover-sub">
+        Conférences, ateliers et formations sur mesure pour révéler ce que vos équipes ont de meilleur
+        — au service de vos adhérents, de vos collaborateurs et de votre performance.
+      </p>
+      <div class="cover-formats">
+        <div class="cover-fmt">Conférences</div>
+        <div class="cover-fmt">Ateliers</div>
+        <div class="cover-fmt">Formations</div>
+      </div>
+    </div>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-bottom-inner">
+      <span class="bottom-tag">Mutuelles et Entreprises à mission</span>
+    </div>
+  </div>
+  <span class="page-number">01 / 09</span>
+</div>
+
+<!-- ════════════════════════════════════════════════════
+     SLIDE 2 — MOUVEMENT KLEIA-UP
+     ════════════════════════════════════════════════════ -->
+<div class="page page-video">
+  <div class="video-glow"></div>
+  <div class="video-wrap">
+    <div class="video-overline">En situation</div>
+    <h2 class="video-title">L'expérience, <span class="gold">en 53 secondes.</span></h2>
+    <div class="video-frame">
+      <video id="prez-video" muted loop playsinline preload="auto" poster="./assets/prez_cover_poster.jpg" src="./assets/prez_sandrina_v1_web.mp4"></video>
+      <button class="video-sound" id="video-sound" type="button">&#128266;&nbsp;&nbsp;Activer le son</button>
+    </div>
+    <p class="video-caption">Extrait filmé lors d'une conférence KLEIA-UP — lecture automatique, musique activable en un clic.</p>
+  </div>
+  <span class="page-number">02 / 09</span>
+</div>
+<script>
+(function(){
+  var v = document.getElementById('prez-video');
+  var b = document.getElementById('video-sound');
+  if(!v || !b) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ var p = v.play(); if(p && p.catch) p.catch(function(){}); }
+      else { v.pause(); }
+    });
+  }, {threshold: 0.5});
+  io.observe(v);
+  b.addEventListener('click', function(){
+    v.muted = false; v.volume = 1;
+    var p = v.play(); if(p && p.catch) p.catch(function(){});
+    b.style.display = 'none';
+  });
+})();
+</script>
+
+<div class="page page-int">
+  <div class="page-body">
+    <div class="overline">Le mouvement</div>
+    <h2>« Que plus aucune voix brillante<br>ne s'éteigne par peur de déranger. »</h2>
+    <div class="gold-bar"></div>
+
+    <div class="slide-2">
+      <div class="slide-2-left">
+        <div class="bio-row">
+          <img src="./assets/sandrina-kleia-up.webp" alt="Sandrina Perrin" class="bio-portrait">
+          <div class="bio-text">
+            <p>
+              <strong>KLEIA-UP</strong> est un mouvement de réconciliation : entre performance et bienveillance,
+              sensibilité et leadership, excellence et joie. Fondé par <strong>Sandrina Perrin</strong>,
+              conférencière et facilitatrice engagée auprès des organisations depuis 2011.
+            </p>
+            <div class="bio-badges">
+              <span>Forces VIA</span>
+              <span>Psychologie positive</span>
+              <span>Cohérence cardiaque</span>
+              <span>Prise de parole en public</span>
+              <span>Serious games</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cartridge-gold">
+          <p>
+            <strong>Notre vision.</strong> Faire de l'optimisme un levier stratégique :
+            une compétence qui se cultive, se mesure et transforme les collectifs en profondeur.
+          </p>
+        </div>
+        <div class="cartridge-gold">
+          <p>
+            <strong>Notre différence.</strong> Une approche <em>incarnée</em> : neurosciences, forces de caractère
+            et exercices pratiques. Pas de conférence descendante. Pas de formation catalogue.
+            Chaque intervention est conçue <strong>avec</strong> vous, pour vos équipes, votre secteur.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-2-right">
+        <h3 style="font-size:6.5pt; text-align:center; margin-bottom:4px;">Ils nous font confiance</h3>
+        <div class="logos-strip">
+          <img src="./assets/logos-partners/UDAMS85-logo-horizontal-_1_.webp" alt="UDAMS 85">
+          <img src="./assets/logos-partners/microsoft.png" alt="Microsoft">
+          <img src="./assets/logos-partners/le-figaro.png" alt="Le Figaro">
+          <img src="./assets/logos-partners/familles-rurales.png" alt="Familles Rurales">
+          <img src="./assets/logos-partners/club-reveuses.png" alt="Club des Rêveuses">
+          <img src="./assets/logos-partners/vendee-grand-littoral.png" alt="Vendée Grand Littoral">
+          <img src="./assets/logos-partners/ateliers-durables.png" alt="Ateliers Durables">
+        </div>
+        <div class="testimonial" style="margin-top:8px;">
+          <p>« Sandrina est intervenue lors de notre séminaire annuel. Taux de satisfaction : 92 %. Les équipes en parlent encore trois mois après. »</p>
+          <cite>— Direction, UDAMS 85 <span class="src">(Groupe VYV) — Juin 2026</span></cite>
+        </div>
+        <div class="slide2-photo-wrap">
+          <img src="./assets/sandrina-scene-micro.jpg" alt="Sandrina Perrin — Conférence Groupe VYV">
+          <span class="slide2-photo-caption">Conférence — Groupe VYV, 2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="page-number">03 / 09</span>
+</div>
+
+<!-- ════════════════════════════════════════════════════
+     SLIDE 3 — CE QUE VOUS GAGNEZ / KPI
+     ════════════════════════════════════════════════════ -->
+<div class="page page-int bg-pearl">
+  <div class="page-body">
+    <div class="overline">Pourquoi investir dans l'engagement</div>
+    <h2>Ce que vous gagnez<br><span class="gold">à investir dans vos équipes</span></h2>
+    <div class="gold-bar"></div>
+
+    <div class="slide-3">
+      <div class="slide-3-left">
+        <p style="font-size:8.5pt; max-width:48ch;">
+          La qualité de vie et des conditions de travail n'est pas une option —
+          c'est un levier de performance globale. Derrière chaque chiffre, il y a
+          des collaborateurs, des managers, des équipes qui ont besoin de sens,
+          d'énergie et de reconnaissance. <strong>Et si on regardait le verre à moitié plein ?</strong>
+        </p>
+
+        <div class="kpi-grid">
+          <div class="kpi-card gold">
+            <div class="kpi-num">9 <span class="small">sur</span> 10</div>
+            <div class="kpi-label">des Français considèrent la santé mentale comme un enjeu de société prioritaire — salariés, indépendants et retraités attendent des actions concrètes</div>
+            <span class="kpi-src">Source : Baromètre Santé Mentale 2025-2026</span>
+          </div>
+          <div class="kpi-card gold">
+            <div class="kpi-num">4,3 <span class="small">%</span></div>
+            <div class="kpi-label">C'est le taux d'absentéisme en 2025,<br>son plus haut niveau depuis 2019</div>
+            <span class="kpi-src">Source : Baromètre Absentéisme 2026</span>
+          </div>
+        </div>
+
+        <div class="chart-row">
+          <div class="chart-card">
+            <div class="chart-title">Une prise de conscience massive</div>
+            <svg viewBox="0 0 180 100" class="chart-svg">
+              <text x="3" y="10" font-size="5" fill="#6A5458">2020</text>
+              <rect x="3" y="36" width="48" height="52" rx="2" fill="#8B1D3D" opacity="0.35"/>
+              <text x="27" y="32" font-size="6" fill="#8B1D3D" font-weight="700" text-anchor="middle">65%</text>
+              <text x="66" y="10" font-size="5" fill="#6A5458">2022</text>
+              <rect x="66" y="28" width="48" height="60" rx="2" fill="#8B1D3D" opacity="0.6"/>
+              <text x="90" y="24" font-size="6" fill="#8B1D3D" font-weight="700" text-anchor="middle">78%</text>
+              <text x="129" y="10" font-size="5" fill="#6A5458">2025</text>
+              <rect x="129" y="10" width="48" height="78" rx="2" fill="#C5A028"/>
+              <text x="153" y="6" font-size="6" fill="#C5A028" font-weight="700" text-anchor="middle">90%</text>
+            </svg>
+            <div class="chart-label">Français considérant la santé mentale<br>comme un enjeu de société majeur</div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-title">Un signal d'alarme</div>
+            <svg viewBox="0 0 180 100" class="chart-svg">
+              <text x="3" y="10" font-size="5" fill="#6A5458">2019</text>
+              <rect x="3" y="48" width="48" height="40" rx="2" fill="#8B1D3D" opacity="0.35"/>
+              <text x="27" y="44" font-size="6" fill="#8B1D3D" font-weight="700" text-anchor="middle">3,2%</text>
+              <text x="66" y="10" font-size="5" fill="#6A5458">2022</text>
+              <rect x="66" y="40" width="48" height="48" rx="2" fill="#8B1D3D" opacity="0.6"/>
+              <text x="90" y="36" font-size="6" fill="#8B1D3D" font-weight="700" text-anchor="middle">3,8%</text>
+              <text x="129" y="10" font-size="5" fill="#6A5458">2025</text>
+              <rect x="129" y="28" width="48" height="60" rx="2" fill="#C5A028"/>
+              <text x="153" y="24" font-size="6" fill="#C5A028" font-weight="700" text-anchor="middle">4,3%</text>
+            </svg>
+            <div class="chart-label">Taux d'absentéisme —<br>son plus haut niveau depuis 2019</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-3-right">
+        <div class="roi-encart">
+          <p>
+            <strong>ROI : 1€ investi = 2,50€ à 6€ retournés</strong>
+            C'est le retour sur investissement des programmes de prévention santé mentale en entreprise.
+            <span class="src">Sources : OMS 2024, Deloitte, Lancet Psychiatry</span>
+          </p>
+        </div>
+
+        <div class="psy-inverse">
+          <p>
+            <strong>Un enjeu qui concerne tous les publics.</strong><br>
+            Santé mentale, qualité de vie — vos adhérents comme vos collaborateurs
+            attendent des réponses concrètes, pas des discours.<br>
+            <strong>Cultivez ce qui va bien.</strong><br>
+            L'engagement, la cohésion, la joie — vos meilleurs indicateurs de performance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="page-number">04 / 09</span>
+</div>
+
+<!-- ════════════════════════════════════════════════════
+     SLIDE 4 — RESPIRATION : L'OPTIMISME SE CULTIVE
+     ════════════════════════════════════════════════════ -->
+<style>
+  .page-resp { background: var(--burgundy-dark); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .page-resp .resp-photo { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .page-resp .resp-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%; transform: scale(1.05); }
+  .page-resp .resp-photo::after { content: ''; position: absolute; inset: 0; background: rgba(128,32,64,0.7); pointer-events: none; }
+  .page-resp .resp-bubble { position: absolute; border-radius: 50%; background: rgba(255,255,255,0.04); pointer-events: none; z-index: 1; }
+  .page-resp .resp-bubble.b1 { width: 120px; height: 120px; bottom: 80px; right: 60px; }
+  .page-resp .resp-bubble.b2 { width: 70px; height: 70px; bottom: 150px; right: 140px; background: rgba(255,255,255,0.06); }
+  .page-resp .resp-bubble.b3 { width: 50px; height: 50px; bottom: 50px; right: 180px; }
+  .page-resp .resp-overlay { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px; }
+  .page-resp .resp-line1 { font-family: var(--font-ranade); font-size: 18pt; color: var(--white); font-weight: 400; font-style: italic; line-height: 1.4; }
+  .page-resp .resp-line2 { font-family: var(--font-ranade); font-size: 20pt; color: var(--gold); font-weight: 700; line-height: 1.3; margin-top: 4px; }
+  .page-resp .resp-attribution { font-size: 8pt; letter-spacing: 3px; text-transform: uppercase; color: var(--white); margin-top: 16px; font-weight: 400; }
+  .page-resp .page-number { color: rgba(255,255,255,0.1); }
+</style>
+<div class="page page-resp">
+  <div class="resp-photo">
+    <img src="./assets/scene-3-1.png" alt="Sandrina Perrin — Scène">
+  </div>
+  <div class="resp-bubble b1"></div>
+  <div class="resp-bubble b2"></div>
+  <div class="resp-bubble b3"></div>
+  <div class="resp-overlay">
+    <div class="resp-line1">« L'optimisme n'est pas un trait de caractère.</div>
+    <div class="resp-line2">C'est une compétence qui se cultive. »</div>
+    <div class="resp-attribution">SANDRINA PERRIN — KLEIA-UP</div>
+  </div>
+  <span class="page-number">05 / 09</span>
+</div>
+
+<!-- ════════════════════════════════════════════════════
+     SLIDE 5 — SANDRINA : L'INTERVENANTE
+     ════════════════════════════════════════════════════ -->
+<div class="page page-int">
+  <div class="page-body">
+    <div class="overline">L'intervenante</div>
+    <h2>Sandrina Perrin<br><span class="gold">15 ans à transformer l'énergie des collectifs</span><br><span style="font-family:var(--font-ranade);font-size:10pt;font-weight:400;color:var(--muted);letter-spacing:0;font-style:italic;">Hypersensibilité, affirmation de soi — pour vos équipes comme pour vos adhérents</span></h2>
+    <div class="gold-bar"></div>
+
+    <div class="chiffres-4">
+      <div class="chiffre-item"><div class="num">18</div><div class="label">ans d'entrepreneuriat</div></div>
+      <div class="chiffre-item"><div class="num">500+</div><div class="label">leaders accompagnés</div></div>
+      <div class="chiffre-item"><div class="num">80+</div><div class="label">épisodes podcast</div></div>
+      <div class="chiffre-item"><div class="num">+90%</div><div class="label">satisfaction</div></div>
+    </div>
+
+    <div class="cv-cards">
+      <div class="cv-card burgundy-top">
+        <h4>◆ Parcours</h4>
+        <ul>
+          <li><strong>18 ans d'entrepreneuriat</strong> — elle connaît la réalité du terrain</li>
+          <li><strong>Auteure</strong> — « À la Conquête de son Everest » (éd. MaÏa, 2022) ; 2ᵉ livre en cours sur l'hypersensibilité et l'affirmation de soi</li>
+          <li><strong>Coach d'orateur TEDx Nantes</strong> — 1 an au service de speakers de haut niveau</li>
+          <li><strong>Interventions France Bleue</strong> — « Bien Vivre, Mieux Vivre » et interviews</li>
+          <li><strong>Podcasteuse</strong> — 80+ épisodes sur la prise de parole et le leadership</li>
+        </ul>
+      </div>
+      <div class="cv-card gold-top">
+        <h4>◆ Compétences &amp; Certifications</h4>
+        <ul>
+          <li><strong>Conférencière</strong> — optimisme stratégique, leadership sensible</li>
+          <li><strong>Animatrice d'ateliers collectifs</strong> — esprit d'équipe, cohésion, remobilisation des collectifs</li>
+          <li><strong>Coach &amp; formatrice</strong> — forces de caractères, prise de parole, présence, incarnation, impact</li>
+          <li><strong>Certifiée</strong> : rigologue experte (techniques du bonheur), psychologie positive (Barbara L. Fredrickson, Ph.D., UNC Chapel Hill), cohérence cardiaque, prise de parole en public</li>
+          <li><strong>Pédagogie interactive</strong> — serious games, improvisation, mises en situation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cv-banner">
+      <h4>Une approche qui fait la différence</h4>
+      <div class="banner-grid">
+        <div class="banner-item"><strong>15 ans de terrain</strong><br>pratique éprouvée, 500+ leaders accompagnés</div>
+        <div class="banner-item"><strong>Connaît le secteur</strong><br>Harmonie Mutuelle, La Poste, CPAM Mayenne</div>
+        <div class="banner-item"><strong>Format interactif</strong><br>conférences vivantes, exercices concrets</div>
+        <div class="banner-item"><strong>Approche incarnée</strong><br>optimisme stratégique &amp; forces de caractère</div>
+      </div>
+    </div>
+
+    <div class="clients-tags">
+      <span>Microsoft</span>
+      <span>Le Figaro</span>
+      <span class="highlight">Harmonie Mutuelle (Groupe VYV)</span>
+      <span>UDAMS 85</span>
+      <span>La Poste</span>
+      <span>CPAM Mayenne</span>
+      <span>Maison et Services</span>
+      <span>Club des Rêveuses</span>
+      <span>Familles Rurales</span>
+      <span>Vendée Grand Littoral</span>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testi-mini">
+        <p>« Sandrina nous pousse à sortir du simple « je prends un micro » pour transformer chaque intervention en expérience émotionnelle. »</p>
+        <cite>— Cécile Neuville, auteure &amp; conférencière</cite>
+      </div>
+      <div class="testi-mini">
+        <p>Des interventions pour <strong>Harmonie Mutuelle, La Poste, CPAM Mayenne</strong> — une références solide<br>dans le secteur public et mutualiste.</p>
+      </div>
+      <div class="testi-mini">
+        <p>Plus de <strong>500 leaders</strong> accompagnés depuis 2011 —<br>une approche éprouvée par le terrain.</p>
+      </div>
+    </div>
+  </div>
+  <span class="page-number">06 / 09</span>
+</div>
+
+<!-- ════════════════════════════════════════════════════
+     SLIDE 6 — OFFRES
+     ════════════════════════════════════════════════════ -->
+<div class="page page-int bg-pearl">
+  <div class="page-body">
+    <div class="overline">Nos formats</div>
+    <h2>Trois portes d'entrée.<br><span class="gold">Une même exigence d'impact.</span></h2>
+    <div class="gold-bar"></div>
+
+    <p>
+      <strong>Conférence</strong> pour ouvrir les perspectives. <strong>Atelier</strong> pour expérimenter. <strong>Formation</strong> pour ancrer durablement les pratiques.
+      Nous construisons avec vous l'intervention adaptée à votre réalité.
+    </p>
+
+    <div class="offres-3">
+      <div class="offre-c">
+        <div class="offre-icon">◇</div>
+        <h4>Conférence Signature</h4>
+        <div class="offre-intent">Cultiver l'optimisme&nbsp;: 3 clés pour soi et pour le collectif.</div>
+        <p>Comment développer une énergie positive au quotidien pour recharger ses propres batteries et renforcer le lien avec les autres. <strong>Disponible en visio.</strong></p>
+        <div class="offre-prix">Sur devis</div>
+      </div>
+      <div class="offre-c">
+        <div class="offre-icon">○</div>
+        <h4>Atelier &amp; coaching</h4>
+        <div class="offre-intent">Expérimenter · Pratiquer · Ancrer</div>
+        <p>Session interactive de 1h à ½ journée. Chaque participant repart avec des <strong>outils concrets</strong> utilisables dès le lendemain. Serious games, mises en situation, cohésion d'équipe. <strong>Disponible en visio.</strong></p>
+        <div class="offre-prix">Sur devis</div>
+      </div>
+      <div class="offre-c">
+        <div class="offre-icon">△</div>
+        <h4>Formation</h4>
+        <div class="offre-intent">Approfondir · Incarner · Durer</div>
+        <p>Parcours de 1 à 3 jours pour développer un <strong>leadership sensible</strong>, renforcer les forces de caractère et ancrer durablement des pratiques de coopération, d'engagement et de responsabilité.</p>
+        <div class="offre-prix">Sur devis</div>
+      </div>
+    </div>
+
+    <div class="devis-box">
+      <p>
+        <strong>Construisons ensemble votre intervention</strong>
+        Chaque projet est unique — nous consulter pour un devis personnalisé.
+        <span class="note">Présentiel ou visio · Frais de déplacement en sus · Associations et mutuelles régionales : nous consulter</span>
+      </p>
+    </div>
+
+    <div class="cartridge-gold">
+      <p>
+        <strong>En pratique.</strong> Chaque intervention est précédée d'un échange préparatoire
+        pour comprendre vos enjeux, votre public et vos contraintes. Pas de discours standard :
+        du sur-mesure, de l'incarné, du durable.
+      </p>
+    </div>
+  </div>
+  <span class="page-number">07 / 09</span>
+</div>
+
+<!-- ════════════════════════════════════════════════════
+     SLIDE 7 — POUR QUI
+     ════════════════════════════════════════════════════ -->
+<div class="page page-int">
+  <div class="page-body">
+    <div class="overline">Pour qui</div>
+    <h2>Un besoin partagé.<br><span class="gold">Des solutions sur mesure.</span></h2>
+    <div class="gold-bar"></div>
+
+    <p>
+      Mutuelles, entreprises, associations, fédérations — vous faites face aux mêmes défis :
+      engager vos équipes et vos adhérents, cultiver l'énergie durable, donner du sens.
+      Nos interventions s'adaptent à votre réalité.
+    </p>
+
+<style>
+  .cible-c { display: flex; gap: 12px; padding: 12px 16px; background: rgba(255,255,255,0.5); border-radius: 6px; }
+  .cible-bar { width: 4px; border-radius: 2px; flex-shrink: 0; }
+  .cible-bar.gold { background: var(--gold); }
+  .cible-bar.blue { background: #5A8BA0; }
+  .cible-bar.green { background: #7BA04A; }
+  .cible-bar.orange { background: #E08B4C; }
+  .cible-content { flex: 1; }
+    .cible-content h4 { font-size: 9pt; color: var(--burgundy); margin-bottom: 4px; }
+  .cible-content p { font-size: 7.5pt; color: var(--muted); margin: 0 0 4px; max-width: none; line-height: 1.5; }
+  .cible-tags { display: flex; flex-wrap: wrap; gap: 2px; }
+  .cible-tags span { font-size: 5.5pt; padding: 2px 6px; border-radius: 8px; font-weight: 600; }
+  .cible-tags .tag-gold { background: rgba(197,160,40,0.1); color: var(--gold); }
+  .cible-tags .tag-blue { background: rgba(90,139,160,0.1); color: #5A8BA0; }
+  .cible-tags .tag-green { background: rgba(123,160,74,0.1); color: #7BA04A; }
+  .cible-tags .tag-orange { background: rgba(224,139,76,0.1); color: #E08B4C; }
+  .cible-benef { font-size: 6.5pt; color: var(--burgundy); font-weight: 500; margin-top: 3px; border-top: 1px solid rgba(139,29,61,0.06); padding-top: 3px; }
+</style>
+    <div class="cibles-2">
+      <div class="cible-c">
+        <div class="cible-bar gold"></div>
+        <div class="cible-content">
+          <h4>Mutuelles &amp; Assureurs</h4>
+          <p>Prévention santé globale, offre de services aux adhérents, QVCT des collaborateurs.</p>
+          <div class="cible-tags">
+            <span class="tag-gold">Congrès mutualiste</span>
+            <span class="tag-gold">Séminaire QVCT</span>
+            <span class="tag-gold">Semaine santé mentale</span>
+          </div>
+          <p class="cible-benef">— Adhérents plus engagés, sinistralité réduite, marque employeur renforcée.</p>
+        </div>
+      </div>
+      <div class="cible-c">
+        <div class="cible-bar blue"></div>
+        <div class="cible-content">
+          <h4>Entreprises</h4>
+          <p>Engagement collaborateurs, marque employeur, performance durable.</p>
+          <div class="cible-tags">
+            <span class="tag-blue">Convention annuelle</span>
+            <span class="tag-blue">Séminaire dirigeants</span>
+            <span class="tag-blue">Parcours managers</span>
+          </div>
+          <p class="cible-benef">— Rétention des talents, climat de travail, alignement culturel.</p>
+        </div>
+      </div>
+      <div class="cible-c">
+        <div class="cible-bar green"></div>
+        <div class="cible-content">
+          <h4>Associations</h4>
+          <p>Mobilisation des bénévoles, cohésion d'équipe, animation de réseau.</p>
+          <div class="cible-tags">
+            <span class="tag-green">Assemblée générale</span>
+            <span class="tag-green">Congrès fédéral</span>
+            <span class="tag-green">Formation bénévoles</span>
+          </div>
+          <p class="cible-benef">— Renouvellement de l'engagement, dynamique collective, impact territorial.</p>
+        </div>
+      </div>
+      <div class="cible-c">
+        <div class="cible-bar orange"></div>
+        <div class="cible-content">
+          <h4>Fédérations</h4>
+          <p>Animation de réseau, cohésion inter-structures, montée en compétences.</p>
+          <div class="cible-tags">
+            <span class="tag-orange">Convention réseau</span>
+            <span class="tag-orange">Université d'été</span>
+            <span class="tag-orange">Séminaire inter-structures</span>
+          </div>
+          <p class="cible-benef">— Cohésion du réseau, impact territorial, mutualisation des pratiques.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cartridge-gold" style="margin-top:6px;">
+      <p>
+        <strong>En pratique.</strong> Chaque intervention commence par un échange préparatoire
+        pour comprendre vos enjeux, votre public et vos contraintes. Pas de catalogue.
+        Du sur-mesure, de l'incarné, du durable.
+      </p>
+    </div>
+  </div>
+  <span class="page-number">08 / 09</span>
+</div>
+
+<!-- ════════════════════════════════════════════════════
+     SLIDE 8 — CONTACT
+     ════════════════════════════════════════════════════ -->
+<div class="page page-contact">
+  <div class="contact-glow"></div>
+  <div class="contact-inner">
+    <div style="margin-bottom:16px;">
+      <div class="overline" style="color:var(--gold); justify-content:center; margin-bottom:14px; font-size:7.5pt;">
+        Et maintenant, passons à l'action
+      </div>
+      <div class="contact-h">
+        Vous avez une vision.<br><span class="gold">Donnons-lui une voix.</span>
+      </div>
+      <p class="contact-invite">
+        Chaque intervention KLEIA-UP commence par un échange gratuit : comprendre vos enjeux,
+        votre public, vos contraintes. Pas de pitch, pas de catalogue.
+        <strong style="color:var(--gold);">Imaginons ensemble l'expérience qui fera la différence pour votre organisation.</strong>
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="label">Contact</div>
+        <div class="value">Sandrina Perrin<br>
+          <a href="mailto:sandrina@kleia-up.fr">sandrina@kleia-up.fr</a><br>
+          <span style="font-size:8pt;color:rgba(255,255,255,0.7);">06 21 01 32 13</span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="label">Web</div>
+        <div class="value">
+          <a href="https://kleia-up.fr">kleia-up.fr</a><br>
+          <a href="https://www.linkedin.com/in/sandrina-perrin-conference-formation/" style="font-size:8pt;">LinkedIn</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="label">Format</div>
+        <div class="value">Conférences<br>Ateliers · Formations</div>
+      </div>
+      <div class="contact-item">
+        <div class="label">Référence</div>
+        <div class="value">Harmonie Mutuelle (Groupe VYV)<br>La Poste · Microsoft</div>
+      </div>
+    </div>
+
+    <div>
+      <a href="mailto:sandrina@kleia-up.fr?subject=Demande%20d'information%20-%20Plaquette%20Mutuelles" class="cta-btn">
+        ✉ Réservez votre échange offert →
+      </a>
+    </div>
+
+    <div class="contact-legal">
+      KLEIA-UP · Sandrina Perrin · SIRET 529 451 320 00061 · 18 Rue du Paradis, 85440 POIROUX · NDA en cours
+    </div>
+  </div>
+  <span class="page-number">09 / 09</span>
+</div>
+
+</body>
+</html>
