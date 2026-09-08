@@ -426,7 +426,7 @@ def _print_schema():
         "desc": "Meta description (~150 car., sans charabia)",
         "date_iso": "AAAA-MM-JJ",
         "eyebrow": "BLOG — <catégorie>",
-        "byline": "Par Sandrina Perrin (optionnel date statique)",
+        "byline": "Par Sandrina Perrin (optionnel date statique). NB: temps de lecture auto-calcule et ajoute apres la categorie",
         "category": "ex Hyperstress & Neuroatypie",
         "og_image": "URL partagée (sinon image d'en-tête ou sandrina-par défaut)",
         "image": "chemin relatif depuis journal/ de l image d en-tête (sinon sandrina-presence-scenique.webp)",
