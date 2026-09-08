@@ -34,6 +34,7 @@ JOURNAL_DIR = ROOT / "journal"
 
 MONTHS_FR = {1:"Jan",2:"Fev",3:"Mar",4:"Avr",5:"Mai",6:"Juin",
              7:"Juil",8:"Aout",9:"Sep",10:"Oct",11:"Nov",12:"Dec"}
+NBSP_CH = "\u00a0"
 SITE = "https://www.kleia-up.fr"
 
 # ---------------------------------------------------------------------------
@@ -179,6 +180,12 @@ def esc(t):  # html escape (pas double-échapper les balises qu'on gère à l'un
             .replace('"', "&quot;"))
 
 
+def fr_nbsp(txt):
+    """Regle typo JP : ':' TOUJOURS en fin de ligne rendue, jamais en debut.
+    Soude le ':' au mot precedent par espace insecable."""
+    return str(txt).replace(" :", NBSP_CH + ":")
+
+
 def bold(txt):
     return re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", str(txt))
 
@@ -212,10 +219,10 @@ def render_k(r):
     if k == "h2":
         sid = r.get("id") or slugify(r["t"])
         return (f'<h2 id="{sid}" style="font-family: var(--font-title); color: var(--color-burgundy); '
-                f'margin-top: 50px; font-size: 1.6rem;">{r["t"]}</h2>')
+                f'margin-top: 50px; font-size: 1.6rem;">{fr_nbsp(r["t"])}</h2>')
     if k == "h3":
         return (f'<h3 style="font-family: var(--font-title); color: var(--color-burgundy); '
-                f'font-size: 1.25rem; margin-top: 35px;">{r["t"]}</h3>')
+                f'font-size: 1.25rem; margin-top: 35px;">{fr_nbsp(r["t"])}</h3>')
     if k == "blockquote":
         return (f'<blockquote style="border-left: 4px solid var(--color-burgundy); padding: 20px 25px; '
                 f'margin: 30px 0; background: #FAF9F6; border-radius: 0 8px 8px 0; '
@@ -252,7 +259,7 @@ def render_body(rows, faq):
     if faq:
         qids = []
         html = ['<h2 id="faq" style="font-family: var(--font-title); color: var(--color-burgundy); '
-                'margin-top: 50px; font-size: 1.6rem;">FAQ : vos questions fréquentes</h2>']
+                'margin-top: 50px; font-size: 1.6rem;">FAQ : vos questions fréquentes</h2>']
         for q in faq:
             qids.append(json.dumps(q["q"], ensure_ascii=False))
             html.append(
@@ -262,7 +269,7 @@ def render_body(rows, faq):
                 f'font-size: 1.05rem; margin: 0 0 10px 0;">{esc(q["q"])}</h3>'
                 f'<p style="margin: 0;">{esc(q["a"])}</p></div>')
         out.append("\n".join(html))
-        toc.append(("faq", "FAQ : vos questions fréquentes"))
+        toc.append(("faq", "FAQ : vos questions fréquentes"))
     return toc, "\n".join(out)
 
 
@@ -370,9 +377,9 @@ def assemble(br):
 <section class="section-padding" style="padding-top: 160px; background-color: var(--bg-cream);">
 <div class="container" style="max-width: 720px;">
 <span class="hero-eyebrow" style="margin-bottom: 20px; display: block;">{esc(br.get("eyebrow","BLOG — JOURNAL DU MOUVEMENT"))}</span>
-<h1 class="hero-title" style="text-align: left; font-size: 2.8rem;">{esc(br["h1"])}</h1>
+<h1 class="hero-title" style="text-align: left; font-size: 2.8rem;">{fr_nbsp(esc(br["h1"])).replace("&lt;br&gt;", "<br>")}</h1>
 <p class="hero-subtitle" style="text-align: left; font-size: 0.95rem; line-height: 1.5; color: var(--color-text-light);">
-Par <strong>Sandrina Perrin</strong> · <span class="hero-date">{esc(br.get("byline", date_fr_v))}</span> · Catégorie : {esc(category)}
+Par <strong>Sandrina Perrin</strong> · <span class="hero-date">{esc(br.get("byline", date_fr_v))}</span> · Catégorie : {esc(category)}
 </p>
 </div>
 </section>
