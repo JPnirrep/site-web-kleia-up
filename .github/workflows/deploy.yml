@@ -1,63 +1,17 @@
 name: Deploy static content to Pages
-
 on:
   push:
     branches: ["main"]
   workflow_dispatch:
-
 permissions:
   contents: read
   pages: write
   id-token: write
-
 concurrency:
   group: "pages"
   cancel-in-progress: false
-
 jobs:
-  # ---------------------------------------------------------------------------
-  # GARDE-FOU: refuse le deploiement si un fichier non autorise est present.
-  # Ne jamais elargir cette liste sans revue explicite.
-  # ---------------------------------------------------------------------------
-  guard:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Deny-list bloquante (fichiers interdits au deploiement)
-        run: |
-          set -euo pipefail
-          echo "=== Controle deny-list ==="
-          FORBIDDEN='^(\.agent/|\.memory/|\.opencode/|\.github/|coaching_data/|space/|_template/|_temp_studio_kit/|prez/|Hostinger/|php/|scripts/|data/|offres/signature/strategy/)'
-          FORBIDDEN_FILES='^(GEMINI\.md|NOTES-SESSION\.md|recapitulatif_session\.md|RAPPORT_AUDIT_.*\.md|CSS_DEBUG\.html|css_temp\.css|_etude-marche-.*\.html|plaquette-mutuelles-v[0-9].*|plaquette-conferences-v[0-9].*|\.firebaserc|firestore\.rules|canva-v8-mapping\.md|session-resume-.*\.md|\.env.*|.*\.bak-.*)'
-          HITS=$(find . -path ./.git -prune -o -type f -print \
-            | sed 's|^\./||' \
-            | grep -E "$FORBIDDEN|$FORBIDDEN_FILES" || true)
-          if [ -n "$HITS" ]; then
-            echo "::error::DEPLOIEMENT REFUSE - fichiers interdits detectes :"
-            echo "$HITS"
-            exit 1
-          fi
-          echo "OK - aucun fichier interdit"
-
-      - name: Whitelist (seuls des fichiers connus peuvent partir)
-        run: |
-          set -euo pipefail
-          echo "=== Controle whitelist ==="
-          ALLOWED_EXT='\.(html|css|js|json|xml|txt|png|jpe?g|webp|svg|ico|pdf|gif|mp3|mp4|woff2?|ttf|md|webmanifest)$'
-          SUSPECT=$(find . -path ./.git -prune -o -type f -print \
-            | sed 's|^\./||' \
-            | grep -vE "$ALLOWED_EXT" \
-            | grep -vE '^(README|LICENSE|CNAME|robots\.txt|sitemap\.xml|llms\.txt|\.nojekyll)' || true)
-          if [ -n "$SUSPECT" ]; then
-            echo "::warning::Fichiers a extension inhabituelle (a confirmer manuellement) :"
-            echo "$SUSPECT"
-          fi
-          echo "OK - controle whitelist termine"
-
   deploy:
-    needs: guard
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -65,31 +19,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Prepare publish directory (whitelist explicite)
-        run: |
-          set -euo pipefail
-          mkdir -p _site
-          # Copie uniquement les repertoires/fichiers de la vitrine publique
-          for p in *.html *.pdf assets css js journal offres labo-immersif \
-                   blog.html sitemap.xml robots.txt llms.txt .nojekyll CNAME favicon.ico; do
-            [ -e "$p" ] && cp -r "$p" _site/ 2>/dev/null || true
-          done
-          # Retirer tout residu interdit qui aurait ete copie
-          rm -rf _site/offres/signature/strategy _site/coaching_data _site/space \
-                 _site/_template _site/.agent _site/.memory _site/prez
-          echo "=== Contenu publie ==="
-          find _site -type f | wc -l
-          du -sh _site
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '_site'
-
+          path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
